@@ -20,18 +20,19 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 47ed4518ec4e703df3af380916cc3756a460e4d1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: d085e4e382727cc91aa82603d64d2f567afdd126
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-chain-bitmapsource-objects-together"></a><span data-ttu-id="7a8a5-102">Comment : enchaîner des objets BitmapSource</span><span class="sxs-lookup"><span data-stu-id="7a8a5-102">How to: Chain BitmapSource Objects Together</span></span>
-<span data-ttu-id="7a8a5-103">Cet exemple montre comment vous pouvez appliquer différents effets à une source d’image chaînage de plusieurs <xref:System.Windows.Media.Imaging.BitmapSource> ensemble des objets dérivés.</span><span class="sxs-lookup"><span data-stu-id="7a8a5-103">This example shows how you can apply a variety of effects to an image source by chaining multiple <xref:System.Windows.Media.Imaging.BitmapSource> derived objects together.</span></span>  
+# <a name="how-to-chain-bitmapsource-objects-together"></a><span data-ttu-id="f695e-102">Comment : enchaîner des objets BitmapSource</span><span class="sxs-lookup"><span data-stu-id="f695e-102">How to: Chain BitmapSource Objects Together</span></span>
+<span data-ttu-id="f695e-103">Cet exemple montre comment vous pouvez appliquer différents effets à une source d’image chaînage de plusieurs <xref:System.Windows.Media.Imaging.BitmapSource> ensemble des objets dérivés.</span><span class="sxs-lookup"><span data-stu-id="f695e-103">This example shows how you can apply a variety of effects to an image source by chaining multiple <xref:System.Windows.Media.Imaging.BitmapSource> derived objects together.</span></span>  
   
- <span data-ttu-id="7a8a5-104">L’exemple suivant utilise le chaînage pour retourner et modifier le format de pixel de la source d’une image.</span><span class="sxs-lookup"><span data-stu-id="7a8a5-104">The following example uses chaining to flip and change the pixel format of the source of an image.</span></span>  
+ <span data-ttu-id="f695e-104">L’exemple suivant utilise le chaînage pour retourner et modifier le format de pixel de la source d’une image.</span><span class="sxs-lookup"><span data-stu-id="f695e-104">The following example uses chaining to flip and change the pixel format of the source of an image.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7a8a5-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="7a8a5-105">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="f695e-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="f695e-105">Example</span></span>  
  [!code-xaml[ImagingSnippetGallery_snip#ChainedBitmapSourcesXamlExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_snip/CS/ChainedBitmapSourcesExample.xaml#chainedbitmapsourcesxamlexamplewholepage)]  
   
  [!code-csharp[ImagingSnippetGallery_procedural_snip#ChainedBitmapSourcesCodeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/CSharp/ChainedBitmapSourcesExample.cs#chainedbitmapsourcescodeexamplewholepage)]

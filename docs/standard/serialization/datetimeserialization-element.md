@@ -16,19 +16,22 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bd6dda1f26e44c4864d5afea1427b2580ac1ed10
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 492a3652ca7cd304b953006bb1b18a1edb3dcf51
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="ltdatetimeserializationgt-element"></a><span data-ttu-id="61198-102">Élément &lt;dateTimeSerialization&gt;</span><span class="sxs-lookup"><span data-stu-id="61198-102">&lt;dateTimeSerialization&gt; Element</span></span>
-<span data-ttu-id="61198-103">Détermine le mode de sérialisation des objets <xref:System.DateTime>.</span><span class="sxs-lookup"><span data-stu-id="61198-103">Determines the serialization mode of <xref:System.DateTime> objects.</span></span>  
+# <a name="ltdatetimeserializationgt-element"></a><span data-ttu-id="758a6-102">Élément &lt;dateTimeSerialization&gt;</span><span class="sxs-lookup"><span data-stu-id="758a6-102">&lt;dateTimeSerialization&gt; Element</span></span>
+<span data-ttu-id="758a6-103">Détermine le mode de sérialisation des objets <xref:System.DateTime>.</span><span class="sxs-lookup"><span data-stu-id="758a6-103">Determines the serialization mode of <xref:System.DateTime> objects.</span></span>  
   
- <span data-ttu-id="61198-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="61198-104">\<configuration></span></span>  
-<span data-ttu-id="61198-105">\<dateTimeSerialization></span><span class="sxs-lookup"><span data-stu-id="61198-105">\<dateTimeSerialization></span></span>  
+ <span data-ttu-id="758a6-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="758a6-104">\<configuration></span></span>  
+<span data-ttu-id="758a6-105">\<dateTimeSerialization></span><span class="sxs-lookup"><span data-stu-id="758a6-105">\<dateTimeSerialization></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="61198-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="61198-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="758a6-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="758a6-106">Syntax</span></span>  
   
 ```xml  
 <dateTimeSerialization  
@@ -36,34 +39,34 @@ ms.lasthandoff: 12/02/2017
 />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="61198-107">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="61198-107">Attributes and Elements</span></span>  
- <span data-ttu-id="61198-108">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="61198-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="758a6-107">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="758a6-107">Attributes and Elements</span></span>  
+ <span data-ttu-id="758a6-108">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="758a6-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="61198-109">Attributs</span><span class="sxs-lookup"><span data-stu-id="61198-109">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="758a6-109">Attributs</span><span class="sxs-lookup"><span data-stu-id="758a6-109">Attributes</span></span>  
   
-|<span data-ttu-id="61198-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="61198-110">Attributes</span></span>|<span data-ttu-id="61198-111">Description</span><span class="sxs-lookup"><span data-stu-id="61198-111">Description</span></span>|  
+|<span data-ttu-id="758a6-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="758a6-110">Attributes</span></span>|<span data-ttu-id="758a6-111">Description</span><span class="sxs-lookup"><span data-stu-id="758a6-111">Description</span></span>|  
 |----------------|-----------------|  
-|`mode`|<span data-ttu-id="61198-112">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="61198-112">Optional.</span></span> <span data-ttu-id="61198-113">Spécifie le mode de sérialisation.</span><span class="sxs-lookup"><span data-stu-id="61198-113">Specifies the serialization mode.</span></span> <span data-ttu-id="61198-114">Affectez-le à l'une des valeurs <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>.</span><span class="sxs-lookup"><span data-stu-id="61198-114">Set to one of the <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> values.</span></span> <span data-ttu-id="61198-115">La valeur par défaut est **RoundTrip**.</span><span class="sxs-lookup"><span data-stu-id="61198-115">The default is **RoundTrip**.</span></span>|  
+|`mode`|<span data-ttu-id="758a6-112">Facultatif.</span><span class="sxs-lookup"><span data-stu-id="758a6-112">Optional.</span></span> <span data-ttu-id="758a6-113">Spécifie le mode de sérialisation.</span><span class="sxs-lookup"><span data-stu-id="758a6-113">Specifies the serialization mode.</span></span> <span data-ttu-id="758a6-114">Affectez-le à l'une des valeurs <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>.</span><span class="sxs-lookup"><span data-stu-id="758a6-114">Set to one of the <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> values.</span></span> <span data-ttu-id="758a6-115">La valeur par défaut est **RoundTrip**.</span><span class="sxs-lookup"><span data-stu-id="758a6-115">The default is **RoundTrip**.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="61198-116">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="61198-116">Child Elements</span></span>  
- <span data-ttu-id="61198-117">Aucun.</span><span class="sxs-lookup"><span data-stu-id="61198-117">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="758a6-116">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="758a6-116">Child Elements</span></span>  
+ <span data-ttu-id="758a6-117">Aucun.</span><span class="sxs-lookup"><span data-stu-id="758a6-117">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="61198-118">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="61198-118">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="758a6-118">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="758a6-118">Parent Elements</span></span>  
   
-|<span data-ttu-id="61198-119">Élément</span><span class="sxs-lookup"><span data-stu-id="61198-119">Element</span></span>|<span data-ttu-id="61198-120">Description</span><span class="sxs-lookup"><span data-stu-id="61198-120">Description</span></span>|  
+|<span data-ttu-id="758a6-119">Élément</span><span class="sxs-lookup"><span data-stu-id="758a6-119">Element</span></span>|<span data-ttu-id="758a6-120">Description</span><span class="sxs-lookup"><span data-stu-id="758a6-120">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="61198-121">system.xml.serialization</span><span class="sxs-lookup"><span data-stu-id="61198-121">system.xml.serialization</span></span>|<span data-ttu-id="61198-122">Élément de niveau supérieur permettant de contrôler la sérialisation XML.</span><span class="sxs-lookup"><span data-stu-id="61198-122">The top-level element for controlling XML serialization.</span></span>|  
+|<span data-ttu-id="758a6-121">system.xml.serialization</span><span class="sxs-lookup"><span data-stu-id="758a6-121">system.xml.serialization</span></span>|<span data-ttu-id="758a6-122">Élément de niveau supérieur permettant de contrôler la sérialisation XML.</span><span class="sxs-lookup"><span data-stu-id="758a6-122">The top-level element for controlling XML serialization.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="61198-123">Remarques</span><span class="sxs-lookup"><span data-stu-id="61198-123">Remarks</span></span>  
- <span data-ttu-id="61198-124">Dans les versions 1.0, 1.1, 2.0 et ultérieures du .NET Framework, quand cette propriété a la valeur **Local**, les objets <xref:System.DateTime> sont toujours mis en forme avec l’heure locale.</span><span class="sxs-lookup"><span data-stu-id="61198-124">In versions 1.0, 1.1, 2.0 and later versions of the .NET Framework, when this property is set to **Local**, <xref:System.DateTime> objects are always formatted as the local time.</span></span> <span data-ttu-id="61198-125">Autrement dit, les informations du fuseau horaire local sont toujours incluses avec les données sérialisées.</span><span class="sxs-lookup"><span data-stu-id="61198-125">That is, local time zone information is always included with the serialized data.</span></span> <span data-ttu-id="61198-126">Affectez la valeur **Local** à cette propriété pour garantir la compatibilité avec les versions antérieures du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="61198-126">Set this property to **Local** to ensure compatibility with older versions of the .NET Framework.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="758a6-123">Notes</span><span class="sxs-lookup"><span data-stu-id="758a6-123">Remarks</span></span>  
+ <span data-ttu-id="758a6-124">Dans les versions 1.0, 1.1, 2.0 et ultérieures du .NET Framework, quand cette propriété a la valeur **Local**, les objets <xref:System.DateTime> sont toujours mis en forme avec l’heure locale.</span><span class="sxs-lookup"><span data-stu-id="758a6-124">In versions 1.0, 1.1, 2.0 and later versions of the .NET Framework, when this property is set to **Local**, <xref:System.DateTime> objects are always formatted as the local time.</span></span> <span data-ttu-id="758a6-125">Autrement dit, les informations du fuseau horaire local sont toujours incluses avec les données sérialisées.</span><span class="sxs-lookup"><span data-stu-id="758a6-125">That is, local time zone information is always included with the serialized data.</span></span> <span data-ttu-id="758a6-126">Affectez la valeur **Local** à cette propriété pour garantir la compatibilité avec les versions antérieures du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="758a6-126">Set this property to **Local** to ensure compatibility with older versions of the .NET Framework.</span></span>  
   
- <span data-ttu-id="61198-127">Dans les versions 2.0 et ultérieures du .NET Framework dont la propriété a la valeur **Roundtrip**, les objets <xref:System.DateTime> sont examinés pour déterminer s’ils se trouvent dans le fuseau horaire local ou UTC, ou encore dans un fuseau horaire non spécifié.</span><span class="sxs-lookup"><span data-stu-id="61198-127">In version 2.0 and later versions of the .NET Framework that have this property set to **Roundtrip**, <xref:System.DateTime> objects are examined to determine whether they are in the local, UTC, or an unspecified time zone.</span></span> <span data-ttu-id="61198-128">Les objets <xref:System.DateTime> sont ensuite sérialisés de manière à ce que ces informations soient conservées.</span><span class="sxs-lookup"><span data-stu-id="61198-128">The <xref:System.DateTime> objects are then serialized in such a way that this information is preserved.</span></span> <span data-ttu-id="61198-129">Il s'agit du comportement par défaut, recommandé pour toutes les nouvelles applications qui ne communiquent pas avec les versions antérieures du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="61198-129">This is the default behavior and is the recommended behavior for all new applications that do not communicate with older versions of the framework.</span></span>  
+ <span data-ttu-id="758a6-127">Dans les versions 2.0 et ultérieures du .NET Framework dont la propriété a la valeur **Roundtrip**, les objets <xref:System.DateTime> sont examinés pour déterminer s’ils se trouvent dans le fuseau horaire local ou UTC, ou encore dans un fuseau horaire non spécifié.</span><span class="sxs-lookup"><span data-stu-id="758a6-127">In version 2.0 and later versions of the .NET Framework that have this property set to **Roundtrip**, <xref:System.DateTime> objects are examined to determine whether they are in the local, UTC, or an unspecified time zone.</span></span> <span data-ttu-id="758a6-128">Les objets <xref:System.DateTime> sont ensuite sérialisés de manière à ce que ces informations soient conservées.</span><span class="sxs-lookup"><span data-stu-id="758a6-128">The <xref:System.DateTime> objects are then serialized in such a way that this information is preserved.</span></span> <span data-ttu-id="758a6-129">Il s'agit du comportement par défaut, recommandé pour toutes les nouvelles applications qui ne communiquent pas avec les versions antérieures du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="758a6-129">This is the default behavior and is the recommended behavior for all new applications that do not communicate with older versions of the framework.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="61198-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="61198-130">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="758a6-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="758a6-130">See Also</span></span>  
  <xref:System.DateTime>  
  <xref:System.Xml.Serialization.XmlSchemaImporter>  
  <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>  
- [<span data-ttu-id="61198-131">Schéma des fichiers de configuration</span><span class="sxs-lookup"><span data-stu-id="61198-131">Configuration File Schema</span></span>](../../../docs/framework/configure-apps/file-schema/index.md)  
- [<span data-ttu-id="61198-132">\<schemaImporterExtensions>, élément</span><span class="sxs-lookup"><span data-stu-id="61198-132">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
- [<span data-ttu-id="61198-133">\<add>, élément pour \<xmlSchemaImporterExtensions></span><span class="sxs-lookup"><span data-stu-id="61198-133">\<add> Element for \<xmlSchemaImporterExtensions></span></span>](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)  
- [<span data-ttu-id="61198-134">\<system.xml.serialization>, élément</span><span class="sxs-lookup"><span data-stu-id="61198-134">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)
+ [<span data-ttu-id="758a6-131">Schéma des fichiers de configuration</span><span class="sxs-lookup"><span data-stu-id="758a6-131">Configuration File Schema</span></span>](../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="758a6-132">\<schemaImporterExtensions>, élément</span><span class="sxs-lookup"><span data-stu-id="758a6-132">\<schemaImporterExtensions> Element</span></span>](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
+ [<span data-ttu-id="758a6-133">\<add>, élément pour \<xmlSchemaImporterExtensions></span><span class="sxs-lookup"><span data-stu-id="758a6-133">\<add> Element for \<xmlSchemaImporterExtensions></span></span>](../../../docs/standard/serialization/add-element-for-xmlschemaimporterextensions.md)  
+ [<span data-ttu-id="758a6-134">\<system.xml.serialization>, élément</span><span class="sxs-lookup"><span data-stu-id="758a6-134">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)

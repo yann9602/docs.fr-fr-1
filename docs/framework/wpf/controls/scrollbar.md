@@ -17,19 +17,20 @@ caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 468ba5546670a0aec6e1f6c59b7d19b83e6ff24f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 05bf330f17e5ebfb00037fae5dd8c44ce337322d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="scrollbar"></a><span data-ttu-id="cac5e-102">ScrollBar</span><span class="sxs-lookup"><span data-stu-id="cac5e-102">ScrollBar</span></span>
-<span data-ttu-id="cac5e-103">A <xref:System.Windows.Controls.Primitives.ScrollBar> vous permet d’afficher le contenu qui se trouve en dehors de la zone d’affichage actuelle en faisant glisser le <xref:System.Windows.Controls.Primitives.Thumb> pour rendre le contenu visible.</span><span class="sxs-lookup"><span data-stu-id="cac5e-103">A <xref:System.Windows.Controls.Primitives.ScrollBar> allows you to view content that is outside of the current viewing area by sliding the <xref:System.Windows.Controls.Primitives.Thumb> to make the content visible.</span></span>  
+# <a name="scrollbar"></a><span data-ttu-id="e95ed-102">ScrollBar</span><span class="sxs-lookup"><span data-stu-id="e95ed-102">ScrollBar</span></span>
+<span data-ttu-id="e95ed-103">A <xref:System.Windows.Controls.Primitives.ScrollBar> vous permet d’afficher le contenu qui se trouve en dehors de la zone d’affichage actuelle en faisant glisser le <xref:System.Windows.Controls.Primitives.Thumb> pour rendre le contenu visible.</span><span class="sxs-lookup"><span data-stu-id="e95ed-103">A <xref:System.Windows.Controls.Primitives.ScrollBar> allows you to view content that is outside of the current viewing area by sliding the <xref:System.Windows.Controls.Primitives.Thumb> to make the content visible.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="cac5e-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="cac5e-104">In This Section</span></span>  
- [<span data-ttu-id="cac5e-105">Personnaliser la taille du curseur sur une barre de défilement</span><span class="sxs-lookup"><span data-stu-id="cac5e-105">Customize the Thumb Size on a ScrollBar</span></span>](../../../../docs/framework/wpf/controls/how-to-customize-the-thumb-size-on-a-scrollbar.md)  
+## <a name="in-this-section"></a><span data-ttu-id="e95ed-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="e95ed-104">In This Section</span></span>  
+ [<span data-ttu-id="e95ed-105">Personnaliser la taille du curseur sur une barre de défilement</span><span class="sxs-lookup"><span data-stu-id="e95ed-105">Customize the Thumb Size on a ScrollBar</span></span>](../../../../docs/framework/wpf/controls/how-to-customize-the-thumb-size-on-a-scrollbar.md)  
   
-## <a name="reference"></a><span data-ttu-id="cac5e-106">Référence</span><span class="sxs-lookup"><span data-stu-id="cac5e-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="e95ed-106">Référence</span><span class="sxs-lookup"><span data-stu-id="e95ed-106">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.ScrollBar>  
   <xref:System.Windows.Controls.Primitives.Track>  
   <xref:System.Windows.Controls.Primitives.Thumb>  

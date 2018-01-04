@@ -19,24 +19,25 @@ caps.latest.revision: "61"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 906cc5575ec8fc307068e7341331ae024cf07542
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 24983386b6f34e7471626fcff50fe5106ca0c8dc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="visual-layer-programming"></a><span data-ttu-id="fb011-102">Programmation de la couche visuelle</span><span class="sxs-lookup"><span data-stu-id="fb011-102">Visual Layer Programming</span></span>
-<span data-ttu-id="fb011-103">Le <xref:System.Windows.Media.Visual> est un objet [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objet, dont le rôle principal consiste à fournir la prise en charge du rendu.</span><span class="sxs-lookup"><span data-stu-id="fb011-103">The <xref:System.Windows.Media.Visual> object is a core [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] object, whose primary role is to provide rendering support.</span></span> <span data-ttu-id="fb011-104">Contrôles d’interface utilisateur, tel que <xref:System.Windows.Controls.Button> et <xref:System.Windows.Controls.TextBox>, dérivent de la <xref:System.Windows.Media.Visual> classe et utilisez-la pour conserver leurs données de rendu.</span><span class="sxs-lookup"><span data-stu-id="fb011-104">User interface controls, such as <xref:System.Windows.Controls.Button> and <xref:System.Windows.Controls.TextBox>, derive from the <xref:System.Windows.Media.Visual> class, and use it for persisting their rendering data.</span></span>  
+# <a name="visual-layer-programming"></a><span data-ttu-id="ae8dd-102">Programmation de la couche visuelle</span><span class="sxs-lookup"><span data-stu-id="ae8dd-102">Visual Layer Programming</span></span>
+<span data-ttu-id="ae8dd-103">Le <xref:System.Windows.Media.Visual> est un objet [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objet, dont le rôle principal consiste à fournir la prise en charge du rendu.</span><span class="sxs-lookup"><span data-stu-id="ae8dd-103">The <xref:System.Windows.Media.Visual> object is a core [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] object, whose primary role is to provide rendering support.</span></span> <span data-ttu-id="ae8dd-104">Contrôles d’interface utilisateur, tel que <xref:System.Windows.Controls.Button> et <xref:System.Windows.Controls.TextBox>, dérivent de la <xref:System.Windows.Media.Visual> classe et utilisez-la pour conserver leurs données de rendu.</span><span class="sxs-lookup"><span data-stu-id="ae8dd-104">User interface controls, such as <xref:System.Windows.Controls.Button> and <xref:System.Windows.Controls.TextBox>, derive from the <xref:System.Windows.Media.Visual> class, and use it for persisting their rendering data.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="fb011-105">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="fb011-105">In This Section</span></span>  
- [<span data-ttu-id="fb011-106">Test de positionnement dans la couche visuelle</span><span class="sxs-lookup"><span data-stu-id="fb011-106">Hit Testing in the Visual Layer</span></span>](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)  
- [<span data-ttu-id="fb011-107">Utilisation d’objets DrawingVisual</span><span class="sxs-lookup"><span data-stu-id="fb011-107">Using DrawingVisual Objects</span></span>](../../../../docs/framework/wpf/graphics-multimedia/using-drawingvisual-objects.md)  
- [<span data-ttu-id="fb011-108">Didacticiel : hébergement d’objets visuels dans une application Win32</span><span class="sxs-lookup"><span data-stu-id="fb011-108">Tutorial: Hosting Visual Objects in a Win32 Application</span></span>](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md)  
- [<span data-ttu-id="fb011-109">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="fb011-109">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/visual-layer-programming-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="ae8dd-105">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="ae8dd-105">In This Section</span></span>  
+ [<span data-ttu-id="ae8dd-106">Test de positionnement dans la couche visuelle</span><span class="sxs-lookup"><span data-stu-id="ae8dd-106">Hit Testing in the Visual Layer</span></span>](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)  
+ [<span data-ttu-id="ae8dd-107">Utilisation d’objets DrawingVisual</span><span class="sxs-lookup"><span data-stu-id="ae8dd-107">Using DrawingVisual Objects</span></span>](../../../../docs/framework/wpf/graphics-multimedia/using-drawingvisual-objects.md)  
+ [<span data-ttu-id="ae8dd-108">Didacticiel : hébergement d’objets visuels dans une application Win32</span><span class="sxs-lookup"><span data-stu-id="ae8dd-108">Tutorial: Hosting Visual Objects in a Win32 Application</span></span>](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md)  
+ [<span data-ttu-id="ae8dd-109">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="ae8dd-109">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/visual-layer-programming-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="fb011-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fb011-110">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="ae8dd-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ae8dd-110">See Also</span></span>  
  <xref:System.Windows.Media.Visual>  
  <xref:System.Windows.Media.VisualTreeHelper>  
  <xref:System.Windows.Media.DrawingVisual>  
- [<span data-ttu-id="fb011-111">Vue d’ensemble du rendu graphique de WPF</span><span class="sxs-lookup"><span data-stu-id="fb011-111">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [<span data-ttu-id="fb011-112">Graphiques et multimédia</span><span class="sxs-lookup"><span data-stu-id="fb011-112">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+ [<span data-ttu-id="ae8dd-111">Vue d’ensemble du rendu graphique de WPF</span><span class="sxs-lookup"><span data-stu-id="ae8dd-111">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
+ [<span data-ttu-id="ae8dd-112">Graphiques et multimédia</span><span class="sxs-lookup"><span data-stu-id="ae8dd-112">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)

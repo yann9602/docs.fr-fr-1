@@ -17,32 +17,33 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 77e9f664ababa32cf0629f513f81b1e24030eac1
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 26832827b0e92813802073adcb4c2db99dff0807
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-apply-multiple-transformations-to-a-3-d-model"></a><span data-ttu-id="4ed37-102">Comment : appliquer plusieurs transformations à un modèle 3D</span><span class="sxs-lookup"><span data-stu-id="4ed37-102">How to: Apply Multiple Transformations to a 3-D Model</span></span>
-<span data-ttu-id="4ed37-103">Cet exemple montre comment utiliser un <xref:System.Windows.Media.Media3D.RotateTransform3D> et un <xref:System.Windows.Media.Media3D.ScaleTransform3D> pour faire pivoter et de modifier l’échelle d’un modèle 3D.</span><span class="sxs-lookup"><span data-stu-id="4ed37-103">This sample shows how to use a <xref:System.Windows.Media.Media3D.RotateTransform3D> and a <xref:System.Windows.Media.Media3D.ScaleTransform3D> to rotate and change the scale of a 3-D model.</span></span> <span data-ttu-id="4ed37-104">Le code ci-dessous montre comment appliquer ces transformations à la <xref:System.Windows.Media.Media3D.Model3D.Transform%2A> propriété d’un <xref:System.Windows.Media.Media3D.GeometryModel3D> en XAML.</span><span class="sxs-lookup"><span data-stu-id="4ed37-104">The code below shows how to apply these transforms to the <xref:System.Windows.Media.Media3D.Model3D.Transform%2A> property of a <xref:System.Windows.Media.Media3D.GeometryModel3D> in XAML.</span></span>  
+# <a name="how-to-apply-multiple-transformations-to-a-3-d-model"></a><span data-ttu-id="3d611-102">Comment : appliquer plusieurs transformations à un modèle 3D</span><span class="sxs-lookup"><span data-stu-id="3d611-102">How to: Apply Multiple Transformations to a 3-D Model</span></span>
+<span data-ttu-id="3d611-103">Cet exemple montre comment utiliser un <xref:System.Windows.Media.Media3D.RotateTransform3D> et un <xref:System.Windows.Media.Media3D.ScaleTransform3D> pour faire pivoter et de modifier l’échelle d’un modèle 3D.</span><span class="sxs-lookup"><span data-stu-id="3d611-103">This sample shows how to use a <xref:System.Windows.Media.Media3D.RotateTransform3D> and a <xref:System.Windows.Media.Media3D.ScaleTransform3D> to rotate and change the scale of a 3-D model.</span></span> <span data-ttu-id="3d611-104">Le code ci-dessous montre comment appliquer ces transformations à la <xref:System.Windows.Media.Media3D.Model3D.Transform%2A> propriété d’un <xref:System.Windows.Media.Media3D.GeometryModel3D> en XAML.</span><span class="sxs-lookup"><span data-stu-id="3d611-104">The code below shows how to apply these transforms to the <xref:System.Windows.Media.Media3D.Model3D.Transform%2A> property of a <xref:System.Windows.Media.Media3D.GeometryModel3D> in XAML.</span></span>  
   
  [!code-xaml[3DGallery_snip#Multiple3DTransformationsExampleInline1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_snip/CS/MultipleTransformationsExample.xaml#multiple3dtransformationsexampleinline1)]  
   
- <span data-ttu-id="4ed37-105">En code :</span><span class="sxs-lookup"><span data-stu-id="4ed37-105">In code:</span></span>  
+ <span data-ttu-id="3d611-105">En code :</span><span class="sxs-lookup"><span data-stu-id="3d611-105">In code:</span></span>  
   
  [!code-csharp[3DGallery_procedural_snip#Multiple3DTransformationsCodeExampleInline1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_procedural_snip/CSharp/MultipleTransformationsExample.cs#multiple3dtransformationscodeexampleinline1)]
  [!code-vb[3DGallery_procedural_snip#Multiple3DTransformationsCodeExampleInline1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/3DGallery_procedural_snip/visualbasic/multipletransformationsexample.vb#multiple3dtransformationscodeexampleinline1)]  
   
-## <a name="example"></a><span data-ttu-id="4ed37-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="4ed37-106">Example</span></span>  
- <span data-ttu-id="4ed37-107">Le code suivant montre l’exemple complet en XAML.</span><span class="sxs-lookup"><span data-stu-id="4ed37-107">The following code shows the entire sample in XAML.</span></span>  
+## <a name="example"></a><span data-ttu-id="3d611-106">Exemple</span><span class="sxs-lookup"><span data-stu-id="3d611-106">Example</span></span>  
+ <span data-ttu-id="3d611-107">Le code suivant montre l’exemple complet en XAML.</span><span class="sxs-lookup"><span data-stu-id="3d611-107">The following code shows the entire sample in XAML.</span></span>  
   
  [!code-xaml[3DGallery_snip#Multiple3DTransformationsExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_snip/CS/MultipleTransformationsExample.xaml#multiple3dtransformationsexamplewholepage)]  
   
-## <a name="example"></a><span data-ttu-id="4ed37-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="4ed37-108">Example</span></span>  
- <span data-ttu-id="4ed37-109">Voici l’exemple complet dans le code.</span><span class="sxs-lookup"><span data-stu-id="4ed37-109">Below is the entire sample in code.</span></span>  
+## <a name="example"></a><span data-ttu-id="3d611-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="3d611-108">Example</span></span>  
+ <span data-ttu-id="3d611-109">Voici l’exemple complet dans le code.</span><span class="sxs-lookup"><span data-stu-id="3d611-109">Below is the entire sample in code.</span></span>  
   
  [!code-csharp[3DGallery_procedural_snip#Multiple3DTransformationsCodeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_procedural_snip/CSharp/MultipleTransformationsExample.cs#multiple3dtransformationscodeexamplewholepage)]
  [!code-vb[3DGallery_procedural_snip#Multiple3DTransformationsCodeExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/3DGallery_procedural_snip/visualbasic/multipletransformationsexample.vb#multiple3dtransformationscodeexamplewholepage)]  
   
-## <a name="see-also"></a><span data-ttu-id="4ed37-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4ed37-110">See Also</span></span>  
- [<span data-ttu-id="4ed37-111">Transformer l’échelle d’un modèle 3D</span><span class="sxs-lookup"><span data-stu-id="4ed37-111">Transform the Scale of a 3-D Model</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-transform-the-scale-of-a-3-d-model.md)
+## <a name="see-also"></a><span data-ttu-id="3d611-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3d611-110">See Also</span></span>  
+ [<span data-ttu-id="3d611-111">Transformer l’échelle d’un modèle 3D</span><span class="sxs-lookup"><span data-stu-id="3d611-111">Transform the Scale of a 3-D Model</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-transform-the-scale-of-a-3-d-model.md)

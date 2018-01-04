@@ -1,5 +1,5 @@
 ---
-title: PasswordBox
+title: Zone de mot de passe
 ms.custom: 
 ms.date: 03/30/2017
 ms.prod: .net-framework
@@ -17,16 +17,17 @@ caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7d3b7f26922b7f4691b2db35f27d5529c5eb9a64
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8d338321544b3c092d64ab520f822e6d593d8ae0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="passwordbox"></a><span data-ttu-id="f1af0-102">PasswordBox</span><span class="sxs-lookup"><span data-stu-id="f1af0-102">PasswordBox</span></span>
-<span data-ttu-id="f1af0-103">Le <xref:System.Windows.Controls.PasswordBox> contrôle est utilisé pour entrer des informations sensibles ou confidentielles.</span><span class="sxs-lookup"><span data-stu-id="f1af0-103">The <xref:System.Windows.Controls.PasswordBox> control is used to input sensitive or private information.</span></span>  
+# <a name="passwordbox"></a><span data-ttu-id="dc68e-102">Zone de mot de passe</span><span class="sxs-lookup"><span data-stu-id="dc68e-102">PasswordBox</span></span>
+<span data-ttu-id="dc68e-103">Le <xref:System.Windows.Controls.PasswordBox> contrôle est utilisé pour entrer des informations sensibles ou confidentielles.</span><span class="sxs-lookup"><span data-stu-id="dc68e-103">The <xref:System.Windows.Controls.PasswordBox> control is used to input sensitive or private information.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f1af0-104">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f1af0-104">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="dc68e-104">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="dc68e-104">See Also</span></span>  
  <xref:System.Windows.Controls.TextBox>  
  <xref:System.Windows.Controls.RichTextBox>  
- [<span data-ttu-id="f1af0-105">Bibliothèque de contrôles</span><span class="sxs-lookup"><span data-stu-id="f1af0-105">Control Library</span></span>](../../../../docs/framework/wpf/controls/control-library.md)
+ [<span data-ttu-id="dc68e-105">Bibliothèque de contrôles</span><span class="sxs-lookup"><span data-stu-id="dc68e-105">Control Library</span></span>](../../../../docs/framework/wpf/controls/control-library.md)

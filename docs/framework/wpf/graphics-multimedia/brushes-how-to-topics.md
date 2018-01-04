@@ -17,36 +17,37 @@ caps.latest.revision: "75"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 188c9c484d6cdb8f1175bd9ac88791e3fbdf23bc
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 189cec2bec9364e4f03ec3a3e0e8c8420dbfcab3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="brushes-how-to-topics"></a><span data-ttu-id="ac7de-102">Rubriques "Comment" relatives aux pinceaux</span><span class="sxs-lookup"><span data-stu-id="ac7de-102">Brushes How-to Topics</span></span>
-<span data-ttu-id="ac7de-103">Les rubriques suivantes montrent comment utiliser [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pinceaux pour peindre le contenu à l’écran.</span><span class="sxs-lookup"><span data-stu-id="ac7de-103">The following topics demonstrate how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] brushes in order to paint content to the screen.</span></span>  
+# <a name="brushes-how-to-topics"></a><span data-ttu-id="57b5e-102">Rubriques "Comment" relatives aux pinceaux</span><span class="sxs-lookup"><span data-stu-id="57b5e-102">Brushes How-to Topics</span></span>
+<span data-ttu-id="57b5e-103">Les rubriques suivantes montrent comment utiliser [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pinceaux pour peindre le contenu à l’écran.</span><span class="sxs-lookup"><span data-stu-id="57b5e-103">The following topics demonstrate how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] brushes in order to paint content to the screen.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="ac7de-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="ac7de-104">In This Section</span></span>  
- [<span data-ttu-id="ac7de-105">Animer la couleur ou l'opacité d'un SolidColorBrush</span><span class="sxs-lookup"><span data-stu-id="ac7de-105">Animate the Color or Opacity of a SolidColorBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-color-or-opacity-of-a-solidcolorbrush.md)  
- [<span data-ttu-id="ac7de-106">Animer la position ou la couleur d'un point de dégradé</span><span class="sxs-lookup"><span data-stu-id="ac7de-106">Animate the Position or Color of a Gradient Stop</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-position-or-color-of-a-gradient-stop.md)  
- [<span data-ttu-id="ac7de-107">Créer une réflexion</span><span class="sxs-lookup"><span data-stu-id="ac7de-107">Create a Reflection</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-reflection.md)  
- [<span data-ttu-id="ac7de-108">Créer différents modèles de mosaïque avec un TileBrush</span><span class="sxs-lookup"><span data-stu-id="ac7de-108">Create Different Tile Patterns with a TileBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-different-tile-patterns-with-a-tilebrush.md)  
- [<span data-ttu-id="ac7de-109">Définir un stylet</span><span class="sxs-lookup"><span data-stu-id="ac7de-109">Define a Pen</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-define-a-pen.md)  
- [<span data-ttu-id="ac7de-110">Peindre une zone avec un dessin</span><span class="sxs-lookup"><span data-stu-id="ac7de-110">Paint an Area with a Drawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-drawing.md)  
- [<span data-ttu-id="ac7de-111">Peindre une zone avec une image</span><span class="sxs-lookup"><span data-stu-id="ac7de-111">Paint an Area with an Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-an-image.md)  
- [<span data-ttu-id="ac7de-112">Peindre une zone avec un dégradé linéaire</span><span class="sxs-lookup"><span data-stu-id="ac7de-112">Paint an Area with a Linear Gradient</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-linear-gradient.md)  
- [<span data-ttu-id="ac7de-113">Peindre une zone avec un dégradé radial</span><span class="sxs-lookup"><span data-stu-id="ac7de-113">Paint an Area with a Radial Gradient</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-radial-gradient.md)  
- [<span data-ttu-id="ac7de-114">Peindre une zone avec une couleur unie</span><span class="sxs-lookup"><span data-stu-id="ac7de-114">Paint an Area with a Solid Color</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-solid-color.md)  
- [<span data-ttu-id="ac7de-115">Peindre une zone avec un pinceau système</span><span class="sxs-lookup"><span data-stu-id="ac7de-115">Paint an Area with a System Brush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)  
- [<span data-ttu-id="ac7de-116">Peindre une zone avec une vidéo</span><span class="sxs-lookup"><span data-stu-id="ac7de-116">Paint an Area with a Video</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-video.md)  
- [<span data-ttu-id="ac7de-117">Peindre une zone avec un visuel</span><span class="sxs-lookup"><span data-stu-id="ac7de-117">Paint an Area with a Visual</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-visual.md)  
- [<span data-ttu-id="ac7de-118">Conserver les proportions d'une image utilisée comme arrière-plan</span><span class="sxs-lookup"><span data-stu-id="ac7de-118">Preserve the Aspect Ratio of an Image Used as a Background</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-preserve-the-aspect-ratio-of-an-image-used-as-a-background.md)  
- [<span data-ttu-id="ac7de-119">Définir l'alignement horizontal et vertical d'un TileBrush</span><span class="sxs-lookup"><span data-stu-id="ac7de-119">Set the Horizontal and Vertical Alignment of a TileBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-the-horizontal-and-vertical-alignment-of-a-tilebrush.md)  
- [<span data-ttu-id="ac7de-120">Définir la taille de la mosaïque pour un TileBrush</span><span class="sxs-lookup"><span data-stu-id="ac7de-120">Set the Tile Size for a TileBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-the-tile-size-for-a-tilebrush.md)  
- [<span data-ttu-id="ac7de-121">Transformer un pinceau</span><span class="sxs-lookup"><span data-stu-id="ac7de-121">Transform a Brush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-transform-a-brush.md)  
- [<span data-ttu-id="ac7de-122">Utiliser des couleurs système dans un dégradé</span><span class="sxs-lookup"><span data-stu-id="ac7de-122">Use System Colors in a Gradient</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)  
+## <a name="in-this-section"></a><span data-ttu-id="57b5e-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="57b5e-104">In This Section</span></span>  
+ [<span data-ttu-id="57b5e-105">Animer la couleur ou l'opacité d'un SolidColorBrush</span><span class="sxs-lookup"><span data-stu-id="57b5e-105">Animate the Color or Opacity of a SolidColorBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-color-or-opacity-of-a-solidcolorbrush.md)  
+ [<span data-ttu-id="57b5e-106">Animer la position ou la couleur d'un point de dégradé</span><span class="sxs-lookup"><span data-stu-id="57b5e-106">Animate the Position or Color of a Gradient Stop</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-position-or-color-of-a-gradient-stop.md)  
+ [<span data-ttu-id="57b5e-107">Créer une réflexion</span><span class="sxs-lookup"><span data-stu-id="57b5e-107">Create a Reflection</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-reflection.md)  
+ [<span data-ttu-id="57b5e-108">Créer différents modèles de mosaïque avec un TileBrush</span><span class="sxs-lookup"><span data-stu-id="57b5e-108">Create Different Tile Patterns with a TileBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-different-tile-patterns-with-a-tilebrush.md)  
+ [<span data-ttu-id="57b5e-109">Définir un stylet</span><span class="sxs-lookup"><span data-stu-id="57b5e-109">Define a Pen</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-define-a-pen.md)  
+ [<span data-ttu-id="57b5e-110">Peindre une zone avec un dessin</span><span class="sxs-lookup"><span data-stu-id="57b5e-110">Paint an Area with a Drawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-drawing.md)  
+ [<span data-ttu-id="57b5e-111">Peindre une zone avec une image</span><span class="sxs-lookup"><span data-stu-id="57b5e-111">Paint an Area with an Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-an-image.md)  
+ [<span data-ttu-id="57b5e-112">Peindre une zone avec un dégradé linéaire</span><span class="sxs-lookup"><span data-stu-id="57b5e-112">Paint an Area with a Linear Gradient</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-linear-gradient.md)  
+ [<span data-ttu-id="57b5e-113">Peindre une zone avec un dégradé radial</span><span class="sxs-lookup"><span data-stu-id="57b5e-113">Paint an Area with a Radial Gradient</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-radial-gradient.md)  
+ [<span data-ttu-id="57b5e-114">Peindre une zone avec une couleur unie</span><span class="sxs-lookup"><span data-stu-id="57b5e-114">Paint an Area with a Solid Color</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-solid-color.md)  
+ [<span data-ttu-id="57b5e-115">Peindre une zone avec un pinceau système</span><span class="sxs-lookup"><span data-stu-id="57b5e-115">Paint an Area with a System Brush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)  
+ [<span data-ttu-id="57b5e-116">Peindre une zone avec une vidéo</span><span class="sxs-lookup"><span data-stu-id="57b5e-116">Paint an Area with a Video</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-video.md)  
+ [<span data-ttu-id="57b5e-117">Peindre une zone avec un visuel</span><span class="sxs-lookup"><span data-stu-id="57b5e-117">Paint an Area with a Visual</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-visual.md)  
+ [<span data-ttu-id="57b5e-118">Conserver les proportions d'une image utilisée comme arrière-plan</span><span class="sxs-lookup"><span data-stu-id="57b5e-118">Preserve the Aspect Ratio of an Image Used as a Background</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-preserve-the-aspect-ratio-of-an-image-used-as-a-background.md)  
+ [<span data-ttu-id="57b5e-119">Définir l'alignement horizontal et vertical d'un TileBrush</span><span class="sxs-lookup"><span data-stu-id="57b5e-119">Set the Horizontal and Vertical Alignment of a TileBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-the-horizontal-and-vertical-alignment-of-a-tilebrush.md)  
+ [<span data-ttu-id="57b5e-120">Définir la taille de la mosaïque pour un TileBrush</span><span class="sxs-lookup"><span data-stu-id="57b5e-120">Set the Tile Size for a TileBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-the-tile-size-for-a-tilebrush.md)  
+ [<span data-ttu-id="57b5e-121">Transformer un pinceau</span><span class="sxs-lookup"><span data-stu-id="57b5e-121">Transform a Brush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-transform-a-brush.md)  
+ [<span data-ttu-id="57b5e-122">Utiliser des couleurs système dans un dégradé</span><span class="sxs-lookup"><span data-stu-id="57b5e-122">Use System Colors in a Gradient</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)  
   
-## <a name="reference"></a><span data-ttu-id="ac7de-123">Référence</span><span class="sxs-lookup"><span data-stu-id="ac7de-123">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="57b5e-123">Référence</span><span class="sxs-lookup"><span data-stu-id="57b5e-123">Reference</span></span>  
  <xref:System.Windows.Media.Brush>  
   
  <xref:System.Windows.Media.SolidColorBrush>  
@@ -59,7 +60,7 @@ ms.lasthandoff: 10/22/2017
   
  <xref:System.Windows.Media.VisualBrush>  
   
-## <a name="related-sections"></a><span data-ttu-id="ac7de-124">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="ac7de-124">Related Sections</span></span>  
- [<span data-ttu-id="ac7de-125">Graphiques et multimédia</span><span class="sxs-lookup"><span data-stu-id="ac7de-125">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
+## <a name="related-sections"></a><span data-ttu-id="57b5e-124">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="57b5e-124">Related Sections</span></span>  
+ [<span data-ttu-id="57b5e-125">Graphiques et multimédia</span><span class="sxs-lookup"><span data-stu-id="57b5e-125">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
   
- [<span data-ttu-id="ac7de-126">Vue d’ensemble du rendu graphique de WPF</span><span class="sxs-lookup"><span data-stu-id="ac7de-126">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+ [<span data-ttu-id="57b5e-126">Vue d’ensemble du rendu graphique de WPF</span><span class="sxs-lookup"><span data-stu-id="57b5e-126">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)

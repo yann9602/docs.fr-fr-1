@@ -15,22 +15,23 @@ caps.latest.revision: "70"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 18b393ca5048d9b96c6803cd536110ea2261daae
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 89c2e2fb12a91e06b3c4347b6f65c6fa91636911
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="base-elements"></a><span data-ttu-id="31638-102">Éléments de base</span><span class="sxs-lookup"><span data-stu-id="31638-102">Base Elements</span></span>
-<span data-ttu-id="31638-103">Quatre classes clés -<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, et <xref:System.Windows.FrameworkContentElement>--implémentent une grande partie de la fonctionnalité des éléments courants disponible dans la programmation WPF.</span><span class="sxs-lookup"><span data-stu-id="31638-103">Four key classes--<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, and <xref:System.Windows.FrameworkContentElement>--implement a substantial percentage of the common element functionality available in WPF programming.</span></span> <span data-ttu-id="31638-104">Ces quatre classes portent le nom dans ce Kit de développement logiciel que les classes d’élément de base.</span><span class="sxs-lookup"><span data-stu-id="31638-104">These four classes are referred to in this SDK as the base element classes.</span></span>  
+# <a name="base-elements"></a><span data-ttu-id="80199-102">Éléments de base</span><span class="sxs-lookup"><span data-stu-id="80199-102">Base Elements</span></span>
+<span data-ttu-id="80199-103">Quatre classes clés -<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, et <xref:System.Windows.FrameworkContentElement>--implémentent une grande partie de la fonctionnalité des éléments courants disponible dans la programmation WPF.</span><span class="sxs-lookup"><span data-stu-id="80199-103">Four key classes--<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, and <xref:System.Windows.FrameworkContentElement>--implement a substantial percentage of the common element functionality available in WPF programming.</span></span> <span data-ttu-id="80199-104">Ces quatre classes portent le nom dans ce Kit de développement logiciel que les classes d’élément de base.</span><span class="sxs-lookup"><span data-stu-id="80199-104">These four classes are referred to in this SDK as the base element classes.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="31638-105">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="31638-105">In This Section</span></span>  
- [<span data-ttu-id="31638-106">Vue d’ensemble des éléments de base</span><span class="sxs-lookup"><span data-stu-id="31638-106">Base Elements Overview</span></span>](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
- [<span data-ttu-id="31638-107">Vue d’ensemble des objets Freezable</span><span class="sxs-lookup"><span data-stu-id="31638-107">Freezable Objects Overview</span></span>](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
- [<span data-ttu-id="31638-108">Vue d'ensemble de l'alignement, des marges et du remplissage</span><span class="sxs-lookup"><span data-stu-id="31638-108">Alignment, Margins, and Padding Overview</span></span>](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)  
- [<span data-ttu-id="31638-109">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="31638-109">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/base-elements-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="80199-105">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="80199-105">In This Section</span></span>  
+ [<span data-ttu-id="80199-106">Vue d’ensemble des éléments de base</span><span class="sxs-lookup"><span data-stu-id="80199-106">Base Elements Overview</span></span>](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
+ [<span data-ttu-id="80199-107">Vue d’ensemble des objets Freezable</span><span class="sxs-lookup"><span data-stu-id="80199-107">Freezable Objects Overview</span></span>](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
+ [<span data-ttu-id="80199-108">Vue d'ensemble de l'alignement, des marges et du remplissage</span><span class="sxs-lookup"><span data-stu-id="80199-108">Alignment, Margins, and Padding Overview</span></span>](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)  
+ [<span data-ttu-id="80199-109">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="80199-109">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/base-elements-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="31638-110">Référence</span><span class="sxs-lookup"><span data-stu-id="31638-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="80199-110">Référence</span><span class="sxs-lookup"><span data-stu-id="80199-110">Reference</span></span>  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.ContentElement>  
@@ -39,13 +40,13 @@ ms.lasthandoff: 10/22/2017
   
  <xref:System.Windows.FrameworkContentElement>  
   
-## <a name="related-sections"></a><span data-ttu-id="31638-111">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="31638-111">Related Sections</span></span>  
- [<span data-ttu-id="31638-112">Architecture de WPF</span><span class="sxs-lookup"><span data-stu-id="31638-112">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [<span data-ttu-id="31638-113">Intégration du format XAML au format WPF</span><span class="sxs-lookup"><span data-stu-id="31638-113">XAML in WPF</span></span>](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
-  [<span data-ttu-id="31638-114">Sérialisation et arborescence d’éléments</span><span class="sxs-lookup"><span data-stu-id="31638-114">Element Tree and Serialization</span></span>](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
-  [<span data-ttu-id="31638-115">Propriétés</span><span class="sxs-lookup"><span data-stu-id="31638-115">Properties</span></span>](../../../../docs/framework/wpf/advanced/properties-wpf.md)  
-  [<span data-ttu-id="31638-116">Événements</span><span class="sxs-lookup"><span data-stu-id="31638-116">Events</span></span>](../../../../docs/framework/wpf/advanced/events-wpf.md)  
-  [<span data-ttu-id="31638-117">Entrée</span><span class="sxs-lookup"><span data-stu-id="31638-117">Input</span></span>](../../../../docs/framework/wpf/advanced/input-wpf.md)  
-  [<span data-ttu-id="31638-118">Ressources</span><span class="sxs-lookup"><span data-stu-id="31638-118">Resources</span></span>](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
-  [<span data-ttu-id="31638-119">Application d’un style et création de modèles</span><span class="sxs-lookup"><span data-stu-id="31638-119">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
-  [<span data-ttu-id="31638-120">Modèle de thread</span><span class="sxs-lookup"><span data-stu-id="31638-120">Threading Model</span></span>](../../../../docs/framework/wpf/advanced/threading-model.md)
+## <a name="related-sections"></a><span data-ttu-id="80199-111">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="80199-111">Related Sections</span></span>  
+ [<span data-ttu-id="80199-112">Architecture de WPF</span><span class="sxs-lookup"><span data-stu-id="80199-112">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
+  [<span data-ttu-id="80199-113">Intégration du format XAML au format WPF</span><span class="sxs-lookup"><span data-stu-id="80199-113">XAML in WPF</span></span>](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
+  [<span data-ttu-id="80199-114">Sérialisation et arborescence d’éléments</span><span class="sxs-lookup"><span data-stu-id="80199-114">Element Tree and Serialization</span></span>](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
+  [<span data-ttu-id="80199-115">Propriétés</span><span class="sxs-lookup"><span data-stu-id="80199-115">Properties</span></span>](../../../../docs/framework/wpf/advanced/properties-wpf.md)  
+  [<span data-ttu-id="80199-116">Événements</span><span class="sxs-lookup"><span data-stu-id="80199-116">Events</span></span>](../../../../docs/framework/wpf/advanced/events-wpf.md)  
+  [<span data-ttu-id="80199-117">Entrée</span><span class="sxs-lookup"><span data-stu-id="80199-117">Input</span></span>](../../../../docs/framework/wpf/advanced/input-wpf.md)  
+  [<span data-ttu-id="80199-118">Ressources</span><span class="sxs-lookup"><span data-stu-id="80199-118">Resources</span></span>](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
+  [<span data-ttu-id="80199-119">Application d’un style et création de modèles</span><span class="sxs-lookup"><span data-stu-id="80199-119">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+  [<span data-ttu-id="80199-120">Modèle de thread</span><span class="sxs-lookup"><span data-stu-id="80199-120">Threading Model</span></span>](../../../../docs/framework/wpf/advanced/threading-model.md)

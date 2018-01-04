@@ -18,16 +18,17 @@ caps.latest.revision: "63"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fcef86bb9cb0ee2cb038b4737af3f54f8c505b31
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e13ad75ca7c6b027ea1423e13934228a2ace4c2c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="wrappanel"></a><span data-ttu-id="0d5cd-102">WrapPanel</span><span class="sxs-lookup"><span data-stu-id="0d5cd-102">WrapPanel</span></span>
-<span data-ttu-id="0d5cd-103">Le <xref:System.Windows.Controls.WrapPanel> élément positionne les éléments enfants dans un ordre séquentiel de gauche à droite, en envoyant le contenu à la ligne suivante à l’extrémité de sa zone conteneur.</span><span class="sxs-lookup"><span data-stu-id="0d5cd-103">The <xref:System.Windows.Controls.WrapPanel> element positions child elements in sequential position from left to right, breaking content to the next line at the edge of its containing box.</span></span>  
+# <a name="wrappanel"></a><span data-ttu-id="679c0-102">WrapPanel</span><span class="sxs-lookup"><span data-stu-id="679c0-102">WrapPanel</span></span>
+<span data-ttu-id="679c0-103">Le <xref:System.Windows.Controls.WrapPanel> élément positionne les éléments enfants dans un ordre séquentiel de gauche à droite, en envoyant le contenu à la ligne suivante à l’extrémité de sa zone conteneur.</span><span class="sxs-lookup"><span data-stu-id="679c0-103">The <xref:System.Windows.Controls.WrapPanel> element positions child elements in sequential position from left to right, breaking content to the next line at the edge of its containing box.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="0d5cd-104">Référence</span><span class="sxs-lookup"><span data-stu-id="0d5cd-104">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="679c0-104">Référence</span><span class="sxs-lookup"><span data-stu-id="679c0-104">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -42,9 +43,9 @@ ms.lasthandoff: 10/18/2017
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="0d5cd-105">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="0d5cd-105">Related Sections</span></span>  
- [<span data-ttu-id="0d5cd-106">Disposition</span><span class="sxs-lookup"><span data-stu-id="0d5cd-106">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="679c0-105">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="679c0-105">Related Sections</span></span>  
+ [<span data-ttu-id="679c0-106">Disposition</span><span class="sxs-lookup"><span data-stu-id="679c0-106">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [<span data-ttu-id="0d5cd-107">Procédure pas à pas : ma première application de bureau WPF</span><span class="sxs-lookup"><span data-stu-id="0d5cd-107">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="679c0-107">Procédure pas à pas : ma première application de bureau WPF</span><span class="sxs-lookup"><span data-stu-id="679c0-107">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="0d5cd-108">Vue d’ensemble de ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="0d5cd-108">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [<span data-ttu-id="679c0-108">Vue d’ensemble de ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="679c0-108">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

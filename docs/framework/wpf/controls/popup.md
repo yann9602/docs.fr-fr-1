@@ -19,25 +19,26 @@ caps.latest.revision: "66"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f4fecc763f1bc6e701869a2b3f46d44f80cc28ee
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 14a1848a27443e7fc5ae7a9ced754cf6d691ae19
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="popup"></a><span data-ttu-id="a44f2-102">Fenêtre contextuelle</span><span class="sxs-lookup"><span data-stu-id="a44f2-102">Popup</span></span>
-<span data-ttu-id="a44f2-103">Le <xref:System.Windows.Controls.Primitives.Popup> contrôle affiche le contenu dans une fenêtre distincte qui flotte au-dessus de la fenêtre d’application actuel.</span><span class="sxs-lookup"><span data-stu-id="a44f2-103">The <xref:System.Windows.Controls.Primitives.Popup> control displays content in a separate window that floats over the current application window.</span></span>  
+# <a name="popup"></a><span data-ttu-id="88c21-102">Fenêtre contextuelle</span><span class="sxs-lookup"><span data-stu-id="88c21-102">Popup</span></span>
+<span data-ttu-id="88c21-103">Le <xref:System.Windows.Controls.Primitives.Popup> contrôle affiche le contenu dans une fenêtre distincte qui flotte au-dessus de la fenêtre d’application actuel.</span><span class="sxs-lookup"><span data-stu-id="88c21-103">The <xref:System.Windows.Controls.Primitives.Popup> control displays content in a separate window that floats over the current application window.</span></span>  
   
- <span data-ttu-id="a44f2-104">L’illustration suivante montre un <xref:System.Windows.Controls.Primitives.Popup> contrôle positionné par rapport à un <xref:System.Windows.Controls.Button> qui est son parent.</span><span class="sxs-lookup"><span data-stu-id="a44f2-104">The following illustration shows a <xref:System.Windows.Controls.Primitives.Popup> control that is positioned with respect to a <xref:System.Windows.Controls.Button> that is its parent.</span></span>  
+ <span data-ttu-id="88c21-104">L’illustration suivante montre un <xref:System.Windows.Controls.Primitives.Popup> contrôle positionné par rapport à un <xref:System.Windows.Controls.Button> qui est son parent.</span><span class="sxs-lookup"><span data-stu-id="88c21-104">The following illustration shows a <xref:System.Windows.Controls.Primitives.Popup> control that is positioned with respect to a <xref:System.Windows.Controls.Button> that is its parent.</span></span>  
   
- <span data-ttu-id="a44f2-105">![Illustration Popup](../../../../docs/framework/wpf/controls/media/popuppicture.JPG "PopupPicture")</span><span class="sxs-lookup"><span data-stu-id="a44f2-105">![Popup illustration](../../../../docs/framework/wpf/controls/media/popuppicture.JPG "PopupPicture")</span></span>  
+ <span data-ttu-id="88c21-105">![Illustration Popup](../../../../docs/framework/wpf/controls/media/popuppicture.JPG "PopupPicture")</span><span class="sxs-lookup"><span data-stu-id="88c21-105">![Popup illustration](../../../../docs/framework/wpf/controls/media/popuppicture.JPG "PopupPicture")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="a44f2-106">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="a44f2-106">In This Section</span></span>  
- [<span data-ttu-id="a44f2-107">Vue d’ensemble de Popup</span><span class="sxs-lookup"><span data-stu-id="a44f2-107">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)  
- [<span data-ttu-id="a44f2-108">Comportement de positionnement de Popup</span><span class="sxs-lookup"><span data-stu-id="a44f2-108">Popup Placement Behavior</span></span>](../../../../docs/framework/wpf/controls/popup-placement-behavior.md)  
- [<span data-ttu-id="a44f2-109">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="a44f2-109">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="88c21-106">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="88c21-106">In This Section</span></span>  
+ [<span data-ttu-id="88c21-107">Vue d’ensemble de Popup</span><span class="sxs-lookup"><span data-stu-id="88c21-107">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)  
+ [<span data-ttu-id="88c21-108">Comportement de positionnement de Popup</span><span class="sxs-lookup"><span data-stu-id="88c21-108">Popup Placement Behavior</span></span>](../../../../docs/framework/wpf/controls/popup-placement-behavior.md)  
+ [<span data-ttu-id="88c21-109">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="88c21-109">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="a44f2-110">Référence</span><span class="sxs-lookup"><span data-stu-id="a44f2-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="88c21-110">Référence</span><span class="sxs-lookup"><span data-stu-id="88c21-110">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.Popup>  
   
-## <a name="related-sections"></a><span data-ttu-id="a44f2-111">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="a44f2-111">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="88c21-111">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="88c21-111">Related Sections</span></span>

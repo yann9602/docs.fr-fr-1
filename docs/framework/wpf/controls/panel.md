@@ -18,20 +18,21 @@ caps.latest.revision: "63"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a73772ddb9d9344e53bf4df71775f1f17e179342
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1a74bf246a66f54e274833c2c9f04f8da0f48a0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="panel"></a><span data-ttu-id="8a2cc-102">Volet</span><span class="sxs-lookup"><span data-stu-id="8a2cc-102">Panel</span></span>
-<span data-ttu-id="8a2cc-103"><xref:System.Windows.Controls.Panel>est la classe de base pour tous les éléments qui prennent en charge la disposition de l’application dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8a2cc-103"><xref:System.Windows.Controls.Panel> is the base class for all elements that support application layout in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
+# <a name="panel"></a><span data-ttu-id="52c37-102">Volet</span><span class="sxs-lookup"><span data-stu-id="52c37-102">Panel</span></span>
+<span data-ttu-id="52c37-103"><xref:System.Windows.Controls.Panel>est la classe de base pour tous les éléments qui prennent en charge la disposition de l’application dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="52c37-103"><xref:System.Windows.Controls.Panel> is the base class for all elements that support application layout in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="8a2cc-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="8a2cc-104">In This Section</span></span>  
- [<span data-ttu-id="8a2cc-105">Vue d’ensemble de Panel</span><span class="sxs-lookup"><span data-stu-id="8a2cc-105">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [<span data-ttu-id="8a2cc-106">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="8a2cc-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/panel-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="52c37-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="52c37-104">In This Section</span></span>  
+ [<span data-ttu-id="52c37-105">Vue d’ensemble de Panel</span><span class="sxs-lookup"><span data-stu-id="52c37-105">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [<span data-ttu-id="52c37-106">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="52c37-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/panel-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="8a2cc-107">Référence</span><span class="sxs-lookup"><span data-stu-id="8a2cc-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="52c37-107">Référence</span><span class="sxs-lookup"><span data-stu-id="52c37-107">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -46,9 +47,9 @@ ms.lasthandoff: 10/18/2017
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="8a2cc-108">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="8a2cc-108">Related Sections</span></span>  
- [<span data-ttu-id="8a2cc-109">Disposition</span><span class="sxs-lookup"><span data-stu-id="8a2cc-109">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="52c37-108">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="52c37-108">Related Sections</span></span>  
+ [<span data-ttu-id="52c37-109">Disposition</span><span class="sxs-lookup"><span data-stu-id="52c37-109">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [<span data-ttu-id="8a2cc-110">Procédure pas à pas : ma première application de bureau WPF</span><span class="sxs-lookup"><span data-stu-id="8a2cc-110">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="52c37-110">Procédure pas à pas : ma première application de bureau WPF</span><span class="sxs-lookup"><span data-stu-id="52c37-110">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="8a2cc-111">Vue d’ensemble de ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="8a2cc-111">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [<span data-ttu-id="52c37-111">Vue d’ensemble de ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="52c37-111">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

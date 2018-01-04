@@ -15,20 +15,21 @@ caps.latest.revision: "61"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ea9fb33be69907609152f062a8755a3a0c04cc16
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2503d12453d3be230c3ff8032bcf4fa0ff321193
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="adorners"></a><span data-ttu-id="1ac0d-102">Ornements</span><span class="sxs-lookup"><span data-stu-id="1ac0d-102">Adorners</span></span>
-<span data-ttu-id="1ac0d-103">Cette section fournit des informations sur les ornements et le [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] infrastructure d’ornement.</span><span class="sxs-lookup"><span data-stu-id="1ac0d-103">This section provides information about Adorners and the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Adorner framework.</span></span>  
+# <a name="adorners"></a><span data-ttu-id="d4ac5-102">Ornements</span><span class="sxs-lookup"><span data-stu-id="d4ac5-102">Adorners</span></span>
+<span data-ttu-id="d4ac5-103">Cette section fournit des informations sur les ornements et le [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] infrastructure d’ornement.</span><span class="sxs-lookup"><span data-stu-id="d4ac5-103">This section provides information about Adorners and the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Adorner framework.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="1ac0d-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="1ac0d-104">In This Section</span></span>  
- [<span data-ttu-id="1ac0d-105">Vue d’ensemble des ornements</span><span class="sxs-lookup"><span data-stu-id="1ac0d-105">Adorners Overview</span></span>](../../../../docs/framework/wpf/controls/adorners-overview.md)  
- [<span data-ttu-id="1ac0d-106">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="1ac0d-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/adorners-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="d4ac5-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="d4ac5-104">In This Section</span></span>  
+ [<span data-ttu-id="d4ac5-105">Vue d’ensemble des ornements</span><span class="sxs-lookup"><span data-stu-id="d4ac5-105">Adorners Overview</span></span>](../../../../docs/framework/wpf/controls/adorners-overview.md)  
+ [<span data-ttu-id="d4ac5-106">Rubriques de guide pratique</span><span class="sxs-lookup"><span data-stu-id="d4ac5-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/adorners-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="1ac0d-107">Référence</span><span class="sxs-lookup"><span data-stu-id="1ac0d-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="d4ac5-107">Référence</span><span class="sxs-lookup"><span data-stu-id="d4ac5-107">Reference</span></span>  
  <xref:System.Windows.Controls.AdornedElementPlaceholder>  
   
  <xref:System.Windows.Documents.Adorner>  
@@ -39,4 +40,4 @@ ms.lasthandoff: 10/18/2017
   
  <xref:System.Windows.Documents.AdornerLayer>  
   
-## <a name="related-sections"></a><span data-ttu-id="1ac0d-108">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="1ac0d-108">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="d4ac5-108">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="d4ac5-108">Related Sections</span></span>

@@ -19,28 +19,29 @@ caps.latest.revision: "77"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6a2ec81fa63b07a33f79a54b500ae3d7e62f367f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0159848e8add1f66ca7690c0fc692522102e74d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="transformations-how-to-topics"></a><span data-ttu-id="da05d-102">Rubriques "Comment" relatives aux transformations</span><span class="sxs-lookup"><span data-stu-id="da05d-102">Transformations How-to Topics</span></span>
-<span data-ttu-id="da05d-103">Les rubriques de cette section décrivent comment appliquer différentes transformations à des objets.</span><span class="sxs-lookup"><span data-stu-id="da05d-103">The topics in this section describe how to apply different transformations to objects.</span></span>  
+# <a name="transformations-how-to-topics"></a><span data-ttu-id="1a2cd-102">Rubriques "Comment" relatives aux transformations</span><span class="sxs-lookup"><span data-stu-id="1a2cd-102">Transformations How-to Topics</span></span>
+<span data-ttu-id="1a2cd-103">Les rubriques de cette section décrivent comment appliquer différentes transformations à des objets.</span><span class="sxs-lookup"><span data-stu-id="1a2cd-103">The topics in this section describe how to apply different transformations to objects.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="da05d-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="da05d-104">In This Section</span></span>  
- [<span data-ttu-id="da05d-105">Appliquer une transformation à un élément lorsqu’un événement se produit</span><span class="sxs-lookup"><span data-stu-id="da05d-105">Apply a Transform to an Element When an Event Occurs</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-transform-to-an-element-when-an-event-occurs.md)  
- <span data-ttu-id="da05d-106">[Apply Multiple Transforms to an Object](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md) (Appliquer plusieurs transformations à un objet)</span><span class="sxs-lookup"><span data-stu-id="da05d-106">[Apply Multiple Transforms to an Object](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md)</span></span>  
- [<span data-ttu-id="da05d-107">Mettre un élément en rotation</span><span class="sxs-lookup"><span data-stu-id="da05d-107">Make an Element Spin in Place</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-make-an-element-spin-in-place.md)  
- [<span data-ttu-id="da05d-108">Faire pivoter un objet</span><span class="sxs-lookup"><span data-stu-id="da05d-108">Rotate an Object</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object.md)  
- [<span data-ttu-id="da05d-109">Mettre à l'échelle un élément</span><span class="sxs-lookup"><span data-stu-id="da05d-109">Scale an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-scale-an-element.md)  
- [<span data-ttu-id="da05d-110">Incliner un élément</span><span class="sxs-lookup"><span data-stu-id="da05d-110">Skew an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)  
- [<span data-ttu-id="da05d-111">Spécifier l'origine d'une transformation à l'aide de valeurs relatives</span><span class="sxs-lookup"><span data-stu-id="da05d-111">Specify the Origin of a Transform by Using Relative Values</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-the-origin-of-a-transform-by-using-relative-values.md)  
- [<span data-ttu-id="da05d-112">Translater un élément</span><span class="sxs-lookup"><span data-stu-id="da05d-112">Translate an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)  
- <span data-ttu-id="da05d-113">[Use a MatrixTransform to Create Custom Transforms](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md) (Utiliser la classe MatrixTransform pour créer des transformations personnalisées)</span><span class="sxs-lookup"><span data-stu-id="da05d-113">[Use a MatrixTransform to Create Custom Transforms](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md)</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="1a2cd-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="1a2cd-104">In This Section</span></span>  
+ [<span data-ttu-id="1a2cd-105">Appliquer une transformation à un élément lorsqu’un événement se produit</span><span class="sxs-lookup"><span data-stu-id="1a2cd-105">Apply a Transform to an Element When an Event Occurs</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-transform-to-an-element-when-an-event-occurs.md)  
+ <span data-ttu-id="1a2cd-106">[Apply Multiple Transforms to an Object](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md) (Appliquer plusieurs transformations à un objet)</span><span class="sxs-lookup"><span data-stu-id="1a2cd-106">[Apply Multiple Transforms to an Object](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transforms-to-an-object.md)</span></span>  
+ [<span data-ttu-id="1a2cd-107">Mettre un élément en rotation</span><span class="sxs-lookup"><span data-stu-id="1a2cd-107">Make an Element Spin in Place</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-make-an-element-spin-in-place.md)  
+ [<span data-ttu-id="1a2cd-108">Faire pivoter un objet</span><span class="sxs-lookup"><span data-stu-id="1a2cd-108">Rotate an Object</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object.md)  
+ [<span data-ttu-id="1a2cd-109">Mettre à l'échelle un élément</span><span class="sxs-lookup"><span data-stu-id="1a2cd-109">Scale an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-scale-an-element.md)  
+ [<span data-ttu-id="1a2cd-110">Incliner un élément</span><span class="sxs-lookup"><span data-stu-id="1a2cd-110">Skew an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)  
+ [<span data-ttu-id="1a2cd-111">Spécifier l'origine d'une transformation à l'aide de valeurs relatives</span><span class="sxs-lookup"><span data-stu-id="1a2cd-111">Specify the Origin of a Transform by Using Relative Values</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-the-origin-of-a-transform-by-using-relative-values.md)  
+ [<span data-ttu-id="1a2cd-112">Translater un élément</span><span class="sxs-lookup"><span data-stu-id="1a2cd-112">Translate an Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)  
+ <span data-ttu-id="1a2cd-113">[Use a MatrixTransform to Create Custom Transforms](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md) (Utiliser la classe MatrixTransform pour créer des transformations personnalisées)</span><span class="sxs-lookup"><span data-stu-id="1a2cd-113">[Use a MatrixTransform to Create Custom Transforms](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-matrixtransform-to-create-custom-transforms.md)</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="da05d-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="da05d-114">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="1a2cd-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1a2cd-114">See Also</span></span>  
  <xref:System.Windows.Media.Transform>  
- [<span data-ttu-id="da05d-115">Graphiques et multimédia</span><span class="sxs-lookup"><span data-stu-id="da05d-115">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
- [<span data-ttu-id="da05d-116">Vue d’ensemble du rendu graphique de WPF</span><span class="sxs-lookup"><span data-stu-id="da05d-116">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [<span data-ttu-id="da05d-117">Disposition</span><span class="sxs-lookup"><span data-stu-id="da05d-117">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)
+ [<span data-ttu-id="1a2cd-115">Graphiques et multimédia</span><span class="sxs-lookup"><span data-stu-id="1a2cd-115">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
+ [<span data-ttu-id="1a2cd-116">Vue d’ensemble du rendu graphique de WPF</span><span class="sxs-lookup"><span data-stu-id="1a2cd-116">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
+ [<span data-ttu-id="1a2cd-117">Disposition</span><span class="sxs-lookup"><span data-stu-id="1a2cd-117">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)
