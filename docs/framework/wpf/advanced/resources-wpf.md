@@ -18,11 +18,12 @@ caps.latest.revision: "77"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f7bebc19f06044ca2360d7f0c48d5ab1c51c1b62
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: a0f55a8811380abd32f4c25fe83c16e62616f283
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="resources-wpf"></a>Ressources (WPF)
 Une ressource est un objet pouvant être réutilisé à plusieurs endroits de votre application. WPF prend en charge différents types de ressources. Ces ressources sont principalement deux types de ressources : XAML ressources et les fichiers de données de ressources. Pinceaux et styles sont des exemples de ressources XAML. Fichiers de données de ressources sont des fichiers de données non exécutables qui a besoin d’une application.  

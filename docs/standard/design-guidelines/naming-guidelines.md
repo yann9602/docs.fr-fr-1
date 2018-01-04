@@ -21,11 +21,14 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 40da7449c88eaaba92e34374c002c7e175b2ef16
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 713a11f822dd30e77e6442c0bb082a40755b1832
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="naming-guidelines"></a>Indications concernant l'attribution d'un nom
 Après un jeu cohérent de conventions d’affectation de noms dans le développement d’une infrastructure peut être une contribution importante à la facilité d’utilisation de l’infrastructure. Il permet à l’infrastructure être utilisé par de nombreux développeurs sur projets largement séparés. Au-delà de la cohérence du formulaire, les noms d’éléments d’infrastructure doivent être compréhensible et doivent communiquer la fonction de chaque élément.  
@@ -36,13 +39,13 @@ Après un jeu cohérent de conventions d’affectation de noms dans le développ
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Conventions de mise en majuscules](../../../docs/standard/design-guidelines/capitalization-conventions.md)  
- [Conventions d’affectation de noms générales](../../../docs/standard/design-guidelines/general-naming-conventions.md)  
- [Noms des assemblys et des DLL](../../../docs/standard/design-guidelines/names-of-assemblies-and-dlls.md)  
+ [Conventions générales de nommage](../../../docs/standard/design-guidelines/general-naming-conventions.md)  
+ [Noms d’assemblys et de DLL](../../../docs/standard/design-guidelines/names-of-assemblies-and-dlls.md)  
  [Noms d’espaces de noms](../../../docs/standard/design-guidelines/names-of-namespaces.md)  
- [Noms de Classes, structures et Interfaces](../../../docs/standard/design-guidelines/names-of-classes-structs-and-interfaces.md)  
- [Noms des membres de Type](../../../docs/standard/design-guidelines/names-of-type-members.md)  
- [Paramètres d’affectation de noms](../../../docs/standard/design-guidelines/naming-parameters.md)  
- [Ressources d’affectation de noms](../../../docs/standard/design-guidelines/naming-resources.md)  
+ [Noms de classes, de structures et d’interfaces](../../../docs/standard/design-guidelines/names-of-classes-structs-and-interfaces.md)  
+ [Noms de membres de type](../../../docs/standard/design-guidelines/names-of-type-members.md)  
+ [Nommage des paramètres](../../../docs/standard/design-guidelines/naming-parameters.md)  
+ [Nommage des ressources](../../../docs/standard/design-guidelines/naming-resources.md)  
  *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
  *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  

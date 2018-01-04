@@ -19,11 +19,12 @@ caps.latest.revision: "42"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 49fbb0c71b13ee7d7ca04e0d40c1f9e32230d805
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f1bdecedece4581eaf8a010eddc0974e44fe88ab
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hit-testing-in-the-visual-layer"></a>Test de positionnement dans la couche visuelle
 Cette rubrique fournit une vue d’ensemble de la fonctionnalité de test de positionnement fournie par la couche visuelle. Prise en charge du test d’atteinte vous permet de déterminer si une valeur de géométrie ou un point se trouve dans le contenu affiché d’un <xref:System.Windows.Media.Visual>, ce qui vous permet d’implémenter le comportement de l’interface utilisateur comme un rectangle de sélection pour sélectionner plusieurs objets.  

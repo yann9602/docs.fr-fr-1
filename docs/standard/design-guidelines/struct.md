@@ -21,11 +21,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d1566d2b67e1dda5b0b221a2c10affb6bdaea888
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2f4a6debc25a51e3a0a83e70fc8c8f8fc55c62f5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="struct-design"></a>Conception de structures
 Le type de valeur à usage général est souvent appelé un struct, le mot clé c#. Cette section fournit des instructions pour la conception de la structure générale.  
@@ -55,6 +58,6 @@ Le type de valeur à usage général est souvent appelé un struct, le mot clé 
  *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi  
- [Règles de conception de type](../../../docs/standard/design-guidelines/type.md)  
+ [Instructions pour la conception des types](../../../docs/standard/design-guidelines/type.md)  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Choix entre les classes et structs](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)
+ [Choix entre classe et structure](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)

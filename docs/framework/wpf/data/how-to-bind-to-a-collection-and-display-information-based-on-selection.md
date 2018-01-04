@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e92621e7e62750ae5ad73158232ccdabfb22287a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a751025470b566ef1e735e4ddd192cfd8fc354ad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-to-a-collection-and-display-information-based-on-selection"></a>Comment : effectuer une liaison à une collection et afficher des informations basées sur la sélection
 Dans un scénario maître / détail simple, vous avez lié aux données <xref:System.Windows.Controls.ItemsControl> comme un <xref:System.Windows.Controls.ListBox>. En fonction de la sélection de l’utilisateur, afficher plus d’informations sur l’élément sélectionné. Cet exemple montre comment implémenter ce scénario.  

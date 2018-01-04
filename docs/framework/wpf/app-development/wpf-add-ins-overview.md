@@ -23,11 +23,12 @@ caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 290682542a0accaf38408127f7358625abca14af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 76a836e2699617803b78f76f90b27452bd0cdd0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-add-ins-overview"></a>Vue d'ensemble des compléments WPF
 <a name="Introduction"></a> Le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] inclut un modèle de complément que les développeurs peuvent utiliser pour créer des applications prenant en charge l’extensibilité des compléments. Ce modèle de complément permet de créer des compléments qui s’intègrent aux applications et étendent leurs fonctionnalités. Dans certains scénarios, les applications doivent également afficher les [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] fournies par les compléments. Cette rubrique montre comment [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] optimise le modèle de complément du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour prendre en charge ces scénarios, l’architecture sur laquelle il repose, ainsi que ses avantages et ses limitations.  
@@ -35,7 +36,7 @@ ms.lasthandoff: 11/21/2017
 
   
 <a name="Requirements"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Une bonne connaissance du modèle de complément du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] est nécessaire. Pour plus d’informations, consultez [Compléments et extensibilité](../../../../docs/framework/add-ins/index.md).  
   
 <a name="AddInsOverview"></a>   

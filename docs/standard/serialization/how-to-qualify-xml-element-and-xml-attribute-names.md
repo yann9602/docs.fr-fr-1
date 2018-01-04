@@ -19,11 +19,14 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e94b9022e6da29f0aa8deb5534fec6e89d40152a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 048bcc587915467f644a2cce695cec352147223a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Comment : qualifier des noms d'éléments XML et des noms d'attributs XML
 [Exemple de code](#cpconworkingwithxmlnamespacesanchor1)  

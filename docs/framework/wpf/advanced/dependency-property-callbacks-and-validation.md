@@ -22,11 +22,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0d1b62c7f49653627c626bce2583b2799df931dc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 15ba7f3315b2ce71357bd4735e2dfca1b3de616d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dependency-property-callbacks-and-validation"></a>Validation et rappels de propriétés de dépendance
 Cette rubrique décrit comment créer des propriétés de dépendance à l’aide d’autres implémentations personnalisées pour des fonctionnalités liées aux propriétés telles que la détermination de la validation, les rappels effectués chaque fois que la valeur effective de la propriété change, et la non prise en compte des possibles influences extérieures sur la détermination de la valeur. Elle décrit également les scénarios où il est nécessaire de développer les comportements par défaut du système de propriétés à l’aide de ces techniques.  

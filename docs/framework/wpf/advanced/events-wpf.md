@@ -18,11 +18,12 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dda7f9497751356c4c650e7fb672f7721ec3dd09
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: cf622066bbfca8260670ca139f4acfe9affca07e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="events-wpf"></a>Événements (WPF)
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] présente les événements routés pouvant appeler des gestionnaires qui existent sur plusieurs écouteurs dans l’arborescence d’éléments d’une application.  

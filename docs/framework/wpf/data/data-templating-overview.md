@@ -21,17 +21,18 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 91ab838ec543e2cc17e380ee9ec0d629989a003e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b3f1efefa4d32e3512b0dda6eca237a5e4938bf7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-templating-overview"></a>Vue d'ensemble des modèles de données
 Le modèle de création de modèles de données WPF offre une grande souplesse pour définir la présentation des données. Les contrôles WPF possèdent des fonctionnalités intégrées permettant de prendre en charge la personnalisation de la présentation des données. Cette rubrique montre d’abord comment définir un <xref:System.Windows.DataTemplate> et présente ensuite les autres fonctionnalités de création de modèles de données, telles que la sélection des modèles basés sur une logique personnalisée et la prise en charge pour l’affichage des données hiérarchiques.  
   
 <a name="Prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Cette rubrique porte sur les fonctionnalités de création de modèles de données ; elle ne constitue pas une introduction aux concepts de liaison de données. Pour plus d’informations sur les concepts de base de la liaison de données, consultez la [Vue d’ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md).  
   
  <xref:System.Windows.DataTemplate>concerne la présentation des données et est une des nombreuses fonctionnalités fournies par le modèle de conception de styles et modèles WPF. Pour obtenir une introduction sur le modèle styles et modèles WPF, notamment comment utiliser un <xref:System.Windows.Style> pour définir des propriétés sur les contrôles, consultez la [styles et modèles](../../../../docs/framework/wpf/controls/styling-and-templating.md) rubrique.  

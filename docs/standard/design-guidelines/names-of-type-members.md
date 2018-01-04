@@ -22,11 +22,14 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1a3460b734d5bab6f5362fa9d3631e06821f6d49
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d489d4cf61adfe8550bd16b85cd658e0d545c861
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="names-of-type-members"></a>Noms de membres de type
 Les types sont constitués de membres : méthodes, propriétés, événements, constructeurs et les champs. Les sections suivantes décrivent les conventions de dénomination des membres de type.  
@@ -111,4 +114,4 @@ public class Control {
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Affectation de noms](../../../docs/standard/design-guidelines/naming-guidelines.md)
+ [Directives de nommage](../../../docs/standard/design-guidelines/naming-guidelines.md)

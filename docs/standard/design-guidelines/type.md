@@ -18,11 +18,14 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2b24a934285f88386daa764c5b28bd82cf5d39a9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6b02abef0180b6de82e26837863849cce35c994f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="type-design-guidelines"></a>Instructions de conception de types
 Du point de vue du CLR, il existe uniquement deux catégories de types : types référence et les types valeur, mais pour une discussion sur la conception d’infrastructure, nous allons diviser les types en groupes plus logiques, chacun avec ses propres règles de conception spécifiques.  
@@ -42,12 +45,12 @@ Du point de vue du CLR, il existe uniquement deux catégories de types : types 
  **✓ FAIRE** Vérifiez que chaque type est un ensemble bien défini de membres associés, pas seulement une collection aléatoire des fonctionnalités non liées.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Choix entre les classes et structs](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)  
- [Conception d’une classe abstraite](../../../docs/standard/design-guidelines/abstract-class.md)  
- [Conception d’une classe statique](../../../docs/standard/design-guidelines/static-class.md)  
- [Conception de l’interface](../../../docs/standard/design-guidelines/interface.md)  
- [Conception d’un struct](../../../docs/standard/design-guidelines/struct.md)  
- [Conception de l’enum](../../../docs/standard/design-guidelines/enum.md)  
+ [Choix entre classe et structure](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)  
+ [Conception de classes abstraites](../../../docs/standard/design-guidelines/abstract-class.md)  
+ [Conception de classes statiques](../../../docs/standard/design-guidelines/static-class.md)  
+ [Conception d’interfaces](../../../docs/standard/design-guidelines/interface.md)  
+ [Conception de structures](../../../docs/standard/design-guidelines/struct.md)  
+ [Conception d’énumérations](../../../docs/standard/design-guidelines/enum.md)  
  [Types imbriqués](../../../docs/standard/design-guidelines/nested-types.md)  
  *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   

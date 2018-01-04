@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ec61fdedc78b785dccf2c235cd17fd20b6d5abc4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d29a572e2989ffb800434fdaab9756cb651c0816
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-specify-the-origin-of-a-transform-by-using-relative-values"></a>Comment : spécifier l'origine d'une transformation à l'aide de valeurs relatives
 Cet exemple montre comment utiliser des valeurs relatives pour spécifier l’origine d’un <xref:System.Windows.UIElement.RenderTransform%2A> qui est appliqué à un <xref:System.Windows.FrameworkElement>.  

@@ -17,11 +17,12 @@ caps.latest.revision: "16"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: d6a9333b2267e82fc25b2a0ec4bf5dd14f644078
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c9cc5e2bff9cc2591c7a12630da5422dbf73713a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xshared-attribute"></a>x:Shared, attribut
 Lorsque la valeur `false`, modifie le comportement de récupération des ressources WPF afin que les requêtes des ressources attribuées créent une nouvelle instance pour chaque demande au lieu de partager la même instance pour toutes les demandes.  
@@ -34,7 +35,7 @@ Lorsque la valeur `false`, modifie le comportement de récupération des ressour
 </ResourceDictionary>  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `x:Shared`est mappé à l’espace de noms XAML du langage XAML et est reconnu comme un élément de langage XAML valid par les Services XAML .NET Framework et ses lecteurs XAML. Toutefois, les fonctions déclarées de `x:Shared` sont uniquement pertinentes pour les applications WPF et pour l’analyseur XAML WPF. Dans WPF, `x:Shared` n’est plus utile en tant qu’attribut lorsqu’il est appliqué à un objet qui existe dans WPF <xref:System.Windows.ResourceDictionary>. Autres utilisations ne lèvent pas d’exceptions d’analyse ou d’autres erreurs, mais elles n’ont aucun effet.  
   
  La signification de `x:Shared` n’est pas spécifié dans la spécification du langage XAML. Autres implémentations XAML, tels que ceux qui s’appuient sur les Services XAML .NET Framework, ne fournissent pas nécessairement le partage des ressources de prise en charge. Ces implémentations XAML peut fournir un comportement similaire dans l’infrastructure de prise en charge qui utilise également `x:Shared` valeurs.  

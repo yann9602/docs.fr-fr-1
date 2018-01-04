@@ -16,11 +16,14 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d70879d5e0a579af7b5c507910d4dcb19ddee52
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d673c76e57ffb8315e97b1695dbcbc1f4fe0aab9
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="ltsystemxmlserializationgt-element"></a>Élément &lt;system.xml.serialization&gt;
 Élément de niveau supérieur permettant de contrôler la sérialisation XML. Pour plus d’informations sur les fichiers de configuration, consultez [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md).  
@@ -39,7 +42,7 @@ ms.lasthandoff: 12/02/2017
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   

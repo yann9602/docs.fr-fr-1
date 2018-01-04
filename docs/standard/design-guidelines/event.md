@@ -20,11 +20,14 @@ caps.latest.revision: "15"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e8dcd1003b3f93db733ece4f90340d1d98867d2e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: a07392ba805b5f2a3913b01a15dd0e1668f0ccf7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="event-design"></a>Conception d'événements
 Les événements sont la forme couramment utilisée de rappels (les constructions qui autorisent l’infrastructure pour appeler dans du code de l’utilisateur). Autres mécanismes de rappel incluent les membres avec les délégués, les membres virtuels et basée sur l’interface de plug-ins. Les données à partir des études de convivialité indiquent que la majorité des développeurs sont plus à l’aise avec les événements qu’ils utilisent d’autres méthodes de rappel. Les événements sont bien intégrés à Visual Studio et de nombreux langages.  
@@ -79,5 +82,5 @@ Les événements sont la forme couramment utilisée de rappels (les construction
  *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi  
- [Règles de conception de membres](../../../docs/standard/design-guidelines/member.md)  
+ [Instructions de conception des membres](../../../docs/standard/design-guidelines/member.md)  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)

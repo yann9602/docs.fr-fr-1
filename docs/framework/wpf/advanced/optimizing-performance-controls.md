@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1b414aee19082196ab242706c7730c031cf3a76
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1b8008d104437454f36f6f425634c40968d5481a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimizing-performance-controls"></a>Optimisation des performances : contrôles
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] intègre de nombreux composants d’interface utilisateur communs qui sont utilisés dans la plupart des applications Windows. Cette rubrique présente des techniques destinées à améliorer les performances de votre interface utilisateur.  
@@ -42,7 +43,7 @@ ms.lasthandoff: 11/21/2017
   
 -   Paramètre <xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A> à `false`.  
   
--   Paramètre <!--zz <xref:System.Windows.Controls.VirtualizingStackPanel.IsVirtualizing%2A>--> `IsVirtualizing` à `false`.    
+-   Paramètre <!--zz <xref:System.Windows.Controls.VirtualizingStackPanel.IsVirtualizing%2A>--> `IsVirtualizing` à `false`.  
   
  Au moment de virtualiser des conteneurs d’éléments, il est important de déterminer si des informations d’état supplémentaire sont associées à un conteneur d’élément qui appartient à l’élément. Si tel est le cas, vous devez enregistrer l’état supplémentaire. Par exemple, vous pouvez avoir un élément contenu dans un <xref:System.Windows.Controls.Expander> contrôle et la <xref:System.Windows.Controls.Expander.IsExpanded%2A> état est lié au conteneur de l’élément et non à l’élément lui-même. Lorsque le conteneur est réutilisé pour un nouvel élément, la valeur actuelle de <xref:System.Windows.Controls.Expander.IsExpanded%2A> est utilisé pour le nouvel élément. En outre, l’ancien élément perd la bonne <xref:System.Windows.Controls.Expander.IsExpanded%2A> valeur.  
   

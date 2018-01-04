@@ -18,11 +18,14 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8caa253a3f17c58f542317de579c4f7832c4efac
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 39bb29d36b6d81464b1213ebc0bf7aee6ceb5713
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="sealing"></a>Sceller
 Une des fonctionnalités des infrastructures d’orientée objet est que les développeurs peuvent étendre et personnalisez-les de manières inattendues par les concepteurs de framework. Il s’agit la puissance et le risque de conception extensible. Lorsque vous concevez votre infrastructure, il est donc très important de concevoir soigneusement pour l’extensibilité lorsqu’il est nécessaire et pour limiter l’extensibilité lorsqu’il est dangereux.  
@@ -57,5 +60,5 @@ Une des fonctionnalités des infrastructures d’orientée objet est que les dé
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Conception d’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
+ [Conception en vue de l’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
  [Classes unsealed](../../../docs/standard/design-guidelines/unsealed-classes.md)

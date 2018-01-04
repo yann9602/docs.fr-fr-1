@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0e1b26ec97f4b379e6b2d75a407408b8382bca52
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f43e8982dc9caaa57ffb6865bf9988243f42fa8b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-controls-used-to-list-options"></a>Contrôles Windows Forms utilisés pour l'affichage de listes d'options
 Si vous souhaitez fournir aux utilisateurs une liste d’options sélectionnables, vous pouvez ajouter une variété de contrôles à un Windows Form. Selon la quantité souhaitée restreindre vos utilisateurs d’entrée, vous pouvez ajouter un <xref:System.Windows.Forms.ListBox> (contrôle), un <xref:System.Windows.Forms.ComboBox> (contrôle), ou un <xref:System.Windows.Forms.CheckedListBox> contrôle. Utilisez les liens suivants pour déterminer le contrôle qui correspond le mieux à vos besoins.  
@@ -46,13 +47,13 @@ Si vous souhaitez fournir aux utilisateurs une liste d’options sélectionnable
   
 ## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.CheckedListBox>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.ComboBox>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.ListBox>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Vue d'ensemble du contrôle CheckedListBox](../../../../docs/framework/winforms/controls/checkedlistbox-control-overview-windows-forms.md)  

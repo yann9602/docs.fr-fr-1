@@ -17,11 +17,12 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 447c836b7df937abf347f65acdd3ee4e2710e55b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 62a8e11ec654b0db232cc71021b7b94d5c0d2fd8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flowdocumentpageviewer"></a>FlowDocumentPageViewer
 Le <xref:System.Windows.Controls.FlowDocumentPageViewer> contrôle permet d’afficher <xref:System.Windows.Documents.FlowDocument> de contenu sur une base par page. Effectuez une comparaison avec le <xref:System.Windows.Controls.FlowDocumentScrollViewer>, qui présente <xref:System.Windows.Documents.FlowDocument> contenu dans une visionneuse de défilement.  

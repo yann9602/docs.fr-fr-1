@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5c49c42b02511fea66c88544bf689b2b05e788ea
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a48e1e728e3ded58b0045554a81588933027074c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-controls-by-function"></a>Classement par fonction des contrôles Windows Forms
 Windows Forms offre des contrôles et composants qui effectuent des fonctions. Le tableau suivant répertorie les contrôles Windows Forms et les composants en fonction de la fonction générale. En outre, il existe plusieurs contrôles qui remplissent la même fonction, le contrôle recommandé est répertorié avec une remarque concernant le contrôle, il est remplacé. Dans une table suivante distincte, les contrôles remplacés sont répertoriés avec leurs remplacements recommandés.  
@@ -43,7 +44,7 @@ Windows Forms offre des contrôles et composants qui effectuent des fonctions. L
 ||Contrôle <xref:System.Windows.Forms.LinkLabel>|Affiche le texte sous la forme d’un lien de style Web et déclenche un événement lorsque l’utilisateur clique sur le texte spécial. Généralement, le texte est un lien vers une autre fenêtre ou un site Web.|  
 ||Contrôle <xref:System.Windows.Forms.StatusStrip>|Affiche des informations sur l’état actuel de l’application à l’aide de la zone délimitée, généralement au bas d’un formulaire parent.|  
 ||Contrôle <xref:System.Windows.Forms.ProgressBar>|Affiche l’état d’avancement d’une opération à l’utilisateur.|  
-|Affichage de page Web|Contrôle <xref:System.Windows.Forms.WebBrowser>|Autorise l'utilisateur à parcourir des pages web dans votre formulaire.|  
+|Affichage de page Web|Contrôle <xref:System.Windows.Forms.WebBrowser>|Autorise l’utilisateur à parcourir des pages web dans votre formulaire.|  
 |Sélection dans une liste|Contrôle <xref:System.Windows.Forms.CheckedListBox>|Affiche une liste déroulante d’éléments, accompagnés chacun d’une case à cocher.|  
 ||Contrôle <xref:System.Windows.Forms.ComboBox>|Affiche une liste déroulante d’éléments.|  
 ||Contrôle <xref:System.Windows.Forms.DomainUpDown>|Affiche une liste d’éléments de texte que les utilisateurs peuvent parcourir avec des boutons haut et bas.|  

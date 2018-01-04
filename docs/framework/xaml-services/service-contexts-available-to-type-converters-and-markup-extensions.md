@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 229601515442b5e84f6c4278b17db7ae25945a42
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4a75a5e6c6e6f627606ef5883655b6780e7519bc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-contexts-available-to-type-converters-and-markup-extensions"></a>Contextes de services disponibles aux convertisseurs de types ou aux extensions de balisage
 Les auteurs des types qui prennent en charge les utilisations de convertisseurs de type et d'extensions de balisage doivent souvent disposer d'informations contextuelles concernant l'emplacement où une utilisation existe dans le balisage ou dans la structure de graphique d'objets environnante. Les informations peuvent être exigées afin que l'objet fourni soit correctement instancié ou que les références d'objets à des objets existants dans le graphique d'objets puissent être créées. Lorsque vous utilisez les services XAML .NET Framework, le contexte qui peut être requis est exposé sous la forme d'une série d'interfaces de service. Le code de prise en charge de convertisseur de type ou d'extension de balisage peut lancer une requête pour un service, à l'aide d'un contexte de fournisseur de services disponible et passé à partir de <xref:System.Xaml.XamlObjectWriter> ou des types associés. Le contexte de schéma XAML est directement disponible via un service de ce type. Cette rubrique décrit comment accéder aux contextes de service à partir d'une implémentation de convertisseur de valeurs et répertorie les services qui sont généralement disponibles et leurs rôles.  
@@ -99,7 +100,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="ixamltyperesolver"></a>IXamlTypeResolver  
  **Documentation de référence**: <xref:System.Windows.Markup.IXamlTypeResolver>  
   
- **Défini par :** <xref:System.Windows.Markup> espace de noms, l’assembly System.Xaml    
+ **Défini par :** <xref:System.Windows.Markup> espace de noms, l’assembly System.Xaml  
   
  **S'applique aux éléments suivants :** scénarios de chemin de chargement et interaction avec le contexte de schéma XAML.  
   
@@ -110,7 +111,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="iuricontext"></a>IUriContext  
  **Documentation de référence**: <xref:System.Windows.Markup.IUriContext>  
   
- **Défini par :** <xref:System.Windows.Markup> espace de noms, l’assembly System.Xaml    
+ **Défini par :** <xref:System.Windows.Markup> espace de noms, l’assembly System.Xaml  
   
  **S'applique aux éléments suivants :** gestion du chemin de chargement et du chemin d'enregistrement des valeurs membres qui sont des URI ou des valeurs `x:Uri` .  
   
@@ -121,7 +122,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="iambientprovider"></a>IAmbientProvider  
  **Documentation de référence**: <xref:System.Xaml.IAmbientProvider>  
   
- **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml    
+ **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml  
   
  **S'applique aux éléments suivants :** gestion de chemin de chargement et différés ou optimisations de recherche de type.  
   
@@ -132,7 +133,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="ixamlschemacontextprovider"></a>IXamlSchemaContextProvider  
  **Documentation de référence**: <xref:System.Xaml.IXamlSchemaContextProvider>  
   
- **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml    
+ **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml  
   
  **S'applique aux éléments suivants :** chemin de chargement et toute opération qui doit résoudre un type XAML en type de stockage.  
   
@@ -143,7 +144,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="irootobjectprovider"></a>IRootObjectProvider  
  **Documentation de référence**: <xref:System.Xaml.IRootObjectProvider>  
   
- **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml    
+ **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml  
   
  **S'applique à l'élément suivant :** chemin de chargement.  
   
@@ -154,7 +155,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="ixamlnamespaceresolver"></a>IXamlNamespaceResolver  
  **Documentation de référence**: <xref:System.Xaml.IXamlNamespaceResolver>  
   
- **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml    
+ **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml  
   
  **S'applique aux éléments suivants :** chemin de chargement, chemin d'enregistrement.  
   
@@ -165,7 +166,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="iprovidevaluetarget"></a>IProvideValueTarget  
  **Documentation de référence**: <xref:System.Windows.Markup.IProvideValueTarget>  
   
- **Défini par :** <xref:System.Windows.Markup> espace de noms, l’assembly System.Xaml    
+ **Défini par :** <xref:System.Windows.Markup> espace de noms, l’assembly System.Xaml  
   
  **S'applique aux éléments suivants :** chemin de chargement et chemin d'enregistrement.  
   
@@ -176,7 +177,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="ixamlnameresolver"></a>IXamlNameResolver  
  **Documentation de référence**: <xref:System.Xaml.IXamlNameResolver>  
   
- **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml    
+ **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml  
   
  **S'applique aux éléments suivants :** définition du graphique d'objets du chemin de chargement, résolution des objets identifiés par `x:Name`, `x:Reference`ou des techniques spécifiques à l'infrastructure.  
   
@@ -187,7 +188,7 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ### <a name="idestinationtypeprovider"></a>IDestinationTypeProvider  
  **Documentation de référence**: <xref:System.Xaml.IDestinationTypeProvider>  
   
- **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml    
+ **Défini par :** <xref:System.Xaml> espace de noms, l’assembly System.Xaml  
   
  **S'applique aux éléments suivants :** résolution de chemin de chargement d'informations indirectes de type CLR.  
   

@@ -16,11 +16,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 56fcba73e9b3dac40f4723e9aeb8c8f6169a9b2c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dd76921059222c9c5b8958ce8e1761a3f04cb037
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="printing-how-to-topics"></a>Rubriques "Comment" relatives à l'impression
 Les rubriques de cette section montrent comment utiliser l’impression et les fonctionnalités de gestion de système d’impression inclus avec [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] , ainsi que la nouvelle [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] chemin d’impression.  

@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fb6f832b77404b57ab22e4ac472e7707f0e10dd5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 60135c09f63bd98f753e151c515938cbf13e70ee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="user-input-in-a-windows-forms-application"></a>Entrée d’utilisateur dans une application Windows Forms
 Dans les Windows Forms, l’entrée d’utilisateur est envoyée aux applications sous la forme de messages Windows. Une série de méthodes substituables traite ces messages au niveau de l’application, du formulaire et niveau de contrôle. Lorsque ces méthodes reçoivent les messages de clavier et souris, ils déclenchent des événements qui peuvent être gérés pour obtenir des informations sur la souris ou du clavier d’entrée. Dans de nombreux cas, les applications Windows Forms seront en mesure de traiter toutes les entrées utilisateur simplement en gérant ces événements. Dans d’autres cas, une application devrez peut-être remplacer une des méthodes qui traitent les messages afin d’intercepter un message particulier avant qu’il est reçu par l’application, un formulaire ou un contrôle.  
@@ -29,7 +30,7 @@ Dans les Windows Forms, l’entrée d’utilisateur est envoyée aux application
 ## <a name="methods-that-process-user-input-messages"></a>Méthodes qui traitent les Messages d’entrée d’utilisateur  
  Formulaires et les contrôles ont accès à la <xref:System.Windows.Forms.IMessageFilter> interface et un jeu de méthodes substituables qui traitent les messages Windows à différents points dans la file d’attente. Ces méthodes ont tous un <xref:System.Windows.Forms.Message> paramètre, qui encapsule les détails de bas niveau des messages Windows. Vous pouvez implémenter ou substituer ces méthodes pour examiner le message, puis consommer le message ou la passer au consommateur suivant dans la file d’attente. Le tableau suivant présente les méthodes qui traitent tous les messages Windows dans les Windows Forms.  
   
-|Méthode|Remarques|  
+|Méthode|Notes|  
 |------------|-----------|  
 |<xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A>|Cette méthode intercepte en file d’attente des messages Windows (également appelé validées) au niveau de l’application.|  
 |<xref:System.Windows.Forms.Control.PreProcessMessage%2A>|Cette méthode intercepte les messages Windows au niveau du formulaire et de contrôle avant qu’ils ont été traités.|  

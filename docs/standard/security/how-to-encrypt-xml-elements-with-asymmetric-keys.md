@@ -27,11 +27,14 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: bd8b63ab02527f66d30251f21a63e19ce4da50ed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: cadd6e5af8ed95da34091bc3a9f3ac8d5af4e9cb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-encrypt-xml-elements-with-asymmetric-keys"></a>Comment : chiffrer des éléments XML avec des clés asymétriques
 Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour chiffrer un élément d'un document XML.  Le chiffrement XML est une méthode normalisée qui permet d'échanger et de stocker des données XML chiffrées sans que celles-ci ne puissent être lues facilement.  Pour plus d'informations sur la norme de chiffrement XML, consultez la spécification W3C (World Wide Web Consortium) relative au chiffrement XML, située à l'adresse http://www.w3.org/TR/xmldsig-core/.  

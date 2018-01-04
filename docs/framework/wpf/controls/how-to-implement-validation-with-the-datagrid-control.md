@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8c611919b5702877db34e9a02e367312678a1b27
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 78846e2b6a1d73e011441b0ccb46b8aad365d5dd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-validation-with-the-datagrid-control"></a>Comment : implémenter la validation avec le contrôle DataGrid
 Le <xref:System.Windows.Controls.DataGrid> contrôle vous permet d’effectuer la validation au niveau de la cellule et la ligne. Validation au niveau de la cellule vous valider les propriétés individuelles d’un objet de données lié lorsqu’un utilisateur met à jour une valeur. La validation au niveau des lignes vous validez les objets de données lorsqu’un utilisateur valide des modifications apportées à une ligne. Vous pouvez également fournir une rétroaction visuelle personnalisée pour les erreurs de validation, ou utiliser la rétroaction visuelle par défaut qui le <xref:System.Windows.Controls.DataGrid> fournit du contrôle.  
@@ -69,7 +70,7 @@ Le <xref:System.Windows.Controls.DataGrid> contrôle vous permet d’effectuer l
   
 ### <a name="to-customize-row-validation-feedback"></a>Pour personnaliser les commentaires de validation de ligne  
   
--   définir la propriété <xref:System.Windows.Controls.DataGrid.RowValidationErrorTemplate%2A?displayProperty=nameWithType> ; Cette propriété vous permet de personnaliser les commentaires de validation de ligne de chaque <xref:System.Windows.Controls.DataGrid> contrôles. Vous pouvez également affecter plusieurs contrôles en utilisant un style de ligne implicite pour définir la <xref:System.Windows.Controls.DataGridRow.ValidationErrorTemplate%2A?displayProperty=nameWithType> propriété.  
+-   Définissez la propriété <xref:System.Windows.Controls.DataGrid.RowValidationErrorTemplate%2A?displayProperty=nameWithType>. Cette propriété vous permet de personnaliser les commentaires de validation de ligne de chaque <xref:System.Windows.Controls.DataGrid> contrôles. Vous pouvez également affecter plusieurs contrôles en utilisant un style de ligne implicite pour définir la <xref:System.Windows.Controls.DataGridRow.ValidationErrorTemplate%2A?displayProperty=nameWithType> propriété.  
   
      L’exemple suivant remplace les commentaires de validation de ligne par défaut par un indicateur plus visible. Lorsqu’un utilisateur entre une valeur non valide, un cercle rouge avec un point d’exclamation blanc s’affiche dans l’en-tête de ligne. Cela se produit pour les erreurs de validation de ligne et de cellule. Le message d’erreur associé s’affiche dans une info-bulle.  
   

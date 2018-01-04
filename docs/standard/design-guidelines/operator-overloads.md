@@ -18,11 +18,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ffd472a7c410bd541ea0382f05f7ed92acb0e688
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 1d17aa00ce551d951b0e178304632572abf592b6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="operator-overloads"></a>Surcharges d'opérateurs
 Les surcharges d’opérateur autorise les types de framework apparaissent comme si elles étaient des primitives de langage intégré.  
@@ -121,5 +124,5 @@ Les surcharges d’opérateur autorise les types de framework apparaissent comme
  *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi  
- [Règles de conception de membres](../../../docs/standard/design-guidelines/member.md)  
+ [Instructions de conception des membres](../../../docs/standard/design-guidelines/member.md)  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)

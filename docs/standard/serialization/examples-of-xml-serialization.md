@@ -23,11 +23,14 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 550b1e8bf04bf7e2cec52ce26d647022688c4004
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ee2baef3ddcaebb494f1eae2813e861f93e489dd
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="examples-of-xml-serialization"></a>Exemples de sérialisation XML
 La sérialisation XML peut prendre plusieurs formes, de la plus simple à la plus complexe. Par exemple, vous pouvez sérialiser une classe qui se compose simplement de champs et de propriétés publics, comme illustré dans [Introduction à la sérialisation XML](../../../docs/standard/serialization/introducing-xml-serialization.md). Les exemples de code suivants abordent différents scénarios avancés, y compris la manière d'utiliser la sérialisation XML pour générer un flux de données XML qui se conforme à un document de schéma XML (XSD) spécifique.  

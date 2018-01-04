@@ -19,11 +19,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 83f59f2df9311f30995b18529a733a5569c85ee0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c491ff4e231d932b3714d2d059b52bad2502368c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-handle-a-routed-event"></a>Comment : gérer un événement routé
 Cet exemple illustre le fonctionnement des événements de propagation et indique comment écrire un gestionnaire permettant de traiter les données des événements routés.  

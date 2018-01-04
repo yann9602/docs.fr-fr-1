@@ -22,16 +22,17 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dc8ffe9ad68060d9dfbcafe99133a736237a2bb3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c977e8a4a23f9739541cf28d9e34ad9e8db1daf0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-with-ink"></a>Débuter avec l'encre
 Incorporation d’encre numérique dans vos applications est plus facile que jamais. Encre a évolué d’être un corollaire à la méthode COM et Windows Forms de la programmation à la réalisation d’une intégration complète dans le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Vous n’avez pas besoin installer les kits de développement logiciel distincts ou des bibliothèques runtime.  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour utiliser les exemples suivants, vous devez d’abord installer Microsoft Visual Studio 2005 et le [!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)]. Vous devez également comprendre comment écrire des applications pour [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Pour plus d’informations sur la prise en main de la [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], consultez [procédure pas à pas : Ma première application de bureau WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
 ## <a name="quick-start"></a>Démarrage rapide  

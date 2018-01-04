@@ -19,11 +19,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b7e1686dca2b96e339917b6dd4861f0f43d20d66
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3ee73e8677ca3fd48f4bb3c94bd4e15c49a564c7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="enum-design"></a>Conception d'énumérations
 Les énumérations sont un type spécial de type valeur. Il existe deux genres d’enums : les enums enums et indicateur simples.  
@@ -105,5 +108,5 @@ Les énumérations sont un type spécial de type valeur. Il existe deux genres d
  *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi  
- [Règles de conception de type](../../../docs/standard/design-guidelines/type.md)  
+ [Instructions pour la conception des types](../../../docs/standard/design-guidelines/type.md)  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)

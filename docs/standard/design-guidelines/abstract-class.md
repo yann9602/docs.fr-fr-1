@@ -20,11 +20,14 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d7b680c3377cbfa40734a57f9408d9487dbf3769
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 739f86acd534549bc997dc7a939cf43a0c6fc3cb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="abstract-class-design"></a>Conception de classes abstraites
 **X ne sont pas** définir des constructeurs internes publiques ou protégées dans les types abstraits.  
@@ -46,5 +49,5 @@ ms.lasthandoff: 11/21/2017
  *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi  
- [Règles de conception de type](../../../docs/standard/design-guidelines/type.md)  
+ [Instructions pour la conception des types](../../../docs/standard/design-guidelines/type.md)  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)

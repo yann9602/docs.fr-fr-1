@@ -21,11 +21,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a6f05f9f1fef335bc0bae578220d458ade9bfe06
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f24be0ce97071905ce53610e5b44db8f92f24e0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-sort-a-gridview-column-when-a-header-is-clicked"></a>Comment : trier une colonne GridView lors d'un clic sur un en-tête
 Cet exemple montre comment créer un <xref:System.Windows.Controls.ListView> contrôle qui implémente un <xref:System.Windows.Controls.GridView> afficher en mode trie le contenu des données lorsqu’un utilisateur clique sur un en-tête de colonne.  

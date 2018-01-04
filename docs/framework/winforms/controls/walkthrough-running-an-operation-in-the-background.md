@@ -24,11 +24,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: de485eb0b9c67ee9c3c897b6521971f50aaf751c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b9be47fd57e49973c0f77a069c4f3371e4f63194
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-running-an-operation-in-the-background"></a>Procédure pas à pas : exécution d'une opération en arrière-plan
 Si vous avez une opération qui prendra un certain temps et que vous ne souhaitez pas causer de retards dans votre interface utilisateur, vous pouvez utiliser la classe <xref:System.ComponentModel.BackgroundWorker> pour exécuter l'opération sur un autre thread.  
@@ -42,7 +43,7 @@ Si vous avez une opération qui prendra un certain temps et que vous ne souhaite
   
 1.  Avec votre formulaire actif dans le Concepteur Windows Forms, faites glisser deux <xref:System.Windows.Forms.Button> des contrôles de la **boîte à outils** pour le formulaire et définissez la `Name` et <xref:System.Windows.Forms.Control.Text%2A> propriétés des boutons conformément au tableau suivant.  
   
-    |Bouton|Nom|Texte|  
+    |Bouton|Name|Texte|  
     |------------|----------|----------|  
     |`button1`|`startBtn`|**Start**|  
     |`button2`|`cancelBtn`|**Annuler**|  

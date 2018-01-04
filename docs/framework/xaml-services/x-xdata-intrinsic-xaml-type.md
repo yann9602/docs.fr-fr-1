@@ -21,11 +21,12 @@ caps.latest.revision: "17"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 3e448c28be6515748254e267b70f3c898b9226a1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ec46d0363e5b10d3bd3bd3f9c8f4d3694abc1c8d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xxdata-intrinsic-xaml-type"></a>x:XData, type XAML intrinsèque
 Active le positionnement des îlots de données XML dans une production XAML. Éléments XML `x:XData` ne doivent pas être traités par les processeurs XAML comme s’ils faisaient partie de l’espace de noms XAML par défaut d’agissant ou tout autre espace de noms XAML. `x:XData`peut contenir arbitraire XML bien formé.  
@@ -47,7 +48,7 @@ Active le positionnement des îlots de données XML dans une production XAML. É
 |`elementDataRoot`|L’élément racine unique de l’îlot de données incorporé. La plupart des consommateurs éventuels, XML qui ne dispose pas d’une racine unique est considéré comme non valide. En particulier, une racine unique est obligatoire si le `x:XData` est destiné à une source de données XML WPF ou bien d’autres technologies qui utilisent des sources XML pour la liaison de données.|  
 |`[elementData]`|Facultatif. Code XML qui représente les données XML. N’importe quel nombre d’éléments peut être contenu comme données d’élément et les éléments imbriqués peuvent être contenus dans d’autres éléments ; Toutefois, les règles générales de XML s’appliquent.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les éléments XML dans un `x:XData` objet peut déclarer de nouveau tous les espaces de noms possibles et les préfixes le conteneur XMLDOM dans les données.  
   
  L’accès par programme aux données XML et le `x:XData` type XAML intrinsèque est possible dans les Services XAML .NET Framework via la <xref:System.Windows.Markup.XData> classe.  

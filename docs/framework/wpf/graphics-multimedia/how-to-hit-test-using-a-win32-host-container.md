@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9a5cb77a53cbb106593b70d618bab67ef816e901
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 142c2faa01c32ac6602e80eaef18779f93154aea
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-hit-test-using-a-win32-host-container"></a>Comment : effectuer un test de positionnement à l'aide d'un conteneur hôte Win32
 Vous pouvez créer des objets visuels dans un [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] fenêtre en fournissant un hôte de conteneur de fenêtre pour les objets visuels. Pour assurer la gestion des événements des objets visuels du conteneur, vous devez traiter les messages transmis à la boucle de filtre de messages du conteneur de fenêtre hôte. Reportez-vous à [didacticiel : hébergeant des objets dans une Application Win32 Visual](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md) pour plus d’informations sur l’hébergement d’objets visuels dans un [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fenêtre.  

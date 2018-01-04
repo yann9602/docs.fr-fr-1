@@ -21,11 +21,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 611a2d2de56025e2f1b5add6106294834586f9af
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b5fde62e2e1ab17b26c91051f68b7d4225450c60
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="intercepting-input-from-the-stylus"></a>Interception d'entrée à partir du stylet
 Le <xref:System.Windows.Input.StylusPlugIns> architecture fournit un mécanisme pour l’implémentation du contrôle de bas niveau sur <xref:System.Windows.Input.Stylus> d’entrée et de la création de l’encre numérique <xref:System.Windows.Ink.Stroke> objets. La <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> classe fournit un mécanisme vous permet d’implémenter un comportement personnalisé et l’appliquer au flux de données provenant du périphérique stylet pour des performances optimales.  

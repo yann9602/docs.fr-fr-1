@@ -21,11 +21,12 @@ caps.latest.revision: "21"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: befbf9960afffcd30bc96863dcc00b4acad2c21a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8419a1e89d5e94b9868b0fd1fb81540253efca5d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="-escape-sequence--markup-extension"></a>{}, séquence d’échappement/extension de balisage
 Fournit la séquence d’échappement XAML pour les valeurs d’attribut. La séquence d’échappement autorise les valeurs suivantes dans l’attribut doit être interprété comme un littéral.  
@@ -52,7 +53,7 @@ Fournit la séquence d’échappement XAML pour les valeurs d’attribut. La sé
 |-|-|  
 |*literalValue*|La chaîne littérale qui suit la séquence d’échappement. En général, cette chaîne contient une accolade ouvrante ou fermante ({ou}).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La séquence d’échappement ({}) est utilisée afin qu’une accolade ouvrante ({}) peut être utilisée comme un caractère littéral dans XAML.  
   
  Lecteurs XAML utilisent en général l’accolade ouvrante ({}) pour indiquer le point d’entrée d’une extension de balisage ; toutefois, ils vérifient d’abord le caractère suivant pour déterminer s’il s’agit d’une accolade fermante (}). Uniquement lorsque les deux accolades ({}) sont adjacentes, sont elles considérées comme une séquence d’échappement.  

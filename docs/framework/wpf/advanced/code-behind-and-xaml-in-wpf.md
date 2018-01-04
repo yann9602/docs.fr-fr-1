@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 241fe815f1a7c2e70a664068a47d511a3dbd7e0a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 19c7c2cdd49663a57a4184027fd7d6ad8fcd7656
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="code-behind-and-xaml-in-wpf"></a>Code-behind et XAML dans WPF
 <a name="introduction"></a>Code-behind est un terme utilisé pour décrire le code joint avec les objets définis par balisage, lorsqu’un [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page est compilé par balisage. Cette rubrique décrit la configuration requise pour le code-behind ainsi qu’un mécanisme de code inline d’autre code dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
@@ -38,7 +39,7 @@ ms.lasthandoff: 11/21/2017
 -   [Limitations de Code inline](#Inline_Code_Limitations)  
   
 <a name="Prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Cette rubrique suppose que vous avez lu la [vue d’ensemble du XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) et avoir des connaissances de base de la [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] et une programmation orientée objet.  
   
 <a name="codebehind_and_the_xaml_language"></a>   

@@ -18,17 +18,18 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f2b04dfa51f578ba80e2b766f455719afbb86b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9cd8f9b14f114060ebec8e336c1212d61fa19c83
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="path-markup-syntax"></a>Syntaxe XAML pour les tracés
 Chemins d’accès sont décrites dans [formes et dessins de base dans WPF Overview](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md) et [vue d’ensemble de Geometry](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md), toutefois, cette rubrique décrit en détail la mini-langue puissante et plus complexe, vous pouvez utiliser pour spécifier le chemin d’accès les géométries de manière plus compacte en [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
   
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette rubrique, vous devez être familiarisé avec les fonctionnalités de base de <xref:System.Windows.Media.Geometry> objets. Pour plus d’informations, consultez la [vue d’ensemble de Geometry](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md).  
   
 <a name="abouthisdocument"></a>   

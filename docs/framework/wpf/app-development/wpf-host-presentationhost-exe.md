@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8b7662213d7204675de7e8681b6fc8141f04dd21
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 1c5a9df438353701932a3e732d6df28b08402ee8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-host-presentationhostexe"></a>Hôte WPF (PresentationHost.exe)
 L’hôte [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] (PresentationHost.exe) est l’application qui permet aux applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] d’être hébergées par des navigateurs compatibles (notamment [!INCLUDE[TLA#tla_ie6](../../../../includes/tlasharptla-ie6-md.md)] et les versions ultérieures). Par défaut, l’hôte [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] est inscrit en tant qu’interpréteur de commandes et gestionnaire [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] pour le contenu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] hébergé par les navigateurs, ce qui inclut :  

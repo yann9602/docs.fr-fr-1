@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6f38a6f900ee2b253708da4b63bdc2f474fa3ab1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 804c4ffd54a0f8cc94e8849a223b1af8b27a58b8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-hook-up-a-command-to-a-control-with-no-command-support"></a>Comment : raccorder une commande à un contrôle sans prise en charge de commande
 L’exemple suivant montre comment raccorder un <xref:System.Windows.Input.RoutedCommand> à un <xref:System.Windows.Controls.Control> qui n’ont pas intégrée prise en charge de la commande.  Pour obtenir un exemple complet qui raccorde des commandes à plusieurs sources, consultez l’exemple [Créer un exemple RoutedCommand personnalisé](http://go.microsoft.com/fwlink/?LinkID=159980).  

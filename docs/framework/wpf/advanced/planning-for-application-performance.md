@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f47f56e28064c852e5d8f721bdb3a0f73172c12a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6bdb140d90de02fa817c55a05f40e57fcd0d636c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="planning-for-application-performance"></a>Planification des performances des applications
 La réussite d’atteindre vos objectifs de performances dépend du degré de l’élaboration de votre stratégie de performances. La planification est la première étape du développement d’un produit. Cette rubrique décrit quelques règles simples pour le développement d’une stratégie de bonnes performances.  
@@ -49,6 +50,6 @@ La réussite d’atteindre vos objectifs de performances dépend du degré de l�
  [Graphiques 2D et acquisition d'images](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
  [Comportement de l’objet](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
  [Ressources d'application](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
- [Texte](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
+ [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
  [Liaison de données](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
  [Autres recommandations relatives aux performances](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

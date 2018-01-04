@@ -17,17 +17,18 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6cd077d1e24fa50dc42a2169b45fe38930cc76c6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2f34fbf48328ea24815615345e855144b8b42d2b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="opacity-masks-overview"></a>Vue d'ensemble des masques d'opacité
 Les masques d’opacité vous permettent de rendre les parties d’un élément ou d’un visuel totalement ou partiellement transparentes. Pour créer un masque d’opacité, vous appliquez un <xref:System.Windows.Media.Brush> à la <xref:System.Windows.UIElement.OpacityMask%2A> propriété d’un élément ou <xref:System.Windows.Media.Visual>.  Le pinceau est mappé à l’élément ou à l’objet visuel, et la valeur d’opacité de chaque pixel de pinceau est utilisée pour déterminer l’opacité obtenu pour chaque pixel correspondant de l’élément ou de l’objet visuel.  
   
 <a name="prereqs"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Cette vue d’ensemble suppose que vous êtes familiarisé avec <xref:System.Windows.Media.Brush> objets. Pour une introduction à l’utilisation des pinceaux, consultez [Vue d’ensemble de la peinture avec des couleurs unies ou des dégradés](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md). Pour plus d’informations sur <xref:System.Windows.Media.ImageBrush> et <xref:System.Windows.Media.DrawingBrush>, consultez [peinture avec des Images, des dessins et des éléments visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
   
 <a name="opacitymasks"></a>   

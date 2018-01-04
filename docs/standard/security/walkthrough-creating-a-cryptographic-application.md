@@ -20,11 +20,14 @@ caps.latest.revision: "17"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: ab596fd10de81e60e6396268cbd5c5b31aa13078
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 869d35a15a028e6df09dea281ac653ab8b9a28d6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Procédure pas à pas : création d'une application de chiffrement
 Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. Les exemples de code sont conçus pour une application Windows Forms. Cette application ne montre pas de scénarios du monde réel, tels que l'utilisation de cartes à puce. Elle montre les principes fondamentaux du chiffrement et du déchiffrement.  
@@ -52,7 +55,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
 |Importation d'une clé publique|Charge la clé d'un fichier XML dans le conteneur de clé.|  
 |Test de l'application|Répertorie les procédures pour le test de cette application.|  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
   
 -   Références aux espaces de noms <xref:System.IO> et <xref:System.Security.Cryptography>.  
@@ -60,7 +63,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
 ## <a name="creating-a-windows-forms-application"></a>Création d'une application Windows Forms  
  La plupart des exemples de code de cette procédure pas à pas sont conçus pour être des gestionnaires d'événements pour des contrôles de bouton. Le tableau suivant répertorie les contrôles requis par l'exemple d'application, ainsi que leur nom pour correspondre aux exemples de code.  
   
-|Contrôle|Nom|Propriété Text (si nécessaire)|  
+|Contrôle|Name|Propriété Text (si nécessaire)|  
 |-------------|----------|---------------------------------|  
 |<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|Chiffrer le fichier|  
 |<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|Déchiffrer le fichier|  

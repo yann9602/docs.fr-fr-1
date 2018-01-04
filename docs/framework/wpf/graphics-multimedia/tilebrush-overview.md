@@ -19,18 +19,19 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f759a56233e8cf2b1c1d39862706be518fefe43
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a7d5e9fa36ddeda0c724eeb0bb46a64d0ba36c99
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tilebrush-overview"></a>Vue d'ensemble de TileBrush
 <xref:System.Windows.Media.TileBrush>objets vous permettent de contrôler la peinture d’une zone avec une image, précisément <xref:System.Windows.Media.Drawing>, ou <xref:System.Windows.Media.Visual>. Cette rubrique explique comment utiliser <xref:System.Windows.Media.TileBrush> fonctionnalités pour mieux contrôler la façon un <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, ou <xref:System.Windows.Media.VisualBrush> peint une zone.  
   
   
 <a name="prerequisite"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette rubrique, il est utile de comprendre comment utiliser les fonctionnalités de base de la <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, ou <xref:System.Windows.Media.VisualBrush> classe. Pour une introduction à ces types, consultez le [peinture avec des Images, des dessins et des éléments visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
   
 <a name="tilebrush"></a>   

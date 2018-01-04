@@ -27,11 +27,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8580f805e23732f24248a046201c87b0a5a370b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4d688bb460b01c0b3fe4d7571916b887cd485b87
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-architecture"></a>Architecture de WPF
 Cette rubrique propose une visite guidée de la hiérarchie de classes [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]. Elle couvre la plupart des principaux sous-systèmes de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] et décrit leur mode d’interaction. Elle passe également en revue certains choix opérés par les architectes de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -144,7 +145,7 @@ Cette rubrique propose une visite guidée de la hiérarchie de classes [!INCLUDE
  Le modèle de contenu est un aspect commun du modèle de données des contrôles. Si vous considérez un contrôle comme <xref:System.Windows.Controls.Button>, vous verrez qu’il a une propriété nommée « Content » de type <xref:System.Object>. Dans [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et [!INCLUDE[TLA#tla_aspnet](../../../../includes/tlasharptla-aspnet-md.md)], cette propriété est généralement une chaîne, mais cela limite le type de contenu que vous pouvez placer dans un bouton. Le contenu d’un bouton peut être une chaîne simple, un objet de données complexe ou une arborescence entière d’éléments. Dans le cas d’un objet de données, le modèle de données sert à créer un affichage.  
   
 <a name="Summary"></a>   
-## <a name="summary"></a>Résumé  
+## <a name="summary"></a>Récapitulatif  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] est conçu pour vous permettre de créer des systèmes de présentation dynamiques, pilotés par les données. Chaque partie du système est destinée à la création d’objets à l’aide de jeux de propriétés qui pilotent le comportement. La liaison de données est une fonctionnalité essentielle du système qui est intégrée au niveau de chaque couche.  
   
  Les applications standard créent un affichage, puis effectuent une liaison avec certaines données. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], tout ce qui concerne le contrôle, chaque aspect de l’affichage, est généré par un certain type de liaison de données. Le texte placé dans un bouton est affiché en créant un contrôle composé à l’intérieur du bouton et en liant son affichage à la propriété de contenu du bouton.  

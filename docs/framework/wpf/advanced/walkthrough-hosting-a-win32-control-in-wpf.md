@@ -19,11 +19,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 566be72cf330f6da83987f5e693176552471f091
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0795875b4d5f1a91b7c570320acb078b845ae712
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Procédure pas à pas : hébergement d'un contrôle Win32 dans WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un environnement de création d'applications élaboré. Toutefois, lorsque vous avez beaucoup investi [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] code, il peut être plus efficace de réutiliser au moins certains de ce code dans votre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application plutôt que de le réécrire complètement. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]fournit un mécanisme simple pour héberger un [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fenêtre, dans un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] page.  
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/21/2017
   
   
 <a name="requirements"></a>   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  Cette rubrique suppose une connaissance de base à la fois avec [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] de programmation. Pour une introduction à [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] de programmation, consultez [mise en route](../../../../docs/framework/wpf/getting-started/index.md). Pour obtenir une présentation [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] de programmation, vous devez référencer un des nombreux livres sur l’objet, en particulier *programmation Windows* de Charles Petzold.  
   
  Étant donné que l’exemple qui accompagne cette rubrique est implémenté dans [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)], il utilise les [!INCLUDE[TLA#tla_pinvoke](../../../../includes/tlasharptla-pinvoke-md.md)] pour accéder à la [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)]. Se familiariser avec [!INCLUDE[TLA2#tla_pinvoke](../../../../includes/tla2sharptla-pinvoke-md.md)] est utile, mais n’est pas indispensable.  

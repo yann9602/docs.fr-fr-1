@@ -19,11 +19,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f4e10f7136b636829f99da34388db7676810cd06
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d35b65f88452085e601569b9dcfc62a541a1655f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="focus-overview"></a>Vue d'ensemble du focus
 Dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], il existe deux concepts principaux associés au focus : le focus clavier et le focus logique.  Le focus clavier fait référence à l’élément qui reçoit une entrée au clavier, tandis que le focus logique fait référence à l’élément d’une portée de focus qui a le focus.  Ces concepts sont présentés en détail dans cette vue d’ensemble.  Il est important de bien comprendre les différences entre ces concepts lors de la création d’applications complexes qui comportent plusieurs régions où le focus peut être obtenu.  

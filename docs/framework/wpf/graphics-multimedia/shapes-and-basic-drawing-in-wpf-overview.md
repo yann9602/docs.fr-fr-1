@@ -23,11 +23,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 134f42da7e4366d4d5bb971aaf26b2a3b57a4c1c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2912215cb8fb0090cef58e0201cc355da1f0bf19
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="shapes-and-basic-drawing-in-wpf-overview"></a>Vue d'ensemble des formes et dessins de base dans WPF
 Cette rubrique donne une vue d’ensemble de la façon de dessiner avec <xref:System.Windows.Shapes.Shape> objets. A <xref:System.Windows.Shapes.Shape> est un type de <xref:System.Windows.UIElement> qui vous permet de dessiner une forme à l’écran. Parce qu’ils sont des éléments d’interface utilisateur, <xref:System.Windows.Shapes.Shape> objets peuvent être utilisés à l’intérieur de <xref:System.Windows.Controls.Panel> la plupart des contrôles et éléments.  

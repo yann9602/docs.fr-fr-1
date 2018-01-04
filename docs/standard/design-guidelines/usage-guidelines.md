@@ -14,11 +14,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: df0d1c5f8bff9d4cb546378f281a44c696246553
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3f0a38c69dc286587e702b80ef4093bb98d78b5a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="usage-guidelines"></a>Indications relatives à l'utilisation
 Cette section contient des instructions pour l’utilisation des types courants dans les API accessibles publiquement. Il traite et l’utilisation directe intégrés Framework des types de (par exemple, les attributs de sérialisation) et la surcharge des opérateurs communs.  
@@ -33,7 +36,7 @@ Cette section contient des instructions pour l’utilisation des types courants 
  [Attributs](../../../docs/standard/design-guidelines/attributes.md)  
  [Collections](/cpp/mfc/collections)  
  [Sérialisation](../../../docs/standard/design-guidelines/serialization.md)  
- [Utilisation de System.Xml](../../../docs/standard/design-guidelines/system-xml-usage.md)  
+ [System.Xml, utilisation](../../../docs/standard/design-guidelines/system-xml-usage.md)  
  [Opérateurs d’égalité](../../../docs/standard/design-guidelines/equality-operators.md)  
  *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   

@@ -12,11 +12,14 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 41f71519ee8945ae93b85e7f6ac2725bf50d4913
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 005e78c32d49c8c1b204a3ac9376d943311868fd
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Outil XML Serializer Generator (Sgen.exe)
 L'outil XML Serializer Generator crée un assembly de sérialisation XML pour les types dans un assembly spécifié afin d'améliorer les performances de démarrage d'un <xref:System.Xml.Serialization.XmlSerializer> lorsqu'il sérialise ou désérialise les objets des types spécifiés.  
@@ -46,7 +49,7 @@ sgen [options]
 |**/v**[**erbose**]|Affiche la sortie en clair pour le débogage. Répertorie les types à partir de l'assembly cible qui ne peuvent pas être sérialisés avec le <xref:System.Xml.Serialization.XmlSerializer>.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Lorsque l'outil XML Serializer Generator n'est pas utilisé, un <xref:System.Xml.Serialization.XmlSerializer> génère un code de sérialisation et un assembly de sérialisation pour chacun des types chaque fois qu'une application est exécutée. Pour améliorer les performances du démarrage de la sérialisation XML, utilisez l'outil Sgen.exe afin de générer ces assemblys à l'avance. Ces assemblys peuvent ensuite être déployés avec l'application.  
   
  L'outil XML Serializer Generator peut également améliorer les performances des clients qui utilisent des proxies de service Web XML pour communiquer avec les serveurs car le processus de sérialisation n'entraîne pas de dégradation des performances lors du premier chargement du type.  

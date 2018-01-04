@@ -23,11 +23,12 @@ caps.latest.revision: "53"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e37c830e8f5290584db8320b041e05ac74839b78
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 45207de8b2e98dd1bd13879f8bbee1fdaf80aa24
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="drawings"></a>Dessins
 <xref:System.Windows.Media.Drawing>objets sont utilisés pour dessiner efficacement des formes, des images ou texte. Dessins sont utilisés lors de la peinture avec un <xref:System.Windows.Media.DrawingBrush> ou de programmation avec <xref:System.Windows.Media.Visual> objets.  

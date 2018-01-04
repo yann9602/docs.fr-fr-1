@@ -17,11 +17,12 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d010e83b0bc5a3e69f8a0c205247681d2bb3d26
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: a947e1e7ccfe31ffcb638f8e09aae5cdd594b449
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="stackpanel-how-to-topics"></a>Rubriques "Comment utiliser le StackPanel"
 Les rubriques de cette section décrivent comment utiliser le <xref:System.Windows.Controls.StackPanel> élément à la pile de contenu horizontalement ou verticalement.  

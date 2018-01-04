@@ -21,11 +21,12 @@ caps.latest.revision: "19"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: d1b21e2a654b18547c8da7da724c87946724f71f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d39249a5d1c0e230d21e6d889b92d0b57c98e2ad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xcode-intrinsic-xaml-type"></a>x:Code, type XAML intrinsèque
 Permet la sélection élective de code dans une production XAML. Ce code peut être compilé par une implémentation du processeur XAML qui compile XAML ou à gauche dans la production XAML pour une utilisation ultérieure comme interprétation par un runtime.  
@@ -38,7 +39,7 @@ Permet la sélection élective de code dans une production XAML. Ce code peut ê
 </x:Code>  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le code dans le `x:Code` élément de directive XAML est toujours interprété dans l’espace de noms XML général et les espaces de noms XAML fourni. Par conséquent, il est généralement nécessaire de placer le code utilisé pour `x:Code` à l’intérieur d’un `CDATA` segment.  
   
  `x:Code`n’est pas autorisé pour tous les mécanismes de déploiement d’une production XAML. Le code doit être compilé dans les infrastructures spécifiques (par exemple WPF). Dans d’autres infrastructures, `x:Code` utilisation peut être refusée de façon générale.  

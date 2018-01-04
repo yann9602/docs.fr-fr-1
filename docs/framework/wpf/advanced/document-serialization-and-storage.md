@@ -17,11 +17,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 34b517366a5f143a86388abff5ae13022bc710c3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9a232e1e2557bf1ecc6bb5f27f941e03a204aec6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="document-serialization-and-storage"></a>Sérialisation et stockage de documents
 [!INCLUDE[TLA#tla_winfx](../../../../includes/tlasharptla-winfx-md.md)] fournit un environnement performant pour créer et afficher des documents de haute qualité.  Grâce à des fonctionnalités améliorées prenant en charge des documents fixes et dynamiques, des contrôles d’affichage avancés et des fonctions graphiques 2D et 3D puissantes, les applications [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)] offrent un niveau de qualité et une expérience utilisateur inégalés.  Avec le [!INCLUDE[TLA2#tla_winfx](../../../../includes/tla2sharptla-winfx-md.md)], vous bénéficiez d’une fonctionnalité clé qui vous permet de gérer la représentation en mémoire d’un document avec souplesse. Vous pouvez aussi enregistrer et charger efficacement des documents d’un magasin de données, ce qui est indispensable pour presque toutes les applications.  Le processus de conversion d’un document d’une représentation en mémoire interne en magasin de données externe est appelé sérialisation.  Le processus inverse consistant à lire un magasin de données et à recréer l’instance en mémoire d’origine est appelé désérialisation.  

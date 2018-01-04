@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3bc3566cf25282749a09c5f2372cd1c81e3ce881
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 252da422ffb34e5865a29112e349e18d0f40327f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-control-key-frame-animation-timing"></a>Comment : contrôler le minutage d'une animation d'image clé
 Cet exemple montre comment contrôler le minutage des images clés d’une animation d’image clé. Comme les autres animations, les animations d’image clé ont une <xref:System.Windows.Media.Animation.Timeline.Duration%2A> propriété. En plus de spécifier la durée d’une animation, vous devez spécifier quelle partie de cette durée qui est allouée à chacune de ses images clés. Pour allouer du temps, vous spécifiez un <xref:System.Windows.Media.Animation.KeyTime> pour chaque image clé de l’animation.  

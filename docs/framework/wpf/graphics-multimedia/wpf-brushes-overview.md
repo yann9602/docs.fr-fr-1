@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: de5bcaeffb77f52b80c229cf0402c2c090e40d81
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ec7e566e6f56c215bbaeafdfb5c5e97cc0add0bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-brushes-overview"></a>Vue d'ensemble des pinceaux WPF
 Tous les éléments visibles sur votre écran sont visible, car il a été peint par un pinceau. Par exemple, un pinceau est utilisé pour décrire l’arrière-plan d’un bouton, le premier plan du texte et le remplissage de la forme. Cette rubrique présente les concepts de la peinture avec [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] de pinceaux et fournit des exemples. Les pinceaux permettent de peindre des objets de l’[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] aussi bien avec de simples couleurs unies qu’avec des ensembles complexes de modèles et d’images.  

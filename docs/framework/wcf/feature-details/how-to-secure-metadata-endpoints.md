@@ -16,11 +16,12 @@ caps.latest.revision: "13"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: e28b4dec851cc4115c2688540ebee151c91e4cd0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6923703230d6792d8938de149f64c41a3bf95699
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>Comment : sécuriser des points de terminaison de métadonnées
 Les métadonnées d'un service peuvent contenir des informations sensibles sur votre application dont un utilisateur malveillant peut tirer parti. Les consommateurs de votre service peuvent également avoir besoin d'un mécanisme sécurisé pour obtenir des métadonnées sur votre service. Par conséquent, il est parfois nécessaire de publier vos métadonnées à l'aide d'un point de terminaison sécurisé.  
@@ -106,7 +107,7 @@ Les métadonnées d'un service peuvent contenir des informations sensibles sur v
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior>  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>  
- [Comment : configurer un Port avec un certificat SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
+ [Guide pratique pour configurer un port avec un certificat SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
  [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [Considérations de sécurité avec des métadonnées](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
- [Sécurisation des Services et Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+ [Considérations sur la sécurité des métadonnées](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
+ [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

@@ -20,11 +20,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8ac462f3b49788fd909f9d9f4fc785db74704ff6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c0a7c9920b321f15f3f01a64fbfc80693042a025
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimizing-performance-application-resources"></a>Optimisation des performances : ressources d'application
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]vous permet de partager des ressources d’application afin que vous pouvez prendre en charge une apparence cohérente ou un comportement sur les éléments de type semblables. Cette rubrique fournit quelques recommandations dans ce domaine qui peuvent vous aider à améliorent les performances de vos applications.  

@@ -26,18 +26,19 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 89a352baed4d07c3c935643e9962131a20af2802
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c12892c4761f0158153c87464066dd727c83bfc3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Procédure pas à pas : implémentation d'un formulaire qui utilise une opération d'arrière-plan
 Si vous avez une opération qui prendra un certain temps, et vous ne souhaitez pas votre interface utilisateur (IU) cesse de répondre ou « se bloque », vous pouvez utiliser la <xref:System.ComponentModel.BackgroundWorker> classe pour exécuter l’opération sur un autre thread.  
   
  Cette procédure pas à pas montre comment utiliser la <xref:System.ComponentModel.BackgroundWorker> classe pour effectuer des calculs de longue durées « en arrière-plan », tandis que l’interface utilisateur reste réactive.  Lorsque vous avez terminé, vous disposerez d’une application qui calcule les nombres de Fibonacci de manière asynchrone. Même si le calcul d’un nombre de Fibonacci élevé peut prendre beaucoup de temps, le thread d’interface utilisateur principal ne sera pas interrompu et le formulaire restera réactif tout au long de l’opération de calcul.  
   
- Cette procédure pas à pas décrit notamment les tâches suivantes :  
+ Cette procédure pas à pas décrit notamment les tâches suivantes :  
   
 -   Création d’une application Windows  
   

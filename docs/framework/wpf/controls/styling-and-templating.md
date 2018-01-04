@@ -26,11 +26,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5bd85383cc27687974fbf3689793a60569a4f97a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c33739d0e753146ffdc8b825d88c6ca7ba63fa1a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="styling-and-templating"></a>Application d'un style et création de modèles
 L’application d'un style et la création de modèles [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] font référence à une suite de fonctionnalités (styles, modèles, déclencheurs et tables de montage séquentiel) qui permettent aux développeurs et aux concepteurs de créer des effets visuellement attrayants et un aspect cohérent pour leur produit. Bien que les développeurs et/ou les concepteurs puissent largement personnaliser une à une l’apparence de leur application, il est essentiel d’utiliser un modèle de création de style et de modèle suffisamment robuste pour conserver et partager l’apparence dans une même application et entre différentes applications. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit ce modèle.  

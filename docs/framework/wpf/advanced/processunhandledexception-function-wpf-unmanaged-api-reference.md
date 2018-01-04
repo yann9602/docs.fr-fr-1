@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8328ae4bcbff54743e8df0a4b6ff6da3065ea470
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 9bc43b42c2e671e13076ba87ce72e054bd65d107
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="processunhandledexception-function-wpf-unmanaged-api-reference"></a>ProcessUnhandledException (fonction) (référence des API non managées WPF)
 Cette API prend en charge l’infrastructure de Windows Presentation Foundation (WPF) et n’est pas destinée à être utilisée directement depuis votre code.  
@@ -39,7 +40,7 @@ void __stdcall ProcessUnhandledException(
  errorMsg  
  Message d'erreur.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [configuration système requise du .NET Framework](../../../../docs/framework/get-started/system-requirements.md).  
   
  **DLL :**  

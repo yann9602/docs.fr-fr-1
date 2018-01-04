@@ -28,11 +28,12 @@ caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bc8914f4bc891aefa191ba5cf2b659afda0f905b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b40a4f1ba28559ee35dff9866539476e55cbd0fd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Stratégie de sécurité de WPF - sécurité de la plateforme
 Bien que [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] fournisse divers services de sécurité, il tire aussi parti des fonctionnalités de sécurité de la plateforme sous-jacente, qui inclut le système d'exploitation, le [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] et [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Ces couches se combinent pour fournir à [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] un modèle de sécurité de défense en profondeur renforcé qui essaie d'éviter le moindre point de défaillance, comme cela est illustré dans l'image suivante :  

@@ -18,11 +18,14 @@ caps.latest.revision: "17"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 91cd9a03ad1acf61681ecfad0edb061802c4362c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5098db5131c2e47c0b73efaac51477ef3b107761
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="using-standard-exception-types"></a>Utilisation de types d'exceptions standard
 Cette section décrit les exceptions standard fournies par le Framework et les détails d’utilisation. La liste n’est pas exhaustive. Reportez-vous à la documentation de référence du .NET Framework pour l’utilisation des autres types d’exception Framework.  
@@ -73,4 +76,4 @@ Cette section décrit les exceptions standard fournies par le Framework et les d
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Règles de conception pour les Exceptions](../../../docs/standard/design-guidelines/exceptions.md)
+ [Instructions de conception pour les exceptions](../../../docs/standard/design-guidelines/exceptions.md)

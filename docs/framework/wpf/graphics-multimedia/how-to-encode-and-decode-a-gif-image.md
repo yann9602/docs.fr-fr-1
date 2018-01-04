@@ -24,11 +24,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f7832e4197ef5c3a764da265a393b654db013876
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 9d098faf45edade4a37a4d8a6004d1e7b8acbd86
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-encode-and-decode-a-gif-image"></a>Comment : encoder et décoder une image GIF
 Les exemples suivants montrent comment décoder et encoder une [!INCLUDE[TLA#tla_gif](../../../../includes/tlasharptla-gif-md.md)] de l’image à l’aide spécifique au <xref:System.Windows.Media.Imaging.GifBitmapDecoder> et <xref:System.Windows.Media.Imaging.GifBitmapEncoder> objets.  

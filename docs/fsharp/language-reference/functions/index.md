@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 6dea2c3e-2f9d-4c9d-97a2-d8f9a72b6f4c
-ms.openlocfilehash: 9750e37647a3e382c7a8308c3ffede15729012d8
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: adb2b0b3680c97582dfefda41c43735f9f09e6c9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="functions"></a>Fonctions
 
@@ -32,7 +32,7 @@ let [inline] function-name parameter-list [ : return-type ] = function-body
 let rec function-name parameter-list = recursive-function-body
 ```
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 *function-name* est un identificateur qui représente la fonction. *parameter-list* se compose de paramètres consécutifs séparés par des espaces. Vous pouvez spécifier un type explicite pour chaque paramètre, comme décrit dans la section Paramètres. Si vous ne spécifiez pas un type d’argument spécifique, le compilateur tente de déduire le type du corps de la fonction. *function-body* se compose d’une expression. L’expression qui constitue le corps de la fonction est en général une expression composée comprenant plusieurs expressions qui débouchent sur une expression finale, c’est-à-dire la valeur de retour. *return-type* est un signe deux-points suivi par un type ; son utilisation est facultative. Si vous ne spécifiez pas explicitement le type de la valeur de retour, le compilateur détermine le type de retour à partir de l’expression finale.
 
 Une définition de fonction simple se présente comme suit :
@@ -188,11 +188,11 @@ let result2 = Compose2 2
 // Pipelining
 // Pipeline operator
 // ( |> ) : 'T1 -> ('T1 -> 'U) -> 'U
-let Pipeline1 x = addOne <| timesTwo x
+let Pipeline2 x = addOne x |> timesTwo
 
 // Backward pipeline operator
 // ( <| ) : ('T -> 'U) -> 'T -> 'U
-let Pipeline2 x = addOne x |> timesTwo
+let Pipeline1 x = addOne <| timesTwo x
 
 // Result is 5
 let result3 = Pipeline1 2

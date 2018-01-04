@@ -18,11 +18,12 @@ caps.latest.revision: "20"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 80b75897f54136849aa4b356c414145510d9cd3c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c382be7dabca90ef201fa24cfb79472955347eef
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="whitespace-processing-in-xaml"></a>Traitement des espaces blancs en XAML
 Selon les règles de langage XAML, un espace blanc significatif doit être traité par une implémentation du processeur [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] . Cette rubrique documente ces règles de langage XAML. Elle traite également de la gestion d'espaces blancs supplémentaires définie par l'implémentation [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] du processeur XAML et du writer XAML pour la sérialisation.  
@@ -49,7 +50,7 @@ Selon les règles de langage XAML, un espace blanc significatif doit être trait
   
 <a name="whitespace_in_inner_text_and_string_primitives"></a>   
 ## <a name="whitespace-in-inner-text-and-string-primitives"></a>Espace blanc dans le texte interne et primitives de chaîne  
- Les règles de normalisation précédentes s'appliquent au texte interne que l'on trouve dans les éléments XAML. Après la normalisation, un processeur XAML convertit tout texte interne en un type approprié, comme suit :  
+ Les règles de normalisation précédentes s'appliquent au texte interne que l'on trouve dans les éléments XAML. Après la normalisation, un processeur XAML convertit tout texte interne en un type approprié, comme suit :  
   
 -   Si le type de la propriété n'est pas une collection, mais n'est pas directement un type <xref:System.Object> , le processeur XAML tente de convertir en ce type à l'aide de son convertisseur de type. En cas d'échec de la conversion, une erreur de compilation survient.  
   

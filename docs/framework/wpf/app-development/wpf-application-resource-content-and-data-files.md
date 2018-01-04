@@ -28,11 +28,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 19fd82daabd5ed12776b2deee6bc850529a6ef23
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 284c3b6788fd43a10d65cfa8bd6c032e4b1e1cd6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Fichiers de ressources, de contenu et de données d'une application WPF
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]applications dépendent souvent de fichiers qui contiennent des données non exécutables, tels que [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], images, vidéo et audio. [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] assure une prise en charge spéciale pour la configuration, l’identification et l’utilisation de ces types de fichier de données, appelés fichiers de données d’application. Cette prise en charge repose sur un ensemble spécifique de types de fichier de données d’application, notamment :  

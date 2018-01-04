@@ -17,11 +17,12 @@ caps.latest.revision: "61"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c34bb03e27d223c09238f658563e8a368a0c6948
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b6aee3d6161d5a20a55e05e86c8479b9182d4e0e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="image-how-to-topics"></a>Rubriques "Comment" relatives à Image
 Les rubriques de cette section décrivent comment utiliser le <xref:System.Windows.Controls.Image> élément.  

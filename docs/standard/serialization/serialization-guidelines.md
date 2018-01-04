@@ -14,11 +14,14 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a695e10ae9b074f0f9dc913d2f687c82e00475dd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 27423607959af4b3201da8d83630b7827b2eeeb6
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="serialization-guidelines"></a>Indications concernant la sérialisation
 Ce document répertorie les indications à prendre en compte lors de la conception d'une API à sérialiser.  
@@ -144,7 +147,7 @@ Ce document répertorie les indications à prendre en compte lors de la concepti
      [!code-vb[SerializationGuidelines#11](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#11)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [À l’aide de contrats de données](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
+ [Utilisation de contrats de données](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
  [Sérialiseur de contrat de données](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)  
  [Types pris en charge par le sérialiseur de contrat de données](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)  
  [Sérialisation binaire](binary-serialization.md)  

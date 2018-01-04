@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9f23a99418d585f43348cd155bc65a3c3e73742b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ea1f2edf4677e3a04e6dd007dcf0fef9137180fe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-a-background-thread-to-search-for-files"></a>Comment : utiliser un thread d'arrière-plan pour rechercher des fichiers
 Le <xref:System.ComponentModel.BackgroundWorker> composant remplace et ajoute des fonctionnalités à la <xref:System.Threading> espace de noms ; Toutefois, le <xref:System.Threading> espace de noms est conservé pour la compatibilité descendante et une utilisation ultérieure, si vous choisissez. Pour plus d’informations, consultez [vue d’ensemble du composant BackgroundWorker](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md).  

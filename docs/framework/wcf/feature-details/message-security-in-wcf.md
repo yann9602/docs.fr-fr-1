@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 21cbeff554be6da77ce28e87b7f82ffdd58f542d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 92422e40742909dbf338ec2660e5494ffcdd31cc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="message-security-in-wcf"></a>Sécurité des messages dans WCF
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] possède deux principaux modes de sécurité (`Transport` et `Message`) et un troisième mode (`TransportWithMessageCredential`) qui associe les deux premiers. Cette rubrique présente la sécurité des messages et les raisons de l'employer.  
@@ -69,7 +70,7 @@ ms.lasthandoff: 12/02/2017
 -   Requiert l'implémentation de mécanismes de sécurité au niveau du XML et la prise en charge de la spécification WS-Security. L'interopérabilité peut en être affectée.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Sécurisation des Services et Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Sécurité de transport](../../../../docs/framework/wcf/feature-details/transport-security.md)  
- [Comment : utilise la sécurité de Transport et les informations d’identification de Message](../../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)  
+ [Guide pratique pour utiliser des informations d’identification de sécurité de transport et de message](../../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)  
  [Microsoft Patterns and Practices, chapitre 3 : sécurité de couche de Transport de mise en œuvre et de Message](http://go.microsoft.com/fwlink/?LinkId=88897)

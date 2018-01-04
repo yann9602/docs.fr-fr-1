@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 678d6f36c02c63825782b9f1c860285450a6a9f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3a8254bd60da379d006bc50ab3a935cd83b83d0a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-define-a-rectangle-using-a-rectanglegeometry"></a>Comment : définir un rectangle à l'aide d'un RectangleGeometry
 Cet exemple explique comment utiliser la <xref:System.Windows.Media.RectangleGeometry> classe pour décrire un rectangle.  

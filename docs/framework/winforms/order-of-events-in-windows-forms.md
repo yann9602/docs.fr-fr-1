@@ -20,11 +20,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f822133b44f0f32224402463b4332811f8cd52b5
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 03d2661752e5c0acb36fe76a8fa72b0638b4ad54
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="order-of-events-in-windows-forms"></a>Ordre des événements dans les Windows Forms
 L’ordre dans lequel les événements sont déclenchés dans les applications Windows Forms est particulièrement intéressant pour les développeurs soucieux de gérer chacun de ces événements tour à tour. Quand une situation nécessite une gestion méticuleuse des événements, par exemple quand vous redessinez certaines parties du formulaire, une connaissance de l'ordre exact dans lequel les événements sont déclenchés au moment de l'exécution est nécessaire. Cette rubrique fournit des détails sur l'ordre des événements durant plusieurs phases importantes de la durée de vie des applications et des contrôles. Pour plus d’informations spécifiques sur l’ordre des événements d’entrée de souris, consultez [les événements de souris dans les Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md). Pour une vue d’ensemble des événements dans les Windows Forms, consultez [vue d’ensemble des événements](../../../docs/framework/winforms/events-overview-windows-forms.md). Pour plus d’informations sur la création de gestionnaires d’événements, consultez [vue d’ensemble des gestionnaires d’événements](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md).  

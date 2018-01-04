@@ -20,17 +20,18 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1a8c196ea15617b13abe8311f8501ab32fd320c0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 132d41346e1c6dcec6ed39b3a9485f04fe8f845c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="property-animation-techniques-overview"></a>Vue d'ensemble des techniques d'animation de propriétés
 Cette rubrique décrit les différentes approches pour animer des propriétés : tables de montage séquentiel, animations locales, horloges et animations par image.  
   
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette rubrique, vous devez connaître les fonctionnalités de base utilisées pour l’animation, décrites dans [Vue d’ensemble de l’animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
   
 <a name="summary"></a>   

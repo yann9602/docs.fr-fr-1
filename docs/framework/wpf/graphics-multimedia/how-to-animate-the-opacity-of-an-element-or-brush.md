@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 808d29292e176af8d3af1fc0f4a02c48ee05ea35
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: c3b750e6ee21c8347d3896ec290f0ff564cc0a2c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-animate-the-opacity-of-an-element-or-brush"></a>Comment : animer l'opacité d'un élément ou d'un pinceau
 Pour rendre un élément d’infrastructure apparaître et disparaître, vous pouvez animer ses <xref:System.Windows.UIElement.Opacity%2A> propriété, ou vous pouvez animer la <xref:System.Windows.Media.Brush.Opacity%2A> propriété de la <xref:System.Windows.Media.Brush> (ou pinceaux) utilisé pour peindre. Animation opacité de l’élément rend et ses enfants apparaître et disparaître, mais animer le pinceau utilisé pour peindre l’élément vous permet d’être plus sélectif sur la partie de l’élément en fondu. Par exemple, vous pouvez animer l’opacité d’un pinceau utilisé pour peindre l’arrière-plan d’un bouton. Cela entraînerait l’arrière-plan du bouton à la disparition en fondu de vue, tout en laissant son texte complètement opaque.  

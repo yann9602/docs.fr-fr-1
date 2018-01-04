@@ -21,11 +21,12 @@ caps.latest.revision: "22"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 111c4a6ed78a908ae3b171dc9349a3c9b81750de
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1a4918e23a915ee07eace388ea2cea512c2e479d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xclassmodifier-directive"></a>x:ClassModifier, directive
 Modifie le comportement de compilation XAML lorsque `x:Class` est également fourni. Plus précisément, au lieu de la création d’un partiel `class` qui a un `Public` (la valeur par défaut), de niveau d’accès fourni `x:Class` est créé avec un `NotPublic` niveau d’accès. Ce comportement affecte le niveau d’accès de la classe dans les assemblys générés.  
@@ -47,7 +48,7 @@ Modifie le comportement de compilation XAML lorsque `x:Class` est également fou
 ## <a name="dependencies"></a>Dépendances  
  [x : Class](../../../docs/framework/xaml-services/x-class-directive.md) doit également être fourni sur le même élément, et cet élément doit être l’élément racine dans une page. Pour plus d’informations, consultez [ \[MS-XAML\] Section 4.3.1.8](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La valeur de `x:ClassModifier` dans les Services XAML .NET Framework utilisation varie selon le langage de programmation. La chaîne à utiliser dépend de la façon dont chaque langage implémente ses <xref:System.CodeDom.Compiler.CodeDomProvider> et les convertisseurs de type qu’il retourne pour définir les significations de <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> et <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, et si cette langue est respecte la casse.  
   
 -   Pour [!INCLUDE[TLA2#tla_cshrp](../../../includes/tla2sharptla-cshrp-md.md)], la chaîne à passer pour désigner <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> est `internal`.  

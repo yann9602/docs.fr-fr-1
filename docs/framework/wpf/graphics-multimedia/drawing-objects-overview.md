@@ -20,11 +20,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: acdbcac957f8dc682e0038600afa90ccdfd0fe14
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: abdc98a6fbf48a30f2f5702e7c2d78396381de6c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="drawing-objects-overview"></a>Vue d'ensemble des objets Drawing
 Cette rubrique présente les <xref:System.Windows.Media.Drawing> des objets et décrit comment les utiliser pour dessiner efficacement des formes, les images bitmap, le texte et support. Utilisez <xref:System.Windows.Media.Drawing> peindre des objets lorsque vous créez une image clipart, avec un <xref:System.Windows.Media.DrawingBrush>, ou utilisez <xref:System.Windows.Media.Visual> objets.  

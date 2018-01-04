@@ -23,11 +23,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4b460afb393c1b88b34281a8db1b61203e5c5962
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b2ede616b311119d174534e53cb3aaf9e366c7c4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-validating-data-in-the-windows-forms-datagridview-control"></a>Procédure pas à pas : validation des données dans le contrôle DataGridView Windows Forms
 Lorsque vous affichez les fonctionnalités d’entrée de données pour les utilisateurs, vous devez fréquemment valider les données entrées dans votre formulaire. La <xref:System.Windows.Forms.DataGridView> classe fournit un moyen pratique pour effectuer une validation avant que les données sont validées dans le magasin de données. Vous pouvez valider les données en gérant la <xref:System.Windows.Forms.DataGridView.CellValidating> événement, qui est déclenché par le <xref:System.Windows.Forms.DataGridView> lorsque la cellule active est modifiée.  
@@ -36,7 +37,7 @@ Lorsque vous affichez les fonctionnalités d’entrée de données pour les util
   
  Pour copier le code dans cette rubrique sous forme de liste unique, consultez [Comment : valider les données dans le contrôle DataGridView Windows Forms](../../../../docs/framework/winforms/controls/how-to-validate-data-in-the-windows-forms-datagridview-control.md).  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :  
   
 -   Accès à un serveur doté de la base de données Northwind SQL Server.  

@@ -18,11 +18,14 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 358b635ee74699d9d427e8fac23fabd70c6cfa98
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ae3193a2f9ef01f8e7f71235f15ed070e84ec11c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="attributes-that-control-encoded-soap-serialization"></a>Attributs qui contrôlent la sérialisation encodée selon le protocole SOAP 
 Le document World Wide Web Consortium (www.w3.org) intitulé « Simple Object Access Protocol (SOAP) 1.1 » contient une section facultative (section 5) qui décrit comment les paramètres SOAP peuvent être encodés. Pour se conformer à la section 5 de la spécification, vous devez utiliser un ensemble spécial d’attributs figurant dans l’espace de noms <xref:System.Xml.Serialization>. Appliquez ces attributs en fonction des classes et membres de classes, puis utilisez <xref:System.Xml.Serialization.XmlSerializer> pour sérialiser les instances de la ou des classes.  

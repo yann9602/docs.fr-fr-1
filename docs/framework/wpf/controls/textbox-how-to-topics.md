@@ -17,11 +17,12 @@ caps.latest.revision: "65"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e21053043a48b68dce229a7de20c4a7e38f7a62c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9cd716f4d9f072284b29958c79350d497442cf41
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textbox-how-to-topics"></a>Rubriques "Comment utiliser le TextBox"
 Cette section fournit des exemples qui montrent comment accomplir des tâches courantes à l’aide de la <xref:System.Windows.Controls.TextBox> contrôle.  

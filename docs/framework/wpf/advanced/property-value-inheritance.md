@@ -17,11 +17,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 538b2e9cc1ce11dc336a8d90ec84ba504baa6f2b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: eac3e03cfc0ca8bbb6f61f1bc6663c67fd6303f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="property-value-inheritance"></a>Héritage de la valeur de propriété
 L’héritage de la valeur de propriété est une fonctionnalité du système de propriétés [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. L’héritage de la valeur de propriété permet aux éléments enfants d’une arborescence d’éléments d’obtenir la valeur d’une propriété particulière des éléments parents, en héritant cette valeur telle qu’elle a été définie dans l’élément parent le plus proche. L’élément parent peut également avoir obtenu sa valeur par héritage de la valeur de propriété, le système peut donc remonter jusqu’à la racine de la page. L’héritage de la valeur de propriété n’est pas le comportement du système de propriétés par défaut. Une propriété doit être établie avec un paramètre de métadonnées particulier pour pouvoir lancer l’héritage de la valeur de propriété sur les éléments enfants.  

@@ -16,11 +16,12 @@ caps.latest.revision: "39"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 791b1b134717859a0e90914bf118fcf1dc3e1e4f
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 6f2bc9021ca376b7b27f74efed6866a907b480ad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Vue d’ensemble de la globalisation et de la localisation WPF
 Quand vous limitez la disponibilité de votre produit à une seule langue, vous limitez votre clientèle potentielle à une fraction des 6,5 milliards de personnes qui constituent la population mondiale. Si vous voulez que vos applications atteignent une audience mondiale, la localisation est le meilleur moyen, et le plus rentable, pour que votre produit atteigne plus de clients.  
@@ -179,7 +180,7 @@ Quand vous limitez la disponibilité de votre produit à une seule langue, vous 
   
  Utilisez votre éditeur CSV préféré prenant en charge Unicode pour éditer ce fichier. Filtrez toutes les entrées avec la catégorie de localisation « None ». Vous devez voir les entrées suivantes :  
   
-|Clé de la ressource|Catégorie de localisation|Valeur|  
+|Clé de la ressource|Catégorie de localisation|Value|  
 |-|-|-| 
 |Button_1:System.Windows.Controls.Button.$Content|Bouton|OK|  
 |Button_2:System.Windows.Controls.Button.$Content|Bouton|Annuler|  
@@ -191,14 +192,14 @@ Quand vous limitez la disponibilité de votre produit à une seule langue, vous 
   
  La Localisation de l’application en allemand nécessiterait les traductions suivantes :  
   
-|Clé de la ressource|Catégorie de localisation|Valeur|  
+|Clé de la ressource|Catégorie de localisation|Value|  
 |-|-|-| 
 |Button_1:System.Windows.Controls.Button.$Content|Bouton|OK|  
 |Button_2:System.Windows.Controls.Button.$Content|Bouton|Abbrechen|  
 |Button_3:System.Windows.Controls.Button.$Content|Bouton|Durchsuchen…|  
 |ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||  
 |TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|Geben Sie den Namen eines Programms, Ordners, Dokuments oder einer Internetresource an.|  
-|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Texte|Öffnen:|  
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Texte|Öffnen :|  
 |Window_1:System.Windows.Window.Title|Titre|Exécuter|  
   
  **Générer**  
@@ -266,9 +267,9 @@ Quand vous limitez la disponibilité de votre produit à une seule langue, vous 
   
  Ce commentaire est associé au contenu de TextBlock_1 et dans le cas de l’outil LocBaml (consultez [localiser une Application](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)), vous pouvez le constater dans la colonne 6 de la ligne TextBlock_1 dans le fichier de sortie .csv :  
   
-|Clé de la ressource|Catégorie|Lisible|Modifiable|Commentaire|Valeur|  
+|Clé de la ressource|Category|Lisible|Modifiable|Commentaire|Value|  
 |-|-|-|-|-|-|  
-|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|TRUE|TRUE|Ce caractère est utilisé comme règle de décoration.|&#124;|  
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|true|true|Ce caractère est utilisé comme règle de décoration.|&#124;|  
   
  Les commentaires peuvent être placés sur le contenu ou la propriété de n’importe quel élément en utilisant la syntaxe suivante :  
   

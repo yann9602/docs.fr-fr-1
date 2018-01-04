@@ -19,11 +19,14 @@ caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 97f0c63857b7af408613e1ffdfecb157d1e2c704
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 86fef5b18ac2c1c1b1dfee385b726484191fe714
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dispose-pattern"></a>Dispose, modèle
 Tous les programmes d’acquérir une ou plusieurs ressources système, telles que la mémoire, les handles du système ou les connexions de base de données, au cours de leur exécution. Les développeurs doivent être prudent lors de l’utilisation de ces ressources système, car ils doivent être libérées après que qu’ils ont été acquis et utilisés.  
@@ -290,5 +293,5 @@ public class ComplexResourceHolder : IDisposable {
  <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>  
  <xref:System.Object.Finalize%2A?displayProperty=nameWithType>  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Modèles de conception courants](../../../docs/standard/design-guidelines/common-design-patterns.md)  
+ [Modèles de design courants](../../../docs/standard/design-guidelines/common-design-patterns.md)  
  [Nettoyage de la mémoire](../../../docs/standard/garbage-collection/index.md)

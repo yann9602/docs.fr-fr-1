@@ -18,11 +18,12 @@ caps.latest.revision: "56"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8717e4e1e54e07109d2e00d9bbf13dbd9d8dde8b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 03caea0247c387c7787838080cd473ccf2b49b4f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="graphics-how-to-topics"></a>Rubriques "Comment" relatives aux graphiques
 Les rubriques suivantes montrent comment utiliser les fonctionnalités graphiques de la [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  

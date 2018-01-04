@@ -17,11 +17,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b1aa0eaccc26e1bd7cc6b78953dc0a782b2f952e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2c1fc02b64a494220070a1cfed928b616e4970c0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="exception-throwing"></a>Levée d'exceptions
 Levée d’exceptions des indications décrites dans cette section nécessitent une bonne définition de la signification de l’échec d’exécution. Échec d’exécution se produit chaque fois qu’un membre ne peut pas faire, il a été conçu pour faire (ce que le nom de membre implique). Par exemple, si le `OpenFile` méthode ne peut pas retourner un handle de fichier ouvert à l’appelant, il est considéré comme un échec d’exécution.  
@@ -74,4 +77,4 @@ Levée d’exceptions des indications décrites dans cette section nécessitent 
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Règles de conception pour les Exceptions](../../../docs/standard/design-guidelines/exceptions.md)
+ [Instructions de conception pour les exceptions](../../../docs/standard/design-guidelines/exceptions.md)

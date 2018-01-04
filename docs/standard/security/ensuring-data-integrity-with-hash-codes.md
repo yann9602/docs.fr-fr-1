@@ -24,11 +24,14 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b5d54a608ae87a1b453b4fa2b4b351ac5fc9f068
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: fcede920b0e57dee0449d8ff6d7c935b177dcbcd
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="ensuring-data-integrity-with-hash-codes"></a>Garantie de l'intégrité des données à l'aide des codes de hachage
 Une valeur de hachage est une valeur numérique de longueur fixe qui identifie les données de manière unique. Les valeurs de hachage permettent de représenter les grandes quantités de données sous forme de valeurs numériques beaucoup plus petites pour qu'elles puissent être utilisées avec des signatures numériques. Il est plus efficace de signer une valeur de hachage que de signer une valeur élevée. De même, les valeurs de hachage s'avèrent utiles pour vérifier l'intégrité des données envoyées via des canaux non sécurisés. La valeur de hachage des données reçues peut être comparée à celle des données envoyées pour déterminer si les données ont été modifiées.  

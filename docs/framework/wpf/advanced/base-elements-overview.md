@@ -14,11 +14,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 270388b8e3dda0342ba74187d8dc45616d0e769d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 52f0bb90d7eb61a199097813eb8313cd9c154f3a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="base-elements-overview"></a>Vue d'ensemble des éléments de base
 Un pourcentage élevé de classes dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] est dérivé de quatre classes souvent appelées classes d’éléments de base dans la documentation du [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. Ces classes sont <xref:System.Windows.UIElement>, <xref:System.Windows.FrameworkElement>, <xref:System.Windows.ContentElement>, et <xref:System.Windows.FrameworkContentElement>. Le <xref:System.Windows.DependencyObject> classe est également liée, car il s’agit d’une classe de base commune des deux <xref:System.Windows.UIElement> et<xref:System.Windows.ContentElement>  

@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: ae5cfd6cdb557aff4910f38ea0fb7f4b54afbbb0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b5bce62b03b97f182d314a379c9532fc05148050
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="understanding-xaml-node-stream-structures-and-concepts"></a>Fonctionnement des concepts et structures du flux de nœud XAML
 Les lecteurs et writers XAML tels qu'ils sont implémentés dans les services XAML .NET Framework sont basés sur le concept d'un flux de nœud XAML. Le flux de nœud XAML est une conceptualisation d'un ensemble de nœuds XAML. Dans cette conceptualisation, un processeur XAML parcourt la structure des relations de nœud dans le code XAML une par une. À tout moment, il n'existe qu'un seul enregistrement actuel ou position actuelle dans un flux de nœud XAML ouvert, et de nombreux aspects de l'API ne signalent que les informations disponibles à partir de cette position. Le nœud actuel dans un flux de nœud XAML peut être un objet, un membre ou une valeur. Si les lecteurs XAML traitent le XAML en tant que flux de nœud XAML, ils peuvent communiquer avec les writers XAML et activer un programme qui permet d'afficher, de manipuler ou de modifier le contenu d'un flux de nœud XAML pendant une opération de chemin de chargement ou d'enregistrement impliquant du code XAML. La conception de l'API des lecteurs et writers XAML et le concept de flux de nœud XAML sont similaires aux conceptions et concepts des lecteurs et writers associés précédents, tels que le [!INCLUDE[TLA#tla_xmldom](../../../includes/tlasharptla-xmldom-md.md)] et les classes <xref:System.Xml.XmlReader> et <xref:System.Xml.XmlWriter> . Cette rubrique aborde les concepts de flux de nœud XAML et décrit comment écrire des routines qui interagissent avec des représentations XAML au niveau des nœuds XAML.  
@@ -74,7 +75,7 @@ while (xxr.Read()) {
 }  
 ```  
   
- Cet exemple de base d'une boucle de nœud XAML de chemin de chargement connecte le lecteur et le writer XAML de façon transparente, comme si vous aviez utilisé <xref:System.Xaml.XamlServices.Parse%2A?displayProperty=nameWithType>. Mais cette structure de base est ensuite développée pour s'appliquer à votre scénario d'écriture ou de lecture. Voici quelques scénarios possibles :  
+ Cet exemple de base d'une boucle de nœud XAML de chemin de chargement connecte le lecteur et le writer XAML de façon transparente, comme si vous aviez utilisé <xref:System.Xaml.XamlServices.Parse%2A?displayProperty=nameWithType>. Mais cette structure de base est ensuite développée pour s'appliquer à votre scénario d'écriture ou de lecture. Voici quelques scénarios possibles :  
   
 -   Activez <xref:System.Xaml.XamlXmlReader.NodeType%2A>. Effectuez différentes actions en fonction du type de nœud en cours de lecture.  
   

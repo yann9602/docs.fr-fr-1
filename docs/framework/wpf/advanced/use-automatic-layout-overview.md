@@ -16,11 +16,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2c9f5b9a6665778bc313febb039aeeeb2e484a6c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 75066b59d0f3a686c66fdbdd187ba4c18e786e6d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="use-automatic-layout-overview"></a>Vue d'ensemble de l'utilisation de la disposition automatique
 Cette rubrique présente des recommandations pour les développeurs sur la façon d’écrire [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications localisables [!INCLUDE[TLA#tla_ui#plural](../../../../includes/tlasharptla-uisharpplural-md.md)]. Dans le passé, la localisation d’un [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] a été beaucoup de temps. Chaque langage qui le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] était adaptée nécessitait un réglage pixel par pixel. Aujourd'hui, grâce à la conception et des normes de codage de droite [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] peuvent être construits afin que les traducteurs aient moins de redimensionnement et le repositionnement à effectuer. L’approche de l’écriture d’applications qui peuvent être plus faciles à redimensionner et repositionner est appelée disposition automatique et peut être obtenue à l’aide de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] conception de l’application.  

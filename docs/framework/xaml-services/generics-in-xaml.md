@@ -14,11 +14,12 @@ caps.latest.revision: "8"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 05eaab4497949231d32ceab0ba696b9f252d67ad
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c0e5bfb4f327028f09e8c898cf07e5fec9a5f789
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="generics-in-xaml"></a>Génériques en XAML
 Les Services XAML .NET Framework tel qu’implémenté dans System.Xaml prend en charge l’utilisation des types CLR génériques. Cette prise en charge inclut la spécification de contraintes de génériques comme argument de type et l’application de la contrainte en appelant approprié `Add` méthode pour les cas de collections génériques. Cette rubrique décrit les aspects de l’utilisation et de référencer des types génériques en XAML.  

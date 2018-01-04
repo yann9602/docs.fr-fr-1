@@ -18,11 +18,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 84b909f0c638bf0fb7c19ecc3a86c7c32bab2adb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8727bc4447955b079c8cd8d3949144e904b0148e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel"></a>Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide d'un FlowLayoutPanel
 Certaines applications exigent un formulaire dont la disposition s’organise de manière appropriée à mesure que le formulaire est redimensionné ou que le contenu change de taille. Si vous avez besoin d’une disposition dynamique et que vous ne souhaitez pas gérer les événements <xref:System.Windows.Forms.Control.Layout> explicitement dans votre code, envisagez d’utiliser un panneau de disposition.  
@@ -187,7 +188,7 @@ Certaines applications exigent un formulaire dont la disposition s’organise de
 6.  Relâchez le bouton de la souris. Notez que les trois contrôles <xref:System.Windows.Forms.Button> sont insérés dans le contrôle <xref:System.Windows.Forms.FlowLayoutPanel> .  
   
 ## <a name="next-steps"></a>Étapes suivantes  
- Vous pouvez obtenir une disposition complexe en combinant plusieurs contrôles et panneaux de disposition. Voici quelques suggestions à explorer :  
+ Vous pouvez obtenir une disposition complexe en combinant plusieurs contrôles et panneaux de disposition. Voici quelques suggestions à explorer :  
   
 -   Agrandissez l’un des contrôles <xref:System.Windows.Forms.Button> et observez l’effet du redimensionnement sur la disposition.  
   

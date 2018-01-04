@@ -21,11 +21,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d10c11cfcacb435438695b0e76ee8982ba9ef24a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1a9d17408d6fa03b267c2a22890d2e17c0441389
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-of-a-wpf-custom-control"></a>UI Automation d'un contrôle personnalisé WPF
 [!INCLUDE[TLA#tla_uiautomation](../../../../includes/tlasharptla-uiautomation-md.md)] fournit une interface unique et généralisée que les clients Automation peuvent utiliser pour examiner ou utiliser les interfaces utilisateur de diverses plateformes et infrastructures. [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] active à la fois le code d’assurance qualité (test) et les applications d’accessibilité, par exemple les lecteurs d’écran, pour examiner les éléments de l’interface utilisateur et simuler la manière dont les utilisateurs interagissent avec ces éléments à partir d’un autre code. Pour plus d’informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] pour toutes les plateformes, consultez la rubrique d’accessibilité.  
@@ -165,6 +166,6 @@ End Class
  [!code-vb[CustomControlNumericUpDown#RaiseEventFromControl](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/numericupdown.vb#raiseeventfromcontrol)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble UI Automation](../../../../docs/framework/ui-automation/ui-automation-overview.md)  
+ [Vue d’ensemble d’UI Automation](../../../../docs/framework/ui-automation/ui-automation-overview.md)  
  [Contrôle personnalisé NumericUpDown avec thème et prise en charge d’UI Automation, exemple](http://go.microsoft.com/fwlink/?LinkID=160025)  
  [Implémentation de fournisseur UI Automation côté serveur](../../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)

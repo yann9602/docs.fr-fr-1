@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6674628acd4ea6b18f98a0ab5e20935220595de5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f6628ec27ab381f52a086cac3f8d0cd92aea2cd8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-property-change-notification"></a>Comment : implémenter la notification des modifications de propriétés
 Pour prendre en charge <xref:System.Windows.Data.BindingMode.OneWay> ou <xref:System.Windows.Data.BindingMode.TwoWay> de liaison pour activer vos propriétés de cible de liaison à reflètent automatiquement les modifications dynamiques de la source de liaison (par exemple, pour que le volet Aperçu de mises à jour automatiquement lorsque l’utilisateur modifie un formulaire), votre classe. doit fournir les notifications de modification de propriété approprié. Cet exemple montre comment créer une classe qui implémente <xref:System.ComponentModel.INotifyPropertyChanged>.  

@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 6df7c6e8f7670648405400cf48e4a1d54cdd7e34
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b59b88c38b6fa7f810bb3a12de09a962eb5679c2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="type-converters-for-xaml-overview"></a>Vue d'ensemble des convertisseurs de types pour XAML
 Les convertisseurs de type fournissent la logique nécessaire à un writer d'objet qui convertit une chaîne de balisage XAML en objets particuliers d'un graphique d'objets. Dans les services XAML .NET Framework, le convertisseur de type doit être une classe dérivée de <xref:System.ComponentModel.TypeConverter>. Certains convertisseurs prennent également en charge le chemin d'enregistrement XAML et peuvent être utilisés pour sérialiser un objet sous forme de chaîne dans le balisage de sérialisation. Cette rubrique décrit comment et quand les convertisseurs de type en XAML sont appelés, et fournit des conseils d'implémentation pour les substitutions de méthode de <xref:System.ComponentModel.TypeConverter>.  
@@ -70,7 +71,7 @@ Les convertisseurs de type fournissent la logique nécessaire à un writer d'obj
  <xref:System.ComponentModel.TypeConverter.CanConvertTo%2A> et <xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A> sont des méthodes de support utilisées lorsqu'un service interroge les fonctions de l'implémentation <xref:System.ComponentModel.TypeConverter> . Vous devez implémenter ces méthodes pour retourner `true` dans des cas spécifiques au type pris en charge par les méthodes de conversion correspondantes de votre convertisseur. Pour le langage XAML, cela correspond généralement au type <xref:System.String> .  
   
 ### <a name="culture-information-and-type-converters-for-xaml"></a>Informations de culture et convertisseurs de type pour XAML  
- Chaque implémentation <xref:System.ComponentModel.TypeConverter> peut interpréter de façon unique ce qui constitue une chaîne valide dans le cadre d'une conversion ; elle peut également utiliser ou ignorer la description de type passée en tant que paramètres. Considération importante relative à la culture et à la conversion de type XAML : bien que l'utilisation de chaînes localisables en tant que valeurs d'attribut soit prise en charge par XAML, vous ne pouvez pas employer ces chaînes localisables comme entrée de convertisseur de type avec des spécifications de culture particulières. Cette restriction est due au fait que les convertisseurs de types des valeurs d'attribut XAML impliquent un comportement de traitement XAML de langage fixe qui utilise la culture `en-US` . Pour plus d’informations sur les raisons de conception de cette restriction, consultez la spécification du langage XAML ([\[MS-XAML\]](http://go.microsoft.com/fwlink/?LinkId=114525)) ou [WPF globalisation et localisation présentation](../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md).  
+ Chaque implémentation <xref:System.ComponentModel.TypeConverter> peut interpréter de façon unique ce qui constitue une chaîne valide dans le cadre d'une conversion ; elle peut également utiliser ou ignorer la description de type passée en tant que paramètres. Considération importante relative à la culture et à la conversion de type XAML : bien que l'utilisation de chaînes localisables en tant que valeurs d'attribut soit prise en charge par XAML, vous ne pouvez pas employer ces chaînes localisables comme entrée de convertisseur de type avec des spécifications de culture particulières. Cette restriction est due au fait que les convertisseurs de types des valeurs d'attribut XAML impliquent un comportement de traitement XAML de langage fixe qui utilise la culture `en-US` . Pour plus d’informations sur les raisons de conception de cette restriction, consultez la spécification du langage XAML ([\[MS-XAML\]](http://go.microsoft.com/fwlink/?LinkId=114525)) ou [WPF globalisation et localisation présentation](../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md).  
   
  Par exemple, certaines cultures utilisent une virgule au lieu d'un point comme séparateur décimal pour les nombres sous forme de chaîne, ce qui peut poser un problème. Cette utilisation crée un conflit avec le comportement de nombreux convertisseurs de type existants, qui consiste à utiliser une virgule comme délimiteur. Le passage d'une culture via `xml:lang` dans le code XAML environnant ne résout pas le problème.  
   

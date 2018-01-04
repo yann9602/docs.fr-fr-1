@@ -21,11 +21,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d14d3bb167fc3e027371c28147720cf2a098c136
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 112a9badaf9a64b2c6d3f73d64c27fbc36ec48a3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dialog-boxes-overview"></a>Vue d'ensemble des boîtes de dialogue
 Les applications autonomes ont généralement une fenêtre principale qui affiche les données principales sur lesquelles l’application fonctionne et expose les fonctionnalités pour traiter ces données via [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mécanismes tels que les barres de menus, barres d’outils et barres d’état. Une application non triviale peut également afficher des fenêtres supplémentaires pour effectuer les opérations suivantes :  

@@ -23,11 +23,14 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4e85ee15223bc135384d698a175d57b4fd543747
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5718f19318121c2025b9d92a5947574289c1f4d0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="custom-serialization"></a>Sérialisation personnalisée
 La sérialisation personnalisée est le processus de contrôle de la sérialisation et désérialisation d'un type. En contrôlant la sérialisation, il est possible de garantir la compatibilité de sérialisation (capacité de sérialisation et désérialisation entre des versions d’un type) sans interrompre la fonctionnalité principale du type. Par exemple, il peut y avoir uniquement deux champs dans la première version d'un type. Dans la version suivante d'un type, plusieurs champs supplémentaires sont ajoutés. La deuxième version d'une application doit néanmoins être en mesure de sérialiser et désérialiser les deux types. Les sections suivantes décrivent comment contrôler la sérialisation.

@@ -19,17 +19,18 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f5eba773a290f1100fcea411919c5c16558e01ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4c4c2c3b9cabb630b5762fdc49f6cb62eef28f71
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fromtoby-animations-overview"></a>Vue d'ensemble des animations From/To/By
 Cette rubrique explique comment utiliser des animations From/To/By pour animer des propriétés de dépendance. Une animation From/To/By crée une transition entre deux valeurs.  
   
 <a name="prereq"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette rubrique, vous devez être familiarisé avec [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fonctionnalités d’animations. Pour une introduction aux fonctionnalités d’animation, consultez le [vue d’ensemble de l’Animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
   
 <a name="whatisanimation"></a>   
@@ -48,7 +49,7 @@ Cette rubrique explique comment utiliser des animations From/To/By pour animer d
   
  *\<Type>* `Animation`  
   
- Où * \<Type >* est le type de valeur que la classe anime.  
+ Où  *\<Type >* est le type de valeur que la classe anime.  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit les classes d’animation From/To/By suivantes.  
   
@@ -129,7 +130,7 @@ Cette rubrique explique comment utiliser des animations From/To/By pour animer d
  [!code-csharp[basicvalues_snip#FromByAnimationInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicvalues_snip/CSharp/AnimationTargetValuesExample.cs#frombyanimationinline)]
  [!code-vb[basicvalues_snip#FromByAnimationInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicvalues_snip/VisualBasic/AnimationTargetValuesExample.vb#frombyanimationinline)]  
   
-### <a name="from"></a>De  
+### <a name="from"></a>From  
  Lorsque vous spécifiez uniquement le <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> valeur d’une animation, l’animation passe de la valeur spécifiée par la <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> propriété, la valeur de base de la propriété animée ou à la sortie d’une animation de composition.  
   
  L’exemple suivant affecte uniquement la <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> propriété de la <xref:System.Windows.Media.Animation.DoubleAnimation> à 50. Car aucune valeur de fin a été spécifié, le <xref:System.Windows.Media.Animation.DoubleAnimation> utilise la valeur de base de la <xref:System.Windows.FrameworkElement.Width%2A> propriété, 100, comme valeur finale. Le <xref:System.Windows.FrameworkElement.Width%2A> de la <xref:System.Windows.Shapes.Rectangle> est animée de 50 à la valeur de base de la <xref:System.Windows.FrameworkElement.Width%2A> propriété, 100.  

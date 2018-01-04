@@ -15,11 +15,12 @@ caps.latest.revision: "70"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 18b393ca5048d9b96c6803cd536110ea2261daae
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 89c2e2fb12a91e06b3c4347b6f65c6fa91636911
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="base-elements"></a>Éléments de base
 Quatre classes clés -<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, et <xref:System.Windows.FrameworkContentElement>--implémentent une grande partie de la fonctionnalité des éléments courants disponible dans la programmation WPF. Ces quatre classes portent le nom dans ce Kit de développement logiciel que les classes d’élément de base.  

@@ -17,11 +17,12 @@ caps.latest.revision: "43"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b241e9a2dbe84833f43dadb2e979e5ee079706a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f9d20fb5b16fbf44bdf8431ae32afee105af7676
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="structured-navigation-overview"></a>Vue d'ensemble de la navigation structurée
 Contenu qui peut être hébergé par une [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], un <xref:System.Windows.Controls.Frame>, ou un <xref:System.Windows.Navigation.NavigationWindow> est composé de pages qui peuvent être identifiés par le pack [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] et navigation en liens hypertexte. La structure des pages et comment elles sont accessibles, tel que défini par des liens hypertexte, porte le nom de topologie de navigation. Une telle topologie convient à différents types d’applications, notamment celles permettant de parcourir des documents. Pour de telles applications, l’utilisateur peut naviguer d’une page à une autre page sans qu’une page ait besoin de savoir quoi que ce soit sur l’autre page.  

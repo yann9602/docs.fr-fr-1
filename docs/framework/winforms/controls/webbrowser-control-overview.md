@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9c2dfae4cbd7f583ce69ff5591c24a573db0d4e4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d2c1ed93769cc91d9622a86ea2d894cea57f5bcd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="webbrowser-control-overview"></a>Vue d'ensemble du contrôle WebBrowser
 Le <xref:System.Windows.Forms.WebBrowser> contrôle fournit un wrapper managé pour le contrôle WebBrowser ActiveX. Le wrapper managé vous permet d’afficher des pages Web dans vos applications clientes Windows Forms. Vous pouvez utiliser la <xref:System.Windows.Forms.WebBrowser> contrôle de dupliquer les fonctionnalités de navigation Web d’Internet Explorer dans votre application, ou vous peut désactiver la fonctionnalité d’Internet Explorer par défaut et utiliser le contrôle comme une simple visionneuse de documents HTML. Vous pouvez également utiliser le contrôle à ajouter des éléments d’interface utilisateur DHTML à votre formulaire et masquer le fait qu’ils sont hébergés dans le <xref:System.Windows.Forms.WebBrowser> contrôle. Cette approche vous permet de combiner de façon transparente les contrôles Web avec des contrôles Windows Forms dans une application unique.  
@@ -33,7 +34,7 @@ Le <xref:System.Windows.Forms.WebBrowser> contrôle fournit un wrapper managé p
   
  Le `Document` propriété vous permet également d’appeler des méthodes implémentées dans du code à partir de votre code d’application cliente de script de page Web. Pour accéder à votre code d’application cliente à partir de votre code de script, définissez la `ObjectForScripting` propriété. L’objet que vous spécifiez est accessible par le code de votre script en tant que le `window.external` objet.  
   
-|Nom|Description|  
+|Name|Description|  
 |----------|-----------------|  
 |Propriété <xref:System.Windows.Forms.WebBrowser.Document%2A>|Obtient un objet qui fournit l’accès managé pour le modèle objet de document HTML (DOM) de la page Web actuelle.|  
 |<xref:System.Windows.Forms.WebBrowser.DocumentCompleted>événement|Se produit lorsqu’une page Web est chargée.|  

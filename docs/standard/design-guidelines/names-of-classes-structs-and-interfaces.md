@@ -23,11 +23,14 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a4f4b9e48587138f3e65c0c6825af0b3e4e8c592
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7c76fccec77454cb4551e427e254fe84d9a60299
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="names-of-classes-structs-and-interfaces"></a>Noms de classes, de structures et d'interfaces
 Les instructions d’affectation de noms qui suivent s’appliquent aux noms de type général.  
@@ -111,4 +114,4 @@ public interface ISessionChannel<TSession> where TSession : ISession{
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Affectation de noms](../../../docs/standard/design-guidelines/naming-guidelines.md)
+ [Directives de nommage](../../../docs/standard/design-guidelines/naming-guidelines.md)

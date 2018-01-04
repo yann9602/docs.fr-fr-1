@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3be5949ee26fbb21d913a7aefe2664202c5bef38
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9767b721321b34030a2f276a90c618c658645207
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mcignorable-attribute"></a>mc:Ignorable, attribut
 Spécifie les [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] les préfixes d’espace de noms rencontrés dans un fichier de balisage peuvent être ignorés par un [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processeur. Le `mc:Ignorable` attribut prend en charge la compatibilité du balisage à la fois pour le mappage d’espace de noms personnalisé et [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] le contrôle de version.  
@@ -60,7 +61,7 @@ Spécifie les [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.m
 |*ignorableUri*|Tout URI valide pour la désignation d’un espace de noms, conformément à la spécification XML 1.0.|  
 |*ThisElementCanBeIgnored*|Un élément qui peut être ignoré par [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] implémentations de processeur, si le type sous-jacent ne peut pas être résolu.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `mc` [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] préfixe d’espace de noms est la convention de préfixe recommandé à utiliser lors du mappage de la [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] espace de noms de compatibilité [!INCLUDE[TLA#tla_mcxmlnsv1](../../../../includes/tlasharptla-mcxmlnsv1-md.md)].  
   
  Éléments ou attributs où le préfixe de nom de l’élément sont identifiés comme `mc:Ignorable` ne génère pas d’erreurs lors du traitement par un [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processeur. Si cet attribut n’a pas pu être résolu en un type sous-jacent ou une construction de programmation, cet élément est ignoré. Notez toutefois que les éléments ignorés peuvent générer des erreurs d’analyse supplémentaires pour les spécifications d’élément supplémentaires qui sont des effets de l’élément n’est pas traitée. Par exemple, un modèle de contenu d’élément particulier peut nécessiter un seul élément enfant, mais si l’élément enfant spécifié était dans un `mc:Ignorable` préfixe et l’élément enfant spécifié n’a pas pu être résolue en un type, puis le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processeur peut génère une erreur.  

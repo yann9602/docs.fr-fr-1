@@ -23,11 +23,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c20753aab569bf90b7db2f062050c7e185d638fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f2a4d023600456adf1e14b801ee6c24fd0a2348c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-binding-and-windows-forms"></a>Liaison de données et Windows Forms
 Dans Windows Forms, vous pouvez créer des liaisons avec des sources de données traditionnelles, mais aussi avec quasiment toute structure contenant des données. Vous pouvez créer une liaison avec un tableau de valeurs que vous calculez au moment de l'exécution, que vous lisez depuis un fichier ou que vous dérivez de valeurs d'autres contrôles.  

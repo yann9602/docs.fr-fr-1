@@ -21,11 +21,12 @@ caps.latest.revision: "25"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 5e2ad03fcb52db1ffdd01849381a392187082991
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2c73cf28905e1dd0f3056ab0eed953d6f05b0a7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xkey-directive"></a>x:Key, directive
 Identifie de façon unique les éléments qui sont créés et référencés dans un dictionnaire définies en XAML. Ajout d’un `x:Key` valeur à un élément d’objet XAML est la méthode la plus courante pour identifier une ressource dans un dictionnaire de ressources, par exemple dans un WPF <xref:System.Windows.ResourceDictionary>.  
@@ -57,7 +58,7 @@ Identifie de façon unique les éléments qui sont créés et référencés dans
 |`stringKeyValue`|Une chaîne de texte à utiliser en tant que clé. La chaîne de texte doit être conforme à la [XamlName, grammaire](../../../docs/framework/xaml-services/xamlname-grammar.md).|  
 |`markupExtensionUsage`|Dans le balisage extension délimiteurs {}, une extension de balisage qui fournit un objet à utiliser en tant que clé. Consultez la section Notes.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `x:Key`prend en charge le concept de dictionnaire de ressources XAML. Le langage XAML ne définit pas une implémentation de dictionnaire de ressources, qui reste pour les infrastructures d’interface utilisateur spécifiques. Pour plus d’informations sur l’implémentation des dictionnaires de ressources XAML dans WPF, consultez [ressources XAML](../../../docs/framework/wpf/advanced/xaml-resources.md).  
   
  Dans XAML 2006 et WPF, `x:Key` doit être fourni en tant qu’attribut. Vous pouvez toujours utiliser les clés, mais cela nécessite une extension de balisage afin de fournir la valeur de chaîne sous forme d’attribut. Si vous utilisez XAML 2009, `x:Key` peut être spécifié comme un élément, pour prendre en charge explicitement des dictionnaires indexés par les types d’objets autres que des chaînes sans exiger une extension de balisage intermédiaire. Consultez la section « XAML 2009 » dans cette rubrique. Le reste de la section Notes s’applique spécifiquement à l’implémentation XAML 2006.  

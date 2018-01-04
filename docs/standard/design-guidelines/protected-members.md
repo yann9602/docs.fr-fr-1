@@ -20,11 +20,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7c3aacd0f08641c01200f0b1791a78413a306590
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 03d9eac41e693568da2d057bc1394c426df4c736
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="protected-members"></a>Membres protégés
 Les membres protégés par eux-mêmes ne fournissent pas de n’importe quel d’extensibilité, mais elles peuvent rendre les extensibilité via le sous-classement plus puissant. Ils peuvent être utilisés pour exposer les options de personnalisation avancée sans compliquer inutilement de l’interface publique principale.  
@@ -43,4 +46,4 @@ Les membres protégés par eux-mêmes ne fournissent pas de n’importe quel d�
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Conception d’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+ [Conception en vue de l’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)

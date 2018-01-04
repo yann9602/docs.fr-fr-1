@@ -17,14 +17,15 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e82d18cd765fc3ac4f4982a71d187a3741f4f03a
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 7c92e5b045b248337f1cb96c333ac38f1228dd90
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-win32-content-in-wpf"></a>Hébergement de contenu Win32 dans WPF
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Consultez [WPF et Win32 interopérabilité](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md).  
   
 ## <a name="a-walkthrough-of-win32-inside-windows-presentation-framework-hwndhost"></a>Une procédure pas à pas de Win32 à l’intérieur de Windows Presentation Framework (HwndHost)  

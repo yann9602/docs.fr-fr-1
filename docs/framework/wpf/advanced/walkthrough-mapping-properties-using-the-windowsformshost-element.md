@@ -19,11 +19,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f566d41ff1ffa07a2f52641ba05e48dfa604cfc9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 612d4a78f2f18824e5859604dc40e66b99e68586
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-mapping-properties-using-the-windowsformshost-element"></a>Procédure pas à pas : mappage de propriétés à l'aide de l'élément WindowsFormsHost
 Cette procédure pas à pas vous montre comment utiliser le <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A> propriété à mapper [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] propriétés dans les propriétés correspondantes sur hébergé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôle.  
@@ -46,7 +47,7 @@ Cette procédure pas à pas vous montre comment utiliser le <xref:System.Windows
   
  Lorsque vous avez terminé, vous ne pourrez pas mapper [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] propriétés dans les propriétés correspondantes sur hébergé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôle.  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
   
 -   [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)].  

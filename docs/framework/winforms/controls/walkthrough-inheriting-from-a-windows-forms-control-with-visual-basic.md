@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0625695933b776b8cdbe5488adc116723b930dd0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3812c81538eb1f3d8716d7ea9bf8e9411188e48a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic"></a>Procédure pas à pas : héritage à partir d'un contrôle Windows Forms à l'aide de Visual Basic
 Avec [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], vous pouvez créer des contrôles personnalisés puissants grâce à *l’héritage*. L’héritage vous permet de créer des contrôles qui conservent toutes les fonctionnalités inhérentes des contrôles Windows Forms standard, tout en intégrant des fonctionnalités personnalisées. Dans cette procédure pas à pas, vous allez créer un contrôle hérité simple appelé `ValueButton`. Ce bouton hérite des fonctionnalités de Windows Forms standard <xref:System.Windows.Forms.Button> contrôler et expose une propriété personnalisée nommée `ButtonValue`.  

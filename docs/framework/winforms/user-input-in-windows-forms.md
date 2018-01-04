@@ -18,11 +18,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7c65fdca99bb12cccf70273194e3294c71a2f5a7
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 7a9face3d38f7f64e3bda9d5dbe9ecfb7f730ee8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="user-input-in-windows-forms"></a>Entrées d'utilisateur dans les Windows Forms
 Windows Forms comprend un modèle d'entrée d'utilisateur basé sur les événements qui sont déclenchés lors du traitement des messages Windows connexes. Les rubriques de cette section fournissent des informations sur l’entrée d’utilisateur avec la souris et le clavier , y compris des exemples de code qui montrent comment effectuer des tâches spécifiques.  

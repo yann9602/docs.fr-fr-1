@@ -17,11 +17,12 @@ caps.latest.revision: "67"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3046e88e26e16172a9c7e6c50123145ce7664f28
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 0616507752c3053b71b2f050997eacfea22240a1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-in-wpf-applications"></a>Fenêtres dans les applications WPF
 Les utilisateurs interagissent avec les applications windows. L’objectif fondamental d’une fenêtre est d’héberger et d’afficher le contenu. Le type de contenu qu’une fenêtre héberge dépend du type de données qu’une application fonctionne, qui peut inclure des média, pages d’Application XAML Extensible Markup Language (), pages Web, documents, des tables de base de données les enregistrements et des informations système.  

@@ -17,11 +17,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7d2bbca799e1eda1abae3d199dd71e004b17c4c9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cc6a0616c6b462ffe6aca0a9adf27ac2ac7b7828
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="binding-markup-extension"></a>Binding, extension de balisage
 Diffère d’une valeur de propriété une valeur liée aux données, création d’un objet d’expression et interprétant le contexte de données qui s’applique à l’élément et ses liaisons au moment de l’exécution.  
@@ -113,7 +114,7 @@ Diffère d’une valeur de propriété une valeur liée aux données, création 
   
 -   <xref:System.Windows.Data.Binding.XmlNamespaceManager%2A>  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 > [!IMPORTANT]
 >  En termes de la propriété de dépendance, un `Binding` expression est équivalente à définie localement valeur. Si vous définissez une valeur locale pour une propriété qui avait précédemment une `Binding` expression, le `Binding` est entièrement supprimée. Pour plus d’informations, consultez [Priorité de la valeur de propriété de dépendance](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md).  

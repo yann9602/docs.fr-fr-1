@@ -26,11 +26,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2dce58776af84b1f4c733ddce2553e4b18b1b824
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 797a432bb8cfd3af3b5f030be8f71c78a1a393e9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-laying-out-windows-forms-controls-with-padding-margins-and-the-autosize-property"></a>Procédure pas à pas : disposition des contrôles Windows Forms avec les propriétés Padding, Margins et AutoSize
 Le positionnement précis des contrôles sur votre formulaire constitue une haute priorité pour de nombreuses applications. Le **Concepteur Windows Forms** vous offre de nombreux outils de disposition pour y parvenir. Trois des plus importants sont les <xref:System.Windows.Forms.Control.Margin%2A>, <xref:System.Windows.Forms.Control.Padding%2A>, et <xref:System.Windows.Forms.Control.AutoSize%2A> propriétés, qui sont présentes sur tous les contrôles Windows Forms.  
@@ -45,7 +46,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
   
  Le <xref:System.Windows.Forms.Control.AutoSize%2A> propriété indique à un contrôle se redimensionne automatiquement à son contenu. Il n’est pas redimensionné automatiquement pour être plus petite que la valeur de son état d’origine <xref:System.Windows.Forms.Control.Size%2A> propriété et il représentera la valeur de son <xref:System.Windows.Forms.Control.Padding%2A> propriété.  
   
- Cette procédure pas à pas décrit notamment les tâches suivantes :  
+ Cette procédure pas à pas décrit notamment les tâches suivantes :  
   
 -   Création d’un projet Windows Forms  
   
@@ -60,7 +61,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 > [!NOTE]
 >  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :  
   
 -   Autorisations suffisantes pour pouvoir créer et exécuter des projets d’application Windows Forms sur l’ordinateur où Visual Studio est installé.  

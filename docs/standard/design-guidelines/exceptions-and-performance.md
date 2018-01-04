@@ -19,11 +19,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9c2d7cfcb228c492d2adbe614d0ed88a3b02bb68
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9a876a818086e0d54251f53a1e8f83cc74a574ae
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="exceptions-and-performance"></a>Exceptions et performances
 Un problème courant lié aux exceptions est que si les exceptions sont utilisées pour le code qui échoue régulièrement, les performances de l’implémentation sera inacceptable. Il s’agit d’un problème valid. Lorsqu’un membre lève une exception, ses performances peuvent être beaucoup plus lent. Toutefois, il est possible d’obtenir de bonnes performances tout en respectant strictement les instructions de l’exception interdire l’utilisation de codes d’erreur. Deux modèles sont décrites dans cette section proposent des solutions pour ce faire.  
@@ -82,4 +85,4 @@ public struct DateTime {
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Règles de conception pour les Exceptions](../../../docs/standard/design-guidelines/exceptions.md)
+ [Instructions de conception pour les exceptions](../../../docs/standard/design-guidelines/exceptions.md)

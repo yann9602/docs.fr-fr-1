@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ddbbab88a22a4350626a36f79236aab67da24a7f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 28cb1b02e67d076f9190e2d8e36b72c20cc5c4e2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="default-keyboard-and-mouse-behavior-in-the-datagrid-control"></a>Comportement par défaut du clavier et de la souris dans le contrôle DataGrid
 Cette rubrique décrit comment les utilisateurs peuvent interagir avec le <xref:System.Windows.Controls.DataGrid> contrôle à l’aide du clavier et la souris.  
@@ -54,7 +55,7 @@ Cette rubrique décrit comment les utilisateurs peuvent interagir avec le <xref:
 |CTRL+PG.PRÉC|Identique à la PAGE précédente.|  
 |F2|Si le <xref:System.Windows.Controls.DataGrid.IsReadOnly%2A?displayProperty=nameWithType> propriété `false` et <xref:System.Windows.Controls.DataGridColumn.IsReadOnly%2A?displayProperty=nameWithType> propriété est `false` pour la colonne actuelle, place la cellule active en mode d’édition de cellule.|  
 |ENTRÉE|Valide toutes les modifications à la cellule active et la ligne et déplace le focus vers la cellule directement sous la cellule active. Si le focus est dans la dernière ligne, valide toutes les modifications sans déplacer le focus.|  
-|Échap|Si le contrôle est en mode édition, annule la modification et rétablit toutes les modifications qui ont été apportées dans le contrôle. Si la source de données sous-jacente implémente <xref:System.ComponentModel.IEditableObject>, en appuyant sur ÉCHAP une deuxième fois annule en mode d’édition pour la ligne entière.|  
+|ÉCHAP|Si le contrôle est en mode édition, annule la modification et rétablit toutes les modifications qui ont été apportées dans le contrôle. Si la source de données sous-jacente implémente <xref:System.ComponentModel.IEditableObject>, en appuyant sur ÉCHAP une deuxième fois annule en mode d’édition pour la ligne entière.|  
 |RETOUR ARRIÈRE|Supprime le caractère avant le curseur lors de la modification d’une cellule.|  
 |SUPPR|Supprime le caractère situé après le curseur lors de la modification d’une cellule.|  
 |CTRL+ENTRÉE|Valide toutes les modifications à la cellule active sans déplacer le focus.|  

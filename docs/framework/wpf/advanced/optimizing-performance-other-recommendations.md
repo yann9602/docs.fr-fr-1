@@ -22,11 +22,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eda112db6dd977b6ef25a1b3a9ae40349d3a045f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e45296befd51af5e4b03f123241efba030fd3754
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimizing-performance-other-recommendations"></a>Optimisation des performances : autres recommandations
 <a name="introduction"></a> Cette rubrique fournit des recommandations pour améliorer les performances en plus de celles abordées dans les rubriques de la section [Optimisation des performances des applications WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md).  
@@ -89,6 +90,6 @@ ms.lasthandoff: 11/21/2017
  [Graphiques 2D et acquisition d'images](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
  [Comportement de l’objet](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
  [Ressources d'application](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
- [Texte](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
+ [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
  [Liaison de données](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
  [Conseils et astuces sur les animations](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)

@@ -19,17 +19,18 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 237dbe83fa52bb967d2f2429fb2beb021c084f23
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 10f2e27a2f68dd784c6fce66ae63873436923d63
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="path-animations-overview"></a>Vue d'ensemble des animations de tracés
 <a name="introduction"></a> Cette rubrique présente les animations de tracés qui vous permettent d’utiliser un tracé géométrique pour générer des valeurs de sortie. Les animations de tracés sont utiles pour déplacer et faire pivoter des objets le long des tracés complexes.  
   
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette rubrique, vous devez être familiarisé avec [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fonctionnalités d’animations. Pour une introduction aux fonctionnalités d’animation, consultez le [vue d’ensemble de l’Animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
   
  Étant donné que vous utilisez un <xref:System.Windows.Media.PathGeometry> objet pour définir une animation de chemin d’accès, vous devez également être familiarisé avec <xref:System.Windows.Media.PathGeometry> et les différents types de <xref:System.Windows.Media.PathSegment> objets. Pour plus d’informations, consultez la [vue d’ensemble de Geometry](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md).  

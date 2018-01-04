@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b7918d97f2f1bcd521e7e7e38231c999d2fbda53
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cc99b09edbc16403e2c0fc4d948a39811801c64b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-and-bind-to-an-observablecollection"></a>Comment : créer et effectuer une liaison à un ObservableCollection
 Cet exemple montre comment créer et lier à une collection qui dérive de la <xref:System.Collections.ObjectModel.ObservableCollection%601> (classe), qui est une classe de collection qui fournit des notifications lorsque des éléments sont ajoutés ou supprimés.  

@@ -17,11 +17,12 @@ caps.latest.revision: "66"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0664d4727dfa16f2409a7e1d7198e4a0e9965742
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a3d430fae20e0ad840f5043d929b89a88f09db95
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flowdocumentreader"></a>FlowDocumentReader
 Le <xref:System.Windows.Controls.FlowDocumentReader> contrôle permet d’afficher <xref:System.Windows.Documents.FlowDocument> contenu. Il prend en charge plusieurs modes d’affichage.  

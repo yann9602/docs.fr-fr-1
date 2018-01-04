@@ -18,11 +18,14 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 217e9eae3540e0a20afd0888d24803285d6352b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 39dd4e31e84e455b72ce53bd8abffd650ce77dfc
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="events-and-callbacks"></a>Événements et rappels
 Les rappels sont des points d’extensibilité qui autorisent une infrastructure rappeler dans le code de l’utilisateur via un délégué. Ces délégués sont généralement transmis à l’infrastructure via un paramètre d’une méthode.  
@@ -52,5 +55,5 @@ Les rappels sont des points d’extensibilité qui autorisent une infrastructure
  *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi  
- [Conception d’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
+ [Conception en vue de l’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)

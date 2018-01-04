@@ -17,11 +17,12 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 72ec8c723ccb5c13a21360bd5abfcc5261dce1b4
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e3123df62e66354b35da26bbda894c5828136d05
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="animation-and-timing-how-to-topics"></a>Rubriques "Comment" relatives à l'animation et au minutage
 Les rubriques suivantes montrent comment utiliser le [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] animation et système de minuterie dans vos applications.  

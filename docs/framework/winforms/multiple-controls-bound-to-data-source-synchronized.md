@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2573f342530e59fa05e7f24342f251990b2ce47d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 227ad36e87c3deceb7fefe3cd19013fc8e76c686
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-ensure-multiple-controls-bound-to-the-same-data-source-remain-synchronized"></a>Comment : s’assurer que plusieurs contrôles liés à la même source de données restent synchronisés
 Souvent, lorsque vous travaillez avec la liaison de données dans les Windows Forms, plusieurs contrôles sont liés à la même source de données. Dans certains cas, il peut être nécessaire de prendre des mesures supplémentaires pour garantir que les propriétés liées des contrôles restent synchronisées avec eux et à la source de données. Ces étapes sont nécessaires dans deux situations :  

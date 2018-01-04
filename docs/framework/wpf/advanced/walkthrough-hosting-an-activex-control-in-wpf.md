@@ -19,18 +19,19 @@ caps.latest.revision: "30"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 25944b3dd28c0bce2646c06ec424b54acc8b8a1e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6980097c074e10efae7fc6ee77c6c9835c3b1b00
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-hosting-an-activex-control-in-wpf"></a>Procédure pas à pas : hébergement d'un contrôle ActiveX dans WPF
 Pour permettre une interaction améliorée avec les navigateurs, vous pouvez utiliser [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] des contrôles dans votre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]-application basée sur. Cette procédure pas à pas montre comment vous pouvez héberger le [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] comme un contrôle sur un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] page.  
   
  Cette procédure pas à pas décrit notamment les tâches suivantes :  
   
--   Création du projet.  
+-   Création du projet  
   
 -   Création du contrôle ActiveX.  
   
@@ -38,7 +39,7 @@ Pour permettre une interaction améliorée avec les navigateurs, vous pouvez uti
   
  Lorsque vous avez terminé cette procédure pas à pas, vous saurez comment utiliser [!INCLUDE[TLA#tla_actx](../../../../includes/tlasharptla-actx-md.md)] des contrôles dans votre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]-application basée sur.  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
   
 -   [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)]installé sur l’ordinateur où [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] est installé.  

@@ -19,11 +19,14 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e1bddb7bb3559e6f39b7884b92f64bee8fbb3510
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: b36f230c9a5f8653f3e252d26fe6464bb9cac4bb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="capitalization-conventions"></a>Conventions de mise en majuscules
 Les instructions de cette mise en page chapitre une méthode simple pour l’utilisation de cas qui, en cas d’application constamment, assurez-vous des identificateurs pour les types, membres et paramètres faciles à lire.  
@@ -63,7 +66,7 @@ Les instructions de cette mise en page chapitre une méthode simple pour l’uti
 |Interface|Pascal|`public interface IEnumerable { ... }`|  
 |Méthode|Pascal|`public class Object {` <br />  `public virtual string ToString();` <br /> `}`|  
 |Propriété|Pascal|`public class String {` <br />  `public int Length { get; }` <br /> `}`|  
-|Événement|Pascal|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|  
+|événement|Pascal|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|  
 |Champ|Pascal|`public class MessageQueue {` <br />  `public static readonly TimeSpan` <br /> `InfiniteTimeout;` <br /> `}` <br /> `public struct UInt32 {` <br />  `public const Min = 0;` <br /> `}`|  
 |Valeur d’énumération|Pascal|`public enum FileMode {` <br />  `Append,` <br />  `...` <br /> `}`|  
 |Paramètre|Mixte|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|  
@@ -114,4 +117,4 @@ Les instructions de cette mise en page chapitre une méthode simple pour l’uti
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Affectation de noms](../../../docs/standard/design-guidelines/naming-guidelines.md)
+ [Directives de nommage](../../../docs/standard/design-guidelines/naming-guidelines.md)

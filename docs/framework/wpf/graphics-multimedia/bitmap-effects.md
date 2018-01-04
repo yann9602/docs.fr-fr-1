@@ -19,11 +19,12 @@ caps.latest.revision: "62"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c4beb386528829bace92be6add471b87fb434d74
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2c2776bda3cebfbe0d614666ce234c10a1ab466b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="bitmap-effects"></a>Effets bitmap
 Les rubriques de cette section décrivent comment appliquer des effets visuels à des images bitmap à l’aide de [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  

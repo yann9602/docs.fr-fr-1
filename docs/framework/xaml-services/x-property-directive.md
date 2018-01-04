@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: a59eb23ab3ed6ee6adbbebab0859caffd293b24f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 36e464f9a45d737317192b2588473e90ae44a456
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xproperty-directive"></a>x:Property, directive
 Déclare une propriété XAML dans le balisage.  
@@ -41,7 +42,7 @@ Déclare une propriété XAML dans le balisage.
 |`propertyName`|Nom de membre de la propriété définie.|  
 |`propertyType`|Tapez le nom (ou une autre forme de chaîne, propre à l'infrastructure) qui spécifie le type de cette propriété.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Dans l'implémentation des services XAML .NET Framework, `x:Property` n'a pas de stockage de type direct, mais est pris en charge par la classe <xref:System.Windows.Markup.PropertyDefinition>. Dans un flux de nœud XAML, un élément `x:Property` est représenté en tant que membre nommé `Property`, à partir de l'espace de noms XAML du langage XAML. Le membre `Property` contient les attributs déclarés par le balisage.  
   
  La signification de `Name` et `Type` n’est pas attribuée au niveau des services XAML .NET Framework. Elles est stockée dans le flux de nœud XAML initial sous forme de valeur de chaîne, afin d’être interprétée ultérieurement selon les règles pouvant être imposées par les infrastructures spécifiques. La signification peut s'aligner sur celle d'un nom et d'un type XAML, ou être valide uniquement dans un système de type de stockage, selon l'implémentation.  

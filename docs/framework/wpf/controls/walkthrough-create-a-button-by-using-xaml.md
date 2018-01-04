@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 543e6496c826c864dc77e50fd096fc4cb43f600e
-ms.sourcegitcommit: 01ea3686e74ff05e4f6de3d8d46dc603d051ec00
+ms.workload: dotnet
+ms.openlocfilehash: 5c5efa9f8787e65d59e1b544632e806bf3fbbc81
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/13/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Procédure pas à pas : créer un bouton avec XAML
 L’objectif de cette procédure pas à pas est d’apprendre à créer un bouton animé à utiliser dans un [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] application. Cette procédure pas à pas utilise des styles et un modèle pour créer une ressource de bouton personnalisé qui permet la réutilisation du code et la séparation de la logique de bouton de la déclaration de bouton. Cette procédure pas à pas est écrite entièrement en [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
@@ -385,7 +386,7 @@ L’objectif de cette procédure pas à pas est d’apprendre à créer un bouto
   
      Appuyez sur F5 pour exécuter l’application, puis cliquez sur un des boutons. Lorsque vous cliquez sur un bouton, le rectangle de verre tourne.  
   
-## <a name="summary"></a>Résumé  
+## <a name="summary"></a>Récapitulatif  
  Dans cette procédure pas à pas, vous avez effectué les exercices suivants :  
   
 -   Cible un <xref:System.Windows.Style> à un type d’objet (<xref:System.Windows.Controls.Button>).  

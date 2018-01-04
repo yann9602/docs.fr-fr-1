@@ -20,11 +20,12 @@ caps.latest.revision: "39"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 10f7eda2b6761a825dcb2b24ae9f11b2e1262d7e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a99bd2336de41366d27c15e4bc4cfb2b2aff3cd0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flow-document-overview"></a>Vue d'ensemble des documents dynamiques
 Les documents dynamiques sont conçus pour optimiser l’affichage et la lisibilité. Au lieu d’avoir une disposition prédéfinie, ces documents dynamiques ajustent et refluent dynamiquement leur contenu en fonction des variables d’exécution telles que la taille de la fenêtre, la résolution de l’appareil et les préférences facultatives de l’utilisateur. En outre, les documents dynamiques offrent des fonctionnalités de document avancées, telles que la pagination et les colonnes. Cette rubrique fournit une vue d’ensemble des documents dynamiques et explique comment les créer.  
@@ -68,7 +69,7 @@ Les documents dynamiques sont conçus pour optimiser l’affichage et la lisibil
 ## <a name="flow-document-types"></a>Types de documents dynamiques  
  L’affichage et l’apparence du contenu des documents dynamiques dépendent de l’objet utilisé pour héberger le contenu dynamique. Il existe quatre contrôles qui prennent en charge l’affichage de contenu de flux : <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>, <xref:System.Windows.Controls.RichTextBox>, et <xref:System.Windows.Controls.FlowDocumentScrollViewer>. Ces contrôles sont brièvement décrits ci-dessous.  
   
- **Remarque :** <xref:System.Windows.Documents.FlowDocument> est nécessaire pour directement le contenu de flux hôte, par conséquent, tous ces contrôles d’affichage consomment un <xref:System.Windows.Documents.FlowDocument> pour activer l’hébergement du contenu dynamique.  
+ **Remarque :** <xref:System.Windows.Documents.FlowDocument> est nécessaire pour directement le contenu de flux hôte, par conséquent, tous ces contrôles d’affichage consomment un <xref:System.Windows.Documents.FlowDocument> pour activer l’hébergement du contenu dynamique.
   
 ### <a name="flowdocumentreader"></a>FlowDocumentReader  
  <xref:System.Windows.Controls.FlowDocumentReader>inclut des fonctionnalités qui permettent aux utilisateurs de choisir dynamiquement entre plusieurs modes d’affichage, y compris un mode d’affichage de page unique (page-à-un-time), deux page-à-un à la fois (format livre) un mode de défilement continu (sans marge inférieure) et du mode d’affichage. Pour plus d’informations sur les modes d’affichage, consultez <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>. Si vous n’avez pas besoin de la possibilité de basculer dynamiquement entre les différents modes d’affichage, <xref:System.Windows.Controls.FlowDocumentPageViewer> et <xref:System.Windows.Controls.FlowDocumentScrollViewer> fournissent les flux légère afficheurs de contenu qui sont résolus dans un mode d’affichage particulier.  

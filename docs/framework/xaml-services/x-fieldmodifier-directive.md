@@ -17,11 +17,12 @@ caps.latest.revision: "15"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 77745744c0da1e4b4425af6d8e4319faaf524908
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3ed50dd2aff1702543789f06939f7c2bc4b3dd83
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xfieldmodifier-directive"></a>x:FieldModifier, directive
 Modifie le comportement de compilation XAML afin que les champs pour les références d’objet nommé sont définis avec <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> accéder à la place de la <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> comportement par défaut.  
@@ -41,7 +42,7 @@ Modifie le comportement de compilation XAML afin que les champs pour les référ
 ## <a name="dependencies"></a>Dépendances  
  Si une production XAML utilise `x:FieldModifier` n’importe où, l’élément racine de cette production XAML doit déclarer un [x : Class Directive](../../../docs/framework/xaml-services/x-class-directive.md).  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `x:FieldModifier`n’est pas pertinent pour déclarer le niveau d’accès général d’une classe ou de ses membres. Il ne s’applique uniquement pour le comportement de traitement XAML lorsqu’un objet XAML particulier qui fait partie d’une production XAML est traité et devienne un objet qui est potentiellement accessible dans le graphique d’objets d’une application. Par défaut, la référence de champ pour un tel objet reste privée, ce qui empêche les consommateurs du contrôle de modifier le graphique d’objets directement. Au lieu de cela, les consommateurs de contrôle sont attendus pour modifier le graphique d’objets à l’aide de modèles standard qui sont activées par les modèles de programmation, comme en obtenant des collections d’éléments, les propriétés publiques dédiées, la racine de disposition, l’enfant et ainsi de suite.  
   
  La valeur de la `x:FieldModifier` attribut varie selon le langage de programmation et son objectif peut varier dans les infrastructures spécifiques. La chaîne à utiliser dépend de la façon dont chaque langage implémente ses <xref:System.CodeDom.Compiler.CodeDomProvider> et les convertisseurs de type qu’il retourne pour définir les significations de <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> et <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, et si cette langue est respecte la casse.  

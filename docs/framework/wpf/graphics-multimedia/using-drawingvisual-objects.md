@@ -19,18 +19,19 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ee46c41d6f0f42bbb9f50bd5862f6eb076b34bb1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a33e56b69a357694a1d1a23d5cd3c887c88cea37
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-drawingvisual-objects"></a>Utilisation d'objets DrawingVisual
 Cette rubrique fournit une vue d’ensemble de l’utilisation de <xref:System.Windows.Media.DrawingVisual> des objets dans le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] couche visuelle.  
   
 <a name="drawingvisual_object"></a>   
 ## <a name="drawingvisual-object"></a>Objet DrawingVisual  
- Le <xref:System.Windows.Media.DrawingVisual> est une classe qui est utilisé pour restituer le texte, des images ou des formes de dessin légère. Cette classe est dite légère, car elle n’assure pas la gestion des dispositions ni des événements, ce qui améliore ses performances. C’est pour cette raison que les dessins sont idéaux pour les arrière-plans et les images clipart.  
+ Le <xref:System.Windows.Media.DrawingVisual> est une classe qui est utilisé pour restituer le texte, des images ou des formes de dessin légère. Cette classe est dite légère, car elle n’assure pas la gestion des dispositions ni des événements, ce qui améliore ses performances. C’est pourquoi, les dessins de ce type sont idéaux pour les arrière-plans et les images clipart.  
   
 <a name="drawingvisual_host_container"></a>   
 ## <a name="drawingvisual-host-container"></a>Conteneur hôte DrawingVisual  

@@ -25,11 +25,12 @@ caps.latest.revision: "27"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: ed0372349a08687fd83b0fc989cc4cb88c29d96c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a4d645d5c953c0ff33435a5648024ace099455e2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xtype-markup-extension"></a>x:Type, extension de balisage
 Fournit le CLR <xref:System.Type> objet qui est le type sous-jacent pour un type XAML spécifié.  
@@ -53,7 +54,7 @@ Fournit le CLR <xref:System.Type> objet qui est le type sous-jacent pour un type
 |`prefix`|Facultatif. Un préfixe qui mappe un espace de noms XAML par défaut. Définition d’un préfixe n’est généralement pas nécessaire. Consultez la section Notes.|  
 |`typeNameValue`|Obligatoire. Un nom de type peut être résolu à l’espace de noms XAML par défaut en cours ; ou spécifié préfixe mappé si `prefix` est fourni.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `x:Type` extension de balisage a une fonction semblable à la `typeof()` opérateur dans [!INCLUDE[TLA#tla_cshrp](../../../includes/tlasharptla-cshrp-md.md)] ou `GetType` opérateur dans [!INCLUDE[TLA#tla_visualb](../../../includes/tlasharptla-visualb-md.md)].  
   
  Le `x:Type` extension de balisage fournit un comportement de conversion de chaînes pour les propriétés qui prennent le type <xref:System.Type>. L’entrée est un type XAML. La relation entre le type XAML d’entrée et la sortie CLR <xref:System.Type> est que la sortie <xref:System.Type> est la <xref:System.Xaml.XamlType.UnderlyingType%2A> de l’entrée <xref:System.Xaml.XamlType>, après avoir recherché le nécessaire <xref:System.Xaml.XamlType> selon le contexte de schéma XAML et le <xref:System.Windows.Markup.IXamlTypeResolver>le contexte de service.  
@@ -62,7 +63,7 @@ Fournit le CLR <xref:System.Type> objet qui est le type sous-jacent pour un type
   
  Dans les implémentations d’infrastructure spécifiques, certaines propriétés qui acceptent <xref:System.Type> comme une valeur accepte directement le nom du type (la valeur de chaîne du type `Name`). Toutefois, l’implémentation de ce comportement est un scénario complexe. Pour obtenir des exemples, consultez la section « Remarques sur l’utilisation WPF » qui suit.  
   
- La syntaxe d'attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage. Le jeton de chaîne fourni après la chaîne d'identificateur `x:Type` est assigné en tant que valeur <xref:System.Windows.Markup.TypeExtension.TypeName%2A> de la classe d'extension <xref:System.Windows.Markup.TypeExtension> sous-jacente. Dans le contexte de schéma XAML par défaut pour les Services XAML .NET Framework, qui est basé sur les types CLR, la valeur de cet attribut est le <xref:System.Reflection.MemberInfo.Name%2A> du type souhaité, ou qui contient <xref:System.Reflection.MemberInfo.Name%2A> précédé d’un préfixe pour un espace de noms XAML par défaut mappage.  
+ La syntaxe d’attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage. Le jeton de chaîne fourni après la chaîne d'identificateur `x:Type` est assigné en tant que valeur <xref:System.Windows.Markup.TypeExtension.TypeName%2A> de la classe d'extension <xref:System.Windows.Markup.TypeExtension> sous-jacente. Dans le contexte de schéma XAML par défaut pour les Services XAML .NET Framework, qui est basé sur les types CLR, la valeur de cet attribut est le <xref:System.Reflection.MemberInfo.Name%2A> du type souhaité, ou qui contient <xref:System.Reflection.MemberInfo.Name%2A> précédé d’un préfixe pour un espace de noms XAML par défaut mappage.  
   
  Le `x:Type` extension de balisage peut être utilisée dans la syntaxe d’élément objet. Dans ce cas, en spécifiant la valeur de la <xref:System.Windows.Markup.TypeExtension.TypeName%2A> propriété est requise pour initialiser correctement l’extension.  
   

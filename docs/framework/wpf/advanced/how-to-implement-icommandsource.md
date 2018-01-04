@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bdff5ebeb51daff4e8848e9a7c8282c2eee6f208
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d82a211f59fbdecdc932b7e57b242274e91cd5b2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-icommandsource"></a>Comment : implémenter ICommandSource
 Cet exemple montre comment créer une source de commande en implémentant <xref:System.Windows.Input.ICommandSource>.  Une source de commande est un objet qui sait comment appeler une commande.  Le <xref:System.Windows.Input.ICommandSource> interface expose trois membres : <xref:System.Windows.Input.ICommandSource.Command%2A>, <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>, et <xref:System.Windows.Input.ICommandSource.CommandTarget%2A>.  <xref:System.Windows.Input.ICommandSource.Command%2A>est la commande qui sera invoquée. Le <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> est un type de données défini par l’utilisateur qui est passé à partir de la source de commande à la méthode qui gère la commande. Le <xref:System.Windows.Input.ICommandSource.CommandTarget%2A> est l’objet qui est en cours d’exécution sur la commande.  

@@ -14,11 +14,12 @@ caps.latest.revision: "32"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6884598e6b883ab5e6369be5f2f796a194c7f930
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b112cb1e383b092c1bcc4403e04938b3b83c5ecc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="toolstrip-control-architecture"></a>Architecture du contrôle ToolStrip
 Le <xref:System.Windows.Forms.ToolStrip> et <xref:System.Windows.Forms.ToolStripItem> classes fournissent un système flexible et extensible pour afficher des éléments de menu, l’état et la barre d’outils. Ces classes sont toutes contenues dans le <xref:System.Windows.Forms> espace de noms et ils sont généralement nommés avec le préfixe « ToolStrip » (tel que <xref:System.Windows.Forms.ToolStripOverflow>) ou le suffixe « Bande » (tel que <xref:System.Windows.Forms.MenuStrip>).  

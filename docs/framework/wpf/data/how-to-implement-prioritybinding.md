@@ -17,11 +17,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9753462908928eaf177e100a16186826bf4828ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 13b254867200897acad2868e396d152a5f9efcbd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-prioritybinding"></a>Comment : implémenter PriorityBinding
 <xref:System.Windows.Data.PriorityBinding>dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fonctionne en spécifiant une liste de liaisons. La liste de liaisons est classée de priorité la plus élevée à la priorité la plus faible. Si la liaison de priorité la plus élevée retourne une valeur avec succès lorsqu’il est traité puis il est jamais nécessaire pour traiter les autres liaisons dans la liste. Il peut être le cas de la liaison de priorité la plus élevée prend beaucoup de temps à évaluer, la priorité la plus élevée suivante qui retourne une valeur avec succès est utilisée jusqu'à ce qu’une liaison d’une priorité plus élevée retourne une valeur avec succès.  

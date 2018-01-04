@@ -23,11 +23,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c5455007e407bf4320355aebfd043bfc056d6d56
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 0019b739c794cbffa62b49749371c2a19f752267
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="customizing-the-appearance-of-an-existing-control-by-creating-a-controltemplate"></a>Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate
 <a name="introduction"></a>A <xref:System.Windows.Controls.ControlTemplate> spécifie la structure visuelle et le comportement d’un contrôle. Vous pouvez personnaliser l’apparence d’un contrôle en lui donnant un nouveau <xref:System.Windows.Controls.ControlTemplate>. Lorsque vous créez un <xref:System.Windows.Controls.ControlTemplate>, vous remplacez l’apparence d’un contrôle existant sans modifier ses fonctionnalités. Par exemple, vous pouvez arrondir les boutons dans votre application au lieu de la forme carrée par défaut, mais le bouton déclenchera toujours le <xref:System.Windows.Controls.Primitives.ButtonBase.Click> événement.  
@@ -44,7 +45,7 @@ Bouton qui utilise un modèle de contrôle personnalisé et sur lequel le pointe
   
   
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Cette rubrique part du principe que vous savez comment créer et utiliser des contrôles et des styles, comme indiqué dans [Contrôles](../../../../docs/framework/wpf/controls/index.md). Les concepts abordés dans cette rubrique s’appliquent aux éléments qui héritent de la <xref:System.Windows.Controls.Control> (classe), à l’exception de la <xref:System.Windows.Controls.UserControl>. Vous ne pouvez pas appliquer un <xref:System.Windows.Controls.ControlTemplate> à un <xref:System.Windows.Controls.UserControl>.  
   
 <a name="when_you_should_create_a_controltemplate"></a>   

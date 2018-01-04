@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 00f605bba709f0ce5f3238ccc3c6ac6cd962f0a4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bb1f5986a0d9f9eb69ade0228925ec06164cee4d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xarguments-directive"></a>x:Arguments, directive
 Arguments de construction de packages pour une déclaration d’élément objet constructeur personnalisé en XAML, ou pour une déclaration d’objet de fabrique (méthode)  
@@ -60,7 +61,7 @@ Arguments de construction de packages pour une déclaration d’élément objet 
   
  Si `x:FactoryMethod` est spécifié, `x:Arguments` s’applique à une surcharge de la méthode nommée.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  XAML 2006 peut prendre en charge l’initialisation par défaut dans le texte de l’initialisation. Toutefois, l’application pratique d’une technique de construction de texte d’initialisation est limitée. Texte d’initialisation est traité comme une chaîne de texte unique ; Par conséquent, il ajoute uniquement la fonctionnalité pour l’initialisation d’un paramètre unique, sauf si un convertisseur de type est défini pour le comportement de construction qui peut analyser des éléments personnalisés des informations et les délimiteurs personnalisés à partir de la chaîne. En outre, la chaîne de texte à la logique de l’objet est potentiellement convertisseur de type natif par défaut d’un analyseur XAML donnée pour la gestion des primitives de chaîne true.  
   
  Le `x:Arguments` l’utilisation de XAML n’est pas utilisation des éléments de propriété dans le sens classique, étant donné que le balisage de la directive ne référence pas de type de l’élément objet contenant. Il est plus apparenté à d’autres directives telles que `x:Code` où l’élément dénote une plage dans laquelle la balise doit être interprétée comme autre que la valeur par défaut pour le contenu enfant. Dans ce cas, le type de chaque élément d’objet XAML communique des informations sur les types d’arguments, qui sont utilisées par les analyseurs XAML pour déterminer la signature de méthode de fabrique constructeur spécifique un `x:Arguments` tente de référencer l’utilisation.  

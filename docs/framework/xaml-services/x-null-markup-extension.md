@@ -23,11 +23,12 @@ caps.latest.revision: "20"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: a60d74bdf3343d02eaf912ac7700f36a649f659c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5b10d759a4f79eabe973a0fcd60736428e46f659
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xnull-markup-extension"></a>x:Null, extension de balisage
 Spécifie `null` en tant que valeur d’un membre XAML.  
@@ -38,7 +39,7 @@ Spécifie `null` en tant que valeur d’un membre XAML.
 <object property="{x:Null}" .../>  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le mot clé pour une référence null dans [!INCLUDE[TLA#tla_cshrp](../../../includes/tlasharptla-cshrp-md.md)] et [!INCLUDE[TLA#tla_cpp](../../../includes/tlasharptla-cpp-md.md)] a la valeur null. Le [!INCLUDE[TLA#tla_visualb](../../../includes/tlasharptla-visualb-md.md)] mot clé pour une référence null est `Nothing`, mais vous utilisez toujours `{x:Null}` comme utilisation de XAML quel que soit le langage de code-behind associer avec le code XAML.  
   
  Le `x:Null` extension de balisage ne dispose pas de propriétés définissables.  

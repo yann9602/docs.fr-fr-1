@@ -16,11 +16,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e77a0c698dae0330877c54422c15e14c82376891
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ad4969d80f7bd801ec738fa40e8b2d4ab9deefad
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-bind-to-the-results-of-a-linq-query"></a>Comment : effectuer une liaison avec les résultats d'une requête LINQ
 Cet exemple montre comment exécuter une requête LINQ, puis lier aux résultats.  

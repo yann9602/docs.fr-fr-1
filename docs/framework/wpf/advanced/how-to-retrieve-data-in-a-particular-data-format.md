@@ -20,11 +20,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8e6513fd6d8d443b76059626c0e40991e35830c6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 884b017a69e55cfccc9201ad2d101017b0c290b4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-retrieve-data-in-a-particular-data-format"></a>Comment : récupérer des données dans un format de données particulier
 Les exemples suivants montrent comment récupérer des données à partir d’un objet de données dans un format spécifié.  

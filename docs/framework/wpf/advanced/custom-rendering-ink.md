@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 90d2ab68f76bef8d8f437a7dd6096011889303fa
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 481990acdf2f5b8f798144d36434569b9e2cd481
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-rendering-ink"></a>Encre de rendu personnalisé
 Le <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> propriété d’un trait vous permet de spécifier l’apparence d’un trait, telles que sa taille, la couleur et la forme, mais il peut arriver que vous souhaitez personnaliser l’apparence au-delà <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> autoriser. Vous souhaiterez peut-être personnaliser l’apparence de l’encre en appliquant des effets tels qu’aérographe, peinture à l’huile et autres. Le [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] permet vous personnalisé encre de rendu en implémentant un personnalisé <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> et <xref:System.Windows.Ink.Stroke> objet.  

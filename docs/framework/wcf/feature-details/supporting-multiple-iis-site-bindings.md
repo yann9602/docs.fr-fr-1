@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bf2dbccd81b9c2e7b4ec78863d3de0227baedf92
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8dcd6a5e6204b1a629c1ee1e2ddfb9b263fa8054
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="supporting-multiple-iis-site-bindings"></a>Prise en charge de plusieurs liaisons de site IIS
 Lorsque vous hébergez un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] dans les services IIS 7.0 (Internet Information Services), vous souhaitez peut-être fournir plusieurs adresses de base utilisant le même protocole sur le même site. Cela permet au même service de répondre à plusieurs URI différents. C'est utile lorsque vous souhaitez héberger un service qui écoute sur http://www.contoso.com et http://contoso.com. Il est également utile de créer un service qui a une adresse de base pour les utilisateurs internes et une autre adresse de base pour les utilisateurs externes. Par exemple : http://internal.contoso.com et http://www.contoso.com.  
@@ -34,7 +35,7 @@ Lorsque vous hébergez un service [!INCLUDE[indigo1](../../../../includes/indigo
   
  Lors de l'hébergement d'un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dans les services IIS, IIS crée une adresse de base automatiquement, basée sur l'URI du répertoire virtuel qui contient l'application. Vous pouvez ajouter des adresses de base supplémentaires utilisant le même protocole, à l'aide du gestionnaire des services IIS pour ajouter une ou plusieurs liaisons à votre site Web. Pour chaque liaison, spécifiez un protocole (HTTP ou HTTPS), une adresse IP, un port et un nom d’hôte. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]à l’aide du Gestionnaire des Services Internet, consultez [Gestionnaire des services Internet (IIS 7)](http://go.microsoft.com/fwlink/?LinkId=164057). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]l’ajout de liaisons à un site, consultez [créer un Site Web (IIS 7)](http://go.microsoft.com/fwlink/?LinkId=164060)  
   
- La spécification de plusieurs adresses de base pour le même site affecte le contenu de la page d'aide [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], le schéma d'importation et les informations WSDL/MEX générées par le service. La page d'aide [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] affiche la ligne de commande à utiliser pour générer un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui peut communiquer avec le service. Cette ligne de commande contient uniquement la première adresse spécifiée dans la liaison IIS pour le site Web. De même, lors de l'importation du schéma, seule la première adresse de base spécifiée dans la liaison IIS est utilisée. Les données WSDL et MEX contiennent toutes les adresses de base spécifiées dans les liaisons IIS.  
+ La spécification de plusieurs adresses de base pour le même site affecte le contenu de la page d'aide [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], le schéma d'importation et les informations WSDL/MEX générées par le service. La page d'aide [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] affiche la ligne de commande à utiliser pour générer un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui peut communiquer avec le service. Cette ligne de commande contient uniquement la première adresse spécifiée dans la liaison IIS pour le site web. De même, lors de l'importation du schéma, seule la première adresse de base spécifiée dans la liaison IIS est utilisée. Les données WSDL et MEX contiennent toutes les adresses de base spécifiées dans les liaisons IIS.  
   
 > [!WARNING]
 >  Cela signifie que si un service possède deux adresses de base, une pour les utilisateurs internes et l'autre pour les utilisateurs externes, les deux sont spécifiées dans les informations WSDL/MEX générées par le service.

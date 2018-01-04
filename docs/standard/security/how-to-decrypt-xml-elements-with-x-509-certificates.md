@@ -23,11 +23,14 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1ac1f986fdbfe139bdcffc8268fc5fdbf916c936
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c922b3da772c685343b8989c5dc1bc89cad857fd
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-decrypt-xml-elements-with-x509-certificates"></a>Comment : déchiffrer des éléments XML avec les certificats X.509
 Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour chiffrer et déchiffrer un élément d'un document XML.  Le chiffrement XML est une méthode normalisée qui permet d'échanger et de stocker des données XML chiffrées sans que celles-ci ne puissent être lues facilement.  Pour plus d'informations sur la norme de chiffrement XML, consultez la spécification W3C (World Wide Web Consortium) relative au chiffrement XML, située à l'adresse http://www.w3.org/TR/xmldsig-core/.  

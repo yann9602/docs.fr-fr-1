@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 41b423235fc2ed9c0e0612c90017d41ab0e83d0a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e88afe5f9c35448b3234498af413500bee163abc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="richtextbox-overview"></a>Vue d'ensemble de RichTextBox
 Le <xref:System.Windows.Controls.RichTextBox> contrôle permet d’afficher ou modifier le contenu de flux, y compris des paragraphes, des images, des tables et bien plus encore. Cette rubrique présente la <xref:System.Windows.Controls.TextBox> classe et fournit des exemples de son utilisation dans les deux [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] et [!INCLUDE[TLA#tla_lhcshrp](../../../../includes/tlasharptla-lhcshrp-md.md)].  

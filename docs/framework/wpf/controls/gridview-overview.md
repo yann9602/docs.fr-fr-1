@@ -17,11 +17,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 44574b5737873371f9a7bc9be2d851a8ae1e101b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 099584ff5149891f406d5ad24a28a6b3e3faafb4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="gridview-overview"></a>Vue d'ensemble de GridView
 <xref:System.Windows.Controls.GridView>mode d’affichage est un des modes d’affichage pour un <xref:System.Windows.Controls.ListView> contrôle. La <xref:System.Windows.Controls.GridView> classe et ses classes de prise en charge permettent aux administrateurs et les utilisateurs afficher des collections d’éléments dans une table qui utilise généralement des boutons comme en-têtes de colonnes interactifs. Cette rubrique présente la <xref:System.Windows.Controls.GridView> classe et décrit son utilisation.  

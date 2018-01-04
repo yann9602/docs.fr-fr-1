@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ad0f7cacc8256e060bb12611bd1818b694e1e6dc
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 996d6d5f531a866d4fc80acc3848cdf264901032
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="gridview-column-header-styles-and-templates-overview"></a>Vue d'ensemble des modèles et styles d'en-tête de colonne GridView
 Cette présentation décrit l’ordre de priorité pour les propriétés qui vous permet de personnaliser un en-tête de colonne dans la <xref:System.Windows.Controls.GridView> mode d’affichage d’un <xref:System.Windows.Controls.ListView> contrôle.  

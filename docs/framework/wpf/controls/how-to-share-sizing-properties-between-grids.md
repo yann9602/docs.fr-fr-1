@@ -20,11 +20,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f0e3be0a0b550f6fbbc9876709094d4a23abe1a6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f8f80d93f9625ff962a3e3fab1f6647678ecf32f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-share-sizing-properties-between-grids"></a>Comment : partager des propriétés de dimensionnement entre grilles
 Cet exemple montre comment partager les données de dimensionnement des colonnes et des lignes entre <xref:System.Windows.Controls.Grid> éléments afin de conserver une taille cohérente.  

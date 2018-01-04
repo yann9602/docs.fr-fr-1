@@ -21,11 +21,12 @@ caps.latest.revision: "18"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: a63a8080c71ad026664e2e14fc1762fcdd4bdb36
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e601fb5895460e52aa21836c542d0b1367527f09
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xtypearguments-directive"></a>x:TypeArguments, directive
 Passe en limitant les arguments d’un générique au constructeur du type générique de type.  
@@ -43,7 +44,7 @@ Passe en limitant les arguments d’un générique au constructeur du type gén�
 |`object`|Une déclaration d’élément objet d’un type XAML, qui est sauvegardé par un type générique CLR. Si `object` fait référence à un type XAML qui n’est pas à partir de l’espace de noms XAML par défaut, `object` nécessite un préfixe pour indiquer l’espace de noms XAML où `object` existe.|  
 |`typeString`|Chaîne qui déclare le XAML d’un ou plusieurs noms de type sous forme de chaînes, qui fournit les arguments de type pour le type CLR générique. Consultez la section Notes pour les notes de la syntaxe supplémentaire.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Dans la plupart des cas, les types XAML qui sont utilisés comme un élément d’information dans un `typeString` chaîne de préfixe. Les types de contraintes génériques CLR (par exemple, <xref:System.Int32> et <xref:System.String>) proviennent de bibliothèques de classe de base CLR. Ces bibliothèques ne sont pas des espaces de noms XAML par défaut mappés au type de spécifiques à l’infrastructure et par conséquent, nécessitent un mappage de préfixe pour l’utilisation XAML.  
   
  Vous pouvez spécifier plusieurs noms de type XAML à l’aide d’une virgule.  

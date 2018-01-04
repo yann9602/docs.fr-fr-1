@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 41978e7b91c50b33649bd88e23d22fce7a272c5b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6ea5d269c3d455a4fbe3a34dca4335e0d8999d80
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="relativesource-markupextension"></a>RelativeSource, extension de balisage
 Spécifie les propriétés d’un <xref:System.Windows.Data.RelativeSource> source de liaison, à utiliser dans un [Extension de balisage de liaison](../../../../docs/framework/wpf/advanced/binding-markup-extension.md), ou lors de la définition la <xref:System.Windows.Data.Binding.RelativeSource%2A> propriété d’un <xref:System.Windows.Data.Binding> élément établie en XAML.  
@@ -67,7 +68,7 @@ Spécifie les propriétés d’un <xref:System.Windows.Data.RelativeSource> sour
 |`typeName`|Nécessaire pour le mode `FindAncestor`. Le nom d'un type, qui remplit la propriété <xref:System.Windows.Data.RelativeSource.AncestorType%2A>.|  
 |`intLevel`|Facultatif pour le mode `FindAncestor`. Un niveau d'ancêtre (évalué vers la direction du parent dans l'arborescence logique).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `{RelativeSource TemplatedParent}`utilisations de liaison sont une technique principale qui traite un concept de séparation de l’interface utilisateur d’un contrôle et la logique d’un contrôle. Cela permet la liaison à partir de la définition de modèle au parent basé sur des modèles (instance de l'objet à l'exécution où le modèle est appliqué). Dans ce cas, le [Extension de balisage TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md) est en fait un raccourci pour l’expression de liaison suivante : `{Binding RelativeSource={RelativeSource TemplatedParent}}`. `TemplateBinding`ou `{RelativeSource TemplatedParent}` utilisations sont uniquement pertinentes dans le code XAML qui définit un modèle. Pour plus d’informations, consultez [Extension de balisage TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)  
   
  `{RelativeSource FindAncestor}`est principalement utilisée dans les modèles de contrôle ou compositions de l’interface utilisateur autonomes prévisibles, pour les cas où un contrôle est toujours censé être dans une arborescence d’éléments visuels d’un certain type ancêtre. Par exemple, les éléments d'un contrôle d'éléments peuvent utiliser des utilisations de `FindAncestor` pour les lier aux propriétés de leur ancêtre parent du contrôle d'éléments. Ou les éléments qui font partie de la composition de contrôle dans un modèle peuvent utiliser des liaisons de `FindAncestor` aux éléments parents dans cette même structure de composition.  

@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a0a87c1cd87b21b10404ae4a19ee931cc5f69ece
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 65c92a64619ae993671f7669117e852994072047
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="webbrowser-control-windows-forms"></a>WebBrowser, contrôle (Windows Forms)
 Windows Forms `WebBrowser` contrôle héberge des pages Web et fournit des fonctionnalités à votre application de navigation Web.  
@@ -53,10 +54,10 @@ Windows Forms `WebBrowser` contrôle héberge des pages Web et fournit des fonct
   
 ## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.WebBrowser>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventArgs>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventHandler>  
  Décrit ce délégué.  
@@ -65,19 +66,19 @@ Windows Forms `WebBrowser` contrôle héberge des pages Web et fournit des fonct
  Décrit cette énumération et toutes ses valeurs.  
   
  <xref:System.Windows.Forms.WebBrowserNavigatedEventArgs>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.WebBrowserNavigatedEventHandler>  
  Décrit ce délégué.  
   
  <xref:System.Windows.Forms.WebBrowserNavigatingEventArgs>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.WebBrowserNavigatingEventHandler>  
  Décrit ce délégué.  
   
  <xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.WebBrowserProgressChangedEventHandler>  
  Décrit ce délégué.  

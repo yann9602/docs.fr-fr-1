@@ -16,17 +16,18 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ac6671033a439051b062ddae70649a63bacd4979
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9305b69927a1ed0ad4f154ab972316f3dee951e9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="timing-behaviors-overview"></a>Vue d'ensemble des comportements de minutage
 Cette rubrique décrit les comportements de minutage d’animations et d’autres <xref:System.Windows.Media.Animation.Timeline> objets.  
   
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette rubrique, vous devez connaître les fonctionnalités de base utilisées pour l’animation. Pour plus d’informations, consultez la [vue d’ensemble de l’Animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
   
 <a name="timelinetypes"></a>   

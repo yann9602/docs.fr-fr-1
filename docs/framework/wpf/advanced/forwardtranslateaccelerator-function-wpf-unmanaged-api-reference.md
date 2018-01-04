@@ -16,11 +16,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 663b28ed1a9430a6280ccd0ee9a44da2dea0c3cd
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cca9c78eaf13e04d22fce9f61ce4a7ab9ee09769
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="forwardtranslateaccelerator-function-wpf-unmanaged-api-reference"></a>ForwardTranslateAccelerator (fonction) (référence des API non managées WPF)
 Cette API prend en charge l’infrastructure de Windows Presentation Foundation (WPF) et n’est pas destinée à être utilisée directement depuis votre code.  
@@ -43,7 +44,7 @@ HRESULT ForwardTranslateAccelerator(
  appUnhandled  
  `true`Lorsque l’application a déjà reçue une chance de traiter le message d’entrée, mais elle n’a pas gérée dans le cas contraire, `false`.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [configuration système requise du .NET Framework](../../../../docs/framework/get-started/system-requirements.md).  
   
  **DLL :**  

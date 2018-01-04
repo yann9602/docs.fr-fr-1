@@ -18,11 +18,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 60a9f66fec64ceda71dd5b70211b897c84113429
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 77f01bc462be67c3b613b8ab102a359a80d74140
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-data-binding"></a>Liaison de données Windows Forms
 La liaison de données dans les Windows Forms vous permet d’afficher et de modifier les informations d’une source de données dans les contrôles du formulaire. Vous pouvez établir une liaison à une source de données traditionnelle et à presque toute structure qui contient des données.  

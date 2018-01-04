@@ -26,11 +26,12 @@ caps.latest.revision: "11"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 2b960e52d8d7dca590411f1c5f096a6942e1ade9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6052e575b62994b54799cc1af88584f433b06ff8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="built-in-types-for-common-xaml-language-primitives"></a>Types intégrés pour les primitives associées au langage XAML courant
 XAML 2009 introduit la prise en charge de niveau de langage XAML pour plusieurs types de données qui sont des primitives fréquemment utilisées dans le Common Language Runtime (CLR) et dans d'autres langages de programmation. XAML 2009 ajoute la prise en charge des primitives suivantes : `x:Object`, `x:Boolean`, `x:Char`, `x:String`, `x:Decimal`, `x:Single`, `x:Double`, `x:Int16`, `x:Int32`, `x:Int64`, `x:TimeSpan`, `x:Uri`, `x:Byte`et `x:Array`  
@@ -50,7 +51,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
 ```  
   
 <a name="xaml_2009_language_primitives"></a>   
-## <a name="xaml-2009-language-primitives"></a>Primitives de langage XAML 2009  
+## <a name="xaml-2009-language-primitives"></a>Primitives de langage XAML 2009  
  Par convention, les primitives de langage pour XAML et tous les autres éléments de langage XAML sont affichés, notamment le préfixe `x:` . C'est ainsi que les éléments de langage XAML sont généralement utilisés dans le balisage réel. Cette convention est suivie de la documentation conceptuelle pour XAML dans WPF, ainsi que dans la spécification XAML.  
   
 ### <a name="xobject"></a>x:Object  
@@ -76,14 +77,14 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
 ### <a name="xdecimal"></a>x:Decimal  
  Pour le stockage CLR, la primitive `x:Decimal` correspond à <xref:System.Decimal>.  
   
- Notez que l'analyse XAML est effectuée fondamentalement par rapport à la culture `en-US` . Dans la culture `en-US` , le séparateur approprié pour les composants d'une valeur décimale est toujours le point (`.`), indépendamment des paramètres de culture de l'environnement de développement, ou de la cible cliente éventuelle où le code XAML est chargé au moment de l'exécution.  
+ Notez que l'analyse XAML est effectuée fondamentalement par rapport à la culture `en-US`. Dans la culture `en-US` , le séparateur approprié pour les composants d'une valeur décimale est toujours le point (`.`), indépendamment des paramètres de culture de l'environnement de développement, ou de la cible cliente éventuelle où le code XAML est chargé au moment de l'exécution.  
   
  Pour la définition de la spécification du langage XAML, consultez [ \[MS-XAML\] Sections 5.2.14 et 5.4.8](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
 ### <a name="xsingle"></a>x:Single  
  Pour le stockage CLR, la primitive `x:Single` correspond à <xref:System.Single>.  
   
- Outre les valeurs numériques, la syntaxe de texte de `x:Single` autorise également les jetons `Infinity`, `-Infinity`et `NaN`. Ces jetons sont traités avec respect de la casse.  
+ Outre les valeurs numériques, la syntaxe de texte de `x:Single` autorise également les jetons `Infinity`, `-Infinity` et `NaN`. Ces jetons sont traités avec respect de la casse.  
   
  `x:Single` peut prendre en charge les valeurs sous forme de notation scientifique, si le premier caractère dans la syntaxe de texte est `e` ou `E`.  
   
@@ -92,7 +93,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
 ### <a name="xdouble"></a>x:Double  
  Pour le stockage CLR, la primitive `x:Double` correspond à <xref:System.Double>.  
   
- Outre les valeurs numériques, la syntaxe de texte de `x:Double` autorise les jetons `Infinity`, `-Infinity`et `NaN`. Ces jetons sont traités avec respect de la casse.  
+ Outre les valeurs numériques, la syntaxe de texte de `x:Double` autorise les jetons `Infinity`, `-Infinity` et `NaN`. Ces jetons sont traités avec respect de la casse.  
   
  `x:Double` peut prendre en charge les valeurs sous forme de notation scientifique. Utilisez le caractère `e` ou `E` pour introduire la partie exposant.  
   

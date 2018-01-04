@@ -17,11 +17,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f45d01da6f9a851a0e51f9d614e84a3fba91e4d3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 43b92051b6524a730735fea98d64ee64578b4e06
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-keyboard-input-works"></a>Fonctionnement de l'entrée au clavier
 Windows Forms traite l’entrée au clavier en déclenchant des événements de clavier en réponse aux messages de Windows. La plupart des applications Windows Forms traitent l’entrée au clavier exclusivement en gérant les événements de clavier. Toutefois, vous devez comprendre le fonctionnement des messages de clavier pour pouvoir implémenter des scénarios d’entrée au clavier plus avancés, comme l’interception des touches avant qu’elles n’atteignent un contrôle. Cette rubrique décrit les types de données de touches que Windows Forms reconnaît et fournit une vue d’ensemble du routage des messages de clavier. Pour plus d’informations sur les événements de clavier, consultez [Utilisation des événements de clavier](../../../docs/framework/winforms/using-keyboard-events.md).  
@@ -61,7 +62,7 @@ Windows Forms traite l’entrée au clavier en déclenchant des événements de 
 ## <a name="processing-keyboard-messages"></a>Traitement des messages de clavier  
  Une fois que les messages de clavier atteignent la <xref:System.Windows.Forms.Control.WndProc%2A> méthode d’un formulaire ou un contrôle, ils sont traités par un ensemble de méthodes qui peuvent être substituées. Chacune de ces méthodes retourne une <xref:System.Boolean> valeur qui spécifie si le message de clavier a été traité et consommé par le contrôle. Si l’une des méthodes renvoie `true`, alors le message est considéré comme traité et n’est pas transmis à la base ou au parent du contrôle pour un traitement ultérieur. Dans le cas contraire, le message reste dans la file d’attente des messages et peut être traité dans une autre méthode de la base ou du parent du contrôle. Le tableau suivant présente les méthodes qui traitent les messages de clavier.  
   
-|Méthode|Remarques|  
+|Méthode|Notes|  
 |------------|-----------|  
 |<xref:System.Windows.Forms.Control.ProcessKeyMessage%2A>|Cette méthode traite tous les messages de clavier qui sont reçus par le <xref:System.Windows.Forms.Control.WndProc%2A> méthode du contrôle.|  
 |<xref:System.Windows.Forms.Control.ProcessKeyPreview%2A>|Cette méthode envoie le message de clavier au parent du contrôle. Si <xref:System.Windows.Forms.Control.ProcessKeyPreview%2A> retourne `true`, aucun événement de touche n’est généré, sinon <xref:System.Windows.Forms.Control.ProcessKeyEventArgs%2A> est appelée.|  

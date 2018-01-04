@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1828b6ffe2d24c2bfb98b4668a9540adf5978e5f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9bb2664b267301fdf1e3a67e385595a5d28212bc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="advanced-text-formatting"></a>Mise en forme de texte avancée
 Le [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] fournit un ensemble robuste de [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] pour inclure du texte dans votre application. Mise en page et [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], tel que <xref:System.Windows.Controls.TextBlock>, fournir les plus courants et général utiliser des éléments de présentation de texte. Dessin [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], tel que <xref:System.Windows.Media.GlyphRunDrawing> et <xref:System.Windows.Media.FormattedText>, fournir un moyen pour inclure le texte mis en forme dans des dessins. Au niveau le plus avancé, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fournit un moteur de contrôler tous les aspects de la présentation de texte, tels que la gestion du magasin de texte, la gestion de mise en forme de texte et gestion de l’objet incorporé de mise en forme du texte extensible.  
@@ -37,7 +38,7 @@ Le [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] fournit u
 
   
 <a name="prereq"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Cette rubrique suppose que vous êtes familiarisé avec le niveau supérieur [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] utilisé pour la présentation du texte. La plupart des scénarios utilisateur ne nécessitent pas de la mise en forme de texte avancée [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] décrites dans cette rubrique. Pour une introduction à l’autre texte [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], consultez [Documents dans WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md).  
   
 <a name="section1"></a>   

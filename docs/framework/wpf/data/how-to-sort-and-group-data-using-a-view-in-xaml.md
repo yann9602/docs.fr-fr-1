@@ -22,11 +22,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c219def87e258a2c9fc1bf4f4867287e6156c59a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1bfa1941e6352372712debb5a5243bdd24810aac
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-sort-and-group-data-using-a-view-in-xaml"></a>Comment : trier et grouper des données à l'aide d'une vue en XAML
 Cet exemple montre comment créer une vue d’une collection de données en [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Les vues permettent pour les fonctionnalités de regroupement, le tri, filtrage et la notion d’un élément actuel.  

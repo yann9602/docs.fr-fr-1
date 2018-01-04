@@ -19,11 +19,12 @@ caps.latest.revision: "77"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6a2ec81fa63b07a33f79a54b500ae3d7e62f367f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0159848e8add1f66ca7690c0fc692522102e74d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transformations-how-to-topics"></a>Rubriques "Comment" relatives aux transformations
 Les rubriques de cette section décrivent comment appliquer différentes transformations à des objets.  

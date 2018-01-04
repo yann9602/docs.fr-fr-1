@@ -17,11 +17,12 @@ caps.latest.revision: "45"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cc027381ec8a5311d53077f103be035dd6c311d0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1e8773b0b99e6394dcc3675b21f4a9454444b617
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="building-a-wpf-application-wpf"></a>Génération d'une application WPF (WPF)
 Les applications [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] peuvent être générées comme fichiers exécutables [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] (.exe), comme bibliothèques (.dll), ou une combinaison des deux types d’assemblys. Cette rubrique présente comment générer des applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] et décrit les principales étapes du processus de génération.  

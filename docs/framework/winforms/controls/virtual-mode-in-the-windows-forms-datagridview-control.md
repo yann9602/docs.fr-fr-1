@@ -14,11 +14,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 10c6afbcde22a82e6227ce1d95d57749bee1a88c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 06c5bb1d4a36d51bb07d59b48c730f722af23f8c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="virtual-mode-in-the-windows-forms-datagridview-control"></a>Mode virtuel dans le contrôle DataGridView Windows Forms
 Avec le mode virtuel, vous pouvez gérer l’interaction entre le <xref:System.Windows.Forms.DataGridView> contrôle et un cache de données personnalisé. Pour implémenter le mode virtuel, vous devez définir le <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> propriété `true` et gérez un ou plusieurs des événements décrits dans cette rubrique. Vous gérerez en général au moins les `CellValueNeeded` événement, ce qui permet au contrôle de rechercher des valeurs dans le cache de données.  
@@ -49,7 +50,7 @@ Avec le mode virtuel, vous pouvez gérer l’interaction entre le <xref:System.W
   
  Les événements suivants se produisent uniquement lorsque la <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> est définie sur `true`.  
   
-|Événement|Description|  
+|événement|Description|  
 |-----------|-----------------|  
 |<xref:System.Windows.Forms.DataGridView.CellValueNeeded>|Utilisé par le contrôle pour récupérer une valeur de cellule à partir du cache de données pour l’affichage. Cet événement se produit uniquement pour les cellules dans les colonnes indépendantes.|  
 |<xref:System.Windows.Forms.DataGridView.CellValuePushed>|Utilisé par le contrôle pour valider l’entrée d’utilisateur pour une cellule dans le cache de données. Cet événement se produit uniquement pour les cellules dans les colonnes indépendantes.<br /><br /> Appelez le <xref:System.Windows.Forms.DataGridView.UpdateCellValue%2A> méthode lorsque vous modifiez une valeur mise en cache en dehors d’un <xref:System.Windows.Forms.DataGridView.CellValuePushed> Gestionnaire d’événements pour vous assurer que la valeur actuelle est affichée dans le contrôle et appliquer des modes de dimensionnement automatique actuellement en vigueur.|  

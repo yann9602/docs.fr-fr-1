@@ -17,11 +17,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 750e5c42158a87c04a7fb0f2a83f126a698bb93f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f1a5d70807541a0a3faf6bc99a3ced42827efd72
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-creating-direct3d9-content-for-hosting-in-wpf"></a>Procédure pas à pas : création de contenu Direct3D9 à héberger dans WPF
 Cette procédure pas à pas montre comment créer un contenu Direct3D9 à héberger dans une application Windows Presentation Foundation (WPF). Pour plus d’informations sur l’hébergement de contenu Direct3D9 dans les applications WPF, consultez [WPF et Direct3D9 interopérabilité](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md).  
@@ -34,7 +35,7 @@ Cette procédure pas à pas montre comment créer un contenu Direct3D9 à héber
   
  Lorsque vous avez terminé, vous aurez une DLL qui contient le contenu Direct3D9 pour une utilisation dans une application WPF.  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
   
 -   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  

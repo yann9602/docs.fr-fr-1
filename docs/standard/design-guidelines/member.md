@@ -18,11 +18,14 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 5df4ad5f6c947d8b3bf62c3bf7eb8426419e5f3f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ae69b77098c7f2e1de83eedd40cf0f0da9473326
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="member-design-guidelines"></a>Instructions de conception des membres
 Méthodes, propriétés, événements, constructeurs et les champs sont collectivement en tant que membres. Les membres sont finalement les moyens par lesquels les fonctionnalités de framework sont exposées aux utilisateurs finaux d’une infrastructure.  
@@ -33,13 +36,13 @@ Méthodes, propriétés, événements, constructeurs et les champs sont collecti
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Surcharge de membre](../../../docs/standard/design-guidelines/member-overloading.md)  
- [Conception de la propriété](../../../docs/standard/design-guidelines/property.md)  
+ [Conception des propriétés](../../../docs/standard/design-guidelines/property.md)  
  [Conception de constructeurs](../../../docs/standard/design-guidelines/constructor.md)  
  [Conception d’événements](../../../docs/standard/design-guidelines/event.md)  
- [Conception de champ](../../../docs/standard/design-guidelines/field.md)  
+ [Conception de champs](../../../docs/standard/design-guidelines/field.md)  
  [Méthodes d’extension](../../../docs/standard/design-guidelines/extension-methods.md)  
- [Surcharges d’opérateur](../../../docs/standard/design-guidelines/operator-overloads.md)  
- [Conception de paramètre](../../../docs/standard/design-guidelines/parameter-design.md)  
+ [Surcharges d’opérateurs](../../../docs/standard/design-guidelines/operator-overloads.md)  
+ [Conception de paramètres](../../../docs/standard/design-guidelines/parameter-design.md)  
  *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
  *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  

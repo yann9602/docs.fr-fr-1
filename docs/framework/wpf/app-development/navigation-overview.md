@@ -35,11 +35,12 @@ caps.latest.revision: "69"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 73bb3a2f43c5bd91d7a107a0a053381ca7bc0559
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3a3b7d865a503189ebb5b3adadc7258603461c9b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="navigation-overview"></a>Vue d'ensemble de la navigation
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]prend en charge la navigation de style navigateur qui peut être utilisée dans les deux types d’applications : applications autonomes et [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]. Pour le contenu du package pour la navigation, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fournit la <xref:System.Windows.Controls.Page> classe. Vous pouvez naviguer à partir d’un <xref:System.Windows.Controls.Page> à l’autre de façon déclarative, en utilisant un <xref:System.Windows.Documents.Hyperlink>, ou par programme, en utilisant le <xref:System.Windows.Navigation.NavigationService>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] utilise le journal pour se souvenir des pages visitées et y revenir.  

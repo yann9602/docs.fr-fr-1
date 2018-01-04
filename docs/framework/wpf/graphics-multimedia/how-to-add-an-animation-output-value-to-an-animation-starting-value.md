@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 018311acb1cfcdaf64dae7a6ea500f0fcca387fb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b1a6a5923655c5857b813df778b36b6c7fd208b0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-an-animation-output-value-to-an-animation-starting-value"></a>Comment : ajouter une valeur de sortie d'animation à une valeur de départ d'animation
 Cet exemple montre comment ajouter une valeur de sortie de l’animation à une valeur de départ de l’animation.  

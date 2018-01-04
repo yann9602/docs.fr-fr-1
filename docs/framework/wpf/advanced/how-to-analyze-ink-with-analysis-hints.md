@@ -21,11 +21,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d405ba3659c32a3aa637218c6f3656f6d4dccae2
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: b97f7fe0314b6bf839e4e639e32a48f9261def73
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-analyze-ink-with-analysis-hints"></a>Comment : analyser l'encre avec des indications d'analyse
 Un [System.Windows.Ink.AnalysisHintNode](https://msdn.microsoft.com/library/system.windows.ink.analysishintnode(v=vs.100).aspx) fournit une indication pour le [System.Windows.Ink.InkAnalyze](https://msdn.microsoft.com/library/system.windows.ink.inkanalyzer(v=vs.100).aspx) à laquelle elle est associée.  L’indicateur s’applique à la zone spécifiée par la [System.Windows.Ink.ContextNode.Location%2A](https://msdn.microsoft.com/library/system.windows.ink.contextnode.location(v=vs.100).aspx) propriété de la [System.Windows.Ink.AnalysisHintNode](https://msdn.microsoft.com/library/system.windows.ink.analysishintnode(v=vs.100).aspx) et fournit un contexte supplémentaire à l’analyseur d’encre à améliorer la précision de la reconnaissance. Le [System.Windows.Ink.InkAnalyze](https://msdn.microsoft.com/library/system.windows.ink.inkanalyzer(v=vs.100).aspx) s’applique à ces informations de contexte lors de l’analyse de l’encre obtenue dans zone de l’indicateur.  

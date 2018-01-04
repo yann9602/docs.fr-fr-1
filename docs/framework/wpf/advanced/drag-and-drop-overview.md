@@ -23,11 +23,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bb803d8cf1a51acf76fb1ef264e0fe63b8a21073
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b7a69a4dcd5fc39b700bf9c3404e70d581509ebc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="drag-and-drop-overview"></a>Vue d'ensemble du glisser-déplacer
 Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplacer dans les applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Le glisser-déplacer fait généralement référence à une méthode de transfert de données qui implique l'utilisation d'une souris (ou d'un autre dispositif de pointage) pour sélectionner un ou plusieurs objets, les faire glisser vers une cible de déplacement souhaitée dans l'[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] et les y déplacer.  
@@ -77,7 +78,7 @@ Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplac
   
 ### <a name="drag-source-events"></a>Événements de la source du glissement  
   
-|Événement|Résumé|  
+|Événement|Récapitulatif|  
 |-----------|-------------|  
 |<xref:System.Windows.DragDrop.GiveFeedback>|Cet événement se produit continuellement pendant une opération de glisser-déplacer et permet à la source du déplacement de fournir une rétroaction visuelle à l'utilisateur. Cette rétroaction est généralement fournie par la modification de l'apparence du pointeur de la souris, indiquant les effets autorisés par la cible du déplacement.  Il s'agit d'une propagation d'événements.|  
 |<xref:System.Windows.DragDrop.QueryContinueDrag>|Cet événement se produit quand il y a une modification dans les états du clavier ou du bouton de la souris pendant une opération de glisser-déplacer ; il permet à la source du déplacement d'annuler l'opération de glisser-déplacer selon les états de la touche/du bouton. Il s'agit d'une propagation d'événements.|  
@@ -86,7 +87,7 @@ Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplac
   
 ### <a name="drop-target-events"></a>Événements de cible de déplacement  
   
-|Événement|Résumé|  
+|Événement|Récapitulatif|  
 |-----------|-------------|  
 |<xref:System.Windows.DragDrop.DragEnter>|Cet événement se produit quand vous faites glisser un objet dans les limites de la cible du déplacement. Il s'agit d'une propagation d'événements.|  
 |<xref:System.Windows.DragDrop.DragLeave>|Cet événement se produit quand vous faites glisser un objet hors des limites de la cible du déplacement.  Il s'agit d'une propagation d'événements.|  

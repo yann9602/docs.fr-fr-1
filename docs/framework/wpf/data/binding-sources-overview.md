@@ -17,11 +17,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 806a62d57e1099bb9d7cdcca657be500c33b0df1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 88f1a22fc15e85e687c7b7eeb0a6e01445277d09
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="binding-sources-overview"></a>Vue d'ensemble des sources de liaison
 Dans la liaison de données, l’objet de source de liaison fait référence à l’objet à partir duquel vous obtenez des données. Cette rubrique décrit les types d’objets que vous pouvez utiliser comme source de liaison.  

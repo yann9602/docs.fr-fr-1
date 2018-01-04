@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e90f7f69aebf48bbc27321d3808468a2df49f793
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: b27f8544a44a252eb1a1afd6e096f303360c14e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-enable-a-command"></a>Comment : activer une commande
 L’exemple suivant montre comment utiliser l’exécution de commandes dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  L’exemple montre comment associer un <xref:System.Windows.Input.RoutedCommand> à un <xref:System.Windows.Controls.Button>, créez un <xref:System.Windows.Input.CommandBinding>et créer les gestionnaires d’événements qui implémentent la <xref:System.Windows.Input.RoutedCommand>.  Pour plus d’informations sur l’exécution des commandes, consultez le [vue d’ensemble de l’exécution des commandes](../../../../docs/framework/wpf/advanced/commanding-overview.md).  

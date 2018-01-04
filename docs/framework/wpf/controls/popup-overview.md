@@ -16,11 +16,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 96ee7b227d4e2ea5dfcb0b8870d77d03abf08db8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0cb20895b5af35fec7274ca4c747740390104355
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="popup-overview"></a>Vue d'ensemble de Popup
 Le <xref:System.Windows.Controls.Primitives.Popup> contrôle permet d’afficher le contenu dans une fenêtre distincte qui flotte au-dessus de la fenêtre d’application actuelle par rapport à une coordonnée désignée d’élément ou de l’écran. Cette rubrique présente la <xref:System.Windows.Controls.Primitives.Popup> de contrôle et fournit des informations sur son utilisation.  

@@ -17,11 +17,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 80621a12a4ccd5008a0331af005629d45f60abdf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4325fd3eb2e3d7179ddb5270d073c7ba5f0f383f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="richtextbox-control-windows-forms"></a>RichTextBox, contrôle (Windows Forms)
 Windows Forms `RichTextBox` contrôle est utilisé pour l’affichage, la saisie et la manipulation de texte avec mise en forme. Le `RichTextBox` contrôle effectue tout le <xref:System.Windows.Forms.TextBox> effectue, mais il peut également afficher des polices, couleurs et des liens ; charger du texte et des images incorporées à partir d’un fichier ; l’annulation et la restauration par progression de la modification des opérations ; et rechercher les caractères spécifiés. Le `RichTextBox` contrôle est généralement utilisé pour fournir la manipulation du texte et afficher les fonctionnalités similaires aux applications de traitement de texte tel que Microsoft Word. Comme le <xref:System.Windows.Forms.TextBox> (contrôle), le `RichTextBox` contrôle peut afficher les barres de défilement ; mais contrairement à la <xref:System.Windows.Forms.TextBox> contrôle, il affiche des barres de défilement horizontal et vertical par défaut et comporte des paramètres de barre de défilement supplémentaires.  
@@ -56,7 +57,7 @@ Windows Forms `RichTextBox` contrôle est utilisé pour l’affichage, la saisie
   
 ## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.RichTextBox>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  

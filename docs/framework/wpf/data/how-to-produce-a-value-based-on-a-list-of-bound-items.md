@@ -19,11 +19,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7d16a198ed78c1ffd9dcaad595e9cc9be3cb2de0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c3987690a1acb180ee22fa02e399accd9c5d481d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-produce-a-value-based-on-a-list-of-bound-items"></a>Comment : produire une valeur en fonction d'une liste d'éléments liés
 <xref:System.Windows.Data.MultiBinding>vous permet de lier une propriété de cible de liaison à une liste de propriétés de la source, puis appliquer une logique pour produire une valeur avec les entrées données. Cet exemple montre comment utiliser <xref:System.Windows.Data.MultiBinding>.  

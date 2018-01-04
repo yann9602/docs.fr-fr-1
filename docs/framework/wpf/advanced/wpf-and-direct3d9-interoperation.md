@@ -17,11 +17,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b1bd4d7486f546a340a4c722d140c6c7f5cee707
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: abfdeb4dbf72d0173b020e201f85a30b57cfb3e2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-and-direct3d9-interoperation"></a>Interopérabilité WPF et Direct3D9
 Vous pouvez inclure le contenu Direct3D9 dans une application Windows Presentation Foundation (WPF). Cette rubrique décrit comment créer le contenu Direct3D9 afin qu’elle interagit efficacement avec WPF.  

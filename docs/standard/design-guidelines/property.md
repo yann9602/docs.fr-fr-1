@@ -16,11 +16,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 477b3b69ce1b8a3bb160e8e120885239e3d99e56
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 8f9c65dc6265daa793656177f066b97373f48ab8
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="property-design"></a>Conception des propriétés
 Bien que les propriétés sont techniquement très semblables aux méthodes, ils sont très différents en termes de leurs scénarios d’utilisation. Ils doivent être considérés comme des champs intelligents. Ils ont la syntaxe d’appel de champs et la flexibilité des méthodes.  
@@ -96,5 +99,5 @@ Bien que les propriétés sont techniquement très semblables aux méthodes, ils
  *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi  
- [Règles de conception de membres](../../../docs/standard/design-guidelines/member.md)  
+ [Instructions de conception des membres](../../../docs/standard/design-guidelines/member.md)  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)

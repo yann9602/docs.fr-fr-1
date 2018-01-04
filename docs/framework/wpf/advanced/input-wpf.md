@@ -17,11 +17,12 @@ caps.latest.revision: "72"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 46e54e05d30e14ad89454a627a7436fbd3cbedbe
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 1a39badbd6e7ddfc445d674a719ba9fe82f554d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="input-wpf"></a>Entrée (WPF)
 [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)]prend en charge plusieurs types d’entrée. Cette entrée inclut le texte, tactile, la souris, les commandes, le focus, tactile, glisser-déplacer et encre numérique. Cette section décrit les rubriques relatives à l’entrée dans WPF.  

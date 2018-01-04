@@ -22,11 +22,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7c754bba18e93f63306701381f66af04b593c473
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d99d794164307cb22c5dfc89d6c9c227aa457a59
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-navigate-data-in-windows-forms"></a>Comment : naviguer au sein des données dans les Windows Forms
 Dans une application Windows, pour parcourir les enregistrements dans une source de données le plus simple consiste à lier un <xref:System.Windows.Forms.BindingSource> à la source de données, puis lier les contrôles à le <xref:System.Windows.Forms.BindingSource>. Vous pouvez ensuite utiliser la méthode de navigation intégrée sur le <xref:System.Windows.Forms.BindingSource> telle une <xref:System.Windows.Forms.BindingSource.MoveNext%2A>, <xref:System.Windows.Forms.BindingSource.MoveLast%2A>, <xref:System.Windows.Forms.BindingSource.MovePrevious%2A> et <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>. À l’aide de ces méthodes s’ajuste le <xref:System.Windows.Forms.BindingSource.Position%2A> et <xref:System.Windows.Forms.BindingSource.Current%2A> propriétés de la <xref:System.Windows.Forms.BindingSource> en conséquence. Vous pouvez également rechercher un élément et définissez-le en tant que l’élément actuel en définissant le <xref:System.Windows.Forms.BindingSource.Position%2A> propriété.  

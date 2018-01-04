@@ -17,11 +17,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bbc5caeab5a77518e160bacb9722e50ff7abbfb4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7390c8c84caa17b984d5a16b7ac6b9704b8f3c6e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sample-opentype-font-pack"></a>Exemple de pack de polices OpenType
 Cette rubrique fournit une vue d’ensemble des polices d’exemple [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] qui sont distribuées avec le [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)]. Les exemples de polices prennent en charge des fonctionnalités [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] étendues qui peuvent être utilisées par les applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -31,7 +32,7 @@ Cette rubrique fournit une vue d’ensemble des polices d’exemple [!INCLUDE[TL
 ## <a name="fonts-in-the-opentype-font-pack"></a>Polices du pack de polices OpenType  
  Le [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] contient des exemples de polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] que vous pouvez utiliser lorsque vous créez des applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Les exemples de polices sont fournis sous licence Ascender Corporation. Ces polices implémentent uniquement une partie des fonctionnalités définies par le format [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)]. Le tableau suivant répertorie les exemples de polices [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)].  
   
-|**Nom**|**Fichier**|  
+|**Name**|**Fichier**|  
 |--------------|--------------|  
 |Kootenay|Kooten.ttf|  
 |Lindsey|Linds.ttf|  

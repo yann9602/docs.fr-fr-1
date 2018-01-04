@@ -18,11 +18,12 @@ caps.latest.revision: "15"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: a5048cbad1d2ea914d041ac3c87a43223b208c3a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 8b8356cdb47b6b834e8d9a6bb84b26445af6d865
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xmlspace-handling-in-xaml"></a>Gestion de xml:space en XAML
 Le `xml:space` attribut est un attribut XML qui déclare le comportement de traitement des espaces blancs significatifs dans un élément objet. Ce comportement ne s’applique à tout le contenu (texte interne) contenu dans l’élément où `xml:space` est déclarée et s’étend également aux éléments enfants.  
@@ -39,7 +40,7 @@ Le `xml:space` attribut est un attribut XML qui déclare le comportement de trai
 <object xml:space="default" />  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La définition de la `xml:space` attribut en XAML, y compris ses deux valeurs possibles est dérivée de `xml:space` , défini comme un « attribut spécial » par les spécifications W3C pour XML.  
   
  La valeur par défaut de la `xml:space` attribut est la valeur littérale `"default"`. Pour la valeur `"default"`, ou si `xml:space` n’est pas indiqué, le comportement de l’analyse d’un espace blanc significatif est la gestion par défaut, tel que défini dans la rubrique [traitement des espaces blancs en XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md).  

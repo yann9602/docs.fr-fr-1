@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 9182c95b9770cac94b2a747e277fcd0cc02b387f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a125aa0968abbd69580cab46f3231a6536eff9c5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="behavior-security"></a>Sécurité des comportements
 Cette section contient des exemples qui indiquent comment configurer la sécurité des comportements de service.  
@@ -26,11 +27,11 @@ Cette section contient des exemples qui indiquent comment configurer la sécurit
  [Comportement de l’audit de service](../../../../docs/framework/wcf/samples/service-auditing-behavior.md)  
  Cet exemple montre comment utiliser <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> pour activer l'audit des événements de sécurité pendant des opérations de service.  
   
- [Fournisseur d’appartenances et rôle](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)  
+ [Fournisseur d’appartenances et de rôles](../../../../docs/framework/wcf/samples/membership-and-role-provider.md)  
  Cet exemple montre comment un service peut utiliser les fournisseurs d'appartenances et de rôles [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] pour authentifier et autoriser des clients.  
   
- [Autoriser l’accès aux opérations de Service](../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)  
+ [Autorisation de l’accès aux opérations de service](../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)  
  Cet exemple montre comment utiliser le [ \<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) pour permettre l’utilisation de la <xref:System.Security.Permissions.PrincipalPermissionAttribute> attribut pour autoriser l’accès aux opérations de service.  
   
- [L’emprunt d’identité du Client](../../../../docs/framework/wcf/samples/impersonating-the-client.md)  
+ [Emprunt de l’identité du client](../../../../docs/framework/wcf/samples/impersonating-the-client.md)  
  Cet exemple montre comment emprunter l'identité de l'application de l'appelant au niveau du service afin que ce dernier puisse accéder aux ressources système pour le compte de l'appelant.

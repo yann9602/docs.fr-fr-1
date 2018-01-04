@@ -15,11 +15,12 @@ caps.latest.revision: "86"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 921a9f3abd8c4cba8cfa0f59b8321ee309642dbb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 58f65d6c25627ba84ffe83677bbaadfc2e55e6f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="documents"></a>Documents
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un ensemble polyvalent de composants qui permettent aux développeurs de créer des applications avec les fonctionnalités de document avancées et une expérience de lecture améliorée. En plus d’une amélioration des capacités et de la qualité, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit également des services de gestion simplifiée pour le packaging, la sécurité et le stockage des documents.  

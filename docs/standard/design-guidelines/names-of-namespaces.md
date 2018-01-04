@@ -19,11 +19,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4fc0cb9183fde33887a3e84bb30cc3f79892586e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: bc298ad41884bfda84771a729990ebb4e6f776b7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="names-of-namespaces"></a>Noms d'espaces de noms
 Comme avec les autres instructions d’affectation de noms, l’objectif lorsque vous nommez des espaces de noms consiste à créer suffisamment claire pour le programmeur immédiatement savoir ce que le contenu de l’espace de noms est susceptible d’être à l’aide de l’infrastructure. Le modèle suivant spécifie la règle générale pour nommer les espaces de noms :  
@@ -95,4 +98,4 @@ Comme avec les autres instructions d’affectation de noms, l’objectif lorsque
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Affectation de noms](../../../docs/standard/design-guidelines/naming-guidelines.md)
+ [Directives de nommage](../../../docs/standard/design-guidelines/naming-guidelines.md)

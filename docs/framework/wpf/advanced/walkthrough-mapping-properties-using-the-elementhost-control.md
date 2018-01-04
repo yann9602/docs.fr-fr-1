@@ -19,18 +19,19 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dae954012d15431d2019d3d9cbe61747a8646d4b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0db7b9677b5c8c415b6d0b3f49bd149c06843a33
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a>Procédure pas à pas : mappage de propriété à l'aide du contrôle ElementHost
 Cette procédure pas à pas vous montre comment utiliser le <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> propriété à mapper [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] propriétés dans les propriétés correspondantes sur hébergé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] élément.  
   
  Cette procédure pas à pas décrit notamment les tâches suivantes :  
   
--   Création du projet.  
+-   Création du projet  
   
 -   Définition d’un nouveau mappage de propriété.  
   
@@ -42,7 +43,7 @@ Cette procédure pas à pas vous montre comment utiliser le <xref:System.Windows
   
  Lorsque vous avez terminé, vous ne pourrez pas mapper [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aux propriétés correspondent [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] propriétés sur un élément hébergé.  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
   
 -   [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)].  

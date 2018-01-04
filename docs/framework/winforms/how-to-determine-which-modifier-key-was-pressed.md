@@ -35,11 +35,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6fdc93063bbc8c9428f2f01c6cd5c0578e77ab01
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ffe09cc07b3eb36184a7242d418fd6782219806e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-determine-which-modifier-key-was-pressed"></a>Comment : identifier la touche de modification activée
 Lorsque vous créez une application qui accepte les séquences de touches de l’utilisateur, vous pouvez souhaiter également surveiller les touches de modification telles que les touches MAJ, ALT ou CTRL. Lorsqu’une touche de modification est enfoncée en combinaison avec d’autres clés ou avec des clics de souris, votre application peut répondre de manière appropriée. Par exemple, si l’utilisateur appuie sur la lettre S, cela peut simplement entraîner un « s » à afficher sur l’écran, mais si les touches CTRL + S sont utilisées, le document actif peut être enregistré. Si vous gérez le <xref:System.Windows.Forms.Control.KeyDown> événement, le <xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> propriété de la <xref:System.Windows.Forms.KeyEventArgs> reçu par l’événement gestionnaire spécifie les touches de modification sont enfoncés. Vous pouvez également le <xref:System.Windows.Forms.KeyEventArgs.KeyData%2A> propriété du <xref:System.Windows.Forms.KeyEventArgs> Spécifie le caractère qui a été enfoncé, ainsi que les touches de modification combinées avec une opération OR au niveau du bit. Toutefois, si vous gérez le <xref:System.Windows.Forms.Control.KeyPress> événement ou un événement de souris, le Gestionnaire d’événements ne reçoit pas ces informations. Dans ce cas, vous devez utiliser le <xref:System.Windows.Forms.Control.ModifierKeys%2A> propriété de la <xref:System.Windows.Forms.Control> classe. Dans les deux cas, vous devez effectuer une opération AND au niveau du bit d’approprié <xref:System.Windows.Forms.Keys> valeur et la valeur que vous testez. Le <xref:System.Windows.Forms.Keys> énumération offre des variations de chaque touche de modification, il est important d’effectuer les opérations de bits et avec la valeur correcte. Par exemple, la touche MAJ est représentée par <xref:System.Windows.Forms.Keys.Shift>, <xref:System.Windows.Forms.Keys.ShiftKey>, <xref:System.Windows.Forms.Keys.RShiftKey> et <xref:System.Windows.Forms.Keys.LShiftKey> la valeur correcte pour tester MAJ comme une touche de modification est <xref:System.Windows.Forms.Keys.Shift>. De même, pour tester le CTLR et ALT comme modificateurs vous devez utiliser le <xref:System.Windows.Forms.Keys.Control> et <xref:System.Windows.Forms.Keys.Alt> valeurs, respectivement.  

@@ -20,11 +20,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5cdac074b873d3a627e6971d440fdd1f98952b08
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: f45d0fb6a2ffb2e20cc23e67de4cac6a2f2c81bc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-security"></a>Sécurité des Windows Forms
 Windows Forms comprend un modèle de sécurité qui est basée sur code (niveaux de sécurité sont définis pour le code, quel que soit l’utilisateur qui exécute le code). Il s’agit en plus de tous les schémas de sécurité qui peuvent être déjà en place sur votre système. Celles-ci peuvent inclure dans le navigateur (telles que la sécurité basée sur la zone disponible dans Internet Explorer) ou le système d’exploitation (par exemple, la sécurité basée sur les informations d’identification de Windows NT).  

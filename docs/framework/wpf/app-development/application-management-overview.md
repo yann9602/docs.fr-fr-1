@@ -17,11 +17,12 @@ caps.latest.revision: "56"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 09129f2dc2bac2bb17ebacd6d6db020288b6f616
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9651b55741a607b1c99a813c0011db380dfd38f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application-management-overview"></a>Vue d'ensemble de la gestion d'applications
 Toutes les applications tendent à partager un jeu de fonctionnalités commun qui s’applique à l’implémentation et à la gestion. Cette rubrique fournit une vue d’ensemble des fonctionnalités de la <xref:System.Windows.Application> classe pour la création et la gestion des applications.  
@@ -60,7 +61,7 @@ Toutes les applications tendent à partager un jeu de fonctionnalités commun qu
 |Obtenir et définir les propriétés de portée application|Utilisez la propriété <xref:System.Windows.Application.Properties%2A?displayProperty=nameWithType>.|  
 |Obtenir et enregistrer l’état d’une application|Consultez [conserver et restaurer les propriétés de l’étendue de l’Application entre les Sessions d’Application](../../../../docs/framework/wpf/app-development/persist-and-restore-application-scope-properties.md).|  
 |Gérer les fichiers de données de non-code, dont les fichiers de ressources, les fichiers de contenu et les fichiers du site d’origine.|Consultez [ressource d’Application WPF, contenu et les fichiers de données](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md).|  
-|Gérer des fenêtres dans des applications autonomes|Consultez [WPF Windows Overview](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md).|  
+|Gérer des fenêtres dans des applications autonomes|Consultez [Vue d’ensemble des fenêtres WPF](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md).|  
 |Suivre et gérer la navigation|Consultez [vue d’ensemble de la Navigation](../../../../docs/framework/wpf/app-development/navigation-overview.md).|  
   
 <a name="The_Application_Definition"></a>   

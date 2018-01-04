@@ -25,11 +25,14 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f90cf4e481d8ce8f5f34c3aaab3e544e37e1481
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 36df7286bad0d26108b726d2499bbeb0b2caa198
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Contrôle de la sérialisation XML à l'aide d'attributs
 Les attributs peuvent être utilisés pour contrôler la sérialisation XML d'un objet ou pour créer un flux de données XML différent à partir du même ensemble de classes. Pour plus d’informations sur la création d’un flux de données XML différent, consultez [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).  

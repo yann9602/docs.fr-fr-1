@@ -17,11 +17,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: f950d8de2681868fe28e09e4b51bd8156cd12e94
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ec66fb3dea74e6f738ec308ce0f88945526a0a77
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="unsealed-classes"></a>Classes unsealed
 Classes sealed ne peut pas être héritées, et empêchent d’extensibilité. En revanche, les classes qui peuvent être héritées sont appelées classes unsealed.  
@@ -38,5 +41,5 @@ Classes sealed ne peut pas être héritées, et empêchent d’extensibilité. E
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Conception d’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
- [Le fait de sceller](../../../docs/standard/design-guidelines/sealing.md)
+ [Conception en vue de l’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
+ [Scellement](../../../docs/standard/design-guidelines/sealing.md)

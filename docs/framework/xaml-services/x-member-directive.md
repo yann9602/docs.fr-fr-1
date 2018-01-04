@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: eafb222dd5d3afcc751bae7799f0d17279aed14f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4ea04dfe5f3c371acbb388256b0854b0da8f45a3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xmember-directive"></a>x:Member, directive
 Déclare un membre XAML dans le balisage.  
@@ -40,7 +41,7 @@ Déclare un membre XAML dans le balisage.
 |`className`|Nom de la classe de stockage ou de la classe partielle pour la production XAML.|  
 |`memberName`|Nom de membre de la propriété définie.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Dans l'implémentation des services XAML .NET Framework, `x:Member` n'a pas de stockage de type direct, mais est pris en charge par la classe <xref:System.Windows.Markup.MemberDefinition>. Dans un flux de nœud XAML, un élément `x:Member` est représenté en tant que membre nommé `Member`, à partir de l'espace de noms XAML du langage XAML. Le membre `Member` contient les attributs déclarés par le balisage.  
   
  La signification de `Name` et `Type` n’est pas attribuée au niveau des services XAML .NET Framework. Elles est stockée dans le flux de nœud XAML initial sous forme de valeur de chaîne, afin d’être interprétée ultérieurement selon les règles pouvant être imposées par les infrastructures spécifiques. La signification peut s'aligner sur celle d'un nom et d'un type XAML, ou être valide uniquement dans un système de type de stockage, selon l'implémentation.  

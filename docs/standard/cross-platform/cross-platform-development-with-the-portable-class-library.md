@@ -17,11 +17,14 @@ caps.latest.revision: "95"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 697842906772c190c67e2f6ec1a4eb255229f289
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 893bbc94d909d5c94b7f8727912a298575617c2c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>Développement interplateforme avec la bibliothèque de classes portable
 Le type de projet de bibliothèque de classes portables .NET Framework dans Visual Studio vous permet de créer rapidement et facilement des applications interplateformes et des bibliothèques pour les plateformes Microsoft.  
@@ -227,8 +230,8 @@ Exemple d'informations sur la version
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [À l’aide de la bibliothèque de classes portables avec MVVM](../../../docs/standard/cross-platform/using-portable-class-library-with-model-view-view-model.md)  
- [Ressources d’application pour les bibliothèques qui ciblent des plateformes multiples](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md)  
+ [Utilisation de la bibliothèque de classes portable avec MVVM](../../../docs/standard/cross-platform/using-portable-class-library-with-model-view-view-model.md)  
+ [Ressources d’application pour les bibliothèques qui ciblent plusieurs plateformes](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md)  
  [Analyseur de portabilité .NET](http://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b)  
  [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)  
  [Déploiement](../../../docs/framework/deployment/net-framework-applications.md)

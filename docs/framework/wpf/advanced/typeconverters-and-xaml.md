@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 073730382f98a6c3d61ebdadf4f1f74411ba4e63
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1b7ee4b3b00a675cfafc884d41079b76656bdf49
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters et XAML
 Cette rubrique présente l’objectif de la conversion de types de chaîne comme une fonctionnalité générale du langage XAML. Dans le .NET Framework, la <xref:System.ComponentModel.TypeConverter> classe a un usage particulier dans le cadre de l’implémentation pour une classe managée personnalisée qui peut être utilisée comme une valeur de propriété dans l’utilisation d’attributs XAML. Si vous écrivez une classe personnalisée, et que les instances de votre classe pour être utilisable en tant que valeurs d’attribut définissables XAML, vous devez appliquer un <xref:System.ComponentModel.TypeConverterAttribute> à votre classe, écrire une personnalisée <xref:System.ComponentModel.TypeConverter> classe, ou les deux.  

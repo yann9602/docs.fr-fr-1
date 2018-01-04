@@ -20,11 +20,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c923a24f5abfdb059a436206a15181a67d03068f
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 9c503eb3300aba4a44c5a013c62942e7a171ae96
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-control-when-the-textbox-text-updates-the-source"></a>Comment : contrôler quand le texte TextBox met à jour la source
 Cette rubrique explique comment utiliser le <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> propriété pour contrôler le minutage des mises à jour de la source de liaison. La rubrique utilise le <xref:System.Windows.Controls.TextBox> contrôle comme exemple.  
@@ -56,4 +57,4 @@ Cette rubrique explique comment utiliser le <xref:System.Windows.Data.Binding.Up
 >  Le <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> propriété porte sur la source des mises à jour et par conséquent concerne uniquement les <xref:System.Windows.Data.BindingMode.TwoWay> ou <xref:System.Windows.Data.BindingMode.OneWayToSource> liaisons. Pour <xref:System.Windows.Data.BindingMode.TwoWay> et <xref:System.Windows.Data.BindingMode.OneWayToSource> liaisons, l’objet source doit fournir des notifications de modification de propriété. Vous pouvez consulter les exemples figurant dans cette rubrique pour plus d’informations. Vous pouvez également consulter la page [Implémenter la notification des modifications de propriétés](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guides pratiques](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+ [Rubriques de guide pratique](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

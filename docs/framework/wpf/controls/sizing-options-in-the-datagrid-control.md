@@ -17,11 +17,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eee894b536b19ec38a9809ab5dc49f5682c1df9c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 4219dc88a263b73aa89812a2f841a920c804796b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sizing-options-in-the-datagrid-control"></a>Options de dimensionnement dans le contrôle DataGrid
 Plusieurs options sont disponibles pour contrôler comment le <xref:System.Windows.Controls.DataGrid> se redimensionne. Le <xref:System.Windows.Controls.DataGrid>et les lignes et les colonnes dans le <xref:System.Windows.Controls.DataGrid>, peut être défini sur la taille s’adapte automatiquement à leur contenu, ou peut être défini sur des valeurs spécifiques. Par défaut, le <xref:System.Windows.Controls.DataGrid> augmente et ajuster la taille de son contenu.  
@@ -66,7 +67,7 @@ Plusieurs options sont disponibles pour contrôler comment le <xref:System.Windo
   
  Le tableau suivant indique les valeurs fournies par le <xref:System.Windows.Controls.DataGridLengthUnitType> structure.  
   
-|Nom|Description|  
+|Name|Description|  
 |----------|-----------------|  
 |<xref:System.Windows.Controls.DataGridLengthUnitType.Auto>|La valeur par défaut des tailles de mode de dimensionnement automatique <xref:System.Windows.Controls.DataGrid> colonnes basées sur le contenu des cellules et des en-têtes de colonne.|  
 |<xref:System.Windows.Controls.DataGridLengthUnitType.SizeToCells>|Automatique basée sur une cellule de tailles de mode de dimensionnement <xref:System.Windows.Controls.DataGrid> colonnes basées sur le contenu des cellules dans la colonne, y compris ne pas les en-têtes de colonne.|  

@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4aa22b011b895a20cefdcc5a7c9e6c1cd0531923
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bfd955b4153c7a2bc54d8b52ff1801541c3a7559
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms"></a>Comment : connecter plusieurs événements à un même gestionnaire d'événements dans les Windows Forms
 Conception de votre application, vous pouvez s’avérer nécessaire d’utiliser un seul gestionnaire d’événements pour plusieurs événements ou d’avoir plusieurs événements à effectuer la même procédure. Par exemple, il est souvent un temps précieux d’avoir une commande de menu à déclencher l’événement de même qu’un bouton sur votre formulaire peut si elles exposent les mêmes fonctionnalités. Cela à l’aide de l’affichage des événements de la fenêtre Propriétés en c# ou à l’aide de la `Handles` (mot clé) et le **nom de la classe** et **nom de la méthode** zones de liste déroulante dans l’éditeur de Code Visual Basic.  

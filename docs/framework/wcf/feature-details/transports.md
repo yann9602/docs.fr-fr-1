@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9275f1812111365ed6b0fb3be6957cd9ca883fdf
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 62eb27919e762004667b3d5179c35cb04d9a9422
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transports-in-windows-communication-foundation"></a>Transports dans Windows Communication Foundation
 La couche de transport se situe au niveau le plus bas de la pile des canaux. Les principaux transports utilisés dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] sont HTTP, HTTPS, TCP ainsi que les canaux nommés. Les rubriques de cette section contiennent des conseils et des instructions permettant de savoir quel protocole choisir, de le configurer et de définir les propriétés de réglage afférentes.  
@@ -29,25 +30,25 @@ La couche de transport se situe au niveau le plus bas de la pile des canaux. Les
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] comporte des transports supplémentaires. Pour plus d’informations sur le transport Message Queuing (également appelé MSMQ), consultez [les files d’attente et les Sessions fiables](../../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md). Pour plus d’informations sur le transport d’homologue à homologue, consultez [mise en réseau pair à pair](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Choix d’un Transport](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
+ [Choix d’un transport](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
  Présente les trois transports principaux et aborde les différents points à prendre en considération lors de leur sélection.  
   
- [Choix d’un encodeur de Message](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
+ [Sélection d’un encodeur de message](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
  Aborde les facteurs à prendre en considération lors de la sélection d’un élément de liaison d’encodage de message.  
   
- [Transfert de messages en continu](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md)  
+ [Transfert des messages par streaming](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md)  
  Contient des instructions permettant de configurer la couche de transport pour une diffusion en continu.  
   
  [Configuration de HTTP et HTTPS](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)  
  Contient des instructions permettant de configurer les éléments de liaison de transport HTTP et HTTPS.  
   
- [Comment : remplacer la réservation d’URL WCF par une réservation restreinte](../../../../docs/framework/wcf/feature-details/how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md)  
+ [Guide pratique pour remplacer la réservation d’URL WCF par une réservation restreinte](../../../../docs/framework/wcf/feature-details/how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md)  
  Décrit comment utiliser les réservations restreintes de l'URL de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  [Quotas de transport](../../../../docs/framework/wcf/feature-details/transport-quotas.md)  
  Aborde les points à prendre en considération lors de la définition de quotas pour la couche de transport.  
   
- [Utilisation des NAT et pare-feu](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md)  
+ [Utilisation des NAT et des pare-feu](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md)  
  Contient des instructions permettant de configurer la couche de transport lorsque les messages envoyés ou reçus rencontrent un pare-feu ou lorsqu'un traducteur d'adresses réseau (NAT) est utilisé.  
   
  [Partage de ports Net.TCP](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)  

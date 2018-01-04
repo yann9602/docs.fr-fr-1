@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 5c6e91fcecb60dee2577ea62c2313f8b2c7eecbf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1d620b59208b9dc852abee3dd2e4d6c58b223d70
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xsubclass-directive"></a>x:Subclass, directive
 Modifie le comportement de compilation du balisage XAML lorsque `x:Class` est également fourni. Au lieu de créer une classe partielle qui est basée sur `x:Class`, fourni `x:Class` est créée comme une classe intermédiaire, et ensuite votre classe dérivée fournie est censée être basée sur `x:Class`.  
@@ -50,7 +51,7 @@ Modifie le comportement de compilation du balisage XAML lorsque `x:Class` est é
 ## <a name="dependencies"></a>Dépendances  
  [x : Class Directive](../../../docs/framework/xaml-services/x-class-directive.md) doit également être fourni sur le même objet, et cet objet doit être l’élément racine de la production XAML.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `x:Subclass`l’utilisation est principalement utilisée pour les langages qui ne prennent pas en charge les déclarations de classe partielle.  
   
  La classe utilisée comme le `x:Subclass` ne peut pas être une classe imbriquée, et `x:Subclass` doit faire référence à l’objet racine, comme expliqué dans la section « Dépendances ».  

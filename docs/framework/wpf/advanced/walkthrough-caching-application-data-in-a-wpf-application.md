@@ -20,11 +20,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7c04a2860b46460065a09de3dafedc7010753d36
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 81d808b982852d5cc6dc187a3c8389748a0dc0bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Procédure pas à pas : mise en cache de données d'application dans une application WPF
 La mise en cache vous permet de stocker des données en mémoire pour y accéder rapidement. Lorsque vous accédez à nouveau les données, les applications peuvent obtenir les données à partir du cache à la place de la récupération à partir de la source d’origine. Cela peut améliorer les performances et la scalabilité. La mise en cache rend également les données disponibles quand la source de données est temporairement indisponible.  
@@ -50,7 +51,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
   
 -   Analyse le chemin d’accès du fichier mis en cache et l’informant de l’instance de cache des modifications apportées à l’élément analysé.  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :  
   
 -   Microsoft [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  

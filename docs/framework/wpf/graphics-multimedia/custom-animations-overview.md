@@ -19,17 +19,18 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a206e0234f4e6365e76f73977beda1688c036a79
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cb8dcce1d72991a803d8a068f29cd0fe3430fdfc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-animations-overview"></a>Vue d'ensemble des animations personnalisées
 Cette rubrique décrit comment et quand étendre le système d’animation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] en créant des images clés personnalisées et des classes d’animation, ou à l’aide du rappel image par image pour l’ignorer.  
   
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette rubrique, vous devez connaître les différents types d’animations offerts par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Pour plus d’informations, consultez la Vue d’ensemble des animations From/To/By, la [Vue d'ensemble des animations d'image clé](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md) et la [Vue d'ensemble des animations de tracés](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md).  
   
  Étant donné que les classes d’animation héritent la <xref:System.Windows.Freezable> (classe), vous devez être familiarisé avec <xref:System.Windows.Freezable> objets et comment hériter de <xref:System.Windows.Freezable>. Pour plus d’informations, consultez la [Vue d’ensemble des objets Freezable](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md).  

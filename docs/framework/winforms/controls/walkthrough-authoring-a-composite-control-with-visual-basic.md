@@ -24,11 +24,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c86a3d420b85c1287597cda738c6d72f0433d0f7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c31e76e9f190990f0a3dddab359ef9523783d955
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-basic"></a>Procédure pas à pas : création d'un contrôle composite à l'aide de Visual Basic
 Les contrôles composites permettent de créer et de réutiliser des interfaces graphiques personnalisées. Un contrôle composite est avant tout un composant doté d’une représentation visuelle. Par conséquent, il peut comporter un ou plusieurs blocs de code, composants ou contrôles Windows Forms qui peuvent en étendre les fonctionnalités en validant les entrées d’utilisateur, en modifiant les propriétés d’affichage ou en effectuant d’autres tâches requises par l’auteur. Les contrôles composites peuvent être insérés dans les Windows Forms de la même manière que les autres contrôles. Dans la première partie de cette procédure pas à pas, vous allez créer un contrôle composite simple appelé `ctlClock`. Dans la seconde partie de la procédure pas à pas, vous allez étendre les fonctionnalités de `ctlClock` via l’héritage.  
@@ -69,8 +70,8 @@ Les contrôles composites permettent de créer et de réutiliser des interfaces 
   
     |Propriété|Remplacer par|  
     |--------------|---------------|  
-    |**Nom**|`lblDisplay`|  
-    |**Texte**|`(blank space)`|  
+    |**Name**|`lblDisplay`|  
+    |**Text**|`(blank space)`|  
     |**TextAlign**|`MiddleCenter`|  
     |**Font.Size**|`14`|  
   
@@ -254,8 +255,8 @@ Les contrôles composites permettent de créer et de réutiliser des interfaces 
   
     |Propriété|Paramètre|  
     |--------------|-------------|  
-    |**Nom**|`lblAlarm`|  
-    |**Texte**|**Alarm!**|  
+    |**Name**|`lblAlarm`|  
+    |**Text**|**Alarm!**|  
     |**TextAlign**|`MiddleCenter`|  
     |**Visible**|`False`|  
   
@@ -366,11 +367,11 @@ Les contrôles composites permettent de créer et de réutiliser des interfaces 
   
 11. Définissez les propriétés de ces contrôles de la manière suivante.  
   
-    |Contrôle|Propriété|Valeur|  
+    |Contrôle|Propriété|Value|  
     |-------------|--------------|-----------|  
-    |`label1`|**Texte**|`(blank space)`|  
-    ||**Nom**|`lblTest`|  
-    |`dateTimePicker1`|**Nom**|`dtpTest`|  
+    |`label1`|**Text**|`(blank space)`|  
+    ||**Name**|`lblTest`|  
+    |`dateTimePicker1`|**Name**|`dtpTest`|  
     ||**Format**|<xref:System.Windows.Forms.DateTimePickerFormat.Time>|  
   
 12. Dans le concepteur, double-cliquez sur **dtpTest**.  

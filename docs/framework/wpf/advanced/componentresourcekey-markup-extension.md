@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b7f959318c5991fea2df92ff8000e85345fb35ed
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f4bfaee35ba9f8cf60deb01c52a142433d08021c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="componentresourcekey-markup-extension"></a>ComponentResourceKey, extension de balisage
 Définit et référence des clés pour les ressources qui sont chargés à partir des assemblys externes. Cela permet une recherche de ressource spécifier un type de cible dans un assembly, plutôt qu’un dictionnaire de ressources explicite dans un assembly ou une classe.  
@@ -59,7 +60,7 @@ Définit et référence des clés pour les ressources qui sont chargés à parti
 |`targetTypeName`|Le nom public [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] type qui est défini dans l’assembly de ressources.|  
 |`targetID`|La clé pour la ressource. Lors de la recherche de ressources, `targetID` sera similaire à la [x : Key, Directive](../../../../docs/framework/xaml-services/x-key-directive.md) de la ressource.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Comme indiqué dans les utilisations ci-dessus, un {`ComponentResourceKey`} extension de balisage se trouve dans deux emplacements :  
   
 -   La définition d’une clé dans un dictionnaire de ressources de thème, tel que fourni par un auteur de contrôle.  

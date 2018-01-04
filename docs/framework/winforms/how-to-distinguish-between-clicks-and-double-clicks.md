@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9b407f7c00454b0a14b4c90694d015b38ffd72ef
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 4da472b4a2cb2001953758acb0f28da77f08ac70
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-distinguish-between-clicks-and-double-clicks"></a>Comment : distinguer les clics des double-clics
 En règle générale, un *clic* unique lance une action d’interface utilisateur et un *double-clic* étend l’action. Par exemple, un clic sélectionne habituellement un élément et un double-clic modifie l'élément sélectionné. Toutefois, les événements de clic Windows Forms ne gèrent pas facilement les scénarios dans lesquels un clic et un double-clic effectuent des actions incompatibles, car une action liée à l'événement <xref:System.Windows.Forms.Control.Click> ou <xref:System.Windows.Forms.Control.MouseClick> est effectuée avant l'action liée à l'événement <xref:System.Windows.Forms.Control.DoubleClick> ou <xref:System.Windows.Forms.Control.MouseDoubleClick>. Cette rubrique illustre deux solutions à ce problème. Une solution consiste à gérer l'événement de double-clic et à annuler les actions dans la gestion de l'événement de clic. Dans de rares cas, vous devrez peut-être simuler le comportement de clic et de double-clic en gérant l'événement <xref:System.Windows.Forms.Control.MouseDown> et en utilisant les propriétés <xref:System.Windows.Forms.SystemInformation.DoubleClickTime%2A> et <xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A> de la classe <xref:System.Windows.Forms.SystemInformation>. Vous mesurez le délai entre les clics et si un deuxième clic se produit avant que la valeur de <xref:System.Windows.Forms.SystemInformation.DoubleClickTime%2A> soit atteinte et que le clic se trouve dans un rectangle défini par <xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A>, vous exécutez l'action de double-clic ; sinon, vous exécutez l'action de clic.  

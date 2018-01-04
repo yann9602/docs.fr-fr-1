@@ -19,11 +19,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c5af705509d30f7dfd50ade0c07aca242deff4dd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f2b64cacea48bbc8855cdb9ce451a13d4ad729bd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms"></a>Procédure pas à pas : hébergement d'un contrôle composite 3-D WPF dans les Windows Forms
 Cette procédure pas à pas montre comment vous pouvez créer un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] composite de contrôle et l’héberger dans [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et les contrôles à l’aide de la <xref:System.Windows.Forms.Integration.ElementHost> contrôle.  
@@ -40,7 +41,7 @@ Cette procédure pas à pas montre comment vous pouvez créer un [!INCLUDE[TLA2#
   
  Pour l’intégralité du code des tâches illustrées dans cette procédure pas à pas, consultez [qui héberge un contrôle Composite WPF 3D dans les Windows Forms exemple](http://go.microsoft.com/fwlink/?LinkID=160001).  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
   
 -   [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)].  

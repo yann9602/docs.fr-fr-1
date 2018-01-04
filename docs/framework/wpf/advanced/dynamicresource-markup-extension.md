@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c80d975e756fab449c254b9e1d8d1bc99a25652e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3f6c8500f9b9cd6d617789a2da3444519971ae81
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dynamicresource-markup-extension"></a>DynamicResource, extension de balisage
 Fournit une valeur pour tout [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] attribut de propriété en différant cette valeur pour être une référence à une ressource définie. Comportement de recherche de cette ressource est analogue à la recherche au moment de l’exécution.  
@@ -48,9 +49,9 @@ Fournit une valeur pour tout [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2s
   
 |||  
 |-|-|  
-|`key`|La clé pour la ressource demandée. Cette clé a été initialement affectée par le [x : Key, Directive](../../../../docs/framework/xaml-services/x-key-directive.md) si une ressource a été créée dans la balise ou est fournie comme le `key` paramètre lors de l’appel <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> si la ressource a été créée dans le code.|  
+|`key`|Clé pour la ressource demandée. Cette clé a été initialement affectée par le [x : Key, Directive](../../../../docs/framework/xaml-services/x-key-directive.md) si une ressource a été créée dans la balise ou est fournie comme le `key` paramètre lors de l’appel <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> si la ressource a été créée dans le code.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  A `DynamicResource` créera une expression temporaire pendant la compilation initiale et donc différer la recherche des ressources jusqu'à ce que la valeur de la ressource demandée est réellement nécessaire afin de construire un objet. Cela peut potentiellement être après le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page est chargée. La valeur de ressource est trouvée en fonction de recherche de clé par rapport à tous les dictionnaires de ressources actif à partir de la portée de la page actuelle et est remplacée par l’expression d’espace réservé de la compilation.  
   
 > [!IMPORTANT]

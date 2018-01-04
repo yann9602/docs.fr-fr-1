@@ -17,11 +17,12 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bea43192d7f9a5bd875914633118dd6609c7804b
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: a013eac5b3306339c82abaa62f97e4aad7d8ed76
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="audio-and-video-how-to-topics"></a>Rubriques "Comment" relatives à l'audio et à la vidéo
 Les rubriques suivantes montrent comment utiliser le <xref:System.Windows.Controls.MediaElement> pour intégrer le contenu audio et vidéo dans vos applications.  

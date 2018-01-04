@@ -20,11 +20,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f6398e4a40a1d4a83bc0ae080321112fb6d9fcd6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0d060e0b511f17a68edb013ae7241e1accbc7dcf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="scrollviewer-overview"></a>Vue d'ensemble de ScrollViewer
 Le contenu d’une interface utilisateur occupe souvent un espace plus important que la zone d’affiche d’un écran d’ordinateur. Le <xref:System.Windows.Controls.ScrollViewer> contrôle offre un moyen pratique d’activer le défilement du contenu dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications. Cette rubrique présente la <xref:System.Windows.Controls.ScrollViewer> élément et fournit plusieurs exemples d’utilisation.  

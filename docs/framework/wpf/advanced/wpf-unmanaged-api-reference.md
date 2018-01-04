@@ -13,11 +13,12 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 02c0d41ccb21cb68c5cae3459a2d7518e98cda20
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 42843e4be907c7361f55a95abb4d91b4426a9f6c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-unmanaged-api-reference"></a>Référence des API non managées de WPF
 Les bibliothèques Windows Presentation Foundation (WPF) exposent un nombre de fonctions non managées qui sont destinés à un usage interne uniquement. Ils ne doivent pas être appelées à partir du code utilisateur.  

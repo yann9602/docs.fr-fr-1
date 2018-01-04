@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 06e59e7686004f8fd44473bd9572ed07a0118d1f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 03b63cb40e57223d5c66c03fb60780689cd6c925
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xreference-markup-extension"></a>x:Référence, extension de balisage
 Fait référence à une instance déclarée ailleurs dans le balisage XAML. La référence de fait référence à un élément `x:Name`.  
@@ -48,7 +49,7 @@ Fait référence à une instance déclarée ailleurs dans le balisage XAML. La r
 |-|-|  
 |`instancexName`|Le `x:Name` valeur (ou la valeur de la <xref:System.Windows.Markup.RuntimeNamePropertyAttribute>-propriété identifiée) de l’instance référencée.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `x:Reference`Fournit la prise en charge du niveau de langage XAML pour un concept de référence d’élément qui a été implémenté dans les infrastructures spécifiques telles que WPF.  
   
 ## <a name="xreference-and-wpf"></a>x : Reference et WPF  

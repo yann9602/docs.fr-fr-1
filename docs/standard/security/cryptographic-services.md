@@ -34,11 +34,14 @@ caps.latest.revision: "34"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: cbea6ab0fcf72937bc936510a89593861115f287
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 1fd0df0e12149371b3403782056982784c0ca3cd
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="cryptographic-services"></a>services de chiffrement
 <a name="top"></a> Les réseaux publics, tels qu'Internet, n'offrent aucun moyen de sécuriser les communications entre les entités. Les communications qui transitent par ces réseaux sont susceptibles d'être lues voire modifiées par des tiers non autorisés. Le chiffrement permet de prévenir la consultation des données, offre des moyens de détecter si les données ont été modifiées et fournit un mode de communication sécurisé via des canaux qui autrement ne sont pas sécurisés. Par exemple, les données peuvent être chiffrées à l'aide d'un algorithme de chiffrement, transmises dans un état chiffré et par la suite déchiffrées par le destinataire prévu. Si un tiers intercepte les données chiffrées, il lui sera difficile de les déchiffrer.  
@@ -47,7 +50,7 @@ ms.lasthandoff: 10/18/2017
   
  Cette vue d'ensemble offre un résumé des différentes méthodes et pratiques de chiffrement prises en charge par le .NET Framework, notamment les manifestes ClickOnce et la prise en charge de Suite B et de Cryptography Next Generation (CNG) introduite dans le [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)].  
   
- Cette vue d'ensemble contient les sections suivantes :  
+ Cette vue d'ensemble contient les sections suivantes :  
   
 -   [Primitives de chiffrement](#primitives)  
   
@@ -85,7 +88,7 @@ ms.lasthandoff: 10/18/2017
   
  Pour atteindre ces objectifs, vous pouvez utiliser une combinaison d'algorithmes et de pratiques appelés primitives de chiffrement pour créer un modèle de chiffrement. Le tableau suivant répertorie les primitives de chiffrement et leurs fonctions.  
   
-|Primitive de chiffrement|Utilisation|  
+|Primitive de chiffrement|Utilisez|  
 |-----------------------------|---------|  
 |Chiffrement à clé secrète (chiffrement symétrique)|Transforme les données pour empêcher des tiers de les lire. Ce type de chiffrement fait appel à une clé partagée, secrète et unique pour chiffrer et déchiffrer des données.|  
 |Chiffrement à clé publique (chiffrement asymétrique)|Transforme les données pour empêcher des tiers de les lire. Ce type de chiffrement fait appel à une paire de clés publique/privée pour chiffrer et déchiffrer les données.|  
@@ -219,7 +222,7 @@ ms.lasthandoff: 10/18/2017
   
  Aucune des méthodes précédentes n'empêchera quiconque de lire les messages d'Alice, car ils sont transmis sous forme de texte en clair. Pour bénéficier d'une sécurité complète, les signatures numériques (signature des messages) et le chiffrement s'avèrent nécessaires.  
   
- Le [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] fournit les classes suivantes, qui implémentent des algorithmes de hachage :  
+ Le [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] fournit les classes suivantes, qui implémentent des algorithmes de hachage :  
   
 -   <xref:System.Security.Cryptography.HMACSHA1>.  
   
@@ -237,7 +240,7 @@ ms.lasthandoff: 10/18/2017
   
 -   <xref:System.Security.Cryptography.SHA512Managed>.  
   
--   Variantes HMAC de tous les algorithmes SHA (Secure Hash Algorithm), MD5 (Message Digest 5) et RIPEMD-160.  
+-   Variantes HMAC de tous les algorithmes SHA (Secure Hash Algorithm), MD5 (Message Digest 5) et RIPEMD-160.  
   
 -   Implémentations CryptoServiceProvider (wrappers de code managé) de tous les algorithmes SHA.  
   

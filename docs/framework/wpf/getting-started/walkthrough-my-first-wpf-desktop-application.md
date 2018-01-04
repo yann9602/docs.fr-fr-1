@@ -19,11 +19,12 @@ caps.latest.revision: "71"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f9818231a68f5c2ac2a6852f27e4876baa9728e7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3667d507f4c35174c1e888c9781b5f74ffd496a0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>Procédure pas à pas : Ma première application de bureau WPF
 Cette procédure pas à pas fournit une introduction au développement d’un [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] application qui inclut les éléments qui sont communes à la plupart des [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications : [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] balisage, code-behind, définitions d’application, contrôles, disposition, liaison de données et styles. 
@@ -46,7 +47,7 @@ Cette procédure pas à pas fournit une introduction au développement d’un [!
   
  L’exemple de code qui est utilisé pour générer cette procédure pas à pas est disponible pour les deux [!INCLUDE[TLA#tla_visualb](../../../../includes/tlasharptla-visualb-md.md)] et [!INCLUDE[TLA#tla_cshrp](../../../../includes/tlasharptla-cshrp-md.md)] à [Introduction à la génération d’Applications](http://go.microsoft.com/fwlink/?LinkID=160008). 
 
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
 
 - [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)] ou version ultérieure
 

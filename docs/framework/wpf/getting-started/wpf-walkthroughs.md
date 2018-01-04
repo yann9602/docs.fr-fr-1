@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9c4c67033711575e0e13785fd448114a6042d8e8
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: c24b5beae2a10720ee4d89b9d2d60306978d2628
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-walkthroughs"></a>Procédures pas à pas WPF
 Procédures pas à pas fournissent des instructions détaillées pour les scénarios courants. Elles constituent donc un bon point de départ pour vous familiariser avec le produit ou un ensemble de fonctionnalités particulier.  

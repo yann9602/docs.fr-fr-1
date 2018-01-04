@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cad79f26a48f3f5e905b2f2ac7de9191dd8539f8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d1d85e85079504e28a5b0ae78dc8be3a4b928ea3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="drawing-formatted-text"></a>Dessin du texte mis en forme
 Cette rubrique fournit une vue d’ensemble des fonctionnalités de la <xref:System.Windows.Media.FormattedText> objet. Cet objet offre un contrôle de bas niveau pour le dessin de texte dans des applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -115,14 +116,14 @@ Vidéo s’affichant dans la géométrie de tracé du texte
 |DT_END_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|Utilisez le <xref:System.Windows.Media.FormattedText.Trimming%2A> propriété avec la valeur <xref:System.Windows.TextTrimming.CharacterEllipsis>.<br /><br /> Utilisez <xref:System.Windows.TextTrimming.WordEllipsis> pour obtenir [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DT_END_ELLIPSIS avec DT_WORD_ELIPSIS fin : dans ce cas, les points de suspension caractère se produit uniquement sur les mots qui ne tiennent pas sur une seule ligne.|  
 |DT_EXPAND_TABS|Aucun.|Non requis Des tabulations sont créées automatiquement avec des taquets tous les 4 cadratins, ce qui correspond plus ou moins à la largeur de 8 caractères indépendants du langage.|  
 |DT_EXTERNALLEADING|Aucun.|Non requis L’espacement externe est toujours inclus dans l’interligne. Utilisez le <xref:System.Windows.Media.FormattedText.LineHeight%2A> propriété à créer l’interligne défini par l’utilisateur.|  
-|DT_HIDEPREFIX|Aucun.|Non prise en charge. Supprimez le '&' à partir de la chaîne avant de construire le <xref:System.Windows.Media.FormattedText> objet.|  
+|DT_HIDEPREFIX|Aucun.|Non pris en charge. Supprimez le '&' à partir de la chaîne avant de construire le <xref:System.Windows.Media.FormattedText> objet.|  
 |DT_LEFT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Il s’agit de l’alignement de texte par défaut. Utilisez le <xref:System.Windows.Media.FormattedText.TextAlignment%2A> propriété avec la valeur est définie sur <xref:System.Windows.TextAlignment.Left>. (WPF uniquement)|  
 |DT_MODIFYSTRING|Aucun.|Non pris en charge.|  
 |DT_NOCLIP|<xref:System.Windows.Media.Visual.VisualClip%2A>|Le découpage n’est pas effectué automatiquement. Si vous souhaitez découper le texte, utilisez le <xref:System.Windows.Media.Visual.VisualClip%2A> propriété.|  
 |DT_NOFULLWIDTHCHARBREAK|Aucun.|Non pris en charge.|  
 |DT_NOPREFIX|Aucun.|Non requis Le caractère '&' présent dans les chaînes est toujours traité comme un caractère normal.|  
-|DT_PATHELLIPSIS|Aucune|Utilisez le <xref:System.Windows.Media.FormattedText.Trimming%2A> propriété avec la valeur <xref:System.Windows.TextTrimming.WordEllipsis>.|  
-|DT_PREFIX|Aucun.|Non prise en charge. Si vous souhaitez utiliser des traits de soulignement pour le texte, tels qu’une touche d’accès ou un lien, utilisez la <xref:System.Windows.Media.FormattedText.SetTextDecorations%2A> (méthode).|  
+|DT_PATHELLIPSIS|Aucun.|Utilisez le <xref:System.Windows.Media.FormattedText.Trimming%2A> propriété avec la valeur <xref:System.Windows.TextTrimming.WordEllipsis>.|  
+|DT_PREFIX|Aucun.|Non pris en charge. Si vous souhaitez utiliser des traits de soulignement pour le texte, tels qu’une touche d’accès ou un lien, utilisez la <xref:System.Windows.Media.FormattedText.SetTextDecorations%2A> (méthode).|  
 |DT_PREFIXONLY|Aucun.|Non pris en charge.|  
 |DT_RIGHT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Utilisez le <xref:System.Windows.Media.FormattedText.TextAlignment%2A> propriété avec la valeur est définie sur <xref:System.Windows.TextAlignment.Right>. (WPF uniquement)|  
 |DT_RTLREADING|<xref:System.Windows.Media.FormattedText.FlowDirection%2A>|Affectez à la propriété <xref:System.Windows.Media.FormattedText.FlowDirection%2A> la valeur <xref:System.Windows.FlowDirection.RightToLeft>.|  

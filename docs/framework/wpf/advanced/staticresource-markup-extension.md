@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 821cd152ccb7a02dda5338d6a3ec44d6625c0097
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 97b83feb9d19760208d9cc103290c5c6293c30c3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="staticresource-markup-extension"></a>StaticResource, extension de balisage
 Fournit une valeur pour tout [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] attribut de propriété en recherchant une référence à une ressource déjà définie. Comportement de recherche de cette ressource est analogue à la recherche au moment du chargement, qui recherche des ressources qui ont été précédemment chargées à partir du balisage d’actuel [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page ainsi que d’autres sources d’application et génère cette valeur de ressource en tant que le valeur de propriété dans les objets d’exécution.  
@@ -48,9 +49,9 @@ Fournit une valeur pour tout [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2s
   
 |||  
 |-|-|  
-|`key`|La clé pour la ressource demandée. Cette clé a été initialement affectée par le [x : Key, Directive](../../../../docs/framework/xaml-services/x-key-directive.md) si une ressource a été créée dans la balise ou est fournie comme le `key` paramètre lors de l’appel <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> si la ressource a été créée dans le code.|  
+|`key`|Clé pour la ressource demandée. Cette clé a été initialement affectée par le [x : Key, Directive](../../../../docs/framework/xaml-services/x-key-directive.md) si une ressource a été créée dans la balise ou est fournie comme le `key` paramètre lors de l’appel <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> si la ressource a été créée dans le code.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 > [!IMPORTANT]
 >  A `StaticResource` ne devez pas tenter de faire une référence vers l’avant à une ressource qui est définie lexical dans le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] fichier. Tente de faire n’est pas pris en charge, et même si une telle référence n’échoue pas, la tentative de référence vers l’avant entraînera une baisse des performances temps charge lorsque les tables de hachage interne représentant un <xref:System.Windows.ResourceDictionary> sont recherchés. Pour de meilleurs résultats, ajustez la composition de vos dictionnaires de ressources de manière à éviter les références vers l’avant. Si vous ne pouvez pas éviter une référence vers l’avant, utilisez [DynamicResource Markup Extension](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md) à la place.  

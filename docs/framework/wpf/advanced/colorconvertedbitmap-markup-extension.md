@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4f1946ec2a5b607d9fce350da0676092d6e0407a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: df6fac332f20d64ddf6569554a75ef96a5536c0c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="colorconvertedbitmap-markup-extension"></a>ColorConvertedBitmap, extension de balisage
 Fournit un moyen de spécifier une image bitmap source qui n’a pas de profil incorporé. Couleur des contextes / profils sont spécifiées par [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)], comme l’image source [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].  
@@ -39,7 +40,7 @@ Fournit un moyen de spécifier une image bitmap source qui n’a pas de profil i
 |`sourceIIC`|Le [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] de la configuration du profil source.|  
 |`destinationIIC`|Le [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] de la configuration de profil de destination|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Cette extension de balisage est conçue pour remplir un ensemble de valeurs de propriété de source de l’image de telles que <xref:System.Windows.Media.Imaging.BitmapImage.UriSource%2A>.  
   
  La syntaxe d’attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage. `ColorConvertedBitmap`(ou `ColorConvertedBitmapExtension`) ne peut pas être utilisé dans la syntaxe d’élément de propriété, car les valeurs peuvent uniquement être définies en tant que valeurs dans le constructeur initial, qui est la chaîne suivante de l’identificateur d’extension.  

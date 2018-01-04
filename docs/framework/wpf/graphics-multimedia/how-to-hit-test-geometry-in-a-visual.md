@@ -20,11 +20,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ab125fe4031b5408eb202f21ce0fdf4314781f1a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a990a43853e375c1c97f88dc6792932ad64c8d37
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-hit-test-geometry-in-a-visual"></a>Comment : effectuer un test de positionnement avec Geometry dans un Visual
 Cet exemple montre comment effectuer un test de positionnement sur un objet visuel qui est composé d’un ou plusieurs <xref:System.Windows.Media.Geometry> objets.  

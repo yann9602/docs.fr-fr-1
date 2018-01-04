@@ -20,11 +20,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 47402194e3588699625249848c96d58b37059138
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 753e55e644a9edea90a0a034ba2930473ef53f61
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tutorial-hosting-visual-objects-in-a-win32-application"></a>Didacticiel : hébergement d'objets visuels dans une application Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un environnement de création d'applications élaboré. Toutefois, lorsque vous avez beaucoup investi [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] code, il peut être plus efficace d’ajouter [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fonctionnalités à votre application plutôt que de réécrire votre code. Pour fournir la prise en charge de [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] et [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sous-systèmes graphiques utilisés simultanément dans une application, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit un mécanisme pour l’hébergement des objets dans un [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fenêtre.  
@@ -34,7 +35,7 @@ ms.lasthandoff: 11/21/2017
 
   
 <a name="requirements"></a>   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  Ce didacticiel suppose que vous avez des connaissances de base en matière de programmation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]. Pour une introduction à [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] de programmation, consultez [procédure pas à pas : Ma première application de bureau WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md). Pour obtenir une présentation [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] de programmation, consultez un des nombreux livres sur l’objet, en particulier *programmation Windows* de Charles Petzold.  
   
 > [!NOTE]

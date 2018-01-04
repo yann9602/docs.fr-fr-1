@@ -17,11 +17,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2799bd6652c9f575be8758f47c9770d3fde93580
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 4b38cbe1bab4c3d2bf0c6ee518dd26df4ff440dc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms"></a>Windows Forms
 Les formulaires étant l'unité de base de votre application, il est essentiel de réfléchir à leur fonction et à leur conception. Si l'on y réfléchit bien, un formulaire est une feuille blanche que vous, en tant que développeur, améliorez avec des contrôles pour créer une interface utilisateur et avec du code pour manipuler des données. À cette fin, [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] offre un environnement de développement intégré (IDE) pour vous aider à écrire du code, ainsi qu'un jeu de contrôles complet écrit avec [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. En associant les fonctionnalités de ces contrôles à votre code, vous pouvez facilement et rapidement développer les solutions dont vous avez besoin.  

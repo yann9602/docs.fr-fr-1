@@ -13,11 +13,14 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a9bfa0f984f97e774d00a64fc3fd8489b3d5b40e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 956cc0ba37c06b39ed32500209e1af47d4035c84
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="systemxml-usage"></a>System.Xml, utilisation
 Cette section aborde l’utilisation de plusieurs types résidant dans <xref:System.Xml?displayProperty=nameWithType> espaces de noms peut être utilisé pour représenter les données XML.  
@@ -36,4 +39,4 @@ Cette section aborde l’utilisation de plusieurs types résidant dans <xref:Sys
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Instructions d’utilisation](../../../docs/standard/design-guidelines/usage-guidelines.md)
+ [Indications relatives à l’utilisation](../../../docs/standard/design-guidelines/usage-guidelines.md)

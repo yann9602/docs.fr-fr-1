@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 86d1ababcb7a00496b59005b5e90f875511fefc4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ebb74e1db2e63269f70a13ef8520ab1383ecae08
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-get-the-default-view-of-a-data-collection"></a>Comment : obtenir la vue par défaut d'une collection de données
 Les vues permettent à la même collection de données de différentes façons, en fonction de tri, de filtrage ou de critères de regroupement. Chaque collection a un affichage par défaut partagé, qui est utilisé comme source de liaison réelle lorsqu’une liaison spécifie une collection comme sa source. Cet exemple montre comment obtenir la vue par défaut d’une collection.  

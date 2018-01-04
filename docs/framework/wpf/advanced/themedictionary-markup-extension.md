@@ -19,11 +19,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 45f878ce89dcf76ae800ade10a0e67f019741f65
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2372961cdc889528f13e13dd1f1760608030275e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="themedictionary-markup-extension"></a>ThemeDictionary, extension de balisage
 Cette extension offre un moyen aux auteurs de contrôles personnalisés ou aux applications qui intègrent des contrôles tiers de charger les dictionnaires de ressources de thème utilisés pour appliquer un style à un contrôle.  
@@ -50,7 +51,7 @@ Cette extension offre un moyen aux auteurs de contrôles personnalisés ou aux a
 |-|-|  
 |`assemblyUri`|[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] de l’assembly qui contient des informations de thème. Il s’agit généralement d’un URI à en-tête pack qui référence un assembly dans le package plus large. Les ressources d’assembly et les URI à en-tête pack simplifient le déploiement. Pour plus d’informations, consultez [URI à en-tête pack dans WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Cette extension est conçue pour remplir une seule valeur de propriété spécifique : une valeur pour <xref:System.Windows.ResourceDictionary.Source%2A?displayProperty=nameWithType>.  
   
  À l’aide de cette extension, vous pouvez spécifier un assembly de ressources uniquement qui contient des styles à utiliser uniquement quand le thème [!INCLUDE[TLA#tla_aero](../../../../includes/tlasharptla-aero-md.md)] est appliqué au système de l’utilisateur, d’autres styles à utiliser quand le thème Luna est appliqué, etc. Quand vous utilisez cette extension, le contenu d’un dictionnaire de ressources d’un contrôle peut être automatiquement invalidé et rechargé pour un autre thème spécifique, si nécessaire.  

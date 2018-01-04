@@ -18,18 +18,21 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 30ee456632070f778d51d7fb40475a795a0f620b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 471746242e7abe491148201103741fd00f4338cb
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="design-guidelines-for-exceptions"></a>Instructions de conception pour les exceptions
 La gestion des exceptions présente de nombreux avantages sur le rapport d’erreurs de basée sur la valeur de retour. Conception bon framework permet le développeur d’applications de tirer parti d’exceptions. Cette section présente les avantages des exceptions et présente des indications pour les utiliser efficacement.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Levée d’exceptions](../../../docs/standard/design-guidelines/exception-throwing.md)  
- [À l’aide des Types d’Exception Standard](../../../docs/standard/design-guidelines/using-standard-exception-types.md)  
+ [Utilisation de types d’exceptions standard](../../../docs/standard/design-guidelines/using-standard-exception-types.md)  
  [Exceptions et performances](../../../docs/standard/design-guidelines/exceptions-and-performance.md)  
  *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   

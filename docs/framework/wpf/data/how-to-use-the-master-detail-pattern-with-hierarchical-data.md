@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bb546a3429012a49ee7652a3470460935fc76d70
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2e392b47682d1bf53dc31073920bdf212fb7d997
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-the-master-detail-pattern-with-hierarchical-data"></a>Comment : utiliser le modèle maître/détail avec des données hiérarchiques
 Cet exemple montre comment implémenter le scénario maître / détail.  

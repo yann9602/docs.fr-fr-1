@@ -17,17 +17,18 @@ caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8c4f4179087679ff891c705cf16693fc69c808d8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 38f0f6ac030af08039438b7e766c3f0f5bed7534
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="key-frame-animations-overview"></a>Vue d'ensemble des animations d'image clé
 Cette rubrique présente les animations d’image clé. Les animations d’image clé vous permettent d’effectuer des animation en utilisant plus de deux valeurs cibles et de contrôler la méthode d’interpolation d’une animation.  
   
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette vue d’ensemble, vous devez être familiarisé avec les animations et les chronologies de [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Pour une introduction aux animations, consultez [Vue d’ensemble de l’animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md). Cette rubrique vous permet également de vous familiariser avec les animations From/To/By. Pour plus d’informations, consultez la Vue d’ensemble des animations From/To/By.  
   
 <a name="whatisakeyframeanimation"></a>   
@@ -132,7 +133,7 @@ Cette rubrique présente les animations d’image clé. Les animations d’image
 ### <a name="linear-interpolation"></a>Interpolation linéaire  
  Avec l’interpolation linéaire, l’animation progresse à une vitesse constante pendant la durée du segment. Par exemple, si un segment d’image clé passe de 0 à 10 sur une durée de 5 secondes, l’animation générera les valeurs suivantes aux temps spécifiés :  
   
-|Heure|Valeur de sortie|  
+|réflexion|Valeur de sortie|  
 |----------|------------------|  
 |0|0|  
 |1|2|  

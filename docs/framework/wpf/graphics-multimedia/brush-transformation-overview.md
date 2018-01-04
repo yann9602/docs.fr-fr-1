@@ -20,17 +20,18 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0b57c5ee36c9ed9c89fc8ca1bfb7ea265c2460c7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: aa4a533594c1e89942406e7df0a49215e3885418
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="brush-transformation-overview"></a>Vue d'ensemble des transformations du pinceau
 La classe Brush fournit deux propriétés de transformation : <xref:System.Windows.Media.Brush.Transform%2A> et <xref:System.Windows.Media.Brush.RelativeTransform%2A>. Les propriétés vous permettent de faire pivoter, mettre à l’échelle, incliner et effectuer la translation du contenu d’un pinceau. Cette rubrique décrit les différences entre ces deux propriétés et fournit des exemples de leur utilisation.  
   
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette rubrique, vous devez comprendre les fonctionnalités du pinceau que vous transformez. Pour <xref:System.Windows.Media.LinearGradientBrush> et <xref:System.Windows.Media.RadialGradientBrush>, consultez la [peinture avec des couleurs unies et vue d’ensemble des dégradés](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md). Pour <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, ou <xref:System.Windows.Media.VisualBrush>, consultez [peinture avec des Images, des dessins et des éléments visuels](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md). Vous devez également être familiarisé avec les transformations 2D décrites dans la [Vue d'ensemble des transformations](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md).  
   
 <a name="transformversusrelativetransform"></a>   

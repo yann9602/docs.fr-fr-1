@@ -20,11 +20,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fc5d5f8c2090f6abaa1157db2a92d2e689d7f216
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: cb2354b61a0433981675ba55978f31937212cabc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-and-data-objects"></a>Données et objets de données
 Données transférées dans le cadre d’une opération de glisser-déplacer sont stockées dans un objet de données.  Conceptuellement, un objet de données se compose d’un ou plusieurs des paires suivantes :  
@@ -39,7 +40,7 @@ Données transférées dans le cadre d’une opération de glisser-déplacer son
 ## <a name="data-objects"></a>Objets de données  
  Tous les objets de données doivent implémenter le <xref:System.Windows.IDataObject> interface, qui fournit le jeu de méthodes qui activent et facilitent le transfert de données standard suivant.  
   
-|Méthode|Résumé|  
+|Méthode|Récapitulatif|  
 |------------|-------------|  
 |<xref:System.Windows.IDataObject.GetData%2A>|Récupère un objet de données dans un format de données spécifié.|  
 |<xref:System.Windows.IDataObject.GetDataPresent%2A>|Vérifie si les données n’est disponibles dans, ou peuvent être converties en un format spécifié.|  

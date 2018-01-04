@@ -18,11 +18,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 69f7a5af655586a62776a8c470f2e1c9811f91d7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5b5c4ee554e8a0148c7d8d8044735f66778e7117
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dependency-property-metadata"></a>Métadonnées de propriété de dépendance
 Le système de propriétés [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] inclut un système de création de rapport de métadonnées allant au-delà de ce qui peut être signalé à propos d’une propriété par réflexion ou par les caractéristiques générales du [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]. Les métadonnées d’une propriété de dépendance peuvent également être affectées de manière unique par la classe qui définit une propriété de dépendance, peuvent être changées quand la propriété de dépendance est ajoutée à une autre classe, et peuvent être substituées de manière spécifique par toutes les classes dérivées qui héritent de la propriété de dépendance de la classe de base de définition.  
@@ -31,7 +32,7 @@ Le système de propriétés [!INCLUDE[TLA#tla_winclient](../../../../includes/tl
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Prérequis  
- Cette rubrique part du principe que vous savez ce que sont les propriétés de dépendance du point de vue d’un consommateur de propriétés de dépendance existantes sur les classes [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], et que vous avez lu la [Vue d’ensemble des propriétés de dépendance](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md). Pour pouvoir suivre les exemples de cette rubrique, vous devez également comprendre [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] et savoir comment écrire des applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+ Cette rubrique part du principe que vous savez ce que sont les propriétés de dépendance du point de vue d’un consommateur de propriétés de dépendance existantes sur les classes [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] et que vous avez lu [Vue d’ensemble des propriétés de dépendance](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md). Pour pouvoir suivre les exemples de cette rubrique, vous devez également comprendre [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] et savoir comment écrire des applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
 <a name="dp_metadata_contents"></a>   
 ## <a name="how-dependency-property-metadata-is-used"></a>Utilisation des métadonnées de propriété de dépendance  

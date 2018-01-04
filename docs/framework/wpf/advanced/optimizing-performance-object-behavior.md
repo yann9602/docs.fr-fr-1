@@ -22,11 +22,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1e929ec927bc0eb7494d8865fc5452cfc6910169
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 12c4dc202ac4db2c21b0a45b61608f5c03c24ac9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="optimizing-performance-object-behavior"></a>Optimisation des performances : comportement d'objets
 Une bonne compréhension du comportement intrinsèque des objets [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vous permet de choisir le bon compromis entre fonctionnalités et performances.  
@@ -127,6 +128,6 @@ Une bonne compréhension du comportement intrinsèque des objets [!INCLUDE[TLA2#
  [Disposition et conception](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
  [Graphiques 2D et acquisition d'images](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
  [Ressources d'application](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
- [Texte](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
+ [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
  [Liaison de données](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
  [Autres recommandations relatives aux performances](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

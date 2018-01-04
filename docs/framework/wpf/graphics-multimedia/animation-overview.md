@@ -19,11 +19,12 @@ caps.latest.revision: "73"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 15eeb27d493cd1138b0d3d41b55a57228a226a11
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 118d63bbbcd0cbb52d092af7002df2538df7790b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="animation-overview"></a>Vue d'ensemble de l'animation
 <a name="introduction"></a>
@@ -223,10 +224,10 @@ ms.lasthandoff: 10/22/2017
   
 |Type de propriété|Animation de base (From/To/By) correspondante|Animation d’image clé correspondante|Animation de tracé correspondante|Exemple d’utilisation|  
 |-------------------|----------------------------------------------------|---------------------------------------|----------------------------------|-------------------|  
-|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Aucune|Animer le <xref:System.Windows.Media.SolidColorBrush.Color%2A> d’un <xref:System.Windows.Media.SolidColorBrush> ou <xref:System.Windows.Media.GradientStop>.|  
+|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Aucun.|Animer le <xref:System.Windows.Media.SolidColorBrush.Color%2A> d’un <xref:System.Windows.Media.SolidColorBrush> ou <xref:System.Windows.Media.GradientStop>.|  
 |<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimation>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>|Animer le <xref:System.Windows.FrameworkElement.Width%2A> d’un <xref:System.Windows.Controls.DockPanel> ou <xref:System.Windows.FrameworkElement.Height%2A> d’un <xref:System.Windows.Controls.Button>.|  
 |<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimation>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.PointAnimationUsingPath>|Animer le <xref:System.Windows.Media.EllipseGeometry.Center%2A> position d’un <xref:System.Windows.Media.EllipseGeometry>.|  
-|<xref:System.String>|Aucune|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Aucune|Animer le <xref:System.Windows.Controls.TextBlock.Text%2A> d’un <xref:System.Windows.Controls.TextBlock> ou <xref:System.Windows.Controls.ContentControl.Content%2A> d’un <xref:System.Windows.Controls.Button>.|  
+|<xref:System.String>|Aucun.|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Aucun.|Animer le <xref:System.Windows.Controls.TextBlock.Text%2A> d’un <xref:System.Windows.Controls.TextBlock> ou <xref:System.Windows.Controls.ContentControl.Content%2A> d’un <xref:System.Windows.Controls.Button>.|  
   
 <a name="animationsaretimelines"></a>   
 ### <a name="animations-are-timelines"></a>Les animations sont des chronologies  
@@ -328,7 +329,7 @@ ms.lasthandoff: 10/22/2017
 ## <a name="animation-samples"></a>Exemples d’animation  
  Les exemples suivants peuvent vous aider à commencer à ajouter animation à vos applications.  
   
--   [Exemple de valeurs cibles d’animation From, To, and By Animation Target Values Sample](http://go.microsoft.com/fwlink/?LinkID=159988)  
+-   [Exemple de valeurs cibles d’animation From, To et By](http://go.microsoft.com/fwlink/?LinkID=159988)  
   
      Présente les différents paramètres From/To/By.  
   

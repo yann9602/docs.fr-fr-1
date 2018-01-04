@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 80edbd452be52e77a464ab29347dbe5d4067d0e1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6707a434f64838467033966c9093e1e415b1fb31
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="guidelines-for-designing-stylable-controls"></a>Recommandations pour la conception de contrôles auxquels un style peut être appliqué
 Ce document récapitule un ensemble de meilleures pratiques à envisager lors de la conception d’un contrôle auquel vous souhaitez appliquer facilement un style et un modèle. Ces meilleures pratiques sont issues d’un long processus d’essais et d’erreurs lors de notre travail sur les styles de contrôles de thème pour le jeu de contrôles [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] intégré. Nous avons appris qu’un style réussi constitue tout autant une fonction d’un modèle d’objet bien conçu que du style lui-même. Ce document concerne l’auteur du contrôle et non l’auteur du style.  

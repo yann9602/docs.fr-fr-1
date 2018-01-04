@@ -20,11 +20,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f20881ed452f1ec78381d17a32b4cc2c77305e0e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 215e3583d50567a2bfec8226e006bc7398628299
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-navigate-through-the-objects-in-a-data-collectionview"></a>Comment : naviguer dans les objets d'un CollectionView de données
 Les vues permettent à la même collection de données de différentes façons, en fonction de tri, de filtrage ou de regroupement. Affichages également un concept de pointeur d’enregistrement en cours et activer le déplacement du pointeur. Cet exemple montre comment obtenir l’objet en cours ainsi que pour naviguer parmi les objets dans une collection de données à l’aide de la fonctionnalité fournie dans la <xref:System.Windows.Data.CollectionView> classe.  

@@ -24,11 +24,12 @@ caps.latest.revision: "38"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9b7abab8747272fcf23611539c29ab476c5bed48
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: fae5c8553cc395268b1c6afb1b64727014756975
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-wpf"></a>Sécurité (WPF)
 <a name="introduction"></a>Lors du développement [!INCLUDE[TLA#tla_wpf](../../../includes/tlasharptla-wpf-md.md)] autonomes et des applications hébergées par un navigateur, vous devez prendre en compte le modèle de sécurité. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]exécutent des applications autonomes avec des autorisations illimitées ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** jeu d’autorisations), qu’il soit déployé à l’aide de Windows Installer (.msi), XCopy, ou [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Le déploiement d’applications WPF autonomes de confiance partielle avec ClickOnce n’est pas pris en charge. Toutefois, une application hôte de niveau de confiance totale peut créer un niveau de confiance partiel <xref:System.AppDomain> à l’aide du modèle de complément .NET Framework. Pour plus d’informations, consultez [vue d’ensemble des compléments WPF](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  
@@ -72,7 +73,7 @@ ms.lasthandoff: 11/21/2017
 |Ressource|Les fichiers qui sont ajoutés à un projet avec un type de build **ressources**.|`pack://application:,,,/MyResourceFile.xaml`|  
 |Contenu|Les fichiers qui sont ajoutés à un projet avec un type de build **contenu**.|`pack://application:,,,/MyContentFile.xaml`|  
 |Site d’origine|Les fichiers qui sont ajoutés à un projet avec un type de build **aucun**.|`pack://siteoforigin:,,,/MySiteOfOriginFile.xaml`|  
-|Code de l’application|Ressources XAML avec un code-behind compilé.<br /><br /> ou<br /><br /> Fichiers XAML qui sont ajoutés à un projet avec un type de build **Page**.|`pack://application:,,,/MyResourceFile` `.xaml`|  
+|Code de l’application|Ressources XAML avec un code-behind compilé.<br /><br /> - ou -<br /><br /> Fichiers XAML qui sont ajoutés à un projet avec un type de build **Page**.|`pack://application:,,,/MyResourceFile` `.xaml`|  
   
 > [!NOTE]
 >  Pour plus d’informations sur les fichiers de données d’application et de pack [!INCLUDE[TLA2#tla_uri#plural](../../../includes/tla2sharptla-urisharpplural-md.md)], consultez [ressource d’Application WPF, contenu et les fichiers de données](../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md).  
@@ -274,7 +275,7 @@ ms.lasthandoff: 11/21/2017
 ## <a name="resources-for-developing-wpf-applications-that-promote-security"></a>Ressources pour le développement d’applications WPF promouvant la sécurité  
  Voici quelques ressources supplémentaires pour aider à développer [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] les applications qui favorisent la sécurité :  
   
-|Zone|Ressource|  
+|Domaine|Ressource|  
 |----------|--------------|  
 |Code managé|[Index des directives, conseils et procédures de sécurité pour les applications](http://go.microsoft.com/fwlink/?LinkId=117426)|  
 |[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]|[Sécurité d’accès du code](../../../docs/framework/misc/code-access-security.md)|  

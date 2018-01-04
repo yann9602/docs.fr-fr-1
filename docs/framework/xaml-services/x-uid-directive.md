@@ -18,11 +18,12 @@ caps.latest.revision: "12"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 4d49e9630b481b2daf103feabd225dd5ef0c8ca2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9abd4a1851ce21a1858f51ff4ce42998c20639e0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xuid-directive"></a>x:Uid, directive
 Fournit un identificateur unique pour les éléments de balisage. Dans de nombreux scénarios, cet identificateur unique est utilisé par des outils et processus de localisation XAML.  
@@ -39,7 +40,7 @@ Fournit un identificateur unique pour les éléments de balisage. Dans de nombre
 |-|-|  
 |`identifier`|Créée manuellement ou chaîne générée automatiquement qui doit être unique dans un fichier lorsqu’il est interprété par un `x:Uid` consommateur.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Dans [MS-XAML] `x:Uid` est défini comme une directive. Pour plus d’informations, consultez [ \[MS-XAML\] Section 5.3.6](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
  `x:Uid`est différent de `x:Name` à la fois en raison du scénario de localisation XAML déclaré et afin que les identificateurs qui sont utilisés pour la localisation n’ont aucune dépendance sur les conséquences de modèle de programmation de `x:Name`. En outre, `x:Name` est régie par la portée de nom XAML ; Toutefois, `x:Uid` n’est pas régi par un concept de langage défini XAML de mise en œuvre de l’unicité. Les processeurs XAML au sens large (processeurs qui ne font pas partie du processus de localisation) ne sont pas prévus pour garantir l’unicité de `x:Uid` valeurs. Cette responsabilité revient conceptuellement à l’initiateur des valeurs. L’attente d’unicité de `x:Uid` des valeurs dans une source XAML unique est justifiée pour les consommateurs des valeurs, telles que le processus d’internationalisation dédié ou d’outils. Le modèle d’unicité typique est que `x:Uid` sont uniques au sein d’un fichier XML qui représente le XAML.  

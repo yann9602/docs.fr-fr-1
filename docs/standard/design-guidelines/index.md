@@ -17,11 +17,14 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a812207fb58e6c87c263966081060d02f8038963
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 38c344e4f4ede58fcb39dd638f6aa8e896e63da0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="framework-design-guidelines"></a>Règles de conception de .NET Framework
 Cette section fournit des instructions pour la conception de bibliothèques qui étendent et interagissent avec le .NET Framework. Vise à aider les concepteurs de bibliothèque à garantir la cohérence d’API et la facilité d’utilisation en fournissant un modèle de programmation unifié qui est indépendant du langage de programmation utilisé pour le développement. Nous vous recommandons de suivre ces instructions de conception lors du développement des classes et des composants qui étendent le .NET Framework. Conception de la bibliothèque incohérent la productivité des développeurs néfaste et déconseille d’adoption.  
@@ -31,25 +34,25 @@ Cette section fournit des instructions pour la conception de bibliothèques qui 
  Ces instructions sont extraites à partir du carnet *Framework Design Guidelines : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition*, Krzysztof Cwalina et Brad Abrams.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Affectation de noms](../../../docs/standard/design-guidelines/naming-guidelines.md)  
+ [Directives de nommage](../../../docs/standard/design-guidelines/naming-guidelines.md)  
  Fournit des instructions pour nommer les assemblys, espaces de noms, types et membres dans les bibliothèques de classes.  
   
- [Règles de conception de type](../../../docs/standard/design-guidelines/type.md)  
+ [Instructions pour la conception des types](../../../docs/standard/design-guidelines/type.md)  
  Fournit des instructions pour l’utilisation des classes statiques et abstraites, des interfaces, des énumérations, des structures et des autres types.  
   
- [Règles de conception de membres](../../../docs/standard/design-guidelines/member.md)  
+ [Instructions de conception des membres](../../../docs/standard/design-guidelines/member.md)  
  Fournit des instructions pour la conception et à l’aide des propriétés, méthodes, constructeurs, champs, événements, opérateurs et paramètres.  
   
- [Conception d’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
+ [Conception en vue de l’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
  Décrit les mécanismes d’extensibilité tels que le sous-classement, à l’aide d’événements, les membres virtuels et les rappels et explique comment choisir les mécanismes qui répondent le mieux aux besoins de votre infrastructure.  
   
- [Règles de conception pour les Exceptions](../../../docs/standard/design-guidelines/exceptions.md)  
+ [Instructions de conception pour les exceptions](../../../docs/standard/design-guidelines/exceptions.md)  
  Décrit les règles de conception pour la conception, la levée et l’interception des exceptions.  
   
- [Instructions d’utilisation](../../../docs/standard/design-guidelines/usage-guidelines.md)  
+ [Indications relatives à l’utilisation](../../../docs/standard/design-guidelines/usage-guidelines.md)  
  Fournit des instructions pour à l’aide des types courants tels que des tableaux, des attributs et des collections, prenant en charge la sérialisation et la surcharge des opérateurs d’égalité.  
   
- [Modèles de conception courants](../../../docs/standard/design-guidelines/common-design-patterns.md)  
+ [Modèles de design courants](../../../docs/standard/design-guidelines/common-design-patterns.md)  
  Fournit des instructions pour le choix et l’implémentation des propriétés de dépendance et le modèle de suppression.  
   
  *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  

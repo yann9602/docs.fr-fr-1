@@ -19,11 +19,14 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 55c0505f5a06dfc87897fa59e9d6083cbd63c8ee
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 5aa37d2ee6b3b18d9decbc98bd1c427168e8ab35
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="equality-operators"></a>Opérateurs d'égalité
 Cette section présente la surcharge d’opérateurs d’égalité et fait référence à `operator==` et `operator!=` en tant qu’opérateurs d’égalité.  
@@ -58,4 +61,4 @@ Cette section présente la surcharge d’opérateurs d’égalité et fait réf�
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Instructions d’utilisation](../../../docs/standard/design-guidelines/usage-guidelines.md)
+ [Indications relatives à l’utilisation](../../../docs/standard/design-guidelines/usage-guidelines.md)

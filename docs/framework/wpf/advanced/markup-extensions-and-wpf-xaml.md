@@ -26,11 +26,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 08cdc3dcb9e6d73b0d3b95915bf955ee27782782
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5e6dec42d40039f9cc23ba976ecf421f6471888e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Extensions de balisage et XAML WPF
 Cette rubrique introduit le concept d’extensions de balisage pour XAML, notamment leurs règles de syntaxe, leur finalité et le modèle d’objet de classe sous-jacent. Les extensions de balisage sont une fonctionnalité générale du langage XAML et de l’implémentation .NET des services XAML. Cette rubrique détaille spécifiquement des extensions de balisage pour une utilisation dans le langage XAML de WPF.  

@@ -19,11 +19,14 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fbab05c3a6b630f3ba191ff9e4903b9c44823aad
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 46a6ccde7c978fe18737c6ae8733dd2e1e1ec858
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="version-tolerant-serialization"></a>Sérialisation avec tolérance de version
 Dans les versions 1.0 et 1.1 du .NET Framework, la création de types sérialisables pouvant être réutilisés d'une version d'application à l'autre était problématique. Si un type était modifié via l'ajout de champs supplémentaires, les problèmes suivants étaient susceptibles de se produire :  

@@ -18,11 +18,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 04bdf32ea329ff25fd62255b4512d8a9d5703b8f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a258a0e145e9a24e6e87bb511fdbd6166422a656
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="preview-events"></a>Aperçu des événements
 Événements d’aperçu, également connus sous le tunneling forcé, les événements sont des événements routés où la direction de l’itinéraire se déplace à partir de la racine de l’application vers l’élément qui a déclenché l’événement et est signalé comme étant la source de données d’événement. Pas tous les scénarios d’événement prend en charge ou exiger des événements d’aperçu. Cette rubrique décrit les situations où les événements d’aperçu existent, comment les applications ou les composants doivent les gérer et les cas où la création d’événements d’aperçu dans des composants personnalisés ou des classes peut être appropriée.  

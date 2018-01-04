@@ -31,11 +31,12 @@ caps.latest.revision: "23"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 5973c67b26e07bba69383cc625ff34493d825a41
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6b325c931579606f6d1d90eb821766a4110acfd5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xml-character-entities-and-xaml"></a>Entités de caractères XML et XAML
 XAML utilise des entités de caractères définies en XML pour les caractères spéciaux. Cette rubrique décrit des entités de caractères spécifiques et les considérations générales pour d'autres concepts XML en XAML.  
@@ -54,13 +55,13 @@ XAML utilise des entités de caractères définies en XML pour les caractères s
 ## <a name="xml-character-entities"></a>Entités de caractères XML  
  Comme indiqué précédemment, la plupart des entités de caractères et des séquences d'échappement qui sont généralement utilisées pour écrire le balisage XAML sont définies par XML. Cette rubrique ne présente pas l'intégralité de ces entités ; vous trouverez de nombreuses autres références détaillées des entités dans la documentation externe, par exemple les spécifications XML. Toutefois, pour plus de commodité, cette rubrique présente certaines des entités de caractères XML spécifiques qui sont généralement utilisées dans le balisage XAML.  
   
-|Caractère|Entité|Remarques|  
+|Caractère|Entité|Notes|  
 |---------------|------------|-----------|  
-|& (et commercial)|&amp;|Doit être utilisé à la fois pour les valeurs d'attribut et pour le contenu d'un élément.|  
-|> (supérieur à)|&gt;|Doit être utilisé pour la valeur d'attribut, mais le caractère > est acceptable comme contenu d'un élément à condition que le caractère < ne le précède pas.|  
-|< (inférieur à)|&lt;|Doit être utilisé pour une valeur d’attribut, mais \< est acceptable comme contenu d’un élément en tant que > ne le suive pas.|  
-|" (guillemets droits)|&quot;|Doit être utilisé pour une valeur d'attribut, mais le guillemet droit (") est acceptable comme contenu d'un élément. Notez que les valeurs d'attributs peuvent être placées entre un guillemet droit unique (') ou des guillemets droit (") ; le caractère qui apparaît en premier définit ce qui est inclus dans la valeur d'attribut, et l'autre guillemet peut ensuite être utilisé comme littéral dans la valeur.|  
-|' (guillemet droit unique)|&apos;|Doit être utilisé pour une valeur d'attribut, mais le guillemet droit unique (') est acceptable comme contenu d'un élément. Notez que les valeurs d'attributs peuvent être placées entre un guillemet droit unique (') ou des guillemets droit (") ; le caractère qui apparaît en premier définit ce qui est inclus dans la valeur d'attribut, et l'autre guillemet peut ensuite être utilisé comme littéral dans la valeur.|  
+|& (et commercial)|\&amp;|Doit être utilisé à la fois pour les valeurs d'attribut et pour le contenu d'un élément.|  
+|> (supérieur à)|\&gt;|Doit être utilisé pour la valeur d'attribut, mais le caractère > est acceptable comme contenu d'un élément à condition que le caractère < ne le précède pas.|  
+|< (inférieur à)|\&lt;|Doit être utilisé pour une valeur d’attribut, mais \< est acceptable comme contenu d’un élément en tant que > ne le suive pas.|  
+|" (guillemets droits)|\&quot;|Doit être utilisé pour une valeur d'attribut, mais le guillemet droit (") est acceptable comme contenu d'un élément. Notez que les valeurs d'attributs peuvent être placées entre un guillemet droit unique (') ou des guillemets droit (") ; le caractère qui apparaît en premier définit ce qui est inclus dans la valeur d'attribut, et l'autre guillemet peut ensuite être utilisé comme littéral dans la valeur.|  
+|' (guillemet droit unique)|\&apos;|Doit être utilisé pour une valeur d'attribut, mais le guillemet droit unique (') est acceptable comme contenu d'un élément. Notez que les valeurs d'attributs peuvent être placées entre un guillemet droit unique (') ou des guillemets droit (") ; le caractère qui apparaît en premier définit ce qui est inclus dans la valeur d'attribut, et l'autre guillemet peut ensuite être utilisé comme littéral dans la valeur.|  
 |(mappages de caractères numériques)|&#*[entier]* ; ou & #x*[hex]*;|XAML prend en charge les mappages de caractères numériques dans de l'encodage actif.|  
 |(espace insécable)|&\#160 ; (en supposant que l’encodage UTF-8)|Pour les éléments de document dynamique ou les éléments qui acceptent du texte tels que le <xref:System.Windows.Controls.TextBox> WPF, les espaces insécables ne sont pas normalisés hors du balisage, même pour `xml:space="default"`. (Pour plus d’informations, consultez [traitement des espaces blancs en XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md).)|  
   

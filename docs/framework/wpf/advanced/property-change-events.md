@@ -24,11 +24,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e415d5ab46bc354198135fc4e0902e3017923e20
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 46a11b072731daf420e35bc9c9cfd7d4fced1fe5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="property-change-events"></a>Événements de changement de propriété
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] définit plusieurs événements déclenchés en réponse au changement de la valeur d’une propriété. Souvent, la propriété est une propriété de dépendance. L’événement lui-même est parfois un événement routé et parfois un événement [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] standard. La définition de l’événement varie selon le scénario, car certains changements de propriété sont routés de façon plus appropriée à travers une arborescence d’éléments, tandis que d’autres changements de propriété ne concernent en général que l’objet sur lequel la propriété a changé.  

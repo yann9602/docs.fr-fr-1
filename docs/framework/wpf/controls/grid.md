@@ -18,11 +18,12 @@ caps.latest.revision: "64"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 58d4bb7974da8f68d7711ec27c914ecac2bb4f93
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0e380f239b85eaa743ceec998c866fdfe07e7c13
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="grid"></a>Grille
 Le <xref:System.Windows.Controls.Grid> élément est utilisé pour positionner le contenu de lignes et colonnes.  

@@ -18,11 +18,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2acb455db8f8bdc5a95bfd2462b651cebbb692c3
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 5dccf0b274121ff4fe88c9270119a2f631ffcf29
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="inline-styles-and-templates"></a>Modèles et styles intralignes
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]Fournit des <xref:System.Windows.Style> objets et les objets de modèle (<xref:System.Windows.FrameworkTemplate> sous-classes) afin de définir l’apparence visuelle d’un élément dans les ressources, afin qu’ils peuvent être utilisés plusieurs fois. Pour cette raison, les attributs dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] qui prennent les types <xref:System.Windows.Style> et <xref:System.Windows.FrameworkTemplate> presque toujours font référence aux styles et modèles existant des ressources plutôt que définir de nouveaux inline.  

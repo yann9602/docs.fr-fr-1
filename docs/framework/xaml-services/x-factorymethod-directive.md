@@ -17,11 +17,12 @@ caps.latest.revision: "8"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 0d53db49961c2a75e4547f6b57240cefd2cc17c3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 58349c5440d0062c64346933e48b64de6c4c7b60
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xfactorymethod-directive"></a>x:FactoryMethod, directive
 Spécifie une méthode autre qu’un constructeur qu’un processeur XAML doit utiliser pour initialiser un objet après avoir résolu son type de stockage.  
@@ -51,7 +52,7 @@ Spécifie une méthode autre qu’un constructeur qu’un processeur XAML doit u
 |`methodname`|Le nom de méthode de chaîne d’une méthode qui appellent des processeurs XAML pour initialiser l’instance spécifié comme `object`. Consultez la section Notes.|  
 |`oneOrMoreObjectElements`|Un ou plusieurs éléments objet pour les objets qui spécifient les paramètres de méthode de fabrique. Ordre est significatif ; Il désigne l’ordre dans lequel les arguments doivent être passés à la méthode de fabrique.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si `methodname` est une méthode d’instance, il ne peut pas être qualifié.  
   
  Les méthodes statiques en tant que méthodes de fabrique sont prises en charge. Si `methodname` est une méthode statique, `methodname` est fournie comme un *typeName*. *methodName* combinaison, où *typeName* nomme la classe qui définit la méthode de fabrique statique. *nom de type* peut être qualifié par un préfixe s’il fait référence à un type dans un xmlns mappé. *typeName* peut être un type différent de `typeof(``object``)`.  

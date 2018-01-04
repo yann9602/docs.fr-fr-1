@@ -26,18 +26,19 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cc5f0fab7c380268dfc041d6105595858c2fed93
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 7fd38f6246d44bd24753d9c86a5b0b08819d3db7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a>Procédure pas à pas : débogage des contrôles Windows Forms personnalisés au moment du design
 Lorsque vous créez un contrôle personnalisé, il est souvent s’avérer nécessaire de déboguer son comportement au moment du design. Cela est particulièrement vrai si vous êtes en train de créer un concepteur personnalisé pour votre contrôle personnalisé. Pour plus d’informations, consultez [procédure pas à pas : création d’un Windows Forms contrôle que prend parti des fonctionnalités Visual Studio au moment du Design](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md).  
   
  Vous pouvez déboguer vos contrôles personnalisés à l’aide de Visual Studio, comme vous le feriez d’autres classes .NET Framework. La différence est que vous allez déboguer une instance distincte de Visual Studio qui exécute le code de votre contrôle personnalisé  
   
- Cette procédure pas à pas décrit notamment les tâches suivantes :  
+ Cette procédure pas à pas décrit notamment les tâches suivantes :  
   
 -   Création d’un projet Windows Forms pour héberger votre contrôle personnalisé  
   

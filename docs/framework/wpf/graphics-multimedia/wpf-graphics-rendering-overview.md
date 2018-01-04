@@ -19,11 +19,12 @@ caps.latest.revision: "51"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: def1f6273809ad3d759f53ab225607c71d04ba4a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cfb9a546ca33b848fbbcbd114951eddc5b000663
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-graphics-rendering-overview"></a>Vue d'ensemble du rendu graphique de WPF
 Cette rubrique offre une vue d’ensemble de la couche visuelle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Il se concentre sur le rôle de la <xref:System.Windows.Media.Visual> classe pour le rendu de prise en charge dans la [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modèle.  

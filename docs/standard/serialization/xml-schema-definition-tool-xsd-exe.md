@@ -12,11 +12,14 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 31bb350d454d2fcb0f38d092240c98c1b87966be
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0e6407fc8da8695da47165ae0ea2c2c6d863ec23
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>Outil XML Schema Definition (Xsd.exe)
 L'outil XML Schema Definition Tool (Xsd.exe) génère des classes du Common Language Runtime et du schéma XML à partir de fichiers XDR, XML et XSD ou de classes figurant dans un assembly de runtime.  
@@ -77,7 +80,7 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
 |------------|-----------------|  
 |**/t**[**ype**]**:***nom_type*|Spécifie le nom du type pour lequel créer un schéma. Vous pouvez spécifier plusieurs arguments pour le type. Si *nom_type* ne spécifie pas d’espace de noms, Xsd.exe établit une correspondance entre tous les types de l’assembly et le type spécifié. Si *nom_type* spécifie un espace de noms, une correspondance est établie uniquement avec ce type. Si *nom_type* se termine par un astérisque (\*), l’outil établit une correspondance avec tous les types commençant par la chaîne qui précède \*. Si vous omettez l'option `/type`, Xsd.exe génère alors des schémas pour tous les types de l'assembly.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le tableau suivant affiche les opérations que Xsd.exe exécute.  
   
  De XDR en XSD  
@@ -235,6 +238,6 @@ xsd myAssembly.dll
  <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>  
  [Outils](../../../docs/framework/tools/index.md)      
  [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)  
- [LINQ to DataSet présentation](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)  
+ [Vue d’ensemble de LINQ to DataSet](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)  
  [Interrogation de DataSets typés](../../../docs/framework/data/adonet/querying-typed-datasets.md)  
  [LINQ (Language Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)

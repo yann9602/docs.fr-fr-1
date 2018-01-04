@@ -21,11 +21,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 22b0354a0821021239140527793dc34e3911a733
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c4caaa9453cb3cec76a8606afb5601919eba607a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wpf-xaml-namescopes"></a>Portées de nom XAML WPF
 Les portées de nom XAML correspondent à un concept qui identifie des objets définis en XAML. Les noms dans une portée de nom XAML peuvent être utilisés pour établir des relations entre les noms définis en XAML des objets et leurs instances équivalentes dans une arborescence d’objets. En règle générale, les portées de nom XAML dans du code managé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sont créées lors du chargement des racines d’une page XAML spécifique pour une application XAML. Portées de nom XAML en tant qu’objet de programmation sont définies par le <xref:System.Windows.Markup.INameScope> de l’interface et sont également implémentées par la classe pratique <xref:System.Windows.NameScope>.  
@@ -65,7 +66,7 @@ Les portées de nom XAML correspondent à un concept qui identifie des objets d�
 ## <a name="xaml-namescopes-in-styles-and-templates"></a>Portées de nom XAML dans les styles et les modèles  
  Les styles et les modèles dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] permettent de réutiliser et de réappliquer le contenu d’une manière simple. Toutefois, les styles et les modèles peuvent également inclure des éléments avec des noms XAML définis au niveau d’un modèle. Ce même modèle peut être utilisé plusieurs fois dans une page. Pour cette raison, les styles et les modèles définissent tous deux leurs propres portées de nom XAML, indépendamment de l’emplacement où le style ou le modèle est appliqué dans une arborescence d’objets.  
   
- Prenons l'exemple suivant :  
+ Prenons l'exemple suivant :  
   
  [!code-xaml[XamlOvwSupport#NameScopeTemplates](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page6.xaml#namescopetemplates)]  
   

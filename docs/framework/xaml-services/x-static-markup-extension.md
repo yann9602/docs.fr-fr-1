@@ -21,11 +21,12 @@ caps.latest.revision: "25"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: d006c8d0937a454dcbe092dcc3e35c4644088e59
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 647bfed7b321a949090f6da047f9b8105d335101
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xstatic-markup-extension"></a>x:Static, extension de balisage
 Fait référence à une entité de code en valeur statique qui est définie dans un [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– moyen conforme. La propriété statique qui est référencée peut être utilisée pour fournir la valeur d’une propriété en XAML.  
@@ -44,7 +45,7 @@ Fait référence à une entité de code en valeur statique qui est définie dans
 |`typeName`|Obligatoire. Le nom du type qui définit le membre statique souhaité.|  
 |`staticMemberName`|Obligatoire. Le nom du membre de valeur statique souhaitée (une constante, une propriété statique, un champ ou une valeur d’énumération).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  L’entité de code référencée doit être une des opérations suivantes :  
   
 -   Une constante  
@@ -63,7 +64,7 @@ Fait référence à une entité de code en valeur statique qui est définie dans
   
  Soyez prudent lorsque vous apportez `x:Static` références qui ne sont pas directement le type de valeur d’une propriété. Dans le code XAML du traitement de séquence, les valeurs fournie d’une extension de balisage n’appellent pas une conversion de valeur supplémentaires. Cela est vrai même si votre `x:Static` référence crée une chaîne de texte et une conversion de valeur pour les valeurs d’attribut basé sur la chaîne de texte, généralement se produit pour ce membre spécifique ou pour des valeurs de membre de type de retour.  
   
- La syntaxe d'attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage. Le jeton de chaîne fourni après la chaîne d'identificateur `x:Static` est assigné en tant que valeur <xref:System.Windows.Markup.StaticExtension.Member%2A> de la classe d'extension <xref:System.Windows.Markup.StaticExtension> sous-jacente.  
+ La syntaxe d’attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage. Le jeton de chaîne fourni après la chaîne d'identificateur `x:Static` est assigné en tant que valeur <xref:System.Windows.Markup.StaticExtension.Member%2A> de la classe d'extension <xref:System.Windows.Markup.StaticExtension> sous-jacente.  
   
  Il existe deux autres utilisations de code XAML qui sont techniquement possibles. Toutefois, ces utilisations sont moins courantes, car elles sont inutilement détaillés :  
   

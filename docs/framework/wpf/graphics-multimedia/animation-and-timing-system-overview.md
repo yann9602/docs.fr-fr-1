@@ -16,17 +16,18 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 484aa47744de95c849b237112f1a383c2c2cb0b7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 87e3b1b63c8582a322f74659f03803d1dbb19621
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="animation-and-timing-system-overview"></a>Vue d'ensemble de l'animation et du système de minutage
 Cette rubrique décrit comment le système de minuterie utilise l’animation, <xref:System.Windows.Media.Animation.Timeline>, et <xref:System.Windows.Media.Animation.Clock> classes pour animer des propriétés.  
   
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette rubrique, vous devez être en mesure d’utiliser des animations [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pour animer des propriétés, comme décrit dans la [Vue d’ensemble de l’animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md). Il est également conseillé de vous familiariser avec les propriétés de dépendance. Pour plus d’informations, consultez [Vue d’ensemble des propriétés de dépendance](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
   
 <a name="timelinesandclocks"></a>   

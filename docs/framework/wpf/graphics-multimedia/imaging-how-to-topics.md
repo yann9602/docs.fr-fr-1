@@ -17,11 +17,12 @@ caps.latest.revision: "79"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 30310b08f33d0f8c4b854635ba41565bce439c05
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 3d2d3bd20a35f5d4b28f0ab4aaba02fdd19a3ee9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imaging-how-to-topics"></a>Rubriques "Comment" relatives à l'acquisition d'images
 Les rubriques de cette section montrent comment utiliser [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] afin d’afficher ou modifier des images bitmap.  

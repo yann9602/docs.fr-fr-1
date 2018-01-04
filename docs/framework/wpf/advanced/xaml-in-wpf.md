@@ -17,11 +17,12 @@ caps.latest.revision: "79"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 74f5a19e891bf0b86f91fcbe4f6b59b4d6acc8bb
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 3735bfc7b759f48a9dc580210f3a6f1c89782d30
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-in-wpf"></a>Intégration du format XAML au format WPF
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]est un langage de balisage pour une application déclarative de programmation. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]implémente l’implémentation du processeur XAML et fournit la prise en charge du langage XAML. Le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] types sont implémentés, tels qu’ils puissent fournir le stockage pour une représentation XAML du type requis. En général, vous pouvez créer la majorité de vos [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] interface utilisateur des applications dans le balisage XAML.  

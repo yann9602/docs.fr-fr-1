@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3f024ae77740c596d8646b10a036428e2342d084
-ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
+ms.workload: dotnet
+ms.openlocfilehash: 21a36797f945f37a641e7002bbb9937a664650fd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="weak-event-patterns"></a>Modèles d'événement faible
 Dans les applications, il est possible que les gestionnaires qui sont attachés à des sources d’événements ne sont pas détruits en coordination avec l’objet écouteur qui joint le gestionnaire à la source. Cette situation peut conduire à des fuites de mémoire. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]introduit un modèle de conception qui peut être utilisé pour résoudre ce problème, en fournissant une classe de gestionnaire dédiée pour des événements particuliers et en implémentant une interface sur les écouteurs de cet événement. Ce modèle de conception est appelé le *du modèle d’événement faible*.  

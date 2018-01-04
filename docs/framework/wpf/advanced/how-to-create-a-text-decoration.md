@@ -27,11 +27,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e9229ce86dbe640c4eb960c455dd049ff40b38d8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0beb22ba78c6fc99951bc2d780c1c5defa32e637
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-text-decoration"></a>Comment : créer une décoration de texte
 A <xref:System.Windows.TextDecoration> objet est un ornement visuel que vous pouvez ajouter au texte. Il existe quatre types de décorations de texte : soulignement, ligne de base, barré et surligné. L’exemple suivant montre les emplacements des ornements de texte par rapport au texte.  

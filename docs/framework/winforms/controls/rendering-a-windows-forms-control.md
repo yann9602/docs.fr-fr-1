@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 07e75bd44ab960744224c2d2d2cf2e53c42860fa
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 587c9c8fb0bf634a2491acb1ae0b2f60979fa899
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="rendering-a-windows-forms-control"></a>Rendu d'un contrôle Windows Forms
 Le rendu désigne le processus de création d’une représentation visuelle sur l’écran d’un utilisateur. Windows Forms utilise [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (la nouvelle bibliothèque de graphiques Windows) pour le rendu. Les classes managées qui donnent accès aux [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] se trouvent dans le <xref:System.Drawing?displayProperty=nameWithType> espace de noms et ses sous-espaces de noms.  

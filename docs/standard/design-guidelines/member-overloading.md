@@ -19,11 +19,14 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8b54a99ab88e4cfa0569b2095a0be3750c91f244
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 2c84d70fb8c05dc295fc807c9a59085c47d0f455
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="member-overloading"></a>Surcharge de membre
 Surcharge de membre équivaut à la création de deux membres ou plus sur le même type qui diffèrent uniquement par le nombre ou le type de paramètres, mais ont le même nom. Par exemple, dans la commande suivante, la `WriteLine` méthode est surchargée :  
@@ -66,5 +69,5 @@ public static class Console {
  *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi  
- [Règles de conception de membres](../../../docs/standard/design-guidelines/member.md)  
+ [Instructions de conception des membres](../../../docs/standard/design-guidelines/member.md)  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)

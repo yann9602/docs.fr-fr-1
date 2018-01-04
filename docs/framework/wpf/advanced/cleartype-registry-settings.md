@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fc4411c8141579150cde1bda2e46d7d2abe42e9c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d915af4ee436bb6c661a7b412b0e36702191339a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cleartype-registry-settings"></a>Paramètres du Registre ClearType
 Cette rubrique fournit une vue d’ensemble de la [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] les paramètres du Registre qui sont utilisées par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications.  
@@ -91,7 +92,7 @@ Cette rubrique fournit une vue d’ensemble de la [!INCLUDE[TLA2#tla_winclient](
 ## <a name="pixel-structure"></a>Structure des pixels  
  La structure des pixels décrit le type des pixels qui composent un écran d’affichage. Cette structure peut être de trois types :  
   
-|Type|Valeur|Description|  
+|Type|Value|Description|  
 |----------|-----------|-----------------|  
 |À deux dimensions|0|L’écran d’affichage n’a aucune structure de pixels. Cela signifie que les sources de lumière de chaque couleur sont étalées de manière uniforme sur la zone de pixel – ce rendu est appelé « rendu en échelle de gris ». C’est ainsi que fonctionne un écran d’affichage standard. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] n’est jamais appliqué au texte rendu.|  
 |RVB|1|L’écran d’affichage comporte des pixels constitués de trois bandes dans l’ordre suivant : rouge, vert et bleu. [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] est appliqué au texte rendu.|  

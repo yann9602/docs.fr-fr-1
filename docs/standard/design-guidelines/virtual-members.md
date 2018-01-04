@@ -17,11 +17,14 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 56838fc4c1c1e7cb8723beee3f0e6b23515d43f0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 692a5803ddb538de6dc5f061c18cc0b250d0f4ae
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="virtual-members"></a>Membres virtuels
 Membres virtuels peuvent être substituées, ce qui modifie le comportement de la sous-classe. Elles sont très similaires aux rappels en termes de l’extensibilité, qu'ils fournissent, mais ils sont mieux en termes de performances de l’exécution et la consommation de mémoire. En outre, les membres virtuels se sentent plus naturels dans les scénarios qui requièrent la création d’un spécial type d’un type existant (spécialisation).  
@@ -48,4 +51,4 @@ Membres virtuels peuvent être substituées, ce qui modifie le comportement de l
   
 ## <a name="see-also"></a>Voir aussi  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)  
- [Conception d’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+ [Conception en vue de l’extensibilité](../../../docs/standard/design-guidelines/designing-for-extensibility.md)

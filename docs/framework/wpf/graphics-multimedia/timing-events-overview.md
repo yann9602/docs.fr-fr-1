@@ -19,16 +19,17 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f50923d9e314d2f677e26416cef59fdf380213e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 79669bdc4b5f9cfb8bdac92efa07e932cc14ac57
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="timing-events-overview"></a>Vue d'ensemble des événements de minutage
 Cette rubrique décrit comment utiliser les cinq événements de minutage disponibles sur <xref:System.Windows.Media.Animation.Timeline> et <xref:System.Windows.Media.Animation.Clock> objets.  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette rubrique, vous devez être en mesure de créer et d’utiliser des animations. Pour commencer l’animation, consultez le [vue d’ensemble de l’Animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
   
  Il existe plusieurs façons pour animer des propriétés dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]:  
@@ -64,7 +65,7 @@ Cette rubrique décrit comment utiliser les cinq événements de minutage dispon
 ## <a name="public-events"></a>Événements publics  
  Le <xref:System.Windows.Media.Animation.Timeline> et <xref:System.Windows.Media.Animation.Clock> les classes fournissent les cinq événements de minutage. Le tableau suivant répertorie ces événements et les conditions qui les déclenchent.  
   
-|Événement|Opération interactive déclenchante|Autres déclencheurs|  
+|événement|Opération interactive déclenchante|Autres déclencheurs|  
 |-----------|--------------------------------------|--------------------|  
 |**Completed**|Passer au remplissage|L’horloge s’arrête.|  
 |**CurrentGlobalSpeedInvalidated**|Suspendre, reprendre, rechercher, définir le ratio vitesse, passer au remplissage, s’arrêter|L’horloge s’inverse, accélère, démarre ou s’arrête.|  

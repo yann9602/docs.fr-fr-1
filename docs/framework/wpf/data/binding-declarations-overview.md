@@ -23,11 +23,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 28b139f6ea2aad41e4d733e8c622699f2474b3e6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2fc90769b1524ec93fd3df6a9b8be3eb28de8195
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="binding-declarations-overview"></a>Vue d'ensemble des déclarations de liaison
 Cette rubrique décrit les différentes façons dont vous pouvez déclarer une liaison.  
@@ -35,7 +36,7 @@ Cette rubrique décrit les différentes façons dont vous pouvez déclarer une l
  
   
 <a name="Prereq"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Avant de lire cette rubrique, il est important de vous familiariser avec le concept et l’utilisation des extensions de balisage. Pour plus d’informations sur les extensions de balisage, consultez [Extensions de balisage et XAML WPF](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
   
  Cette rubrique ne couvre pas les concepts de liaison de données. Pour une présentation des concepts de liaison de données, consultez la page [Vue d’ensemble de la liaison de données](../../../../docs/framework/wpf/data/data-binding-overview.md).  

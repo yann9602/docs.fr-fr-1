@@ -20,11 +20,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bb9edf0439c985af015d6badd11c026449a82f57
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 922faa06456a1aa86ffd0c805ab33577280ccf4f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="table-overview"></a>Vue d'ensemble de Table
 <xref:System.Windows.Documents.Table>est un élément de niveau bloc qui prend en charge la présentation grille du contenu de document de flux. La flexibilité de cet élément est très utile, mais rend plus difficiles sa compréhension et son utilisation.  

@@ -21,11 +21,12 @@ caps.latest.revision: "27"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 90f0d27f3bf5adffe8a9b47940451e71fda082b9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 676f7f696fda26ee9d86d14f06dc7b70e2565157
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xname-directive"></a>x:Name, directive
 Identifie de façon unique les éléments définis par XAML dans une portée de nom XAML. Portées de nom XAML et de leurs modèles d’unicité peuvent être appliquées aux objets instanciés, lorsque les infrastructures fournissent des API ou implémentent les comportements qui accèdent au graphique d’objet XAML créé au moment de l’exécution.  
@@ -42,7 +43,7 @@ Identifie de façon unique les éléments définis par XAML dans une portée de 
 |-|-|  
 |`XAMLNameValue`|Chaîne qui est conforme aux restrictions de la [XamlName, grammaire](../../../docs/framework/xaml-services/xamlname-grammar.md).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Après avoir `x:Name` est appliqué à une infrastructure de stockage du modèle de programmation, le nom est équivalent à la variable qui contient une référence d’objet ou une instance, telle que retournée par un constructeur.  
   
  La valeur d’un `x:Name` utilisation de la directive doit être unique dans une portée de nom XAML. Par défaut lorsqu’il est utilisé par les API des Services XAML .NET Framework, la portée de nom XAML principale est définie à l’élément racine XAML d’une production XAML unique et comprend les éléments contenus dans cette production XAML. Portées de nom XAML supplémentaires discrètes qui peuvent se produire au sein d’une production XAML unique peuvent être définies par les infrastructures pour résoudre des scénarios spécifiques. Par exemple, dans WPF, nouveau portées de nom XAML sont définies et créées par n’importe quel modèle est également défini sur cette production XAML. Pour plus d’informations sur les portées de nom XAML (écrites pour WPF mais pertinents pour de nombreux concepts de portée de nom XAML), consultez [portées de nom XAML WPF](../../../docs/framework/wpf/advanced/wpf-xaml-namescopes.md).  

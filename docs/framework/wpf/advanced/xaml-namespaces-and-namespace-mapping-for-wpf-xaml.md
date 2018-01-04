@@ -25,11 +25,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2798659d3b53cb32af8e5976d4fee69780266633
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 80f152f8cdf459f920d723df66756af680b4bcea
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Espaces de noms XAML et mappage d'espace de noms pour XAML WPF
 Cette rubrique explique plus en détail la présence et la finalité des deux mappages d’espace de noms XAML qui figurent souvent dans la balise racine de chaque fichier XAML WPF. Elle décrit également comment produire des mappages similaires pour utiliser des éléments définis dans votre propre code et/ou dans des assemblys distincts.  

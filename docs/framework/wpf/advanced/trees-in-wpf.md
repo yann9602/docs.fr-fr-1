@@ -17,11 +17,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 56237bccb2bf61994c6114fa01d15c254267ca20
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 73c34f8edfa735e361bf294f08cefd285be3e898
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="trees-in-wpf"></a>Arborescences dans WPF
 Dans de nombreuses technologies, les éléments et les composants sont organisés en une arborescence, où les développeurs manipulent directement les nœuds d’objet dans l’arborescence pour modifier le rendu ou le comportement d’une application. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] utilise également plusieurs métaphores d’arborescence pour définir des relations entre des éléments du programme. Pour la plupart, les développeurs WPF peuvent créer une application dans le code ou définir des parties de l’application en XAML, en se représentant mentalement la métaphore de l’arborescence des objets, mais en appelant pour cela une API spécifique ou en utilisant un balisage spécifique, au lieu d’utiliser une API générale de manipulation d’une arborescence d’objets, comme ce peut être le cas dans le modèle DOM XML. WPF expose deux classes d’assistance qui fournissent une vue de la métaphore de l’arborescence, <xref:System.Windows.LogicalTreeHelper> et <xref:System.Windows.Media.VisualTreeHelper>. Les termes « arborescence d’éléments visuels » et « arborescence logique » sont également utilisés dans la documentation WPF, car ils sont utiles pour comprendre le comportement de certaines fonctionnalités clés de WPF. Cette rubrique définit ce que l’arborescence d’éléments visuels et l’arborescence logique représentent, explique la relation de ces arborescences avec le concept d’arborescence d’un objet global et présente <xref:System.Windows.LogicalTreeHelper> et <xref:System.Windows.Media.VisualTreeHelper>s.  

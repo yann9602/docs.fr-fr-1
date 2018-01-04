@@ -29,11 +29,12 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f0badceeb9ce085dc68fce2c59ec6c42877f2622
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: f598cecef2d0994692f197df09e9befc39a58723
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="threading-model"></a>Modèle de thread
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] est conçu pour épargner aux développeurs les difficultés d’utilisation des threads. Par conséquent, la majorité des [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] n’auront pas les développeurs à écrire une interface qui utilise plusieurs threads. Comme les programmes multithreads sont complexes et difficiles à déboguer, il est préférable de les éviter quand des solutions à thread unique existent.  
@@ -70,7 +71,7 @@ ms.lasthandoff: 10/22/2017
 ### <a name="a-single-threaded-application-with-a-long-running-calculation"></a>Une application à thread unique avec un calcul de longue durée  
  La plupart des [!INCLUDE[TLA#tla_gui#plural](../../../../includes/tlasharptla-guisharpplural-md.md)] passent à une grande partie de leur temps inactif en attendant des événements qui sont générés en réponse aux interactions de l’utilisateur. Programmation prudence cette durée d’inactivité peut être utilisée de manière constructive, sans affecter la réactivité de le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modèle de thread n’autorise pas l’entrée d’interrompre une opération qui se passe dans le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] thread. Cela signifie que vous devez être sûr de revenir à la <xref:System.Windows.Threading.Dispatcher> régulièrement au processus en attente d’événements d’entrée avant de pouvoir obsolètes.  
   
- Prenons l'exemple suivant :  
+ Prenons l'exemple suivant :  
   
  ![Capture d’écran : nombres premiers](../../../../docs/framework/wpf/advanced/media/threadingprimenumberscreenshot.PNG "ThreadingPrimeNumberScreenShot")  
   

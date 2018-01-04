@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: faa74e982fb114d041468c53dde2f978bb3faa35
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0feef370e6b09d2f58a33f2142bd654e1d7e3402
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>Vue d’ensemble des extensions de balisage pour XAML
 Les extensions de balisage constituent une technique XAML permettant d'obtenir une valeur qui n'est ni une primitive ni un type XAML spécifique. Pour l'utilisation d'attributs, les extensions de balisage utilisent la séquence de caractères connue d'une accolade ouvrante `{` pour entrer la portée d'extension de balisage et d'une accolade fermante `}` pour quitter. Lors de l'utilisation des services XAML .NET Framework, vous pouvez utiliser certaines des extensions de balisage prédéfinies du langage XAML à partir de l'assembly System.Xaml. Vous pouvez également créer une sous-classe à partir de la classe <xref:System.Windows.Markup.MarkupExtension> , définie dans System.Xaml, et définir vos propres extensions de balisage. Vous pouvez également utiliser des extensions de balisage définies par une infrastructure particulière, si vous référencez déjà cette infrastructure.  
@@ -29,7 +30,7 @@ Les extensions de balisage constituent une technique XAML permettant d'obtenir u
   
 <a name="XAML_Defined_Markup_Extensions"></a>   
 ## <a name="xaml-defined-markup-extensions"></a>Extensions de balisage définies en XAML  
- Plusieurs extensions de balisage sont implémentées par les services XAML .NET Framework pour la prise en charge du langage XAML. Ces extensions de balisage font partie de la spécification de XAML en tant que langage. Elles sont généralement identifiables par le préfixe `x:` dans la syntaxe, comme observé dans l'utilisation courante. Les implémentations des services XAML .NET Framework pour ces éléments de langage XAML dérivent toutes de la classe de base  <xref:System.Windows.Markup.MarkupExtension> .  
+ Plusieurs extensions de balisage sont implémentées par les services XAML .NET Framework pour la prise en charge du langage XAML. Ces extensions de balisage font partie de la spécification de XAML en tant que langage. Elles sont généralement identifiables par le préfixe `x:` dans la syntaxe, comme observé dans l'utilisation courante. Les implémentations des services XAML .NET Framework pour ces éléments de langage XAML dérivent toutes de la classe de base  <xref:System.Windows.Markup.MarkupExtension> .  
   
 > [!NOTE]
 >  Le préfixe `x:` est utilisé pour le mappage d'espace de noms XAML standard de l'espace de noms du langage XAML, dans l'élément racine d'une production XAML. Par exemple, les modèles de projet et de page [!INCLUDE[vs_current_short](../../../includes/vs-current-short-md.md)] de différentes infrastructures spécifiques initialisent un fichier XAML à l'aide de ce mappage `x:` . Vous pouvez choisir un autre jeton de préfixe pour votre propre mappage d'espace de noms XAML. Toutefois, dans cette documentation, le mappage `x:` par défaut est considéré comme un moyen d'identification des entités qui représentent une partie définie de l'espace de noms XAML du langage XAML, par opposition à l'espace de noms XAML par défaut d'une infrastructure spécifique ou à d'autres espaces de noms CLR ou XML arbitraires.  

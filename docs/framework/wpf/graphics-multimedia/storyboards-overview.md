@@ -20,17 +20,18 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c90fb49a8fb5c63a3bf680bbbe5347db881d500b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: efb6db7758319d2d3c6b403e12fe0edabe7c5ff0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="storyboards-overview"></a>Vue d'ensemble des storyboards
 Cette rubrique montre comment utiliser <xref:System.Windows.Media.Animation.Storyboard> objets pour organiser et appliquer des animations. Il explique comment manipuler de manière interactive <xref:System.Windows.Media.Animation.Storyboard> des objets et décrit la syntaxe de ciblage de propriété indirecte.  
   
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour comprendre cette rubrique, vous devez connaître les différents types d’animations et leurs fonctions de base. Pour une introduction à l’animation, consultez [Vue d’ensemble de l’animation](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md). Vous devez également savoir comment utiliser les propriétés jointes. Pour plus d’informations sur les propriétés jointes, consultez [Vue d’ensemble des propriétés jointes](../../../../docs/framework/wpf/advanced/attached-properties-overview.md).  
   
 <a name="whatisatimeline"></a>   

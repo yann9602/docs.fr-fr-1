@@ -22,11 +22,14 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: df6659853e9c410ece3233cfa630c9066303a871
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 68a3d2c7335ff15706925f9a7986164e6d9c0c36
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="choosing-between-class-and-struct"></a>Choix entre classe et structure
 Les décisions de conception de base que fait face à chaque concepteur framework consiste à concevoir un type en tant que classe (type référence) ou en tant que struct (un type valeur). Bien comprendre les différences dans le comportement des types référence et les types de valeur est vitale pour rendre ce choix.  
@@ -62,5 +65,5 @@ Les décisions de conception de base que fait face à chaque concepteur framewor
  *Réimprimées avec l’autorisation de Pearson éducation, Inc. à partir de [règles de conception d’infrastructure : Conventions, idiomes et des modèles pour les bibliothèques .NET réutilisable, 2nd Edition](http://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi  
- [Règles de conception de type](../../../docs/standard/design-guidelines/type.md)  
+ [Instructions pour la conception des types](../../../docs/standard/design-guidelines/type.md)  
  [Règles de conception de .NET Framework](../../../docs/standard/design-guidelines/index.md)

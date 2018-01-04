@@ -21,11 +21,12 @@ caps.latest.revision: "27"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 1828ef3614cc1f3a81d8aeff62c15ed5accfe380
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b894a56caa3644bae140e7ec37cf5b55ab093a59
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xclass-directive"></a>x:Class, directive
 Configure la compilation du balisage XAML pour joindre des classes partielles entre le balisage et code-behind. La classe partielle du code est définie dans un fichier de code séparé dans un [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] langage, tandis que la classe partielle du balisage est créée par la génération de code lors de la compilation du code XAML.  
@@ -48,7 +49,7 @@ Configure la compilation du balisage XAML pour joindre des classes partielles en
 ## <a name="dependencies"></a>Dépendances  
  `x:Class`peut uniquement être spécifié sur l’élément racine d’une production XAML. `x:Class`n’est pas valide sur n’importe quel objet qui a un parent dans la production XAML. Pour plus d’informations, consultez [ \[MS-XAML\] Section 4.3.1.6](http://go.microsoft.com/fwlink/?LinkId=114525).  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le `namespace` valeur peut contenir des points supplémentaires pour organiser des espaces de noms connexes en hiérarchies de noms, qui est une technique courante en programmation .NET Framework. Seul le dernier point dans une chaîne de `x:Class` valeurs est interprété pour séparer `namespace` et `classname.` la classe qui est utilisée en tant que `x:Class` ne peut pas être une classe imbriquée. Les classes imbriquées ne sont pas autorisés, car la détermination de la signification de points pour `x:Class` chaînes est ambiguë si les classes imbriquées sont autorisées.  
   
  Existant qui utilisent les modèles de programmation `x:Class`, `x:Class` est facultatif dans le sens où il est entièrement valide d’avoir une page XAML qui ne possède aucun code-behind. Toutefois, cette fonctionnalité interagit avec les actions de génération comme étant implémentées par les infrastructures qui utilisent XAML. `x:Class`fonctionnalité est également influencée par les rôles que différentes classifications de contenu XAML dans un modèle d’application et les actions de génération, qui correspond. Si votre code XAML déclare l’attribut de la gestion des événements, les valeurs ou instancie des éléments personnalisés où les classes définies sont dans la classe code-behind, vous devez fournir le `x:Class` directive référence (ou [x : Subclass](../../../docs/framework/xaml-services/x-subclass-directive.md)) à la classe appropriée pour le code-behind.  

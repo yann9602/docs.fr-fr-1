@@ -14,11 +14,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9e91889947a17f8cba66d822b857e1c8bc875cab
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 18f575e9bae37b66526d7b61a641374266ba627b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Comment : utiliser le moniker de service Windows Communication Foundation sans inscription
 Pour se connecter à un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et communiquer avec ce dernier, une application cliente [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] doit être en possession des détails de l'adresse du service, de la configuration de liaison et du contrat de service.  
@@ -67,4 +68,4 @@ binding=WSHttpBinding_IAffiliate, bindingNamespace=http://tempuri.org/
 >  Si le moniker est incorrect ou si le service n'est pas disponible, l'appel à `GetObject` retourne une erreur indiquant que la syntaxe n'est pas valide. Si vous recevez cette erreur, assurez-vous que le moniker que vous utilisez est correct et que le service est disponible.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comment : inscrire et configurer un Moniker de Service](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+ [Guide pratique pour inscrire et configurer un moniker de service](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)

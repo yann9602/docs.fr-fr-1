@@ -22,11 +22,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e2c57cfbab4d3af6cebff96517383999ae5b73d5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d737959ee0ecab4c611cebf996741516fc7be031
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-creating-an-unbound-windows-forms-datagridview-control"></a>Procédure pas à pas : création d'un contrôle DataGridView Windows Forms non lié
 Vous souhaiterez souvent affichent les données sous forme de tableau qui ne proviennent pas d’une base de données. Par exemple, vous souhaiterez afficher le contenu du tableau de chaînes à deux dimensions. La <xref:System.Windows.Forms.DataGridView> classe fournit un moyen simple et hautement personnalisable pour afficher les données sans liaison à une source de données. Cette procédure pas à pas montre comment remplir un <xref:System.Windows.Forms.DataGridView> contrôler et gérer l’ajout et la suppression de lignes en mode « indépendant ». Par défaut, l’utilisateur peut ajouter de nouvelles lignes. Pour empêcher l’ajout de ligne, définissez la <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> propriété est `false`.  

@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7362c57afa3d5615ffaa0616823a954a2d577cfe
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 57b140391526c5b2a0e73a8bab2355ae445b395b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-control-a-mediaelement-play-pause-stop-volume-and-speed"></a>Comment : contrôler un MediaElement (lecture, pause, arrêt, volume et vitesse)
 L’exemple suivant montre comment contrôler la lecture du média à l’aide un <xref:System.Windows.Controls.MediaElement>. L’exemple crée un lecteur multimédia simple qui vous permet de lire, suspendre, arrêter et ignorer dans les deux sens dans le support ainsi ajuster le taux de vitesse et de volume.  

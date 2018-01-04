@@ -14,11 +14,12 @@ caps.latest.revision: "34"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5dc0a0f7b579feca6150e299cd7f0ef3a6e7a5e3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 965136c94b696fc182537b60dde71ee4f02afe7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Procédure pas à pas : hébergement d'un contrôle composite WPF dans les Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un environnement de création d'applications élaboré. Toutefois, lorsque vous avez beaucoup investi [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] code, il peut être plus efficace d’étendre votre [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] application avec [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] plutôt qu’à la réécrire à partir de zéro. Un scénario courant est lorsque vous souhaitez incorporer une ou plusieurs contrôles mis en œuvre avec [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] au sein de votre [!INCLUDE[TLA2#tla_winforms](../../../../includes/tla2sharptla-winforms-md.md)] application. Pour plus d’informations sur la personnalisation des contrôles WPF, consultez [personnalisation du contrôle](../../../../docs/framework/wpf/controls/control-customization.md).  
@@ -35,7 +36,7 @@ ms.lasthandoff: 11/21/2017
   
  Pour l’intégralité du code des tâches illustrées dans cette procédure pas à pas, consultez [hébergement d’un contrôle Composite WPF dans les Windows Forms exemple](http://go.microsoft.com/fwlink/?LinkID=159996).  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :  
   
 -   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  
@@ -238,7 +239,7 @@ Contrôle composite WPF hébergé dans une application Windows Forms
   
 4.  Ajoutez le code suivant <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType> contrôles au formulaire.  
   
-    |Nom|Texte|  
+    |Name|Texte|  
     |----------|----------|  
     |groupBox1|Couleur d'arrière-plan|  
     |groupBox2|Couleur de premier plan|  
@@ -250,7 +251,7 @@ Contrôle composite WPF hébergé dans une application Windows Forms
   
 5.  Ajoutez le code suivant <xref:System.Windows.Forms.RadioButton?displayProperty=nameWithType> des contrôles à la <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType> contrôles.  
   
-    |GroupBox|Nom|Texte|  
+    |GroupBox|Name|Texte|  
     |--------------|----------|----------|  
     |groupBox1|radioBackgroundOriginal|D'origine|  
     |groupBox1|radioBackgroundLightGreen|LightGreen|  
@@ -271,7 +272,7 @@ Contrôle composite WPF hébergé dans une application Windows Forms
   
 6.  Ajoutez le code suivant <xref:System.Windows.Forms.Label?displayProperty=nameWithType> contrôle au dernier <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType>. Ces contrôles affichent les données retournées par la [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contrôle composite.  
   
-    |GroupBox|Nom|Texte|  
+    |GroupBox|Name|Texte|  
     |--------------|----------|----------|  
     |groupBox7|lblName|Nom :|  
     |groupBox7|lblAddress|Adresse :|  

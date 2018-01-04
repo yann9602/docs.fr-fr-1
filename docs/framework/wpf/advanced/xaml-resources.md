@@ -18,11 +18,12 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1f9d0ff535d0784343b36d0b2df48b123ff3beef
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a2d58802bcdfa57bb7689e7406651fcc9829a7e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xaml-resources"></a>Ressources XAML
 Une ressource est un objet pouvant être réutilisé à plusieurs endroits de votre application. Par exemple, les styles et les pinceaux sont des ressources. Cette vue d’ensemble décrit comment utiliser des ressources dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Vous pouvez également créer et accéder aux ressources à l’aide de code, ou de manière interchangeable entre le code et [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Pour plus d’informations, consultez [des ressources et Code](../../../../docs/framework/wpf/advanced/resources-and-code.md).  

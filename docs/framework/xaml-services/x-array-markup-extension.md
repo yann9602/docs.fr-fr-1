@@ -19,11 +19,12 @@ caps.latest.revision: "20"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 2cefdee5ca2d1b0a6c79325365aa101d767b6926
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bc2304ba68956b705904c72e29a17bdac4536c79
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xarray-markup-extension"></a>x:Array, extension de balisage
 Fournit la prise en charge générale pour les tableaux d’objets en XAML via une extension de balisage. Cela correspond à la `x:ArrayExtension` type XAML [MS-XAML].  
@@ -43,7 +44,7 @@ Fournit la prise en charge générale pour les tableaux d’objets en XAML via u
 |`typeName`|Le nom du type que votre `x:Array` contiendra. `typeName`peut être (et est souvent) comme préfixe pour un XAML définitions de type espace de noms qui contient le code XAML.|  
 |`arrayContents`|Le contenu d’éléments est affecté à la fonction intrinsèque `ArrayExtension.Items` propriété. En règle générale, ces éléments sont spécifiés en tant qu’un ou plusieurs éléments objet contenus dans le `x:Array` balises ouvrantes et fermantes. Les objets spécifiés ici sont supposés être assigné au type XAML spécifié dans `typeName`.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `Type`est un attribut obligatoire pour tous les `x:Array` éléments objet. A `Type` la valeur du paramètre n’a pas besoin d’utiliser un `x:Type` extension de balisage ; court nom du type est un type XAML, qui peut être spécifié sous forme de chaîne.  
   
  Dans l’implémentation de Services XAML .NET Framework, la relation entre le type XAML d’entrée et la sortie CLR <xref:System.Type> du tableau créé sont influencées par le contexte de service pour les extensions de balisage. La sortie <xref:System.Type> est la <xref:System.Xaml.XamlType.UnderlyingType%2A> du type XAML d’entrée, après avoir recherché le nécessaire <xref:System.Xaml.XamlType> selon le contexte de schéma XAML et le <xref:System.Windows.Markup.IXamlTypeResolver> le contexte de service.  
@@ -54,7 +55,7 @@ Fournit la prise en charge générale pour les tableaux d’objets en XAML via u
   
  `x:Array`est que plus destiné au grand extensibilité de langage dans XAML. Mais `x:Array` peut également être utile pour spécifier des valeurs XAML de certaines propriétés qui prennent des collections de prise en charge de XAML en tant que contenu de propriété structuré. Par exemple, vous pouvez spécifier le contenu d’un <xref:System.Collections.IEnumerable> propriété avec une `x:Array` l’utilisation.  
   
- `x:Array` est une extension de balisage. Les extensions de balisage sont généralement implémentées pour éviter que les valeurs d'attribut ne soient autre chose que des valeurs littérales ou des noms de gestionnaire et lorsque l'exigence dépasse le cadre de la définition de convertisseurs de type sur certains types ou propriétés. `x:Array`est partiellement une exception à cette règle, car au lieu de fournir un traitement de valeur d’attribut de remplacement, `x:Array` fournit un autre traitement de son contenu de texte interne. Ce comportement permet aux types qui ne peuvent pas être pris en charge par un modèle de contenu existant d’être regroupées dans un tableau et référencés plus loin dans le code-behind en accédant au tableau nommé ; Vous pouvez appeler <xref:System.Array> méthodes pour obtenir des éléments de tableau individuels.  
+ `x:Array` est une extension de balisage. Les extensions de balisage sont généralement implémentées pour éviter que les valeurs d’attribut ne soient autre chose que des valeurs littérales ou des noms de gestionnaire et lorsque l’exigence dépasse le cadre de la définition de convertisseurs de type sur certains types ou propriétés. `x:Array`est partiellement une exception à cette règle, car au lieu de fournir un traitement de valeur d’attribut de remplacement, `x:Array` fournit un autre traitement de son contenu de texte interne. Ce comportement permet aux types qui ne peuvent pas être pris en charge par un modèle de contenu existant d’être regroupées dans un tableau et référencés plus loin dans le code-behind en accédant au tableau nommé ; Vous pouvez appeler <xref:System.Array> méthodes pour obtenir des éléments de tableau individuels.  
   
  Toutes les extensions de balisage en XAML utilisent les accolades ({,}`)` dans leur syntaxe d’attribut, qui est la convention selon laquelle un processeur XAML reconnaît qu’une extension de balisage doit traiter la valeur d’attribut. Pour plus d’informations sur les extensions de balisage en général, consultez [convertisseurs de Type et Extensions de balisage pour XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md).  
   

@@ -17,11 +17,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 691487046e2a34dbf233dc4bc03e20f9ec245da1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 08cb39215ea1d9aff1cd7ecc125bd731f14a4d7f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-automatically-populating-the-toolbox-with-custom-components"></a>Procédure pas à pas : remplissage automatique de la boîte à outils avec des composants personnalisés
 Si vos composants sont définis par un projet dans la solution actuellement ouverte, ils apparaissent automatiquement dans le **boîte à outils**, sans aucune action requise par vous. Vous pouvez également remplir manuellement la **boîte à outils** avec vos composants personnalisés à l’aide de la [choisir de boîte de dialogue des éléments de boîte à outils (Visual Studio)](http://msdn.microsoft.com/en-us/bd07835f-18a8-433e-bccc-7141f65263bb), mais la **boîte à outils** tient compte des éléments dans de votre solution génération avec toutes les caractéristiques suivantes :  

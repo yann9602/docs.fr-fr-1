@@ -23,11 +23,14 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2d2ed7d037faa0bab649600128dc97580c7b972f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f9a91f7a00f72917ca5c469f51fd0aa11e24e125
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="choosing-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo
 
@@ -87,7 +90,7 @@ Le type <xref:System.DateTimeOffset> comprend toutes les fonctionnalités du typ
 
 * Effectuent des calculs de date et d'heure.
 
-* Conservent plusieurs dates/heures ayant un lien entre elles, comme les dates/heures qui sont stockées sous la forme de deux valeurs distinctes ou de deux membres d'une structure.
+* Conserver plusieurs dates/heures ayant un lien entre elles, comme les dates/heures qui sont stockées sous la forme de deux valeurs distinctes ou de deux membres d'une structure.
 
 > [!NOTE]
 > Ces utilisations pour des valeurs <xref:System.DateTimeOffset> sont beaucoup plus courantes que celles pour les valeurs <xref:System.DateTime> . Par conséquent, <xref:System.DateTimeOffset> doit être considéré comme le type de date et d'heure par défaut pour le développement d'applications.
@@ -101,7 +104,7 @@ La sortie montre que chaque valeur de date et d'heure de cet exemple peut appart
 
 ## <a name="the-timespan-structure"></a>La structure TimeSpan
 
-La structure <xref:System.TimeSpan> représente un intervalle de temps. Ses deux utilisations courantes sont :
+La structure <xref:System.TimeSpan> représente un intervalle de temps. Ses deux utilisations courantes sont :
 
 * Refléter un intervalle de temps entre deux valeurs de date/heure. Par exemple, la soustraction d'une valeur <xref:System.DateTime> d'une autre retourne une valeur <xref:System.TimeSpan> .
 

@@ -25,11 +25,14 @@ caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3be1a51db31f18255eabe633cdeaeb860f9c8ce7
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 3e75f3c74c5966ce5ce22b23f7ba179e903d37aa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="secure-coding-guidelines"></a>Instructions de codage sécurisé
 La sécurité basée sur les preuves et la sécurité d’accès du code fournissent des mécanismes particulièrement puissants et explicites d’implémentation de la sécurité. La plupart des codes d’application peuvent simplement utiliser l’infrastructure implémentée par le .NET Framework. Dans certains cas, une sécurité supplémentaire spécifique à l’application est nécessaire, générée via l’extension du système de sécurité ou via de nouvelles méthodes ad hoc.  

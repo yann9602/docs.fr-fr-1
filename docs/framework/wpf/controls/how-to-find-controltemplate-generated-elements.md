@@ -19,11 +19,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f81069873930af57e1f6ab2f3e0408b4d53f38b7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e4e06de393fa9020277d01f24a332cddb9683bce
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-find-controltemplate-generated-elements"></a>Rechercher des éléments générés par ControlTemplate
 Cet exemple montre comment rechercher des éléments qui sont générés par un <xref:System.Windows.Controls.ControlTemplate>.  

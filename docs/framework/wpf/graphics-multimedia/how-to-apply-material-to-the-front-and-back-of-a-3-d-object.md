@@ -17,11 +17,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ce4605208be264418088399253298798205c3f9b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c5ead8805c3d16bc16e259bdf90a19f05500563c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-apply-material-to-the-front-and-back-of-a-3-d-object"></a>Comment : appliquer un matériau à l'avant et à l'arrière d'un objet 3D
 L’exemple suivant montre comment appliquer un <xref:System.Windows.Media.Media3D.Material> vers l’avant et arrière 3D de l’objet et animer cet objet pour afficher les deux côtés de l’objet. Le <xref:System.Windows.Media.Media3D.GeometryModel3D.Material%2A> propriété d’un <xref:System.Windows.Media.Media3D.GeometryModel3D> est utilisé pour appliquer une croix rouge <xref:System.Windows.Media.Brush> à la face avant de l’objet et le <xref:System.Windows.Media.Media3D.GeometryModel3D.BackMaterial%2A> propriété de la <xref:System.Windows.Media.Media3D.GeometryModel3D> est utilisée pour appliquer un bleu <xref:System.Windows.Media.Brush> à l’arrière de l’objet. Le code suivant montre l’application des matériaux à l’objet :  

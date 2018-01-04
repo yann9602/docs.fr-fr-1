@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ca2bac983e25ab7453230a6718fe7eaa98e82275
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bcf06f4dc0d8c70ae85d5add5a2fee078238d5e8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-forms-control-development-basics"></a>Concepts de base du développement de contrôles Windows Forms
 Un contrôle Windows Forms est une classe qui dérive directement ou indirectement de <xref:System.Windows.Forms.Control?displayProperty=nameWithType>. La liste suivante décrit les scénarios courants pour le développement de contrôles Windows Forms :  
