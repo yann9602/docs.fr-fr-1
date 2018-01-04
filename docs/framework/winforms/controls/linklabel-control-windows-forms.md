@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9627634f30ebdabe75ccfc7ff0ffa8fdd50655b9
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 5231813096413b66272b87aabd9adf0643c6e26d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="linklabel-control-windows-forms"></a>LinkLabel, contrôle (Windows Forms)
 Windows Forms `LinkLabel` contrôle vous permet d’ajouter des liens Web dans les applications Windows Forms. Vous pouvez utiliser la `LinkLabel` contrôle pour tous les éléments que vous pouvez utiliser le <xref:System.Windows.Forms.Label> de contrôle pour ; vous pouvez également définir une partie du texte sous forme de lien vers un objet ou une page Web.  
@@ -43,7 +44,7 @@ Windows Forms `LinkLabel` contrôle vous permet d’ajouter des liens Web dans l
   
 ## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.LinkLabel>  
- Décrit cette classe et propose des liens vers tous ses membres.  
+ Décrit cette classe et fournit des liens vers tous ses membres.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  

@@ -22,11 +22,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0e8f39e031835275818504151e66834f0634b7f2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 5dca8d0f869702dee50bf851a2099317c45aa842
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-view-multiple-lines-in-the-windows-forms-textbox-control"></a>Comment : afficher des lignes multiples dans le contrôle TextBox Windows Forms
 Par défaut, Windows Forms <xref:System.Windows.Forms.TextBox> contrôle affiche une ligne unique de texte et n’affiche pas de barres de défilement. Si le texte est plus long que l’espace disponible, seule une partie du texte est visible. Vous pouvez modifier ce comportement par défaut en définissant le <xref:System.Windows.Forms.TextBox.Multiline%2A>, <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>, et <xref:System.Windows.Forms.TextBox.ScrollBars%2A> valeurs appropriées aux propriétés.  
@@ -43,7 +44,7 @@ Par défaut, Windows Forms <xref:System.Windows.Forms.TextBox> contrôle affiche
   
 2.  Affectez à la propriété <xref:System.Windows.Forms.TextBox.ScrollBars%2A> une valeur appropriée.  
   
-    |Valeur|Description|  
+    |Value|Description|  
     |-----------|-----------------|  
     |<xref:System.Windows.Forms.ScrollBars.None>|Utilisez cette valeur si le texte est un paragraphe qui correspond presque toujours le contrôle. L’utilisateur peut utiliser le pointeur de la souris pour vous déplacer dans le contrôle si le texte est trop long à afficher à la fois.|  
     |<xref:System.Windows.Forms.ScrollBars.Horizontal>|Utilisez cette valeur si vous souhaitez afficher une liste de lignes, dont certaines peuvent être plus longue que la largeur de la <xref:System.Windows.Forms.TextBox> contrôle.|  
@@ -51,7 +52,7 @@ Par défaut, Windows Forms <xref:System.Windows.Forms.TextBox> contrôle affiche
   
 3.  Affectez à la propriété <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> une valeur appropriée.  
   
-    |Valeur|Description|  
+    |Value|Description|  
     |-----------|-----------------|  
     |`false`|Texte dans le contrôle ne sera pas automatiquement encapsulé, donc il défilera vers la droite jusqu'à ce qu’un saut de ligne est atteinte. Utilisez cette valeur si vous avez choisi <xref:System.Windows.Forms.ScrollBars.Horizontal> les barres de défilement ou <xref:System.Windows.Forms.ScrollBars.Both>, ci-dessus.|  
     |`true` (par défaut)|La barre de défilement horizontal n’apparaître pas. Utilisez cette valeur si vous avez choisi <xref:System.Windows.Forms.ScrollBars.Vertical> les barres de défilement ou <xref:System.Windows.Forms.ScrollBars.None>ci-dessus, pour afficher un ou plusieurs paragraphes.|  

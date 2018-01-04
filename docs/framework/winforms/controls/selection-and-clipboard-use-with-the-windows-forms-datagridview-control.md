@@ -20,11 +20,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 888fb1cbd960c006dc2705a2b0bd66c038a926f3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ceea4108f39619ccbcbf0286905a94b8236607cb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="selection-and-clipboard-use-with-the-windows-forms-datagridview-control"></a>Sélection et utilisation du Presse-papiers avec le contrôle DataGridView Windows Forms
 Le `DataGridView` contrôle vous fournit une vaste gamme d’options pour configurer la façon dont les utilisateurs peuvent sélectionner des cellules, lignes et colonnes. Par exemple, vous pouvez activer une ou plusieurs de sélection, la sélection de lignes entières ou des colonnes lorsque les utilisateurs cliquent sur des cellules ou de lignes entières ou des colonnes uniquement lorsque les utilisateurs cliquent sur leurs en-têtes, ce qui permet la sélection de la cellule. Si vous souhaitez fournir votre propre interface utilisateur pour la sélection, vous pouvez désactiver la sélection ordinaire et gérer toute la sélection par programme. En outre, vous pouvez activer les utilisateurs peuvent copier les valeurs sélectionnées dans le Presse-papiers.  

@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b6df44df3582ed806d338e2d4565c5c11f69ce21
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3dc355fbe0d8262cb24779b99375d6075f758bbc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="soundplayer-class-overview"></a>Vue d'ensemble de la classe SoundPlayer
 La classe <xref:System.Media.SoundPlayer> vous permet d'inclure facilement des sons dans vos applications.  
@@ -32,7 +33,7 @@ La classe <xref:System.Media.SoundPlayer> vous permet d'inclure facilement des s
   
 ## <a name="commonly-used-properties-methods-and-events"></a>Propriétés, méthodes et événements couramment utilisés  
   
-|Nom|Description|  
+|Name|Description|  
 |----------|-----------------|  
 |Propriété <xref:System.Media.SoundPlayer.SoundLocation%2A>|Chemin du fichier ou adresse web du son. Les valeurs acceptables peuvent être UNC ou HTTP.|  
 |Propriété <xref:System.Media.SoundPlayer.LoadTimeout%2A>|Nombre de millisecondes que votre programme attend pour charger un son avant de lever une exception. La valeur par défaut est 10 secondes.|  

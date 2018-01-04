@@ -22,11 +22,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 56c0991bfbe8c190c06a7907cf04fa4576435864
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: eef312d7e7883e86bcbaa4dfb9733d567139fad9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="notifyicon-component-windows-forms"></a>NotifyIcon, composant (Windows Forms)
 Windows Forms `NotifyIcon` composant affiche des icônes dans la zone de notification d’état de la barre des tâches pour les processus qui s’exécutent en arrière-plan et ne sont pas sinon possèdent des interfaces utilisateur. En guise d’exemple, on pourrait citer un programme antivirus accessible en cliquant sur une icône dans la zone de notification d’état de la barre des tâches.  

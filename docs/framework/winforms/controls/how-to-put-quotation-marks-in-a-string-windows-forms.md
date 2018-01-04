@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3a4141a27a3b195dbb747a827d2bd9426a948f83
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 267a69b9470040dfc60f3c0b280b71e3f52dbc88
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-put-quotation-marks-in-a-string-windows-forms"></a>Comment : insérer des guillemets dans une chaîne (Windows Forms)
 Il se peut que vous souhaitiez placer une chaîne de texte entre guillemets (« »). Exemple :  
@@ -58,7 +59,7 @@ Il se peut que vous souhaitiez placer une chaîne de texte entre guillemets («�
        }  
     ```  
   
-     ou  
+     - ou -  
   
 2.  Insérez le caractère ASCII ou Unicode d’un guillemet. Dans [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)], utilisez le caractère ASCII (34). Dans [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], utilisez le caractère Unicode (\u0022).  
   
@@ -77,7 +78,7 @@ Il se peut que vous souhaitiez placer une chaîne de texte entre guillemets («�
     > [!NOTE]
     >  Dans cet exemple, vous ne pouvez pas utiliser \u0022, car vous ne pouvez pas utiliser un nom de caractère universel qui désigne un caractère dans le jeu de caractères de base. Sinon, vous générez l’erreur C3851. Pour plus d’informations, consultez [Erreur du compilateur C3851](/cpp/error-messages/compiler-errors-2/compiler-error-c3851).  
   
-     ou  
+     - ou -  
   
 3.  Vous pouvez également définir une constante pour le caractère et l’utiliser lorsque cela est nécessaire.  
   
