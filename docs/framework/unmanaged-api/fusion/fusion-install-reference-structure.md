@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 244ea215b6668685920a454c1bd9da065076f38b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 36321606fe208233fb6114fe9568b655f0e1b400
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="fusioninstallreference-structure"></a>FUSION_INSTALL_REFERENCE, structure
 Représente une référence qu’une application à un assembly de l’application est installée dans le global assembly cache.  
@@ -50,7 +51,7 @@ typedef struct _FUSION_INSTALL_REFERENCE_ {
 |`szIdentifier`|Une chaîne unique qui identifie l’application qui a installé l’assembly dans le global assembly cache. Sa valeur dépend de la valeur de la `guidScheme` champ.|  
 |`szNonCanonicalData`|Chaîne qui est comprise uniquement par l’entité qui ajoute la référence. Le global assembly cache stocke cette chaîne, mais ne l’utilise pas.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Fusion.h  

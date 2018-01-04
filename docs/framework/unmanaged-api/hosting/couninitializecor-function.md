@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 57740ed8f20891b240bca5e9e19591484022b8ec
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b9f50892b44cf8ce22cc126fe22323c8b0bbe6be
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="couninitializecor-function"></a>CoUninitializeCor, fonction
 `CoUninitializeCor` est obsolète.  
@@ -34,7 +35,7 @@ ms.lasthandoff: 10/18/2017
 STDAPI_(void) CoUninitializeCor(void);  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le common language runtime ne peut pas être déchargé d’un processus. Pour supprimer complètement le runtime d’un processus en cours d’exécution, vous devez arrêter ce processus.  
   
 ## <a name="see-also"></a>Voir aussi  

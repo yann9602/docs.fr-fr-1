@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 64312398c95a33c2bbe136b1c4d03c06cb09aeef
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a04db61a16aeae24476fb0b191a3d2dc89743dee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="stackoverflowtype-enumeration"></a>StackOverflowType, énumération
 Contient des valeurs qui indiquent la cause sous-jacente d’un événement de dépassement de capacité de pile.  
@@ -46,10 +47,10 @@ typedef enum {
 |`SO_Managed`|Le dépassement de capacité de pile a été provoquée par le code managé.|  
 |`SO_Other`|Le dépassement de capacité de pile a été provoquée par le code non managé.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Ces informations sont passées à l’hôte via un appel à la [IActionOnCLREvent::OnEvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) (méthode).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  

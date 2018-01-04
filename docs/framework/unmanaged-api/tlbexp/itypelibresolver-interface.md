@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ed1b4dd4816f67bb98472b7150f3da3bd5b927b6
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a2c9b23472cdeee15788d496fae160c3e7d2de20
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="itypelibresolver-interface"></a>ITypeLibResolver, interface
 Fournit la [ResolveTypeLib, méthode](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md), ce qui donne le chemin d’accès de fichier d’une bibliothèque de types.  
@@ -34,7 +35,7 @@ Fournit la [ResolveTypeLib, méthode](../../../../docs/framework/unmanaged-api/t
 |------------|-----------------|  
 |[ResolveTypeLib, méthode](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md)|Résout le nom simple d’une bibliothèque de types en retournant son chemin d’accès qualifié complet.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** TlbRef.idl, TlbRef.h  

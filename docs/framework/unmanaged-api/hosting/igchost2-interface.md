@@ -19,11 +19,12 @@ caps.latest.revision: "4"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c6706696e3fd5158d2b49a4d114d978a26510b67
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a616e724d6fb26734fcda48d6a9b39605e0284a5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="igchost2-interface"></a>IGCHost2, interface
 Fournit des méthodes pour obtenir des informations sur le système de garbage collection et contrôler certains aspects du garbage collection.  
@@ -35,9 +36,9 @@ Fournit des méthodes pour obtenir des informations sur le système de garbage c
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[SetGCStartupLimitsEx (méthode)](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md)|Définit la taille du segment et la taille maximale pour la génération 0. Permet la génération 0 et la taille de segment est supérieure à `DWORD`.|  
+|[SetGCStartupLimitsEx, méthode](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md)|Définit la taille du segment et la taille maximale pour la génération 0. Permet la génération 0 et la taille de segment est supérieure à `DWORD`.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** GCHost.idl, GCHost.h  
@@ -49,4 +50,4 @@ Fournit des méthodes pour obtenir des informations sur le système de garbage c
 ## <a name="see-also"></a>Voir aussi  
  [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [Interfaces d’hébergement CLR](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces.md)  
- [Corruntimehost, coclasse](../../../../docs/framework/unmanaged-api/hosting/corruntimehost-coclass.md)
+ [CorRuntimeHost, coclasse](../../../../docs/framework/unmanaged-api/hosting/corruntimehost-coclass.md)

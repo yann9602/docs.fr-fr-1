@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 9556880ad534f5c82d8d0e874129876478e2e63f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ca342e04f554d070546c6c6d82d5ad56a4dad8cf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostfiltermarktoken-method"></a>IHostFilter::MarkToken, méthode
 Indique que le jeton de métadonnées spécifié sera traité.  
@@ -42,10 +43,10 @@ HRESULT MarkToken (
  `tk`  
  [in] Le jeton de métadonnées à traiter.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  En règle générale, vous souhaitez un jeton de traitement s’il est dans la portée de métadonnées. Le `MarkToken` méthode est passée au moteur de métadonnées via la [IMetaDataEmit::SetHandler](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md) (méthode).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Cor.h  
@@ -56,4 +57,4 @@ HRESULT MarkToken (
   
 ## <a name="see-also"></a>Voir aussi  
  [Interfaces de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
- [IHostFilter (Interface)](../../../../docs/framework/unmanaged-api/metadata/ihostfilter-interface.md)
+ [IHostFilter, interface](../../../../docs/framework/unmanaged-api/metadata/ihostfilter-interface.md)

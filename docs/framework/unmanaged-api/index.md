@@ -17,11 +17,12 @@ ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a7069762dd95636399c53c98e8bdef6f00be62c1
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: 9836d8d02bb81fc19a5b3a1714e32fcefeb8791d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="unmanaged-api-reference"></a>Informations de référence sur les API non managées
 Cette section contient des informations sur les API non managées qui peuvent être utilisées par les applications associées à du code managé, comme les hôtes de runtime, les compilateurs, les désassembleurs, les obscurcisseurs, les débogueurs et les profileurs.  
@@ -45,7 +46,7 @@ Cette section contient des informations sur les API non managées qui peuvent ê
  [Débogage](../../../docs/framework/unmanaged-api/debugging/index.md)  
  Décrit l'API de débogage, qui permet à un débogueur de déboguer du code qui s'exécute dans un environnement CLR (Common Language Runtime).  
   
- [Magasin de symboles de Diagnostics](../../../docs/framework/unmanaged-api/diagnostics/index.md)  
+ [Magasin de symboles de diagnostics](../../../docs/framework/unmanaged-api/diagnostics/index.md)  
  Décrit l'API du magasin de symboles des diagnostics, qui permet à un compilateur de générer des informations de symbole utilisables par un débogueur.  
   
  [Fusion](../../../docs/framework/unmanaged-api/fusion/index.md)  
@@ -60,10 +61,10 @@ Cette section contient des informations sur les API non managées qui peuvent ê
  [Profilage](../../../docs/framework/unmanaged-api/profiling/index.md)  
  Décrit l'API de profilage, qui permet à un profileur de surveiller l'exécution d'un programme par le CLR.  
   
- [Nom fort](../../../docs/framework/unmanaged-api/strong-naming/index.md)  
+ [Utilisation de noms forts](../../../docs/framework/unmanaged-api/strong-naming/index.md)  
  Décrit l'API de nommage fort, qui permet à un client d'administrer la signature par noms forts pour les assemblys.  
 
- [Compteurs de Performance et de WMI](wmi/index.md)  
+ [WMI et compteurs de performance](wmi/index.md)  
  Décrit les API qui encapsulent les appels à des bibliothèques de Windows Management Instrumentation (WMI).
   
  [Fonctions d’assistance Tlbexp](../../../docs/framework/unmanaged-api/tlbexp/index.md)  

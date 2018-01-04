@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 1364a990b13cfca010d9dad29403da367965d98b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0f34d7dca85ea76aac33b073a31b6251a804ec7a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="igchostcontrol-interface"></a>IGCHostControl, interface
 Fournit une méthode qui autorise le garbage collector de demander à l’hôte de modifier les limites de mémoire virtuelle.  
@@ -32,9 +33,9 @@ Fournit une méthode qui autorise le garbage collector de demander à l’hôte 
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[RequestVirtualMemLimit (méthode)](../../../../docs/framework/unmanaged-api/hosting/igchostcontrol-requestvirtualmemlimit-method.md)|Demande à l’hôte de modifier les limites de mémoire virtuelle.|  
+|[RequestVirtualMemLimit, méthode](../../../../docs/framework/unmanaged-api/hosting/igchostcontrol-requestvirtualmemlimit-method.md)|Demande à l’hôte de modifier les limites de mémoire virtuelle.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  

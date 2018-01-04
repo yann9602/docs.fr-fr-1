@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 8932e295aa1a6c6cf961e7b3a218e76984da02cb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 00f4aa4e87c0deb4b1326cb8bf4256a9307b3393
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corelementtype-enumeration1"></a>CorElementType Enumeration1
 Spécifie un common language runtime <xref:System.Type>, un modificateur de type ou des informations sur un type dans une signature de type de métadonnées.  
@@ -119,7 +120,7 @@ typedef enum CorElementType {
 |`ELEMENT_TYPE_SENTINEL`|Un modificateur de type qui est une sentinelle pour obtenir la liste d’un nombre variable de paramètres.|  
 |`ELEMENT_TYPE_PINNED`|Utilisé en interne.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les modificateurs de type constituent la base pour représenter des types plus complexes. A `CorElementType` valeur de modificateur de type est appliquée à la valeur qui suit immédiatement dans la signature de type. La valeur qui suit le `CorElementType` valeur de modificateur de type peut être un `CorElementType` valeur de type simple, un jeton de métadonnées ou une autre valeur, comme indiqué dans le tableau suivant.  
   
 > [!NOTE]
@@ -140,7 +141,7 @@ typedef enum CorElementType {
 |`ELEMENT_TYPE_CMOD_REQD`|ELEMENT_TYPE_ < un `mdTypeRef` ou `mdTypeDef` jeton de métadonnées >|  
 |`ELEMENT_TYPE_CMOD_OPT`|E_T_CMOD_OPT < un `mdTypeRef` ou `mdTypeDef` jeton de métadonnées >|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorHdr.h  

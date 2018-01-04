@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 1910321942ebac26d8c377f9d156cdf97bd34b62
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ae9164753e919b80e635582b15da5263194e215f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cortokentype-enumeration"></a>CorTokenType, énumération
 Indique le type de jeton de métadonnées.  
@@ -94,10 +95,10 @@ typedef enum CorTokenType {
 |`mdtName`|Un `mdName` jeton.|  
 |`mdtBaseType`|Non utilisé.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Chaque valeur est égale à la valeur de l’octet dans le jeton de métadonnées correspondant.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorHdr.h  

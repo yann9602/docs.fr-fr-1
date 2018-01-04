@@ -23,11 +23,12 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 2d27a881f84121f0d096eae7c693dec5b674caec
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 64a1bc6bbd89e3a36ac53b322bb246a7e61baa67
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clrcreatemanagedinstance-function"></a>ClrCreateManagedInstance, fonction
 Crée une instance du type managé spécifié.  
@@ -54,10 +55,10 @@ STDAPI ClrCreateManagedInstance (
  `ppObject`  
  [out] Pointeur vers un pointeur vers une instance du type managé qui a été demandée par l’appelant.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le common language runtime doit déjà être chargé dans un processus. Par exemple, il peut être chargé à l’aide d’un appel à la [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) fonctionner avant du `ClrCreateManagedInstance` est appelée. Si le runtime n’est pas chargé, `ClrCreateManagedInstance` tente d’abord charger la version v1.0.3705 du runtime. En cas d’échec, il tente de charger la dernière version du runtime.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  
@@ -67,5 +68,5 @@ STDAPI ClrCreateManagedInstance (
  **Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Fonctions d’hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
+ [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
  [Hébergement d’applications WPF](../../../../docs/framework/unmanaged-api/hosting/index.md)

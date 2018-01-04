@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6c8db4f854b73d04e7260457c978a7a644677559
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 8d105b0aed9c47d5e2d8ad664744e6424db63961
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="igchostgetstats-method"></a>IGCHost::GetStats, méthode
 Obtient les statistiques de l’état actuel du système de garbage collection.  
@@ -42,10 +43,10 @@ HRESULT GetStats (
  `pStats`  
  [dans, out] Un pointeur vers un [COR_GC_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) structure qui contient les statistiques de l’état actuel du système de garbage collection.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les statistiques peuvent être utilisées par un système intelligent d’allocation pour utiliser le système de garbage collection. Par exemple, le système d’allocation peut déterminer, après avoir examiné les statistiques, il doit ajouter davantage de mémoire ou forcer une collection.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** GCHost.idl, GCHost.h  
@@ -55,4 +56,4 @@ HRESULT GetStats (
  **Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [IGCHost (Interface)](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)
+ [IGCHost, interface](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)

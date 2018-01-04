@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f340f9ad83d28b00054a0997bf4b60c750192bef
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5e00f695edb94acbd54d6bd009ccd629aeec1b14
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corprfgcrootflags-enumeration"></a>COR_PRF_GC_ROOT_FLAGS, énumération
 Indique une propriété d’une racine de garbage collection.  
@@ -48,10 +49,10 @@ typedef enum {
 |`COR_PRF_GC_ROOT_INTERIOR`|La racine fait référence à un champ de l’objet plutôt que l’objet lui-même.|  
 |`COR_PRF_GC_ROOT_REFCOUNTED`|La racine empêche le garbage collection si le décompte de références de l’objet est une certaine valeur.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `COR_PRF_GC_ROOT_FLAGS`est un masque de bits qui fournit des informations supplémentaires à propos des racines spéciales. Toutefois, pas toutes les racines sont spéciales. Par exemple, certaines racines ne sont pas des références faibles, des pointeurs intérieurs, épinglés ou comptés par référence. Pour de telles racines, il n’existe aucun indicateur pour transmettre. Par conséquent, les méthodes qui utilisent cette énumération, telles que la [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) (méthode), envoi 0 pour le masque de bits d’indicateurs, indiquant que tous les indicateurs sont désactivés.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

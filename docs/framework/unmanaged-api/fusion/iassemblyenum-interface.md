@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8c7b3bd04b348912a6d45c4efb41dfb87e7b5998
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ca74970ea7c2b98ad65e279fc1cc128b2e55aeb5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iassemblyenum-interface"></a>IAssemblyEnum, interface
 Représente un énumérateur pour un tableau de `IAssemblyName` objets.  
@@ -32,11 +33,11 @@ Représente un énumérateur pour un tableau de `IAssemblyName` objets.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Clone (méthode)](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-clone-method.md)|Crée une copie superficielle de cet `IAssemblyEnum` objet.|  
-|[GetNextAssembly (méthode)](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-getnextassembly-method.md)|Obtient un pointeur vers la prochaine `IAssemblyName` contenus dans ce `IAssemblyEnum` objet.|  
-|[Reset (méthode)](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-reset-method.md)|Cela réinitialise `IAssemblyEnum` objet à sa position de départ.|  
+|[Clone, méthode](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-clone-method.md)|Crée une copie superficielle de cet `IAssemblyEnum` objet.|  
+|[GetNextAssembly, méthode](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-getnextassembly-method.md)|Obtient un pointeur vers la prochaine `IAssemblyName` contenus dans ce `IAssemblyEnum` objet.|  
+|[Reset, méthode](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-reset-method.md)|Cela réinitialise `IAssemblyEnum` objet à sa position de départ.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Fusion.h  
@@ -45,4 +46,4 @@ Représente un énumérateur pour un tableau de `IAssemblyName` objets.
   
 ## <a name="see-also"></a>Voir aussi  
  [Interfaces de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [IAssemblyName (Interface)](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+ [IAssemblyName, interface](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)

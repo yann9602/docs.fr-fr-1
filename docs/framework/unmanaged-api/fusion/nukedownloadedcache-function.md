@@ -22,11 +22,12 @@ caps.latest.revision: "7"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 5ff24cf46ab24fe94ab19cee04d9e32ed1a34b53
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 31d7ba7d5f4a9268ea1e04a4c9f09cd17ebfd5bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="nukedownloadedcache-function"></a>NukeDownloadedCache, fonction
 Supprime le cache de téléchargement du common language runtime (CLR).  
@@ -40,10 +41,10 @@ HRESULT NukeDownloadedCache();
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne des codes d’erreur COM standard, tel que défini dans WinError.h.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le cache de téléchargement CLR est la zone où les assemblys avec nom fort qui sont téléchargés à partir d’une URL sont stockés pour une réutilisation éventuelle.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Fusion.h  
@@ -53,6 +54,6 @@ HRESULT NukeDownloadedCache();
  **Versions du .NET framework :**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [CreateHistoryReader (fonction)](../../../../docs/framework/unmanaged-api/fusion/createhistoryreader-function.md)  
- [GetHistoryFileDirectory (fonction)](../../../../docs/framework/unmanaged-api/fusion/gethistoryfiledirectory-function.md)  
+ [CreateHistoryReader, fonction](../../../../docs/framework/unmanaged-api/fusion/createhistoryreader-function.md)  
+ [GetHistoryFileDirectory, fonction](../../../../docs/framework/unmanaged-api/fusion/gethistoryfiledirectory-function.md)  
  [Fonctions statiques globales de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)

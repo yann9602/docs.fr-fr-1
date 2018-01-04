@@ -21,11 +21,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 7bfd6b89c3220e071a477e0c5b85e4ee57289762
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: fe84dd4d231bacba6792836844058b7256124db5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="igchostgetthreadstats-method"></a>IGCHost::GetThreadStats, méthode
 Obtient les statistiques par thread pour le garbage collection.  
@@ -46,7 +47,7 @@ HRESULT GetThreadStats (
  `pStats`  
  [dans, out] Un pointeur vers un [COR_GC_THREAD_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-structure.md) structure qui contient les statistiques de garbage collection pour le thread spécifié.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** GCHost.idl, GCHost.h  
@@ -56,4 +57,4 @@ HRESULT GetThreadStats (
  **Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [IGCHost (Interface)](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)
+ [IGCHost, interface](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)

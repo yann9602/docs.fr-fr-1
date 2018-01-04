@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b87936fb099d6e58281162d0a9a75291b0ac0767
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4805e9421a80954c01ba1ffb6e04332c07e5d84e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iceegengetilsection-method"></a>ICeeGen::GetIlSection, méthode
 Obtient la section de la base de code de langage intermédiaire référencée par le handle spécifié.  
@@ -44,7 +45,7 @@ HRESULT GetIlSection (
  `section`  
  [in] Descripteur de la section à obtenir.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Cor.h  
@@ -54,4 +55,4 @@ HRESULT GetIlSection (
  **Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICeeGen (Interface)](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+ [ICeeGen, interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

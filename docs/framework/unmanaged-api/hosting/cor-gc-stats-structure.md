@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e7c620c4a33032711abc0d7b82af908018bd44cf
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 02a775be4976760b354a492e7252a67ef04eace9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corgcstats-structure"></a>COR_GC_STATS, structure
 Fournit des statistiques sur le mécanisme de garbage collection du common language runtime (CLR).  
@@ -62,7 +63,7 @@ typedef struct _COR_GC_STATS {
 |`KBytesPromotedFromGen0`|La taille, en kilo-octets, des objets promus de la génération zéro à la génération 1.|  
 |`KBytesPromotedFromGen1`|La taille, en kilo-octets, des objets promus de la génération 1 à la génération 2.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le [ICLRGCManager::GetStats](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-getstats-method.md) méthode requiert le `Flags` champ le `COR_GC_STATS` structure soit définie sur une ou plusieurs valeurs de la [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) énumération pour spécifier les les statistiques doivent être définies.  
   
  Le tableau suivant mappe les statistiques fournies par cette structure et les deux [COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md) des valeurs d’énumération `COR_GC_COUNTS` et `COR_GC_MEMORYUSAGE`.  
@@ -79,7 +80,7 @@ GCStats.Flags = COR_GC_COUNTS | COR_GC_MEMORYUSAGE;
 pCLRGCManager->GetStats(&GCStats);  
 ```  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** GCHost.idl  

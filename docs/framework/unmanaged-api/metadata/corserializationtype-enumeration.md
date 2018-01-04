@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: f6650298364f7deb60d553ee21f5028f5cbe7400
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e43151b1611f5b9b8218d30ba46a9143f463c193
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corserializationtype-enumeration"></a>CorSerializationType, énumération
 Spécifie la façon dont un objet est sérialisé par le common language runtime.  
@@ -82,7 +83,7 @@ typedef enum CorSerializationType {
 |`SERIALIZATION_TYPE_PROPERTY`|L’objet est sérialisé en tant que propriété.|  
 |`SERIALIZATION_TYPE_ENUM`|L’objet est sérialisé en tant qu’énumération.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorHdr.h  

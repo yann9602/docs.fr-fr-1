@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 878d2b01ee22d339115925e101f7349ecd5207bd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 713788f8938e43f3516edd95646fc6dc653a56c6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="core-communications-connection-framework"></a>Communications principales : infrastructure de connexion
 Cette rubrique répertorie toutes les exceptions générées par l'infrastructure de connexion [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  
@@ -26,7 +27,7 @@ Cette rubrique répertorie toutes les exceptions générées par l'infrastructur
   
 |Code de la ressource|Chaîne de la ressource|  
 |-------------------|---------------------|  
-|CloseTimedOut|La méthode Close a expiré après l'heure spécifiée. Augmentez la valeur du délai d'attente de l'appel à la méthode Close ou la valeur CloseTimeout sur la liaison. Le temps alloué à cette opération peut avoir été une partie d'un délai d'expiration plus long.|  
+|CloseTimedOut|La méthode Close a expiré après l'heure spécifiée. Augmentez la valeur du délai d’attente de l’appel à la méthode Close ou la valeur CloseTimeout sur la liaison. Le temps alloué à cette opération peut avoir été une partie d'un délai d'expiration plus long.|  
 |ContentTypeMismatch|Le type de contenu spécifié a été envoyé à un service qui attendait . Il se peut que les liaisons client et service ne se correspondent pas.|  
 |DuplexChannelAbortedDuringOpen|Le canal duplex vers s'est fermé pendant le processus Open.|  
 |FramingValueNotAvailable|La valeur n'est pas accessible parce qu'elle n'est pas complètement décodée.|  

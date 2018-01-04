@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: cbd83560516e946c03a0ea71cf79fe6d3396bacb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 677b7c2858e4f3248e0d46e460b9eef09de724f0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="symlinedelta-structure"></a>SYMLINEDELTA, structure
 Fournit des informations pour le Gestionnaire de symboles sur les méthodes qui ont été déplacés à la suite de modifications.  
@@ -45,8 +46,8 @@ typedef struct _SYMLINEDELTA
 |`mdMethod`|Jeton de métadonnées de la méthode.|  
 |`delta`|Le nombre de lignes que la méthode a été déplacée.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **En-tête :** CorSym.idl  
   
 ## <a name="see-also"></a>Voir aussi  
- [Structures du magasin de symboles de Diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)
+ [Structures du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)

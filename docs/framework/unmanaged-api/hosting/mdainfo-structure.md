@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d303bcbee0b0c769fe2bc45663356b759fc91669
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 53a999028f2677599598caf55e62f10721f61fe3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mdainfo-structure"></a>MDAInfo, structure
 Fournit des détails sur la `Event_MDAFired` événement qui déclenche la création d’un assistant débogage managé (MDA).  
@@ -44,7 +45,7 @@ typedef struct _MDAInfo {
 |`lpMDACaption`|Le titre de l’Assistant Débogage MANAGÉ actuel. Le titre décrit le genre d’échec qui a déclenché la `Event_MDAFired` événement.|  
 |`lpMDAMessage`|Le message de sortie fourni par l’Assistant Débogage MANAGÉ actuel.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Assistants de débogage managés (MDA) sont outils de débogage qui fonctionnent conjointement avec le common language runtime (CLR) pour effectuer des tâches telles que l’identification des conditions non valides dans le moteur d’exécution ou le vidage des informations supplémentaires sur l’état de la moteur. MDA génèrent des messages XML sur les événements qui sont difficiles à intercepter. Ils sont particulièrement utiles pour déboguer des transitions entre code managé et non managé.  
   
  Le runtime effectue les étapes suivantes lorsqu’un événement qui déclenche la création d’un Assistant Débogage MANAGÉ est déclenché :  
@@ -55,7 +56,7 @@ typedef struct _MDAInfo {
   
  L’hôte peut choisir d’activer les MDA et d’être averti quand un Assistant Débogage MANAGÉ est activé. Cela permet de l’hôte de substituer le comportement par défaut et d’abandonner le thread managé qui a déclenché l’événement pour l’empêcher d’endommager l’état du processus. Pour plus d’informations sur l’utilisation des Assistants Débogage managé, consultez [diagnostic d’erreurs avec les Assistants Débogage managé](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.idl  

@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 66afef7dec0637e98249838ae06ae6f1161df3f3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: def6ae3c8bf8eea9cb135529e2b6e672b180e68c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="igcthreadcontrol-interface"></a>IGCThreadControl, interface
 Fournit des méthodes pour participer à la planification des threads qui seraient sinon bloqués pour un garbage collection.  
@@ -32,11 +33,11 @@ Fournit des méthodes pour participer à la planification des threads qui seraie
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[SuspensionEnding (méthode)](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-suspensionending-method.md)|Avertit l’hôte que le runtime est la reprise de threads après un garbage collection ou une suspension.|  
-|[SuspensionStarting (méthode)](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-suspensionstarting-method.md)|Avertit l’hôte que le runtime débute une suspension du thread pour un garbage collection ou une suspension.|  
-|[ThreadIsBlockingForSuspension (méthode)](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-threadisblockingforsuspension-method.md)|Avertit l’hôte que le thread qui effectue l’appel va bloquer, peut-être pour un garbage collection ou une suspension.|  
+|[SuspensionEnding, méthode](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-suspensionending-method.md)|Avertit l’hôte que le runtime est la reprise de threads après un garbage collection ou une suspension.|  
+|[SuspensionStarting, méthode](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-suspensionstarting-method.md)|Avertit l’hôte que le runtime débute une suspension du thread pour un garbage collection ou une suspension.|  
+|[ThreadIsBlockingForSuspension, méthode](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-threadisblockingforsuspension-method.md)|Avertit l’hôte que le thread qui effectue l’appel va bloquer, peut-être pour un garbage collection ou une suspension.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  

@@ -19,11 +19,12 @@ caps.latest.revision: "16"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: bc93adf575af7f2803b20f24a3261a447772ffd4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2fd42a576e1315ea029f98b94d8dc84d2b92b5e9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="loadstringrc-function"></a>LoadStringRC, fonction
 Traduit une valeur HRESULT dans un message d’erreur à l’aide de la culture par défaut du thread actuel.  
@@ -62,10 +63,10 @@ HRESULT LoadStringRC (
 |S_OK|La commande s'est correctement terminée.|  
 |E_INVALIDARG|`szBuffer`a la valeur null ou `iMax` est zéro (0).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si la méthode ne se termine pas correctement, `szBuffer` contient une chaîne vide.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  
@@ -75,5 +76,5 @@ HRESULT LoadStringRC (
  **Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [LoadStringRCEx (fonction)](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)  
- [Fonctions d’hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+ [LoadStringRCEx, fonction](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)  
+ [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

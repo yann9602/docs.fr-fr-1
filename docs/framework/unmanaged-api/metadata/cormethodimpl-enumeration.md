@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 85ee55c0d4ec0d3fb8c18dff570afefeb2eaf25e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: e82eb50e4850ffbb4d5fc67d9603a3128cf8bcf6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cormethodimpl-enumeration"></a>CorMethodImpl, énumération
 Contient des valeurs qui décrivent les fonctionnalités d’implémentation d’une méthode.  
@@ -77,7 +78,7 @@ typedef enum CorMethodImpl {
 |`miNoOptimization`|Spécifie que la méthode ne doit pas être optimisée.|  
 |`miMaxMethodImplVal`|La valeur valide maximale pour un `CorMethodImpl`.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorHdr.h  

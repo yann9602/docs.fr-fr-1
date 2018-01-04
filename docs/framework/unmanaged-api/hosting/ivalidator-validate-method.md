@@ -21,11 +21,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 722c6acc7e152a78ba28bc2730b2fdc7e0c45eb0
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a74249cb806f332b3ae575223f237438da616972
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ivalidatorvalidate-method"></a>IValidator::Validate, méthode
 Valide le spécifié fichier exécutable portable (PE) ou un fichier Microsoft intermediate language (MSIL).  
@@ -70,7 +71,7 @@ HRESULT Validate (
  `ulSize`  
  [in] La taille, en octets, du fichier à valider.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** IValidator.idl, IValidator.h  

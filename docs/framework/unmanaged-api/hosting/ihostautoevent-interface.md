@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8c99bde7641ee640df06be71fc43a7f8774f7ff3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 91e790cf7c97c0045535870c2d41d628f943a22d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostautoevent-interface"></a>IHostAutoEvent, interface
 Fournit une représentation de l’implémentation de l’hôte d’un événement de réinitialisation automatique.  
@@ -32,10 +33,10 @@ Fournit une représentation de l’implémentation de l’hôte d’un événeme
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Set (méthode)](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-set-method.md)|Définit l’actuel `IHostAutoEvent` instance à un état signalé.|  
-|[Wait (méthode)](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-wait-method.md)|Fait en `IHostAutoEvent` instance d’attendre que l’événement est détenu ou d’un certain laps de temps.|  
+|[Set, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-set-method.md)|Définit l’actuel `IHostAutoEvent` instance à un état signalé.|  
+|[Wait, méthode](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-wait-method.md)|Fait en `IHostAutoEvent` instance d’attendre que l’événement est détenu ou d’un certain laps de temps.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  
@@ -45,7 +46,7 @@ Fournit une représentation de l’implémentation de l’hôte d’un événeme
  **Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICLRSyncManager (Interface)](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
- [IHostManualEvent (Interface)](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)  
- [IHostSyncManager (Interface)](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)  
+ [ICLRSyncManager, interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
+ [IHostManualEvent, interface](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)  
+ [IHostSyncManager, interface](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)  
  [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

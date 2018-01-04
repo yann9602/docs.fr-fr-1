@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a58ac4379522c13125f98df058cd67bceb7cdbd1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 96810ba0eab99d1df58f0b68b85ef4da8ce7084e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imetadatadispenserexsetoption-method"></a>IMetaDataDispenserEx::SetOption, méthode
 Définit l’option spécifiée à une valeur donnée pour la portée de métadonnées actuelle. L’option contrôle la gestion des appels à la portée de métadonnées actuelle.  
@@ -46,7 +47,7 @@ HRESULT SetOption (
  `pValue`  
  [in] La valeur à utiliser pour définir l’option. Le type de cette valeur doit être une variante de type de l’option spécifiée.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le tableau suivant répertorie les GUID disponibles qui le `optionId` paramètre peut pointer vers et les valeurs valides correspondantes pour le `pValue` paramètre.  
   
 |GUID|Description|`pValue`Paramètre|  
@@ -65,7 +66,7 @@ HRESULT SetOption (
 |MetaDataMergerOptions|Spécifie les options de fusion des métadonnées.|Doit être un variant de type UI4 et doit contenir une combinaison des valeurs de la `MergeFlags` énumération, qui est décrite dans le fichier CorHdr.h.|  
 |MetaDataPreserveLocalRefs|Désactive l’optimisation des références locales dans des définitions.|Doit contenir une combinaison des valeurs de la [CorLocalRefPreservation](../../../../docs/framework/unmanaged-api/metadata/corlocalrefpreservation-enumeration.md) énumération.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateforme :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Cor.h  
@@ -75,5 +76,5 @@ HRESULT SetOption (
  **Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [IMetaDataDispenserEx (Interface)](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
- [IMetaDataDispenser (Interface)](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+ [IMetaDataDispenserEx, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
+ [IMetaDataDispenser, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)

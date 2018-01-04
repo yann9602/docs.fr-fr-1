@@ -14,11 +14,12 @@ topic_type: Reference
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 67431d4272ac1da4d400a5552c61cf464680b502
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnet
+ms.openlocfilehash: f384e8d045dd7a6f2f864f0991f8caf4a674408b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="blessiwbemservices-function"></a>BlessIWbemServices (fonction)
 Indique si les informations d’identification autorisent l’accès spécifié [IWbemServices](https://msdn.microsoft.com/library/aa392093(v=vs.85).aspx) classe.   
@@ -59,7 +60,7 @@ HRESULT BlessIWbemServices (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WinError.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 | `E_INVALIDARG` | 0 x 80070057 | Un ou plusieurs arguments ne sont pas valide. |
 | `E_POINTER` | 0 x 80004003 | `pIWbemServices` a la valeur `null`. | 
@@ -67,7 +68,7 @@ Les valeurs suivantes est retournées par cette fonction sont définies dans le 
 | `E_OUTOFMEMORY` | 0x80000002 | Mémoire disponible est insuffisante pour effectuer l’opération. | 
 | `S_OK` | 0 | L’appel de fonction a réussi. | 
 
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  

@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: b9e909ccdabcc8a5f1a6bb89be7cef4b1bb5e4b8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c0e0483f48f772d280faab3f47c1188829804a3a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imetadatainfo-interface"></a>IMetaDataInfo, interface
 Fournit une méthode qui obtient des informations sur le mappage de métadonnées à partir d'un fichier sur disque dans la mémoire.  
@@ -32,9 +33,9 @@ Fournit une méthode qui obtient des informations sur le mappage de métadonnée
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetFileMapping (méthode)](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-getfilemapping-method.md)|Obtient la région de mémoire du fichier mappé et le type de mappage.|  
+|[GetFileMapping, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-getfilemapping-method.md)|Obtient la région de mémoire du fichier mappé et le type de mappage.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Cor.h  
@@ -45,4 +46,4 @@ Fournit une méthode qui obtient des informations sur le mappage de métadonnée
   
 ## <a name="see-also"></a>Voir aussi  
  [Interfaces de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
- [CorFileMapping (énumération)](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md)
+ [CorFileMapping, énumération](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md)

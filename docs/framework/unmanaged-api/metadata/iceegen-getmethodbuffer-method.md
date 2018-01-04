@@ -21,11 +21,12 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: be6b74de649a9b13092e6a5dcd2d2f80a215a16d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 23beea4bd991b21b30375c9297efb945c3dbab75
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iceegengetmethodbuffer-method"></a>ICeeGen::GetMethodBuffer, méthode
 Obtient une mémoire tampon de la taille appropriée de la méthode à l’adresse virtuelle relative spécifiée.  
@@ -48,7 +49,7 @@ HRESULT GetMethodBuffer (
  `lpBuffer`  
  [out] Pointeur vers la mémoire tampon retournée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Cor.h  
@@ -58,4 +59,4 @@ HRESULT GetMethodBuffer (
  **Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICeeGen (Interface)](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+ [ICeeGen, interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

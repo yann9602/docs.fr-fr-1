@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 785e096bc01c9c4e1bbfe6a94338e782ad09bcad
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5a5d409f8a90994afc3e541bdbe4bbe1973dd9d5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ihostfilter-interface"></a>IHostFilter, interface
 Fournit une méthode pour indiquer qu’un jeton spécifié sera traité.  
@@ -37,7 +38,7 @@ Fournit une méthode pour indiquer qu’un jeton spécifié sera traité.
 |------------|-----------------|  
 |[MarkToken, méthode](../../../../docs/framework/unmanaged-api/metadata/ihostfilter-marktoken-method.md)|Indique que le jeton de métadonnées spécifié sera traité.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Cor.h  

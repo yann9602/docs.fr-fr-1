@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 59a379b1c34f5b7c6b721627e6053cacf3ed784a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b3f41f381266c76b267d5d3e366047fe5267c30b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="malloctype-enumeration"></a>MALLOC_TYPE (énumération)
 Contient des valeurs qui spécifient les caractéristiques de la mémoire est allouée.  
@@ -44,7 +45,7 @@ typedef enum {
 |`MALLOC_EXECUTABLE`|La mémoire allouée peut contenir un fichier exécutable.|  
 |`MALLOC_THREADSAFE`|La mémoire allouée est thread-safe. Autrement dit, la mémoire est accessible par plusieurs threads sans synchronisation.<br /><br /> Si cet indicateur n’est pas défini, les appels sur l’objet doivent être sérialisés.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  

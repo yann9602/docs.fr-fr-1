@@ -19,18 +19,19 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: a843e8f307b50f375133287c2593ebb0a3580a05
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: dcc7d7293bc95fce95994acb986844c983aaca4e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="itypenamefactory-interface"></a>ITypeNameFactory, interface
 Fournit des méthodes pour détruire un nom de type.  
   
  Cette interface prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  
@@ -41,4 +42,4 @@ Fournit des méthodes pour détruire un nom de type.
   
 ## <a name="see-also"></a>Voir aussi  
  [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- [TypeNameFactory (coclasse)](../../../../docs/framework/unmanaged-api/hosting/typenamefactory-coclass.md)
+ [TypeNameFactory, coclasse](../../../../docs/framework/unmanaged-api/hosting/typenamefactory-coclass.md)

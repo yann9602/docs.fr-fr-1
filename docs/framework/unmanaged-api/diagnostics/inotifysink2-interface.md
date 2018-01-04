@@ -19,11 +19,12 @@ caps.latest.revision: "5"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e73daf26a6d3620cde75a24d44c75b0f09d4d8cd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0462d92d29328330422cd7e81b26f9e6d069df01
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="inotifysink2-interface"></a>INotifySink2, interface
 Déclare des méthodes pour la notification de récepteur.  
@@ -32,15 +33,15 @@ Déclare des méthodes pour la notification de récepteur.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[OnSyncCallEnter (méthode)](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallenter-method.md)|Est appelé lors de la saisie d’un appel.|  
-|[OnSyncCallExit (méthode)](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallexit-method.md)|Est appelé lors de la sortie d’un appel.|  
-|[OnSyncCallOut (méthode)](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallout-method.md)|Appelée lorsqu’un appel est sortant.|  
-|[OnSyncCallReturn (méthode)](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallreturn-method.md)|Appelée lorsqu’un appel est retourné.|  
+|[OnSyncCallEnter, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallenter-method.md)|Est appelé lors de la saisie d’un appel.|  
+|[OnSyncCallExit, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallexit-method.md)|Est appelé lors de la sortie d’un appel.|  
+|[OnSyncCallOut, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallout-method.md)|Appelée lorsqu’un appel est sortant.|  
+|[OnSyncCallReturn, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallreturn-method.md)|Appelée lorsqu’un appel est retourné.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **En-tête :** ProtocolNotify2.idl  
   
 ## <a name="see-also"></a>Voir aussi  
- [INotifyConnection2 (Interface)](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)  
- [INotifySource2 (Interface)](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
- [Interfaces du magasin de symboles de Diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+ [INotifyConnection2, interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)  
+ [INotifySource2, interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
+ [Interfaces du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

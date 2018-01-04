@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9d9d7b4934d4295ee799fb13d3d749e6b977e644
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 266868a65a0db75b57d46d92a469b4b6ceaa88e9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compareassemblyidentity-function"></a>CompareAssemblyIdentity, fonction
 Compare deux identités d’assembly pour déterminer s’ils sont équivalents.  
@@ -65,7 +66,7 @@ STDAPI CompareAssemblyIdentity (
 ## <a name="return-value"></a>Valeur de retour  
  `pfEquivalent`Retourne une valeur booléenne qui indique si les deux assemblys sont équivalents. `pResult`Retourne l’une de le `AssemblyComparisonResult` valeurs, afin de donner une raison plus détaillée pour la valeur de `pfEquivalent`.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  `CompareAssemblyIdentity`vérifie si `pwzAssemblyIdentity1` et `pwzAssemblyIdentity2` sont équivalents. `pfEquivalent`a la valeur `true` sous un ou plusieurs des conditions suivantes :  
   
 -   Les identités des deux assemblys sont équivalentes. Pour les assemblys à nom fort, l’équivalence implique le nom de l’assembly, version, jeton de clé publique et la culture sont identiques. Pour les assemblys de nommés simple, l’équivalence implique une correspondance sur le nom de l’assembly et la culture.  
@@ -78,7 +79,7 @@ STDAPI CompareAssemblyIdentity (
   
  Le `pResult` paramètre inclut des informations spécifiques sur la raison pour laquelle les deux assemblys sont considérés comme équivalents ou pas. Pour plus d’informations, consultez [AssemblyComparisonResult, énumération](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md).  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Fusion.h  
@@ -89,4 +90,4 @@ STDAPI CompareAssemblyIdentity (
   
 ## <a name="see-also"></a>Voir aussi  
  [Fonctions statiques globales de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)  
- [AssemblyComparisonResult (énumération)](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md)
+ [AssemblyComparisonResult, énumération](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ca1b97c509ea8ed2c43c30cab278048aeb4170a7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 90b3bd053eb2e1161d6bb107afe9b3c627b1b207
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flockclrversioncallback-function-pointer"></a>FLockClrVersionCallback (pointeur fonction)
 Pointe vers une fonction que le common language runtime (CLR) appelle pour indiquer que l’initialisation a démarré ou s’est terminée.  
@@ -36,10 +37,10 @@ Pointe vers une fonction que le common language runtime (CLR) appelle pour indiq
 typedef HRESULT (__stdcall *FLockClrVersionCallback) ( );  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Cette fonction est implémentée par l’hôte.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  
@@ -49,5 +50,5 @@ typedef HRESULT (__stdcall *FLockClrVersionCallback) ( );
  **Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [LockClrVersion (fonction)](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md)  
- [Fonctions d’hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+ [LockClrVersion, fonction](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md)  
+ [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

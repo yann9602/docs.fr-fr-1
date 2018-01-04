@@ -21,11 +21,12 @@ caps.latest.revision: "12"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c1f5f1c0ea5672812fca387b34238ada2a109938
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0b027615f7697b9ea103d44bea0ec44834fe3f04
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="iceegencomputepointer-method"></a>ICeeGen::ComputePointer, méthode
 Détermine la mémoire tampon pour la section de code spécifié.  
@@ -52,7 +53,7 @@ HRESULT ComputePointer (
  `lpBuffer`  
  [out] Pointeur vers la mémoire tampon retournée.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Cor.h  
@@ -62,4 +63,4 @@ HRESULT ComputePointer (
  **Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [ICeeGen (Interface)](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+ [ICeeGen, interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

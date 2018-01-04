@@ -19,11 +19,12 @@ caps.latest.revision: "18"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 3467ebcd0b821c2313f3535c5b594ef664546e4a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9b046387b5ae365ece694509b302f7ac3a7e066a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="loadstringrcex-function"></a>LoadStringRCEx, fonction
 Traduit une valeur HRESULT à un message d’erreur approprié pour la culture spécifiée.  
@@ -70,10 +71,10 @@ HRESULT LoadStringRCEx (
 |S_OK|La commande s'est correctement terminée.|  
 |E_INVALIDARG|`szBuffer`a la valeur null ou `iMax` est zéro (0).|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Si la méthode ne se termine pas correctement, `szBuffer` contient une chaîne vide.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  
@@ -84,5 +85,5 @@ HRESULT LoadStringRCEx (
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Globalization.CultureInfo.LCID%2A?displayProperty=nameWithType>  
- [LoadStringRC (fonction)](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)  
- [Fonctions d’hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+ [LoadStringRC, fonction](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)  
+ [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

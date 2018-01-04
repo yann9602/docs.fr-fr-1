@@ -19,11 +19,12 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c8118de9f4fc6a4f2820b88685b9b87c498328b1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5f2dcc60d41369250409cccf5b340e98f0cb4ca8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corregflags-enumeration"></a>CorRegFlags, énumération
 Fournit des valeurs d’indicateur utilisées pour l’inscription lors de l’installation d’un module ou une image composite.  
@@ -47,7 +48,7 @@ typedef enum
 |`regConfig`|Spécifie que le module ou composite est une configuration.|  
 |`regHasRefs`|Spécifie que le module ou composite a des références de classe.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Cor.h  

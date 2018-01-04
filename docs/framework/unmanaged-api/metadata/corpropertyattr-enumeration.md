@@ -19,11 +19,12 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a87676064f39dc01d04e881bbf46476fb12a1c65
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4470cd46653dd798718e5b3413dbc021a894138b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="corpropertyattr-enumeration"></a>CorPropertyAttr, énumération
 Contient des valeurs qui décrivent les métadonnées d'une propriété.  
@@ -52,7 +53,7 @@ typedef enum CorPropertyAttr {
 |`prHasDefault`|Spécifie que la propriété a une valeur par défaut.|  
 |`prUnused`|Non utilisé.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorHdr.h  

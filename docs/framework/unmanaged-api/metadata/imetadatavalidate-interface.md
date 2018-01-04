@@ -19,11 +19,12 @@ caps.latest.revision: "13"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a30de0ca9554d93e000a07af80b34bcd10814dfb
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7d4b83817883879c253fee4718e60a593a337314
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="imetadatavalidate-interface"></a>IMetaDataValidate, interface
 Fournit des méthodes pour valider les signatures de métadonnées.  
@@ -32,10 +33,10 @@ Fournit des méthodes pour valider les signatures de métadonnées.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[ValidateMetaData (méthode)](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-validatemetadata-method.md)|Valide les signatures de métadonnées des objets dans la portée de métadonnées actuelle.|  
-|[ValidatorInit (méthode)](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-validatorinit-method.md)|Définit un indicateur qui spécifie le type du module dans la portée de métadonnées actuelle et enregistre la méthode de rappel spécifiée pour les erreurs de validation.|  
+|[ValidateMetaData, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-validatemetadata-method.md)|Valide les signatures de métadonnées des objets dans la portée de métadonnées actuelle.|  
+|[ValidatorInit, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-validatorinit-method.md)|Définit un indicateur qui spécifie le type du module dans la portée de métadonnées actuelle et enregistre la méthode de rappel spécifiée pour les erreurs de validation.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Cor.h  

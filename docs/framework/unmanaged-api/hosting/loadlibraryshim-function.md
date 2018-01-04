@@ -21,11 +21,12 @@ caps.latest.revision: "20"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c56f5a3576c505fd7b7d514e3f2d038e7f8f3ecc
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5b8fe8413d0eff332e60508a083f03574e58d7bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="loadlibraryshim-function"></a>LoadLibraryShim, fonction
 Charge une version spécifiée d’une DLL qui est incluse dans le package redistribuable .NET Framework.  
@@ -64,13 +65,13 @@ HRESULT LoadLibraryShim (
 |S_OK|La commande s'est correctement terminée.|  
 |CLR_E_SHIM_RUNTIMELOAD|Chargement `szDllName` requiert le chargement, le common language runtime (CLR) et la version nécessaire du CLR ne peut pas être chargé.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Cette fonction est utilisée pour charger les DLL qui sont inclus dans le package redistribuable .NET Framework. Il ne charge pas les DLL générées par l’utilisateur.  
   
 > [!NOTE]
 >  À compter de .NET Framework version 2.0, en chargeant Fusion.dll provoque le CLR à charger. Il s’agit, car les fonctions dans le fichier Fusion.dll sont maintenant des wrappers dont les implémentations sont fournies par le runtime.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  
@@ -78,4 +79,4 @@ HRESULT LoadLibraryShim (
  **Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Fonctions d’hébergement du CLR déconseillées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+ [Fonctions d’hébergement CLR dépréciées](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

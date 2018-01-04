@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: e5ba8de0a8db315e5c06586ad2248cfea241653b
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 30fd7ca2cf7962c6cadb43d4d8e3031b59292463
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cordeclsecurity-enumeration"></a>CorDeclSecurity, énumération
 Spécifie les actions de sécurité qui peuvent être effectuées à l’aide de la sécurité déclarative.  
@@ -84,7 +85,7 @@ typedef enum CorDeclSecurity {
 |`dclDemandChoice`|Réservé.|  
 |`dclMaximumValue`|Réservé.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorHdr.h  

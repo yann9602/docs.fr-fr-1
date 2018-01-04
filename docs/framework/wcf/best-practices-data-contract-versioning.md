@@ -18,11 +18,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a84b671725ab41bc3287f184406ebec381f0a554
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 78373d482aaaa0121a6c2708f543188d9cc9464d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="best-practices-data-contract-versioning"></a>Meilleures pratiques : contrôle de version des contrats de données
 Cette rubrique répertorie les méthodes conseillées pour créer des contrats de données qui peuvent évoluer facilement avec le temps. [!INCLUDE[crabout](../../../includes/crabout-md.md)]contrats de données, consultez les rubriques de [à l’aide de contrats de données](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
@@ -110,8 +111,8 @@ Cette rubrique répertorie les méthodes conseillées pour créer des contrats d
  <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A>  
  <xref:System.Runtime.Serialization.ExtensionDataObject>  
  <xref:System.Runtime.Serialization.OnDeserializingAttribute>  
- [À l’aide de contrats de données](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
- [Version des contrats de données](../../../docs/framework/wcf/feature-details/data-contract-versioning.md)  
- [Noms de contrat de données](../../../docs/framework/wcf/feature-details/data-contract-names.md)  
+ [Utilisation de contrats de données](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
+ [Gestion de version des contrats de données](../../../docs/framework/wcf/feature-details/data-contract-versioning.md)  
+ [Noms de contrats de données](../../../docs/framework/wcf/feature-details/data-contract-names.md)  
  [Contrats de données à compatibilité ascendante](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)  
  [Rappels de sérialisation avec tolérance de version](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)

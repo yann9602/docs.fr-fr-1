@@ -19,11 +19,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e191293ff7bde6b1be2210af4e7830fec0d7290d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a8c910dd06109a8a69f29517812737d4b4dcef21
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosttype-enumeration"></a>HOST_TYPE, énumération
 Contient des valeurs qui spécifient le type d’hôte qui lance une application.  
@@ -46,7 +47,7 @@ typedef enum {
 |`HOST_TYPE_CORFLAG`|Lancer l’application directement. Autrement dit, lancez l’application à partir de son propre fichier .exe.<br /><br /> Utilisez cette valeur pour les applications de confiance.|  
 |`HOST_TYPE_DEFAULT`|Identique à HOST_TYPE_APPLAUNCH.|  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE.h  
