@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 37e32bedeafd8976212940803b42b493d14f7809
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e086c4560515b85d2ea291a8fb71999f13af92eb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="4812---discoverymessagewithnullreplyto"></a><span data-ttu-id="71823-102">4812 - DiscoveryMessageWithNullReplyTo</span><span class="sxs-lookup"><span data-stu-id="71823-102">4812 - DiscoveryMessageWithNullReplyTo</span></span>
-## <a name="properties"></a><span data-ttu-id="71823-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="71823-103">Properties</span></span>  
+# <a name="4812---discoverymessagewithnullreplyto"></a><span data-ttu-id="e3560-102">4812 - DiscoveryMessageWithNullReplyTo</span><span class="sxs-lookup"><span data-stu-id="e3560-102">4812 - DiscoveryMessageWithNullReplyTo</span></span>
+## <a name="properties"></a><span data-ttu-id="e3560-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="e3560-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="71823-104">ID</span><span class="sxs-lookup"><span data-stu-id="71823-104">ID</span></span>|<span data-ttu-id="71823-105">4812</span><span class="sxs-lookup"><span data-stu-id="71823-105">4812</span></span>|  
-|<span data-ttu-id="71823-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="71823-106">Keywords</span></span>|<span data-ttu-id="71823-107">Découverte</span><span class="sxs-lookup"><span data-stu-id="71823-107">Discovery</span></span>|  
-|<span data-ttu-id="71823-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="71823-108">Level</span></span>|<span data-ttu-id="71823-109">Avertissement</span><span class="sxs-lookup"><span data-stu-id="71823-109">Warning</span></span>|  
-|<span data-ttu-id="71823-110">Canal</span><span class="sxs-lookup"><span data-stu-id="71823-110">Channel</span></span>|<span data-ttu-id="71823-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="71823-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="e3560-104">ID</span><span class="sxs-lookup"><span data-stu-id="e3560-104">ID</span></span>|<span data-ttu-id="e3560-105">4812</span><span class="sxs-lookup"><span data-stu-id="e3560-105">4812</span></span>|  
+|<span data-ttu-id="e3560-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="e3560-106">Keywords</span></span>|<span data-ttu-id="e3560-107">Découverte</span><span class="sxs-lookup"><span data-stu-id="e3560-107">Discovery</span></span>|  
+|<span data-ttu-id="e3560-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="e3560-108">Level</span></span>|<span data-ttu-id="e3560-109">Avertissement</span><span class="sxs-lookup"><span data-stu-id="e3560-109">Warning</span></span>|  
+|<span data-ttu-id="e3560-110">Canal</span><span class="sxs-lookup"><span data-stu-id="e3560-110">Channel</span></span>|<span data-ttu-id="e3560-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="e3560-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="71823-112">Description</span><span class="sxs-lookup"><span data-stu-id="71823-112">Description</span></span>  
- <span data-ttu-id="71823-113">Cet événement est émis lorsque le message de découverte a été supprimé par DiscoveryClient, car il n'avait pas d'adresse de réponse ReplyTo.</span><span class="sxs-lookup"><span data-stu-id="71823-113">This event is emitted when the discovery message was dropped by the DiscoveryClient because it did not have a ReplyTo address.</span></span>  
+## <a name="description"></a><span data-ttu-id="e3560-112">Description</span><span class="sxs-lookup"><span data-stu-id="e3560-112">Description</span></span>  
+ <span data-ttu-id="e3560-113">Cet événement est émis lorsque le message de découverte a été supprimé par DiscoveryClient, car il n'avait pas d'adresse de réponse ReplyTo.</span><span class="sxs-lookup"><span data-stu-id="e3560-113">This event is emitted when the discovery message was dropped by the DiscoveryClient because it did not have a ReplyTo address.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="71823-114">Message</span><span class="sxs-lookup"><span data-stu-id="71823-114">Message</span></span>  
- <span data-ttu-id="71823-115">Un message de demande de découverte avec messageId='%1' a été supprimé, car il n'avait pas d'adresse de réponse ReplyTo.</span><span class="sxs-lookup"><span data-stu-id="71823-115">A discovery request message with messageId='%1' was dropped because it did not have a ReplyTo address.</span></span>  
+## <a name="message"></a><span data-ttu-id="e3560-114">Message</span><span class="sxs-lookup"><span data-stu-id="e3560-114">Message</span></span>  
+ <span data-ttu-id="e3560-115">Un message de demande de découverte avec messageId='%1' a été supprimé, car il n'avait pas d'adresse de réponse ReplyTo.</span><span class="sxs-lookup"><span data-stu-id="e3560-115">A discovery request message with messageId='%1' was dropped because it did not have a ReplyTo address.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="71823-116">Détails</span><span class="sxs-lookup"><span data-stu-id="71823-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="e3560-116">Détails</span><span class="sxs-lookup"><span data-stu-id="e3560-116">Details</span></span>

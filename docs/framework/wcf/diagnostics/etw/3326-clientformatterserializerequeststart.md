@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8a5b17c2cbfb1cefdb091efd4b700f149a6080a9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0c4c1b30a816e99a753e825e73e00a4278596f77
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3326---clientformatterserializerequeststart"></a><span data-ttu-id="25e1f-102">3326 - ClientFormatterSerializeRequestStart</span><span class="sxs-lookup"><span data-stu-id="25e1f-102">3326 - ClientFormatterSerializeRequestStart</span></span>
-## <a name="properties"></a><span data-ttu-id="25e1f-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="25e1f-103">Properties</span></span>  
+# <a name="3326---clientformatterserializerequeststart"></a><span data-ttu-id="9a3ee-102">3326 - ClientFormatterSerializeRequestStart</span><span class="sxs-lookup"><span data-stu-id="9a3ee-102">3326 - ClientFormatterSerializeRequestStart</span></span>
+## <a name="properties"></a><span data-ttu-id="9a3ee-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="9a3ee-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="25e1f-104">ID</span><span class="sxs-lookup"><span data-stu-id="25e1f-104">ID</span></span>|<span data-ttu-id="25e1f-105">3326</span><span class="sxs-lookup"><span data-stu-id="25e1f-105">3326</span></span>|  
-|<span data-ttu-id="25e1f-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="25e1f-106">Keywords</span></span>|<span data-ttu-id="25e1f-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="25e1f-107">ServiceModel</span></span>|  
-|<span data-ttu-id="25e1f-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="25e1f-108">Level</span></span>|<span data-ttu-id="25e1f-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="25e1f-109">Verbose</span></span>|  
-|<span data-ttu-id="25e1f-110">Canal</span><span class="sxs-lookup"><span data-stu-id="25e1f-110">Channel</span></span>|<span data-ttu-id="25e1f-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="25e1f-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="9a3ee-104">ID</span><span class="sxs-lookup"><span data-stu-id="9a3ee-104">ID</span></span>|<span data-ttu-id="9a3ee-105">3326</span><span class="sxs-lookup"><span data-stu-id="9a3ee-105">3326</span></span>|  
+|<span data-ttu-id="9a3ee-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="9a3ee-106">Keywords</span></span>|<span data-ttu-id="9a3ee-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="9a3ee-107">ServiceModel</span></span>|  
+|<span data-ttu-id="9a3ee-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="9a3ee-108">Level</span></span>|<span data-ttu-id="9a3ee-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="9a3ee-109">Verbose</span></span>|  
+|<span data-ttu-id="9a3ee-110">Canal</span><span class="sxs-lookup"><span data-stu-id="9a3ee-110">Channel</span></span>|<span data-ttu-id="9a3ee-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="9a3ee-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="25e1f-112">Description</span><span class="sxs-lookup"><span data-stu-id="25e1f-112">Description</span></span>  
- <span data-ttu-id="25e1f-113">Cet événement est émis lorsque la sérialisation de la requête du client a démarré.</span><span class="sxs-lookup"><span data-stu-id="25e1f-113">This event is emitted when the client request serialization started.</span></span>  
+## <a name="description"></a><span data-ttu-id="9a3ee-112">Description</span><span class="sxs-lookup"><span data-stu-id="9a3ee-112">Description</span></span>  
+ <span data-ttu-id="9a3ee-113">Cet événement est émis lorsque la sérialisation de la requête du client a démarré.</span><span class="sxs-lookup"><span data-stu-id="9a3ee-113">This event is emitted when the client request serialization started.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="25e1f-114">Message</span><span class="sxs-lookup"><span data-stu-id="25e1f-114">Message</span></span>  
- <span data-ttu-id="25e1f-115">La sérialisation de la requête du client a démarré.</span><span class="sxs-lookup"><span data-stu-id="25e1f-115">Client request serialization started.</span></span>  
+## <a name="message"></a><span data-ttu-id="9a3ee-114">Message</span><span class="sxs-lookup"><span data-stu-id="9a3ee-114">Message</span></span>  
+ <span data-ttu-id="9a3ee-115">La sérialisation de la requête du client a démarré.</span><span class="sxs-lookup"><span data-stu-id="9a3ee-115">Client request serialization started.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="25e1f-116">Détails</span><span class="sxs-lookup"><span data-stu-id="25e1f-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="9a3ee-116">Détails</span><span class="sxs-lookup"><span data-stu-id="9a3ee-116">Details</span></span>

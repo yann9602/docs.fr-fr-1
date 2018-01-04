@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b5a563672c008b3b808965babdc6e5b4fd72fa6e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2ddc3252b666a017095e0462948f59a169be098c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="5013---dcjsongenreaderstop"></a><span data-ttu-id="bfce3-102">5013 - DCJsonGenReaderStop</span><span class="sxs-lookup"><span data-stu-id="bfce3-102">5013 - DCJsonGenReaderStop</span></span>
-## <a name="properties"></a><span data-ttu-id="bfce3-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="bfce3-103">Properties</span></span>  
+# <a name="5013---dcjsongenreaderstop"></a><span data-ttu-id="14ed2-102">5013 - DCJsonGenReaderStop</span><span class="sxs-lookup"><span data-stu-id="14ed2-102">5013 - DCJsonGenReaderStop</span></span>
+## <a name="properties"></a><span data-ttu-id="14ed2-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="14ed2-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="bfce3-104">ID</span><span class="sxs-lookup"><span data-stu-id="bfce3-104">ID</span></span>|<span data-ttu-id="bfce3-105">5013</span><span class="sxs-lookup"><span data-stu-id="bfce3-105">5013</span></span>|  
-|<span data-ttu-id="bfce3-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="bfce3-106">Keywords</span></span>|<span data-ttu-id="bfce3-107">Sérialisation</span><span class="sxs-lookup"><span data-stu-id="bfce3-107">Serialization</span></span>|  
-|<span data-ttu-id="bfce3-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="bfce3-108">Level</span></span>|<span data-ttu-id="bfce3-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="bfce3-109">Verbose</span></span>|  
-|<span data-ttu-id="bfce3-110">Canal</span><span class="sxs-lookup"><span data-stu-id="bfce3-110">Channel</span></span>|<span data-ttu-id="bfce3-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="bfce3-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="14ed2-104">ID</span><span class="sxs-lookup"><span data-stu-id="14ed2-104">ID</span></span>|<span data-ttu-id="14ed2-105">5013</span><span class="sxs-lookup"><span data-stu-id="14ed2-105">5013</span></span>|  
+|<span data-ttu-id="14ed2-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="14ed2-106">Keywords</span></span>|<span data-ttu-id="14ed2-107">Sérialisation</span><span class="sxs-lookup"><span data-stu-id="14ed2-107">Serialization</span></span>|  
+|<span data-ttu-id="14ed2-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="14ed2-108">Level</span></span>|<span data-ttu-id="14ed2-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="14ed2-109">Verbose</span></span>|  
+|<span data-ttu-id="14ed2-110">Canal</span><span class="sxs-lookup"><span data-stu-id="14ed2-110">Channel</span></span>|<span data-ttu-id="14ed2-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="14ed2-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="bfce3-112">Description</span><span class="sxs-lookup"><span data-stu-id="bfce3-112">Description</span></span>  
- <span data-ttu-id="bfce3-113">Cet événement est émis lorsque la génération de lecteur JSON s'arrête.</span><span class="sxs-lookup"><span data-stu-id="bfce3-113">This event is emitted when the Json reader generation stops.</span></span>  
+## <a name="description"></a><span data-ttu-id="14ed2-112">Description</span><span class="sxs-lookup"><span data-stu-id="14ed2-112">Description</span></span>  
+ <span data-ttu-id="14ed2-113">Cet événement est émis lorsque la génération de lecteur JSON s'arrête.</span><span class="sxs-lookup"><span data-stu-id="14ed2-113">This event is emitted when the Json reader generation stops.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="bfce3-114">Message</span><span class="sxs-lookup"><span data-stu-id="bfce3-114">Message</span></span>  
- <span data-ttu-id="bfce3-115">Arrêt de la génération du lecteur par JSON.</span><span class="sxs-lookup"><span data-stu-id="bfce3-115">Json reader generation stop.</span></span>  
+## <a name="message"></a><span data-ttu-id="14ed2-114">Message</span><span class="sxs-lookup"><span data-stu-id="14ed2-114">Message</span></span>  
+ <span data-ttu-id="14ed2-115">Arrêt de la génération du lecteur par JSON.</span><span class="sxs-lookup"><span data-stu-id="14ed2-115">Json reader generation stop.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="bfce3-116">Détails</span><span class="sxs-lookup"><span data-stu-id="bfce3-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="14ed2-116">Détails</span><span class="sxs-lookup"><span data-stu-id="14ed2-116">Details</span></span>

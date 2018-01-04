@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 845b344cee6c47a0c2f125caab7965ef8f65f336
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 90989d6b83ea5b54d5ed476d58a5d7f6e32f1fed
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="microsofttransactionstransactionbridgeparticipantstatemachinefinished"></a><span data-ttu-id="35fc6-102">Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished</span><span class="sxs-lookup"><span data-stu-id="35fc6-102">Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished</span></span>
-<span data-ttu-id="35fc6-103">La machine à états pour un enrôlement de participant est passée à l'état Finished.</span><span class="sxs-lookup"><span data-stu-id="35fc6-103">The state machine for a participant enlistment entered the finished state.</span></span>  
+# <a name="microsofttransactionstransactionbridgeparticipantstatemachinefinished"></a><span data-ttu-id="68c95-102">Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished</span><span class="sxs-lookup"><span data-stu-id="68c95-102">Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished</span></span>
+<span data-ttu-id="68c95-103">La machine à états pour un enrôlement de participant est passée à l'état Finished.</span><span class="sxs-lookup"><span data-stu-id="68c95-103">The state machine for a participant enlistment entered the finished state.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="35fc6-104">Description</span><span class="sxs-lookup"><span data-stu-id="35fc6-104">Description</span></span>  
- <span data-ttu-id="35fc6-105">Suivi lorsqu'un enrôlement de participant subalterne a terminé le traitement 2PC.</span><span class="sxs-lookup"><span data-stu-id="35fc6-105">Traced when a subordinate participant enlistment has completed 2pc processing.</span></span> <span data-ttu-id="35fc6-106">Le résultat peut être Committed ou Aborted.</span><span class="sxs-lookup"><span data-stu-id="35fc6-106">The outcome for the enlistment can be Committed or Aborted.</span></span> <span data-ttu-id="35fc6-107">Il est également suivi lorsque les participants votent ReadOnly pendant la préparation.</span><span class="sxs-lookup"><span data-stu-id="35fc6-107">It is also traced if any participant votes ReadOnly during Prepare.</span></span>  
+## <a name="description"></a><span data-ttu-id="68c95-104">Description</span><span class="sxs-lookup"><span data-stu-id="68c95-104">Description</span></span>  
+ <span data-ttu-id="68c95-105">Suivi lorsqu'un enrôlement de participant subalterne a terminé le traitement 2PC.</span><span class="sxs-lookup"><span data-stu-id="68c95-105">Traced when a subordinate participant enlistment has completed 2pc processing.</span></span> <span data-ttu-id="68c95-106">Le résultat peut être Committed ou Aborted.</span><span class="sxs-lookup"><span data-stu-id="68c95-106">The outcome for the enlistment can be Committed or Aborted.</span></span> <span data-ttu-id="68c95-107">Il est également suivi lorsque les participants votent ReadOnly pendant la préparation.</span><span class="sxs-lookup"><span data-stu-id="68c95-107">It is also traced if any participant votes ReadOnly during Prepare.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="35fc6-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="35fc6-108">See Also</span></span>  
- [<span data-ttu-id="35fc6-109">Le suivi</span><span class="sxs-lookup"><span data-stu-id="35fc6-109">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="35fc6-110">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="35fc6-110">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="35fc6-111">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="35fc6-111">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="68c95-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="68c95-108">See Also</span></span>  
+ [<span data-ttu-id="68c95-109">Suivi</span><span class="sxs-lookup"><span data-stu-id="68c95-109">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="68c95-110">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="68c95-110">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="68c95-111">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="68c95-111">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

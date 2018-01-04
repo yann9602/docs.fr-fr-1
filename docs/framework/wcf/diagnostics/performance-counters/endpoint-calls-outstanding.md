@@ -13,14 +13,15 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e415bcdd366dc0899ce50cef7cf669a3208f564b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b963ba88772f223ebdd1f4aa86832879f3010940
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="endpoint-calls-outstanding"></a><span data-ttu-id="8ec59-102">Point de terminaison : appels en attente</span><span class="sxs-lookup"><span data-stu-id="8ec59-102">Endpoint: Calls Outstanding</span></span>
-<span data-ttu-id="8ec59-103">Nom du compteur : Appels en attente</span><span class="sxs-lookup"><span data-stu-id="8ec59-103">Counter Name: Calls Outstanding</span></span>  
+# <a name="endpoint-calls-outstanding"></a><span data-ttu-id="81fbd-102">Point de terminaison : appels en attente</span><span class="sxs-lookup"><span data-stu-id="81fbd-102">Endpoint: Calls Outstanding</span></span>
+<span data-ttu-id="81fbd-103">Nom du compteur : Appels en attente</span><span class="sxs-lookup"><span data-stu-id="81fbd-103">Counter Name: Calls Outstanding</span></span>  
   
-## <a name="description"></a><span data-ttu-id="8ec59-104">Description</span><span class="sxs-lookup"><span data-stu-id="8ec59-104">Description</span></span>  
- <span data-ttu-id="8ec59-105">Nombre d'appels en cours vers ce point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="8ec59-105">Number of in-progress calls to this endpoint.</span></span>
+## <a name="description"></a><span data-ttu-id="81fbd-104">Description</span><span class="sxs-lookup"><span data-stu-id="81fbd-104">Description</span></span>  
+ <span data-ttu-id="81fbd-105">Nombre d'appels en cours vers ce point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="81fbd-105">Number of in-progress calls to this endpoint.</span></span>

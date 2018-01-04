@@ -13,14 +13,15 @@ caps.latest.revision: "2"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8d7fff10ce54b7b9da9a6b47a23904bd18f54409
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8b031d2837f28b7324638f5d3c0f4ac84faac3a4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="percent-of-max-concurrent-instances"></a><span data-ttu-id="e6896-102">Pourcentage du nombre maximal d'instances simultanées</span><span class="sxs-lookup"><span data-stu-id="e6896-102">Percent of Max Concurrent Instances</span></span>
-<span data-ttu-id="e6896-103">Nom du compteur : Pourcentage du nombre maximal d'instances simultanées</span><span class="sxs-lookup"><span data-stu-id="e6896-103">Counter Name: Percent of Max Concurrent Instances</span></span>  
+# <a name="percent-of-max-concurrent-instances"></a><span data-ttu-id="d28df-102">Pourcentage du nombre maximal d'instances simultanées</span><span class="sxs-lookup"><span data-stu-id="d28df-102">Percent of Max Concurrent Instances</span></span>
+<span data-ttu-id="d28df-103">Nom du compteur : Pourcentage du nombre maximal d'instances simultanées</span><span class="sxs-lookup"><span data-stu-id="d28df-103">Counter Name: Percent of Max Concurrent Instances</span></span>  
   
-## <a name="description"></a><span data-ttu-id="e6896-104">Description</span><span class="sxs-lookup"><span data-stu-id="e6896-104">Description</span></span>  
- <span data-ttu-id="e6896-105">Le nombre maximal d'instances simultanées sous la forme d'un pourcentage du nombre maximal d'instances simultanées.</span><span class="sxs-lookup"><span data-stu-id="e6896-105">The number of concurrent instances as a percentage of maximum concurrent instances.</span></span>
+## <a name="description"></a><span data-ttu-id="d28df-104">Description</span><span class="sxs-lookup"><span data-stu-id="d28df-104">Description</span></span>  
+ <span data-ttu-id="d28df-105">Le nombre maximal d'instances simultanées sous la forme d'un pourcentage du nombre maximal d'instances simultanées.</span><span class="sxs-lookup"><span data-stu-id="d28df-105">The number of concurrent instances as a percentage of maximum concurrent instances.</span></span>

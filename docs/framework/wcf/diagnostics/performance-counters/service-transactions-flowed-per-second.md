@@ -13,18 +13,19 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0d4fe3dc70a36a7761665b2cc2ba7d3bd3ccb7e6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ee4c163b2a48cee8fe99414df6e6e2b0f34c526e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="service-transactions-flowed-per-second"></a><span data-ttu-id="7db70-102">Service : transactions passées par seconde</span><span class="sxs-lookup"><span data-stu-id="7db70-102">Service: Transactions Flowed Per Second</span></span>
-<span data-ttu-id="7db70-103">Nom du compteur : transactions passées par seconde.</span><span class="sxs-lookup"><span data-stu-id="7db70-103">Counter Name: Transactions Flowed Per Second.</span></span>  
+# <a name="service-transactions-flowed-per-second"></a><span data-ttu-id="668d8-102">Service : transactions passées par seconde</span><span class="sxs-lookup"><span data-stu-id="668d8-102">Service: Transactions Flowed Per Second</span></span>
+<span data-ttu-id="668d8-103">Nom du compteur : transactions passées par seconde.</span><span class="sxs-lookup"><span data-stu-id="668d8-103">Counter Name: Transactions Flowed Per Second.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="7db70-104">Description</span><span class="sxs-lookup"><span data-stu-id="7db70-104">Description</span></span>  
- <span data-ttu-id="7db70-105">Nombre de transactions passées aux opérations dans ce service en une seconde.</span><span class="sxs-lookup"><span data-stu-id="7db70-105">Number of transactions flowed to operations in this service in a second.</span></span>  
+## <a name="description"></a><span data-ttu-id="668d8-104">Description</span><span class="sxs-lookup"><span data-stu-id="668d8-104">Description</span></span>  
+ <span data-ttu-id="668d8-105">Nombre de transactions passées aux opérations dans ce service en une seconde.</span><span class="sxs-lookup"><span data-stu-id="668d8-105">Number of transactions flowed to operations in this service in a second.</span></span>  
   
- <span data-ttu-id="7db70-106">Ce compteur est de type de compteur de performances [PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649), dont la valeur est calculée à l’aide de la formule suivante.</span><span class="sxs-lookup"><span data-stu-id="7db70-106">This counter is of performance counter type [PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649), whose value is calculated using the following formula.</span></span>  
+ <span data-ttu-id="668d8-106">Ce compteur est de type de compteur de performances [PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649), dont la valeur est calculée à l’aide de la formule suivante.</span><span class="sxs-lookup"><span data-stu-id="668d8-106">This counter is of performance counter type [PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649), whose value is calculated using the following formula.</span></span>  
   
- <span data-ttu-id="7db70-107">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span><span class="sxs-lookup"><span data-stu-id="7db70-107">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span></span>
+ <span data-ttu-id="668d8-107">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span><span class="sxs-lookup"><span data-stu-id="668d8-107">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span></span>

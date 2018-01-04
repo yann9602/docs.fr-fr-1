@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d6e0ff47c3113bf5ec503b7963eb997a117deafe
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c0f6b47f5a7c449ef63c1476dacb3e95ab429df2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemidentitymodelselectorsstorerollbacktransaction"></a><span data-ttu-id="5e39a-102">System.IdentityModel.Selectors.StoreRollbackTransaction</span><span class="sxs-lookup"><span data-stu-id="5e39a-102">System.IdentityModel.Selectors.StoreRollbackTransaction</span></span>
-<span data-ttu-id="5e39a-103">System.IdentityModel.Selectors.StoreRollbackTransaction</span><span class="sxs-lookup"><span data-stu-id="5e39a-103">System.IdentityModel.Selectors.StoreRollbackTransaction</span></span>  
+# <a name="systemidentitymodelselectorsstorerollbacktransaction"></a><span data-ttu-id="a374b-102">System.IdentityModel.Selectors.StoreRollbackTransaction</span><span class="sxs-lookup"><span data-stu-id="a374b-102">System.IdentityModel.Selectors.StoreRollbackTransaction</span></span>
+<span data-ttu-id="a374b-103">System.IdentityModel.Selectors.StoreRollbackTransaction</span><span class="sxs-lookup"><span data-stu-id="a374b-103">System.IdentityModel.Selectors.StoreRollbackTransaction</span></span>  
   
-## <a name="description"></a><span data-ttu-id="5e39a-104">Description</span><span class="sxs-lookup"><span data-stu-id="5e39a-104">Description</span></span>  
- <span data-ttu-id="5e39a-105">Restauration de la transaction, consultez l’erreur précédente.</span><span class="sxs-lookup"><span data-stu-id="5e39a-105">Rolling back the transaction, see the previous error.</span></span>  
+## <a name="description"></a><span data-ttu-id="a374b-104">Description</span><span class="sxs-lookup"><span data-stu-id="a374b-104">Description</span></span>  
+ <span data-ttu-id="a374b-105">Restauration de la transaction, consultez l’erreur précédente.</span><span class="sxs-lookup"><span data-stu-id="a374b-105">Rolling back the transaction, see the previous error.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5e39a-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5e39a-106">See Also</span></span>  
- [<span data-ttu-id="5e39a-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="5e39a-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="5e39a-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="5e39a-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="5e39a-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="5e39a-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="a374b-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a374b-106">See Also</span></span>  
+ [<span data-ttu-id="a374b-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="a374b-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="a374b-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="a374b-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="a374b-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="a374b-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

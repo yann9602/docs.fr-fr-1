@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3df6404dba718ae8a186a7fe76a1c16d32d6e60f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 209d15324027becc9bdd0a72e06017b2f0992d01
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3426---websocketclosesent"></a><span data-ttu-id="a6fb6-102">3426 - WebSocketCloseSent</span><span class="sxs-lookup"><span data-stu-id="a6fb6-102">3426 - WebSocketCloseSent</span></span>
-## <a name="properties"></a><span data-ttu-id="a6fb6-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="a6fb6-103">Properties</span></span>  
+# <a name="3426---websocketclosesent"></a><span data-ttu-id="5eaeb-102">3426 - WebSocketCloseSent</span><span class="sxs-lookup"><span data-stu-id="5eaeb-102">3426 - WebSocketCloseSent</span></span>
+## <a name="properties"></a><span data-ttu-id="5eaeb-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="5eaeb-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="a6fb6-104">ID</span><span class="sxs-lookup"><span data-stu-id="a6fb6-104">ID</span></span>|<span data-ttu-id="a6fb6-105">3426</span><span class="sxs-lookup"><span data-stu-id="a6fb6-105">3426</span></span>|  
-|<span data-ttu-id="a6fb6-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="a6fb6-106">Keywords</span></span>|<span data-ttu-id="a6fb6-107">HTTP</span><span class="sxs-lookup"><span data-stu-id="a6fb6-107">HTTP</span></span>|  
-|<span data-ttu-id="a6fb6-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="a6fb6-108">Level</span></span>|<span data-ttu-id="a6fb6-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="a6fb6-109">Verbose</span></span>|  
-|<span data-ttu-id="a6fb6-110">Canal</span><span class="sxs-lookup"><span data-stu-id="a6fb6-110">Channel</span></span>|<span data-ttu-id="a6fb6-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="a6fb6-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="5eaeb-104">ID</span><span class="sxs-lookup"><span data-stu-id="5eaeb-104">ID</span></span>|<span data-ttu-id="5eaeb-105">3426</span><span class="sxs-lookup"><span data-stu-id="5eaeb-105">3426</span></span>|  
+|<span data-ttu-id="5eaeb-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="5eaeb-106">Keywords</span></span>|<span data-ttu-id="5eaeb-107">HTTP</span><span class="sxs-lookup"><span data-stu-id="5eaeb-107">HTTP</span></span>|  
+|<span data-ttu-id="5eaeb-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="5eaeb-108">Level</span></span>|<span data-ttu-id="5eaeb-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="5eaeb-109">Verbose</span></span>|  
+|<span data-ttu-id="5eaeb-110">Canal</span><span class="sxs-lookup"><span data-stu-id="5eaeb-110">Channel</span></span>|<span data-ttu-id="5eaeb-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="5eaeb-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="a6fb6-112">Description</span><span class="sxs-lookup"><span data-stu-id="a6fb6-112">Description</span></span>  
- <span data-ttu-id="a6fb6-113">Cet événement est émis lorsque le message de fermeture WebSocket est envoyé.</span><span class="sxs-lookup"><span data-stu-id="a6fb6-113">This event is emitted when WebSocket close is sent.</span></span>  
+## <a name="description"></a><span data-ttu-id="5eaeb-112">Description</span><span class="sxs-lookup"><span data-stu-id="5eaeb-112">Description</span></span>  
+ <span data-ttu-id="5eaeb-113">Cet événement est émis lorsque le message de fermeture WebSocket est envoyé.</span><span class="sxs-lookup"><span data-stu-id="5eaeb-113">This event is emitted when WebSocket close is sent.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="a6fb6-114">Message</span><span class="sxs-lookup"><span data-stu-id="a6fb6-114">Message</span></span>  
- <span data-ttu-id="a6fb6-115">L'élément WebSocketId %1 a envoyé un message de fermeture à « %2 » avec l'état de fermeture « %3 ».</span><span class="sxs-lookup"><span data-stu-id="a6fb6-115">WebSocketId:%1 sending close message to '%2' with close status '%3'.</span></span>  
+## <a name="message"></a><span data-ttu-id="5eaeb-114">Message</span><span class="sxs-lookup"><span data-stu-id="5eaeb-114">Message</span></span>  
+ <span data-ttu-id="5eaeb-115">L'élément WebSocketId %1 a envoyé un message de fermeture à « %2 » avec l'état de fermeture « %3 ».</span><span class="sxs-lookup"><span data-stu-id="5eaeb-115">WebSocketId:%1 sending close message to '%2' with close status '%3'.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="a6fb6-116">Détails</span><span class="sxs-lookup"><span data-stu-id="a6fb6-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="5eaeb-116">Détails</span><span class="sxs-lookup"><span data-stu-id="5eaeb-116">Details</span></span>

@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c62f81667e3bab7c2bafdcb235ddcc348eafa045
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e2849f5b9927675bcd7e4eb269ba172541675993
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3314---sessionidletimeout"></a><span data-ttu-id="73832-102">3314 - SessionIdleTimeout</span><span class="sxs-lookup"><span data-stu-id="73832-102">3314 - SessionIdleTimeout</span></span>
-## <a name="properties"></a><span data-ttu-id="73832-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="73832-103">Properties</span></span>  
+# <a name="3314---sessionidletimeout"></a><span data-ttu-id="bf04d-102">3314 - SessionIdleTimeout</span><span class="sxs-lookup"><span data-stu-id="bf04d-102">3314 - SessionIdleTimeout</span></span>
+## <a name="properties"></a><span data-ttu-id="bf04d-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="bf04d-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="73832-104">ID</span><span class="sxs-lookup"><span data-stu-id="73832-104">ID</span></span>|<span data-ttu-id="73832-105">3314</span><span class="sxs-lookup"><span data-stu-id="73832-105">3314</span></span>|  
-|<span data-ttu-id="73832-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="73832-106">Keywords</span></span>|<span data-ttu-id="73832-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="73832-107">ServiceModel</span></span>|  
-|<span data-ttu-id="73832-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="73832-108">Level</span></span>|<span data-ttu-id="73832-109">Erreur</span><span class="sxs-lookup"><span data-stu-id="73832-109">Error</span></span>|  
-|<span data-ttu-id="73832-110">Canal</span><span class="sxs-lookup"><span data-stu-id="73832-110">Channel</span></span>|<span data-ttu-id="73832-111">Microsoft-Windows-Application Server-Applications/Analyse</span><span class="sxs-lookup"><span data-stu-id="73832-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
+|<span data-ttu-id="bf04d-104">ID</span><span class="sxs-lookup"><span data-stu-id="bf04d-104">ID</span></span>|<span data-ttu-id="bf04d-105">3314</span><span class="sxs-lookup"><span data-stu-id="bf04d-105">3314</span></span>|  
+|<span data-ttu-id="bf04d-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="bf04d-106">Keywords</span></span>|<span data-ttu-id="bf04d-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="bf04d-107">ServiceModel</span></span>|  
+|<span data-ttu-id="bf04d-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="bf04d-108">Level</span></span>|<span data-ttu-id="bf04d-109">Erreur</span><span class="sxs-lookup"><span data-stu-id="bf04d-109">Error</span></span>|  
+|<span data-ttu-id="bf04d-110">Canal</span><span class="sxs-lookup"><span data-stu-id="bf04d-110">Channel</span></span>|<span data-ttu-id="bf04d-111">Microsoft-Windows-Application Server-Applications/Analyse</span><span class="sxs-lookup"><span data-stu-id="bf04d-111">Microsoft-Windows-Application Server-Applications/Analytic</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="73832-112">Description</span><span class="sxs-lookup"><span data-stu-id="73832-112">Description</span></span>  
- <span data-ttu-id="73832-113">Cet événement est émis lorsque la session a été abandonnée pour le canal inactif.</span><span class="sxs-lookup"><span data-stu-id="73832-113">This event is emitted when the session aborted for the idle channel.</span></span>  
+## <a name="description"></a><span data-ttu-id="bf04d-112">Description</span><span class="sxs-lookup"><span data-stu-id="bf04d-112">Description</span></span>  
+ <span data-ttu-id="bf04d-113">Cet événement est émis lorsque la session a été abandonnée pour le canal inactif.</span><span class="sxs-lookup"><span data-stu-id="bf04d-113">This event is emitted when the session aborted for the idle channel.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="73832-114">Message</span><span class="sxs-lookup"><span data-stu-id="73832-114">Message</span></span>  
- <span data-ttu-id="73832-115">Abandon de la session du canal inactif de l'URI : « %1 ».</span><span class="sxs-lookup"><span data-stu-id="73832-115">Session aborting for idle channel to uri:'%1'.</span></span>  
+## <a name="message"></a><span data-ttu-id="bf04d-114">Message</span><span class="sxs-lookup"><span data-stu-id="bf04d-114">Message</span></span>  
+ <span data-ttu-id="bf04d-115">Abandon de la session du canal inactif de l'URI : « %1 ».</span><span class="sxs-lookup"><span data-stu-id="bf04d-115">Session aborting for idle channel to uri:'%1'.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="73832-116">Détails</span><span class="sxs-lookup"><span data-stu-id="73832-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="bf04d-116">Détails</span><span class="sxs-lookup"><span data-stu-id="bf04d-116">Details</span></span>

@@ -13,17 +13,18 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ea7ab0715c86eabb69c265f8a755abf89e1428c5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2ec0cd00ed4dc3f873d006133421784b9be00837
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="endpoint-calls-failed"></a><span data-ttu-id="5e214-102">Point de terminaison : appels ayant échoué</span><span class="sxs-lookup"><span data-stu-id="5e214-102">Endpoint: Calls Failed</span></span>
-<span data-ttu-id="5e214-103">Nom du compteur : appels ayant échoué.</span><span class="sxs-lookup"><span data-stu-id="5e214-103">Counter Name: Calls Failed.</span></span>  
+# <a name="endpoint-calls-failed"></a><span data-ttu-id="dbc3c-102">Point de terminaison : appels ayant échoué</span><span class="sxs-lookup"><span data-stu-id="dbc3c-102">Endpoint: Calls Failed</span></span>
+<span data-ttu-id="dbc3c-103">Nom du compteur : appels ayant échoué.</span><span class="sxs-lookup"><span data-stu-id="dbc3c-103">Counter Name: Calls Failed.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="5e214-104">Description</span><span class="sxs-lookup"><span data-stu-id="5e214-104">Description</span></span>  
- <span data-ttu-id="5e214-105">Nombre d'appels à ce point de terminaison avec des exceptions non prises en charge.</span><span class="sxs-lookup"><span data-stu-id="5e214-105">Number of calls with unhandled exceptions at this endpoint.</span></span> <span data-ttu-id="5e214-106">Ce compteur est incrémenté chaque fois qu'une exception n'est pas prise en charge à ce point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="5e214-106">This counter is incremented everytime there is an unhandled exception at this endpoint.</span></span>  
+## <a name="description"></a><span data-ttu-id="dbc3c-104">Description</span><span class="sxs-lookup"><span data-stu-id="dbc3c-104">Description</span></span>  
+ <span data-ttu-id="dbc3c-105">Nombre d'appels à ce point de terminaison avec des exceptions non prises en charge.</span><span class="sxs-lookup"><span data-stu-id="dbc3c-105">Number of calls with unhandled exceptions at this endpoint.</span></span> <span data-ttu-id="dbc3c-106">Ce compteur est incrémenté chaque fois qu'une exception n'est pas prise en charge à ce point de terminaison.</span><span class="sxs-lookup"><span data-stu-id="dbc3c-106">This counter is incremented everytime there is an unhandled exception at this endpoint.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5e214-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5e214-107">See Also</span></span>  
- [<span data-ttu-id="5e214-108">Spécification et gestion des erreurs dans les contrats et les services</span><span class="sxs-lookup"><span data-stu-id="5e214-108">Specifying and Handling Faults in Contracts and Services</span></span>](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)
+## <a name="see-also"></a><span data-ttu-id="dbc3c-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="dbc3c-107">See Also</span></span>  
+ [<span data-ttu-id="dbc3c-108">Spécification et gestion des erreurs dans les contrats et les services</span><span class="sxs-lookup"><span data-stu-id="dbc3c-108">Specifying and Handling Faults in Contracts and Services</span></span>](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)

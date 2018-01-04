@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d66fe030483da47870a600795026c486ce32894d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8048994f683bbce7df2e80523dcf695143532918
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3306---clientbasechannelfactoryagedoutofcache"></a><span data-ttu-id="a1b15-102">3306 - ClientBaseChannelFactoryAgedOutofCache</span><span class="sxs-lookup"><span data-stu-id="a1b15-102">3306 - ClientBaseChannelFactoryAgedOutofCache</span></span>
-## <a name="properties"></a><span data-ttu-id="a1b15-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="a1b15-103">Properties</span></span>  
+# <a name="3306---clientbasechannelfactoryagedoutofcache"></a><span data-ttu-id="0a404-102">3306 - ClientBaseChannelFactoryAgedOutofCache</span><span class="sxs-lookup"><span data-stu-id="0a404-102">3306 - ClientBaseChannelFactoryAgedOutofCache</span></span>
+## <a name="properties"></a><span data-ttu-id="0a404-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="0a404-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="a1b15-104">ID</span><span class="sxs-lookup"><span data-stu-id="a1b15-104">ID</span></span>|<span data-ttu-id="a1b15-105">3306</span><span class="sxs-lookup"><span data-stu-id="a1b15-105">3306</span></span>|  
-|<span data-ttu-id="a1b15-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="a1b15-106">Keywords</span></span>|<span data-ttu-id="a1b15-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="a1b15-107">ServiceModel</span></span>|  
-|<span data-ttu-id="a1b15-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="a1b15-108">Level</span></span>|<span data-ttu-id="a1b15-109">Information</span><span class="sxs-lookup"><span data-stu-id="a1b15-109">Information</span></span>|  
-|<span data-ttu-id="a1b15-110">Canal</span><span class="sxs-lookup"><span data-stu-id="a1b15-110">Channel</span></span>|<span data-ttu-id="a1b15-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="a1b15-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="0a404-104">ID</span><span class="sxs-lookup"><span data-stu-id="0a404-104">ID</span></span>|<span data-ttu-id="0a404-105">3306</span><span class="sxs-lookup"><span data-stu-id="0a404-105">3306</span></span>|  
+|<span data-ttu-id="0a404-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="0a404-106">Keywords</span></span>|<span data-ttu-id="0a404-107">ServiceModel</span><span class="sxs-lookup"><span data-stu-id="0a404-107">ServiceModel</span></span>|  
+|<span data-ttu-id="0a404-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="0a404-108">Level</span></span>|<span data-ttu-id="0a404-109">Information</span><span class="sxs-lookup"><span data-stu-id="0a404-109">Information</span></span>|  
+|<span data-ttu-id="0a404-110">Canal</span><span class="sxs-lookup"><span data-stu-id="0a404-110">Channel</span></span>|<span data-ttu-id="0a404-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="0a404-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="a1b15-112">Description</span><span class="sxs-lookup"><span data-stu-id="a1b15-112">Description</span></span>  
- <span data-ttu-id="a1b15-113">Cet événement est émis lorsqu'une fabrique de canaux a été échue du cache, car le cache a atteint sa limite.</span><span class="sxs-lookup"><span data-stu-id="a1b15-113">This event is emitted when a channel factory has been aged out of the cache because the cache has reached its limit.</span></span>  
+## <a name="description"></a><span data-ttu-id="0a404-112">Description</span><span class="sxs-lookup"><span data-stu-id="0a404-112">Description</span></span>  
+ <span data-ttu-id="0a404-113">Cet événement est émis lorsqu'une fabrique de canaux a été échue du cache, car le cache a atteint sa limite.</span><span class="sxs-lookup"><span data-stu-id="0a404-113">This event is emitted when a channel factory has been aged out of the cache because the cache has reached its limit.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="a1b15-114">Message</span><span class="sxs-lookup"><span data-stu-id="a1b15-114">Message</span></span>  
- <span data-ttu-id="a1b15-115">Une fabrique de canaux a été échue du cache, car le cache a atteint sa limite de « %1 ».</span><span class="sxs-lookup"><span data-stu-id="a1b15-115">A channel factory has been aged out of the cache because the cache has reached its limit of '%1'.</span></span>  
+## <a name="message"></a><span data-ttu-id="0a404-114">Message</span><span class="sxs-lookup"><span data-stu-id="0a404-114">Message</span></span>  
+ <span data-ttu-id="0a404-115">Une fabrique de canaux a été échue du cache, car le cache a atteint sa limite de « %1 ».</span><span class="sxs-lookup"><span data-stu-id="0a404-115">A channel factory has been aged out of the cache because the cache has reached its limit of '%1'.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="a1b15-116">Détails</span><span class="sxs-lookup"><span data-stu-id="a1b15-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="0a404-116">Détails</span><span class="sxs-lookup"><span data-stu-id="0a404-116">Details</span></span>

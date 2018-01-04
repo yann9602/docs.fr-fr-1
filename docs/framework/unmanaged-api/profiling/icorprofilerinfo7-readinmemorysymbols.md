@@ -19,18 +19,19 @@ caps.latest.revision: "3"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 9ada9f629c3a3c3d8b7c32ebc180c4788b6f6d3f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 5851f73cc899ef21d8a5dcfd8f03617641a6625a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icorprofilerinfo7readinmemorysymbols"></a><span data-ttu-id="a63ed-102">ICorProfilerInfo7::ReadInMemorySymbols</span><span class="sxs-lookup"><span data-stu-id="a63ed-102">ICorProfilerInfo7::ReadInMemorySymbols</span></span>
-<span data-ttu-id="a63ed-103">[Prise en charge dans [!INCLUDE[net_v461](../../../../includes/net-v461-md.md)] et versions ultérieures]</span><span class="sxs-lookup"><span data-stu-id="a63ed-103">[Supported in the [!INCLUDE[net_v461](../../../../includes/net-v461-md.md)] and later versions]</span></span>  
+# <a name="icorprofilerinfo7readinmemorysymbols"></a><span data-ttu-id="d9ac2-102">ICorProfilerInfo7::ReadInMemorySymbols</span><span class="sxs-lookup"><span data-stu-id="d9ac2-102">ICorProfilerInfo7::ReadInMemorySymbols</span></span>
+<span data-ttu-id="d9ac2-103">[Prise en charge dans [!INCLUDE[net_v461](../../../../includes/net-v461-md.md)] et versions ultérieures]</span><span class="sxs-lookup"><span data-stu-id="d9ac2-103">[Supported in the [!INCLUDE[net_v461](../../../../includes/net-v461-md.md)] and later versions]</span></span>  
   
- <span data-ttu-id="a63ed-104">Lit les octets à partir d’un flux de symbole de mémoire.</span><span class="sxs-lookup"><span data-stu-id="a63ed-104">Reads bytes from an in-memory symbol stream.</span></span>  
+ <span data-ttu-id="d9ac2-104">Lit les octets à partir d’un flux de symbole de mémoire.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-104">Reads bytes from an in-memory symbol stream.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a63ed-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a63ed-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d9ac2-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d9ac2-105">Syntax</span></span>  
   
 ```  
 HRESULT ReadInMemorySymbols(  
@@ -42,41 +43,41 @@ HRESULT ReadInMemorySymbols(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="a63ed-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="a63ed-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="d9ac2-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="d9ac2-106">Parameters</span></span>  
  `moduleId`  
- <span data-ttu-id="a63ed-107">[in] Identificateur du module contenant le flux de données en mémoire.</span><span class="sxs-lookup"><span data-stu-id="a63ed-107">[in] The identifier of the module containing the in-memory stream.</span></span>  
+ <span data-ttu-id="d9ac2-107">[in] Identificateur du module contenant le flux de données en mémoire.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-107">[in] The identifier of the module containing the in-memory stream.</span></span>  
   
  `symbolsReadOffset`  
- <span data-ttu-id="a63ed-108">[in] Offset dans le flux en mémoire à partir duquel commencer la lecture des octets.</span><span class="sxs-lookup"><span data-stu-id="a63ed-108">[in] The offset within the in-memory stream at which to start reading bytes.</span></span>  
+ <span data-ttu-id="d9ac2-108">[in] Offset dans le flux en mémoire à partir duquel commencer la lecture des octets.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-108">[in] The offset within the in-memory stream at which to start reading bytes.</span></span>  
   
  `pSymbolBytes`  
- <span data-ttu-id="a63ed-109">[out] Pointeur vers la mémoire tampon à laquelle les données seront copiées.</span><span class="sxs-lookup"><span data-stu-id="a63ed-109">[out] A pointer to the buffer to which the data will be copied.</span></span> <span data-ttu-id="a63ed-110">La mémoire tampon doit avoir `countSymbolBytes` d’espace disponible.</span><span class="sxs-lookup"><span data-stu-id="a63ed-110">The buffer should have `countSymbolBytes` of space available.</span></span>  
+ <span data-ttu-id="d9ac2-109">[out] Pointeur vers la mémoire tampon à laquelle les données seront copiées.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-109">[out] A pointer to the buffer to which the data will be copied.</span></span> <span data-ttu-id="d9ac2-110">La mémoire tampon doit avoir `countSymbolBytes` d’espace disponible.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-110">The buffer should have `countSymbolBytes` of space available.</span></span>  
   
  `countSymbolBytes`  
- <span data-ttu-id="a63ed-111">[in] Le nombre d’octets à copier.</span><span class="sxs-lookup"><span data-stu-id="a63ed-111">[in] The number of bytes to copy.</span></span>  
+ <span data-ttu-id="d9ac2-111">[in] Le nombre d’octets à copier.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-111">[in] The number of bytes to copy.</span></span>  
   
  `pCountSymbolBytesRead`  
- <span data-ttu-id="a63ed-112">[out] Lorsque la méthode est retournée, contient le nombre réel d’octets lus.</span><span class="sxs-lookup"><span data-stu-id="a63ed-112">[out] When the method returns, contains the actual number of bytes read.</span></span>  
+ <span data-ttu-id="d9ac2-112">[out] Lorsque la méthode est retournée, contient le nombre réel d’octets lus.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-112">[out] When the method returns, contains the actual number of bytes read.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="a63ed-113">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="a63ed-113">Return Value</span></span>  
- <span data-ttu-id="a63ed-114">`S_OK`, si un nombre d’octets qui ont été lus.</span><span class="sxs-lookup"><span data-stu-id="a63ed-114">`S_OK`, if a non-zero number of bytes were read.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="d9ac2-113">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="d9ac2-113">Return Value</span></span>  
+ <span data-ttu-id="d9ac2-114">`S_OK`, si un nombre d’octets qui ont été lus.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-114">`S_OK`, if a non-zero number of bytes were read.</span></span>  
   
- <span data-ttu-id="a63ed-115">`CORPROF_E_MODULE_IS_DYNAMIC`, si le module a été créé à l’aide de <xref:System.Reflection.Emit>.</span><span class="sxs-lookup"><span data-stu-id="a63ed-115">`CORPROF_E_MODULE_IS_DYNAMIC`, if the module was created using <xref:System.Reflection.Emit>.</span></span>  
+ <span data-ttu-id="d9ac2-115">`CORPROF_E_MODULE_IS_DYNAMIC`, si le module a été créé à l’aide de <xref:System.Reflection.Emit>.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-115">`CORPROF_E_MODULE_IS_DYNAMIC`, if the module was created using <xref:System.Reflection.Emit>.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="a63ed-116">Remarques</span><span class="sxs-lookup"><span data-stu-id="a63ed-116">Remarks</span></span>  
- <span data-ttu-id="a63ed-117">Le `ReadInMemorySymbols` méthode tente de lire `countSymbolBytes` de données, en commençant au décalage `symbolsReadOffset` dans le flux en mémoire.</span><span class="sxs-lookup"><span data-stu-id="a63ed-117">The `ReadInMemorySymbols` method attempts to read `countSymbolBytes` of data starting at offset      `symbolsReadOffset` within the in-memory stream.</span></span> <span data-ttu-id="a63ed-118">Les données sont copiées à `pSymbolBytes`, qui est censé avoir `countSymbolBytes` d’espace disponible.</span><span class="sxs-lookup"><span data-stu-id="a63ed-118">The data is copied to `pSymbolBytes`, which is expected to have `countSymbolBytes` of space available.</span></span>     <span data-ttu-id="a63ed-119">`pCountSymbolsBytesRead`contient le nombre réel d’octets lus, ce qui peut être inférieure à `countSymbolBytes` si la fin du flux est atteinte.</span><span class="sxs-lookup"><span data-stu-id="a63ed-119">`pCountSymbolsBytesRead` contains the actual number of bytes read, which may be less than `countSymbolBytes` if the end of the stream is reached.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d9ac2-116">Notes</span><span class="sxs-lookup"><span data-stu-id="d9ac2-116">Remarks</span></span>  
+ <span data-ttu-id="d9ac2-117">Le `ReadInMemorySymbols` méthode tente de lire `countSymbolBytes` de données, en commençant au décalage `symbolsReadOffset` dans le flux en mémoire.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-117">The `ReadInMemorySymbols` method attempts to read `countSymbolBytes` of data starting at offset      `symbolsReadOffset` within the in-memory stream.</span></span> <span data-ttu-id="d9ac2-118">Les données sont copiées à `pSymbolBytes`, qui est censé avoir `countSymbolBytes` d’espace disponible.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-118">The data is copied to `pSymbolBytes`, which is expected to have `countSymbolBytes` of space available.</span></span>     <span data-ttu-id="d9ac2-119">`pCountSymbolsBytesRead`contient le nombre réel d’octets lus, ce qui peut être inférieure à `countSymbolBytes` si la fin du flux est atteinte.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-119">`pCountSymbolsBytesRead` contains the actual number of bytes read, which may be less than `countSymbolBytes` if the end of the stream is reached.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="a63ed-120">L’implémentation actuelle ne prend pas en charge Reflection.Emit.</span><span class="sxs-lookup"><span data-stu-id="a63ed-120">The current implementation does not support Reflection.Emit.</span></span> <span data-ttu-id="a63ed-121">Si le module a été créé à l’aide de Reflection.Emit, la méthode retourne `CORPROF_E_MODULE_IS_DYNAMIC`.</span><span class="sxs-lookup"><span data-stu-id="a63ed-121">If the module was created by using Reflection.Emit, the method returns `CORPROF_E_MODULE_IS_DYNAMIC`.</span></span>  
+>  <span data-ttu-id="d9ac2-120">L’implémentation actuelle ne prend pas en charge Reflection.Emit.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-120">The current implementation does not support Reflection.Emit.</span></span> <span data-ttu-id="d9ac2-121">Si le module a été créé à l’aide de Reflection.Emit, la méthode retourne `CORPROF_E_MODULE_IS_DYNAMIC`.</span><span class="sxs-lookup"><span data-stu-id="d9ac2-121">If the module was created by using Reflection.Emit, the method returns `CORPROF_E_MODULE_IS_DYNAMIC`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a63ed-122">Spécifications</span><span class="sxs-lookup"><span data-stu-id="a63ed-122">Requirements</span></span>  
- <span data-ttu-id="a63ed-123">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a63ed-123">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d9ac2-122">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d9ac2-122">Requirements</span></span>  
+ <span data-ttu-id="d9ac2-123">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d9ac2-123">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a63ed-124">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="a63ed-124">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="d9ac2-124">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="d9ac2-124">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="a63ed-125">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a63ed-125">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="d9ac2-125">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d9ac2-125">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="a63ed-126">**Versions du .NET Framework :** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a63ed-126">**.NET Framework Versions:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]</span></span>  
+ <span data-ttu-id="d9ac2-126">**Versions du .NET Framework :** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d9ac2-126">**.NET Framework Versions:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a63ed-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a63ed-127">See Also</span></span>  
- [<span data-ttu-id="a63ed-128">Interface de ICorProfilerInfo7</span><span class="sxs-lookup"><span data-stu-id="a63ed-128">ICorProfilerInfo7 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo7-interface.md)
+## <a name="see-also"></a><span data-ttu-id="d9ac2-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d9ac2-127">See Also</span></span>  
+ [<span data-ttu-id="d9ac2-128">ICorProfilerInfo7, interface</span><span class="sxs-lookup"><span data-stu-id="d9ac2-128">ICorProfilerInfo7 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo7-interface.md)

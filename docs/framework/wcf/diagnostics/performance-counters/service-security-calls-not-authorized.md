@@ -13,14 +13,15 @@ caps.latest.revision: "5"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 5dae370d90082c9efe89f9d523740fc25ece21ab
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: bd3e118d6e657ce03d8ccdf0d68d1b12b84d50bc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="service-security-calls-not-authorized"></a><span data-ttu-id="6d383-102">Service : appels de sécurité non autorisés</span><span class="sxs-lookup"><span data-stu-id="6d383-102">Service: Security Calls Not Authorized</span></span>
-<span data-ttu-id="6d383-103">Nom du compteur : Appels de sécurité non autorisés.</span><span class="sxs-lookup"><span data-stu-id="6d383-103">Counter Name: Security Calls Not Authorized.</span></span>  
+# <a name="service-security-calls-not-authorized"></a><span data-ttu-id="b5c89-102">Service : appels de sécurité non autorisés</span><span class="sxs-lookup"><span data-stu-id="b5c89-102">Service: Security Calls Not Authorized</span></span>
+<span data-ttu-id="b5c89-103">Nom du compteur : Appels de sécurité non autorisés.</span><span class="sxs-lookup"><span data-stu-id="b5c89-103">Counter Name: Security Calls Not Authorized.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="6d383-104">Description</span><span class="sxs-lookup"><span data-stu-id="6d383-104">Description</span></span>  
- <span data-ttu-id="6d383-105">Ce compteur est incrémenté lorsque la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> retourne la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="6d383-105">This counter is incremented when the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> method returns `false`.</span></span> <span data-ttu-id="6d383-106">Il indique que le message entrant provient d'un utilisateur valide et qu'il est correctement protégé, mais que l'utilisateur n'est pas autorisé à exécuter des tâches spécifiques.</span><span class="sxs-lookup"><span data-stu-id="6d383-106">It indicates that the incoming message is from a valid user and protected properly, but the user is not authorized to do specific tasks.</span></span>
+## <a name="description"></a><span data-ttu-id="b5c89-104">Description</span><span class="sxs-lookup"><span data-stu-id="b5c89-104">Description</span></span>  
+ <span data-ttu-id="b5c89-105">Ce compteur est incrémenté lorsque la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> retourne la valeur `false`.</span><span class="sxs-lookup"><span data-stu-id="b5c89-105">This counter is incremented when the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> method returns `false`.</span></span> <span data-ttu-id="b5c89-106">Il indique que le message entrant provient d'un utilisateur valide et qu'il est correctement protégé, mais que l'utilisateur n'est pas autorisé à exécuter des tâches spécifiques.</span><span class="sxs-lookup"><span data-stu-id="b5c89-106">It indicates that the incoming message is from a valid user and protected properly, but the user is not authorized to do specific tasks.</span></span>
