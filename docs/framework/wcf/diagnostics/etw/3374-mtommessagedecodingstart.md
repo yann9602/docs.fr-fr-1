@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a49b70b7078d5a6c570fadbe8abc8a833c436011
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5ef46e357a3296d9fcc18ee7267ba2adf668f2f1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="3374---mtommessagedecodingstart"></a><span data-ttu-id="33431-102">3374 - MtomMessageDecodingStart</span><span class="sxs-lookup"><span data-stu-id="33431-102">3374 - MtomMessageDecodingStart</span></span>
-## <a name="properties"></a><span data-ttu-id="33431-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="33431-103">Properties</span></span>  
+# <a name="3374---mtommessagedecodingstart"></a><span data-ttu-id="7e60d-102">3374 - MtomMessageDecodingStart</span><span class="sxs-lookup"><span data-stu-id="7e60d-102">3374 - MtomMessageDecodingStart</span></span>
+## <a name="properties"></a><span data-ttu-id="7e60d-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="7e60d-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="33431-104">ID</span><span class="sxs-lookup"><span data-stu-id="33431-104">ID</span></span>|<span data-ttu-id="33431-105">3374</span><span class="sxs-lookup"><span data-stu-id="33431-105">3374</span></span>|  
-|<span data-ttu-id="33431-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="33431-106">Keywords</span></span>|<span data-ttu-id="33431-107">Canal</span><span class="sxs-lookup"><span data-stu-id="33431-107">Channel</span></span>|  
-|<span data-ttu-id="33431-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="33431-108">Level</span></span>|<span data-ttu-id="33431-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="33431-109">Verbose</span></span>|  
-|<span data-ttu-id="33431-110">Canal</span><span class="sxs-lookup"><span data-stu-id="33431-110">Channel</span></span>|<span data-ttu-id="33431-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="33431-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="7e60d-104">ID</span><span class="sxs-lookup"><span data-stu-id="7e60d-104">ID</span></span>|<span data-ttu-id="7e60d-105">3374</span><span class="sxs-lookup"><span data-stu-id="7e60d-105">3374</span></span>|  
+|<span data-ttu-id="7e60d-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="7e60d-106">Keywords</span></span>|<span data-ttu-id="7e60d-107">Canal</span><span class="sxs-lookup"><span data-stu-id="7e60d-107">Channel</span></span>|  
+|<span data-ttu-id="7e60d-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="7e60d-108">Level</span></span>|<span data-ttu-id="7e60d-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="7e60d-109">Verbose</span></span>|  
+|<span data-ttu-id="7e60d-110">Canal</span><span class="sxs-lookup"><span data-stu-id="7e60d-110">Channel</span></span>|<span data-ttu-id="7e60d-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="7e60d-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="33431-112">Description</span><span class="sxs-lookup"><span data-stu-id="33431-112">Description</span></span>  
- <span data-ttu-id="33431-113">Cet événement est émis lorsque le MtomMessageEncoder a commencé à décoder le message.</span><span class="sxs-lookup"><span data-stu-id="33431-113">This event is emitted when the MtomMessageEncoder started decoding the message.</span></span>  
+## <a name="description"></a><span data-ttu-id="7e60d-112">Description</span><span class="sxs-lookup"><span data-stu-id="7e60d-112">Description</span></span>  
+ <span data-ttu-id="7e60d-113">Cet événement est émis lorsque le MtomMessageEncoder a commencé à décoder le message.</span><span class="sxs-lookup"><span data-stu-id="7e60d-113">This event is emitted when the MtomMessageEncoder started decoding the message.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="33431-114">Message</span><span class="sxs-lookup"><span data-stu-id="33431-114">Message</span></span>  
- <span data-ttu-id="33431-115">Mtommessageencoder a démarré le décodage du message.</span><span class="sxs-lookup"><span data-stu-id="33431-115">MtomMessageEncoder started decoding  the message.</span></span>  
+## <a name="message"></a><span data-ttu-id="7e60d-114">Message</span><span class="sxs-lookup"><span data-stu-id="7e60d-114">Message</span></span>  
+ <span data-ttu-id="7e60d-115">Mtommessageencoder a démarré le décodage du message.</span><span class="sxs-lookup"><span data-stu-id="7e60d-115">MtomMessageEncoder started decoding  the message.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="33431-116">Détails</span><span class="sxs-lookup"><span data-stu-id="33431-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="7e60d-116">Détails</span><span class="sxs-lookup"><span data-stu-id="7e60d-116">Details</span></span>

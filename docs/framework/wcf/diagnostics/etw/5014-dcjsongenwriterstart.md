@@ -13,26 +13,27 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a6770747ac64c77848649269b037f0ca378bff40
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 54ee8b185ae714f378107a35813b1c2613ff985c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="5014---dcjsongenwriterstart"></a><span data-ttu-id="731a0-102">5014 - DCJsonGenWriterStart</span><span class="sxs-lookup"><span data-stu-id="731a0-102">5014 - DCJsonGenWriterStart</span></span>
-## <a name="properties"></a><span data-ttu-id="731a0-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="731a0-103">Properties</span></span>  
+# <a name="5014---dcjsongenwriterstart"></a><span data-ttu-id="61768-102">5014 - DCJsonGenWriterStart</span><span class="sxs-lookup"><span data-stu-id="61768-102">5014 - DCJsonGenWriterStart</span></span>
+## <a name="properties"></a><span data-ttu-id="61768-103">Propriétés</span><span class="sxs-lookup"><span data-stu-id="61768-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="731a0-104">ID</span><span class="sxs-lookup"><span data-stu-id="731a0-104">ID</span></span>|<span data-ttu-id="731a0-105">5014</span><span class="sxs-lookup"><span data-stu-id="731a0-105">5014</span></span>|  
-|<span data-ttu-id="731a0-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="731a0-106">Keywords</span></span>|<span data-ttu-id="731a0-107">Sérialisation</span><span class="sxs-lookup"><span data-stu-id="731a0-107">Serialization</span></span>|  
-|<span data-ttu-id="731a0-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="731a0-108">Level</span></span>|<span data-ttu-id="731a0-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="731a0-109">Verbose</span></span>|  
-|<span data-ttu-id="731a0-110">Canal</span><span class="sxs-lookup"><span data-stu-id="731a0-110">Channel</span></span>|<span data-ttu-id="731a0-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="731a0-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="61768-104">ID</span><span class="sxs-lookup"><span data-stu-id="61768-104">ID</span></span>|<span data-ttu-id="61768-105">5014</span><span class="sxs-lookup"><span data-stu-id="61768-105">5014</span></span>|  
+|<span data-ttu-id="61768-106">Mots clés</span><span class="sxs-lookup"><span data-stu-id="61768-106">Keywords</span></span>|<span data-ttu-id="61768-107">Sérialisation</span><span class="sxs-lookup"><span data-stu-id="61768-107">Serialization</span></span>|  
+|<span data-ttu-id="61768-108">Niveau</span><span class="sxs-lookup"><span data-stu-id="61768-108">Level</span></span>|<span data-ttu-id="61768-109">Verbose</span><span class="sxs-lookup"><span data-stu-id="61768-109">Verbose</span></span>|  
+|<span data-ttu-id="61768-110">Canal</span><span class="sxs-lookup"><span data-stu-id="61768-110">Channel</span></span>|<span data-ttu-id="61768-111">Microsoft-Windows-Application Server-Applications/Débogage</span><span class="sxs-lookup"><span data-stu-id="61768-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="731a0-112">Description</span><span class="sxs-lookup"><span data-stu-id="731a0-112">Description</span></span>  
- <span data-ttu-id="731a0-113">Cet événement est émis lorsque la génération de lecteur JSON commence.</span><span class="sxs-lookup"><span data-stu-id="731a0-113">This event is emitted when the Json reader generation starts.</span></span>  
+## <a name="description"></a><span data-ttu-id="61768-112">Description</span><span class="sxs-lookup"><span data-stu-id="61768-112">Description</span></span>  
+ <span data-ttu-id="61768-113">Cet événement est émis lorsque la génération de lecteur JSON commence.</span><span class="sxs-lookup"><span data-stu-id="61768-113">This event is emitted when the Json reader generation starts.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="731a0-114">Message</span><span class="sxs-lookup"><span data-stu-id="731a0-114">Message</span></span>  
- <span data-ttu-id="731a0-115">Début de la génération de l'enregistreur %1 par JSON pour %2.</span><span class="sxs-lookup"><span data-stu-id="731a0-115">Json generate %1 writer for %2 start.</span></span>  
+## <a name="message"></a><span data-ttu-id="61768-114">Message</span><span class="sxs-lookup"><span data-stu-id="61768-114">Message</span></span>  
+ <span data-ttu-id="61768-115">Début de la génération de l'enregistreur %1 par JSON pour %2.</span><span class="sxs-lookup"><span data-stu-id="61768-115">Json generate %1 writer for %2 start.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="731a0-116">Détails</span><span class="sxs-lookup"><span data-stu-id="731a0-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="61768-116">Détails</span><span class="sxs-lookup"><span data-stu-id="61768-116">Details</span></span>

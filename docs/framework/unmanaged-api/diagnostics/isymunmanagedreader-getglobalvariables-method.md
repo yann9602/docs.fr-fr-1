@@ -21,16 +21,17 @@ caps.latest.revision: "7"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: cad85da193220c766da393a753501400e698ee8d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b17abe352dc37b366294e72de53bcc4e1ad8dc9d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isymunmanagedreadergetglobalvariables-method"></a><span data-ttu-id="19891-102">ISymUnmanagedReader::GetGlobalVariables, méthode</span><span class="sxs-lookup"><span data-stu-id="19891-102">ISymUnmanagedReader::GetGlobalVariables Method</span></span>
-<span data-ttu-id="19891-103">Retourne toutes les variables globales.</span><span class="sxs-lookup"><span data-stu-id="19891-103">Returns all global variables.</span></span>  
+# <a name="isymunmanagedreadergetglobalvariables-method"></a><span data-ttu-id="313c9-102">ISymUnmanagedReader::GetGlobalVariables, méthode</span><span class="sxs-lookup"><span data-stu-id="313c9-102">ISymUnmanagedReader::GetGlobalVariables Method</span></span>
+<span data-ttu-id="313c9-103">Retourne toutes les variables globales.</span><span class="sxs-lookup"><span data-stu-id="313c9-103">Returns all global variables.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="19891-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="19891-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="313c9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="313c9-104">Syntax</span></span>  
   
 ```  
 HRESULT GetGlobalVariables(  
@@ -40,21 +41,21 @@ HRESULT GetGlobalVariables(
         length_is(*pcVars)] ISymUnmanagedVariable *pVars[]);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="19891-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="19891-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="313c9-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="313c9-105">Parameters</span></span>  
  `cVars`  
- <span data-ttu-id="19891-106">[in] La longueur de la mémoire tampon pointée par `pcVars`.</span><span class="sxs-lookup"><span data-stu-id="19891-106">[in] The length of the buffer pointed to by `pcVars`.</span></span>  
+ <span data-ttu-id="313c9-106">[in] La longueur de la mémoire tampon pointée par `pcVars`.</span><span class="sxs-lookup"><span data-stu-id="313c9-106">[in] The length of the buffer pointed to by `pcVars`.</span></span>  
   
  `pcVars`  
- <span data-ttu-id="19891-107">[out] Un pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les variables.</span><span class="sxs-lookup"><span data-stu-id="19891-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the variables.</span></span>  
+ <span data-ttu-id="313c9-107">[out] Un pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les variables.</span><span class="sxs-lookup"><span data-stu-id="313c9-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the variables.</span></span>  
   
  `pVars`  
- <span data-ttu-id="19891-108">[out] Une mémoire tampon qui contient les variables.</span><span class="sxs-lookup"><span data-stu-id="19891-108">[out] A buffer that contains the variables.</span></span>  
+ <span data-ttu-id="313c9-108">[out] Une mémoire tampon qui contient les variables.</span><span class="sxs-lookup"><span data-stu-id="313c9-108">[out] A buffer that contains the variables.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="19891-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="19891-109">Return Value</span></span>  
- <span data-ttu-id="19891-110">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="19891-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="313c9-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="313c9-109">Return Value</span></span>  
+ <span data-ttu-id="313c9-110">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="313c9-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="19891-111">Spécifications</span><span class="sxs-lookup"><span data-stu-id="19891-111">Requirements</span></span>  
- <span data-ttu-id="19891-112">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="19891-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="313c9-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="313c9-111">Requirements</span></span>  
+ <span data-ttu-id="313c9-112">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="313c9-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="19891-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="19891-113">See Also</span></span>  
- [<span data-ttu-id="19891-114">ISymUnmanagedReader (Interface)</span><span class="sxs-lookup"><span data-stu-id="19891-114">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a><span data-ttu-id="313c9-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="313c9-113">See Also</span></span>  
+ [<span data-ttu-id="313c9-114">ISymUnmanagedReader, interface</span><span class="sxs-lookup"><span data-stu-id="313c9-114">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

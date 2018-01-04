@@ -21,16 +21,17 @@ caps.latest.revision: "11"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 23aa78f8daf649c4fdba218cdc964e4e47070580
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0d65b17899f0a6856daf3d99fe8b8025d5d4c462
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="imetadatatablesgetnumtables-method"></a><span data-ttu-id="ac450-102">IMetaDataTables::GetNumTables, méthode</span><span class="sxs-lookup"><span data-stu-id="ac450-102">IMetaDataTables::GetNumTables Method</span></span>
-<span data-ttu-id="ac450-103">Obtient le nombre de tables dans la portée du actuel `IMetaDataTables` instance.</span><span class="sxs-lookup"><span data-stu-id="ac450-103">Gets the number of tables in the scope of the current `IMetaDataTables` instance.</span></span>  
+# <a name="imetadatatablesgetnumtables-method"></a><span data-ttu-id="3a791-102">IMetaDataTables::GetNumTables, méthode</span><span class="sxs-lookup"><span data-stu-id="3a791-102">IMetaDataTables::GetNumTables Method</span></span>
+<span data-ttu-id="3a791-103">Obtient le nombre de tables dans la portée du actuel `IMetaDataTables` instance.</span><span class="sxs-lookup"><span data-stu-id="3a791-103">Gets the number of tables in the scope of the current `IMetaDataTables` instance.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ac450-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ac450-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3a791-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3a791-104">Syntax</span></span>  
   
 ```  
 HRESULT GetNumTables (  
@@ -38,19 +39,19 @@ HRESULT GetNumTables (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="ac450-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="ac450-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="3a791-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="3a791-105">Parameters</span></span>  
  `pcTables`  
- <span data-ttu-id="ac450-106">[out] Pointeur vers le nombre de tables dans la portée de l’instance actuelle.</span><span class="sxs-lookup"><span data-stu-id="ac450-106">[out] A pointer to the number of tables in the current instance scope.</span></span>  
+ <span data-ttu-id="3a791-106">[out] Pointeur vers le nombre de tables dans la portée de l’instance actuelle.</span><span class="sxs-lookup"><span data-stu-id="3a791-106">[out] A pointer to the number of tables in the current instance scope.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ac450-107">Spécifications</span><span class="sxs-lookup"><span data-stu-id="ac450-107">Requirements</span></span>  
- <span data-ttu-id="ac450-108">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ac450-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3a791-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="3a791-107">Requirements</span></span>  
+ <span data-ttu-id="3a791-108">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3a791-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ac450-109">**En-tête :** Cor.h</span><span class="sxs-lookup"><span data-stu-id="ac450-109">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="3a791-109">**En-tête :** Cor.h</span><span class="sxs-lookup"><span data-stu-id="3a791-109">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="ac450-110">**Bibliothèque :** utilisé en tant que ressource dans MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ac450-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="3a791-110">**Bibliothèque :** utilisé en tant que ressource dans MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="3a791-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="ac450-111">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ac450-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="3a791-111">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3a791-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ac450-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ac450-112">See Also</span></span>  
- [<span data-ttu-id="ac450-113">IMetaDataTables (Interface)</span><span class="sxs-lookup"><span data-stu-id="ac450-113">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
- [<span data-ttu-id="ac450-114">IMetaDataTables2 (Interface)</span><span class="sxs-lookup"><span data-stu-id="ac450-114">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="3a791-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3a791-112">See Also</span></span>  
+ [<span data-ttu-id="3a791-113">IMetaDataTables, interface</span><span class="sxs-lookup"><span data-stu-id="3a791-113">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
+ [<span data-ttu-id="3a791-114">IMetaDataTables2, interface</span><span class="sxs-lookup"><span data-stu-id="3a791-114">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

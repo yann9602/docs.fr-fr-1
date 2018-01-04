@@ -21,16 +21,17 @@ caps.latest.revision: "9"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: a876d6ffb8331ee52789d5c146db7615d352dc1b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e93f544e504949b496881369c15905ef43a0d2f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="imetadatadispenserexgetcorsystemdirectory-method"></a><span data-ttu-id="f7c06-102">IMetaDataDispenserEx::GetCORSystemDirectory, méthode</span><span class="sxs-lookup"><span data-stu-id="f7c06-102">IMetaDataDispenserEx::GetCORSystemDirectory Method</span></span>
-<span data-ttu-id="f7c06-103">Obtient le répertoire qui contient le common language runtime (CLR) actuel.</span><span class="sxs-lookup"><span data-stu-id="f7c06-103">Gets the directory that holds the current common language runtime (CLR).</span></span> <span data-ttu-id="f7c06-104">Cette méthode est prise en charge uniquement pour une utilisation par les débogueurs out-of-process.</span><span class="sxs-lookup"><span data-stu-id="f7c06-104">This method is supported only for use by out-of-process debuggers.</span></span> <span data-ttu-id="f7c06-105">Si elle est appelée à partir d’un autre composant, elle retournera E_NOTIMPL.</span><span class="sxs-lookup"><span data-stu-id="f7c06-105">If called from another component, it will return E_NOTIMPL.</span></span>  
+# <a name="imetadatadispenserexgetcorsystemdirectory-method"></a><span data-ttu-id="13b4a-102">IMetaDataDispenserEx::GetCORSystemDirectory, méthode</span><span class="sxs-lookup"><span data-stu-id="13b4a-102">IMetaDataDispenserEx::GetCORSystemDirectory Method</span></span>
+<span data-ttu-id="13b4a-103">Obtient le répertoire qui contient le common language runtime (CLR) actuel.</span><span class="sxs-lookup"><span data-stu-id="13b4a-103">Gets the directory that holds the current common language runtime (CLR).</span></span> <span data-ttu-id="13b4a-104">Cette méthode est prise en charge uniquement pour une utilisation par les débogueurs out-of-process.</span><span class="sxs-lookup"><span data-stu-id="13b4a-104">This method is supported only for use by out-of-process debuggers.</span></span> <span data-ttu-id="13b4a-105">Si elle est appelée à partir d’un autre composant, elle retournera E_NOTIMPL.</span><span class="sxs-lookup"><span data-stu-id="13b4a-105">If called from another component, it will return E_NOTIMPL.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f7c06-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f7c06-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="13b4a-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="13b4a-106">Syntax</span></span>  
   
 ```  
 HRESULT GetCORSystemDirectory (  
@@ -40,25 +41,25 @@ HRESULT GetCORSystemDirectory (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="f7c06-107">Paramètres</span><span class="sxs-lookup"><span data-stu-id="f7c06-107">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="13b4a-107">Paramètres</span><span class="sxs-lookup"><span data-stu-id="13b4a-107">Parameters</span></span>  
  `szBuffer`  
- <span data-ttu-id="f7c06-108">[out] La mémoire tampon pour recevoir le nom de répertoire.</span><span class="sxs-lookup"><span data-stu-id="f7c06-108">[out] The buffer to receive the directory name.</span></span>  
+ <span data-ttu-id="13b4a-108">[out] La mémoire tampon pour recevoir le nom de répertoire.</span><span class="sxs-lookup"><span data-stu-id="13b4a-108">[out] The buffer to receive the directory name.</span></span>  
   
  `cchBuffer`  
- <span data-ttu-id="f7c06-109">[in] La taille, en octets, de `szBuffer`.</span><span class="sxs-lookup"><span data-stu-id="f7c06-109">[in] The size, in bytes, of `szBuffer`.</span></span>  
+ <span data-ttu-id="13b4a-109">[in] La taille, en octets, de `szBuffer`.</span><span class="sxs-lookup"><span data-stu-id="13b4a-109">[in] The size, in bytes, of `szBuffer`.</span></span>  
   
  `pchBuffer`  
- <span data-ttu-id="f7c06-110">[out] Le nombre d’octets retournés dans `szBuffer`.</span><span class="sxs-lookup"><span data-stu-id="f7c06-110">[out] The number of bytes actually returned in `szBuffer`.</span></span>  
+ <span data-ttu-id="13b4a-110">[out] Le nombre d’octets retournés dans `szBuffer`.</span><span class="sxs-lookup"><span data-stu-id="13b4a-110">[out] The number of bytes actually returned in `szBuffer`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f7c06-111">Spécifications</span><span class="sxs-lookup"><span data-stu-id="f7c06-111">Requirements</span></span>  
- <span data-ttu-id="f7c06-112">**Plateforme :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f7c06-112">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="13b4a-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="13b4a-111">Requirements</span></span>  
+ <span data-ttu-id="13b4a-112">**Plateforme :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="13b4a-112">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f7c06-113">**En-tête :** Cor.h</span><span class="sxs-lookup"><span data-stu-id="f7c06-113">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="13b4a-113">**En-tête :** Cor.h</span><span class="sxs-lookup"><span data-stu-id="13b4a-113">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="f7c06-114">**Bibliothèque :** utilisé en tant que ressource dans MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f7c06-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="13b4a-114">**Bibliothèque :** utilisé en tant que ressource dans MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="13b4a-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="f7c06-115">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f7c06-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="13b4a-115">**Versions du .NET framework :**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="13b4a-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f7c06-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f7c06-116">See Also</span></span>  
- [<span data-ttu-id="f7c06-117">IMetaDataDispenserEx (Interface)</span><span class="sxs-lookup"><span data-stu-id="f7c06-117">IMetaDataDispenserEx Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
- [<span data-ttu-id="f7c06-118">IMetaDataDispenser (Interface)</span><span class="sxs-lookup"><span data-stu-id="f7c06-118">IMetaDataDispenser Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+## <a name="see-also"></a><span data-ttu-id="13b4a-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="13b4a-116">See Also</span></span>  
+ [<span data-ttu-id="13b4a-117">IMetaDataDispenserEx, interface</span><span class="sxs-lookup"><span data-stu-id="13b4a-117">IMetaDataDispenserEx Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
+ [<span data-ttu-id="13b4a-118">IMetaDataDispenser, interface</span><span class="sxs-lookup"><span data-stu-id="13b4a-118">IMetaDataDispenser Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)

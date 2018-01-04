@@ -19,16 +19,17 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 64312398c95a33c2bbe136b1c4d03c06cb09aeef
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: a04db61a16aeae24476fb0b191a3d2dc89743dee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="stackoverflowtype-enumeration"></a><span data-ttu-id="97632-102">StackOverflowType, énumération</span><span class="sxs-lookup"><span data-stu-id="97632-102">StackOverflowType Enumeration</span></span>
-<span data-ttu-id="97632-103">Contient des valeurs qui indiquent la cause sous-jacente d’un événement de dépassement de capacité de pile.</span><span class="sxs-lookup"><span data-stu-id="97632-103">Contains values that indicate the underlying cause of a stack overflow event.</span></span>  
+# <a name="stackoverflowtype-enumeration"></a><span data-ttu-id="597cd-102">StackOverflowType, énumération</span><span class="sxs-lookup"><span data-stu-id="597cd-102">StackOverflowType Enumeration</span></span>
+<span data-ttu-id="597cd-103">Contient des valeurs qui indiquent la cause sous-jacente d’un événement de dépassement de capacité de pile.</span><span class="sxs-lookup"><span data-stu-id="597cd-103">Contains values that indicate the underlying cause of a stack overflow event.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="97632-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="97632-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="597cd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="597cd-104">Syntax</span></span>  
   
 ```  
 typedef enum {  
@@ -38,25 +39,25 @@ typedef enum {
 } StackOverflowType;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="97632-105">Membres</span><span class="sxs-lookup"><span data-stu-id="97632-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="597cd-105">Membres</span><span class="sxs-lookup"><span data-stu-id="597cd-105">Members</span></span>  
   
-|<span data-ttu-id="97632-106">Membre</span><span class="sxs-lookup"><span data-stu-id="97632-106">Member</span></span>|<span data-ttu-id="97632-107">Description</span><span class="sxs-lookup"><span data-stu-id="97632-107">Description</span></span>|  
+|<span data-ttu-id="597cd-106">Membre</span><span class="sxs-lookup"><span data-stu-id="597cd-106">Member</span></span>|<span data-ttu-id="597cd-107">Description</span><span class="sxs-lookup"><span data-stu-id="597cd-107">Description</span></span>|  
 |------------|-----------------|  
-|`SO_ClrEngine`|<span data-ttu-id="97632-108">Le dépassement de capacité de pile a été provoquée par le moteur d’exécution.</span><span class="sxs-lookup"><span data-stu-id="97632-108">The stack overflow was caused by the execution engine.</span></span>|  
-|`SO_Managed`|<span data-ttu-id="97632-109">Le dépassement de capacité de pile a été provoquée par le code managé.</span><span class="sxs-lookup"><span data-stu-id="97632-109">The stack overflow was caused by managed code.</span></span>|  
-|`SO_Other`|<span data-ttu-id="97632-110">Le dépassement de capacité de pile a été provoquée par le code non managé.</span><span class="sxs-lookup"><span data-stu-id="97632-110">The stack overflow was caused by unmanaged code.</span></span>|  
+|`SO_ClrEngine`|<span data-ttu-id="597cd-108">Le dépassement de capacité de pile a été provoquée par le moteur d’exécution.</span><span class="sxs-lookup"><span data-stu-id="597cd-108">The stack overflow was caused by the execution engine.</span></span>|  
+|`SO_Managed`|<span data-ttu-id="597cd-109">Le dépassement de capacité de pile a été provoquée par le code managé.</span><span class="sxs-lookup"><span data-stu-id="597cd-109">The stack overflow was caused by managed code.</span></span>|  
+|`SO_Other`|<span data-ttu-id="597cd-110">Le dépassement de capacité de pile a été provoquée par le code non managé.</span><span class="sxs-lookup"><span data-stu-id="597cd-110">The stack overflow was caused by unmanaged code.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="97632-111">Remarques</span><span class="sxs-lookup"><span data-stu-id="97632-111">Remarks</span></span>  
- <span data-ttu-id="97632-112">Ces informations sont passées à l’hôte via un appel à la [IActionOnCLREvent::OnEvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) (méthode).</span><span class="sxs-lookup"><span data-stu-id="97632-112">This information is passed to the host through a call to the [IActionOnCLREvent::OnEvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="597cd-111">Notes</span><span class="sxs-lookup"><span data-stu-id="597cd-111">Remarks</span></span>  
+ <span data-ttu-id="597cd-112">Ces informations sont passées à l’hôte via un appel à la [IActionOnCLREvent::OnEvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) (méthode).</span><span class="sxs-lookup"><span data-stu-id="597cd-112">This information is passed to the host through a call to the [IActionOnCLREvent::OnEvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="97632-113">Spécifications</span><span class="sxs-lookup"><span data-stu-id="97632-113">Requirements</span></span>  
- <span data-ttu-id="97632-114">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="97632-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="597cd-113">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="597cd-113">Requirements</span></span>  
+ <span data-ttu-id="597cd-114">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="597cd-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="97632-115">**En-tête :** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="97632-115">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="597cd-115">**En-tête :** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="597cd-115">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="97632-116">**Bibliothèque :** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="97632-116">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="597cd-116">**Bibliothèque :** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="597cd-116">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="97632-117">**Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="97632-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="597cd-117">**Versions du .NET framework :**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="597cd-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="97632-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="97632-118">See Also</span></span>  
- [<span data-ttu-id="97632-119">Énumérations d’hébergement</span><span class="sxs-lookup"><span data-stu-id="97632-119">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="597cd-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="597cd-118">See Also</span></span>  
+ [<span data-ttu-id="597cd-119">Énumérations d’hébergement</span><span class="sxs-lookup"><span data-stu-id="597cd-119">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

@@ -21,16 +21,17 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 7540dfcefbe7a331a26220a07b2e206c1302ddc8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 11d991d9861fa3dc77b6a95a4c8f7665547672eb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isymunmanagedwriterdefineglobalvariable-method"></a><span data-ttu-id="2e715-102">ISymUnmanagedWriter::DefineGlobalVariable, méthode</span><span class="sxs-lookup"><span data-stu-id="2e715-102">ISymUnmanagedWriter::DefineGlobalVariable Method</span></span>
-<span data-ttu-id="2e715-103">Définit une variable globale unique.</span><span class="sxs-lookup"><span data-stu-id="2e715-103">Defines a single global variable.</span></span>  
+# <a name="isymunmanagedwriterdefineglobalvariable-method"></a><span data-ttu-id="18220-102">ISymUnmanagedWriter::DefineGlobalVariable, méthode</span><span class="sxs-lookup"><span data-stu-id="18220-102">ISymUnmanagedWriter::DefineGlobalVariable Method</span></span>
+<span data-ttu-id="18220-103">Définit une variable globale unique.</span><span class="sxs-lookup"><span data-stu-id="18220-103">Defines a single global variable.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2e715-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2e715-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="18220-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="18220-104">Syntax</span></span>  
   
 ```  
 HRESULT DefineGlobalVariable(  
@@ -44,38 +45,38 @@ HRESULT DefineGlobalVariable(
     [in] ULONG32      addr3);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="2e715-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="2e715-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="18220-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="18220-105">Parameters</span></span>  
  `name`  
- <span data-ttu-id="2e715-106">[in] Un pointeur vers un `WCHAR` qui définit le nom de la variable global.</span><span class="sxs-lookup"><span data-stu-id="2e715-106">[in] A pointer to a `WCHAR` that defines the global variable name.</span></span>  
+ <span data-ttu-id="18220-106">[in] Un pointeur vers un `WCHAR` qui définit le nom de la variable global.</span><span class="sxs-lookup"><span data-stu-id="18220-106">[in] A pointer to a `WCHAR` that defines the global variable name.</span></span>  
   
  `attributes`  
- <span data-ttu-id="2e715-107">[in] Attributs de la variable globales.</span><span class="sxs-lookup"><span data-stu-id="2e715-107">[in] The global variable attributes.</span></span>  
+ <span data-ttu-id="18220-107">[in] Attributs de la variable globales.</span><span class="sxs-lookup"><span data-stu-id="18220-107">[in] The global variable attributes.</span></span>  
   
  `cSig`  
- <span data-ttu-id="2e715-108">[in] A `ULONG32` qui indique la taille, en caractères, de la `signature` mémoire tampon.</span><span class="sxs-lookup"><span data-stu-id="2e715-108">[in] A `ULONG32` that indicates the size, in characters, of the `signature` buffer.</span></span>  
+ <span data-ttu-id="18220-108">[in] A `ULONG32` qui indique la taille, en caractères, de la `signature` mémoire tampon.</span><span class="sxs-lookup"><span data-stu-id="18220-108">[in] A `ULONG32` that indicates the size, in characters, of the `signature` buffer.</span></span>  
   
  `signature`  
- <span data-ttu-id="2e715-109">[in] La signature de variable globale.</span><span class="sxs-lookup"><span data-stu-id="2e715-109">[in] The global variable signature.</span></span>  
+ <span data-ttu-id="18220-109">[in] La signature de variable globale.</span><span class="sxs-lookup"><span data-stu-id="18220-109">[in] The global variable signature.</span></span>  
   
  `addrKind`  
- <span data-ttu-id="2e715-110">[in] Le type d’adresse.</span><span class="sxs-lookup"><span data-stu-id="2e715-110">[in] The address type.</span></span>  
+ <span data-ttu-id="18220-110">[in] Le type d’adresse.</span><span class="sxs-lookup"><span data-stu-id="18220-110">[in] The address type.</span></span>  
   
  `addr1`  
- <span data-ttu-id="2e715-111">[in] La première adresse de la spécification du paramètre.</span><span class="sxs-lookup"><span data-stu-id="2e715-111">[in] The first address for the parameter specification.</span></span>  
+ <span data-ttu-id="18220-111">[in] La première adresse de la spécification du paramètre.</span><span class="sxs-lookup"><span data-stu-id="18220-111">[in] The first address for the parameter specification.</span></span>  
   
  `addr2`  
- <span data-ttu-id="2e715-112">[in] La deuxième adresse de la spécification du paramètre.</span><span class="sxs-lookup"><span data-stu-id="2e715-112">[in] The second address for the parameter specification.</span></span>  
+ <span data-ttu-id="18220-112">[in] La deuxième adresse de la spécification du paramètre.</span><span class="sxs-lookup"><span data-stu-id="18220-112">[in] The second address for the parameter specification.</span></span>  
   
  `addr3`  
- <span data-ttu-id="2e715-113">[in] Troisième adresse de la spécification du paramètre.</span><span class="sxs-lookup"><span data-stu-id="2e715-113">[in] The third address for the parameter specification.</span></span>  
+ <span data-ttu-id="18220-113">[in] Troisième adresse de la spécification du paramètre.</span><span class="sxs-lookup"><span data-stu-id="18220-113">[in] The third address for the parameter specification.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="2e715-114">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="2e715-114">Return Value</span></span>  
- <span data-ttu-id="2e715-115">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="2e715-115">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="18220-114">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="18220-114">Return Value</span></span>  
+ <span data-ttu-id="18220-115">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="18220-115">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2e715-116">Spécifications</span><span class="sxs-lookup"><span data-stu-id="2e715-116">Requirements</span></span>  
- <span data-ttu-id="2e715-117">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="2e715-117">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="18220-116">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="18220-116">Requirements</span></span>  
+ <span data-ttu-id="18220-117">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="18220-117">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2e715-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2e715-118">See Also</span></span>  
- [<span data-ttu-id="2e715-119">ISymUnmanagedWriter (Interface)</span><span class="sxs-lookup"><span data-stu-id="2e715-119">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)  
- [<span data-ttu-id="2e715-120">DefineLocalVariable (méthode)</span><span class="sxs-lookup"><span data-stu-id="2e715-120">DefineLocalVariable Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-definelocalvariable-method.md)  
- [<span data-ttu-id="2e715-121">DefineGlobalVariable2 (méthode)</span><span class="sxs-lookup"><span data-stu-id="2e715-121">DefineGlobalVariable2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-defineglobalvariable2-method.md)
+## <a name="see-also"></a><span data-ttu-id="18220-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="18220-118">See Also</span></span>  
+ [<span data-ttu-id="18220-119">ISymUnmanagedWriter, interface</span><span class="sxs-lookup"><span data-stu-id="18220-119">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)  
+ [<span data-ttu-id="18220-120">DefineLocalVariable, méthode</span><span class="sxs-lookup"><span data-stu-id="18220-120">DefineLocalVariable Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-definelocalvariable-method.md)  
+ [<span data-ttu-id="18220-121">DefineGlobalVariable2, méthode</span><span class="sxs-lookup"><span data-stu-id="18220-121">DefineGlobalVariable2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-defineglobalvariable2-method.md)

@@ -21,16 +21,17 @@ caps.latest.revision: "14"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c7366df7d2213740f640590364b1cb4d28876115
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 0c90a63f075c392ca3ff02a47190f9c4dfe6aad5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="icorprofilerinfogetfunctionfromtoken-method"></a><span data-ttu-id="17f54-102">ICorProfilerInfo::GetFunctionFromToken, méthode</span><span class="sxs-lookup"><span data-stu-id="17f54-102">ICorProfilerInfo::GetFunctionFromToken Method</span></span>
-<span data-ttu-id="17f54-103">Obtient l’ID d’une fonction.</span><span class="sxs-lookup"><span data-stu-id="17f54-103">Gets the ID of a function.</span></span> <span data-ttu-id="17f54-104">Cette méthode est obsolète dans le .NET Framework version 2.0.</span><span class="sxs-lookup"><span data-stu-id="17f54-104">This method is obsolete in the .NET Framework version 2.0.</span></span> <span data-ttu-id="17f54-105">Utilisez le [ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctionfromtokenandtypeargs-method.md) méthode à la place.</span><span class="sxs-lookup"><span data-stu-id="17f54-105">Use the [ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctionfromtokenandtypeargs-method.md) method instead.</span></span>  
+# <a name="icorprofilerinfogetfunctionfromtoken-method"></a><span data-ttu-id="9ee80-102">ICorProfilerInfo::GetFunctionFromToken, méthode</span><span class="sxs-lookup"><span data-stu-id="9ee80-102">ICorProfilerInfo::GetFunctionFromToken Method</span></span>
+<span data-ttu-id="9ee80-103">Obtient l’ID d’une fonction.</span><span class="sxs-lookup"><span data-stu-id="9ee80-103">Gets the ID of a function.</span></span> <span data-ttu-id="9ee80-104">Cette méthode est obsolète dans le .NET Framework version 2.0.</span><span class="sxs-lookup"><span data-stu-id="9ee80-104">This method is obsolete in the .NET Framework version 2.0.</span></span> <span data-ttu-id="9ee80-105">Utilisez le [ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctionfromtokenandtypeargs-method.md) méthode à la place.</span><span class="sxs-lookup"><span data-stu-id="9ee80-105">Use the [ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctionfromtokenandtypeargs-method.md) method instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="17f54-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="17f54-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9ee80-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9ee80-106">Syntax</span></span>  
   
 ```  
 HRESULT GetFunctionFromToken(  
@@ -39,17 +40,17 @@ HRESULT GetFunctionFromToken(
     [out] FunctionID *pFunctionId);  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="17f54-107">Remarques</span><span class="sxs-lookup"><span data-stu-id="17f54-107">Remarks</span></span>  
- <span data-ttu-id="17f54-108">Le `GetFunctionFromToken` méthode ne fonctionnera pas pour les fonctions génériques ou les fonctions dans des types génériques ; il est désormais obsolète.</span><span class="sxs-lookup"><span data-stu-id="17f54-108">The `GetFunctionFromToken` method will not work for generic functions or functions in generic types; it is now obsolete.</span></span> <span data-ttu-id="17f54-109">Utilisez `ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs` pour toutes les fonctions.</span><span class="sxs-lookup"><span data-stu-id="17f54-109">Use `ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs` for all functions.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="9ee80-107">Notes</span><span class="sxs-lookup"><span data-stu-id="9ee80-107">Remarks</span></span>  
+ <span data-ttu-id="9ee80-108">Le `GetFunctionFromToken` méthode ne fonctionnera pas pour les fonctions génériques ou les fonctions dans des types génériques ; il est désormais obsolète.</span><span class="sxs-lookup"><span data-stu-id="9ee80-108">The `GetFunctionFromToken` method will not work for generic functions or functions in generic types; it is now obsolete.</span></span> <span data-ttu-id="9ee80-109">Utilisez `ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs` pour toutes les fonctions.</span><span class="sxs-lookup"><span data-stu-id="9ee80-109">Use `ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs` for all functions.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="17f54-110">Spécifications</span><span class="sxs-lookup"><span data-stu-id="17f54-110">Requirements</span></span>  
- <span data-ttu-id="17f54-111">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="17f54-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9ee80-110">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="9ee80-110">Requirements</span></span>  
+ <span data-ttu-id="9ee80-111">**Plateformes :** consultez [requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9ee80-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="17f54-112">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="17f54-112">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="9ee80-112">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="9ee80-112">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="17f54-113">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="17f54-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="9ee80-113">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="9ee80-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="17f54-114">**Versions du .NET framework :** 1.1, 1.0</span><span class="sxs-lookup"><span data-stu-id="17f54-114">**.NET Framework Versions:** 1.1, 1.0</span></span>  
+ <span data-ttu-id="9ee80-114">**Versions du .NET framework :** 1.1, 1.0</span><span class="sxs-lookup"><span data-stu-id="9ee80-114">**.NET Framework Versions:** 1.1, 1.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="17f54-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="17f54-115">See Also</span></span>  
- [<span data-ttu-id="17f54-116">ICorProfilerInfo (Interface)</span><span class="sxs-lookup"><span data-stu-id="17f54-116">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a><span data-ttu-id="9ee80-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9ee80-115">See Also</span></span>  
+ [<span data-ttu-id="9ee80-116">ICorProfilerInfo, interface</span><span class="sxs-lookup"><span data-stu-id="9ee80-116">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

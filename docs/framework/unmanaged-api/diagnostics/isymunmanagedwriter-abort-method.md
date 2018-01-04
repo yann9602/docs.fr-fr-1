@@ -21,26 +21,27 @@ caps.latest.revision: "8"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 29dd11972e8db80f36820bba1eb679070d02146e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 8013bf2118a73a8b5eb8a5b160f2655a83382efc
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="isymunmanagedwriterabort-method"></a><span data-ttu-id="08012-102">ISymUnmanagedWriter::Abort, méthode</span><span class="sxs-lookup"><span data-stu-id="08012-102">ISymUnmanagedWriter::Abort Method</span></span>
-<span data-ttu-id="08012-103">Ferme le writer de symbole sans valider les symboles dans le magasin de symboles.</span><span class="sxs-lookup"><span data-stu-id="08012-103">Closes the symbol writer without committing the symbols to the symbol store.</span></span> <span data-ttu-id="08012-104">Après cet appel, le writer de symbole devient non valide pour les autres mises à jour.</span><span class="sxs-lookup"><span data-stu-id="08012-104">After this call, the symbol writer becomes invalid for further updates.</span></span> <span data-ttu-id="08012-105">Pour valider les symboles et fermer le writer de symbole, utilisez le [ISymUnmanagedWriter::Close](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-close-method.md) méthode à la place.</span><span class="sxs-lookup"><span data-stu-id="08012-105">To commit the symbols and close the symbol writer, use the [ISymUnmanagedWriter::Close](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-close-method.md) method instead.</span></span>  
+# <a name="isymunmanagedwriterabort-method"></a><span data-ttu-id="9c4c3-102">ISymUnmanagedWriter::Abort, méthode</span><span class="sxs-lookup"><span data-stu-id="9c4c3-102">ISymUnmanagedWriter::Abort Method</span></span>
+<span data-ttu-id="9c4c3-103">Ferme le writer de symbole sans valider les symboles dans le magasin de symboles.</span><span class="sxs-lookup"><span data-stu-id="9c4c3-103">Closes the symbol writer without committing the symbols to the symbol store.</span></span> <span data-ttu-id="9c4c3-104">Après cet appel, le writer de symbole devient non valide pour les autres mises à jour.</span><span class="sxs-lookup"><span data-stu-id="9c4c3-104">After this call, the symbol writer becomes invalid for further updates.</span></span> <span data-ttu-id="9c4c3-105">Pour valider les symboles et fermer le writer de symbole, utilisez le [ISymUnmanagedWriter::Close](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-close-method.md) méthode à la place.</span><span class="sxs-lookup"><span data-stu-id="9c4c3-105">To commit the symbols and close the symbol writer, use the [ISymUnmanagedWriter::Close](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-close-method.md) method instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="08012-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="08012-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9c4c3-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9c4c3-106">Syntax</span></span>  
   
 ```  
 HRESULT Abort();  
 ```  
   
-## <a name="return-value"></a><span data-ttu-id="08012-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="08012-107">Return Value</span></span>  
- <span data-ttu-id="08012-108">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="08012-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="9c4c3-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="9c4c3-107">Return Value</span></span>  
+ <span data-ttu-id="9c4c3-108">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="9c4c3-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="08012-109">Spécifications</span><span class="sxs-lookup"><span data-stu-id="08012-109">Requirements</span></span>  
- <span data-ttu-id="08012-110">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="08012-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9c4c3-109">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="9c4c3-109">Requirements</span></span>  
+ <span data-ttu-id="9c4c3-110">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="9c4c3-110">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="08012-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="08012-111">See Also</span></span>  
- [<span data-ttu-id="08012-112">ISymUnmanagedWriter (Interface)</span><span class="sxs-lookup"><span data-stu-id="08012-112">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+## <a name="see-also"></a><span data-ttu-id="9c4c3-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9c4c3-111">See Also</span></span>  
+ [<span data-ttu-id="9c4c3-112">ISymUnmanagedWriter, interface</span><span class="sxs-lookup"><span data-stu-id="9c4c3-112">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
