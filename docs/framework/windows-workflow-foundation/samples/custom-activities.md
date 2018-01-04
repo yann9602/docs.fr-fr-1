@@ -12,17 +12,18 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: acd8d5925e1aea82f53d222daf9ccc8063ae7841
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 24655f8e230cf2286dc451ab8a26f1a4ccf445a8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-activities"></a>Activités personnalisées
 Cette section contient des exemples qui illustrent la création d'activités personnalisées dans [!INCLUDE[wf](../../../../includes/wf-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Pulvérisés de code](../../../../docs/framework/windows-workflow-foundation/samples/code-bodied.md)  
+ [Code-Bodied](../../../../docs/framework/windows-workflow-foundation/samples/code-bodied.md)  
  Contient des exemples d'activités personnalisées créées de façon déclarative dans le code.  
   
  [Composite](../../../../docs/framework/windows-workflow-foundation/samples/composite.md)  

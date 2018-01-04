@@ -13,14 +13,15 @@ caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fb45a08e9f21578b69dedbe504cfb8bbd21193bb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0bdd1874004af1ebbde69c622853d5fdcd982005
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="pooling"></a>Pooling
-Cet exemple montre comment étendre [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] afin de prendre en charge le mise en pool d’objet. L'exemple montre comment créer un attribut syntaxiquement et sémantiquement similaire aux fonctionnalités de l'attribut `ObjectPoolingAttribute` de Enterprise Services. Le mise en pool d’objets permet une amélioration significative de la performance d'une application. Toutefois, il peut avoir l'effet inverse s'il n'est pas utilisé de manière appropriée. Le mise en pool d’objets évite d'avoir à recréer les objets fréquemment utilisés qui requièrent une initialisation complète. Toutefois, si un appel à une méthode sur un objet du pool met beaucoup de temps à s'exécuter, le mise en pool d’objets met les demandes supplémentaires en file d'attente dès que la taille de pool maximale est atteinte. Il peut donc ne pas traiter certaines demandes de création d'objet en levant une exception de délai d'attente.  
+Cet exemple montre comment étendre [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] afin de prendre en charge le mise en pool d’objet. L'exemple montre comment créer un attribut syntaxiquement et sémantiquement similaire aux fonctionnalités de l'attribut `ObjectPoolingAttribute` de Enterprise Services. Le mise en pool d’objets permet une amélioration significative de la performance d'une application. Toutefois, il peut avoir l’effet inverse s’il n’est pas utilisé de manière appropriée. Le mise en pool d’objets évite d'avoir à recréer les objets fréquemment utilisés qui requièrent une initialisation complète. Toutefois, si un appel à une méthode sur un objet du pool met beaucoup de temps à s'exécuter, le mise en pool d’objets met les demandes supplémentaires en file d'attente dès que la taille de pool maximale est atteinte. Il peut donc ne pas traiter certaines demandes de création d'objet en levant une exception de délai d'attente.  
   
 > [!NOTE]
 >  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
@@ -93,7 +94,7 @@ void IInstanceProvider.ReleaseInstance(InstanceContext instanceContext, object i
  Le `ReleaseInstance` méthode fournit une fonctionnalité « initialisation du nettoyage ». Normalement, le pool gère un nombre minimal d'objets pendant sa durée de vie. Toutefois, il peut y avoir des périodes d'utilisation excessive qui requièrent la création d'objets supplémentaires dans le pool afin d'atteindre la limite maximale spécifiée dans la configuration. Par la suite, lorsque le pool devient moins actif, ces objets en surplus peuvent devenir une surcharge supplémentaire. Par conséquent, lorsque `activeObjectsCount` atteint zéro, une minuterie d'inactivité est démarrée, puis déclenche et effectue un cycle de nettoyage.  
   
 ## <a name="adding-the-behavior"></a>Ajout du comportement  
- Les extensions de couche de répartiteur sont raccordées à l'aide des comportements suivants :  
+ Les extensions de couche de répartiteur sont raccordées à l’aide des comportements suivants :  
   
 -   Comportements de service : permettent de personnaliser l'ensemble de l'exécution du service.  
   
@@ -101,11 +102,11 @@ void IInstanceProvider.ReleaseInstance(InstanceContext instanceContext, object i
   
 -   Comportements de contrat : permettent de personnaliser les classes <xref:System.ServiceModel.Dispatcher.ClientRuntime> et <xref:System.ServiceModel.Dispatcher.DispatchRuntime> sur le client et le service, respectivement.  
   
- Dans le cadre d'une extension de mise en pool d’objets, vous devez créer un comportement de service. Pour ce faire, implémentez l'interface <xref:System.ServiceModel.Description.IServiceBehavior>. Il existe plusieurs méthodes pour que le modèle de service tienne compte des comportements personnalisés :  
+ Dans le cadre d’une extension de mise en pool d’objets, vous devez créer un comportement de service. Pour ce faire, implémentez l'interface <xref:System.ServiceModel.Description.IServiceBehavior>. Il existe plusieurs méthodes pour que le modèle de service tienne compte des comportements personnalisés :  
   
 -   Utilisation d'un attribut personnalisé.  
   
--   L'ajouter de façon impérative à la collection de comportements de la description de service.  
+-   L’ajouter de façon impérative à la collection de comportements de la description de service.  
   
 -   Extension du fichier de configuration  
   
@@ -113,7 +114,7 @@ void IInstanceProvider.ReleaseInstance(InstanceContext instanceContext, object i
   
  L'interface <xref:System.ServiceModel.Description.IServiceBehavior> a trois méthode : <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A>, <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> et <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>. La méthode <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> permet de s'assurer que le comportement peut être appliqué au service. Dans cet exemple, l'implémentation garantit que le service n'est pas configuré avec <xref:System.ServiceModel.InstanceContextMode.Single>. La méthode <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> permet de configurer les liaisons du service. Elle n'est pas requise dans ce scénario. <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> permet de configurer les répartiteurs du service. Cette méthode est appelée par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lors de l'initialisation de <xref:System.ServiceModel.ServiceHost>. Les paramètres suivants sont passés dans cette méthode :  
   
--   `Description` : cet argument fournit la description de service pour l'ensemble du service. Il permet d'inspecter les données de description sur les points de terminaison, les contrats, les liaisons et autres données du service.  
+-   `Description` : cet argument fournit la description de service pour l'ensemble du service. Il permet d’inspecter les données de description sur les points de terminaison, les contrats, les liaisons et autres données du service.  
   
 -   `ServiceHostBase`  cet argument fournit le <xref:System.ServiceModel.ServiceHostBase> actuellement initialisé.  
   

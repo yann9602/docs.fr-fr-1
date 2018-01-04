@@ -16,11 +16,12 @@ caps.latest.revision: "32"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 842ce0efefcc026ad33d9be3b2b681fcfc9c0b59
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1e67c5da534e7b35d4d27c0164d9389c8afe252b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="distributed-application-security"></a>Sécurité des applications distribuées
 La sécurité [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est divisée en trois domaines fonctionnels principaux : la sécurité de transfert, le contrôle d'accès et l'audit. La sécurité de transfert fournit l'intégrité, la confidentialité et l'authentification. La sécurité de transfert est fournie par l'un des éléments suivants : sécurité de transport, sécurité de message ou `TransportWithMessageCredential`.  
@@ -30,11 +31,11 @@ La sécurité [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est divis�
 ## <a name="transfer-security-scenarios"></a>Scénarios de sécurité de transfert  
  Les scénarios courants qui utilisent la sécurité de transfert [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont les suivants :  
   
--   Transfert sécurisé à l'aide de Windows. Un service et un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont déployés dans un domaine Windows (ou forêt Windows). Les messages contenant des données personnelles, les spécifications incluent donc l'authentification mutuelle du client et du service, l'intégrité et la confidentialité des messages. En outre, la preuve est requise qu'une transaction spécifique s'est produite ; à titre d'exemple, le récepteur du message doit enregistrer les informations de signature.  
+-   Transfert sécurisé à l'aide de Windows. Un service et un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont déployés dans un domaine Windows (ou forêt Windows). Les messages contenant des données personnelles, les spécifications incluent donc l'authentification mutuelle du client et du service, l'intégrité et la confidentialité des messages. En outre, la preuve est requise qu’une transaction spécifique s’est produite ; à titre d’exemple, le récepteur du message doit enregistrer les informations de signature.  
   
 -   Transfert sécurisé à l'aide de `UserName` et HTTPS. Un service et un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] doivent être développés pour fonctionner sur Internet. Les informations d'identification du client permettent d'effectuer l'authentification par rapport à une base de données de paires nom d'utilisateur/mot de passe. Le service est déployé à une adresse HTTPS à l'aide d'un certificat SSL (Secure Sockets Layer) approuvé. Les messages transitant sur Internet, le client et le service doivent donc être mutuellement authentifiés, et la confidentialité et l'intégrité des messages doivent être conservées pendant le transfert.  
   
--   Transfert sécurisé à l'aide de certificats. Un service et un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] doivent être développés pour fonctionner sur Internet. Le client et le service ont tous deux des certificats qui permettent de sécuriser les messages. Le client et le service utilisent Internet pour communiquer l'un avec l'autre et exécuter des transactions à forte valeur qui requièrent l'intégrité des messages, la confidentialité et l'authentification mutuelle.  
+-   Transfert sécurisé à l'aide de certificats. Un service et un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] doivent être développés pour fonctionner sur Internet. Le client et le service ont tous deux des certificats qui permettent de sécuriser les messages. Le client et le service utilisent Internet pour communiquer l’un avec l’autre et exécuter des transactions à forte valeur qui requièrent l’intégrité des messages, la confidentialité et l’authentification mutuelle.  
   
 ## <a name="integrity-confidentiality-and-authentication"></a>Intégrité, confidentialité et authentification  
  Ces trois fonctions (intégrité, confidentialité et authentification) forment ensemble la « sécurité de transfert ». La sécurité de transfert fournit les fonctions permettant de limiter les menaces auxquelles est exposée une application distribuée. Le tableau suivant décrit brièvement les trois fonctions qui composent la sécurité de transfert.  
@@ -50,7 +51,7 @@ La sécurité [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est divis�
   
 |Mode|Description|  
 |----------|-----------------|  
-|None|Aucune sécurité n'est fournie au niveau de la couche de transport ou de la couche de message. Aucun des liaisons prédéfinies utilisent ce mode par défaut, sauf le [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) élément ou, lors de l’utilisation de code, la <xref:System.ServiceModel.BasicHttpBinding> classe.|  
+|Aucun.|Aucune sécurité n'est fournie au niveau de la couche de transport ou de la couche de message. Aucun des liaisons prédéfinies utilisent ce mode par défaut, sauf le [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) élément ou, lors de l’utilisation de code, la <xref:System.ServiceModel.BasicHttpBinding> classe.|  
 |Transport|Utilise un transport sécurisé tel que HTTPS pour l'intégrité, la confidentialité et l'authentification mutuelle.|  
 |Message|Utilise la sécurité de message SOAP pour l'intégrité, la confidentialité et l'authentification mutuelle. Les messages SOAP sont sécurisés conformément aux standards WS-Security.|  
 |Mixed Mode|Utilise la sécurité de transport pour l'intégrité, la confidentialité et l'authentification du serveur. Utilise la sécurité de message (WS-Security et autres standards) pour l'authentification du client.<br /><br /> (Cette énumération pour ce mode est `TransportWithMessageCredential`.)|  
@@ -86,9 +87,9 @@ La sécurité [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est divis�
   
 |Paramètre|Description|  
 |-------------|-----------------|  
-|None|Autorise le service à interagir avec des clients anonymes.|  
+|Aucun.|Autorise le service à interagir avec des clients anonymes.|  
 |Windows|Autorise les échanges de messages SOAP à se produire sous le contexte authentifié d'une information d'identification Windows. Utilise le mécanisme de négociation SSPI pour sélectionner le protocole Kerberos ou NTLM comme service d'authentification.|  
-|Nom d'utilisateur|Autorise le service à exiger que le client soit authentifié avec des informations d'identification de nom d'utilisateur. Notez que [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] n'autorise pas d'opération de chiffrement avec le nom d'utilisateur, telle que la génération d'une signature ou le chiffrement de données. De ce fait, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] s'assure que le transport est sécurisé lors de l'utilisation d'informations d'identification de nom d'utilisateur.|  
+|Utilisateur|Autorise le service à exiger que le client soit authentifié avec des informations d'identification de nom d'utilisateur. Notez que [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] n'autorise pas d'opération de chiffrement avec le nom d'utilisateur, telle que la génération d'une signature ou le chiffrement de données. De ce fait, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] s'assure que le transport est sécurisé lors de l'utilisation d'informations d'identification de nom d'utilisateur.|  
 |Certificat|Autorise le service à exiger une authentification du client via un certificat.|  
 |[!INCLUDE[infocard](../../../../includes/infocard-md.md)]|Autorise le service à imposer que le client soit authentifié à l'aide d'un [!INCLUDE[infocard](../../../../includes/infocard-md.md)].|  
   

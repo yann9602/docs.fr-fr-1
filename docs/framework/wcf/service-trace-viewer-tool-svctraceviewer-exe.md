@@ -13,11 +13,12 @@ caps.latest.revision: "55"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7832060a29ceb2dc58feac9ce2fc97f58caf70f0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9c739db4db5afad8fc379a5da4764cb9ab6804fe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Service Trace Viewer Tool (SvcTraceViewer.exe)
 L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] vous aide à analyser des suivis de diagnostic générés par [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Service Trace Viewer permet de fusionner, d'afficher et de filtrer facilement des messages de suivi dans le journal afin de les diagnostiquer, de les réparer et de vérifier les problèmes des services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
@@ -53,7 +54,7 @@ L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)
 |Niveau de suivi|Description|  
 |-----------------|-----------------|  
 |Critique|-Enregistre les entrées Fail-Fast et le journal des événements et informations de corrélation de trace. Les éléments suivants sont quelques exemples de l'utilisation du  niveau critique :<br />-Votre AppDomain s’est arrêté en raison d’une exception non gérée.<br />-Votre application ne parvient pas à démarrer.<br />-Le message qui a provoqué la panne provient du processus MyApp.exe.|  
-|Erreur|-Enregistre toutes les exceptions. Vous pouvez utiliser le niveau Erreur dans les situations suivantes :<br />-Votre code a échoué en raison d’une Exception de Cast non valide.<br />-Une exception « Impossible de créer le point de terminaison » provoque l’échec au démarrage de votre application.|  
+|Error|-Enregistre toutes les exceptions. Vous pouvez utiliser le niveau Erreur dans les situations suivantes :<br />-Votre code a échoué en raison d’une Exception de Cast non valide.<br />-Une exception « Impossible de créer le point de terminaison » provoque l’échec au démarrage de votre application.|  
 |Warning|-Une condition existe pouvant provoquer par la suite une erreur ou d’une défaillance critique. Vous pouvez utiliser ce niveau dans les situations suivantes :<br />-L’application reçoit davantage de demandes que ses paramètres de limitation autorise.<br />-La file d’attente de réception est à 98 pour cent de sa capacité configurée.|  
 |Information|-Messages utiles pour la surveillance et de diagnostic de l’état du système, de mesurer les performances ou de profilage sont générés. Vous pouvez utiliser ces informations pour la planification de capacité et la gestion des performances. Vous pouvez utiliser ce niveau dans les situations suivantes :<br />-Une erreur s’est produite après que le message ait atteint AppDomain et ait été désérialisé.<br />-Une erreur s’est produite pendant la création de la liaison HTTP.|  
 |Verbose|Débogage-niveau de suivi pour le code utilisateur et de maintenance. Définissez ce niveau lorsque :<br />-Vous ne savez pas quelle méthode dans votre code a été appelée lors de la défaillance s’est produite.<br />-Vous avez un point de terminaison incorrect configuré et le service a échoué Démarrer, car l’entrée dans le magasin de réservation est verrouillée.|  
@@ -79,9 +80,9 @@ L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)
 1.  Démarrez le Service Trace Viewer à l’aide d’une fenêtre de commande pour accéder à votre [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] emplacement d’installation (C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin), puis tapez `SvcTraceViewer.exe`.  
   
 > [!NOTE]
->  L'outil Service Trace Viewer peut être associé à deux types de fichier : .svclog et .stvproj. Vous pouvez utiliser deux paramètres dans la ligne de commande pour inscrire et supprimer l'inscription des extensions de fichier.  
+>  L'outil Service Trace Viewer peut être associé à deux types de fichier : .svclog et .stvproj. Vous pouvez utiliser deux paramètres dans la ligne de commande pour inscrire et supprimer l’inscription des extensions de fichier.  
 >   
->  /register : inscrire l'association des extensions de fichier .svclog et .stvproj avec SvcTraceViewer.exe  
+>  /register : inscrire l’association des extensions de fichier .svclog et .stvproj avec SvcTraceViewer.exe  
 >   
 >  /unregister : supprimer l’inscription de l’association des extensions de fichier .svclog et .stvproj avec SvcTraceViewer.exe  
   
@@ -164,8 +165,8 @@ L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)
   
 3.  Observez les informations de suivi dans le volet Suivi et le volet Détail.  
   
-###### <a name="expanding-or-collapsing-activity-transfers"></a>Développement ou réduction de transferts d'activité  
- Vous pouvez développer les transferts d'activité lors du transfert de l'activité sélectionnée vers une autre activité. Cela vous permet de suivre les transferts.  
+###### <a name="expanding-or-collapsing-activity-transfers"></a>Développement ou réduction de transferts d’activité  
+ Vous pouvez développer les transferts d’activité lors du transfert de l’activité sélectionnée vers une autre activité. Cela vous permet de suivre les transferts.  
   
  Pour développer ou réduire des transferts d’activité  
   
@@ -253,7 +254,7 @@ L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)
  Les paramètres de ce filtre sont définis dans le **Options de filtre** sous-menu sous **vue** menu.  
   
 #### <a name="custom-filters"></a>Filtres personnalisés  
- Si vous connaissez le langage XML XPath, vous pouvez l'utiliser pour créer des filtres personnalisés et rechercher des éléments XML intéressants dans les données de suivi. Vous pouvez accéder aux filtres par la barre d'outils de filtre.  
+ Si vous connaissez le langage XML XPath, vous pouvez l’utiliser pour créer des filtres personnalisés et rechercher des éléments XML intéressants dans les données de suivi. Vous pouvez accéder aux filtres par la barre d'outils de filtre.  
   
  Les filtres personnalisés peuvent inclure des paramètres. Vous pouvez également importer des filtres préexistants personnalisés.  
   
@@ -276,7 +277,7 @@ L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)
 6.  Cliquez sur **Ok** pour créer le filtre.  
   
 > [!NOTE]
->  Une fois qu'un filtre a été créé à l'aide de l'Assistant Modèle, il peut être modifié uniquement manuellement. Il n'est pas possible d'activer l'Assistant pour un filtre qui a été créé précédemment. De plus, les conditions d'un filtre XPath créé dans l'Assistant Modèle sont associées à l'aide de l'opérateur OR. Si vous avez besoin d'une opération AND, vous pouvez modifier l'expression de filtre une fois qu'elle a été créée.  
+>  Une fois qu'un filtre a été créé à l'aide de l'Assistant Modèle, il peut être modifié uniquement manuellement. Il n'est pas possible d'activer l'Assistant pour un filtre qui a été créé précédemment. De plus, les conditions d’un filtre XPath créé dans l’Assistant Modèle sont associées à l’aide de l’opérateur OR. Si vous avez besoin d'une opération AND, vous pouvez modifier l'expression de filtre une fois qu'elle a été créée.  
   
 ###### <a name="creating-a-custom-filter-manually"></a>Création manuelle d'un filtre personnalisé  
  Le menu Filtres personnalisés vous permet d’entrer des filtres XPath manuellement.  
@@ -453,7 +454,7 @@ L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)
 ## <a name="troubleshooting"></a>Résolution des problèmes  
  Si vous n’avez pas l’autorisation d’écrire dans le Registre, vous obtenez le message d’erreur « Le Microsoft Service Trace Viewer n’était pas enregistré dans le système » lorsque vous utilisez le «`svctraceviewer /register`« commande permettant d’enregistrer l’outil. Si cela se produit, vous devez vous connecter en utilisant un compte qui possède un accès en écriture au registre.  
   
- De plus, l'outil Service Trace Viewer écrit certains paramètres (par exemple, filtres personnalisés et options du filtre) dans le fichier SvcTraceViewer.exe., dans son dossier assembly. Si vous ne disposez pas d'une autorisation de lecture pour le fichier, vous pouvez malgré tout lancer l'outil, mais vous ne pouvez pas charger les paramètres.  
+ De plus, l’outil Service Trace Viewer écrit certains paramètres (par exemple, filtres personnalisés et options du filtre) dans le fichier SvcTraceViewer.exe., dans son dossier assembly. Si vous ne disposez pas d'une autorisation de lecture pour le fichier, vous pouvez malgré tout lancer l'outil, mais vous ne pouvez pas charger les paramètres.  
   
  Si le message d'erreur « Une erreur inconnue s'est produite lors du traitement d'un ou de plusieurs suivis. » lors de l'ouverture du fichier .etl, cela signifie que le format du fichier .etl n'est pas valide.  
   
@@ -461,5 +462,5 @@ L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)
   
 ## <a name="see-also"></a>Voir aussi  
  [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
- [Configuration du traçage](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
+ [Configuration du suivi](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
  [Le suivi des activités et Propagation pour la corrélation de suivi de bout en bout](http://msdn.microsoft.com/en-us/2c11a905-64f8-47b5-bae5-a74fc666137e)

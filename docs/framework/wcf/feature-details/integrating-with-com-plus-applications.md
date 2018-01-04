@@ -20,30 +20,31 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 02e0fbf7c8b6ddfe0d722575042b4cbc82ba9bb3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1a29b28608c9ca16dd5a2023bd3d9e135618d753
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="integrating-with-com-applications"></a>Intégration à des applications COM+
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournit un environnement riche permettant de créer des applications distribuées. Si vous avez beaucoup investi dans la logique d'application basée sur des composants hébergée dans COM+, vous pouvez utiliser [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour étendre votre logique existante plutôt qu'avoir à la réécrire. Les rubriques de cette section décrivent comment utiliser COM+ avec [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Intégration de la vue d’ensemble des Applications COM +](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)  
+ [Vue d’ensemble de l’intégration à des applications COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)  
  Fournit une vue d'ensemble de quand et comment intégrer des composants COM+.  
   
- [Comment : utiliser l’outil de Configuration de modèle de Service COM +](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)  
+ [Guide pratique pour utiliser l’outil de configuration de modèle de service COM+](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)  
  Explique comment utiliser l'outil de ligne de commande de configuration de modèle de service COM+ (ComSvcConfig.exe) pour configurer les interfaces d'application que vous souhaitez exposer comme services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Comment : configurer les paramètres de Service COM +](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)  
+ [Guide pratique pour configurer des paramètres de service COM+](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)  
  Explique comment configurer un objet COM+ en tant que service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Comment : déployer une Application d’intégration COM +](../../../../docs/framework/wcf/feature-details/how-to-deploy-a-com-integration-application.md)  
+ [Guide pratique pour déployer une application d’intégration COM+](../../../../docs/framework/wcf/feature-details/how-to-deploy-a-com-integration-application.md)  
  Explique comment déplacer une application d'intégration COM+.  
   
 ## <a name="reference"></a>Référence  
  <xref:System.ServiceModel>  
   
 ## <a name="see-also"></a>Voir aussi  
- [Intégration à des Applications COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md)
+ [Intégration à des applications COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md)

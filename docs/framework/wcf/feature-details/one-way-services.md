@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 12913a9afc0003b041b260379a55e469273c5910
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0d023d3623777a93cf72715410aed87fe8a63ee5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="one-way-services"></a>Services monodirectionnels
 Le comportement par défaut d’une opération de service est le modèle demande-réponse. Dans un modèle demande-réponse, le client attend le message de réponse, même si l'opération de service est représentée dans le code en tant que méthode `void`. Avec une opération monodirectionnelle, un seul message est transmis. Le récepteur n'envoie pas de message de réponse, l'expéditeur n'en attend pas.  
@@ -54,7 +55,7 @@ public interface IOneWayCalculator
  Pour obtenir un exemple complet, consultez la [unidirectionnel](../../../../docs/framework/wcf/samples/one-way.md) exemple.  
   
 ## <a name="clients-blocking-with-one-way-operations"></a>Blocage de clients à l'aide d'opérations monodirectionnelles  
- Il est important de se rendre compte qu'alors que certaines applications monodirectionnelles sont retournées dès que les données sortantes sont écrites dans la connexion réseau, l'implémentation d'une liaison ou d'un service peut, dans plusieurs scénarios, provoquer le blocage d'un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à l'aide d'opérations monodirectionnelles. Dans les applications clientes [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], l'objet client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ne retourne pas tant que les données sortantes ne sont pas écrites dans la connexion réseau. Cela se vérifie pour l'ensemble des modèles d'échange de messages, dont les opérations monodirectionnelles ; cela signifie que les problèmes d'écriture de données sur le transport empêchent le client de retourner. Selon le problème, le résultat peut être une exception ou un retard d'envoi des messages au service.  
+ Il est important de se rendre compte qu'alors que certaines applications monodirectionnelles sont retournées dès que les données sortantes sont écrites dans la connexion réseau, l'implémentation d'une liaison ou d'un service peut, dans plusieurs scénarios, provoquer le blocage d'un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à l'aide d'opérations monodirectionnelles. Dans les applications clientes [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], l'objet client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ne retourne pas tant que les données sortantes ne sont pas écrites dans la connexion réseau. Cela se vérifie pour l’ensemble des modèles d’échange de messages, dont les opérations monodirectionnelles ; cela signifie que les problèmes d’écriture de données sur le transport empêchent le client de retourner. Selon le problème, le résultat peut être une exception ou un retard d'envoi des messages au service.  
   
  Par exemple, si le transport ne peut pas trouver le point de terminaison, une exception <xref:System.ServiceModel.EndpointNotFoundException?displayProperty=nameWithType> est levée sans beaucoup de retard. Toutefois, il est également possible que le service ne puisse pas lire les données du câble pour une raison quelconque, ce qui empêche l'opération d'envoi du transport client de retourner. Dans ce cas, si le délai <xref:System.ServiceModel.Channels.Binding.SendTimeout%2A?displayProperty=nameWithType> sur la liaison de transport client est dépassé, une exception <xref:System.TimeoutException?displayProperty=nameWithType> est levée, mais pas tant que le délai d'attente n'a pas été dépassé. Il est également possible qu'il y ait un nombre si élevé de messages sur un service que celui-ci ne puisse pas les traiter passé un certain stade. Dans ce cas également, le client monodirectionnel se bloque jusqu'à ce que le service puisse traiter les messages ou jusqu'à ce qu'une exception soit levée.  
   

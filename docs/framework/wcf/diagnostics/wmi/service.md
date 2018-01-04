@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 027366e7bf7abd285ef65da2040514b4b9908213
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f7b631ede7bd011a92003dc5f6083c1c427d990e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service"></a>Service
 Service  
@@ -55,7 +56,7 @@ class Service
   
  Les adresses de base utilisées par le service.  
   
-### <a name="behaviors"></a>Comportements  
+### <a name="behaviors"></a>comportements  
  Type de données : tableau de comportements  
   
  Type d'accès : lecture seule  
@@ -88,7 +89,7 @@ class Service
   
  Type d'accès : lecture seule  
   
- Les contextes d'instance pour les extensions de l'instance de service.  
+ Les contextes d’instance pour les extensions de l’instance de service.  
   
 ### <a name="metadata"></a>Métadonnées  
  Type de données : tableau de chaînes  
@@ -97,7 +98,7 @@ class Service
   
  Les paramètres de métadonnées du service.  
   
-### <a name="name"></a>Nom  
+### <a name="name"></a>Name  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
@@ -132,7 +133,7 @@ class Service
   
  L'ID de processus du processus qui héberge le service.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

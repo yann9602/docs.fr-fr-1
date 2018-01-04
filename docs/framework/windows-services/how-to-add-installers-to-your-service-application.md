@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: ghogen
 ms.author: ghogen
 manager: douge
-ms.openlocfilehash: 8137e41f92335849916dfc9e9ce72afeb186e73c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0dcb666f317ab285ae0156d2df16947f71665aee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-installers-to-your-service-application"></a>Comment : ajouter des programmes d'installation à votre application de service
 Visual Studio est fourni à des composants qui peuvent installer des ressources associées à vos applications de service. Composants d’installation inscrivent chaque service dans le système auquel il est en cours d’installation et informe le Gestionnaire de contrôle des Services de l’existence du service. Lorsque vous travaillez avec une application de service, vous pouvez sélectionner un lien dans la fenêtre Propriétés pour ajouter automatiquement les programmes d’installation appropriées à votre projet.  
@@ -54,7 +55,7 @@ Visual Studio est fourni à des composants qui peuvent installer des ressources 
   
 5.  Pour déterminer le mode de démarrage de votre service, cliquez sur le <xref:System.ServiceProcess.ServiceInstaller> composant et définissez le <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> propriété la valeur appropriée.  
   
-    |Valeur|Résultat|  
+    |Value|Résultat|  
     |-----------|------------|  
     |<xref:System.ServiceProcess.ServiceStartMode.Manual>|Le service doit être démarré manuellement après l’installation. Pour plus d’informations, consultez [Comment : démarrer des Services](../../../docs/framework/windows-services/how-to-start-services.md).|  
     |<xref:System.ServiceProcess.ServiceStartMode.Automatic>|Le service démarre par lui-même chaque fois que l’ordinateur redémarre.|  
@@ -70,7 +71,7 @@ Visual Studio est fourni à des composants qui peuvent installer des ressources 
     >  Pour chaque service supplémentaire de votre projet, vous devez ajouter un <xref:System.ServiceProcess.ServiceInstaller> composant du projet `ProjectInstaller` classe. Le <xref:System.ServiceProcess.ServiceProcessInstaller> composant ajouté à l’étape 3 fonctionne avec tous les programmes d’installation de service individuels dans le projet.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Introduction aux Applications de Service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [Comment : installer et désinstaller des Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
- [Comment : démarrer des Services](../../../docs/framework/windows-services/how-to-start-services.md)  
- [Comment : spécifier le contexte de sécurité pour les Services](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)
+ [Introduction aux applications de service Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
+ [Guide pratique pour installer et désinstaller des services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
+ [Guide pratique pour démarrer des services](../../../docs/framework/windows-services/how-to-start-services.md)  
+ [Guide pratique pour spécifier le contexte de sécurité des services](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)

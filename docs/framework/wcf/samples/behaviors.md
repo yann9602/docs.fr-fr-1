@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bd6d3e24becfe1cf8a30d6006087fe74e9487fbe
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0d4c3a91d69fd7adc863c6e947b72aa9134c376b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="behaviors"></a>comportements
 Cette section contient des exemples qui illustrent des comportements de service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -26,7 +27,7 @@ Cette section contient des exemples qui illustrent des comportements de service 
  [Concurrence](../../../../docs/framework/wcf/samples/concurrency.md)  
  Montre l'utilisation du <xref:System.ServiceModel.ServiceBehaviorAttribute> avec l'énumération <xref:System.ServiceModel.ConcurrencyMode> qui contrôle si une instance de service traite des messages l'un après l'autre ou simultanément.  
   
- [Comportement de Service par défaut](../../../../docs/framework/wcf/samples/default-service-behavior.md)  
+ [Comportement de service par défaut](../../../../docs/framework/wcf/samples/default-service-behavior.md)  
  Montre comment configurer les paramètres de comportement de service.  
   
  [Instanciation](../../../../docs/framework/wcf/samples/instancing.md)  
@@ -35,14 +36,14 @@ Cette section contient des exemples qui illustrent des comportements de service 
  [Comportement de publication des métadonnées](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)  
  Montre comment contrôler les fonctionnalités de publication de métadonnées d’un service.  
   
- [Comportement de Transaction de service](../../../../docs/framework/wcf/samples/service-transaction-behavior.md)  
+ [Comportement de transaction de service](../../../../docs/framework/wcf/samples/service-transaction-behavior.md)  
  Illustre l'utilisation d'une transaction coordonnée par le client et des paramètres de <xref:System.ServiceModel.ServiceBehaviorAttribute> et <xref:System.ServiceModel.OperationBehaviorAttribute> pour contrôler le comportement de transaction du service.  
   
  [Comportement de débogage de service](../../../../docs/framework/wcf/samples/service-debug-behavior.md)  
  Montre comment configurer les paramètres de comportement de débogage de service.  
   
- [La limitation](../../../../docs/framework/wcf/samples/throttling.md)  
+ [Limitation](../../../../docs/framework/wcf/samples/throttling.md)  
  Montre l'utilisation des contrôles de limitation.  
   
- [Sécurité de comportement](../../../../docs/framework/wcf/samples/behavior-security.md)  
+ [Sécurité des comportements](../../../../docs/framework/wcf/samples/behavior-security.md)  
  Montre comment configurer la sécurité de comportement de service.

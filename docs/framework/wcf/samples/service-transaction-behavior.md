@@ -14,11 +14,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4777136c80f7dba368c85fac7d7dd1db9c945c5b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a4c7c9c78b821f7457f193d24bae031d49b301ec
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-transaction-behavior"></a>Service Transaction Behavior
 Cet exemple illustre l’utilisation d’une transaction coordonnée par le client et les paramètres de ServiceBehaviorAttribute et OperationBehaviorAttribute pour contrôler le comportement de la transaction du service. Cet exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice, mais qui est étendu pour conserver un journal des opérations effectuées dans une table de base de données et un avec état en cours d’exécution total pour les opérations de calcul du serveur. Les écritures rendues persistantes dans la table du journal de serveur dépendent du résultat d’une transaction coordonnée par le client : si la transaction cliente ne se complète pas, la transaction de service Web garantit que les mises à jour de la base de données ne sont pas validées.  
@@ -26,7 +27,7 @@ Cet exemple illustre l’utilisation d’une transaction coordonnée par le clie
 > [!NOTE]
 >  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
- Le contrat pour le service définit que toutes les opérations requièrent qu'une transaction soit transmise avec les demandes :  
+ Le contrat pour le service définit que toutes les opérations requièrent qu’une transaction soit transmise avec les demandes :  
   
 ```  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples",  
@@ -200,11 +201,11 @@ Creating new service instance...
   Writing row 4 to database: Dividing 495 by 15  
 ```  
   
- Notez qu'en plus de conserver le total évolutif des calculs, le service signale la création d'instances (une instance pour cet exemple) et enregistre les demandes d'opération dans une base de données. Étant donné que toutes les demandes transmettent la transaction du client, tout échec d'exécution de cette transaction entraîne la restauration de toutes les opérations de la base de données. Cela peut être démontré de plusieurs manières :  
+ Notez qu'en plus de conserver le total évolutif des calculs, le service signale la création d'instances (une instance pour cet exemple) et enregistre les demandes d'opération dans une base de données. Étant donné que toutes les demandes transmettent la transaction du client, tout échec d’exécution de cette transaction entraîne la restauration de toutes les opérations de la base de données. Cela peut être démontré de plusieurs manières :  
   
 -   Supprimez l'appel du client à `tx.Complete` () et répétez la transaction : le client quitte l'étendue de la transaction sans l'exécuter.  
   
--   Supprimez l'appel à l'opération de division du service : cela empêche l'action initiée par l'opération de multiplication de s'effectuer. Par conséquent, la transaction du client échoue également.  
+-   Supprimez l’appel à l’opération de division du service : cela empêche l’action initiée par l’opération de multiplication de s’effectuer. Par conséquent, la transaction du client échoue également.  
   
 -   Levez une exception non gérée n'importe où dans l'étendue de transaction du client : cela empêche également le client d'exécuter sa transaction.  
   
@@ -223,7 +224,7 @@ Creating new service instance...
   
  Si vous exécutez l'exemple sur plusieurs ordinateurs, vous devez configurer le Microsoft Distributed Transaction Coordinator (MSDTC) pour activer le flux de transaction réseau et utiliser l'outil WsatConfig.exe pour activer la gestion réseau des transactions [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
   
-### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample-across-machines"></a>Pour configurer le Microsoft Distributed Transaction Coordinator (MSDTC) de manière à prendre en charge l'exécution de l'exemple sur plusieurs ordinateurs  
+### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample-across-machines"></a>Pour configurer le Microsoft Distributed Transaction Coordinator (MSDTC) de manière à prendre en charge l’exécution de l’exemple sur plusieurs ordinateurs  
   
 1.  Sur l’ordinateur de service, configurez MSDTC pour autoriser des transactions réseau entrantes.  
   

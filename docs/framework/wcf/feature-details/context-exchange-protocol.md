@@ -13,14 +13,15 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0ef5406831e1bfaa9c1c4f959363bc8b26cd3820
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8f19b228eadcf8dabfaba2fc31f4f49f1b4d149b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="context-exchange-protocol"></a>Protocole d'échange de contexte
-Cette section décrit le protocole d'échange de contexte introduit dans la version finale de [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] du [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]. Ce protocole permet au canal client d'accepter un contexte fourni par un service et de l'appliquer à toutes les demandes ultérieures à ce service envoyées sur la même instance de canal client. L'implémentation du protocole d'échange de contexte peut utiliser l'un des deux mécanismes suivants pour propager le contexte entre le serveur et le client : les cookies HTTP ou un en-tête SOAP.  
+Cette section décrit le protocole d’échange de contexte introduit dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] de version. Ce protocole permet au canal client d'accepter un contexte fourni par un service et de l'appliquer à toutes les demandes ultérieures à ce service envoyées sur la même instance de canal client. L'implémentation du protocole d'échange de contexte peut utiliser l'un des deux mécanismes suivants pour propager le contexte entre le serveur et le client : les cookies HTTP ou un en-tête SOAP.  
   
  Le protocole d'échange de contexte est implémenté dans une couche de canal personnalisée. Le canal communique le contexte depuis et vers la couche d'application à l'aide d'une propriété <xref:System.ServiceModel.Channels.ContextMessageProperty>. Pour la transmission entre des points de terminaison, la valeur du contexte est soit sérialisée comme un en-tête SOAP à la couche du canal, soit convertie depuis ou vers des propriétés de message qui représentent une réponse et une demande HTTP. Dans le dernier cas, l'une des couches du canal sous-jacents convertie les propriétés de message de réponse et de demande HTTP vers et depuis des cookies HTTP, respectivement. Le choix du mécanisme utilisé pour échanger le contexte s'effectue à l'aide de la propriété <xref:System.ServiceModel.Channels.ContextExchangeMechanism> sur le <xref:System.ServiceModel.Channels.ContextBindingElement>. Les valeurs valides sont `HttpCookie` ou `SoapHeader`.  
   
@@ -61,7 +62,7 @@ Cette section décrit le protocole d'échange de contexte introduit dans la vers
   
  La valeur du contexte doit être protégée des changements au cours du transit pour les mêmes raisons  que les en-têtes WS-Addressing sont protégés. L'en-tête est utilisé pour déterminer vers où distribuer la demande sur le service. L'en-tête `wsc:Context` est requis par conséquent pour être signé numériquement ou signé et chiffré au niveau du transport ou de SOAP lorsque la liaison offre une fonction de protection des messages. Lorsque les cookies HTTP sont utilisés pour propager le contexte, ils doivent être protégés à l'aide de la sécurité de transport.  
   
- Les points de terminaison de service qui requièrent la prise en charge du protocole de l'échange de contexte peuvent l'indiquer explicitement dans la stratégie publiée. Deux nouvelles assertions de stratégie ont été introduites pour représenter la spécification de la prise en charge du protocole d'échange de contexte par le client au niveau de SOAP ou pour activer la prise en charge des cookies HTTP. La génération de ces assertions dans la stratégie sur le service est contrôlée par la valeur de la propriété <xref:System.ServiceModel.Channels.ContextBindingElement.ContextExchangeMechanism%2A> de la façon suivante :  
+ Les points de terminaison de service qui requièrent la prise en charge du protocole de l'échange de contexte peuvent l'indiquer explicitement dans la stratégie publiée. Deux nouvelles assertions de stratégie ont été introduites pour représenter l’exigence de la prise en charge du protocole d’échange de contexte par le client au niveau de SOAP ou pour activer la prise en charge des cookies HTTP. La génération de ces assertions dans la stratégie sur le service est contrôlée par la valeur de la propriété <xref:System.ServiceModel.Channels.ContextBindingElement.ContextExchangeMechanism%2A> de la façon suivante :  
   
 -   Pour <xref:System.ServiceModel.Channels.ContextExchangeMechanism.ContextSoapHeader>, l'assertion suivante est générée :  
   
@@ -78,4 +79,4 @@ Cette section décrit le protocole d'échange de contexte introduit dans la vers
     ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Guide de l’interopérabilité de protocoles de Services Web](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)
+ [Guide de l’interopérabilité des protocoles de services web](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)

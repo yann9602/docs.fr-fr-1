@@ -13,11 +13,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5886b327f1ea6d2866b9fc76bb29031ee870934e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3e6039567e4fad7fe4c014665dd3ae0c3082a9d0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="supported-deployment-scenarios"></a>Scénarios de déploiement pris en charge
 Le sous-ensemble des fonctionnalités [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] prises en charge pour une utilisation dans des applications d'un niveau de confiance partiel est conçu pour répondre aux spécifications de certains, mais pas tous, scénarios destinés à [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Sur le serveur, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] répond aux spécifications des fournisseurs d'hébergement partagé à l'échelle d'Internet qui exécutent des applications tierces dans le jeu d'autorisations de confiance moyenne [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] définies pour des raisons de sécurité. Sur le client, la prise en charge de la confiance partielle [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est conçue pour répondre aux spécifications des technologies de déploiement telles que le [ClickOnce Deployment](http://go.microsoft.com/fwlink/?LinkId=83712) (Déploiement ClickOnce) ou la technologie d’application du navigateur XAML de [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]qui autorise un déploiement transparent et sécurisé d’applications bureautiques à partir de sites non fiables.  

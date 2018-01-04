@@ -13,14 +13,15 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: edb53e6cd234a059ebd3e7ddff9aaa258ae6027b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8d9b63e4cb056cf72f2e7b4796883f3fc2873a49
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="peer-channel-security"></a>Sécurité de canal homologue
-Le canal homologue active divers types d'applications distribuées qui dépendent de la messagerie entre plusieurs parties. Certains exemples incluent la distribution de contenu Internet, où une source fiable distribue du contenu (tel que des supports ou mises à jour logicielles), un groupe d'amis échange de la musique et des photos, ou une équipe de collègues modifie de manière collaborative un document. Chacun de ces scénarios requiert un modèle de sécurité unique. Le modèle de sécurité du canal homologue est conçu pour gérer ces scénarios et fournit un modèle de sécurité complet adapté aux besoins spécifiques des divers modèles d'identité, d'authentification et d'autorisation.  
+Le canal homologue active divers types d'applications distribuées qui dépendent de la messagerie entre plusieurs parties. Certains exemples incluent la distribution de contenu Internet, où une source fiable distribue du contenu (tel que des supports ou mises à jour logicielles), un groupe d’amis échange de la musique et des photos, ou une équipe de collègues modifie de manière collaborative un document. Chacun de ces scénarios requiert un modèle de sécurité unique. Le modèle de sécurité du canal homologue est conçu pour gérer ces scénarios et fournit un modèle de sécurité complet adapté aux besoins spécifiques des divers modèles d'identité, d'authentification et d'autorisation.  
   
 ## <a name="security-scenarios"></a>Scénarios de sécurité  
  Un scénario de distribution de contenu requiert que chaque destinataire identifie la source du contenu. En raison de la nature distribuée du scénario, il n'est pas toujours possible de savoir et d'avoir confiance dans les intermédiaires qui traitent ou interceptent les messages. Pour atténuer efficacement les risques de falsification des messages par un intermédiaire non fiable, les applications peuvent sécuriser le message au niveau de l'expéditeur afin de détecter facilement les tentatives de falsification. Dans ce cas, selon la confidentialité du contenu, le chiffrement peut s'avérer nécessaire.  
@@ -44,6 +45,6 @@ Le canal homologue active divers types d'applications distribuées qui dépenden
  Le canal homologue ne requiert pas de modèle d'identité spécifique tant que l'application choisit l'un des types de jetons pris en charge. Les applications gèrent entièrement le cycle de vie de ces identités et des décisions d'authentification.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Sécurisation des Applications de canal homologue](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
+ [Sécurisation des applications de canal homologue](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
  [Concepts de canal homologue](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)  
- [Création d’une Application de canal homologue](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+ [Création d’une application de canal homologue](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

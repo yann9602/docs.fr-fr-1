@@ -13,11 +13,12 @@ caps.latest.revision: "43"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3bb2646a500db299f164dce34fb062a509f90047
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 96ae88fd29391bf173da33398dfb41b3a06441ba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="unsupported-scenarios"></a>Scénarios non pris en charge
 Pour diverses raisons, certains modes de sécurité ne sont pas pris en charge par [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Par exemple, [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Édition familiale n'implémentant pas les protocoles d'authentification SSPI ou Kerberos, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ne prend pas en charge, sur ce type de plateforme, l'exécution des services utilisant l'authentification Windows. En revanche, d'autres mécanismes d'authentification, tels que l'association nom d'utilisateur/mot de passe et l'authentification intégrée HTTP/HTTPS, sont pris en charge lorsque [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] s'exécute sous Windows XP Édition familiale.  
@@ -43,7 +44,7 @@ Pour diverses raisons, certains modes de sécurité ne sont pas pris en charge p
  Ou bien, dans la configuration, le jeton est activé en créant un <`customBinding`>, puis en ajoutant un <`security`> élément et affecter le `authenticationMode` attribut SecureConversation et le `requireSecurityContextCancellation` attribut `true`.  
   
 > [!NOTE]
->  Les spécifications précédentes sont spécifiques. Par exemple, l'élément <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> crée un élément de liaison qui aboutit à une identité Windows, mais cet élément ne définit pas de jeton de contexte de sécurité avec état. Vous pouvez donc utiliser cet élément avec l'option `Required` de [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+>  Les exigences précédentes sont spécifiques. Par exemple, l'élément <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> crée un élément de liaison qui aboutit à une identité Windows, mais cet élément ne définit pas de jeton de contexte de sécurité avec état. Vous pouvez donc utiliser cet élément avec l'option `Required` de [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
 ### <a name="possible-aspnet-conflict"></a>Éventuel conflit avec ASP.NET  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] permettent l'activation ou la désactivation de l'emprunt d'identité. Lorsque [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] héberge une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], un conflit peut survenir entre les paramètres de la configuration [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]. En cas de conflit, le paramètre [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est prioritaire, sauf si la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> a la valeur <xref:System.ServiceModel.ImpersonationOption.NotAllowed>, auquel cas c'est le paramètre d'emprunt d'identité de [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] qui est prioritaire.  
@@ -114,14 +115,14 @@ Pour diverses raisons, certains modes de sécurité ne sont pas pris en charge p
  Pour qu'il fonctionne, vous pouvez placer le point de terminaison `issue_ticket` ailleurs.  
   
 ## <a name="wsdl-import-attributes-can-be-lost"></a>Risques de perte des attributs d'importation WSDL  
- WCF perd la trace des attributs sur un élément `<wst:Claims>` dans un modèle `RST` lors de l'exécution d'une importation WSDL. Cela se produit pendant une importation WSDL si vous spécifiez directement `<Claims>` dans `WSFederationHttpBinding.Security.Message.TokenRequestParameters` ou `IssuedSecurityTokenRequestParameters.AdditionalRequestParameters` au lieu d'utiliser directement les collections de types de revendication.  Puisque l'importation perd les attributs, la liaison ne fait pas l'aller-retour correctement dans WSDL et est donc incorrecte du côté client.  
+ WCF perd la trace des attributs sur un élément `<wst:Claims>` dans un modèle `RST` lors de l'exécution d'une importation WSDL. Cela se produit pendant une importation WSDL si vous spécifiez directement `<Claims>` dans `WSFederationHttpBinding.Security.Message.TokenRequestParameters` ou `IssuedSecurityTokenRequestParameters.AdditionalRequestParameters` au lieu d'utiliser directement les collections de types de revendication.  Puisque l’importation perd les attributs, la liaison ne fait pas l’aller-retour correctement dans WSDL et est donc incorrecte du côté client.  
   
  pour corriger cette situation, il convient de modifier directement la liaison sur le client après l’importation.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Considérations sur la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [Considérations relatives à la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
  [Divulgation d’informations](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
  [Élévation de privilèges](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- [Déni de Service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [Déni de service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
  [Falsification](../../../../docs/framework/wcf/feature-details/tampering.md)  
  [Attaques par relecture](../../../../docs/framework/wcf/feature-details/replay-attacks.md)

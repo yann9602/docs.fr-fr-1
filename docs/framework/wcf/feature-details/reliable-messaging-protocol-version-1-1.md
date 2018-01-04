@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 586e26825bd01947706bb26061ef1b8879fecb4c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 67df8b539109d7e4dafcbc42ad7679643767021a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="reliable-messaging-protocol-version-11"></a>Protocole de messagerie fiable version 1,1
 Cette rubrique traite des détails de l'implémentation [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour le protocole WS-ReliableMessaging de février 2007 (version 1.1) nécessaire pour l'interopérabilité à l'aide du transport HTTP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] suit la spécification WS-ReliableMessaging avec les contraintes et les éclaircissements présentés dans cette rubrique. Notez que le protocole de la version 1.1 de WS-ReliableMessaging est implémenté en commençant par le [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)].  
@@ -381,7 +382,7 @@ Example TerminateSequenceResponse message:
   
 -   B3006 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] spécifie toujours l'assurance de remise `wsrmp:ExactlyOnce`.  
   
--   B3007 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] génère et lit les propriétés suivantes de l'assertion WS-ReliableMessaging et permet de les contrôler sur [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]`ReliableSessionBindingElement` :  
+-   B3007 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] génère et lit les propriétés suivantes de l’assertion WS-ReliableMessaging et assure leur contrôle sur le [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] `ReliableSessionBindingElement`:  
   
     -   `netrmp:InactivityTimeout`  
   
@@ -428,8 +429,8 @@ Example TerminateSequenceResponse message:
   
 -   B4005 : [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] génère des valeurs entières `netrm:BufferRemaining` dans une plage inclusive de 0 à 4096 et lit des valeurs entières dans une plage inclusive de 0 à la valeur `xs:int` 214748364 de `maxInclusive`.  
   
-## <a name="message-exchange-patterns"></a>Modèles d'échange de messages  
- Cette section décrit le comportement de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lorsque WS-ReliableMessaging est utilisé pour différents modèles d'échange de messages. Pour chaque modèle d'échange de messages, les deux scénarios de déploiements suivants sont considérés :  
+## <a name="message-exchange-patterns"></a>Modèles d’échange de messages  
+ Cette section décrit le comportement de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lorsque WS-ReliableMessaging est utilisé pour différents modèles d'échange de messages. Pour chaque modèle d’échange de messages, les deux scénarios de déploiements suivants sont considérés :  
   
 -   Initiateur non adressable : l'initiateur est derrière un pare-feu ; le répondeur peut remettre uniquement des messages à celui-ci sur les réponses HTTP.  
   
@@ -437,7 +438,7 @@ Example TerminateSequenceResponse message:
   
 ### <a name="one-way-non-addressable-initiator"></a>Initiateur unidirectionnel, non adressable  
   
-#### <a name="binding"></a>Binding  
+#### <a name="binding"></a>Liaison  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit un modèle unidirectionnel d'échange de messages qui utilise une séquence sur un canal HTTP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise des requêtes HTTP de transmettre tous les messages de l'initiateur au répondeur et les réponses HTTP pour transmettre tous les messages de répondeur à l'initiateur.  
   
 #### <a name="createsequence-exchange"></a>Échange CreateSequence  
@@ -454,7 +455,7 @@ Example TerminateSequenceResponse message:
   
 ### <a name="one-way-addressable-initiator"></a>Initiateur unidirectionnel, adressable  
   
-#### <a name="binding"></a>Binding  
+#### <a name="binding"></a>Liaison  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit un modèle unidirectionnel d'échange de messages qui utilise une séquences sur un canal HTTP entrant et un canal sortant. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise les requêtes HTTP pour transmettre les messages. Toutes les réponses HTTP ont un corps vide et le code d'état HTTP 202.  
   
 #### <a name="createsequence-exchange"></a>Échange CreateSequence  
@@ -462,7 +463,7 @@ Example TerminateSequenceResponse message:
   
 ### <a name="duplex-addressable-initiator"></a>Initiateur duplex, adressable  
   
-#### <a name="binding"></a>Binding  
+#### <a name="binding"></a>Liaison  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit un modèle d'échange de messages asynchrone complet, bidirectionnel qui utilise deux séquences sur un canal HTTP entrant et sortant. Ce modèle d'échange de messages peut être combiné avec le modèle d'échange de messages initiateur `Request/Reply`, `Addressable` d'une manière limitée. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise les requêtes HTTP pour transmettre les messages. Toutes les réponses HTTP ont un corps vide et le code d'état HTTP 202.  
   
 #### <a name="createsequence-exchange"></a>Échange CreateSequence  
@@ -477,7 +478,7 @@ Example TerminateSequenceResponse message:
   
 ### <a name="request-reply-and-one-way-non-addressable-initiator"></a>Initiateur demande-réponse, unidirectionnel et non adressable  
   
-#### <a name="binding"></a>Binding  
+#### <a name="binding"></a>Liaison  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit un modèle unidirectionnel d'échange de messages et de réponse-demande qui utilise deux séquences sur un canal HTTP. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise des requêtes HTTP de transmettre tous les messages de l'initiateur au répondeur et les réponses HTTP pour transmettre tous les messages de répondeur à l'initiateur.  
   
 #### <a name="createsequence-exchange"></a>Échange CreateSequence  
@@ -514,7 +515,7 @@ Example TerminateSequenceResponse message:
   
 ### <a name="requestreply-addressable-initiator"></a>Initiateur demande/réponse, adressable  
   
-#### <a name="binding"></a>Binding  
+#### <a name="binding"></a>Liaison  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit un modèle d'échange de messages de réponse-demande qui utilise deux séquences sur un canal HTTP entrant et un canal sortant. Ce modèle d'échange de messages peut être combiné avec le modèle d'échange de messages initiateur `Duplex, Addressable` d'une manière limitée. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise les requêtes HTTP pour transmettre les messages. Toutes les réponses HTTP ont un corps vide et le code d'état HTTP 202.  
   
 #### <a name="createsequence-exchange"></a>Échange CreateSequence  

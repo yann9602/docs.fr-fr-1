@@ -19,11 +19,12 @@ caps.latest.revision: "40"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9cd9e5c4f978eb6e8492d9bd6c90a32f87cfbce9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6319a9793698e12a984c875670d71b2cbb0b00ba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Délégation et emprunt d'identité avec WCF
 L'*emprunt d'identité* est une technique courante utilisée par les services pour restreindre l'accès du client aux ressources d'un domaine de service. Les ressources de domaine de service peuvent être des ressources d'ordinateur, telles que des fichiers locaux (emprunt d'identité), ou une ressource sur un autre ordinateur, tel qu'un partage de fichiers (délégation). Pour obtenir un exemple d'application, consultez [Impersonating the Client](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Pour obtenir un exemple sur l’utilisation de l’emprunt d’identité, consultez [How to: Impersonate a Client on a Service](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
@@ -103,9 +104,9 @@ L'*emprunt d'identité* est une technique courante utilisée par les services po
 |`ImpersonationOption`|`ImpersonateCallerForAllServiceOperations`|Comportement|  
 |---------------------------|------------------------------------------------|--------------|  
 |Obligatoire|N/A|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] emprunte l'identité de l'appelant|  
-|Allowed|false|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] n'emprunte par l'identité de l'appelant|  
+|Allowed|False|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] n'emprunte par l'identité de l'appelant|  
 |Allowed|true|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] emprunte l'identité de l'appelant|  
-|NotAllowed|false|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] n'emprunte par l'identité de l'appelant|  
+|NotAllowed|False|[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] n'emprunte par l'identité de l'appelant|  
 |NotAllowed|true|Non autorisé. (Une exception <xref:System.InvalidOperationException> est levée.)|  
   
 ## <a name="impersonation-level-obtained-from-windows-credentials-and-cached-token-impersonation"></a>Niveau d'emprunt d'identité obtenu à partir des informations d'identification Windows et emprunt d'identité avec jeton mis en cache  
@@ -123,11 +124,11 @@ L'*emprunt d'identité* est une technique courante utilisée par les services po
   
 |Valeur`AllowedImpersonationLevel` |Le Service a `SeImpersonatePrivilege`|Le Service et le client sont capables de délégation|Jeton `ImpersonationLevel`mis en cache|  
 |---------------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
-|Anonymous|Oui|N/A|emprunt d'identité|  
+|Anonymous|Oui|N/A|Emprunt d'identité|  
 |Anonymous|Non|N/A|Identification|  
 |Identification|N/A|N/A|Identification|  
-|emprunt d'identité|Oui|N/A|emprunt d'identité|  
-|emprunt d'identité|Non|N/A|Identification|  
+|Emprunt d'identité|Oui|N/A|Emprunt d'identité|  
+|Emprunt d'identité|Non|N/A|Identification|  
 |Delegation|Oui|Oui|Delegation|  
 |Delegation|Oui|Non|emprunt d'identité|  
 |Delegation|Non|N/A|Identification|  
@@ -138,14 +139,14 @@ L'*emprunt d'identité* est une technique courante utilisée par les services po
 |`AllowedImpersonationLevel`|Le Service a `SeImpersonatePrivilege`|Le Service et le client sont capables de délégation|Jeton `ImpersonationLevel`mis en cache|  
 |---------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
 |N/A|Oui|Oui|Delegation|  
-|N/A|Oui|Non|emprunt d'identité|  
+|N/A|Oui|Non|Emprunt d'identité|  
 |N/A|Non|N/A|Identification|  
   
 ## <a name="impersonation-level-obtained-from-s4u-based-impersonation"></a>Niveau d'emprunt d'identité obtenu à partir de l'emprunt d'identité basé sur S4U  
   
-|Le Service a `SeTcbPrivilege`|Le Service a `SeImpersonatePrivilege`|Le Service et le client sont capables de délégation|Jeton `ImpersonationLevel`mis en cache|  
+|Le Service a `SeTcbPrivilege`|Le Service a `SeImpersonatePrivilege`|Le Service et le client sont capables de délégation|Jeton `ImpersonationLevel` mis en cache|  
 |----------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
-|Oui|Oui|N/A|emprunt d'identité|  
+|Oui|Oui|N/A|Emprunt d'identité|  
 |Oui|Non|N/A|Identification|  
 |Non|N/A|N/A|Identification|  
   
@@ -229,7 +230,7 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
  <xref:System.ServiceModel.Security.WindowsClientCredential>  
  <xref:System.ServiceModel.ChannelFactory%601>  
  <xref:System.Security.Principal.TokenImpersonationLevel.Identification>  
- [À l’aide de l’emprunt d’identité avec la sécurité de Transport](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)  
- [L’emprunt d’identité du Client](../../../../docs/framework/wcf/samples/impersonating-the-client.md)  
+ [Utilisation de l’emprunt d’identité avec la sécurité de transport](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)  
+ [Emprunt de l’identité du client](../../../../docs/framework/wcf/samples/impersonating-the-client.md)  
  [Guide pratique pour emprunter l’identité d’un client sur un service](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)  
  [Outil ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "33"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 26a47e6ea0d93d81275d7b3b87c88d0d3ab595df
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d5de916aa5825625f29efe316571ad5085afb431
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a>Génération des exemples Windows Communication Foundation
 Le [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] exemples peuvent être construites à l’aide de Visual Studio 2010 ou à l’aide de la **msbuild** commande à partir de la ligne de commande. Les deux procédures sont décrites dans cette rubrique.  
@@ -46,10 +47,10 @@ Le [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] exemples peuvent êtr
 >  Vous devez affecter %systemdrive%\inetpub\wwwroot aux listes de contrôle d'accès (ACL) pour accorder des autorisations de modification au compte sous lequel vous vous êtes connecté. Sinon, certains des événements post-build échoueront. Vous pouvez également laisser les listes de contrôle d'accès telles quelles et exécuter l'invite de commandes du Kit de développement logiciel (SDK) ou Visual Studio en tant qu'administrateur. Certaines actions de Visual Studio (tel que l'attachement d'un débogueur au processus de travail ASP.NET) requièrent également des privilèges d'administrateur.  
   
 ## <a name="setup-batch-files-and-scripts"></a>Scripts et fichiers de commandes d'installation  
- Les fichiers de commandes Setup.exe et Cleanup.exe et les scripts doivent être exécutés à partir d'une invite de commandes de Visual Studio. Plusieurs fichiers d'installation et de nettoyage effectuent des tâches qui requièrent des privilèges d'administrateur et doivent être lancés avec des privilèges d'administrateur.  
+ Les fichiers de commandes Setup.exe et Cleanup.exe et les scripts doivent être exécutés à partir d'une invite de commandes de Visual Studio. Plusieurs fichiers d’installation et de nettoyage effectuent des tâches qui requièrent des privilèges d’administrateur et doivent être lancés avec des privilèges d’administrateur.  
   
 ## <a name="important-security-information-about-metadata-endpoints"></a>Informations de sécurité importantes à propos des points de terminaison de métadonnées  
- Pour empêcher la divulgation involontaire de métadonnées de service potentiellement sensibles, la publication de métadonnées est désactivée par défaut dans la configuration des services [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Ce comportement est sécurisé par défaut, mais il signifie également que vous ne pouvez pas utiliser d'outil d'importation de métadonnées (tel que Svcutil.exe) pour générer le code client requis pour appeler le service, à moins que le comportement de publication des métadonnées du service soit activé explicitement dans la configuration. Pour faciliter l'utilisation des exemples, pratiquement tous les exemples exposent un point de terminaison de publication de métadonnées non sécurisé. De tels points de terminaison sont potentiellement disponibles aux consommateurs non authentifiés anonymes et il est nécessaire de se montrer vigilant et de s'assurer que la divulgation publique des métadonnées d'un service est appropriée avant de déployer de tels points de terminaison. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]publication des métadonnées de service, consultez le [comportement de publication de métadonnées](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md) exemple. Consultez le [personnalisé sécuriser les métadonnées de point de terminaison](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) sample pour obtenir un exemple de sécurisation d’un point de terminaison de métadonnées.  
+ Pour empêcher la divulgation involontaire de métadonnées de service potentiellement sensibles, la publication de métadonnées est désactivée par défaut dans la configuration des services [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Ce comportement est sécurisé par défaut, mais il signifie également que vous ne pouvez pas utiliser d'outil d'importation de métadonnées (tel que Svcutil.exe) pour générer le code client requis pour appeler le service, à moins que le comportement de publication des métadonnées du service soit activé explicitement dans la configuration. Pour faciliter l’utilisation des exemples, pratiquement tous les exemples exposent un point de terminaison de publication de métadonnées non sécurisé. De tels points de terminaison sont potentiellement disponibles aux consommateurs non authentifiés anonymes et il est nécessaire de se montrer vigilant et de s'assurer que la divulgation publique des métadonnées d'un service est appropriée avant de déployer de tels points de terminaison. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]publication des métadonnées de service, consultez le [comportement de publication de métadonnées](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md) exemple. Consultez le [personnalisé sécuriser les métadonnées de point de terminaison](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) sample pour obtenir un exemple de sécurisation d’un point de terminaison de métadonnées.  
   
 ## <a name="exception-handling"></a>Gestion des exceptions  
  En général, ces exemples n'incluent pas la gestion des exceptions pour que le code reste axé sur le sujet de l'exemple. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]gestion des exceptions, consultez la [attendu des Exceptions](../../../../docs/framework/wcf/samples/expected-exceptions.md) exemple.  
@@ -91,5 +92,5 @@ Le [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] exemples peuvent êtr
     >  Pour ignorer la génération de la configuration du client ajouter la **/noConfig** option.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Les exemples Windows Communication Foundation en cours d’exécution](../../../../docs/framework/wcf/samples/running-the-samples.md)  
+ [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md)  
  [Outil ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

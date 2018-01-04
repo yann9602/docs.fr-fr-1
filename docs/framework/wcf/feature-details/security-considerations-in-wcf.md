@@ -17,11 +17,12 @@ caps.latest.revision: "49"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: c0af5a5d96f20b2ba5118909a3f0c5ba405bdb11
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: f35bd56bdc69f8c57a7e46984778051b57b7a06a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-considerations-in-wcf"></a>Considérations relatives à la sécurité dans WCF
 Les rubriques de cette section répertorient différents éléments relatifs à la sécurité à prendre en compte lors de la conception d'une application [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -33,7 +34,7 @@ Les rubriques de cette section répertorient différents éléments relatifs à 
  [Élévation de privilèges](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
  Traite des conséquences de l'attribution à un intrus d'autorisations plus étendues celles accordées initialement, et de la manière de limiter ce risque.  
   
- [Déni de Service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [Déni de service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
  Traite de ce qui arrive lorsqu'un système ne peut pas traiter des messages convenablement, et de la manière de limiter ce risque.  
   
  [Falsification](../../../../docs/framework/wcf/feature-details/tampering.md)  
@@ -42,7 +43,7 @@ Les rubriques de cette section répertorient différents éléments relatifs à 
  [Attaques par relecture](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
  Traite de ce qui arrive lorsqu'un intrus copie un flux de messages entre deux correspondants et relit le flux à l'un des correspondants ou les deux, et de la manière de limiter ce risque.  
   
- [Considérations sur la sécurité pour les Sessions sécurisées](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)  
+ [Considérations sur la sécurité pour les sessions sécurisées](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)  
  Traite des éléments suivants qui affectent la sécurité lors de l'implémentation de sessions sécurisées.  
   
  [Scénarios non pris en charge](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)  
@@ -58,7 +59,7 @@ Les rubriques de cette section répertorient différents éléments relatifs à 
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Guide de sécurité et les meilleures pratiques](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+ [Aide sur la sécurité et bonnes pratiques](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
   
 ## <a name="see-also"></a>Voir aussi  
  [Sécurité](../../../../docs/framework/wcf/feature-details/security.md)

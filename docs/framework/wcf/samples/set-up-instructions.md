@@ -16,11 +16,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e88737d50b24f524e4a33fd51ee16678c1928b1a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cfbd4769d1fc974369093e3b5253f9853a9ef730
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="set-up-instructions"></a>Instructions d'installation
 Cet ensemble de rubriques décrit comment installer des services requis pour exécuter un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -32,19 +33,19 @@ Cet ensemble de rubriques décrit comment installer des services requis pour ex�
  [Instructions sur les pare-feu](../../../../docs/framework/wcf/samples/firewall-instructions.md)  
  Décrit les étapes requises pour installer le pare-feu Windows pour permettre aux services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] de fonctionner.  
   
- [Internet Information Service d’hébergement Instructions](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
+ [Instructions relatives à l’hébergement dans Internet Information Services](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
  Décrit les étapes requises pour installer IIS.  
   
- [Internet Information Services (IIS) Server Instructions d’Installation du certificat](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md)  
+ [Instructions d’installation du certificat de serveur dans Internet Information Services](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md)  
  Décrit le processus d'installation des certificats de serveur pour IIS.  
   
- [Instructions de configuration du répertoire virtuel](../../../../docs/framework/wcf/samples/virtual-directory-setup-instructions.md)  
+ [Instructions d’installation du répertoire virtuel](../../../../docs/framework/wcf/samples/virtual-directory-setup-instructions.md)  
  Décrit les étapes requises pour créer un répertoire virtuel.  
   
  [Génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)  
  Décrit les étapes de la génération des exemples [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Les exemples Windows Communication Foundation en cours d’exécution](../../../../docs/framework/wcf/samples/running-the-samples.md)  
+ [Exécution des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md)  
  Décrit les étapes de l'exécution des exemples [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sur le même ordinateur et sur plusieurs ordinateurs.  
   
  [L’activation des Services d’égal à égal](http://msdn.microsoft.com/library/e7a0fcf4-b0e5-4b26-a7e3-f0f37b60a1f9)  

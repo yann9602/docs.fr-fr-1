@@ -12,11 +12,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 17abe368b8e1d9a5212b564d201d5d163d849e4d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 79ec9c423f86a0a736ed1b99d8ddf0f5a38160c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tracking"></a>Suivi
 Cette section contient des exemples qui illustrent le suivi de workflow dans [!INCLUDE[wf](../../../../includes/wf-md.md)].  
@@ -31,7 +32,7 @@ Cette section contient des exemples qui illustrent le suivi de workflow dans [!I
  [Suivi SQL](../../../../docs/framework/windows-workflow-foundation/samples/sql-tracking.md)  
  Montre comment écrire un participant de suivi SQL personnalisé, qui écrit des enregistrements de suivi dans une base de données SQL.  
   
- [Extraire des données WF à l’aide de suivi](../../../../docs/framework/windows-workflow-foundation/samples/extract-wf-data-using-tracking.md)  
+ [Extraire des données WF à l’aide du suivi](../../../../docs/framework/windows-workflow-foundation/samples/extract-wf-data-using-tracking.md)  
  Montre comment utiliser le suivi de workflow pour extraire des variables de workflow et des arguments d’activités.  
   
  [Suivi à l’aide d’un fichier texte](../../../../docs/framework/windows-workflow-foundation/samples/tracking-using-a-text-file.md)  

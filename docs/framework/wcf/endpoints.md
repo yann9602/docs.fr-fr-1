@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a1771f5c69442ea4e95925339c28204663f78eb2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0725c4f4275853cce958072a57d7f6ca4059e8cf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-endpoints"></a>Points de terminaison Windows Communication Foundation
 Toutes les communications avec un [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service s’effectue via le *points de terminaison* du service. Les points de terminaison fournissent au client l'accès aux fonctionnalités offertes par un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
@@ -46,10 +47,10 @@ Toutes les communications avec un [!INCLUDE[indigo1](../../../includes/indigo1-m
  [Spécification d’une adresse de point de terminaison](../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
  Décrit comment la communication avec un service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] a lieu par l'intermédiaire des points de terminaison.  
   
- [Comment : créer un point de terminaison de Service dans la Configuration](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
+ [Guide pratique pour créer un point de terminaison de service dans la configuration](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
  Montre comment créer un point de terminaison de service dans la configuration.  
   
- [Comment : créer un point de terminaison de Service dans le Code](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
+ [Guide pratique pour créer un point de terminaison de service dans le code](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
  Montre comment créer un point de terminaison de service dans le code.  
   
  [Publication de points de terminaison de métadonnées](../../../docs/framework/wcf/publishing-metadata-endpoints.md)  

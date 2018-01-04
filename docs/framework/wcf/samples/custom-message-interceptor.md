@@ -13,14 +13,15 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f7774af6c1531e48be29351299555a650548687f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: acac4baa5be68d042dd1b0a11d7acfe609169e10
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-message-interceptor"></a>Custom Message Interceptor
-Cet exemple montre l'utilisation du modèle d'extensibilité des canaux. Indique en particulier comment implémenter un élément de liaison personnalisé qui crée des fabrications de canaux et des écouteurs de canal pour intercepter tous les messages entrants et sortants à un point particulier dans la pile d'exécution. L'exemple inclut également un client et serveur qui montrent l'utilisation de ces fabrications personnalisées.  
+Cet exemple montre l'utilisation du modèle d'extensibilité des canaux. Indique en particulier comment implémenter un élément de liaison personnalisé qui crée des fabrications de canaux et des écouteurs de canal pour intercepter tous les messages entrants et sortants à un point particulier dans la pile d’exécution. L'exemple inclut également un client et serveur qui montrent l'utilisation de ces fabrications personnalisées.  
   
  Dans cet exemple, le client et le service sont tous deux des programmes de console (.exe). Le client et le service utilisent une bibliothèque commune (.dll) qui contient l'élément de liaison personnalisé et ses objets d'exécution associés.  
   
@@ -44,7 +45,7 @@ Cet exemple montre l'utilisation du modèle d'extensibilité des canaux. Indique
   
 3.  Ajoutez un élément de liaison qui ajoute le canal superposé personnalisé à une pile de canaux.  
   
-4.  Ajoutez une section d'extension d'élément de liaison afin d'exposer le nouvel élément de liaison au système de configuration.  
+4.  Ajoutez une section d’extension d’élément de liaison afin d’exposer le nouvel élément de liaison au système de configuration.  
   
 ## <a name="channel-shapes"></a>Formes de canal  
  La première étape de l'écriture d'un canal superposé personnalisé consiste à déterminer les formes requises pour le canal. Pour notre inspecteur de message, nous prenons en charge les formes qui la couche ci-dessous prend en charge (par exemple, si la couche ci-dessous peux générer <xref:System.ServiceModel.Channels.IOutputChannel> et <xref:System.ServiceModel.Channels.IDuplexSessionChannel>, nous exposons alors également <xref:System.ServiceModel.Channels.IOutputChannel> et <xref:System.ServiceModel.Channels.IDuplexSessionChannel>).  
@@ -61,7 +62,7 @@ class InterceptingChannelListener<TChannel> : ListenerFactoryBase<TChannel>
 { ... }  
 ```  
   
-## <a name="adding-a-binding-element"></a>Ajout d'un élément de liaison  
+## <a name="adding-a-binding-element"></a>Ajout d’un élément de liaison  
  l'exemple définit un élément de liaison personnalisé : `InterceptingBindingElement`. `InterceptingBindingElement`prend un `ChannelMessageInterceptor` en tant qu’entrée et utilise ce `ChannelMessageInterceptor` pour manipuler les messages qui passent par son biais. C'est la seule classe qui doit être publique. La fabrication, l'écouteur et les canaux peuvent tous être des implémentations internes des interfaces d'exécution publiques.  
   
 ```  
@@ -69,7 +70,7 @@ public class InterceptingBindingElement : BindingElement
 ```  
   
 ## <a name="adding-configuration-support"></a>Ajout de la prise en charge de la configuration  
- Pour s'intégrer avec la configuration de liaison, la bibliothèque définit un gestionnaire de section de configuration comme section d'extension d'élément de liaison. Les fichiers de configuration du client et du serveur doivent enregistrer l'extension d'élément de liaison avec le système de configuration. Les implémenteurs qui souhaitent exposer leur élément de liaison au système de configuration peuvent dériver de cette classe.  
+ Pour s’intégrer avec la configuration de liaison, la bibliothèque définit un gestionnaire de section de configuration comme section d’extension d’élément de liaison. Les fichiers de configuration du client et du serveur doivent enregistrer l'extension d'élément de liaison avec le système de configuration. Les implémenteurs qui souhaitent exposer leur élément de liaison au système de configuration peuvent dériver de cette classe.  
   
 ```  
 public abstract class InterceptingElement : BindingElementExtensionElement { ... }  
@@ -78,7 +79,7 @@ public abstract class InterceptingElement : BindingElementExtensionElement { ...
 ## <a name="adding-policy"></a>Ajout d'une stratégie  
  Pour s'intégrer avec notre système de stratégie, `InterceptingBindingElement` implémente IPolicyExportExtension pour signaler que nous devons participer à la génération de la stratégie. Pour prendre en charge l'importation de la stratégie sur un client généré, l'utilisateur peut enregistrer une classe dérivée de `InterceptingBindingElementImporter` et substituer `CreateMessageInterceptor`() pour générer leur classe `ChannelMessageInterceptor` activée par stratégie.  
   
-## <a name="example-droppable-message-inspector"></a>Exemple : Droppable Message Inspector  
+## <a name="example-droppable-message-inspector"></a>Exemple : Inspecteur de message pouvant être déposé  
  L'exemple comporte un exemple d'implémentation de `ChannelMessageInspector` qui supprime des messages.  
   
 ```  
@@ -144,7 +145,7 @@ Server dropped a message.
 Press ENTER to shut down client  
 ```  
   
- Le client signale 10 vitesses de vent différentes au service, mais n'en référence que la moitié avec l'en-tête spécifique.  
+ Le client signale 10 vitesses de vent différentes au service, mais n’en référence que la moitié avec l’en-tête spécifique.  
   
  La sortie suivante doit s'afficher sur le service :  
   

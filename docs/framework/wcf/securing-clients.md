@@ -14,14 +14,15 @@ caps.latest.revision: "22"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: d41d2f8419644d5ddcb15f49bbe895b0a3f1f2d4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a30f42c88e2478341737b99ad239d37c87a1063e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-clients"></a>Sécurisation des clients
-Dans [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], le service dicte les conditions de sécurité pour les clients. Autrement dit, le service spécifie quel mode de sécurité utiliser, et si le client doit fournir ou non une information d'identification. Le processus de la sécurisation d'un client, par conséquent, est simple : utilisez les métadonnées obtenues depuis le service (s'il est publié) et générez un client. Les métadonnées spécifient comment configurer le client. Si le service exige que le client fournisse une information d'identification, vous devez obtenir une information d'identification qui correspond à la spécification. Cette rubrique décrit en détail le processus. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Création d’un service sécurisé, consultez [sécurisation des Services](../../../docs/framework/wcf/securing-services.md).  
+Dans [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], le service dicte les conditions de sécurité pour les clients. Autrement dit, le service spécifie quel mode de sécurité utiliser, et si le client doit fournir ou non une information d'identification. Le processus de la sécurisation d'un client, par conséquent, est simple : utilisez les métadonnées obtenues depuis le service (s'il est publié) et générez un client. Les métadonnées spécifient comment configurer le client. Si le service exige que le client fournisse une information d’identification, vous devez obtenir une information d’identification qui correspond à l’exigence. Cette rubrique décrit en détail le processus. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Création d’un service sécurisé, consultez [sécurisation des Services](../../../docs/framework/wcf/securing-services.md).  
   
 ## <a name="the-service-specifies-security"></a>Le service spécifie la sécurité  
  Par défaut, les fonctionnalités de sécurité des liaisons [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] sont activées. (Exception : <xref:System.ServiceModel.BasicHttpBinding>.) Par conséquent, si le service a été créé à l'aide de [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], il est plus probable qu'il implémente la sécurité pour garantir l'identification, la confidentialité et l'intégrité. Dans ce cas, les métadonnées que le service fournit indiqueront ce qu'il faut pour établir un canal de communication sécurisé. Si les métadonnées du service n'incluent pas de conditions de sécurité, il n'y a aucun moyen d'imposer une méthode de sécurité, telle que SSL (Secure Sockets Layer) sur HTTP, sur un service. Toutefois, si le service exige que le client fournisse une information d'identification, le développeur, le responsable du déploiement ou l'administrateur client doit fournir l'information d'identification réelle que le client utilisera pour s'identifier auprès du service.  
@@ -87,10 +88,10 @@ Dans [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], le service dicte les 
 #### <a name="setting-a-clientcredentials-value-in-code"></a>Définir un \<clientCredentials > valeur dans le Code  
  Pour définir un [ \<clientCredentials >](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) valeur dans le code, vous devez accéder à la <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> propriété de la <xref:System.ServiceModel.ClientBase%601> classe. La propriété retourne un objet <xref:System.ServiceModel.Description.ClientCredentials> qui autorise l'accès à différents types d'informations d'identification, comme le montre le tableau suivant.  
   
-|Propriété ClientCredential|Description|Remarques|  
+|Propriété ClientCredential|Description|Notes|  
 |-------------------------------|-----------------|-----------|  
 |<xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A>|Retourne un <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>.|Représente un certificat X.509 fourni par le client pour s'identifier auprès du service.|  
-|<xref:System.ServiceModel.Description.ClientCredentials.HttpDigest%2A>|Retourne un <xref:System.ServiceModel.Security.HttpDigestClientCredential>.|Représente une information d'identification HTTP Digest. L'information d'identification est un hachage du nom d'utilisateur et du mot de passe.|  
+|<xref:System.ServiceModel.Description.ClientCredentials.HttpDigest%2A>|Retourne un <xref:System.ServiceModel.Security.HttpDigestClientCredential>.|Représente une information d’identification HTTP Digest. L'information d'identification est un hachage du nom d'utilisateur et du mot de passe.|  
 |<xref:System.ServiceModel.Description.ClientCredentials.IssuedToken%2A>|Retourne un <xref:System.ServiceModel.Security.IssuedTokenClientCredential>.|Représente un jeton de sécurité personnalisé publié par un service de jeton de sécurité, utilisé communément dans les scénarios de fédération.|  
 |<xref:System.ServiceModel.Description.ClientCredentials.Peer%2A>|Retourne un <xref:System.ServiceModel.Security.PeerCredential>.|Représente une information d'identification homologue pour la participation à une maille homologue sur un domaine Windows.|  
 |<xref:System.ServiceModel.Description.ClientCredentials.ServiceCertificate%2A>|Retourne un <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>.|Représente un certificat X.509 fourni par le service dans une négociation hors bande.|  

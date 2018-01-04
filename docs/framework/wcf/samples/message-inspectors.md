@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d601a2dfb0daab4e54d6caac6940b4826cee0b01
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7ed4f31e004ddeb69a29568b3892ab7379715457
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="message-inspectors"></a>Message Inspectors
 Cet exemple montre comment implémenter et configurer des inspecteurs de message de service et client.  
@@ -66,7 +67,7 @@ object IDispatchMessageInspector.AfterReceiveRequest(ref System.ServiceModel.Cha
 }  
 ```  
   
- <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%28System.ServiceModel.Channels.Message%40%2CSystem.Object%29> est appelé chaque fois qu'une réponse est prête à être renvoyée à un client, ou dans le cas de messages unidirectionnels, lorsque le message entrant a été traité. Cela permet aux extensions d'être appelées symétriquement, indépendamment du MEP utilisé. Comme avec <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>, le message est passé comme paramètre de référence et peut être inspecté, modifié ou remplacé. La validation du message effectuée dans cet exemple est de nouveau déléguée à la méthode `ValidMessageBody`, mais la gestion des erreurs de validation diffère légèrement dans ce cas.  
+ <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%28System.ServiceModel.Channels.Message%40%2CSystem.Object%29> est appelé chaque fois qu'une réponse est prête à être renvoyée à un client, ou dans le cas de messages unidirectionnels, lorsque le message entrant a été traité. Cela permet aux extensions d’être appelées symétriquement, indépendamment du MEP utilisé. Comme avec <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>, le message est passé comme paramètre de référence et peut être inspecté, modifié ou remplacé. La validation du message effectuée dans cet exemple est de nouveau déléguée à la méthode `ValidMessageBody`, mais la gestion des erreurs de validation diffère légèrement dans ce cas.  
   
  Si une erreur de validation se produit sur le service, la méthode `ValidateMessageBody` lève <xref:System.ServiceModel.FaultException> (exceptions dérivées). Dans <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A>, ces exceptions peuvent être placées dans l'infrastructure de modèle de service où elles sont automatiquement transformées en erreurs SOAP et relayées au client. Dans <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector.BeforeSendReply%2A>, les exceptions <xref:System.ServiceModel.FaultException> ne doivent pas être placées dans l'infrastructure, car la transformation des exceptions levées par le service se produit avant l'appel de l'inspecteur de message. Par conséquent, l'implémentation suivante intercepte l'exception `ReplyValidationFault` connue et remplace le message de réponse par un message d'erreur explicite. Cette méthode garantit qu'aucun message non valide n'est retourné par l'implémentation de service.  
   
@@ -266,7 +267,7 @@ public class SchemaValidationBehavior : IEndpointBehavior
 ```  
   
 > [!NOTE]
->  Ce comportement spécifique ne joue pas le rôle d'attribut et, par conséquent, ne peut pas être ajouté de façon déclarative sur un type de contrat d'un type de service. Cette décision de conception a été prise car la collection de schémas ne peut pas être chargée dans une déclaration attribute, et faire référence à un emplacement de configuration supplémentaire (par exemple aux paramètres d'application) dans cet attribut revient à créer un élément de configuration qui n'est pas cohérent avec le reste de la configuration de modèle de service. Par conséquent, ce comportement peut uniquement être ajouté de façon impérative via le code et une extension de configuration de modèle de service.  
+>  Ce comportement spécifique ne joue pas le rôle d'attribut et, par conséquent, ne peut pas être ajouté de façon déclarative sur un type de contrat d'un type de service. Cette décision de conception a été prise car la collection de schémas ne peut pas être chargée dans une déclaration attribute, et faire référence à un emplacement de configuration supplémentaire (par exemple aux paramètres d’application) dans cet attribut revient à créer un élément de configuration qui n’est pas cohérent avec le reste de la configuration de modèle de service. Par conséquent, ce comportement peut uniquement être ajouté de façon impérative via le code et une extension de configuration de modèle de service.  
   
 ## <a name="adding-the-message-inspector-through-configuration"></a>Ajout de l'inspecteur de message via la configuration  
  Pour configurer un comportement personnalisé sur un point de terminaison dans le fichier de configuration d’application, le modèle de service requiert des implémenteurs afin de créer une configuration *élément d’extension* représenté par une classe dérivée de <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>. Cette extension doit être ensuite ajoutée à la section de configuration du modèle de service pour les extensions, tel qu’indiqué pour l’extension suivante traitée dans cette section.  
@@ -285,7 +286,7 @@ public class SchemaValidationBehavior : IEndpointBehavior
   
  Des extensions peuvent être ajoutées dans le fichier de configuration de l'application ou ASP.NET (ce qui est le choix le plus courant), ou bien dans le fichier de configuration de l'ordinateur.  
   
- Lorsque l'extension est ajoutée à une étendue de configuration, le comportement peut être ajouté à une configuration de comportement, tel qu'indiqué dans le code suivant. Les configurations de comportement sont des éléments réutilisables qui peuvent être appliqués à plusieurs points de terminaison selon les besoins. Le comportement spécifique à configurer dans ce cas implémentant <xref:System.ServiceModel.Description.IEndpointBehavior>, il est uniquement valide dans la section de configuration respective du fichier de configuration.  
+ Lorsque l’extension est ajoutée à une étendue de configuration, le comportement peut être ajouté à une configuration de comportement, tel qu’indiqué dans le code suivant. Les configurations de comportement sont des éléments réutilisables qui peuvent être appliqués à plusieurs points de terminaison selon les besoins. Le comportement spécifique à configurer dans ce cas implémentant <xref:System.ServiceModel.Description.IEndpointBehavior>, il est uniquement valide dans la section de configuration respective du fichier de configuration.  
   
 ```xml  
 <system.serviceModel>  

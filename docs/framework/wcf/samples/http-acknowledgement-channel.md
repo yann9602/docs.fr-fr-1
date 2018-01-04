@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9081b47284b63315d950ef791389312df32815f8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d07a17c5ed4302657671e0247e44ac0ef6e75518
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="http-acknowledgement-channel"></a>HTTP Acknowledgement Channel
 HTTP Acknowledgement Channel est un exemple d’un canal superposé qui modifie le modèle de messagerie unidirectionnel pour permettre à un service d’accepter ou de refuser des messages entrants plutôt que d’envoyer automatiquement un accusé de réception. HTTP Acknowledgement Channel permet également au service de différer l'accusé de réception jusqu'à ce qu'il puisse garantir au niveau de l'entreprise que le message sera traité.  
@@ -26,7 +27,7 @@ HTTP Acknowledgement Channel est un exemple d’un canal superposé qui modifie 
  <xref:System.ServiceModel.Channels.ReceiveContext>, exemple de canal superposé (HTTP Acknowledgement Channel).  
   
 ## <a name="discussion"></a>Discussion  
- HTTP Acknowledgement Channel implémente <xref:System.ServiceModel.Channels.ReceiveContext> pour restructurer le modèle de messagerie requête-réponse HTTP en modèle unidirectionnel avec accusé de réception différé. À l'aide de ce nouveau modèle, un service peut vérifier le traitement du message en envoyant un accusé de réception sous forme de code d'état HTTP OK (200) sans bloquer le client jusqu'à ce que le traitement du message soit terminé ou peut envoyer un message d'échec au client sous forme de code d'état HTTP Erreur interne du serveur (500). Par exemple, un service peut envoyer un accusé de réception après avoir écrit un message dans une file d'attente, puis continuer le traitement du message de façon asynchrone. Dans ce scénario, un client peut être assuré que ses messages ont été traités au moins une fois par le service, s'il a renvoyé chaque message jusqu'à obtention d'un accusé de réception en provenance du service. Notez que, si un service requiert un traitement asynchrone rapide des messages sur HTTP, sans garantie de leur traitement, <xref:System.ServiceModel.Channels.OneWayBindingElement> est un choix plus approprié.  
+ HTTP Acknowledgement Channel implémente <xref:System.ServiceModel.Channels.ReceiveContext> pour restructurer le modèle de messagerie requête-réponse HTTP en modèle unidirectionnel avec accusé de réception différé. À l’aide de ce nouveau modèle, un service peut vérifier le traitement du message en envoyant un accusé de réception sous forme de code d’état HTTP OK (200) sans bloquer le client jusqu’à ce que le traitement du message soit terminé ou peut envoyer un message d’échec au client sous forme de code d’état HTTP Erreur interne du serveur (500). Par exemple, un service peut envoyer un accusé de réception après avoir écrit un message dans une file d'attente, puis continuer le traitement du message de façon asynchrone. Dans ce scénario, un client peut être assuré que ses messages ont été traités au moins une fois par le service, s'il a renvoyé chaque message jusqu'à obtention d'un accusé de réception en provenance du service. Notez que, si un service requiert un traitement asynchrone rapide des messages sur HTTP, sans garantie de leur traitement, <xref:System.ServiceModel.Channels.OneWayBindingElement> est un choix plus approprié.  
   
  <xref:System.ServiceModel.Channels.ReceiveContext> est utilisé pour maintenir le message en place pendant le temps nécessaire à déterminer s'il peut être traité au niveau du service. La capacité d'un service à traiter le message avec succès est indiquée en appelant Complete sur l'objet <xref:System.ServiceModel.Channels.ReceiveContext> qui envoie le code d'état HTTP OK et la capacité du service à traiter le message est indiquée en appelant la méthode <xref:System.ServiceModel.Channels.ReceiveContext> de `Abandon` sur l'objet <xref:System.ServiceModel.Channels.ReceiveContext>, qui envoie le code d'état HTTP Erreur interne du serveur.  
   

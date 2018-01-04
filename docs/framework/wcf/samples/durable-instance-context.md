@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5d4a1dfb2f517496cab1dcc2a57be3082c7c6f1a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e4f1f3f9e840ba422e327792ec2b0554fad45902
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="durable-instance-context"></a>Durable Instance Context
 Cet exemple montre comment personnaliser l'exécution [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] afin d'activer des contextes d'instance fiables. Il utilise SQL Server 2005 comme magasin de sauvegarde (SQL Server 2005 Express dans ce cas précis). Toutefois, il permet également d'accéder aux mécanismes de stockage personnalisés.  
@@ -59,7 +60,7 @@ class DurableInstanceContextChannelBase
   
  Ces deux méthodes utilisent des implémentations `IContextManager` pour écrire et lire l'ID de contexte vers ou à partir du message  (`IContextManager` est une interface personnalisée permettant de définir le contrat de tous les gestionnaires de contexte). Le canal peut inclure l'ID de contexte dans un en-tête SOAP personnalisé ou dans un en-tête cookie HTTP. Chaque implémentation de gestionnaire de contexte hérite de la classe `ContextManagerBase` qui contient les fonctionnalités communes de tous les gestionnaires de contexte. La méthode `GetContextId` de cette classe permet de générer l'ID de contexte à partir du client. Lorsqu'un ID de contexte est généré pour la première fois, cette méthode l'enregistre dans un fichier texte dont le nom est construit par l'adresse du point de terminaison distant (les caractères de nom de fichier non valides dans les URI classiques sont remplacés par des caractères @).  
   
- Par la suite, lorsque l'ID de contexte est requis pour le même point de terminaison distant, il vérifie si un fichier approprié existe. Si c'est le cas, il lit l'ID de contexte et retourne. Sinon, il retourne un ID de contexte généré récemment et l'enregistre dans un fichier. Avec la configuration par défaut, ces fichiers sont placés dans un répertoire appelé ContextStore, qui réside dans le répertoire temporaire de l'utilisateur actuel. Toutefois, cet emplacement est configurable à l'aide de l'élément de liaison.  
+ Par la suite, lorsque l'ID de contexte est requis pour le même point de terminaison distant, il vérifie si un fichier approprié existe. Si c'est le cas, il lit l'ID de contexte et retourne. Sinon, il retourne un ID de contexte généré récemment et l'enregistre dans un fichier. Avec la configuration par défaut, ces fichiers sont placés dans un répertoire appelé ContextStore, qui réside dans le répertoire temporaire de l'utilisateur actuel. Toutefois, cet emplacement est configurable à l’aide de l’élément de liaison.  
   
  Le mécanisme utilisé pour transporter l'ID de contexte est configurable. Il peut être écrit dans l'en-tête cookie HTTP ou dans un en-tête SOAP personnalisé. L'approche utilisant l'en-tête SOAP personnalisé permet d'utiliser ce protocole avec des protocoles non HTTP (par exemple, TCP ou canaux nommés). Les deux classes `MessageHeaderContextManager` et `HttpCookieContextManager` implémentent ces deux options.  
   
@@ -401,7 +402,7 @@ public class ShoppingCart : IShoppingCart
  }  
 ```  
   
- Les applications clientes doivent ajouter DurableInstanceContextChannel dans la pile de canaux à l'aide d'une liaison personnalisée. Pour configurer le canal de façon déclarative dans le fichier de configuration, la section d'élément de liaison doit être ajoutée à la collection d'extensions d'élément de liaison.  
+ Les applications clientes doivent ajouter DurableInstanceContextChannel dans la pile de canaux à l'aide d'une liaison personnalisée. Pour configurer le canal de façon déclarative dans le fichier de configuration, la section d’élément de liaison doit être ajoutée à la collection d’extensions d’élément de liaison.  
   
 ```xml  
 <system.serviceModel>  

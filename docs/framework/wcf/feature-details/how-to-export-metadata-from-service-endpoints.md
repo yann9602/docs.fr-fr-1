@@ -16,11 +16,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 684d9bcf2e4787457a6ef3251e0202e1559561b5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 14b045ef55ac0b6d76bb06e711b4134d54b3d61f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-export-metadata-from-service-endpoints"></a>Comment : exporter des métadonnées à partir de points de terminaison de service
 Cette rubrique explique comment exporter des métadonnées à partir de points de terminaison de service.  
@@ -66,6 +67,6 @@ Cette rubrique explique comment exporter des métadonnées à partir de points d
  Lors de la compilation de Program.cs, faites référence à System.ServiceModel.dll.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble de l’Architecture de métadonnées](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)  
- [À l’aide de métadonnées](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
- [Points de terminaison : Adresses, liaisons et contrats](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+ [Vue d’ensemble de l’architecture de métadonnées](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)  
+ [Utilisation des métadonnées](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
+ [Points de terminaison : adresses, liaisons et contrats](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)

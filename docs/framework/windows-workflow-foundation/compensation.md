@@ -12,11 +12,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 248af9c669687d0ab4d41f0ac93985d0d9a17678
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7dd56b41b7b661b58446219d426be1a19edba059
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compensation"></a>Compensation
 La compensation dans [!INCLUDE[wf](../../../includes/wf-md.md)] est le mécanisme qui permet d'annuler ou de compenser un travail terminé (en fonction de la logique définie par l'application) lorsqu'un échec ultérieur se produit. Cette section décrit comment utiliser une compensation dans les flux de travail.  

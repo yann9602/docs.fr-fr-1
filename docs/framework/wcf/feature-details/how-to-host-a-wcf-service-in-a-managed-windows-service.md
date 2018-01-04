@@ -16,11 +16,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3e8572541e0bf9ddcfb93939c177b5cb8c440b41
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f4b2c8daa176ef1f9aef24cac3125d59fcc02fa9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Comment : héberger un service WCF dans un service Windows managé
 Cette rubrique décrit les étapes de base requises pour créer un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] hébergé par un service Windows. Le scénario est activé par le service Windows managé qui héberge l'option de service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à durée d'exécution longue en dehors des services IIS (Internet Information Services) dans un environnement sécurisé qui n'est pas activé pour les messages. La durée de vie du service est contrôlée par le système d'exploitation. Cette option d'hébergement est disponible dans toutes les versions de Windows.  
@@ -146,6 +147,6 @@ Cette rubrique décrit les étapes de base requises pour créer un service [!INC
   
 ## <a name="see-also"></a>Voir aussi  
  [Configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md)  
- [Hébergement dans une Application managée](../../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)  
+ [Hébergement dans une application managée](../../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)  
  [Hébergement de services](../../../../docs/framework/wcf/hosting-services.md)  
  [Fonctionnalités d’hébergement de Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=201276)

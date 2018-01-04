@@ -13,11 +13,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 72d6dcef2ac59fd63706d8d8c843f739575cf5cc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4c06efd7450afe93eaecca1e678eb6f8bf5de7a6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="httpcookiesession"></a>HttpCookieSession
 Cet exemple montre comment générer un canal de protocole personnalisé pour utiliser des cookies HTTP pour la gestion des sessions. Ce canal active la communication entre les services [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et les clients ASMX ou entre les clients [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et les services ASMX.  
@@ -95,7 +96,7 @@ InputQueue<RequestContext> requestQueue;
 ## <a name="binding-and-binding-element"></a>Liaison et élément de liaison  
  Après avoir créé les canaux de service et les canaux clients, l'étape suivante consiste à les intégrer à l'exécution [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Les canaux sont exposés à [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à travers des liaisons et des éléments de liaison. Une liaison se compose d'un ou de plusieurs éléments de liaison. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit plusieurs liaisons définies par le système ; par exemple, BasicHttpBinding ou WSHttpBinding. La classe `HttpCookieSessionBindingElement` contient l'implémentation pour l'élément de liaison. Elle substitue l'écouteur de canal et les méthodes de création des fabrications de canaux pour procéder aux instanciations requises de l'écouteur de canal ou de la fabrication de canal.  
   
- L'exemple utilise des assertions de stratégie pour décrire le service. Cela permet à l'exemple de publier ses spécifications de canal sur d'autres clients qui peuvent consommer le service. Par exemple, cet élément de liaison publie des assertions de stratégie pour permettre à des clients potentiels de savoir qu'il prend en charge des sessions. Vu que l'exemple active la propriété `ExchangeTerminateMessage` dans la configuration de l'élément de liaison, il ajoute les assertions nécessaires pour montrer que le service prend en charge une action d'échange de messages supplémentaire pour mettre fin à la conversation de la session. Les clients peuvent ensuite utiliser cette action. Le code WSDL suivant illustre les assertions de stratégie créées à partir de l'`HttpCookieSessionBindingElement`.  
+ L'exemple utilise des assertions de stratégie pour décrire le service. Cela permet à l'exemple de publier ses spécifications de canal sur d'autres clients qui peuvent consommer le service. Par exemple, cet élément de liaison publie des assertions de stratégie pour permettre à des clients potentiels de savoir qu’il prend en charge des sessions. Vu que l'exemple active la propriété `ExchangeTerminateMessage` dans la configuration de l'élément de liaison, il ajoute les assertions nécessaires pour montrer que le service prend en charge une action d'échange de messages supplémentaire pour mettre fin à la conversation de la session. Les clients peuvent ensuite utiliser cette action. Le code WSDL suivant illustre les assertions de stratégie créées à partir de l'`HttpCookieSessionBindingElement`.  
   
 ```xml  
 <wsp:Policy wsu:Id="HttpCookieSessionBinding_IWcfCookieSessionService_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">  
@@ -114,7 +115,7 @@ InputQueue<RequestContext> requestQueue;
  L'exemple fournit deux classes qui exposent l'exemple de canal à travers la configuration. La première est un <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> pour l'`HttpCookieSessionBindingElement`. Le bloc de l'implémentation est délégué à `HttpCookieSessionBindingConfigurationElement`, qui dérive de <xref:System.ServiceModel.Configuration.StandardBindingElement>. L'`HttpCookieSessionBindingConfigurationElement` a des propriétés qui correspondent aux propriétés de l'`HttpCookieSessionBindingElement`.  
   
 ### <a name="binding-element-extension-section"></a>Section d'extension de l'élément de liaison  
- La section `HttpCookieSessionBindingElementSection` est un <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> qui expose `HttpCookieSessionBindingElement` au système de configuration. Avec quelques substitutions, l'exemple définit le nom de section de configuration, le type de l'élément de liaison et la méthode utilisée pour le créer. Nous pouvons ensuite enregistrer la section d'extension dans un fichier de configuration comme suit :  
+ La section `HttpCookieSessionBindingElementSection` est un <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> qui expose `HttpCookieSessionBindingElement` au système de configuration. Avec quelques substitutions, l’exemple définit le nom de section de configuration, le type de l’élément de liaison et la méthode utilisée pour le créer. Nous pouvons ensuite enregistrer la section d’extension dans un fichier de configuration comme suit :  
   
 ```xml  
 <configuration>        

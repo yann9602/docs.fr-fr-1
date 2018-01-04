@@ -20,11 +20,12 @@ caps.latest.revision: "22"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 595999bfa7d3472fc31274a0c9652af5416d2da5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 84fa0e6b20f3d2b75d3182f64ddc9c70ef661f10
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-the-security-mode"></a>Comment : définir le mode de sécurité
 La sécurité [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] propose trois modes de sécurité standard disponibles sur la plupart des liaisons prédéfinies : transport, message et transport avec informations d'identification de message. Il existe également deux modes supplémentaires propres à deux liaisons particulières. Il s'agit du mode « informations d'identification de transport uniquement » disponible sur la liaison <xref:System.ServiceModel.BasicHttpBinding> et du mode « les deux » disponible sur la liaison <xref:System.ServiceModel.NetMsmqBinding>. Cette rubrique traite essentiellement des trois principaux modes de sécurité : <xref:System.ServiceModel.SecurityMode.Transport>, <xref:System.ServiceModel.SecurityMode.Message> et <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>.  
@@ -124,10 +125,10 @@ La sécurité [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] propose trois
  [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Comment : utilise la sécurité de Transport et les informations d’identification de Message](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comment : configurer un Port avec un certificat SSL](../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
- [Comment : utilise la sécurité de Transport et les informations d’identification de Message](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)  
+ [Guide pratique pour configurer un port avec un certificat SSL](../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
+ [Guide pratique pour utiliser des informations d’identification de sécurité de transport et de message](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)  
  [Sécurité de transport](../../../docs/framework/wcf/feature-details/transport-security.md)  
- [Sécurité des messages](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)  
+ [Sécurité de message](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)  
  [Vue d’ensemble de la sécurité](../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Liaisons fournies par le système](../../../docs/framework/wcf/system-provided-bindings.md)  
  [\<sécurité >](../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)  

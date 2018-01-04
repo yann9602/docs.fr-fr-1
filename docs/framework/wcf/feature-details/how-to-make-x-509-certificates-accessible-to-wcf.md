@@ -20,11 +20,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e03a38e2a93dd866bc3da65527d5410b09009e00
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b95ee7c28c67ff861dc401d1405306c78b9663de
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>Comment : rendre des certificats X.509 accessibles à WCF
 Pour rendre un certificat X.509 accessible à [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], le code d'application doit spécifier le nom et l'emplacement du magasin de certificats. Dans certains cas, l'identité du processus doit avoir accès au fichier contenant la clé privée associée au certificat X.509. Pour obtenir la clé privée associée à un certificat X.509 dans un magasin de certificats, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] doit disposer de l'autorisation requise. Par défaut, seuls le propriétaire et le compte système peuvent accéder à la clé privée d'un certificat.  
@@ -82,5 +83,5 @@ Pour rendre un certificat X.509 accessible à [!INCLUDE[indigo1](../../../../inc
   
 ## <a name="see-also"></a>Voir aussi  
  [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md)  
- [Comment : récupérer l’empreinte numérique d’un certificat](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)  
+ [Guide pratique pour récupérer l’empreinte numérique d’un certificat](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)  
  [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

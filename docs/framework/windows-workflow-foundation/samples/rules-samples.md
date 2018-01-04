@@ -12,11 +12,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9f130fb875074e45144e8ff7bb4cc48e353f0428
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 087b6aaf524ac2bf301d40b13ed8f3d7987d1956
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="rules-samples"></a>Exemples de règles
 Cette section contient des exemples qui illustrent l'utilisation du moteur de règles de workflow de [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)].  
@@ -28,11 +29,11 @@ Cette section contient des exemples qui illustrent l'utilisation du moteur de r�
  [Stratégie simple](../../../../docs/framework/windows-workflow-foundation/samples/simple-policy.md)  
  Montre comment utiliser une activité <xref:System.Workflow.Activities.PolicyActivity> dans un workflow.  
   
- [IfElse avec des règles](../../../../docs/framework/windows-workflow-foundation/samples/ifelse-with-rules.md)  
+ [IfElse With Rules](../../../../docs/framework/windows-workflow-foundation/samples/ifelse-with-rules.md)  
  Montre l'utilisation d'une condition de règle avec une activité <xref:System.Workflow.Activities.IfElseActivity>.  
   
- [Groupe d’activités conditionnée](../../../../docs/framework/windows-workflow-foundation/samples/conditioned-activity-group.md)  
+ [Groupe d’activités sous conditions](../../../../docs/framework/windows-workflow-foundation/samples/conditioned-activity-group.md)  
  Illustre une application de réservation de voyages.  
   
- [Ordre de traitement de la stratégie](../../../../docs/framework/windows-workflow-foundation/samples/order-processing-with-policy.md)  
+ [Traitement des commandes avec une stratégie](../../../../docs/framework/windows-workflow-foundation/samples/order-processing-with-policy.md)  
  Présente quelques-unes des fonctionnalités clés contenues dans le [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] de [!INCLUDE[wf](../../../../includes/wf-md.md)].

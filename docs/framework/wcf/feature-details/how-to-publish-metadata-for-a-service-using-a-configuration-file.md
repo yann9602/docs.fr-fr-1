@@ -13,11 +13,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 16e278fd0eb227ddd382157d38c7370e604c35d3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 42f70cd34f65d5393d79b8ace4f9eb704f309d0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Comment : publier les métadonnées d'un service à l'aide d'un fichier de configuration
 C'est l'une des deux rubriques de procédure qui traitent de la publication des métadonnées pour un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Il y a deux façons de spécifier comment un service doit publier des métadonnées : à l'aide d'un fichier de configuration et à l'aide du code. Cette rubrique montre comment publier des métadonnées pour un service à l'aide d'un fichier de configuration.  
@@ -274,7 +275,7 @@ namespace Metadata.Samples
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior>  
  [Guide pratique pour héberger un service WCF dans une application managée](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)  
- [L’auto-hébergement](../../../../docs/framework/wcf/samples/self-host.md)  
- [Vue d’ensemble de l’Architecture de métadonnées](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)  
- [À l’aide de métadonnées](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
- [Comment : publier les métadonnées d’un Service à l’aide de Code](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)
+ [Auto-hébergement](../../../../docs/framework/wcf/samples/self-host.md)  
+ [Vue d’ensemble de l’architecture de métadonnées](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)  
+ [Utilisation des métadonnées](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
+ [Guide pratique pour publier les métadonnées d’un service à l’aide de code](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)

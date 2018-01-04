@@ -19,11 +19,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 17cbdebfa6cbb0cacacd923de4bd22125c812938
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a7993345a39a24c770fdd717580d428968dae836
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-list-installed-decoders"></a>Comment : répertorier les décodeurs installés
 Vous souhaiterez répertorier les décodeurs d’image disponibles sur un ordinateur, pour déterminer si votre application peut lire un format de fichier d’image spécifique. Le <xref:System.Drawing.Imaging.ImageCodecInfo> classe fournit le <xref:System.Drawing.Imaging.ImageCodecInfo.GetImageDecoders%2A> méthodes statiques afin que vous pouvez déterminer quelle image décodeurs sont disponibles. <xref:System.Drawing.Imaging.ImageCodecInfo.GetImageDecoders%2A>Retourne un tableau de <xref:System.Drawing.Imaging.ImageCodecInfo> objets.  

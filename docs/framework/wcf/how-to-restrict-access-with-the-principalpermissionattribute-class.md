@@ -20,11 +20,12 @@ caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9ddfb7b343bf4eb551b5029c538d29f104698adf
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: da91e3456fdca863980c89f45e0cc28db19170be
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-restrict-access-with-the-principalpermissionattribute-class"></a>Comment : restreindre l'accès à l'aide de la classe PrincipalPermissionAttribute
 Le contrôle de l’accès aux ressources sur un ordinateur de domaine Windows est une tâche de sécurité de base. Par exemple, certains utilisateurs doivent pouvoir consulter des données sensibles, telles que les informations relatives aux salaires. Cette rubrique explique comment restreindre l'accès à une méthode en exigeant que l'utilisateur appartienne à un groupe prédéfini. Pour obtenir un exemple fonctionnel, consultez [autorisant l’accès aux opérations de Service](../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md).  
@@ -99,6 +100,6 @@ Le contrôle de l’accès aux ressources sur un ordinateur de domaine Windows e
  <xref:System.Security.Permissions.PrincipalPermissionAttribute>  
  <xref:System.Security.Permissions.SecurityAction.Demand>  
  <xref:System.Security.Permissions.PrincipalPermissionAttribute.Role%2A>  
- [Autoriser l’accès aux opérations de Service](../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)  
+ [Autorisation de l’accès aux opérations de service](../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)  
  [Vue d’ensemble de la sécurité](../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Implémentation de contrats de service](../../../docs/framework/wcf/implementing-service-contracts.md)

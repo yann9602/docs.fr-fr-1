@@ -14,11 +14,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 91b03e29c2841434d4222f59ae62028bf2431a84
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a2785f74d9a07b267d836a9f6e6749d259a1ab21
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exporting-and-importing-metadata"></a>Exportation et importation de métadonnées
 Dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], le processus d'exportation de métadonnées consiste à décrire des points de terminaison de service et à les projeter dans une représentation parallèle standardisée qui permet aux clients de comprendre comment utiliser le service. L'importation des métadonnées du service est le processus de génération d'instances <xref:System.ServiceModel.Description.ServiceEndpoint> ou de parties de métadonnées de service.  
@@ -57,19 +58,19 @@ Dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], le processus d'exp
  Le type <xref:System.ServiceModel.Description.WsdlExporter> lève à nouveau toutes les exceptions détectées pendant le processus d'exportation. Ces exceptions ne sont pas capturées en tant qu'erreurs dans la propriété `Errors`. Une fois que <xref:System.ServiceModel.Description.WsdlExporter> lève une exception, celle-ci se trouve dans un état de faute et ne peut pas être réutilisée. <xref:System.ServiceModel.Description.WsdlExporter> ajoute des avertissements à sa propriété `Errors` lorsqu'une opération ne peut pas être exportée parce qu'elle utilise des actions génériques et lorsque des noms de liaison dupliqués sont rencontrés.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Comment : importer des métadonnées dans les points de terminaison de Service](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md)  
+ [Guide pratique pour importer des métadonnées dans des points de terminaison de service](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md)  
  Décrit comment importer les métadonnées téléchargées dans des objets description.  
   
- [Comment : exporter les métadonnées à partir de points de terminaison de Service](../../../../docs/framework/wcf/feature-details/how-to-export-metadata-from-service-endpoints.md)  
+ [Guide pratique pour exporter des métadonnées à partir de points de terminaison de service](../../../../docs/framework/wcf/feature-details/how-to-export-metadata-from-service-endpoints.md)  
  Décrit comment exporter des objets description dans des métadonnées.  
   
- [ServiceDescription et WSDL référence](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md)  
+ [Informations de référence sur ServiceDescription et WSDL](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md)  
  Décrit le mappage entre les objets description et WSDL.  
   
- [Comment : utiliser Svcutil.exe pour exporter les métadonnées à partir de Code de Service compilé](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)  
+ [Guide pratique pour utiliser Svcutil.exe pour exporter des métadonnées à partir de code de service compilé](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)  
  Décrit l'utilisation de Svcutil.exe pour exporter les métadonnées pour les services, les contrats et les types de données dans les assemblys compilés.  
   
- [Référence de schéma de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
+ [Informations de référence sur les schémas de contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
  Décrit le sous-ensemble du schéma XML (XSD) utilisé par <xref:System.Runtime.Serialization.DataContractSerializer> pour décrire les types CLR (Common Language Run-time) pour la sérialisation XML.  
   
 ## <a name="reference"></a>Référence  
@@ -78,5 +79,5 @@ Dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], le processus d'exp
  <xref:System.ServiceModel.Description.WsdlImporter>  
   
 ## <a name="see-also"></a>Voir aussi  
- [Exportation de métadonnées personnalisées pour une Extension WCF](../../../../docs/framework/wcf/extending/exporting-custom-metadata-for-a-wcf-extension.md)  
- [Importation de métadonnées personnalisées pour une Extension WCF](../../../../docs/framework/wcf/extending/importing-custom-metadata-for-a-wcf-extension.md)
+ [Exportation de métadonnées personnalisées pour une extension WCF](../../../../docs/framework/wcf/extending/exporting-custom-metadata-for-a-wcf-extension.md)  
+ [Importation de métadonnées personnalisées pour une extension WCF](../../../../docs/framework/wcf/extending/importing-custom-metadata-for-a-wcf-extension.md)

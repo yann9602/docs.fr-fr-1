@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c1570832e5f179b6d2685ad33fad743c9530bb16
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fe4222ac124174341a28035c955a2a9bef4a167c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="trace-type-summary"></a>Liste des types de suivis
 [Niveaux de source](http://go.microsoft.com/fwlink/?LinkID=94943) définit différents niveaux de trace : critique, erreur, avertissement, Information et Verbose, et fournit une description de la `ActivityTracing` indicateur qui active ou désactive la sortie de traçage d’événements de transfert de limite et d’activité.  
@@ -33,7 +34,7 @@ ms.lasthandoff: 12/02/2017
 |Warning|Message d'informations.|  
 |Information|Problème non critique.|  
 |Verbose|Suivi de débogage.|  
-|Démarrer|Démarrage d'une unité logique de traitement.|  
+|Start|Démarrage d'une unité logique de traitement.|  
 |Interrompre|Interruption d'une unité logique de traitement.|  
 |Reprendre|Reprise d'une unité logique de traitement.|  
 |Arrêter|Arrêt d'une unité logique de traitement.|  

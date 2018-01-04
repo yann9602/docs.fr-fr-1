@@ -13,16 +13,17 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e2d177045f82f9df5318a38c67a23d6b9fa2d268
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0717aae2c13c9fa5fcbf0ea47d344cac5675fbea
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="x509-certificate-validator"></a>X.509 Certificate Validator
-Cet exemple montre comment implémenter un validateur de certificat X.509 personnalisé. Cela s'avère utile dans les cas où aucun des modes de validation de certificat X.509 intégrés ne convient aux spécifications de l'application. Cet exemple illustre un service qui possède un validateur personnalisé qui accepte les certificats auto-émis. Le client utilise un certificat X.509 pour s'authentifier auprès du service.  
+Cet exemple montre comment implémenter un validateur de certificat X.509 personnalisé. Cela s’avère utile dans les cas où aucun des modes de validation de certificat X.509 intégrés ne convient aux spécifications de l’application. Cet exemple illustre un service qui possède un validateur personnalisé qui accepte les certificats auto-émis. Le client utilise un certificat X.509 pour s'authentifier auprès du service.  
   
- Remarque : comme n'importe qui peut généré un certificat auto-émis, le validateur personnalisé utilisé par le service est moins sécurisé que le comportement par défaut fourni par le mode de validation ChainTrust X509CertificateValidationMode. Les implications en termes de sécurité doivent être soigneusement étudiées avant d'utiliser cette logique de validation dans le code de production.  
+ Remarque : comme n'importe qui peut généré un certificat auto-émis, le validateur personnalisé utilisé par le service est moins sécurisé que le comportement par défaut fourni par le mode de validation ChainTrust X509CertificateValidationMode. Les implications en termes de sécurité doivent être soigneusement étudiées avant d’utiliser cette logique de validation dans le code de production.  
   
  En résumé, cet exemple montre comment :  
   

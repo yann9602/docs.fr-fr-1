@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8ee7376f87fd0e4ce15d192dd53f872e84187acc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0b7812023fbe2159daba205727e20e1b69b84686
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="metadata-formats"></a>Formats de métadonnées
 Le tableau suivant répertorie les formats de métadonnées pris en charge par [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -34,5 +35,5 @@ Le tableau suivant répertorie les formats de métadonnées pris en charge par [
 |WS-Addressing Binding pour WSDL|[Web Services Addressing 1.0 - liaison WSDL](http://go.microsoft.com/fwlink/?LinkId=94869)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implémente WS-Addressing Binding pour WSDL pour joindre des données d'adressage dans WSDL.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Protocoles pris en charge par les liaisons d’interopérabilité fournies par le système des Services Web](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
+ [Protocoles de services web pris en charge par des liaisons d’interopérabilité fournies par le système](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
  [WSDL et stratégie](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)

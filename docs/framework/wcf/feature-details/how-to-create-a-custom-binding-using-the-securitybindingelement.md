@@ -17,11 +17,12 @@ caps.latest.revision: "19"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 0042ae642d8e3a5936c316921b2f9377a0eac17a
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e230c02d53f8222034dfd79872cde9c540c31963
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] contient plusieurs liaisons fournies par le système qui peuvent être configurées mais qui n'offrent pas une souplesse complète lors de la configuration de toutes les options de sécurité prises en charge par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Cette rubrique montre comment créer une liaison personnalisée directement à partir d’éléments de liaison individuels et met en évidence certains des paramètres de sécurité qui peuvent être spécifiés lors de la création d’une liaison de ce type. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Création de liaisons personnalisées, consultez [extension de liaisons](../../../../docs/framework/wcf/extending/extending-bindings.md).  
@@ -56,9 +57,9 @@ ms.lasthandoff: 11/21/2017
   
 -   Protocole de transport  
   
--   Modèle d'échange de messages (MEP) spécifié dans le contrat  
+-   Modèle d’échange de messages (MEP) spécifié dans le contrat  
   
- Le tableau suivant indique les configurations des piles d'éléments de liaison valides pour chaque combinaison des facteurs précédents. Notez qu'il s'agit d'exigences minimales. Vous pouvez ajouter d'autres éléments de liaison à la liaison, notamment des éléments de liaison d'encodage de message et de transaction.  
+ Le tableau suivant indique les configurations des piles d’éléments de liaison valides pour chaque combinaison des facteurs précédents. Notez qu’il s’agit d’exigences minimales. Vous pouvez ajouter d’autres éléments de liaison à la liaison, notamment des éléments de liaison d’encodage de message et de transaction.  
   
 |Mode de sécurité|Transport|Contracter le modèle d’échange de messages|Contracter le modèle d’échange de messages|Contracter le modèle d’échange de messages|  
 |-------------------|---------------|---------------------------------------|---------------------------------------|---------------------------------------|  
@@ -98,13 +99,13 @@ ms.lasthandoff: 11/21/2017
   
 3.  Ajoutez <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> à la collection (`outputBec`) en appelant la méthode `Add` de <xref:System.Collections.ObjectModel.Collection%601> de la classe <xref:System.ServiceModel.Channels.BindingElement>.  
   
-4.  Créez une instance de la classe <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> et ajoutez-la à la collection (`outputBec`). Cela spécifie l'encodage utilisé par la liaison.  
+4.  Créez une instance de la classe <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> et ajoutez-la à la collection (`outputBec`). Cela spécifie l’encodage utilisé par la liaison.  
   
 5.  Créez un <xref:System.ServiceModel.Channels.HttpTransportBindingElement> et ajoutez-le à la collection `outputBec`. Cela indique que la liaison utilise le transport HTTP.  
   
 6.  Créez une liaison personnalisée en créant une instance de la classe <xref:System.ServiceModel.Channels.CustomBinding> et en passant la collection `outputBec` au constructeur.  
   
-7.  La liaison personnalisée résultante partage un grand nombre des caractéristiques de <xref:System.ServiceModel.WSHttpBinding>. Elle spécifie la sécurité au niveau du message et les informations d'identification Windows, mais désactive les sessions sécurisées, requiert que les informations d'identification du service soient spécifiées hors bande, et ne chiffre pas de signature. La dernière ne peut être contrôlée que par la définition de la propriété <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A>, tel qu'indiqué à l'étape 4. Les deux autres peuvent être contrôlées à l'aide de paramètres sur la liaison standard.  
+7.  La liaison personnalisée résultante partage un grand nombre des caractéristiques de <xref:System.ServiceModel.WSHttpBinding>. Elle spécifie la sécurité au niveau du message et les informations d'identification Windows, mais désactive les sessions sécurisées, requiert que les informations d'identification du service soient spécifiées hors bande, et ne chiffre pas de signature. La dernière ne peut être contrôlée que par la définition de la propriété <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A>, tel qu'indiqué à l'étape 4. Les deux autres peuvent être contrôlées à l’aide de paramètres sur la liaison standard.  
   
 ## <a name="example"></a>Exemple  
   

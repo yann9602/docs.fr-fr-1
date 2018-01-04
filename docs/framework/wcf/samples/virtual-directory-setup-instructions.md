@@ -13,11 +13,12 @@ caps.latest.revision: "36"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 72487c4a6720f80119beb837fbb3b5ea25ac3b93
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2684091d15a4c0796a0b8fb85952c0f902c1f545
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="virtual-directory-setup-instructions"></a>Instructions d'installation du répertoire virtuel
 Les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ont pour but de partager un répertoire virtuel commun nommé servicemodelsamples, mappé au dossier %SystemDrive%\inetpub\wwwroot\servicemodelsamples.  
@@ -41,7 +42,7 @@ Les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ont pour bu
   
 5.  Créez le répertoire suivant : %SystemDrive%\inetpub\wwwroot\servicemodelsamples  
   
-6.  Affectez la valeur %SystemDrive%\inetpub\wwwroot\servicemodelsamples au chemin d'accès physique.  La plupart des exemples WCF copient les fichiers exécutables de service dans cet emplacement une fois générés.  
+6.  Affectez la valeur %SystemDrive%\inetpub\wwwroot\servicemodelsamples au chemin d’accès physique.  La plupart des exemples WCF copient les fichiers exécutables de service dans cet emplacement une fois générés.  
   
 7.  Cliquez sur **OK**. L'application Web est créée pour les exemples WCF.  
   
@@ -201,4 +202,4 @@ Les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] ont pour bu
     3.  Dans le **groupe** colonne, vérifiez que la valeur de **ASPNET** est « Utilisateurs ».  
   
 ## <a name="see-also"></a>Voir aussi  
- [Internet Information Service d’hébergement Instructions](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)
+ [Instructions relatives à l’hébergement dans Internet Information Services](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)

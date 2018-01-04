@@ -14,11 +14,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4de910e2e66bc480abefe228bd183fe95270fb69
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5e9d7fbf42f2ed9b8f68b1faf2e2425050b62eaa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transport-quotas"></a>Quotas de transport
 Les quotas de transport sont un mécanisme stratégique permettant de déterminer lorsqu'une connexion consomme trop de ressources. Un quota est une limite imposée qui empêche l'utilisation de ressources supplémentaires une fois la valeur du quota dépassée. Les quotas de transport permettent de lutter contre les attaques par déni de service malveillantes ou non intentionnelles.  
@@ -39,7 +40,7 @@ Les quotas de transport sont un mécanisme stratégique permettant de détermine
   
  Chaque paramètre de quota possède un type, une valeur minimale et une valeur par défaut. La valeur maximale d'un quota est limitée par son type. En raison des limites de l'ordinateur, il n'est pas toujours possible d'affecter à un quota sa valeur maximale.  
   
-|Nom|Type|Valeur<br /><br /> par défaut|Par défaut<br /><br /> par défaut|Description|  
+|Name|Type|Valeur<br /><br /> par défaut|Par défaut<br /><br /> par défaut|Description|  
 |----------|----------|--------------------|-----------------------|-----------------|  
 |`ChannelInitializationTimeout`|TimeSpan|1 graduation|5 s|Durée maximale à attendre pour qu'une connexion envoie le préambule pendant la lecture initiale. Ces données sont reçues avant que l'authentification ait lieu. Ce paramètre est généralement bien inférieur à la valeur de quota `ReceiveTimeout`.|  
 |`CloseTimeout`|TimeSpan|0|1 minute|Durée maximale à attendre pour qu'une connexion se ferme avant que le transport ne lève une exception.|  
@@ -52,7 +53,7 @@ Les quotas de transport sont un mécanisme stratégique permettant de détermine
 |`MaxOutboundConnectionsPerEndpoint`|Entier|1|10|Nombre maximal de connexions sortantes qui peuvent être associées à un point de terminaison particulier.<br /><br /> Ce paramètre ne s'applique qu'aux connexions en groupe.|  
 |`MaxOutputDelay`|TimeSpan|0|200 ms|Durée maximale à attendre après une opération d'envoi pour traiter par lot des messages supplémentaires dans une opération unique. Les messages sont envoyés plus tôt si la mémoire tampon du transport sous-jacent est pleine. L'envoi de messages supplémentaires ne réinitialise pas la période d'attente.|  
 |`MaxPendingAccepts`|Entier|1|1|Nombre maximal de canaux que l'écouteur peut mettre en attente d'acceptation.<br /><br /> Il existe un intervalle entre la fin de l'acceptation en cours et le début d'une nouvelle acceptation. Augmenter la taille de cette collection peut empêcher la suppression des clients qui se connectent pendant cet intervalle.|  
-|`MaxPendingConnections`|Entier|1|10|Nombre maximal de connexions que l'écouteur peut mettre en attente d'acceptation par l'application. Lorsque cette valeur de quota est dépassée, les nouvelles connexions entrantes sont supprimées plutôt que mises en attente d'acceptation.<br /><br /> Les fonctionnalités de connexion telles que la sécurité des messages peuvent entraîner qu'un client ouvre plusieurs connexions. Les administrateurs de service doivent prendre en compte ces connexions supplémentaires lors de la définition de cette valeur de quota.|  
+|`MaxPendingConnections`|Entier|1|10|Nombre maximal de connexions que l'écouteur peut mettre en attente d'acceptation par l'application. Lorsque cette valeur de quota est dépassée, les nouvelles connexions entrantes sont supprimées plutôt que mises en attente d’acceptation.<br /><br /> Les fonctionnalités de connexion telles que la sécurité des messages peuvent entraîner qu'un client ouvre plusieurs connexions. Les administrateurs de service doivent prendre en compte ces connexions supplémentaires lors de la définition de cette valeur de quota.|  
 |`MaxReceivedMessageSize`|Longue|1|64 Ko|Taille maximale, en octets, d'un message reçu (en-têtes compris) avant que le transport ne lève une exception.|  
 |`OpenTimeout`|TimeSpan|0|1 minute|Durée maximale à attendre pour qu'une connexion soit établie avant que le transport ne lève une exception.|  
 |`ReceiveTimeout`|TimeSpan|0|10 minutes|Durée maximale à attendre pour qu'une opération de lecture se termine avant que le transport ne lève une exception.|  
@@ -65,10 +66,10 @@ Les quotas de transport sont un mécanisme stratégique permettant de détermine
   
  D'autres types de quotas s'appliquent indirectement aux transports. L'encodeur de message que le transport utilise pour transformer un message en octets peut avoir ses propres paramètres de quota. Toutefois, ces quotas sont indépendants du type de transport utilisé.  
   
-### <a name="controlling-transport-quotas-from-the-binding-element"></a>Contrôle des quotas de transport depuis l'élément de liaison  
- La définition des quotas de transport au moyen de l'élément de liaison offre le maximum de souplesse pour contrôler le comportement du transport. Les délais par défaut pour les opérations de fermeture, d'ouverture, de réception et d'envoi sont issus de la liaison lorsqu'un canal est construit.  
+### <a name="controlling-transport-quotas-from-the-binding-element"></a>Contrôle des quotas de transport depuis l’élément de liaison  
+ La définition des quotas de transport au moyen de l'élément de liaison offre le maximum de souplesse pour contrôler le comportement du transport. Les délais par défaut pour les opérations de fermeture, d’ouverture, de réception et d’envoi sont issus de la liaison lorsqu’un canal est construit.  
   
-|Nom|HTTP|TCP/IP|Canal nommé|  
+|Name|HTTP|TCP/IP|Canal nommé|  
 |----------|----------|-------------|----------------|  
 |`ChannelInitializationTimeout`||X|X|  
 |`CloseTimeout`||||  
@@ -88,9 +89,9 @@ Les quotas de transport sont un mécanisme stratégique permettant de détermine
 |`SendTimeout`||||  
   
 ### <a name="controlling-transport-quotas-from-the-binding"></a>Contrôle des quotas de transport depuis la liaison  
- La définition des quotas de transport au moyen de la liaison permet de choisir parmi un ensemble de quotas simplifié tout en conservant l'accès aux valeurs de quota les plus courantes.  
+ La définition des quotas de transport au moyen de la liaison permet de choisir parmi un ensemble de quotas simplifié tout en conservant l’accès aux valeurs de quota les plus courantes.  
   
-|Nom|HTTP|TCP/IP|Canal nommé|  
+|Name|HTTP|TCP/IP|Canal nommé|  
 |----------|----------|-------------|----------------|  
 |`ChannelInitializationTimeout`||||  
 |`CloseTimeout`|X|X|X|  

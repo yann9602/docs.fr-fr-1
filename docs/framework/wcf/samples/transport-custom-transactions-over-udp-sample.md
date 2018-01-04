@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b17cb737533f1542b5f702097da4592df8e17eac
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7e26d0c25879b3b1b6ed873543f051de989ddd92
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transport-custom-transactions-over-udp-sample"></a>Transport: Custom Transactions over UDP Sample
 Cet exemple est basé sur le [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) présenté dans le [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] [Transport extensibilité](../../../../docs/framework/wcf/samples/transport-extensibility.md). Il étend l'exemple UDP Transport afin de prendre en charge le flux de transactions personnalisé et présente l'utilisation de la propriété <xref:System.ServiceModel.Channels.TransactionMessageProperty>.  
@@ -127,7 +128,7 @@ public class TransactionFlowBehavior : IEndpointBehavior
 }  
 ```  
   
- Le mécanisme précédent étant en place, le code utilisateur crée un `TransactionScope` avant d'appeler l'opération de service. L'inspecteur de message veille à ce que la transaction soit passée au transport si elle doit être transmise à l'opération de service.  
+ Le mécanisme précédent étant en place, le code utilisateur crée un `TransactionScope` avant d'appeler l'opération de service. L’inspecteur de message veille à ce que la transaction soit passée au transport si elle doit être transmise à l’opération de service.  
   
 ```  
 CalculatorContractClient calculatorClient = new CalculatorContractClient("SampleProfileUdpBinding_ICalculatorContract");  
@@ -161,7 +162,7 @@ catch (Exception)
 }  
 ```  
   
- Après réception d'un paquet UDP émanant du client, le service désérialise ce paquet afin d'extraire le message et éventuellement une transaction.  
+ Après réception d’un paquet UDP émanant du client, le service désérialise ce paquet afin d’extraire le message et éventuellement une transaction.  
   
 ```  
 count = listenSocket.EndReceiveFrom(result, ref dummy);  
@@ -273,4 +274,4 @@ if (transaction != null)
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transactions\TransactionMessagePropertyUDPTransport`  
   
 ## <a name="see-also"></a>Voir aussi  
- [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md)
+ [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md)

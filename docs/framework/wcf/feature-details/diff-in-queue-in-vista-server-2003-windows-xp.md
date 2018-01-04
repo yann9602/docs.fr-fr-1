@@ -14,11 +14,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 669c6be6756d79b30266c9fda0909fedc71aeae3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8f30ad7819a570f0149868502261f986f4dd8c0b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="differences-in-queuing-features-in-windows-vista-windows-server-2003-and-windows-xp"></a>Différences entre les fonctionnalités de mise en file d’attente dans Windows Vista, Windows Server 2003 et Windows XP
 Cette rubrique liste les différences des files d'attente [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] dans [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
@@ -31,7 +32,7 @@ Cette rubrique liste les différences des files d'attente [!INCLUDE[indigo1](../
  [!INCLUDE[wv](../../../../includes/wv-md.md)] fournit des files d'attente de lettres mortes spécifiques aux applications. Les files d'attente de lettres mortes spécifiques aux applications ne sont pas disponibles dans [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] ni dans [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et les applications doivent utiliser la file d'attente de lettres mortes à l'échelle du système.  
   
 ## <a name="poison-message-handling"></a>Gestion des messages incohérents  
- Un message incohérent est un message qui a dépassé le nombre maximal de tentatives de remise à l'application réceptrice. Cette situation peut survenir lorsqu'une application qui lit un message d'une file d'attente transactionnelle ne peut pas traiter immédiatement le message en raison d'erreurs. Si l'application abandonne la transaction dans laquelle le message mis en file d'attente a été reçu, elle renvoie le message à la file d'attente. L'application essaie ensuite de récupérer le message dans une nouvelle transaction. Si le problème qui provoque l'erreur n'est pas résolu, l'application réceptrice peut être bloquée dans une réception et un abandon en boucle du même message jusqu'à ce que le nombre maximal de tentatives de remise soit dépassé et qu'un message incohérent soit généré.  
+ Un message incohérent est un message qui a dépassé le nombre maximal de tentatives de remise à l'application réceptrice. Cette situation peut survenir lorsqu’une application qui lit un message d’une file d’attente transactionnelle ne peut pas traiter immédiatement le message en raison d’erreurs. Si l'application abandonne la transaction dans laquelle le message mis en file d'attente a été reçu, elle renvoie le message à la file d'attente. L’application essaie ensuite de récupérer le message dans une nouvelle transaction. Si le problème qui provoque l'erreur n'est pas résolu, l'application réceptrice peut être bloquée dans une réception et un abandon en boucle du même message jusqu'à ce que le nombre maximal de tentatives de remise soit dépassé et qu'un message incohérent soit généré.  
   
  Les différences clés de Message Queuing (MSMQ) sur [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] et sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] relatives à la gestion des messages incohérents sont les suivantes :  
   
@@ -45,5 +46,5 @@ Cette rubrique liste les différences des files d'attente [!INCLUDE[indigo1](../
  MSMQ sur [!INCLUDE[wv](../../../../includes/wv-md.md)] prend en charge les lectures transactionnelles distantes. Cette prise en charge permet à une application qui lit à partir d'une file d'attente d'être hébergée sur un ordinateur différent de l'ordinateur sur lequel la file d'attente est hébergée. Cela garantit la possibilité d'avoir une batterie de services qui lit à partir d'une file d'attente centrale, ce qui augmente le débit total du système. Cela garantit également que, si une défaillance se produit lors de la lecture et du traitement du message, la transaction est restaurée et le message est conservé dans la file d’attente afin d’y être traité ultérieurement.  
   
 ## <a name="see-also"></a>Voir aussi  
- [À l’aide de files d’attente de lettres mortes pour gérer les échecs de transfert de Message](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
+ [Utilisation de files d’attente de lettres mortes pour gérer des défaillances de transfert de messages](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
  [Gestion des messages incohérents](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bd37e88c581638e5ae11d85803fa3a970b4c8409
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 889a14d7d30c3c7750b38f55256ccc4ff004f10d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="interpreting-error-codes-returned-by-wsatconfigexe"></a>Interprétation de codes d'erreur retournés par wsatConfig.exe
 Cette rubrique répertorie tous les codes d'erreur générés par l'utilitaire de configuration de WS-AtomicTransaction (wsatConfig.exe), et les actions recommandées.  
@@ -26,7 +27,7 @@ Cette rubrique répertorie tous les codes d'erreur générés par l'utilitaire d
   
 |Code d'erreur|Description|Action recommandée|  
 |----------------|-----------------|------------------------------------|  
-|0|L'opération a réussi.|None|  
+|0|L'opération a réussi.|Aucun.|  
 |1|Erreur inattendue|Contactez Microsoft|  
 |2|Une erreur inattendue s'est produite lors de la tentative de contact de MSDTC pour récupérer les paramètres de sécurité.|Vérifiez que le service MSDTC n'est pas désactivé et traitez tous les problèmes répertoriés dans l'exception retournée.|  
 |3|Le compte via lequel WsatConfig.exe a été exécuté ne disposait pas des autorisations suffisantes pour lire les paramètres de sécurité du réseau.|Exécutez WsatConfig.exe en utilisant un compte d'administrateur.|  
@@ -63,7 +64,7 @@ Cette rubrique répertorie tous les codes d'erreur générés par l'utilitaire d
 |39|WsatConfig.exe a rencontré une erreur en mettant à jour la configuration du pare-feu.|Examinez le message d'erreur pour rechercher les éléments sur lesquels une action peut être effectuée.|  
 |40|WsatConfig.exe ne parvient pas à fournir l'accès en lecture MSDTC au fichier de clé privée du certificat|Exécutez WsatConfig.exe en utilisant un compte d'administrateur.|  
 |41|Aucune installation de [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] n'a été trouvée ou la version trouvée ne correspond pas à ce que l'outil peut configurer.|Vérifiez que [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] est installé correctement et utilisez uniquement l'outil WsatConfig.exe fourni avec cette version de [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] pour configurer WS-AT.|  
-|42|Un argument a été spécifié plusieurs fois sur la ligne de commande.|Veillez à spécifier chaque argument une seule fois lors de l'exécution de WsatConfig.exe.|  
+|42|Un argument a été spécifié plusieurs fois sur la ligne de commande.|Veillez à spécifier chaque argument une seule fois lors de l’exécution de WsatConfig.exe.|  
 |43|WsatConfig.exe ne parvient pas à mettre à jour les paramètres WS-AT si WS-AT n'est pas activé.|Spécifiez `-network:enable` en tant qu'argument supplémentaire de ligne de commande.|  
 |44|Un correctif logiciel requis est manquant et WS-AT ne peut pas être configuré tant que ce correctif logiciel n'est pas installé.|Consultez les notes de mise à jour de [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] pour obtenir les instructions d'installation du correctif logiciel requis.|  
 |45|L'option de ligne de commande `-virtualServer` est incorrecte.|Corrigez l'option de ligne de commande `-virtualServer` en spécifiant le nom de réseau de la ressource de cluster dans lequel la configuration doit s'effectuer.|  

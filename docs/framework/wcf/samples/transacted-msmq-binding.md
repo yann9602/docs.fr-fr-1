@@ -13,11 +13,12 @@ caps.latest.revision: "50"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fd656bed608811a5a04a47849bf915f708a62a9d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 702f3ac45ade5fcd2f37d256ce1213a79f012ae3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transacted-msmq-binding"></a>Transacted MSMQ Binding
 Cet exemple montre comment effectuer la communication de messages mis en file d'attente avec transactions à l'aide de MSMQ (Message Queuing).  
@@ -27,7 +28,7 @@ Cet exemple montre comment effectuer la communication de messages mis en file d'
   
  Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente. Cela signifie que le client envoie ses messages à cette file d'attente. Le service reçoit des messages de la file d'attente. Par conséquent, il n'est pas nécessaire que le service et le client s'exécutent simultanément pour communiquer à l'aide d'une file d'attente.  
   
- Lorsque des transactions sont utilisées pour envoyer et recevoir des messages, il y a en fait 2 transactions distinctes. Lorsque le client envoie des messages dans l'étendue d'une transaction, la transaction est locale au client et au gestionnaire de files d'attente client. Lorsque le service reçoit des messages dans l'étendue de la transaction, la transaction est locale au service et au gestionnaire de files d'attente de réception. N'oubliez pas que le client et le service ne participent pas à la même transaction : ils utilisent des transactions différentes lorsqu'ils effectuent leurs opérations (telles que l'envoi et la réception) avec la file d'attente.  
+ Lorsque des transactions sont utilisées pour envoyer et recevoir des messages, il y a en fait 2 transactions distinctes. Lorsque le client envoie des messages dans l’étendue d’une transaction, la transaction est locale au client et au gestionnaire de files d’attente client. Lorsque le service reçoit des messages dans l'étendue de la transaction, la transaction est locale au service et au gestionnaire de files d'attente de réception. N’oubliez pas que le client et le service ne participent pas à la même transaction : ils utilisent des transactions différentes lorsqu’ils effectuent leurs opérations (telles que l’envoi et la réception) avec la file d’attente.  
   
  Dans cet exemple, le client envoie un lot de messages au service à partir de l'étendue d'une transaction. Les messages envoyés à la file d'attente sont ensuite reçus par le service dans l'étendue de la transaction définie par le service.  
   
@@ -42,7 +43,7 @@ public interface IOrderProcessor
 }  
 ```  
   
- Le comportement de service définit un comportement d'opération avec la valeur `TransactionScopeRequired` affectée à `true`. Ainsi, l'étendue de transaction qui est utilisée pour récupérer le message de la file d'attente est utilisée par tous les gestionnaires des ressources auxquels accède la méthode. Si, par ailleurs, la méthode lève une exception, le message est retourné à la file d'attente. Si ce comportement d'opération n'est pas défini, un canal mis en file d'attente crée une transaction pour lire le message à partir de la file d'attente et le valide automatiquement avant sa distribution de sorte qu'en cas d'échec de l'opération, le message est perdu. Le scénario le plus courant est l'inscription des opérations de service dans la transaction utilisée pour lire le message à partir de la file d'attente, tel qu'indiqué dans le code suivant.  
+ Le comportement de service définit un comportement d'opération avec la valeur `TransactionScopeRequired` affectée à `true`. Ainsi, l’étendue de transaction qui est utilisée pour récupérer le message de la file d’attente est utilisée par tous les gestionnaires des ressources auxquels accède la méthode. Si, par ailleurs, la méthode lève une exception, le message est retourné à la file d'attente. Si ce comportement d'opération n'est pas défini, un canal mis en file d'attente crée une transaction pour lire le message à partir de la file d'attente et le valide automatiquement avant sa distribution de sorte qu'en cas d'échec de l'opération, le message est perdu. Le scénario le plus courant est l’inscription des opérations de service dans la transaction utilisée pour lire le message à partir de la file d’attente, tel qu’indiqué dans le code suivant.  
   
 ```  
  // This service class that implements the service contract.  

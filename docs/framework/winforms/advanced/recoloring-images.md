@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7f6f432742c966e3f17a7b7fa84628f24109d08e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c55c27c09a60e5ac5dd8f2fc6ef9372d4390621d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="recoloring-images"></a>Recoloriage des images
 Recoloriage est le processus de réglage des couleurs de l’image. Le changement de couleur à une autre, ajuster l’intensité d’une couleur par rapport à une autre couleur, modifier la luminosité ou le contraste de toutes les couleurs et la conversion des couleurs en nuances de gris sont des exemples de recoloriage.  

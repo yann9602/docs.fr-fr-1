@@ -14,11 +14,12 @@ caps.latest.revision: "27"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 933f62e1921fe12255965567bbec0faf651e0ba2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: cb8f112c71c743fd6650baf04b8db55ceaeef4ae
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="auditing-security-events"></a>Audit des événements de sécurité
 Les applications créées avec [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] peuvent enregistrer des événements de sécurité (succès, échec, ou les deux) à l'aide de la fonctionnalité d'audit. Les événements sont écrits dans le journal des événements système Windows et peuvent être examinés à l'aide de l'Observateur d'événements.  
@@ -96,8 +97,8 @@ Les applications créées avec [!INCLUDE[indigo1](../../../../includes/indigo1-m
   
 |Système|Journal Application|Journal Security|  
 |------------|---------------------|------------------|  
-|[!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] ou version ultérieure|Pris en charge|Non pris en charge|  
-|[!INCLUDE[ws2003sp1](../../../../includes/ws2003sp1-md.md)] et [!INCLUDE[wv](../../../../includes/wv-md.md)]|Pris en charge|Le contexte de thread doit posséder `SeAuditPrivilege`|  
+|[!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] ou version ultérieure|Prise en charge|Non pris en charge|  
+|[!INCLUDE[ws2003sp1](../../../../includes/ws2003sp1-md.md)] et [!INCLUDE[wv](../../../../includes/wv-md.md)]|Prise en charge|Le contexte de thread doit posséder `SeAuditPrivilege`|  
   
 #### <a name="other-factors"></a>Autres facteurs  
  Outre le système d'exploitation, le tableau suivant décrit les autres paramètres qui contrôlent l'activation de l'enregistrement.  
@@ -112,7 +113,7 @@ Les applications créées avec [!INCLUDE[indigo1](../../../../includes/indigo1-m
  <xref:System.ServiceModel.AuditLogLocation>  
  [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Programmation WCF de base](../../../../docs/framework/wcf/basic-wcf-programming.md)  
- [Comment : auditer les événements de sécurité](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
+ [Guide pratique pour auditer des événements de sécurité](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
  [\<serviceSecurityAudit >](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)  
  [\<comportements >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
  [Modèle de sécurité pour Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

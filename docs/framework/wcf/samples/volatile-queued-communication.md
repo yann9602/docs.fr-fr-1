@@ -13,11 +13,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 67fa95ffb23aee4dc3137dcab23eade8f87e9b9d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d7af5e29faf000fe3fe86463cb4eca9dc1e5c567
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="volatile-queued-communication"></a>Volatile Queued Communication
 Cet exemple montre comment procéder à la communication de messages volatils mis en file d'attente sur le transport MSMQ (Message Queuing). Il utilise <xref:System.ServiceModel.NetMsmqBinding>. Dans le cas présent, le service est une application console auto-hébergée qui vous permet d'observer le service qui reçoit les messages mis en file d'attente.  
@@ -32,7 +33,7 @@ Cet exemple montre comment procéder à la communication de messages volatils mi
  Dans certains scénarios, vous pouvez envoyer un message volatil sans assurances sur une file d'attente, lorsque la remise en temps opportun est plus importante que la perte des messages. Les messages volatils ne survivent pas aux pannes du gestionnaire de files d'attente. Par conséquent si le gestionnaire de files d'attente tombe en panne, la file d'attente non transactionnelle utilisée pour stocker des messages volatils survit mais pas les messages eux-mêmes car ils ne sont pas stockés sur le disque.  
   
 > [!NOTE]
->  Vous ne pouvez pas envoyer de messages volatils sans assurances dans l'étendue d'une transaction à l'aide de MSMQ. Vous devez également créer une file d'attente non transactionnelle pour envoyer des messages volatils.  
+>  Vous ne pouvez pas envoyer de messages volatils sans assurances dans l'étendue d'une transaction à l'aide de MSMQ. Vous devez également créer une file d’attente non transactionnelle pour envoyer des messages volatils.  
   
  Le contrat de service dans cet exemple est `IStockTicker`, qui définit les services unidirectionnels les mieux adaptés à une utilisation avec mise en file d'attente.  
   
@@ -127,7 +128,7 @@ public static void Main()
 </system.serviceModel>  
 ```  
   
- Étant donné que l'exemple envoie des messages mis en file d'attente en utilisant une file d'attente non transactionnelle, les messages traités ne peuvent pas être envoyés à la file d'attente.  
+ Étant donné que l’exemple envoie des messages mis en file d’attente en utilisant une file d’attente non transactionnelle, les messages traités ne peuvent pas être envoyés à la file d’attente.  
   
 ```  
 // Create a client.  

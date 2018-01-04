@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ae7ed7b1d01420c8e542d9ecce577995e927adc3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a872fbd5be56fed3d01481d1740c70932fd60c06
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="importing-schema-to-generate-classes"></a>Importation du schéma pour générer des classes
 Pour générer des classes à partir des schémas qui sont utilisables avec [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], utilisez la classe <xref:System.Runtime.Serialization.XsdDataContractImporter>. Cette rubrique décrit le processus et les variations.  
@@ -135,7 +136,7 @@ Pour générer des classes à partir des schémas qui sont utilisables avec [!IN
   
  Les doublons ne sont pas autorisés. Par exemple, vous ne pouvez pas ajouter à la fois `List(Of Integer)` et `Collection(Of Integer)` aux types référencés. Il serait alors impossible de déterminer lequel doit être utilisé lorsqu'une liste d'entiers est présente dans le schéma. Les doublons sont détectés uniquement si un type présent dans le schéma expose le problème des doublons. Par exemple, si le schéma importé ne contient pas de listes d'entiers, il est possible que la collection de types référencés contiennent à la fois `List(Of Integer)` et `Collection(Of Integer)`, mais aucun n'aura d'effet.  
   
- Le mécanisme des types de collection référencés fonctionne également bien pour les collections de types complexes (y compris les collections d'autres collections), et pas seulement pour les collections de primitives.  
+ Le mécanisme des types de collection référencés fonctionne également bien pour les collections de types complexes (y compris les collections d’autres collections), et pas seulement pour les collections de primitives.  
   
  Le `ReferencedCollectionTypes` propriété correspond à la **/collectionType** basculer sur l’outil SvcUtil.exe. Notez que pour référencer plusieurs types de collection, le **/collectionType** commutateur doit être spécifié plusieurs fois. Si le type n’est pas dans le fichier MsCorLib.dll, son assembly doit être aussi référencé à l’aide de la **/reference** basculer.  
   
@@ -194,8 +195,8 @@ Pour générer des classes à partir des schémas qui sont utilisables avec [!IN
  <xref:System.Runtime.Serialization.XsdDataContractImporter>  
  <xref:System.Runtime.Serialization.XsdDataContractExporter>  
  <xref:System.Runtime.Serialization.ImportOptions>  
- [Référence de schéma de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
- [Substituts de contrat de données](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)  
- [Exportation et importation de schéma](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)  
- [Exportation de schémas à partir de Classes](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md)  
- [Référence de schéma de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)
+ [Informations de référence sur les schémas de contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
+ [Substituts de contrats de données](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)  
+ [Importation et exportation de schémas](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)  
+ [Exportation de schémas à partir de classes](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md)  
+ [Informations de référence sur les schémas de contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d68f1b6ecfb55a917dde97b395b4455930565409
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: edfd0670d951a07526454bc380cee91c66e4e7a5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="services"></a>Services
 Cette section contient des exemples qui illustrent des services [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -35,19 +36,19 @@ Cette section contient des exemples qui illustrent des services [!INCLUDE[indigo
  [Sécurité du service](../../../../docs/framework/wcf/samples/service-security.md)  
  Illustre la sécurité des services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Configuration simplifiée des Services WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)  
+ [Configuration simplifiée pour les services WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)  
  Montre comment implémenter et configurer un service et un client classiques à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Utilisation de points de terminaison Standard](../../../../docs/framework/wcf/samples/usage-of-standard-endpoints.md)  
+ [Utilisation de points de terminaison standard](../../../../docs/framework/wcf/samples/usage-of-standard-endpoints.md)  
  Montre comment utiliser des points de terminaison standard dans des fichiers de configuration de service.  
   
- [Modèle de Configuration hiérarchique](../../../../docs/framework/wcf/samples/hierarchical-configuration-model.md)  
+ [Modèle de configuration hiérarchique](../../../../docs/framework/wcf/samples/hierarchical-configuration-model.md)  
  Montre comment implémenter une hiérarchie de fichiers de configuration pour les services.  
   
- [Stratégie de Protection étendue](../../../../docs/framework/wcf/samples/extended-protection-policy.md)  
+ [Stratégie de protection étendue](../../../../docs/framework/wcf/samples/extended-protection-policy.md)  
  Illustre la protection étendue, une initiative de sécurité visant à se protéger des attaques de l'intercepteur (MITM, Man In The Middle).  
   
- [Fabrication de canal de configuration](../../../../docs/framework/wcf/samples/configuration-channel-factory.md)  
+ [Fabrique de canaux de configuration](../../../../docs/framework/wcf/samples/configuration-channel-factory.md)  
  Illustre l'utilisation du <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>.  
   
  [Adressage](../../../../docs/framework/wcf/samples/addressing.md)  
@@ -62,7 +63,7 @@ Cette section contient des exemples qui illustrent des services [!INCLUDE[indigo
  [Plusieurs points de terminaison](../../../../docs/framework/wcf/samples/multiple-endpoints.md)  
  Montre comment configurer plusieurs points de terminaison sur un service et comment communiquer avec chacun d'entre eux à partir d'un client.  
   
- [Plusieurs points de terminaison à ListenUri unique](../../../../docs/framework/wcf/samples/multiple-endpoints-at-a-single-listenuri.md)  
+ [Plusieurs points de terminaison sur un ListenUri unique](../../../../docs/framework/wcf/samples/multiple-endpoints-at-a-single-listenuri.md)  
  Présente un service qui héberge plusieurs points de terminaison au niveau d'un `ListenUri` unique.  
   
  [OperationContextScope](../../../../docs/framework/wcf/samples/operationcontextscope.md)  

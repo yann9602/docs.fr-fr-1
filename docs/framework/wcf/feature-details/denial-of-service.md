@@ -14,11 +14,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 26b638b81f6402748b261e0766c18a6e9b3489d4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5d5f67790abad5dcf6311de1817b4ea093e703d9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="denial-of-service"></a>Refus de service
 Un déni de service se produit lorsqu'un système est saturé au point que le traitement des messages est impossible ou extrêmement lent.  
@@ -89,10 +90,10 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
  Pour atténuer ce risque, paramétrez le nombre maximal de sessions actives et la durée de vie maximale d'une session en définissant la propriété <xref:System.ServiceModel.Channels.SecurityBindingElement> de la classe <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Considérations sur la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [Considérations relatives à la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
  [Divulgation d’informations](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
  [Élévation de privilèges](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- [Déni de Service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [Déni de service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
  [Attaques par relecture](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
  [Falsification](../../../../docs/framework/wcf/feature-details/tampering.md)  
  [Scénarios non pris en charge](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)

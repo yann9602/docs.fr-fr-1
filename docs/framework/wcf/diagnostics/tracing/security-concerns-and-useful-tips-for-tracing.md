@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 07ac814253a563a0cbdad1014970af3d18c6fdde
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 4c6916333d1efa99ba1c4a9d75d80be2193e8698
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-concerns-and-useful-tips-for-tracing"></a>Problèmes de sécurité et conseils utiles pour le suivi
 Cette rubrique décrit comment empêcher l'exposition des informations sensibles et fournit également des conseils utiles en cas d'utilisation de WebHost.  
@@ -34,7 +35,7 @@ Cette rubrique décrit comment empêcher l'exposition des informations sensibles
   
 -   Assurez-vous que les fichiers journaux sont protégés par des listes de contrôle d'accès dans les scénarios WebHost et à auto-hébergement.  
   
--   Choisissez une extension de fichier qui ne peut pas être facilement fournie à l'aide d'une demande Web. Par exemple, l'extension de fichier .xml n'est pas un choix sûr. Vous pouvez vérifier le guide d'administration des services Internet (IIS) pour obtenir une liste des extensions qui peuvent être servies.  
+-   Choisissez une extension de fichier qui ne peut pas être facilement fournie à l’aide d’une demande Web. Par exemple, l’extension de fichier .xml n’est pas un choix sûr. Vous pouvez vérifier le guide d’administration des services Internet (IIS) pour obtenir une liste des extensions qui peuvent être servies.  
   
 -   Spécifiez un chemin d'accès absolu pour l'emplacement de fichier journal, qui doit être en dehors du répertoire public vroot WebHost afin d'empêcher qu'il soit accessible par un correspondant externe à l'aide d'un navigateur Web.  
   
@@ -101,4 +102,4 @@ Cette rubrique décrit comment empêcher l'exposition des informations sensibles
  De plus, l'adresse IP de l'expéditeur du message est enregistrée une fois par connexion pour les transports orientés connexion, et une fois par message envoyé par d'autres transports. Cette opération est effectuée sans le consentement de l'expéditeur. Toutefois, cet enregistrement se produit uniquement aux niveaux de suivi Information ou Verbose, qui ne sont pas les niveaux de suivi par défaut ou recommandés dans les environnements de production, hormis pour le débogage en direct.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Le suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+ [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)

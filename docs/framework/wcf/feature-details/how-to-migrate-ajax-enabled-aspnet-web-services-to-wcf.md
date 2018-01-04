@@ -13,11 +13,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fe09e2c91df0c25f070e06a39ce5e94a54062a20
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2ca8dbbffdb48c33160e3c4f7495057b9ce60c13
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Comment : migrer des services Web ASP.NET compatibles AJAX vers WCF
 Cette rubrique décrit les procédures de migration d'un service de base ASP.NET AJAX vers un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] compatible AJAX équivalent. Elle indique comment créer une version [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] d'un service ASP.NET AJAX équivalente en termes de fonctionnalités. Vous pouvez soit utiliser les deux services côte à côte, soit utiliser le service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour remplacer le service ASP.NET AJAX.  
@@ -223,4 +224,4 @@ d.Add("two", 2);
 |Caractères d'échappement|Toujours avec une barre oblique d'échappement (/) ; n'autorise jamais de caractères JSON non valides sans séquence d'échappement, tels que "\n".|Avec une barre oblique d'échappement (/) pour les valeurs DateTime.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comment : utiliser la Configuration pour ajouter un point de terminaison ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)
+ [Guide pratique pour utiliser la configuration pour ajouter un point de terminaison AJAX ASP.NET](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)

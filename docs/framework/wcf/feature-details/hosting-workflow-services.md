@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1bf0b63d3de750b5ec2aea41dcb6bb700385663a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c4a18289fcc5f6dfd68f13a006223d5870d3cd4f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-workflow-services"></a>Hébergement de services de workflow
 Un service de workflow doit être hébergé pour pouvoir répondre aux messages entrants. Les services de workflow utilisent l'infrastructure de messagerie [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et sont donc hébergés de manière similaire. Comme les services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], les services de workflow peuvent être hébergés dans n'importe quelle application managée, dans les services IIS (Internet Information Services) ou WAS (Windows Process Activation Services). De plus, les services de workflow peuvent être hébergés sous Windows Server App Fabric. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Voir de Windows Server AppFabric [documentation de Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkId=193037), [fonctionnalités d’hébergement AppFabric](http://go.microsoft.com/fwlink/?LinkId=196494), et [Concepts d’hébergement AppFabric](http://go.microsoft.com/fwlink/?LinkId=196495). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]les différentes façons de hôte [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services voir [Services d’hébergement](../../../../docs/framework/wcf/hosting-services.md).  
@@ -64,5 +65,5 @@ Un service de workflow doit être hébergé pour pouvoir répondre aux messages 
  L'outil de déploiement Web a été créé pour simplifier le travail de déploiement. Cet outil vous permet de migrer des applications entre IIS 6.0 et IIS 7.0, de synchroniser des batteries de serveurs et d’empaqueter, d’archiver et de déployer des applications Web. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Outil de déploiement de MS](http://go.microsoft.com/fwlink/?LinkId=178690)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Éléments internes hôte de Service de flux de travail](../../../../docs/framework/wcf/feature-details/workflow-service-host-internals.md)  
+ [Éléments internes de l’hôte du service de workflow](../../../../docs/framework/wcf/feature-details/workflow-service-host-internals.md)  
  [Configuration de WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/configuring-workflowservicehost.md)

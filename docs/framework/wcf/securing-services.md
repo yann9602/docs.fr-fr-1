@@ -17,11 +17,12 @@ caps.latest.revision: "28"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 509da8b697f38ea75d9509a8243f3e9e09cc661b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2b8e84fe75f812cdcb97dcc24a0edad2d238515b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-services"></a>Sécurisation de services
 La sécurité d'un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] passe par deux spécifications principales : la sécurité de transfert et l'autorisation. (Une troisième spécification, l’audit des événements de sécurité, est décrite dans [audit](../../../docs/framework/wcf/feature-details/auditing-security-events.md).) En résumé, la sécurité de transfert regroupe l'authentification (vérification de l'identité du service et du client), la confidentialité (chiffrement des messages) et l'intégrité (signature numérique afin de détecter la falsification). L'autorisation est le contrôle d'accès aux ressources, par exemple en autorisant uniquement les utilisateurs privilégiés à lire un fichier. Ces deux spécifications principales peuvent être facilement implémentées à l'aide des fonctionnalités de [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
@@ -113,7 +114,7 @@ La sécurité d'un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] 
  <xref:System.ServiceModel.Description.ServiceCredentials>  
  <xref:System.ServiceModel.ServiceContractAttribute>  
  <xref:System.ServiceModel.OperationContractAttribute>  
- [L’authentification et identité de Service](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [Identité du service et authentification](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
  [Présentation du niveau de protection](../../../docs/framework/wcf/understanding-protection-level.md)  
  [Délégation et emprunt d’identité](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)  
  [Conception de contrats de service](../../../docs/framework/wcf/designing-service-contracts.md)  

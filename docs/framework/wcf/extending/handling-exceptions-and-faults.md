@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3a69acb9b640c17e6641efc6c30798e3856ef6e9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ae8d16db6fefccf01692088e29676f6bfeace0e3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="handling-exceptions-and-faults"></a>Gestion des exceptions et des erreurs
 Les exceptions sont utilisées pour communiquer localement des erreurs au sein du service ou de l'implémentation cliente. Les erreurs, en revanche, sont utilisées pour communiquer des erreurs au-delà des limites du service, notamment du serveur au client ou vice versa. En plus des erreurs, les canaux de transport utilisent souvent des mécanismes propres au transport pour communiquer des erreurs de niveau transport. Par exemple, le transport HTTP utilise des codes d'état tels que 404 pour communiquer une URL de point de terminaison inexistante (il n'existe aucun point de terminaison pour renvoyer une erreur). Ce document se compose de trois sections qui fournissent des indications aux auteurs de canaux personnalisés. La première section indique quand et comment définir et lever des exceptions. La deuxième section fournir des indications sur la génération et la consommation des erreurs. La troisième section explique comment fournir des informations de suivi afin d'aider l'utilisateur de votre canal personnalisé à résoudre les problèmes des applications en cours d'exécution.  
@@ -193,7 +194,7 @@ public override bool OnTryCreateFaultMessage(Exception exception,
   
 1.  Erreurs envahissant toute la pile. Ces erreurs pouvant être rencontrées au niveau de toute couche dans la pile des canaux, par exemple InvalidCardinalityAddressingException.  
   
-2.  Erreurs pouvant être rencontrées n'importe où au-dessus d'une certaine couche de la pile, par exemple, certaines erreurs en rapport avec une transaction transmise ou avec des rôles de sécurité.  
+2.  Erreurs pouvant être rencontrées n’importe où au-dessus d’une certaine couche de la pile, par exemple, certaines erreurs en rapport avec une transaction transmise ou avec des rôles de sécurité.  
   
 3.  Erreurs dirigées vers une couche unique dans la pile, par exemple, erreurs comme les erreurs de numéro de séquence WS-RM.  
   
@@ -201,7 +202,7 @@ public override bool OnTryCreateFaultMessage(Exception exception,
   
  Catégorie 2. Les erreurs se produisent lorsqu'une couche ajoute une propriété au message qui ne consomme pas complètement les informations de message en rapport avec cette couche. Les erreurs peuvent être détectées ultérieurement lorsqu'une couche supérieure demande la propriété de message pour traiter davantage les informations de message. De tels canaux doivent implémenter `GetProperty`, spécifié précédemment, pour permettre à la couche supérieure de renvoyer l'erreur correcte. TransactionMessageProperty en est un exemple. Cette propriété est ajoutée au message sans valider pleinement toutes les données dans l'en-tête (cette opération peut impliquer de contacter le coordinateur de transactions distribuées (DTC).  
   
- Catégorie 3. Les erreurs sont uniquement générées et envoyées par une couche unique dans le processeur. Par conséquent, toutes les exceptions sont contenues dans la couche. Pour améliorer la cohérence parmi les canaux et faciliter la maintenance, votre canal personnalisé doit utiliser le modèle spécifié précédemment pour générer les messages d'erreur même pour des erreurs internes.  
+ Catégorie 3. Les erreurs sont uniquement générées et envoyées par une couche unique dans le processeur. Par conséquent, toutes les exceptions sont contenues dans la couche. Pour améliorer la cohérence parmi les canaux et faciliter la maintenance, votre canal personnalisé doit utiliser le modèle spécifié précédemment pour générer les messages d’erreur même pour des erreurs internes.  
   
 ### <a name="interpreting-received-faults"></a>Interprétation des erreurs reçues  
  Cette section fournit des indications pour générer l'exception appropriée lors de la réception d'un message d'erreur. L'arbre de décision pour le traitement d'un message à chaque couche de la pile est le suivant :  

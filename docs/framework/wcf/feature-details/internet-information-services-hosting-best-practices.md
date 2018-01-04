@@ -13,11 +13,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6b1139fe82bc0a02eafb274f13bfb7b39eeec609
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c8593b9ceb579f33ba3b37975d88b37f3f5ab628
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Meilleures pratiques pour l'hébergement dans Internet Information Services
 Cette rubrique définit les meilleures pratiques pour l'hébergement des services [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -49,7 +50,7 @@ Cette rubrique définit les meilleures pratiques pour l'hébergement des service
   
  Vous pouvez configurer des liaisons de site web IIS en utilisant le composant logiciel enfichable IIS Microsoft Management Console (MMC).  
   
-## <a name="application-pools-running-in-different-user-contexts-overwrite-assemblies-from-other-accounts-in-the-temporary-folder"></a>Les pools d'applications qui s'exécutent dans des contextes d'utilisateur différents remplacent des assemblys d'autres comptes dans le dossier temporaire  
+## <a name="application-pools-running-in-different-user-contexts-overwrite-assemblies-from-other-accounts-in-the-temporary-folder"></a>Les pools d’applications qui s’exécutent dans des contextes d’utilisateur différents remplacent des assemblys d’autres comptes dans le dossier temporaire  
  Pour garantir que les pools d'applications qui s'exécutent dans les contextes d'utilisateur différents ne peuvent pas remplacer d'assemblys d'autres comptes dans le dossier des fichiers [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] temporaire, utilisez des identités et des dossiers temporaires différents pour des applications différentes. Par exemple, si vous avez deux applications virtuelles /Application1 et / Application2, vous pouvez créer deux pools d'applications, A et B, avec deux identités différentes. Le pool d'applications A peut s'exécuter sous une identité d'utilisateur (user1), et le pool d'applications B peut s'exécuter sous une autre identité d'utilisateur (user2), et configurer /Application1 pour utiliser A et /Application2 pour utiliser B.  
   
  Dans le fichier Web.config, vous pouvez configurer le dossier temporaire à l’aide de \< system.web/compilation/@tempFolder>. Pour/Application1, il peut être « c:\tempForUser1 » et pour application2, il peut être « c:\tempForUser2 ». Accordez l’autorisation en écriture correspondante à ces dossiers pour les deux identités.  

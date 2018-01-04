@@ -20,11 +20,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e530cfa5cd5716e937318bf8fc458d372202ffeb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6241df0fd5a0b6ee532691eee2279f618be25a56
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-basic-data-contract-for-a-class-or-structure"></a>Comment : créer un contrat de données de base destiné à une classe ou une structure
 Cette rubrique illustre les étapes de base pour créer un contrat de données à l'aide d'une classe ou d'une structure. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]les contrats de données et comment elles sont utilisées, consultez [à l’aide de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
@@ -49,6 +50,6 @@ Cette rubrique illustre les étapes de base pour créer un contrat de données �
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
- [À l’aide de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
+ [Utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
  [Didacticiel Bien démarrer](../../../../docs/framework/wcf/getting-started-tutorial.md)  
  [Prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md)

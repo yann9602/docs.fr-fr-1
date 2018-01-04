@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9b2ad869e8127bcaf513bee82e3175b35349d922
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a9a78bab9f7c4af23cf01c44e1d22a41a87a96f1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="queues-and-reliable-sessions"></a>Files d'attente et sessions fiables
 Les files d'attente et les sessions fiables correspondent aux fonctionnalités [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] qui implémentent la messagerie fiable. Les rubriques contenues de cette section traitent des fonctionnalités de messagerie fiable de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
@@ -50,6 +51,6 @@ Les files d'attente et les sessions fiables correspondent aux fonctionnalités [
   
 ## <a name="see-also"></a>Voir aussi  
  [Files d’attente dans WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
- [Queuing dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
+ [Mise en file d’attente dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  [Sessions fiables](../../../../docs/framework/wcf/feature-details/reliable-sessions.md)  
- [Vue d’ensemble des Sessions fiables](../../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md)
+ [Vue d’ensemble des sessions fiables](../../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md)

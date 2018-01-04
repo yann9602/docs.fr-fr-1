@@ -16,11 +16,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4c797a527789aabae922f6c890c5bc50d1b02bcb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: de66234a79ad4e17f41048e87324237c47918a7a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-change-the-value-of-an-existing-setting-at-design-time"></a>Comment : modifier la valeur d'un paramètre existant au moment du design
 Vous pouvez utiliser Visual Studio pour modifier les valeurs de paramètres existants dans votre projet.  

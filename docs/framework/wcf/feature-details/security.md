@@ -17,11 +17,12 @@ caps.latest.revision: "21"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 38f62a6ccc0c9291f3963173475f99d5800feb39
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 2f2314c8def27bac9e64685d2af3cdd7639332f8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-communication-foundation-security"></a>Sécurité dans Windows Communication Foundation
 Les rubriques de cette section décrivent les fonctionnalités de sécurité [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] et comment les utiliser pour aider à sécuriser les messages.  
@@ -32,7 +33,7 @@ Les rubriques de cette section décrivent les fonctionnalités de sécurité [!I
  [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  Décrit les fonctionnalités de sécurité de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Concepts de sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
+ [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
  Décrit la terminologie et les concepts de base utilisés dans la sécurité [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  [Scénarios de sécurité courants](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
@@ -44,7 +45,7 @@ Les rubriques de cette section décrivent les fonctionnalités de sécurité [!I
  [Liaisons et sécurité](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
  Une vue orientée sécurité des liaisons, y compris des rubriques qui montrent comment créer des liaisons de sécurité personnalisées.  
   
- [Sécurisation des Services et Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  Décrit comment sécuriser des messages à l'aide des fonctionnalités de sécurité [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  [Authentification](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)  
@@ -59,10 +60,10 @@ Les rubriques de cette section décrivent les fonctionnalités de sécurité [!I
  [Confiance partielle](../../../../docs/framework/wcf/feature-details/partial-trust.md)  
  Décrit comment exécuter des scénarios à approbation partielle et certaines limitations de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] lors de l'exécution en mode d'approbation partielle.  
   
- [L’audit](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
+ [Audit](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
  Décrit comment effectuer un audit des événements de sécurité.  
   
- [Guide de sécurité et les meilleures pratiques](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+ [Aide sur la sécurité et bonnes pratiques](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  Instructions pour la création d'applications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sécurisées.  
   
 ## <a name="reference"></a>Référence  
@@ -80,4 +81,4 @@ Les rubriques de cette section décrivent les fonctionnalités de sécurité [!I
  [Vue d’ensemble conceptuelle](../../../../docs/framework/wcf/conceptual-overview.md)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Configuration de votre Application](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)
+ [Configuration de votre application](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)

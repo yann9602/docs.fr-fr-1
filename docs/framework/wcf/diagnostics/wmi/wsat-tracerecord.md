@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b4e701c2f0d669a04be7f7235c8ab1edb8ce1612
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d24f74d4086a5499d3bfd4ef6183d377528acc21
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wsattracerecord"></a>WSAT_TraceRecord
 WSAT_TraceRecord  
@@ -45,7 +46,7 @@ Type d'accès : lecture seule
   
  ID d'activité de l'enregistrement de suivi.  
   
-### <a name="eventid"></a>EventID  
+### <a name="eventid"></a>ID de l’événement  
  Type de données : sint32  
 Type d'accès : lecture seule  
   
@@ -57,7 +58,7 @@ Type d'accès : lecture seule
   
  Enregistrement de suivi  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

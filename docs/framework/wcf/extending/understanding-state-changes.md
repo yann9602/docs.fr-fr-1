@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9f93b1e9fdb1569507937c5381b157204ac88f87
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ce0d3be43b8e50367d1cdd9b4e486a4154001624
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="understanding-state-changes"></a>Fonctionnement des modifications d'état
 Cette rubrique présente les états et transitions des canaux, les types utilisés pour structurer les états des canaux et la manière de les implémenter.  
@@ -153,7 +154,7 @@ Substituez la méthode OnAbort pour implémenter une logique d'arrêt personnali
 |Closing|Oui|<xref:System.ServiceModel.CommunicationObjectAbortedException?displayProperty=nameWithType>|  
 |Closing|Non|<xref:System.ObjectDisposedException?displayProperty=nameWithType>|  
 |Closed|Oui|<xref:System.ServiceModel.CommunicationObjectAbortedException?displayProperty=nameWithType> dans le cas où un objet aurait été fermé par un appel précédent et explicite d'Abort. Si vous appelez Close sur l'objet, alors une <xref:System.ObjectDisposedException?displayProperty=nameWithType> est levée.|  
-|Fermé|Non|<xref:System.ObjectDisposedException?displayProperty=nameWithType>|  
+|Closed|Non|<xref:System.ObjectDisposedException?displayProperty=nameWithType>|  
 |Faulted|N/A|<xref:System.ServiceModel.CommunicationObjectFaultedException?displayProperty=nameWithType>|  
   
 ### <a name="timeouts"></a>Délais d'attente  

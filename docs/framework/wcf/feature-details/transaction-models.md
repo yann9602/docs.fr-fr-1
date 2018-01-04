@@ -13,18 +13,19 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7c74b1826ca280ba05420449758cdbb84dac3e93
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 782a6b5bdb206d285d619b8085993b591785aca5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transaction-models"></a>Modèles de transaction
 Cette rubrique décrit la relation entre les modèles de programmation de transactions et les composants d’infrastructure que Microsoft fournit.  
   
  Lors de l'utilisation de transactions dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], il est important de comprendre que vous ne choisissez pas entre des modèles transactionnels différents, mais que vous évoluez dans des couches différentes d'un modèle intégré et cohérent.  
   
- Les sections suivantes décrivent les trois composants principaux d'une transaction.  
+ Les sections suivantes décrivent les trois composants principaux d’une transaction.  
   
 ## <a name="windows-communication-foundation-transactions"></a>Transactions WCF (Windows Communication Foundation)  
  La prise en charge des transactions dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vous permet d'écrire des services transactionnels. De plus, avec sa prise en charge du protocole WS-AtomicTransaction (WS-AT), les applications peuvent transférer des transactions aux services Web construits à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ou d'une technologie tiers.  

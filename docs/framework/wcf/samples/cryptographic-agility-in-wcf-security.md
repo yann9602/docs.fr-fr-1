@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 8b07b23f4428053964fa33150c4300645242f918
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7d99ada67255d0ced8bbabc2ab6fc645e6ba9e35
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cryptographic-agility-in-wcf-security"></a>Agilité de chiffrement dans sécurité WCF
 Cet exemple montre comment effectuer des spécifications dans un algorithme standard ou personnalisé afin de fournir une implémentation de chiffrement agile dans un client et un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Cet exemple est composé des projets suivants :  

@@ -19,11 +19,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4a111a600230bda529362ac19969a8a4b7d32916
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 2337de6889a92b295e0a4f3a88d2a5039e583508
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="globalizing-windows-forms"></a>Globalisation des Windows Forms
 *Globalisation* est le processus de conception et développement d’un produit logiciel qui fonctionne pour plusieurs cultures.  

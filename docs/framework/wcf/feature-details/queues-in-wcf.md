@@ -14,11 +14,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d00f8847e64e30b42490f319ea3e1df5e5a1850d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c87e384b3186a1dd4b53ba6c21d92bf4d0e6a8c7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Files d'attente dans Windows Communication Foundation
 Les rubriques de cette section traitent de la prise en charge des files d'attente par [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] prend en charge la mise en file d'attente en utilisant Microsoft Message Queuing (anciennement connu sous le nom MSMQ) comme un transport et active les scénarios suivants :  
@@ -37,40 +38,40 @@ Les rubriques de cette section traitent de la prise en charge des files d'attent
  [Vue d’ensemble des files d’attente](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
  Vue d'ensemble des concepts de la mise en file d'attente des messages.  
   
- [Queuing dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
+ [Mise en file d’attente dans WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
  Vue d'ensemble de la prise en charge des files d'attente par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Comment : Exchange en file d’attente de Messages avec des points de terminaison WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+ [Guide pratique pour échanger des messages en file d’attente avec des points de terminaison WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
  Explique comment utiliser la classe <xref:System.ServiceModel.NetMsmqBinding> pour communiquer entre un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Comment : échanger des Messages avec des points de terminaison WCF et les Applications Message Queuing](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+ [Guide pratique pour échanger des messages avec des points de terminaison WCF et des applications Message Queuing](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
  Explique comment utiliser la <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> pour communiquer entre [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et des applications Message Queuing.  
   
- [Regroupement en attente de Messages dans une Session](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md)  
+ [Regroupement de messages mis en file d’attente dans une session](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md)  
  Explique comment grouper des messages dans une file d'attente pour faciliter le traitement des messages corrélés par une application réceptrice unique.  
   
- [Le traitement par lot des Messages dans une Transaction](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)  
+ [Traitement par lots des messages dans une transaction](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)  
  Explique comment traiter par lots les messages dans une transaction.  
   
- [À l’aide de files d’attente de lettres mortes pour gérer les échecs de transfert de Message](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
+ [Utilisation de files d’attente de lettres mortes pour gérer des défaillances de transfert de messages](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
  Explique comment gérer les échecs de transfert des messages et de livraison à l'aide des files d'attente de lettres mortes et comment traiter des messages de la file d'attente de lettres mortes.  
   
  [Gestion des messages incohérents](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)  
  Explique comment gérer les messages incohérents (messages qui ont dépassé le nombre maximal de tentatives de livraison à l'application réceptrice).  
   
- [Différences de fonctionnalités de file d’attente dans Windows Vista, Windows Server 2003 et Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)  
+ [Différences entre les fonctionnalités de mise en file d’attente dans Windows Vista, Windows Server 2003 et Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)  
  Résume les différences des files d'attente [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] dans [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
- [Sécurisation des Messages à l’aide de la sécurité de Transport](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
+ [Sécurisation des messages à l’aide de la sécurité de transport](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
  Décrit comment utiliser la sécurité de transport pour sécuriser des messages mis en file d'attente.  
   
- [Sécurisation des Messages à l’aide de la sécurité des messages](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md)  
+ [Sécurisation des messages à l’aide de la sécurité de message](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md)  
  Décrit comment utiliser la sécurité des messages pour sécuriser des messages mis en file d'attente.  
   
  [Résolution des problèmes de messagerie en file d’attente](../../../../docs/framework/wcf/feature-details/troubleshooting-queued-messaging.md)  
  Explique comment résoudre les problèmes courants de mise en file d'attente.  
   
- [Meilleures pratiques pour la Communication en file d’attente](../../../../docs/framework/wcf/feature-details/best-practices-for-queued-communication.md)  
+ [Bonnes pratiques pour les communications mises en file d’attente](../../../../docs/framework/wcf/feature-details/best-practices-for-queued-communication.md)  
  Explique les meilleures pratiques pour utiliser les communications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] mises en file d'attente.  
   
 ## <a name="see-also"></a>Voir aussi  

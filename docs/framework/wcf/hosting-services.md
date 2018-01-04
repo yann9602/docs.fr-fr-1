@@ -14,11 +14,12 @@ caps.latest.revision: "31"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c4cafff46d31ed9a5737dbb74acecab96b1f1a1e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b23dac1db5252d3ce2bd60e4f8525dd89d9127b0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="hosting-services"></a>Hébergement de services
 Pour devenir actif, un service doit être hébergé dans un environnement d'exécution qui le crée et contrôle son contexte et sa durée de vie. Les services[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] sont conçus pour s'exécuter dans tout processus Windows qui prend en charge le code managé.  
@@ -76,5 +77,5 @@ Pour devenir actif, un service doit être hébergé dans un environnement d'exé
  [Implémentation de contrats de service](../../../docs/framework/wcf/implementing-service-contracts.md)  
  [How to: Host a WCF Service in IIS (Comment : héberger un service WCF dans IIS)](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)  
  [How to: Host a WCF Service in WAS (Comment : héberger un service WCF dans WAS)](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)  
- [Comment : héberger un Service WCF dans un Service Windows managé](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)  
+ [Guide pratique pour héberger un service WCF dans un service Windows managé](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)  
  [Guide pratique pour héberger un service WCF dans une application managée](../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)

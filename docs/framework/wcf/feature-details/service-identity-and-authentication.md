@@ -17,11 +17,12 @@ caps.latest.revision: "32"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 19ff205fd1e76a5d2ee787522cc5d94916b0c11c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b741e421a8773e1a4b2d2ab7da5e119073e861ed
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-identity-and-authentication"></a>Identité du service et authentification
 D’un service *identité du point de terminaison*est une valeur générée à partir du service Web Services Description Language (WSDL). Cette valeur, propagée à tout client, est utilisée pour authentifier le service. Une fois que le client a initialisé une communication à un point de terminaison et le service s'authentifie au client, le client compare la valeur de l'identité du point de terminaison avec la valeur réelle que le processus d'authentification du point de terminaison a retournée. Si elles correspondent, le client est assuré qu'il a contacté le point de terminaison du service attendu. Cela fonctionne comme une protection contre les *hameçonnage* par un client empêche d’être redirigé vers un point de terminaison hébergé par un service malveillant.  
@@ -114,7 +115,7 @@ D’un service *identité du point de terminaison*est une valeur générée à p
  La spécification de l'identité par programmation (à l'aide de la propriété <xref:System.ServiceModel.EndpointAddress.Identity%2A> ) est facultative. Si aucune identité n'est spécifiée et si le type d'information d'identification du client est Windows, la valeur par défaut est SPN et la valeur définie dans la partie correspondant au nom d'hôte de l'adresse du point de terminaison du service est préfixée avec la valeur littérale "host/". Si aucune identité n'est spécifiée et si le type d'information d'identification du client est un certificat, la valeur par défaut est `Certificate`. Cela s'applique à la fois à la sécurité au niveau du message et au niveau du transport.  
   
 ## <a name="identity-and-custom-bindings"></a>Identité et liaisons personnalisées  
- Parce que l'identité d'un service dépend du type de liaison utilisé, assurez-vous qu'une identité appropriée est exposée lors de la création d'une liaison personnalisée. Par exemple, dans l'exemple de code suivant, l'identité exposée n'est pas compatible avec le type de sécurité parce que l'identité de la liaison de démarrage de conversation sécurisée ne correspond pas à l'identité de la liaison sur le point de terminaison. La liaison de conversation sécurisée définit l'identité DNS, tandis que <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement> définit l'identité UPN ou SPN.  
+ Parce que l’identité d’un service dépend du type de liaison utilisé, assurez-vous qu’une identité appropriée est exposée lors de la création d’une liaison personnalisée. Par exemple, dans l’exemple de code suivant, l’identité exposée n’est pas compatible avec le type de sécurité parce que l’identité de la liaison de démarrage de conversation sécurisée ne correspond pas à l’identité de la liaison sur le point de terminaison. La liaison de conversation sécurisée définit l'identité DNS, tandis que <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement> définit l'identité UPN ou SPN.  
   
  [!code-csharp[C_Identity#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#8)]
  [!code-vb[C_Identity#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#8)]  
@@ -122,11 +123,11 @@ D’un service *identité du point de terminaison*est une valeur générée à p
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)]la pile de liaison éléments correctement pour une liaison personnalisée, consultez [Creating liaisons](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Création d’une liaison personnalisée avec le <xref:System.ServiceModel.Channels.SecurityBindingElement>, consultez [Comment : créer un SecurityBindingElement pour un Mode d’authentification spécifié](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
- [Comment : créer un SecurityBindingElement pour un Mode d’authentification spécifié](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)  
- [Comment : créer un vérificateur d’identité Client personnalisés](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
- [Sélection d’un Type d’informations d’identification](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
+ [Guide pratique pour créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
+ [Guide pratique pour créer un SecurityBindingElement pour un mode d’authentification spécifié](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)  
+ [Guide pratique pour créer un vérificateur d’identité du client personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
+ [Sélection d’un type d’informations d’identification](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
  [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  [Outil ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
  [Création de liaisons définies par l’utilisateur](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)  
- [Comment : récupérer l’empreinte numérique d’un certificat](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)
+ [Guide pratique pour récupérer l’empreinte numérique d’un certificat](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)

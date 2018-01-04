@@ -19,11 +19,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c9b707108d5849db57dcebfb4cb1f7b18378bff0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3c87fa08a698350d601f72d5d19ef353bd4257a9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="federation"></a>Fédération
 Cette rubrique fournit une brève vue d'ensemble du concept de sécurité fédérée. Elle décrit également la prise en charge [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] permettant de déployer des architectures de sécurité fédérée. Pour un exemple d’application qui illustre la fédération, consultez [Federation, exemple](../../../../docs/framework/wcf/samples/federation-sample.md).  
@@ -39,7 +40,7 @@ Cette rubrique fournit une brève vue d'ensemble du concept de sécurité fédé
 |Élément|Description|  
 |-------------|-----------------|  
 |Domaine|Unité unique de confiance ou d'administration de sécurité. Un domaine classique peut inclure une organisation unique.|  
-|Fédération|Collection de domaines qui ont établi la confiance. Le niveau de confiance peut varier, mais il inclut en général l'authentification et presque toujours l'autorisation. Une fédération classique peut inclure un certain nombre d'organisations qui ont établi la confiance pour l'accès partagé à un ensemble de ressources.|  
+|Fédération|Collection de domaines qui ont établi la confiance. Le niveau de confiance peut varier, mais il inclut en général l’authentification et presque toujours l’autorisation. Une fédération classique peut inclure un certain nombre d'organisations qui ont établi la confiance pour l'accès partagé à un ensemble de ressources.|  
 |Service d'émission de jeton de sécurité (STS, Security Token Service)|Service Web qui émet des jetons de sécurité ; autrement dit, fait des assertions en fonction de la preuve qu'il approuve, à quiconque l'approuve. Il constitue la base de l'échange de confiance entre les domaines.|  
   
 ### <a name="example-scenario"></a>Exemple de scénario  
@@ -296,7 +297,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
   
  ![Fédération](../../../../docs/framework/wcf/feature-details/media/federationclienta.gif "FederationClientA")  
   
-## <a name="summary"></a>Résumé  
+## <a name="summary"></a>Récapitulatif  
  La sécurité fédérée fournit une division nette de la responsabilité et permet de générer des architectures de service sécurisées et évolutives. À l'instar d'une plateforme de génération et de déploiement d'applications distribuées, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit une prise en charge native permettant d'implémenter la sécurité fédérée.  
   
 ## <a name="see-also"></a>Voir aussi  

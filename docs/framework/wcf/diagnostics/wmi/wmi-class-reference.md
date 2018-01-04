@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7a74f1d7e70b8664df5022d6f9f42cf04b88f930
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0e221c8197b9713dd5f4e35114ada3c63f4978ef
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wmi-class-reference"></a>Référence des classes WMI
 Cette section répertorie toutes les classes WMI exposées par le fournisseur WMI [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  
@@ -38,13 +39,13 @@ Cette section répertorie toutes les classes WMI exposées par le fournisseur WM
   
  [BinaryMessageEncodingBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/binarymessageencodingbindingelement.md)  
   
- [Liaison](../../../../../docs/framework/wcf/diagnostics/wmi/binding.md)  
+ [Binding](../../../../../docs/framework/wcf/diagnostics/wmi/binding.md)  
   
- [Élément de liaison](../../../../../docs/framework/wcf/diagnostics/wmi/bindingelement.md)  
+ [BindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/bindingelement.md)  
   
  [CallbackBehavior](../../../../../docs/framework/wcf/diagnostics/wmi/callbackbehavior.md)  
   
- [Classe de canal](../../../../../docs/framework/wcf/diagnostics/wmi/channel-class.md)  
+ [Channel, classe](../../../../../docs/framework/wcf/diagnostics/wmi/channel-class.md)  
   
  [ChannelPoolSettings](../../../../../docs/framework/wcf/diagnostics/wmi/channelpoolsettings.md)  
   
@@ -56,13 +57,13 @@ Cette section répertorie toutes les classes WMI exposées par le fournisseur WM
   
  [ConnectionOrientedTransportBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/connectionorientedtransportbindingelement.md)  
   
- [Contrat](../../../../../docs/framework/wcf/diagnostics/wmi/contract.md)  
+ [Contract](../../../../../docs/framework/wcf/diagnostics/wmi/contract.md)  
   
  [CustomBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/custombindingelement.md)  
   
  [DeliveryRequirementsAttribute](../../../../../docs/framework/wcf/diagnostics/wmi/deliveryrequirementsattribute.md)  
   
- [Point de terminaison](../../../../../docs/framework/wcf/diagnostics/wmi/endpoint.md)  
+ [Endpoint](../../../../../docs/framework/wcf/diagnostics/wmi/endpoint.md)  
   
  [HttpsTransportBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/httpstransportbindingelement.md)  
   
@@ -88,7 +89,7 @@ Cette section répertorie toutes les classes WMI exposées par le fournisseur WM
   
  [NamedPipeTransportBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/namedpipetransportbindingelement.md)  
   
- [Élément OneWayBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/onewaybindingelement.md)  
+ [OneWayBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/onewaybindingelement.md)  
   
  « Classe opération »  
   
@@ -108,9 +109,9 @@ Cette section répertorie toutes les classes WMI exposées par le fournisseur WM
   
  [PrivacyNoticeBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/privacynoticebindingelement.md)  
   
- [Élément ReliableSessionBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/reliablesessionbindingelement.md)  
+ [ReliableSessionBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/reliablesessionbindingelement.md)  
   
- [Élément SecurityBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/securitybindingelement.md)  
+ [SecurityBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/securitybindingelement.md)  
   
  [Service](../../../../../docs/framework/wcf/diagnostics/wmi/service.md)  
   
@@ -156,9 +157,9 @@ Cette section répertorie toutes les classes WMI exposées par le fournisseur WM
   
  [TransactionFlowBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/transactionflowbindingelement.md)  
   
- [Élément TransportBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/transportbindingelement.md)  
+ [TransportBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/transportbindingelement.md)  
   
- [Élément TransportSecurityBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/transportsecuritybindingelement.md)  
+ [TransportSecurityBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/transportsecuritybindingelement.md)  
   
  [UseManagedPresentationBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/usemanagedpresentationbindingelement.md)  
   

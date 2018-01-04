@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5229c872c4843df916cf538b7f2e88e451dc6b9d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 87e3df31060a9c71e0b2868aa34373bca221fa79
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="comparing-transactions-in-com-and-servicemodel"></a>Comparaison des transactions dans COM+ et dans ServiceModel
 Cette rubrique explique comment simuler le comportement d'un service COM+ transactionnel à l'aide des attributs [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournis par l'espace de noms <xref:System.ServiceModel>.  

@@ -14,14 +14,15 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 23cfa64aa698643f30409119e162b815e58e2379
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2444488418b7647111cf4b89db0c41a8e66470d4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-clients"></a>Extension de clients
-Dans une application appelante, la couche de modèle de service est chargée de traduire les appels de méthode du code d'application en messages sortants, de les envoyer vers les canaux sous-jacents, de retraduire les résultats en valeurs de retour et paramètres de sortie dans le code d'application, et de retourner de nouveau les résultats à l'appelant. Les extensions de modèle de service modifient ou implémentent le comportement et les fonctionnalités d'exécution ou de communication qui impliquent des fonctionnalités de répartiteur ou client, des comportements personnalisés, l'interception de messages et de paramètres, ainsi que d'autres fonctionnalités d'extensibilité.  
+Dans une application appelante, la couche de modèle de service est chargée de traduire les appels de méthode du code d'application en messages sortants, de les envoyer vers les canaux sous-jacents, de retraduire les résultats en valeurs de retour et paramètres de sortie dans le code d'application, et de retourner de nouveau les résultats à l'appelant. Les extensions de modèle de service modifient ou implémentent le comportement et les fonctionnalités d’exécution ou de communication qui impliquent des fonctionnalités de répartiteur ou client, des comportements personnalisés, l’interception de messages et de paramètres, ainsi que d’autres fonctionnalités d’extensibilité.  
   
  Cette rubrique décrit comment utiliser les classes <xref:System.ServiceModel.Dispatcher.ClientRuntime> et <xref:System.ServiceModel.Dispatcher.ClientOperation> dans une application cliente [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] afin de modifier le comportement d'exécution par défaut d'un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ou d'intercepter ou de modifier des messages, paramètres ou valeurs de retour avant ou à la suite de leur envoi ou de leur récupération dans la couche du canal. Pour plus d’informations sur l’extension de l’exécution du service, consultez [extension des répartiteurs](../../../../docs/framework/wcf/extending/extending-dispatchers.md). Pour plus d’informations sur les comportements qui modifient et insérer des objets de personnalisation dans l’exécution du client, consultez [configuration et l’extension de l’exécution des comportements](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).  
   
@@ -126,5 +127,5 @@ Dans une application appelante, la couche de modèle de service est chargée de 
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.Dispatcher.ClientRuntime>  
  <xref:System.ServiceModel.Dispatcher.ClientOperation>  
- [Comment : inspecter ou modifier des Messages sur le Client](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-messages-on-the-client.md)  
- [Comment : inspecter ou modifier les paramètres](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-parameters.md)
+ [Guide pratique pour inspecter ou modifier des messages sur le client](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-messages-on-the-client.md)  
+ [Guide pratique pour inspecter ou modifier des paramètres](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-parameters.md)

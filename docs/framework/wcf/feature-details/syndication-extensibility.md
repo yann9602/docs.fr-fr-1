@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 87121270d45637834b9499228075f49710073d21
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5322ff2c79ab5051b3a9aaaeaafe7db6c9c2f683
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="syndication-extensibility"></a>Extensibilité de la syndication
 L'API de syndication est conçue pour fournir un modèle de programmation neutre en ce qui concerne le format qui autorise l'écriture du contenu syndiqué sur le câble dans divers formats. Le modèle de données abstrait inclut les classes suivantes :  
@@ -34,10 +35,10 @@ L'API de syndication est conçue pour fournir un modèle de programmation neutre
   
  Ces classes mappent précisément aux constructions définies dans la spécification Atom 1.0, bien que certains noms soient différents.  
   
- L'une des fonctionnalités clés de protocoles de syndication est l'extensibilité. Atom 1.0 et RSS 2.0 ajoutent des attributs et des éléments aux flux de syndication des attributs et des éléments qui ne sont pas définis dans les spécifications. Le modèle de programmation de la syndication [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] offre les moyens suivants d'utiliser des attributs personnalisés et des extensions : la dérivation d'une nouvelle classe et l'accès peu typé.  
+ L’une des fonctionnalités clés de protocoles de syndication est l’extensibilité. Atom 1.0 et RSS 2.0 ajoutent des attributs et des éléments aux flux de syndication des attributs et des éléments qui ne sont pas définis dans les spécifications. Le modèle de programmation de la syndication [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] offre les moyens suivants d'utiliser des attributs personnalisés et des extensions : la dérivation d'une nouvelle classe et l'accès peu typé.  
   
 ## <a name="loosely-typed-access"></a>Accès peu typé  
- L'ajout des extensions en dérivant une classe nouvelle requiert l'écriture de code supplémentaire. Une autre option accède aux extensions d'une manière peu typée. Tous les types définis dans le modèle de données abstraites de syndication contiennent des propriétés nommées `AttributeExtensions` et `ElementExtensions` (avec une exception, <xref:System.ServiceModel.Syndication.SyndicationContent> possède une propriété `AttributeExtensions` mais aucune propriété `ElementExtensions` ). Ces propriétés sont des collections d'extensions non traitées par les méthodes `TryParseAttribute` et `TryParseElement`, respectivement. Vous pouvez accéder à ces extensions non traitées en appelant <xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection.ReadElementExtensions%2A?displayProperty=nameWithType> sur la propriété `ElementExtensions` de <xref:System.ServiceModel.Syndication.SyndicationFeed>, <xref:System.ServiceModel.Syndication.SyndicationItem>, <xref:System.ServiceModel.Syndication.SyndicationLink>, <xref:System.ServiceModel.Syndication.SyndicationPerson> et <xref:System.ServiceModel.Syndication.SyndicationCategory>. Ce jeu de méthodes recherche toutes les extensions avec le nom et l'espace de noms spécifiés, les désérialise individuellement dans les instances de `TExtension` et les retourne comme une collection d'objets `TExtension`.  
+ L'ajout des extensions en dérivant une classe nouvelle requiert l'écriture de code supplémentaire. Une autre option accède aux extensions d’une manière peu typée. Tous les types définis dans le modèle de données abstraites de syndication contiennent des propriétés nommées `AttributeExtensions` et `ElementExtensions` (avec une exception, <xref:System.ServiceModel.Syndication.SyndicationContent> possède une propriété `AttributeExtensions` mais aucune propriété `ElementExtensions` ). Ces propriétés sont des collections d'extensions non traitées par les méthodes `TryParseAttribute` et `TryParseElement`, respectivement. Vous pouvez accéder à ces extensions non traitées en appelant <xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection.ReadElementExtensions%2A?displayProperty=nameWithType> sur la propriété `ElementExtensions` de <xref:System.ServiceModel.Syndication.SyndicationFeed>, <xref:System.ServiceModel.Syndication.SyndicationItem>, <xref:System.ServiceModel.Syndication.SyndicationLink>, <xref:System.ServiceModel.Syndication.SyndicationPerson> et <xref:System.ServiceModel.Syndication.SyndicationCategory>. Ce jeu de méthodes recherche toutes les extensions avec le nom et l'espace de noms spécifiés, les désérialise individuellement dans les instances de `TExtension` et les retourne comme une collection d'objets `TExtension`.  
   
 ## <a name="deriving-a-new-class"></a>Dérivation d'une nouvelle classe  
  Vous pouvez dériver une classe nouvelle à partir des classes de modèle de données abstraites existantes. Procédez ainsi lors de l'implémentation d'une application dans laquelle la plupart des flux que vous utilisez ont une extension particulière. Dans cette rubrique, la plupart des flux que le programme utilise contiennent une extension `MyExtension`. Pour fournir une expérience de programmation améliorée, procédez comme suit :  
@@ -55,5 +56,5 @@ L'API de syndication est conçue pour fournir un modèle de programmation neutre
 -   Substituez <xref:System.ServiceModel.Syndication.SyndicationFeed.CreateItem> dans la classe MyExtensionFeed pour instancier un MyExtensionItem au lieu du <xref:System.ServiceModel.Syndication.SyndicationItem> par défaut. Une série de méthodes est définie dans <xref:System.ServiceModel.Syndication.SyndicationFeed> et <xref:System.ServiceModel.Syndication.SyndicationItem> qui peut créer des objets <xref:System.ServiceModel.Syndication.SyndicationLink>, <xref:System.ServiceModel.Syndication.SyndicationCategory> et <xref:System.ServiceModel.Syndication.SyndicationPerson> (par exemple, <xref:System.ServiceModel.Syndication.SyndicationFeed.CreateLink>, <xref:System.ServiceModel.Syndication.SyndicationFeed.CreateCategory>et <xref:System.ServiceModel.Syndication.SyndicationFeed.CreatePerson>). Toutes ces méthodes peuvent être substituées pour créer une classe dérivée personnalisée.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble de la Syndication WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
- [Architecture de Syndication](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)
+ [Vue d’ensemble de la syndication WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
+ [Architecture de syndication](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9d6418f1f6af544669cf63b48db736d3e144a595
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9eedf84d1dccb8bc2540aca7e6bd338b4e58326d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="generating-a-wcf-client-from-service-metadata"></a>Génération d'un client WCF à partir de métadonnées de service
 Cette rubrique décrit comment utiliser plusieurs commutateurs dans Svcutil.exe pour générer des clients à partir de documents de métadonnées.  
@@ -65,7 +66,7 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
 |------------|-----------------|  
 |**/ namespace :\<chaîne, chaîne >**|Spécifie un mappage d'un schéma WSDL ou XML `targetNamespace` à un espace de noms du Common Language Runtime (CLR). L'utilisation d'un caractère générique (*) pour le `targetNamespace` mappe tous les `targetNamespaces` sans mappage explicite à cet espace de noms CLR.<br /><br /> Pour vérifier que le nom de contrat du message n'entre pas en collision avec le nom d'opération, qualifiez la référence de type avec des signes deux-points doubles `::`, ou vérifiez que les noms sont uniques.<br /><br /> Valeur par défaut : dérivée de l'espace de noms cible du document de schéma pour `DataContracts`. L'espace de noms par défaut est utilisé pour tous les autres types générés.<br /><br /> Forme abrégée : `/n`|  
   
-## <a name="choosing-a-data-binding"></a>Choix d'une liaison de données  
+## <a name="choosing-a-data-binding"></a>Choix d’une liaison de données  
   
 |Option|Description|  
 |------------|-----------------|  
@@ -80,5 +81,5 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
 |**/noconfig ignorée**|Ne génère pas de fichiers de configuration.|  
   
 ## <a name="see-also"></a>Voir aussi  
- [À l’aide de métadonnées](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
- [Vue d’ensemble de l’Architecture de métadonnées](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)
+ [Utilisation des métadonnées](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
+ [Vue d’ensemble de l’architecture de métadonnées](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)

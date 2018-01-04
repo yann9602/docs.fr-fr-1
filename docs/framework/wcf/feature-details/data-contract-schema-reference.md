@@ -14,11 +14,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 261d6e41ca79ca245b104513a92306ab8833c905
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 57ccc812aab5df0a9acd99bdcde327d56e4bad8d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-contract-schema-reference"></a>Référence des schémas de contrats de données
 Cette rubrique décrit le sous-ensemble du schéma XML (XSD) utilisé par <xref:System.Runtime.Serialization.DataContractSerializer> pour décrire les types CLR (Common Language Run-time) pour la sérialisation XML.  
@@ -617,7 +618,7 @@ public class Employee : Person
 </xs:schema>  
 ```  
   
- Il convient de remarquer les points suivants :  
+ Il convient de remarquer les points suivants :  
   
 -   `ser:char` est introduit pour représenter des caractères Unicode de type <xref:System.Char>.  
   
@@ -696,4 +697,4 @@ new XmlQualifiedName("Person","http://Microsoft.ServiceModel.Samples");
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
  <xref:System.Runtime.Serialization.XsdDataContractImporter>  
- [À l’aide de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+ [Utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)

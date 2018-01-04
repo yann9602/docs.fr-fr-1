@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 31720b0639f9be68a2124b4ff844a2837787ef81
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7d2b5b6d4a671a3eb281f49dd60fd3c00ee76f8a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>Comment : utiliser un moniker de service avec des contrats d'échange de métadonnées
 Après avoir développé de nouveaux services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], vous pouvez décider que vous souhaitez être en mesure d'appeler ces services à partir d'un script ou d'une application Visual Basic 6.0. Une méthode consisterait à générer un assembly client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], à inscrire l'assembly avec COM, à installer l'assembly dans le Global Assembly Cache (GAC), puis à référencer les types COM à partir de votre code Visual Basic. Lors de la distribution de l'application, vous devrez distribuer également l'assembly client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. L'utilisateur devra ensuite inscrire l'assembly client WCF avec COM et le placer dans le GAC. COM Interop [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vous permet également d'effectuer les mêmes appels de service sans reposer sur un assembly client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Le moniker [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] vous permet d'appeler tout service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] à partir de tout langage compatible avec COM (Visual Basic, VBScript, Visual Basic pour applications (VBA), et ainsi de suite) en spécifiant un URI de point de terminaison d'échange de métadonnées (Mex) que le moniker de service utilise pour extraire des informations de type à propos du service. Cette rubrique décrit comment appeler l'exemple [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] de Mise en route à l'aide d'un moniker [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui spécifie un point de terminaison Mex.  
@@ -50,5 +51,5 @@ Après avoir développé de nouveaux services [!INCLUDE[indigo2](../../../../inc
     >  Si le moniker est mal formé ou si le service n'est pas disponible, l'appel à `GetObject` retourne une erreur indiquant que la syntaxe n'est pas valide.  Si vous recevez cette erreur, assurez-vous que le moniker que vous utilisez est correct et que le service est disponible.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comment : utiliser le Moniker de Service Windows Communication Foundation sans inscription](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)  
- [Comment : utiliser un Moniker de Service avec des contrats WSDL](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)
+ [Guide pratique pour utiliser le moniker de service Windows Communication Foundation sans inscription](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)  
+ [Guide pratique pour utiliser un moniker de service avec des contrats WSDL](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)

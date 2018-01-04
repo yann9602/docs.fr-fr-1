@@ -14,11 +14,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5ac7410f919ceef50827b9c98adf3ad6312122ec
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: dd89a3333ab68b7d580c813a4b7741686b46c5b6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-use-the-com-service-model-configuration-tool"></a>Comment : utiliser l'outil de configuration de modèle de service COM+
 Une fois que vous avez sélectionné un mode d'hébergement approprié, utilisez l'outil en ligne de commande de configuration de modèle de service COM+ (ComSvcConfig.exe) pour configurer les interfaces d'application qui seront exposées en tant que services Web.  
@@ -108,7 +109,7 @@ Une fois que vous avez sélectionné un mode d'hébergement approprié, utilisez
     ComSvcConfig.exe /list /application:OnlineStore /hosting:complus  
     ```  
   
-     La commande répertoire les interfaces hébergées par COM+ exposées actuellement, avec l'adresse correspondante et les détails de liaison, pour l'application COM+ OnlineStore sur l'ordinateur local.  
+     La commande répertoire les interfaces hébergées par COM+ exposées actuellement, avec l’adresse correspondante et les détails de liaison, pour l’application COM+ OnlineStore sur l’ordinateur local.  
   
 ### <a name="to-display-help-on-the-options-that-can-be-used-with-the-utility"></a>Pour afficher une aide sur les options qui peuvent être utilisées avec l'utilitaire  
   
@@ -119,4 +120,4 @@ Une fois que vous avez sélectionné un mode d'hébergement approprié, utilisez
     ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Intégration de la vue d’ensemble des Applications COM +](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)
+ [Vue d’ensemble de l’intégration à des applications COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)

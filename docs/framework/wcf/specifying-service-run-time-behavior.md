@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 117011d0ceecf04b6c73655873985dbd08768ab6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c2c1534b161f81fa90dce52c825b0417dc8fd35d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-service-run-time-behavior"></a>Spécification du comportement du service au moment de l'exécution
 Une fois que vous avez conçu un contrat de service ([Designing Service Contracts](../../../docs/framework/wcf/designing-service-contracts.md)) et implémenté votre contrat de service ([Implementing Service Contracts](../../../docs/framework/wcf/implementing-service-contracts.md)), vous pouvez configurer le comportement d’opération de l’exécution du service. Cette rubrique traite des comportements de service fournis par le système et des comportements d'opération et précise où rechercher plus d'informations pour créer de nouveaux comportements. Si certains comportements sont appliqués sous la forme d'attributs, un grand nombre s'appliquent à l'aide d'un fichier de configuration de l'application ou par programme. [!INCLUDE[crabout](../../../includes/crabout-md.md)] la configuration de votre application de service, consultez [Configuring Services](../../../docs/framework/wcf/configuring-services.md).  
@@ -74,7 +75,7 @@ Une fois que vous avez conçu un contrat de service ([Designing Service Contract
  Notez que lorsqu'un objet est fourni à ce constructeur, certaines des fonctionnalités associées au comportement d'instanciation [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] fonctionnent différemment. Par exemple, l'appel de <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> n'a aucun effet lorsqu'une instance d'objet connue est fournie. De même, tout autre mécanisme de libération d'instance est ignoré. La classe <xref:System.ServiceModel.ServiceHost> se comporte toujours comme si la propriété <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> avait la valeur <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> pour toutes les opérations.  
   
 ## <a name="other-service-endpoint-contract-and-operation-behaviors"></a>Autres comportements de service, de point de terminaison, de contrat et d'opération  
- Les comportements de service, tels que l'attribut <xref:System.ServiceModel.ServiceBehaviorAttribute> , fonctionnent sur l'ensemble d'un service. Par exemple, si vous affectez à la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A?displayProperty=nameWithType> la valeur <xref:System.ServiceModel.ConcurrencyMode.Multiple?displayProperty=nameWithType>, vous devez gérer vous-même les problèmes de synchronisation de thread à l'intérieur de chaque opération dans ce service. Les comportements de point de terminaison fonctionnent sur un point de terminaison ; un grand nombre des comportements de point de terminaison fournis par le système sont destinés aux fonctionnalités clientes. Les comportements de contrat fonctionnent au niveau du contrat, et les comportements d'opération modifient la remise d'opération.  
+ Les comportements de service, tels que l'attribut <xref:System.ServiceModel.ServiceBehaviorAttribute> , fonctionnent sur l'ensemble d'un service. Par exemple, si vous affectez à la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A?displayProperty=nameWithType> la valeur <xref:System.ServiceModel.ConcurrencyMode.Multiple?displayProperty=nameWithType>, vous devez gérer vous-même les problèmes de synchronisation de thread à l'intérieur de chaque opération dans ce service. Les comportements de point de terminaison fonctionnent sur un point de terminaison ; un grand nombre des comportements de point de terminaison fournis par le système sont destinés aux fonctionnalités clientes. Les comportements de contrat fonctionnent au niveau du contrat, et les comportements d'opération modifient la remise d'opération.  
   
  Un grand nombre de ces comportements sont implémentés sur les attributs, et sont utilisés comme les attributs <xref:System.ServiceModel.ServiceBehaviorAttribute> et <xref:System.ServiceModel.OperationBehaviorAttribute> , en les appliquant à l'implémentation d'opération ou de classe de service appropriée. Les autres comportements, tels que les objets <xref:System.ServiceModel.Description.ServiceMetadataBehavior> ou <xref:System.ServiceModel.Description.ServiceDebugBehavior> , sont appliqués en général à l'aide d'un fichier de configuration de l'application, bien que vous puissiez les utiliser par programme.  
   
@@ -132,4 +133,4 @@ Une fois que vous avez conçu un contrat de service ([Designing Service Contract
   
 ## <a name="see-also"></a>Voir aussi  
  [Configuration des services](../../../docs/framework/wcf/configuring-services.md)  
- [Comment : Service de contrôle d’instanciation](../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)
+ [Guide pratique pour contrôler l’instanciation de service](../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)

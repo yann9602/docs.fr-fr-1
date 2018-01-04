@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fef5fc58adeac99bcd2cac0fda8a72dde2797001
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 600a1bd57015c6a64a51bf99f3ded35a375e62fe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="messaging-protocols"></a>Protocoles de messagerie
 La pile de canaux [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] utilise l'encodage et les canaux de transport pour transformer la représentation du message interne en son format de transmission et l'envoyer en utilisant un transport particulier. Le transport le plus couramment utilisé pour l'interopérabilité des services Web est le HTTP, et les encodages les plus couramment utilisés par les services Web sont SOAP 1.1 basé sur XML, SOAP 1.2 et MTOM (Message Transmission Optimization Mechanism).  
@@ -180,7 +181,7 @@ point de distribution|http://schemas.microsoft.com/net/2006/06/duplex|
  B3221: lorsqu'ils sont configurés pour utiliser WS-Addressing 2004/08, les points de terminaison [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ne font pas la différence entre le traitement des propriétés de référence et des paramètres de référence.  
   
 ### <a name="message-exchange-patterns"></a>Modèles d’échange de messages  
- La séquence de messages impliquée dans l’appel d’opération de service Web est appelée le *modèle d’échange de message*. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] prend en charge les modèles d'échange de messages duplex, demande-réponse et unidirectionnels. Cette section clarifie les spécifications WS-Addressing de traitement des messages en fonction du modèle d'échange de messages utilisé.  
+ La séquence de messages impliquée dans l’appel d’opération de service Web est appelée le *modèle d’échange de message*. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] prend en charge les modèles d'échange de messages duplex, demande-réponse et unidirectionnels. Cette section clarifie les exigences WS-Addressing de traitement des messages en fonction du modèle d’échange de messages utilisé.  
   
  Dans cette section, le demandeur envoie le premier message et le répondeur reçoit le premier message.  
   
@@ -255,7 +256,7 @@ point de distribution|http://schemas.microsoft.com/net/2006/06/duplex|
   
  L'élément `wsaw10:UsingAddressing` est emprunté à [WS-Adressage-WSDL] et est utilisé dans le contexte de WS-Policy conformément à la section 3.1.2 de cette spécification.  
   
- L'utilisation de l'adressage n'altère pas la sémantique des liaisons HTTP WSDL 1.1, SOAP 1.1 et SOAP 1.2. Par exemple, si une réponse est attendue à une demande envoyée à un point de terminaison qui utilise l'adressage et la liaison HTTP WSDL SOAP 1.x, elle doit être envoyée en utilisant la réponse HTTP.  
+ L’utilisation de l’adressage n’altère pas la sémantique des liaisons HTTP WSDL 1.1, SOAP 1.1 et SOAP 1.2. Par exemple, si une réponse est attendue à une demande envoyée à un point de terminaison qui utilise l’adressage et la liaison HTTP WSDL SOAP 1.x, elle doit être envoyée en utilisant la réponse HTTP.  
   
  Pour les réponses envoyées via HTTP, l'assertion WS-AM est :  
   
@@ -273,7 +274,7 @@ point de distribution|http://schemas.microsoft.com/net/2006/06/duplex|
 </wsam:Addressing>  
 ```  
   
- Toutefois, certains modèles d'échange de messages profitent du fait que deux connexions HTTP réciproques indépendantes soient établies entre le demandeur et le répondeur, par exemple dans le cas de messages unidirectionnels non sollicités envoyés par le répondeur.  
+ Toutefois, certains modèles d’échange de messages profitent du fait que deux connexions HTTP réciproques indépendantes soient établies entre le demandeur et le répondeur, par exemple dans le cas de messages unidirectionnels non sollicités envoyés par le répondeur.  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] propose un utilitaire grâce auquel deux canaux de transport sous-jacents peuvent former un canal duplex composite, où un canal est utilisé pour les messages d'entrée et l'autre est utilisé pour les messages de sortie. Dans le cas du transport HTTP, le canal duplex composite fournit deux connexions HTTP réciproques. Le demandeur utilise une connexion pour envoyer des messages au répondeur, et le répondeur utilise l'autre pour renvoyer des messages au demandeur.  
   
@@ -293,7 +294,7 @@ point de distribution|http://schemas.microsoft.com/net/2006/06/duplex|
   </wsam:Addressing>  
 ```  
   
- Pour utiliser l'assertion suivante, qui possède un objet de stratégie de point de terminaison [WS-PA] sur les points de terminaison qui utilisent des liaisons HTTP WSDL 1.1 SOAP 1.x, il est nécessaire d'utiliser deux connexions HTTP réciproques séparées pour transmettre des messages du demandeur au répondeur et du répondeur au demandeur, respectivement.  
+ Pour utiliser l’assertion suivante, qui possède un objet de stratégie de point de terminaison [WS-PA] sur les points de terminaison qui utilisent des liaisons HTTP WSDL 1.1 SOAP 1.x, il est nécessaire d’utiliser deux connexions HTTP réciproques séparées pour transmettre des messages du demandeur au répondeur et du répondeur au demandeur, respectivement.  
   
 ```xml  
 <cdp:CompositeDuplex/>  
@@ -312,7 +313,7 @@ point de distribution|http://schemas.microsoft.com/net/2006/06/duplex|
 #### <a name="action-definition"></a>Définition d'action  
  WS-Addressing 2004/08 définit un attribut `wsa:Action` pour les éléments `wsdl:portType/wsdl:operation/[wsdl:input | wsdl:output | wsdl:fault]`. La liaison WS-Addressing 1.0 WSDL (WS-ADDR10-WSDL) définit un attribut semblable, `wsaw10:Action`.  
   
- La seule différence entre les deux réside dans la sémantique du modèle d'action par défaut décrite à la section 3.3.2 de WS-ADDR et à la section 4.4.4 de WS-ADDR10-WSDL, respectivement.  
+ La seule différence entre les deux réside dans la sémantique du modèle d’action par défaut décrite à la section 3.3.2 de WS-ADDR et à la section 4.4.4 de WS-ADDR10-WSDL, respectivement.  
   
  Il est raisonnable d'avoir deux points de terminaison qui partagent le même `portType` (ou contrat, dans la terminologie [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]) mais utilisant des versions différentes de WS-Addressing. Mais étant donné que cette action est définie par le `portType` et ne doit pas pour les points de terminaison qui implémentent le `portType`, il devient impossible de prendre en charge les deux modèles d'action par défaut.  
   

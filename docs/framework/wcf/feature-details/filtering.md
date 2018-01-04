@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4a5b2c78ef7e675a656caf00e9d0ba0c9eb0630b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6f67a7f6ac423bd66d9d25b834edc9cf55a5d6a8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="filtering"></a>Filtrage
 Le système de filtrage [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] peut utiliser des filtres déclaratifs pour trouver des messages correspondants et prendre des décisions opérationnelles. Vous pouvez utiliser des filtres pour déterminer ce qu'il faut faire d'un message en examinant une partie du message. Par exemple, un processus de mise en file d'attente peut utiliser une requête XPath 1.0 pour vérifier l'élément prioritaire d'un en-tête connu afin de déterminer s'il faut déplacer un message au début de la file d'attente.  
@@ -57,7 +58,7 @@ Le système de filtrage [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 
 ### <a name="xpath-message-filters"></a>Filtres de message XPath  
  Un <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> utilise une expression XPath pour déterminer si un document XML contient des éléments, des attributs, du texte ou d'autre constructions syntaxiques XML spécifiques. Le filtre se révèle extrêmement efficace pour les sous-ensembles stricts de XPath. Le langage XML est décrite dans le [spécification W3C XML Path Language 1.0](http://go.microsoft.com/fwlink/?LinkId=94779).  
   
- En général, une application utilise un <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> à un point de terminaison pour interroger le contenu d'un message SOAP puis prend la mesure appropriée en fonction des résultats de cette requête. Par exemple, un processus de mise en file d'attente peut utiliser une requête XPath pour inspecter l'élément de priorité d'un en-tête connu afin de décider s'il faut déplacer un message en haut de la file d'attente.  
+ En général, une application utilise un <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> à un point de terminaison pour interroger le contenu d'un message SOAP puis prend la mesure appropriée en fonction des résultats de cette requête. Par exemple, un processus de mise en file d’attente peut utiliser une requête XPath pour inspecter l’élément de priorité d’un en-tête connu afin de décider s’il faut déplacer un message en haut de la file d’attente.  
   
 ## <a name="filter-tables"></a>Tables de filtres  
  Les tables de filtres sont utilisées pour stocker des paires clé-valeur, où la clé est un filtre et certaines données associées sont la valeur. Les données du filtre peuvent être utilisées pour indiquer quelles actions doivent être effectuées si un message correspond au filtre et si le type des données du filtre correspond au paramètre générique pour la classe de la table de filtres. Les données de filtre peuvent se composer de règles de routage, de l'état de la sécurité de la session, d'écouteurs sur un canal, et ainsi de suite. Les données peuvent être utilisées là où le contrôle du flux de données est nécessaire.  

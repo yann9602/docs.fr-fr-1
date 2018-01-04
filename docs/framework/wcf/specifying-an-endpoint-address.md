@@ -17,11 +17,12 @@ caps.latest.revision: "41"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 44a51c1bc9bd17cab7e3ba59ad36aa6700f82f71
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 21b15fb2b3f3d204ebd5b59f5a93f8e53a89ff71
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specifying-an-endpoint-address"></a>Spécification d'une adresse de point de terminaison
 Toute communication avec un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] a lieu par l'intermédiaire de ses points de terminaison. Chaque <xref:System.ServiceModel.Description.ServiceEndpoint> contient un <xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>, un <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A> et un <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A>. Le contrat spécifie quelles opérations sont disponibles. La liaison spécifie comment communiquer avec le service et l'adresse spécifie où rechercher le service. Chaque point de terminaison doit avoir une adresse unique. L'adresse de point de terminaison est représentée par la classe <xref:System.ServiceModel.EndpointAddress>, qui contient un URI (Uniform Resource Identifier) représentant l'adresse du service, un <xref:System.ServiceModel.EndpointAddress.Identity%2A> représentant l'identité de sécurité du service et une collection de <xref:System.ServiceModel.EndpointAddress.Headers%2A> facultative. Les en-têtes facultatifs fournissent des informations d'adressage plus détaillées pour identifier ou interagir avec le point de terminaison. Par exemple, les en-tête peuvent indiquer comment traiter un message entrant, où le point de terminaison doit envoyer un message de réponse ou quelle instance d'un service utiliser pour traiter un message entrant d'un utilisateur particulier lorsque plusieurs instances sont disponibles.  
@@ -41,7 +42,7 @@ Toute communication avec un service [!INCLUDE[indigo1](../../../includes/indigo1
   
  Une partie du modèle ERP établit que chaque référence de point de terminaison peut contenir des paramètres de référence qui ajoutent des informations d'identification supplémentaires. Dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], ces paramètres de référence sont modélisés sous forme d'instances de la classe <xref:System.ServiceModel.Channels.AddressHeader>.  
   
- L'adresse du point de terminaison pour un service peut être spécifiée de manière impérative en utilisant le code ou de façon déclarative par la configuration. La définition de points de terminaison dans le code est généralement peu pratique car les liaisons et les adresses pour un service déployé sont en général différentes de celles utilisées au cours du développement du service. En général, il est plus pratique de définir des points de terminaison de service à l'aide de la configuration plutôt que du code. Le fait de conserver les informations de liaison et d'adressage hors du code leur permet de changer sans devoir recompiler ou de redéployer l'application. Si aucun point de terminaison n'est spécifié dans le code ou dans la configuration, le runtime ajoute un point de terminaison par défaut sur chaque adresse de base pour chaque contrat implémenté par le service.  
+ L'adresse du point de terminaison pour un service peut être spécifiée de manière impérative en utilisant le code ou de façon déclarative par la configuration. La définition de points de terminaison dans le code est généralement peu pratique car les liaisons et les adresses pour un service déployé sont en général différentes de celles utilisées au cours du développement du service. En général, il est plus pratique de définir des points de terminaison de service à l'aide de la configuration plutôt que du code. Le fait de conserver les informations de liaison et d’adressage hors du code leur permet de changer sans devoir recompiler ou de redéployer l’application. Si aucun point de terminaison n'est spécifié dans le code ou dans la configuration, le runtime ajoute un point de terminaison par défaut sur chaque adresse de base pour chaque contrat implémenté par le service.  
   
  Il y a deux façons de spécifier des adresses de point de terminaison pour un service dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Vous pouvez spécifier une adresse absolue pour chaque point de terminaison associé au service ou vous pouvez fournir une adresse de base pour le <xref:System.ServiceModel.ServiceHost> d'un service puis spécifier une adresse pour chaque point de terminaison associé à ce service défini comme relatif à cette adresse de base. Vous pouvez utiliser chacune de ces procédures pour spécifier les adresses de point de terminaison pour un service dans la configuration ou le code. Si vous ne spécifiez pas d'adresse relative, le service utilise l'adresse de base. Vous pouvez également avoir plusieurs adresses de base pour un service, mais une seule adresse de base pour chaque transport est autorisée pour chaque service. Si vous avez plusieurs points de terminaison, chacun configuré avec une liaison différente, leurs adresses doivent être uniques. Les points de terminaison qui utilisent la même liaison mais des contrats différents peuvent utiliser la même adresse.  
   
@@ -93,6 +94,6 @@ Toute communication avec un service [!INCLUDE[indigo1](../../../includes/indigo1
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.EndpointAddress>  
- [L’authentification et identité de Service](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [Identité du service et authentification](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
  [Vue d’ensemble de la création de points de terminaison](../../../docs/framework/wcf/endpoint-creation-overview.md)  
  [Hébergement d’applications WPF](../../../docs/framework/wcf/feature-details/hosting.md)

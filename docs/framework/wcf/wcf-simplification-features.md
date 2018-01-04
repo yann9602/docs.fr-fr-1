@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 533176b3859c820d3549e5162dcbe5d80e5fcee9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 211a52288010adabb712618cee40dbdd9d8b5262
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-simplification-features"></a>Fonctionnalités de simplification de WCF
 Cette rubrique décrit les nouvelles fonctionnalités qui facilitent l’écriture d’applications WCF.  
@@ -98,7 +99,7 @@ Cette rubrique décrit les nouvelles fonctionnalités qui facilitent l’écritu
 ## <a name="new-transport-default-values"></a>Valeurs par défaut pour le nouveau transport  
  Le tableau suivant décrit les paramètres qui ont changé et où trouver des informations supplémentaires.  
   
-|Propriété|Activé|Nouvelle valeur par défaut|Plus d'infos|  
+|Propriété|Activé|Nouvelle valeur par défaut|Informations complémentaires|  
 |--------------|--------|-----------------|----------------------|  
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 secondes|Cette propriété détermine la durée d'authentification d'une connexion TCP à l'aide du protocole .Net Framing. Un client doit envoyer des données initiales avant que le serveur dispose de suffisamment d'informations pour exécuter l'authentification. Ce délai d'attente est volontairement plus petit que le ReceiveTimeout (10 minutes) afin que les clients non authentifiés malveillants ne conservent pas longtemps les connexions occupées au serveur. La valeur par défaut est de 30 secondes. [!INCLUDE[crdefault](../../../includes/crabout-md.md)] <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|  
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * nombre de processeurs|Cette propriété de niveau socket décrit le nombre de demandes en "attente d'acceptation" à mettre en file d'attente. Si la file d'attente du journal des travaux en souffrance d'écoute est remplie, les nouvelles demandes de socket sont rejetées. [!INCLUDE[crdefault](../../../includes/crabout-md.md)] <xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|  
@@ -127,7 +128,7 @@ Cette rubrique décrit les nouvelles fonctionnalités qui facilitent l’écritu
 >  Ces nouvelles valeurs par défaut sont utilisées uniquement si vous déployez le service WCF sur un ordinateur avec le .NET Framework 4.5. Si vous déployez le même service sur un ordinateur avec le .NET Framework 4.0, les valeurs par défaut du .NET Framework 4.0 sont utilisées. Dans ce cas, il est recommandé de configurer ces paramètres explicitement.  
   
 ## <a name="wcf-configuration-validation"></a>Validation de configuration WCF  
- Dans le cadre du processus de génération dans Visual Studio, les fichiers de configuration WCF sont maintenant validés. Une liste d'erreurs ou d'avertissements de validation s'affiche dans Visual Studio si la validation échoue.  
+ Dans le cadre du processus de génération dans Visual Studio, les fichiers de configuration WCF sont maintenant validés. Une liste d’erreurs ou d’avertissements de validation s’affiche dans Visual Studio si la validation échoue.  
   
 ## <a name="xml-editor-tooltips"></a>Info-bulles de l'éditeur XML  
  Pour aider les développeurs de services WCF nouveaux et existants à configurer leurs services, l'Éditeur XML de Visual Studio fournit maintenant des info-bulles pour chaque élément de configuration et ses propriétés qui fait partie du fichier de configuration du service.  

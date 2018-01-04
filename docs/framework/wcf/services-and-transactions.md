@@ -14,14 +14,15 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 680a86d453dd8ca7c78d0ca6ba60cbaa691e44f3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f6256db06825a79b5235b92e2ed205608f04aac7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="services-and-transactions"></a>Services et transactions
-Les applications [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] peuvent initier une transaction à partir d'un client et coordonner la transaction dans l'opération de service. Les clients peuvent initier une transaction et appeler plusieurs opérations de service et s'assurer que les opérations de service sont validées ou annulées en tant qu'unité unique.  
+Les applications [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] peuvent initier une transaction à partir d'un client et coordonner la transaction dans l'opération de service. Les clients peuvent initier une transaction et appeler plusieurs opérations de service et s’assurer que les opérations de service sont validées ou annulées en tant qu’unité unique.  
   
  Vous pouvez activer le comportement de transaction dans le contrat de service en spécifiant un <xref:System.ServiceModel.ServiceBehaviorAttribute> et en définissant ses propriétés <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> et <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> pour les opérations de service qui requièrent des transactions clientes. Le paramètre <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> spécifie si la transaction dans laquelle la méthode s'exécute est automatiquement effectuée si aucune exception non prise en charge n'est levée. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Ces attributs, consultez [attributs de Transaction ServiceModel](../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md).  
   
@@ -100,4 +101,4 @@ using (TransactionScope ts = new TransactionScope(TransactionScopeOption.Require
 ## <a name="see-also"></a>Voir aussi  
  [Prise en charge transactionnelle dans System.ServiceModel](../../../docs/framework/wcf/feature-details/transactional-support-in-system-servicemodel.md)  
  [Modèles de transaction](../../../docs/framework/wcf/feature-details/transaction-models.md)  
- [Flux de Transaction WS](../../../docs/framework/wcf/samples/ws-transaction-flow.md)
+ [Flux de transaction WS](../../../docs/framework/wcf/samples/ws-transaction-flow.md)

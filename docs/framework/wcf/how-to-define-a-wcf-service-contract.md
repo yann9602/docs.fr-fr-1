@@ -14,11 +14,12 @@ caps.latest.revision: "58"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 062167742a70307949624066b8607a37d5c7ed71
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c69f79d8629acee80a2e59346032e7733ec37dea
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-define-a-windows-communication-foundation-service-contract"></a>Comment : définir un contrat de service Windows Communication Foundation
 Il s'agit de la première des six tâches requises pour créer une application de base [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]. Pour une vue d’ensemble des six tâches, consultez la [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md) rubrique.  
@@ -88,11 +89,11 @@ Il s'agit de la première des six tâches requises pour créer une application d
      Ce contrat définit une calculatrice en ligne. Notez que l'interface `ICalculator`est marquée avec l'attribut <xref:System.ServiceModel.ServiceContractAttribute>. Cet attribut définit un espace de noms qui est utilisé pour lever l'ambiguïté du nom de contrat. Chaque opération de calculatrice est marquée avec l'attribut <xref:System.ServiceModel.OperationContractAttribute>.  
   
     > [!NOTE]
-    >  Lorsque vous utilisez des attributs pour annoter une interface, un membre ou une classe, vous pouvez supprimer la partie « Attribute » du nom d'attribut. Par conséquent, <xref:System.ServiceModel.ServiceContractAttribute> devient `[ServiceContract]` dans C#, ou `<ServiceContract>` dans Visual Basic.  
+    >  Lorsque vous utilisez des attributs pour annoter une interface, un membre ou une classe, vous pouvez supprimer la partie « Attribute » du nom d’attribut. Par conséquent, <xref:System.ServiceModel.ServiceContractAttribute> devient `[ServiceContract]` dans C#, ou `<ServiceContract>` dans Visual Basic.  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.ServiceContractAttribute>  
  <xref:System.ServiceModel.OperationContractAttribute>  
  [Guide pratique pour implémenter un contrat de service](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)  
  [Prise en main](../../../docs/framework/wcf/samples/getting-started-sample.md)  
- [L’auto-hébergement](../../../docs/framework/wcf/samples/self-host.md)
+ [Auto-hébergement](../../../docs/framework/wcf/samples/self-host.md)

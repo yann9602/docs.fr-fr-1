@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 75191aa28be76da549d38403c4a6f019c6f54bc2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 098b31e479322d9de3a299f06652e819a5388c42
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-considerations-with-metadata"></a>Considérations sur la sécurité des métadonnées
 Lorsque vous utilisez des fonctionnalités de métadonnées dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vous devez tenir compte des conséquences liées à la publication, la récupération et l'utilisation de métadonnées de service en termes de sécurité.  
@@ -49,5 +50,5 @@ Lorsque vous utilisez des fonctionnalités de métadonnées dans [!INCLUDE[indig
  Le fichier de configuration d'application d'un service peut spécifier si des métadonnées doivent être publiées et de quelle façon. Il est judicieux de protéger le fichier de configuration d'application à l'aide des listes de contrôle d'accès (ACL) appropriées pour vous assurer qu'aucun intrus ne pourra modifier ces paramètres.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comment : sécuriser des points de terminaison de métadonnées](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)  
+ [Guide pratique pour sécuriser des points de terminaison de métadonnées](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)  
  [Sécurité](../../../../docs/framework/wcf/feature-details/security.md)

@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 72c9c2078f694a1739a7f33689a0d8275d786937
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: be885a964ad7e8d63045febfa279b23d0d85ab1f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="workflow-hosting-options"></a>Options d'hébergement de workflow
 La plupart des exemples [!INCLUDE[wf](../../../includes/wf-md.md)] utilisent des workflows hébergés dans une application console, mais il ne s'agit pas d'un scénario réaliste pour les workflows réels. Les workflows dans les applications d'entreprise réelles sont hébergés dans des processus persistants, un service Windows créé par le développeur ou une application serveur telle que [!INCLUDE[iisver](../../../includes/iisver-md.md)] ou AppFabric. Les différences entre ces approches sont les suivantes.  

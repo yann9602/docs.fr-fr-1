@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e749594d7a37b89d5dbf02013b2f667d923af7ed
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6418c3b5c82ac42fb7e6d3ce85913896a3f76442
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="client-architecture"></a>Architecture du client
 Les applications utilisent des objets de client [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pour appeler des opérations de service. Cette rubrique contient des informations sur les objets de client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], les canaux de client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et leurs relations par rapport à l'architecture de canal sous-jacente. Pour une vue d’ensemble de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client, voir [vue d’ensemble du Client WCF](../../../../docs/framework/wcf/wcf-client-overview.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]la couche de canal, consultez [extension de la couche de canal](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md).  

@@ -19,11 +19,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5b60b31133a3721611285b5b4caa93d3c34e193f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 01e841e76c4a6cf06169113422921367d671ea98
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="exporting-schemas-from-classes"></a>Exportation de schémas à partir de classes
 Pour générer des schémas XSD (Schema definition language) à partir des classes utilisées dans le modèle de contrat de données, utilisez la classe <xref:System.Runtime.Serialization.XsdDataContractExporter> . Cette rubrique décrit le processus de création de schémas.  
@@ -31,7 +32,7 @@ Pour générer des schémas XSD (Schema definition language) à partir des class
 ## <a name="the-export-process"></a>Processus d'exportation  
  Le processus d'exportation de schéma démarre avec un ou plusieurs types et produit un <xref:System.Xml.Schema.XmlSchemaSet> qui décrit la projection XML de ces types.  
   
- Le `XmlSchemaSet` fait partie du modèle d'objet de schéma du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]qui représente un jeu de documents de schéma XSD. Pour créer des documents XSD à partir d'un `XmlSchemaSet`, utilisez la collection de schémas de la propriété <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> de la classe `XmlSchemaSet` . Puis sérialisez chaque objet <xref:System.Xml.Schema.XmlSchema> à l'aide du <xref:System.Xml.Serialization.XmlSerializer>.  
+ Le `XmlSchemaSet` fait partie du modèle d'objet de schéma du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] qui représente un jeu de documents de schéma XSD. Pour créer des documents XSD à partir d'un `XmlSchemaSet`, utilisez la collection de schémas de la propriété <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> de la classe `XmlSchemaSet` . Puis sérialisez chaque objet <xref:System.Xml.Schema.XmlSchema> à l'aide du <xref:System.Xml.Serialization.XmlSerializer>.  
   
 #### <a name="to-export-schemas"></a>Pour exporter des schémas  
   
@@ -72,5 +73,5 @@ Pour générer des schémas XSD (Schema definition language) à partir des class
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Runtime.Serialization.XsdDataContractImporter>  
  <xref:System.Runtime.Serialization.XsdDataContractExporter>  
- [Exportation et importation de schéma](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)  
- [Importation du schéma pour générer des Classes](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)
+ [Importation et exportation de schémas](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)  
+ [Importation du schéma pour générer des classes](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)

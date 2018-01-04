@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 94ab623713a419426cbfd023c684741c69d3c8d5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bb1b48bf06d024183a22027cb12dbca78f272085
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="activity-definition-scoping-and-visibility"></a>Portée et visibilité de la définition de l'activité
 La portée et la visibilité de la définition d'une activité, tout comme la portée et la visibilité d'un objet représentent la capacité d'autres objets d'accéder aux membres de l'activité. La définition de l'activité est assurée par les implémentations suivantes :  

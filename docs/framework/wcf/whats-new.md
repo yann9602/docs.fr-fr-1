@@ -16,11 +16,12 @@ caps.latest.revision: "35"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 362578e6e8066c0490e692d0cd9d637b05bb1fa0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fd36f012f614e08be131efb3791fd997d3668531
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="what39s-new-in-windows-communication-foundation-45"></a>Quel &#39; nouveauté dans Windows Communication Foundation 4.5
 Cette rubrique présente les nouvelles fonctionnalités de [!INCLUDE[indigo1](../../../includes/indigo1-md.md)].  
@@ -29,7 +30,7 @@ Cette rubrique présente les nouvelles fonctionnalités de [!INCLUDE[indigo1](..
  Beaucoup de travail a été effectué pour faciliter le développement et la gestion des applications WCF 4.5. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Fonctionnalités de Simplification de WCF](../../../docs/framework/wcf/wcf-simplification-features.md).  
   
 ### <a name="task-based-async-support"></a>Prise en charge du modèle asynchrone basé sur les tâches  
- Par défaut, la fonctionnalité Ajouter une référence de service génère des méthodes d'opération de service asynchrone retournant des tâches. Cette opération est effectuée pour les méthodes synchrones et asynchrones. Cela vous permet d'appeler les opérations de service de façon asynchrone à l'aide du modèle de programmation asynchrone basé sur les tâches. Lorsque vous appelez la méthode de proxy générée, WCF construit un objet Tâche pour représenter l'opération asynchrone et retourne cette tâche. La tâche se termine lorsque l’opération se termine.  Lors de l’implémentation d’une opération asynchrone, vous pouvez l’implémenter en tant qu’une opération asynchrone basé sur des tâches. Pour plus d’informations, consultez [synchrone et asynchrone des opérations](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
+ Par défaut, la fonctionnalité Ajouter une référence de service génère des méthodes d'opération de service asynchrone retournant des tâches. Cette opération est effectuée pour les méthodes synchrones et asynchrones. Cela vous permet d’appeler les opérations de service de façon asynchrone à l’aide du modèle de programmation asynchrone basé sur les tâches. Lorsque vous appelez la méthode de proxy générée, WCF construit un objet Tâche pour représenter l’opération asynchrone et retourne cette tâche. La tâche se termine lorsque l’opération se termine.  Lors de l’implémentation d’une opération asynchrone, vous pouvez l’implémenter en tant qu’une opération asynchrone basé sur des tâches. Pour plus d’informations, consultez [synchrone et asynchrone des opérations](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
   
 ### <a name="simplified-generated-configuration-files"></a>Fichiers de configuration générés simplifiés  
  Lorsque vous ajoutez une référence de service dans Visual Studio ou utilisez l'outil SvcUtil.exe, un fichier de configuration client est généré. Dans les versions antérieures de WCF, ces fichiers de configuration contenaient la valeur de chaque propriété de liaison et ce, même si sa valeur était la valeur par défaut. Dans WCF 4.5, les fichiers de configuration générés contiennent uniquement les propriétés de liaison qui ont une valeur non définie par défaut.  
@@ -78,7 +79,7 @@ Cette rubrique présente les nouvelles fonctionnalités de [!INCLUDE[indigo1](..
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|12 * nombre de processeurs|<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|  
 |maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * nombre de processeurs pour le transport<br /><br /> 4 \* nombre de processeurs pour SMSvcHost.exe|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A>[Configuration du Service de partage de ports Net.TCP](http://msdn.microsoft.com/en-us/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)|  
 |maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * nombre de processeurs|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|  
-|receiveTimeout|SMSvcHost.exe|30 secondes|[Configuration du Service de partage de ports Net.TCP](http://msdn.microsoft.com/en-us/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)|  
+|receiveTimeout|SMSvcHost.exe|30 secondes|[Configuration du service de partage de ports Net.TCP](http://msdn.microsoft.com/en-us/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)|  
   
 ## <a name="xml-editor-tooltips"></a>Info-bulles de l'éditeur XML  
  Pour aider les développeurs de services WCF nouveaux et existants à configurer leurs services, l'Éditeur XML de Visual Studio fournit maintenant des info-bulles pour chaque élément de configuration et ses propriétés qui fait partie du fichier de configuration du service.  
@@ -106,7 +107,7 @@ Cette rubrique présente les nouvelles fonctionnalités de [!INCLUDE[indigo1](..
  Prise en charge a été ajoutée pour un transport UDP qui permet aux développeurs d’écrire des services qui utilisent « fire and forget » de messagerie. Un client envoie un message à un service et n'attend aucune réponse de ce dernier.  
   
 ## <a name="multiple-authentication-support"></a>Prise en charge de plusieurs authentifications  
- La prise en charge a été ajoutée pour prendre en charge plusieurs modes d'authentification, tels que pris en charge par IIS, sur un point de terminaison unique WCF lorsque vous utilisez le transport et la sécurité de transport HTTP. IIS vous permet d'activer plusieurs modes d'authentification sur un répertoire virtuel, cette fonctionnalité permet à un seul point de terminaison WCF de prendre en charge plusieurs modes d'authentification activés pour le répertoire virtuel où le service WCF est hébergé.  
+ La prise en charge a été ajoutée pour prendre en charge plusieurs modes d'authentification, tels que pris en charge par IIS, sur un point de terminaison unique WCF lorsque vous utilisez le transport et la sécurité de transport HTTP. IIS vous permet d’activer plusieurs modes d’authentification sur un répertoire virtuel, cette fonctionnalité permet à un seul point de terminaison WCF de prendre en charge plusieurs modes d’authentification activés pour le répertoire virtuel où le service WCF est hébergé.  
   
 ## <a name="idn-support"></a>Prise en charge IDN  
  La prise en charge a été ajoutée pour tenir compte des services WCF avec des noms IDN (Internationalized Domain Names). Pour plus d’informations, consultez [WCF et les noms de domaine internationaux](../../../docs/framework/wcf/feature-details/wcf-and-internationalized-domain-names.md).  
@@ -133,7 +134,7 @@ Cette rubrique présente les nouvelles fonctionnalités de [!INCLUDE[indigo1](..
 ```  
   
 ## <a name="ihttpcookiecontainermanager"></a>IHttpCookieContainerManager  
- Cette interface, exposée par <xref:System.ServiceModel.Channels.IChannelFactory%601>, facilite l'utilisation des cookies côté client. Lorsque AllowCookies a la valeur True sur la liaison, accédez aux cookies à l'aide du code suivant :  
+ Cette interface, exposée par <xref:System.ServiceModel.Channels.IChannelFactory%601>, facilite l'utilisation des cookies côté client. Lorsque AllowCookies a la valeur True sur la liaison, accédez aux cookies à l’aide du code suivant :  
   
 ```csharp  
 IHttpCookieContainerManager cookieManager = factory.GetProperty<IHttpCookieContainerManager>();   

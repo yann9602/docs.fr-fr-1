@@ -13,11 +13,12 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 455dec4adefc479433945f9f9b02708c23437991
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 629d5c55bd679539220566db17401151a1339d18
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="selecting-a-credential-type"></a>Sélection d'un type d'informations d'identification
 *Informations d’identification* sont les données [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] utilise pour établir une identité déclarée ou des fonctions. Par exemple, un passeport est une information d'identification émise par un gouvernement pour établir la citoyenneté dans un pays ou une région. Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], les informations d'identification peuvent prendre plusieurs formes, telles que les jetons de nom d'utilisateur et les certificats X.509. Cette rubrique traite des informations d'identification, de leur mode d'utilisation dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et de la façon de sélectionner les informations d'identification appropriées pour votre application.  
@@ -120,7 +121,7 @@ ms.lasthandoff: 12/02/2017
  <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType>  
  <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType>  
  <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.SetCertificate%2A?displayProperty=nameWithType>  
- [Concepts de sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
- [Sécurisation des Services et Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Programmation de la sécurité WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)  
- [Sécurité de Transport HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md)
+ [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
+ [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Programmation de la sécurité dans WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)  
+ [Sécurité de transport HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md)

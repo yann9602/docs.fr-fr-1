@@ -17,11 +17,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ef25e349ca6245ff3247f3a136d9a950d03d81d5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5ffd4a09de508a2353af356863f9e4f41fc253e8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="forward-compatible-data-contracts"></a>Contrats de données à compatibilité ascendante
 L'une des particularités du système de contrats de données [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est que les contrats peuvent évoluer avec le temps sans rupture. Autrement dit, un client avec une version antérieure d'un contrat de données peut communiquer avec un service disposant d'une version plus récente du même contrat de données, ou un client avec une version plus récente d'un contrat de données peut communiquer avec une version antérieure du même contrat de données. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Meilleures pratiques : contrôle de version de contrat de données](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
@@ -53,5 +54,5 @@ L'une des particularités du système de contrats de données [!INCLUDE[indigo1]
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Runtime.Serialization.IExtensibleDataObject>  
  <xref:System.Runtime.Serialization.ExtensionDataObject>  
- [Version des contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md)  
+ [Gestion de version des contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md)  
  [Bonnes pratiques : gestion des versions des contrats de données](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)

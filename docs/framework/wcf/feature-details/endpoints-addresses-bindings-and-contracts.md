@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6c0b13ee48ed729d89f4b4b506e3608abe7e82b5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: af82cb934570b371d332c0e08ebc9b2338d0c0d6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="endpoints-addresses-bindings-and-contracts"></a>Points de terminaison : adresses, liaisons et contrats
 Toutes les communications avec un [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service s’effectue via le *points de terminaison* du service. Les points de terminaison fournissent aux clients l'accès aux fonctionnalités offertes par un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
@@ -49,7 +50,7 @@ Toutes les communications avec un [!INCLUDE[indigo1](../../../../includes/indigo
   
      [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Spécification d’une adresse de point de terminaison](../../../../docs/framework/wcf/specifying-an-endpoint-address.md).  
   
--   Liaison : la liaison spécifie le mode de communication avec le point de terminaison. Cela inclut :  
+-   Liaison : la liaison spécifie le mode de communication avec le point de terminaison. Cela concerne :  
   
     -   Le protocole de transport à utiliser (par exemple, TCP ou HTTP).  
   
@@ -83,18 +84,18 @@ Toutes les communications avec un [!INCLUDE[indigo1](../../../../includes/indigo
  Décrit comment les points de terminaison sont adressés dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  [Liaisons](../../../../docs/framework/wcf/feature-details/bindings.md)  
- Décrit comment les liaisons sont utilisées pour spécifier le transport, l'encodage et les détails de protocole requis pour que les clients et les services puissent communiquer l'un l'autre.  
+ Décrit comment les liaisons sont utilisées pour spécifier le transport, l’encodage et les détails de protocole requis pour que les clients et les services puissent communiquer l’un l’autre.  
   
  [Contrats](../../../../docs/framework/wcf/feature-details/contracts.md)  
  Décrit comment les contrats définissent les méthodes d'un service.  
   
- [Comment : créer un point de terminaison de Service dans la Configuration](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
+ [Guide pratique pour créer un point de terminaison de service dans la configuration](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
  Décrit comment créer un point de terminaison de service dans la configuration.  
   
- [Comment : créer un point de terminaison de Service dans le Code](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
+ [Guide pratique pour créer un point de terminaison de service dans le code](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
  Décrit comment créer un point de terminaison de service dans le code.  
   
- [Comment : utiliser Svcutil.exe pour valider le Code de Service compilé](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)  
+ [Guide pratique pour utiliser Svcutil.exe pour valider le code de service compilé](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)  
  Explique comment détecter les erreurs dans les configurations et les implémentations de service sans héberger le service en utilisant le [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 ## <a name="see-also"></a>Voir aussi  

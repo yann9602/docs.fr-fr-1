@@ -20,11 +20,12 @@ caps.latest.revision: "38"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: acbe1fc52cec011863dea8f3ae81492e3661cd97
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7541f04279bbe9d85b7e2ecca841d9f5a14fc9a3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-data-contracts"></a>Utilisation de contrats de données
 Un *contrat de données* est un accord en bonne et due forme entre un service et un client qui décrit de manière abstraite les données à échanger. Autrement dit, pour communiquer, le client et le service n'ont pas besoin de partager les mêmes types, mais uniquement les mêmes contrats de données. Un contrat de données définit précisément, pour chaque type de paramètre ou de retour, les données qui doivent être sérialisées (converties en données XML) pour être échangées.  
@@ -46,7 +47,7 @@ Un *contrat de données* est un accord en bonne et due forme entre un service et
  [!code-vb[C_DataContract#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#2)]  
   
 ### <a name="notes"></a>Notes  
- Les remarques suivantes fournissent des éléments à prendre en compte lors de la création de contrats de données :  
+ Les remarques suivantes fournissent des éléments à prendre en compte lors de la création de contrats de données :  
   
 -   L'attribut <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> est honoré uniquement lorsqu'il est utilisé avec des types non marqués. Cela inclut les types qui ne sont pas marqués avec l'un des attributs <xref:System.Runtime.Serialization.DataContractAttribute>, <xref:System.SerializableAttribute>, <xref:System.Runtime.Serialization.CollectionDataContractAttribute>ou <xref:System.Runtime.Serialization.EnumMemberAttribute> , ou qui sont marqués comme sérialisables par tout autre moyen (par exemple, objet <xref:System.Xml.Serialization.IXmlSerializable>).  
   
@@ -80,13 +81,13 @@ Un *contrat de données* est un accord en bonne et due forme entre un service et
  <xref:System.Runtime.Serialization.DataMemberAttribute>  
  <xref:System.Runtime.Serialization.DataContractAttribute>  
  [Types sérialisables](../../../../docs/framework/wcf/feature-details/serializable-types.md)  
- [Noms de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-names.md)  
+ [Noms de contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-names.md)  
  [Équivalence des contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)  
- [Ordre des membres de données](../../../../docs/framework/wcf/feature-details/data-member-order.md)  
- [Types connus de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
+ [Classement des membres de données](../../../../docs/framework/wcf/feature-details/data-member-order.md)  
+ [Types connus de contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
  [Contrats de données à compatibilité ascendante](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)  
- [Version des contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md)  
+ [Gestion de version des contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md)  
  [Rappels de sérialisation avec tolérance de version](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)  
- [Valeurs de données membre par défaut](../../../../docs/framework/wcf/feature-details/data-member-default-values.md)  
+ [Valeurs par défaut des membres de données](../../../../docs/framework/wcf/feature-details/data-member-default-values.md)  
  [Types pris en charge par le sérialiseur de contrat de données](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)  
- [Comment : créer un contrat de données de base pour une classe ou Structure](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)
+ [Guide pratique pour créer un contrat de données de base destiné à une classe ou une structure](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

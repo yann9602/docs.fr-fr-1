@@ -13,11 +13,12 @@ caps.latest.revision: "48"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fc30a755278251ac9e06f2ddd56e2c369b950af4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1933d216f991b78e21a56ec67826dce0b4a7b24a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transport-udp"></a>Transport: UDP
 Cet exemple montre comment implémenter le mode unicast et multicast UDP en tant que transport [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] personnalisé. Il décrit la procédure recommandée pour créer un transport personnalisé dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], en utilisant l'infrastructure de canal et les meilleures pratiques [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] suivantes. Les étapes de la création d'un transport personnalisé sont les suivantes :  
@@ -40,7 +41,7 @@ Cet exemple montre comment implémenter le mode unicast et multicast UDP en tant
   
 <a name="MessageExchangePatterns"></a>   
 ## <a name="message-exchange-patterns"></a>Modèles d’échange de messages  
- La première étape de l'écriture d'un transport personnalisé consiste à déterminer les MEP (Message Exchange Pattern, modèle d'échange de messages) requis pour le transport. Trois MEP sont disponibles :  
+ La première étape de l’écriture d’un transport personnalisé consiste à déterminer les MEP (Message Exchange Pattern, modèle d’échange de messages) requis pour le transport. Trois MEP sont disponibles :  
   
 -   Datagramme (IInputChannel/IOutputChannel)  
   
@@ -132,7 +133,7 @@ message = MessageEncoderFactory.Encoder.ReadMessage(new ArraySegment<byte>(buffe
   
 <a name="AddingABindingElement"></a>   
 ## <a name="adding-a-binding-element"></a>Ajout d’un élément de liaison  
- Maintenant que les fabrications de canaux sont construites, nous devons les exposer à l'exécution de ServiceModel via une liaison. Une liaison est une collection d’éléments de liaison qui représente la pile de communication associée à une adresse de service. Chaque élément dans la pile est représenté par un [ \<liaison >](../../../../docs/framework/misc/binding.md) élément.  
+ Maintenant que les fabrications de canaux sont construites, nous devons les exposer à l’exécution de ServiceModel via une liaison. Une liaison est une collection d’éléments de liaison qui représente la pile de communication associée à une adresse de service. Chaque élément dans la pile est représenté par un [ \<liaison >](../../../../docs/framework/misc/binding.md) élément.  
   
  Dans notre exemple, l'élément de liaison est `UdpTransportBindingElement`, lequel dérive de <xref:System.ServiceModel.Channels.TransportBindingElement>. Il substitue les méthodes suivantes pour générer les fabrications associées à notre liaison.  
   
@@ -211,7 +212,7 @@ if (transportBindingElement is UdpTransportBindingElement)
 ```  
   
 ### <a name="adding-policy-support"></a>Ajout de la prise en charge de la stratégie  
- L'élément de liaison personnalisé peut exporter des assertions de stratégie dans la liaison WSDL d'un point de terminaison de service pour exprimer les fonctionnalités de cet élément de liaison.  
+ L’élément de liaison personnalisé peut exporter des assertions de stratégie dans la liaison WSDL d’un point de terminaison de service pour exprimer les fonctionnalités de cet élément de liaison.  
   
 #### <a name="policy-export"></a>Exportation de stratégie  
  Le `UdpTransportBindingElement` type implémente `IPolicyExportExtension` pour ajouter la prise en charge pour l’exportation de stratégie. En conséquence, `System.ServiceModel.MetadataExporter` inclut `UdpTransportBindingElement` dans la génération de stratégie des liaisons qui l'incluent.  
@@ -286,7 +287,7 @@ public override BindingElementCollection CreateBindingElements()
 }  
 ```  
   
-### <a name="adding-a-custom-standard-binding-importer"></a>Ajout d'un importateur de liaison standard personnalisé  
+### <a name="adding-a-custom-standard-binding-importer"></a>Ajout d’un importateur de liaison standard personnalisé  
  Par défaut, Svcutil.exe et le type `WsdlImporter` reconnaissent et importent les liaisons définies par le système. Sinon, la liaison est importée en tant qu'instance `CustomBinding`. Pour permettre à Svcutil.exe et `WsdlImporter` d'importer `SampleProfileUdpBinding`, `UdpBindingElementImporter` agit également comme un importateur de liaison standard personnalisé.  
   
  Un importateur de liaison standard personnalisé implémente la méthode `ImportEndpoint` sur l'interface `IWsdlImportExtension` pour examiner l'instance `CustomBinding` importée à partir des métadonnées afin de vérifier si elle peut avoir été générée par une liaison standard spécifique.  
@@ -316,7 +317,7 @@ if (context.Endpoint.Binding is CustomBinding)
  Pour exposer notre transport via la configuration, nous devons implémenter deux sections de configuration. La première est `BindingElementExtensionElement` pour `UdpTransportBindingElement`. C'est de cette façon que les implémentations `CustomBinding` référencent notre élément de liaison. La deuxième est `Configuration` pour `SampleProfileUdpBinding`.  
   
 ### <a name="binding-element-extension-element"></a>Élément d’extension de l’élément de liaison  
- La section `UdpTransportElement` est un `BindingElementExtensionElement` qui expose `UdpTransportBindingElement` au système de configuration. Avec quelques substitutions de base, nous définissons le nom de notre section de configuration, le type de notre élément de liaison et la méthode utilisée pour le créer. Nous pouvons ensuite enregistrer notre section d'extension dans un fichier de configuration, tel qu'indiqué dans le code suivant.  
+ La section `UdpTransportElement` est un `BindingElementExtensionElement` qui expose `UdpTransportBindingElement` au système de configuration. Avec quelques substitutions de base, nous définissons le nom de notre section de configuration, le type de notre élément de liaison et la méthode utilisée pour le créer. Nous pouvons ensuite enregistrer notre section d’extension dans un fichier de configuration, tel qu’indiqué dans le code suivant.  
   
 ```xml
 <configuration>  

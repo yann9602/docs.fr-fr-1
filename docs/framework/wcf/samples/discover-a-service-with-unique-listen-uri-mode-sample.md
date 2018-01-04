@@ -13,16 +13,17 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 82f47fb0b789e41c332ebae2cfeaeb350ff0fddd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 017a14794dfb2cb2c49cc32df038600a984acf3f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="discover-a-service-with-unique-listen-uri-mode-sample"></a>Découvrir un service avec Unique Listen Uri Mode Sample
 Cet exemple montre comment découvrir un service dont la propriété <xref:System.ServiceModel.Channels.BindingContext.ListenUriMode%2A> a la valeur <xref:System.ServiceModel.Description.ListenUriMode.Unique>. Lorsque la propriété <xref:System.ServiceModel.Channels.BindingContext.ListenUriMode%2A> a la valeur <xref:System.ServiceModel.Description.ListenUriMode.Unique>, le caractère unique de ListenUri peut être garanti soit en définissant le port de sorte qu'il soit unique, soit en ajoutant un GUID pour que le chemin d'accès soit unique.  
   
-### <a name="features-on-the-service"></a>Caractéristiques sur le service  
+### <a name="features-on-the-service"></a>Fonctionnalités sur le service  
  La propriété <xref:System.ServiceModel.Channels.BindingContext.ListenUriMode%2A> a la valeur <xref:System.ServiceModel.Description.ListenUriMode.Unique> pour le point de terminaison TCP. Le service est alors rendu détectable sur un point de terminaison <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>.  
   
 ### <a name="features-on-the-client"></a>Caractéristiques sur le client  
@@ -36,7 +37,7 @@ Cet exemple montre comment découvrir un service dont la propriété <xref:Syste
   
 3.  Exécutez l'application du service, générée dans le dossier [répertoire de base de la solution]\service\bin\debug.  
   
-4.  Exécutez l'application du client, générée dans le dossier [répertoire de base de la solution]\Client\bin\debug.  
+4.  Exécutez l’application du client, générée dans le dossier [répertoire de base de la solution]\Client\bin\debug.  
   
      Le client trouve le service en cours d'exécution et écrit dans la console les métadonnées publiées par le point de terminaison du service.  
   

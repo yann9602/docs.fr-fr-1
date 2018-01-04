@@ -13,23 +13,24 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 70e38e3fe1a07613b0e5b219922c95cdc3bcda41
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 37125ed8211578e221b24e6aed1fc57b2fc0f518
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clients"></a>Clients
 Les rubriques de cette section traitent de l'architecture client, de la façon d'accéder à un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], de la façon de configurer un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] et de certaines considérations relatives à la sécurité des clients [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Architecture de Client WCF](../../../../docs/framework/wcf/feature-details/client-architecture.md)  
+ [Architecture du client WCF](../../../../docs/framework/wcf/feature-details/client-architecture.md)  
  Décrit l'architecture client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  [Accès aux services à l’aide d’un client WCF](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)  
  Décrit comment accéder à un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Configuration du Client WCF](../../../../docs/framework/wcf/feature-details/client-configuration.md)  
+ [Configuration du client WCF](../../../../docs/framework/wcf/feature-details/client-configuration.md)  
  Décrit comment configurer un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  [Sécurisation des clients](../../../../docs/framework/wcf/securing-clients.md)  

@@ -19,11 +19,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 53429513426d3b197da4740e5e92d44d8b3a5533
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 305ffae04b6f1ddb94081f8a6ee334f8195caba3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="three-categories-of-graphics-services"></a>Trois catégories de services graphiques
 Les offres de graphiques dans les Windows Forms se répartissent en trois grandes catégories :  

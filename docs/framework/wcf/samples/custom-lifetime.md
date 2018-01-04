@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2538a9c483b949dfef1c60bd2225f5daf4e01117
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1cbe73468e2ce1c8a4fe81a676c819b04d2ef760
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-lifetime"></a>Custom Lifetime
 Cet exemple montre comment écrire une extension [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] afin de fournir des services de durée de vie personnalisés pour des instances de service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] partagées.  
@@ -171,7 +172,7 @@ public void NotifyIdle(InstanceContextIdleCallback callback,
   
  Avant que la propriété `ICustomLease.IsIdle` ne soit vérifiée, la propriété Callback doit être définie, condition essentielle pour que `CustomLeaseExtension` puisse indiquer au répartiteur le moment où elle devient inactive. Si `ICustomLease.IsIdle` retourne `true`, le membre privé `isIdle` reçoit simplement dans `CustomLifetimeLease` la valeur `true` et appelle la méthode de rappel. Étant donné que le code maintient un verrou, d'autres threads ne peuvent pas modifier la valeur de ce membre privé. Et la prochaine fois que le répartiteur vérifie l'`ISharedSessionLifetime.IsIdle`, il retourne `true` et laisse le répartiteur libérer l'instance.  
   
- Le travail préparatoire étant à présent terminé, l'extension personnalisée doit être raccordée au modèle de service. Pour raccorder l'implémentation de `CustomLeaseExtension` au <xref:System.ServiceModel.InstanceContext>, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit l'interface <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer> qui permet d'effectuer le l'initialisation d'<xref:System.ServiceModel.InstanceContext>. Dans l'exemple, la classe `CustomLeaseInitializer` implémente cette interface et ajoute une instance de `CustomLeaseExtension` à la collection <xref:System.ServiceModel.InstanceContext.Extensions%2A> à partir de la seule initialisation de la méthode. Cette méthode est appelée par le répartiteur en initialisant l'<xref:System.ServiceModel.InstanceContext>.  
+ Le travail préparatoire étant à présent terminé, l’extension personnalisée doit être raccordée au modèle de service. Pour raccorder l'implémentation de `CustomLeaseExtension` au <xref:System.ServiceModel.InstanceContext>, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit l'interface <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer> qui permet d'effectuer le l'initialisation d'<xref:System.ServiceModel.InstanceContext>. Dans l'exemple, la classe `CustomLeaseInitializer` implémente cette interface et ajoute une instance de `CustomLeaseExtension` à la collection <xref:System.ServiceModel.InstanceContext.Extensions%2A> à partir de la seule initialisation de la méthode. Cette méthode est appelée par le répartiteur en initialisant l'<xref:System.ServiceModel.InstanceContext>.  
   
 ```  
 public void Initialize(InstanceContext instanceContext, Message message)  

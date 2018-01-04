@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cb9fc13d7facf3bdc3f9da43297a47fd1cf4af65
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 28bf67b3840cb37c918198dd0910db9d592a6823
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-discovery-overview"></a>Vue d'ensemble de la découverte WCF
 Les API de découverte offrent un modèle de programmation unifié pour la publication et la découverte dynamiques de services Web, à l'aide du protocole WS-Discovery. Ces API permettent aux services de se publier eux-mêmes et permettent aux clients de rechercher des services publiés. Une fois un service rendu détectable, le service a la capacité d'envoyer des messages d'annonce, ainsi que d'écouter des demandes de découverte et d'y répondre. Les services détectables peuvent envoyer des messages de type Hello pour annoncer leur arrivée sur un réseau et des messages de type Bye pour annoncer leur départ d'un réseau. Pour trouver un service, les clients envoient une demande `Probe` qui contient des critères spécifiques tels que le type de contrat de service, les mots clés et l'étendue sur le réseau. Les services reçoivent la demande `Probe` et déterminent s'ils correspondent aux critères. Si un service correspond, il répond en renvoyant au client un message `ProbeMatch`, avec les informations nécessaires pour contacter le service. Les clients peuvent également envoyer des demandes `Resolve` qui leur permettent de trouver des services dont l'adresse du point de terminaison risque d'avoir été modifiée. Les services correspondants répondent aux demandes `Resolve` en renvoyant un message `ResolveMatch` au client.  
@@ -69,7 +70,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), base
  Une instance <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> doit être ajoutée à une description du service pour rendre le service détectable. Une instance <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> doit être ajoutée à l'hôte de service pour indiquer au service où écouter les demandes de découverte. Dans cet exemple, un objet <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> (dérivé de <xref:System.ServiceModel.Discovery.DiscoveryEndpoint>) est ajouté pour spécifier que le service doit écouter les demandes de découverte sur le transport de multidiffusion UDP. L'objet <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> est utilisé pour la découverte ad hoc parce que tous les messages sont envoyés en mode multidiffusion.  
   
 ## <a name="announcement"></a>Annonce  
- Par défaut, la publication de service n'envoie pas de messages d'annonce. Le service doit être configuré pour envoyer des messages d'annonce. Cela offre aux développeurs de service une flexibilité supplémentaire, parce qu'ils peuvent annoncer le service séparément de l'écoute des messages de découverte. L'annonce de service peut également être utilisée comme mécanisme d'inscription des services avec un proxy de découverte ou d'autres registres de service. Le code suivant indique comment configurer un service pour envoyer des messages d'annonce sur une liaison UDP.  
+ Par défaut, la publication de service n'envoie pas de messages d'annonce. Le service doit être configuré pour envoyer des messages d'annonce. Cela offre aux développeurs de service une flexibilité supplémentaire, parce qu'ils peuvent annoncer le service séparément de l'écoute des messages de découverte. L'annonce de service peut également être utilisée comme mécanisme d'inscription des services avec un proxy de découverte ou d'autres registres de service. Le code suivant indique comment configurer un service pour envoyer des messages d’annonce sur une liaison UDP.  
   
 ```csharp  
 Uri baseAddress = new Uri(string.Format("http://{0}:8000/discovery/scenarios/calculatorservice/{1}/",
@@ -161,7 +162,7 @@ class Client
 ## <a name="discovery-and-web-hosted-services"></a>Services de découverte et hébergés Web  
  Pour que les services WCF soient détectables, ils doivent être en cours d'exécution. Les services WCF hébergés sous IIS ou WAS ne sont pas exécutés tant que IIS/WAS ne reçoit pas de message lié pour le service, ainsi, ils ne sont pas détectables par défaut.  Il existe deux options pour rendre les services hébergés Web détectables :  
   
-1.  Utiliser la fonction de démarrage automatique de Windows Server AppFabric  
+1.  Utiliser la fonctionnalité de démarrage automatique de Windows Server AppFabric  
   
 2.  Utiliser un proxy de découverte pour communiquer pour le compte du service  
   

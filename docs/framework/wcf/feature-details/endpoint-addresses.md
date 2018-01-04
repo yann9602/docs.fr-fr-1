@@ -17,11 +17,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3231e5b043dd0e65c09f25eed56341e660bf1f87
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 94610842cd801a54bba0266a4f658d8a4bb60dcd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="endpoint-addresses"></a>Adresses de point de terminaison
 Chaque point de terminaison a une adresse qui lui est associée et qui est utilisé pour localiser et identifier le point de terminaison. Cette adresse se compose à l'origine d'un URI (Uniform Resource Identifier) qui spécifie l'emplacement du point de terminaison. L'adresse de point de terminaison est représentée dans le modèle de programmation [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] par la classe <xref:System.ServiceModel.EndpointAddress>, qui contient une propriété <xref:System.ServiceModel.EndpointAddress.Identity%2A> facultative qui active l'authentification du point de terminaison par d'autres points de terminaison qui échangent des messages avec celui-ci et un jeu de propriétés <xref:System.ServiceModel.EndpointAddress.Headers%2A> facultatives qui définissent tous les autres en-têtes SOAP requis pour atteindre le service. Les en-têtes facultatifs fournissent des données d'adressage plus détaillées supplémentaires pour identifier ou interagir avec le point de terminaison de service. L'adresse d'un point de terminaison est représentée sur le câble comme une référence de point de terminaison WS-Addressing (EPR).  
@@ -35,7 +36,7 @@ Chaque point de terminaison a une adresse qui lui est associée et qui est utili
   
 -   (facultatif) Port : 322  
   
--   Chemin d'accès : /mathservice.svc/secureEndpoint  
+-   Chemin d’accès : /mathservice.svc/secureEndpoint  
   
 ## <a name="defining-an-address-for-a-service"></a>Définition de l'adresse d'un service  
  L'adresse du point de terminaison pour un service peut être spécifiée de manière impérative en utilisant le code ou de façon déclarative par la configuration. La définition de points de terminaison dans le code est généralement peu pratique car les liaisons et les adresses pour un service déployé sont en général différentes de celles utilisées au cours du développement du service. En général, il est plus pratique de définir des points de terminaison de service à l'aide de la configuration plutôt que du code. Le fait de conserver les informations de liaison et d'adressage hors du code leur permet de changer sans nécessiter de recompilation et de redéploiement de l'application.  
@@ -50,7 +51,7 @@ Chaque point de terminaison a une adresse qui lui est associée et qui est utili
  Une adresse de point de terminaison peut aussi être représentée dans WSDL sous la forme d'un élément EPR WS-Addressing à l'intérieur de l'élément `wsdl:port` du point de terminaison correspondant. L'EPR contient l'adresse du point de terminaison ainsi que toutes les propriétés d'adresse. Pour plus d’informations, consultez [spécification d’une adresse de point de terminaison](../../../../docs/framework/wcf/specifying-an-endpoint-address.md).  
   
 ## <a name="multiple-iis-binding-support-in-net-framework-35"></a>Plusieurs IIS liaison prise en charge dans .NET Framework 3.5  
- Les fournisseurs de services Internet hébergent souvent de nombreuses applications sur le même serveur et le même site pour augmenter la densité du site et réduire le coût total de possession. Ces applications sont liées en général à des adresses de base différentes. Un site Web IIS (Internet Information Services) peut contenir plusieurs applications. Les applications dans un site sont accessibles par le biais d'une ou de plusieurs liaisons IIS.  
+ Les fournisseurs de services Internet hébergent souvent de nombreuses applications sur le même serveur et le même site pour augmenter la densité du site et réduire le coût total de possession. Ces applications sont liées en général à des adresses de base différentes. Un site web IIS (Internet Information Services) peut contenir plusieurs applications. Les applications dans un site sont accessibles par le biais d'une ou de plusieurs liaisons IIS.  
   
  Les liaisons IIS fournissent deux informations : un protocole de liaison et des informations de liaison. Le protocole de liaison définit la méthode selon laquelle la communication se produit, et les informations de liaison sont les informations utilisées pour accéder au site.  
   
@@ -58,7 +59,7 @@ Chaque point de terminaison a une adresse qui lui est associée et qui est utili
   
 -   Protocole de liaison : HTTP  
   
--   Informations de liaison : adresse IP, port, en-tête de l'hôte  
+-   Informations de liaison : adresse IP, port, en-tête de l’hôte  
   
  IIS peut spécifier plusieurs liaisons pour chaque site, ce qui génère plusieurs adresses de base pour chaque méthode. Avant le [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)], [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ne prenait pas en charge plusieurs adresses pour un schéma, et, si elles étaient spécifiées, il levait une exception <xref:System.ArgumentException> pendant l'activation.  
   
@@ -149,4 +150,4 @@ Chaque point de terminaison a une adresse qui lui est associée et qui est utili
   
 ## <a name="see-also"></a>Voir aussi  
  [Spécification d’une adresse de point de terminaison](../../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
- [L’authentification et identité de Service](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+ [Identité du service et authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)

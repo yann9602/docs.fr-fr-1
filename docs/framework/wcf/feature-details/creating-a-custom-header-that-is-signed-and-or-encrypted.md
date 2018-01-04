@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d637dfaa4b3639d1e47280c423489735844a2a47
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0b0faa62d75c506fd93c17c6a67aaecdd22bc8c4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-a-custom-header-that-is-signed-and-or-encrypted"></a>Création d’un en-tête personnalisé qui est signé et- ou chiffrées
 Si vous appelez un service autre que WCF à l'aide d'un client WCF, il est parfois nécessaire d'utiliser des en-têtes SOAP personnalisés. Un bogue de canonisation dans WCF empêche les en-têtes personnalisés qui sont signés et chiffrés de fonctionner avec un service non-WCF. Le problème est causé par la canonisation incorrecte des espaces de noms XML par défaut. Ceci pose problème uniquement si vous appelez des services autres que WCF avec en-têtes personnalisés qui sont signés et/ou chiffrés.  Lorsque le service reçoit le message contenant l'en-tête personnalisé signé et/ou chiffré, il n'est pas en mesure de vérifier la signature. Cette solution de contournement évite le bogue de canonisation, permet l'interopérabilité avec les services autres que WCF, mais n'empêche pas l'interopérabilité avec les services WCF.  
@@ -67,6 +68,6 @@ public  class MyMessageContract
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Contrat de Message par défaut](../../../../docs/framework/wcf/samples/default-message-contract.md)  
+ [Contrat de message par défaut](../../../../docs/framework/wcf/samples/default-message-contract.md)  
  [Contrats de message](../../../../docs/framework/wcf/samples/message-contracts.md)  
- [À l’aide de contrats de Message](../../../../docs/framework/wcf/feature-details/using-message-contracts.md)
+ [Utilisation de contrats de message](../../../../docs/framework/wcf/feature-details/using-message-contracts.md)

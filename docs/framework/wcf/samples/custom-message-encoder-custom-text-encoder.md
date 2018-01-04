@@ -13,11 +13,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ea35904fe038bdeac528254e476e799369b8b013
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 54e2b87a9e104ea61c32b06ffc604fc864283f3d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-message-encoder-custom-text-encoder"></a>Encodeur de message personnalisé : Encodeur de texte personnalisé
 Cet exemple montre comment implémenter un encodeur de message texte personnalisé à l'aide de [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -33,15 +34,15 @@ Cet exemple montre comment implémenter un encodeur de message texte personnalis
   
  Le <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] prend uniquement en charge les encodages UTF-8, UTF-16 et Unicode Big-Endian. L'encodeur de message texte personnalisé de cet exemple prend en charge l'ensemble des encodages de caractères pris en charge par la plateforme qui peuvent être nécessaires pour l'interopérabilité. L'exemple se compose d'un programme de console client (.exe), d'une bibliothèque de service (.dll) hébergée par les services IIS (Internet Information Services) et d'une bibliothèque d'encodeurs de message texte (.dll). Le service implémente un contrat qui définit un modèle de communication demande-réponse. Le contrat est défini par l'interface `ICalculator`, laquelle expose les opérations mathématiques suivantes : addition, soustraction, multiplication et division. Le client adresse des demandes synchrones à une opération mathématique donnée et le service répond avec le résultat. Le client et le service utilisent `CustomTextMessageEncoder` au lieu du <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> par défaut.  
   
- L'implémentation d'encodeur personnalisée se compose d'une fabrique d'encodeur de message, d'un encodeur de message, d'un élément de liaison d'encodage de message et d'un gestionnaire de configuration, et présente les éléments suivants :  
+ L’implémentation d’encodeur personnalisée se compose d’une fabrique d’encodeur de message, d’un encodeur de message, d’un élément de liaison d’encodage de message et d’un gestionnaire de configuration, et présente les éléments suivants :  
   
 -   Création d'un encodeur personnalisé et d'une fabrique d'encodeur.  
   
 -   Création d'un élément de liaison pour un encodeur personnalisé.  
   
--   Utilisation de la configuration de liaison personnalisée permettant d'intégrer des éléments de liaison personnalisés.  
+-   Utilisation de la configuration de liaison personnalisée permettant d’intégrer des éléments de liaison personnalisés.  
   
--   Développement d'un gestionnaire de configuration personnalisé afin de permettre la configuration de fichier d'un élément de liaison personnalisé.  
+-   Développement d’un gestionnaire de configuration personnalisé afin de permettre la configuration de fichier d’un élément de liaison personnalisé.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
@@ -200,14 +201,14 @@ public class CustomTextMessageEncoderFactory : MessageEncoderFactory
 }  
 ```  
   
-## <a name="message-encoding-binding-element"></a>Élément de liaison d'encodage de message  
+## <a name="message-encoding-binding-element"></a>Élément de liaison d’encodage de message  
  Les éléments de liaison permettent de configurer la pile d'exécution [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Pour utiliser l'encodeur de message personnalisé dans une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], un élément de liaison est requis et permet de créer la fabrique d'encodeur de message avec les paramètres appropriés au niveau correct dans la pile d'exécution.  
   
  `CustomTextMessageBindingElement` dérive de la classe de base <xref:System.ServiceModel.Channels.BindingElement> et hérite de la classe <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>. Cela permet à d'autres composants [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] de reconnaître cet élément de liaison comme étant un élément de liaison d'encodage de message. L'implémentation de <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> retourne une instance de la fabrique d'encodeur de message correspondante avec les paramètres appropriés.  
   
  `CustomTextMessageBindingElement` expose des paramètres pour `MessageVersion`, `ContentType` et `Encoding` via des propriétés. L'encodeur prend en charge les versions Soap11Addressing et Soap12Addressing1. La valeur par défaut est Soap11Addressing1. La valeur par défaut de `ContentType` est "text/xml". La propriété `Encoding` vous permet de définir la valeur de l'encodage de caractères souhaité. L'exemple de client et de service utilise l'encodage de caractères ISO-8859-1 (Latin1), qui n'est pas pris en charge par le <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- Le code suivant montre comment créer la liaison par programme à l'aide de l'encodeur de message texte personnalisé.  
+ Le code suivant montre comment créer la liaison par programme à l’aide de l’encodeur de message texte personnalisé.  
   
 ```  
 ICollection<BindingElement> bindingElements = new List<BindingElement>();  
@@ -218,7 +219,7 @@ bindingElements.Add(httpBindingElement);
 CustomBinding binding = new CustomBinding(bindingElements);  
 ```  
   
-## <a name="adding-metadata-support-to-the-message-encoding-binding-element"></a>Ajout de la prise en charge des métadonnées à l'élément de liaison d'encodage de message  
+## <a name="adding-metadata-support-to-the-message-encoding-binding-element"></a>Ajout de la prise en charge des métadonnées à l’élément de liaison d’encodage de message  
  Les types qui dérivent de <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> sont chargés de mettre à jour la version de la liaison SOAP dans le document WSDL généré pour le service. Pour ce faire, implémentez la méthode `ExportEndpoint` sur l'interface <xref:System.ServiceModel.Description.IWsdlExportExtension>, puis modifiez le document WSDL généré. Dans cet exemple, `CustomTextMessageBindingElement` utilise la logique d'exportation WSDL de `TextMessageEncodingBinidngElement`.  
   
  Pour cet exemple, la configuration du client est créée manuellement. Vous ne pouvez pas utiliser Svcutil.exe pour générer la configuration du client car `CustomTextMessageBindingElement` n'exporte pas d'assertion de stratégie pour décrire son comportement. Il est en général préférable d'implémenter l'interface <xref:System.ServiceModel.Description.IPolicyExportExtension> sur un élément de liaison personnalisé pour exporter une assertion de stratégie personnalisée qui décrit le comportement ou la fonctionnalité implémentée par l'élément de liaison. Pour obtenir un exemple montrant comment exporter une assertion de stratégie pour un élément de liaison personnalisée, consultez le [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) exemple.  

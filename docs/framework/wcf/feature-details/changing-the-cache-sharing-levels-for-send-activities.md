@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d0254673277cf6435ec835351b89fc03db01b2ae
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 59c6ae1ae31a5aa256844e6efca158e4702b6aba
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="changing-the-cache-sharing-levels-for-send-activities"></a>Modification des niveaux de partage du cache pour les activités d'envoi
 L'extension <xref:System.ServiceModel.Activities.SendMessageChannelCache> vous permet de personnaliser les niveaux de partage du cache, les paramètres du cache de fabrication de canaux et les paramètres du cache de canaux, pour les flux de travail qui envoient des messages aux points de terminaison de service par le biais d'activités de messagerie <xref:System.ServiceModel.Activities.Send>. Ces flux de travail sont généralement des flux de travail clients, mais peuvent également être des services de flux de travail hébergés dans un <xref:System.ServiceModel.WorkflowServiceHost>. Le cache de fabrication de canaux contient des objets <xref:System.ServiceModel.ChannelFactory%601> mis en cache. Le cache de canaux contient des canaux mis en cache.  
@@ -47,7 +48,7 @@ static SendMessageChannelCache sharedChannelCacheExtension =
     new SendMessageChannelCache();  
 ```  
   
- Ensuite, ajoutez l'extension de cache à chaque instance de flux de travail client.  
+ Ensuite, ajoutez l’extension de cache à chaque instance de flux de travail client.  
   
 ```  
 WorkflowApplication clientInstance1 = new WorkflowApplication(new clientWorkflow1());  
@@ -70,7 +71,7 @@ static SendMessageChannelCache sharedChannelCacheExtension = new
     SendMessageChannelCache();  
 ```  
   
- Ensuite, ajoutez l'extension de cache statique à chaque hôte du service de workflow.  
+ Ensuite, ajoutez l’extension de cache statique à chaque hôte du service de workflow.  
   
 ```  
 WorkflowServiceHost host1 = new WorkflowServiceHost(new serviceWorkflow1(), new Uri(baseAddress1));  
@@ -103,7 +104,7 @@ serviceHost.WorkflowExtensions.Add(() => new SendMessageChannelCache
 |Valeur par défaut du cache de fabrication|TimeSpan.MaxValue|2|16|  
 |Valeur par défaut du cache de canaux|5|2|16|  
   
- Pour personnaliser les paramètres des caches de fabrication et de canaux, instanciez la classe <xref:System.ServiceModel.Activities.SendMessageChannelCache> à l'aide du constructeur paramétré <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> et passez une nouvelle instance de l'objet <xref:System.ServiceModel.Activities.ChannelCacheSettings> avec les valeurs personnalisées à chacun des paramètres `factorySettings` et `channelSettings`. Ensuite, ajoutez la nouvelle instance de cette classe en tant qu'extension à un hôte du service de flux de travail ou à une instance de flux de travail. L'exemple de code suivant indique comment effectuer ces étapes pour une instance de flux de travail.  
+ Pour personnaliser les paramètres des caches de fabrication et de canaux, instanciez la classe <xref:System.ServiceModel.Activities.SendMessageChannelCache> à l'aide du constructeur paramétré <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> et passez une nouvelle instance de l'objet <xref:System.ServiceModel.Activities.ChannelCacheSettings> avec les valeurs personnalisées à chacun des paramètres `factorySettings` et `channelSettings`. Ensuite, ajoutez la nouvelle instance de cette classe en tant qu’extension à un hôte du service de flux de travail ou à une instance de flux de travail. L'exemple de code suivant indique comment effectuer ces étapes pour une instance de flux de travail.  
   
 ```  
 ChannelCacheSettings factorySettings = new ChannelCacheSettings{  
@@ -122,7 +123,7 @@ SendMessageChannelCache customChannelCacheExtension =
 clientInstance.Extensions.Add(customChannelCacheExtension);  
 ```  
   
- Pour activer la mise en cache lorsque votre service de flux de travail a des points de terminaison définis dans la configuration, instanciez la classe <xref:System.ServiceModel.Activities.SendMessageChannelCache> à l'aide du constructeur paramétré <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> avec le paramètre `allowUnsafeCaching` défini sur `true`. Ensuite, ajoutez la nouvelle instance de cette classe en tant qu'extension à un hôte du service de flux de travail ou à une instance de flux de travail. L'exemple de code suivant indique la procédure d'activation de la mise en cache pour une instance de flux de travail.  
+ Pour activer la mise en cache lorsque votre service de flux de travail a des points de terminaison définis dans la configuration, instanciez la classe <xref:System.ServiceModel.Activities.SendMessageChannelCache> à l'aide du constructeur paramétré <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> avec le paramètre `allowUnsafeCaching` défini sur `true`. Ensuite, ajoutez la nouvelle instance de cette classe en tant qu’extension à un hôte du service de flux de travail ou à une instance de flux de travail. L'exemple de code suivant indique la procédure d'activation de la mise en cache pour une instance de flux de travail.  
   
 ```  
 SendMessageChannelCache customChannelCacheExtension =   

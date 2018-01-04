@@ -13,11 +13,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4ca1eb73842f3f7dac5557c1eafff637396d317a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f90f7dd508e2ff4058b787fc29d152abc18f24fd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migrating-aspnet-web-services-to-wcf"></a>Migration des services Web ASP.NET vers WCF
 ASP.NET fournit des bibliothèques de classes .NET Framework et des outils permettant de générer des services Web, ainsi que des fonctionnalités d'hébergement des services dans les services IIS (Internet Information Services). [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournit des bibliothèques de classes .NET Framework, des outils et des fonctionnalités d'hébergement permettant aux entités logicielles de communiquer à l'aide de n'importe quel protocole, y compris ceux utilisés par les services Web.  La migration des services Web ASP.NET vers [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] permet à vos applications de tirer parti des nouvelles fonctionnalités et améliorations propres à [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
@@ -46,8 +47,8 @@ ASP.NET fournit des bibliothèques de classes .NET Framework et des outils perme
  Cette section décrit ces options en détail, compare des services Web ASP.NET à [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], et fournit des instructions sur la procédure de migration du code de vos services Web ASP.NET vers [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
 ## <a name="see-also"></a>Voir aussi  
- [Anticipation de l’adoption de Windows Communication Foundation : faciliter la Future Migration](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)  
- [Anticipation de l’adoption de Windows Communication Foundation : faciliter l’intégration Future](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)  
+ [Anticipation de l’adoption de Windows Communication Foundation : faciliter la migration future](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)  
+ [Anticipation de l’adoption de Windows Communication Foundation : faciliter l’intégration future](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)  
  [Adoption de Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/adopting-wcf.md)  
- [Comparaison des Services Web ASP.NET vers WCF en fonction délibérément et normes utilisées](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)  
- [Comparaison entre les Services Web ASP.NET basée sur le développement de WCF](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-development.md)
+ [Comparaison des services web ASP.NET et de WCF en fonction de l’objectif et des normes utilisées](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)  
+ [Comparaison des services web ASP.NET et de WCF du point de vue du développement](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-development.md)

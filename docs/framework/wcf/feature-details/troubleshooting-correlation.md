@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5ea348811a1b2dbd19254f6979a5165c821aa31e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 76b6178d3190165e711f46af60a6541a82ad0bd7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="troubleshooting-correlation"></a>Dépannage de la corrélation
 La corrélation est utilisée pour établir une relation entre des messages de service de workflow et avec l'instance de workflow appropriée, mais si elle n'est pas proprement configurée, les messages ne seront pas reçus et les applications ne fonctionneront pas correctement. Cette rubrique fournit une vue d'ensemble de plusieurs méthodes de résolution des problèmes de corrélation et présente certains problèmes courants qui peuvent se produire lorsque vous utilisez la corrélation.  
@@ -187,7 +188,7 @@ SendReply ReplyToStartOrder = new SendReply
  Il existe un petit intervalle entre le moment où le service reçoit un message et où la corrélation est réellement initialisée, pendant lequel les messages de suivi sont ignorés. Si un service de workflow initialise la corrélation basée sur le contenu à l'aide des données transmises par le client lors d'une opération unidirectionnelle et que l'appelant envoie des messages de suivi immédiats, ces messages sont ignorés pendant cet intervalle. Cela peut être évité en utilisant une opération bidirectionnelle pour initialiser la corrélation, ou en utilisant un <xref:System.ServiceModel.Activities.TransactedReceiveScope>.  
   
 ### <a name="correlation-query-issues"></a>Problèmes de requête de corrélation  
- Les requêtes de corrélation permettent de spécifier les données d'un message qui servent à mettre le message en corrélation. Ces données sont spécifiées à l'aide d'une requête XPath. Si des messages adressés à un service ne sont pas distribués alors que tout semble correct, une stratégie de résolution des problèmes consiste à spécifier une valeur littérale qui correspond à la valeur des données de message au lieu d'une requête XPath. Pour spécifier une valeur littérale, utilisez la fonction `string`. Dans l'exemple suivant, un <xref:System.ServiceModel.MessageQuerySet> est configuré de façon à utiliser la valeur littérale `11445` pour l'`OrderId` et des marques de commentaire sont ajoutées à la requête XPath pour la supprimer.  
+ Les requêtes de corrélation permettent de spécifier les données d'un message qui servent à mettre le message en corrélation. Ces données sont spécifiées à l'aide d'une requête XPath. Si des messages adressés à un service ne sont pas distribués alors que tout semble correct, une stratégie de résolution des problèmes consiste à spécifier une valeur littérale qui correspond à la valeur des données de message au lieu d’une requête XPath. Pour spécifier une valeur littérale, utilisez la fonction `string`. Dans l'exemple suivant, un <xref:System.ServiceModel.MessageQuerySet> est configuré de façon à utiliser la valeur littérale `11445` pour l'`OrderId` et des marques de commentaire sont ajoutées à la requête XPath pour la supprimer.  
   
 ```csharp  
 MessageQuerySet = new MessageQuerySet  
@@ -200,7 +201,7 @@ MessageQuerySet = new MessageQuerySet
 }  
 ```  
   
- Si une requête XPath est configurée incorrectement et aucune donnée de corrélation n'est récupérée, une erreur est retournée avec le message suivant : «  Une requête de corrélation a donné un jeu de résultats vide. Vérifiez que les requêtes de corrélation pour le point de terminaison sont correctement configurées. ». Une solution pour résoudre rapidement ce problème consiste à remplacer la requête XPath avec une valeur littérale comme décrit dans la section précédente. Ce problème peut se produire si vous utilisez le Générateur de requêtes XPath dans le **ajouter des initialiseurs de corrélation** ou **définition CorrelatesOn** boîtes de dialogue et votre service de workflow utilise des contrats de message. Dans l'exemple suivant, une classe de contrat de message est définie.  
+ Si une requête XPath est configurée incorrectement et aucune donnée de corrélation n’est récupérée, une erreur est retournée avec le message suivant : «  Une requête de corrélation a donné un jeu de résultats vide. Vérifiez que les requêtes de corrélation pour le point de terminaison sont correctement configurées. ». Une solution pour résoudre rapidement ce problème consiste à remplacer la requête XPath avec une valeur littérale comme décrit dans la section précédente. Ce problème peut se produire si vous utilisez le Générateur de requêtes XPath dans le **ajouter des initialiseurs de corrélation** ou **définition CorrelatesOn** boîtes de dialogue et votre service de workflow utilise des contrats de message. Dans l'exemple suivant, une classe de contrat de message est définie.  
   
 ```csharp  
 [MessageContract]  

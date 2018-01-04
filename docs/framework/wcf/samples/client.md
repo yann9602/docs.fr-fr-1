@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: def4536fb40820372bf473d1752bb73d525db2e4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 11a02fc857fa3c03b11b549013550e557933820e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="client"></a>Client
 Cette section contient des exemples qui illustrent des applications clientes [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -29,7 +30,7 @@ Cette section contient des exemples qui illustrent des applications clientes [!I
  [En-têtes d’adresse](../../../../docs/framework/wcf/samples/address-headers.md)  
  Montre comment les clients peuvent passer des paramètres de référence à un service à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Fabrication de canal](../../../../docs/framework/wcf/samples/channel-factory.md)  
+ [Fabrique de canaux](../../../../docs/framework/wcf/samples/channel-factory.md)  
  Montre comment une application cliente peut créer un canal avec la classe <xref:System.ServiceModel.ChannelFactory> au lieu d'un client généré.  
   
  [Exceptions attendues](../../../../docs/framework/wcf/samples/expected-exceptions.md)  

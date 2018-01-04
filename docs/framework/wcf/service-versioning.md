@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 679a6a30e72e18547a04007c58c82d5f121893d0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 791e201907f72f9d590f6d835fd6ec1bfc25633f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-versioning"></a>Contrôle des versions du service
 Après leur déploiement initial, et potentiellement plusieurs fois pendant leur durée de vie, il peut s’avérer nécessaire de modifier les services (et les points de terminaison qu’ils exposent) pour diverses raisons, telles que l’évolution des besoins de l’entreprise, des exigences informatiques, ou pour résoudre d’autres problèmes. Chaque modification introduit une nouvelle version du service. Cette rubrique explique comment tenir compte du contrôle de version dans [!INCLUDE[indigo1](../../../includes/indigo1-md.md)].  
@@ -117,8 +118,8 @@ Après leur déploiement initial, et potentiellement plusieurs fois pendant leur
 > [!NOTE]
 >  L'ajout des opérations à un contrat de rappel duplex est une modification avec rupture.  
   
-### <a name="changing-operation-parameter-or-return-types"></a>Modification des types de retours ou de paramètres d'opération  
- La modification des types de retours ou de paramètres est généralement une modification avec rupture, sauf si le nouveau type implémente le même contrat de données implémenté par l'ancien type. Pour apporter une modification de ce type, ajoutez une nouvelle opération au contrat de service ou définissez un nouveau contrat de service.  
+### <a name="changing-operation-parameter-or-return-types"></a>Modification des types de retours ou de paramètres d’opération  
+ La modification des types de retours ou de paramètres est généralement une modification avec rupture, sauf si le nouveau type implémente le même contrat de données implémenté par l’ancien type. Pour apporter une modification de ce type, ajoutez une nouvelle opération au contrat de service ou définissez un nouveau contrat de service.  
   
 ### <a name="removing-operations"></a>Suppression d'opérations  
  La suppression d'opérations est également une modification avec rupture. Pour apporter une modification de ce type, définissez un nouveau contrat de service et exposez-le sur un nouveau point de terminaison.  
@@ -132,7 +133,7 @@ Après leur déploiement initial, et potentiellement plusieurs fois pendant leur
  Les entreprises peuvent avoir des bibliothèques de contrats dans lesquelles un contrat est publié sur un référentiel central, et des implémenteurs de service qui implémentent des contrats à partir de ce référentiel. Dans ce cas, lorsque vous publiez un contrat de service sur le référentiel, vous n'avez aucun contrôle sur l'élément qui crée les services qui l'implémentent. Par conséquent, vous ne pouvez pas modifier le contrat de service une fois celui-ci publié, et le rendre ainsi immuable. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] prend en charge l'héritage de contrat, qui peut être utilisé pour créer un contrat qui étend les contrats existants. Pour utiliser cette fonctionnalité, définissez une nouvelle interface de contrat de service qui hérite de l'ancienne interface de contrat de service, puis ajoutez-lui des méthodes. Modifiez ensuite le service qui implémente l'ancien contrat pour implémenter le nouveau contrat et modifier la définition de point de terminaison de l'« AncienneVersion » afin d'utiliser le nouveau contrat. Pour les clients de l'« AncienneVersion », le point de terminaison continuera d'exposer le contrat de l'« AncienneVersion » ; pour les clients de la « NouvelleVersion », le point de terminaison exposera le contrat de la « NouvelleVersion ».  
   
 ## <a name="address-and-binding-versioning"></a>Contrôle de version des adresses et liaisons  
- Les modifications apportées à la liaison et à l'adresse de point de terminaison sont des modifications avec rupture, sauf si les clients sont capables de découvrir dynamiquement la nouvelle liaison ou adresse de point de terminaison. L'un des mécanismes permettant d'implémenter cette fonctionnalité consiste à utiliser un registre UDDI (Universal Discovery Description and Integration) et le modèle d'appel UDDI lorsqu'un client tente de communiquer avec un point de terminaison et, qu'après échec, il interroge un registre UDDI connu pour les métadonnées de point de terminaison actuelles. Le client utilise ensuite l'adresse et la liaison à partir de ces métadonnées pour communiquer avec le point de terminaison. Si cette communication réussit, le client met en cache les informations d'adresse et de liaison pour un usage ultérieur.  
+ Les modifications apportées à la liaison et à l'adresse de point de terminaison sont des modifications avec rupture, sauf si les clients sont capables de découvrir dynamiquement la nouvelle liaison ou adresse de point de terminaison. L'un des mécanismes permettant d'implémenter cette fonctionnalité consiste à utiliser un registre UDDI (Universal Discovery Description and Integration) et le modèle d'appel UDDI lorsqu'un client tente de communiquer avec un point de terminaison et, qu'après échec, il interroge un registre UDDI connu pour les métadonnées de point de terminaison actuelles. Le client utilise ensuite l’adresse et la liaison à partir de ces métadonnées pour communiquer avec le point de terminaison. Si cette communication réussit, le client met en cache les informations d'adresse et de liaison pour un usage ultérieur.  
   
 ## <a name="routing-service-and-versioning"></a>Contrôle de version et service de routage  
  Si les modifications apportées à un service sont des modifications avec rupture et vous n'avez pas besoin de plusieurs versions différentes d'un service exécutées simultanément, vous pouvez utiliser le Service de routage WCF pour acheminer les messages vers l'instance de service appropriée. Le Service de routage WCF utilise le routage basé sur le contenu, c'est-à-dire qu'il utilise les informations contenues dans le message pour déterminer la destination du message. [!INCLUDE[crabout](../../../includes/crabout-md.md)]le voir Service de routage WCF [Service de routage](../../../docs/framework/wcf/feature-details/routing-service.md). Pour obtenir un exemple montrant comment utiliser le Service de routage WCF pour le contrôle de version de service, consultez [How To : le Service de contrôle de version](../../../docs/framework/wcf/feature-details/how-to-service-versioning.md).  

@@ -13,11 +13,12 @@ caps.latest.revision: "14"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 3154080682d406598b47122c64cc856ff8cb1f15
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: be460249ed877b2f67f2d153c2aea4a3cc4d2b37
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-considerations-for-secure-sessions"></a>Considérations sur la sécurité pour les sessions sécurisées
 Vous devez tenir compte des éléments suivants qui affectent la sécurité lors de l'implémentation de sessions sécurisées. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Considérations sur la sécurité, consultez [considérations de sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md) et [meilleures pratiques pour la sécurité](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md).  
@@ -31,6 +32,6 @@ Vous devez tenir compte des éléments suivants qui affectent la sécurité lors
  Cela signifie que si vous souhaitez qu'un jeton personnalisé soit dérivé, vous devez encapsuler son type de clause dans un élément `SecurityTokenReference`. Il est possible de désactiver la dérivation mais la valeur par défaut consiste à dériver les clés. Si vous ne parvenez pas à encapsuler la clé, la sérialisation du jeton de clé dérivé aboutit, mais la tentative de désérialisation de ce jeton lève une exception.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comment : désactiver des Sessions sécurisées sur une liaison WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
- [Considérations sur la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
- [Meilleures pratiques pour la sécurité](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md)
+ [Guide pratique pour désactiver des sessions sécurisées sur une classe WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
+ [Considérations relatives à la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [Bonnes pratiques pour la sécurité](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md)

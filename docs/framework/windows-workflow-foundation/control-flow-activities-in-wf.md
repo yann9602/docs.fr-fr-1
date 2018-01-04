@@ -12,11 +12,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d5312012a74f5e11b02c0191dc00fa23fb25a73a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1e8520e34cf9bd9d31e9b877849e7c9611d6d989
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="control-flow-activities-in-wf"></a>Activités de flux de contrôle dans WF
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] fournit plusieurs activités pour le contrôle de flux d'exécution dans un workflow. Quelques-unes de ces activités (telles que `Switch` et `If`) implémentent des structures de contrôle de flux semblables à celles utilisées dans les environnements de programmation tels que [!INCLUDE[csprcs](../../../includes/csprcs-md.md)], alors que d'autres modélisent de nouvelles structures de programmation (telles que `Pick`.)  
@@ -28,10 +29,10 @@ ms.lasthandoff: 12/02/2017
 |Activité|Description|  
 |--------------|-----------------|  
 |<xref:System.Activities.Statements.DoWhile>|Exécute une fois les activités contenues et continue de le faire jusqu'à ce qu'une condition soit `true`.|  
-|<xref:System.Activities.Statements.ForEach%601>|Exécute une instruction incorporée en séquence pour chaque élément d’une collection. <xref:System.Activities.Statements.ForEach%601> est semblable au mot clé `foreach`, mais est implémenté comme une activité et non comme une instruction de langage.|  
+|<xref:System.Activities.Statements.ForEach%601>|Exécute une instruction incorporée en séquence pour chaque élément d'une collection. <xref:System.Activities.Statements.ForEach%601> est semblable au mot clé `foreach`, mais est implémenté comme une activité et non comme une instruction de langage.|  
 |<xref:System.Activities.Statements.If>|Exécute des activités contenues si une condition est `true`, et peut exécuter des activités contenues dans la propriété <xref:System.Activities.Statements.If.Else%2A> si la condition est `false`.|  
 |<xref:System.Activities.Statements.Parallel>|Exécute des activités contenues en parallèle.|  
-|<xref:System.Activities.Statements.ParallelForEach%601>|Exécute une instruction incorporée en parallèle pour chaque élément d’une collection.|  
+|<xref:System.Activities.Statements.ParallelForEach%601>|Exécute une instruction incorporée en parallèle pour chaque élément d'une collection.|  
 |<xref:System.Activities.Statements.Pick>|Fournit une modélisation de flux de contrôle reposant sur des événements.|  
 |<xref:System.Activities.Statements.PickBranch>|Représente un chemin d'exécution potentiel dans une activité <xref:System.Activities.Statements.Pick>.|  
 |<xref:System.Activities.Statements.Sequence>|Exécute des activités contenues dans l'ordre.|  

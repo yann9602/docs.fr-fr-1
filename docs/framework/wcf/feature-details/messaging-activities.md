@@ -13,16 +13,17 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c08d57f36d733312793ab9de1699b83a1e22ce31
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8ba5d49f357fe1cf56a45f733e91c1dbc2208736
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="messaging-activities"></a>Activités de messagerie
-Les activités de messagerie permettent aux workflows d'envoyer et de recevoir des messages WCF. En ajoutant des activités de messagerie à un workflow, vous pouvez modéliser n'importe quel modèle d'échange de messages (MEP) arbitrairement complexe.  
+Les activités de messagerie permettent aux workflows d'envoyer et de recevoir des messages WCF. En ajoutant des activités de messagerie à un workflow, vous pouvez modéliser n’importe quel modèle d’échange de messages (MEP) arbitrairement complexe.  
   
-## <a name="message-exchange-patterns"></a>Modèles d'échange de messages  
+## <a name="message-exchange-patterns"></a>Modèles d’échange de messages  
  Il existe trois modèles d’échange de messages de base :  
   
 -   **Datagramme** - lors de l’utilisation du datagramme MEP le client envoie un message au service, mais le service ne répond pas. Cet échange est parfois appelé « fire and forget ». Un échange de ce type requiert une confirmation hors bande de la réussite de la remise. Le message peut être perdu lors de la transmission et ne jamais atteindre le service. Si le client envoie un message avec succès, cela ne garantit pas que le service a reçu le message. Le datagramme est un bloc de construction de messagerie fondamental. Vous pouvez en effet générer vos propres MEP au-dessus de ce bloc.  
@@ -44,10 +45,10 @@ Les activités de messagerie permettent aux workflows d'envoyer et de recevoir d
   
 -   <xref:System.ServiceModel.Activities.ReceiveReply> : utilise l'activité <xref:System.ServiceModel.Activities.ReceiveReply> pour recevoir un message de réponse. Cette activité est utilisée par les clients du service de workflow lors de l'implémentation d'un MEP demande/réponse.  
   
-## <a name="messaging-activities-and-message-exchange-patterns"></a>Activités de messagerie et modèles d'échange de messages  
+## <a name="messaging-activities-and-message-exchange-patterns"></a>Activités de messagerie et modèles d’échange de messages  
  Un MEP datagramme implique un client qui envoie un message et un service qui reçoit le message. Si le client est un workflow, utilisez une activité <xref:System.ServiceModel.Activities.Send> pour envoyer le message. Pour recevoir ce message dans un workflow, utilisez une activité <xref:System.ServiceModel.Activities.Receive>. Les activités <xref:System.ServiceModel.Activities.Send> et <xref:System.ServiceModel.Activities.Receive> ont chacune une propriété nommée `Content`. Cette propriété contient les données qui sont envoyées ou reçues. Lors de l'implémentation du MEP demande-réponse, le client et le service utilisent tous les deux des paires d'activités. Le client utilise une activité <xref:System.ServiceModel.Activities.Send> pour envoyer le message et une activité <xref:System.ServiceModel.Activities.ReceiveReply> pour recevoir la réponse du service. Ces deux activités sont associées l'une à l'autre par la propriété <xref:System.ServiceModel.Activities.ReceiveReply.Request%2A>. Cette propriété est définie sur l'activité <xref:System.ServiceModel.Activities.Send> qui a envoyé le message d'origine. Le service utilise également une paire d'activités associées : <xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.SendReply>. Ces deux activités sont associées par la propriété <xref:System.ServiceModel.Activities.SendReply.Request%2A>. Cette propriété est définie sur l'activité <xref:System.ServiceModel.Activities.Receive> qui a reçu le message d'origine. Les activités <xref:System.ServiceModel.Activities.ReceiveReply> et <xref:System.ServiceModel.Activities.SendReply>, comme <xref:System.ServiceModel.Activities.Send> et <xref:System.ServiceModel.Activities.Receive> vous permettent d'envoyer une instance <xref:System.ServiceModel.Channels.Message> ou un type de contrat de message.  
   
- En raison de la longue durée d'exécution des workflows, il est important que le modèle duplex de communication prenne également en charge des conversations de longue durée. Pour prendre en charge des conversations de longue durée, les clients qui initialisent la conversation doivent donner au service la possibilité de le rappeler plus tard lorsque les données deviennent disponibles. Par exemple, une demande de bon de commande est soumise à l'approbation du gestionnaire, mais elle risque de ne pas être traitée dans la journée, la semaine ou même l'année ; le workflow qui gère l'approbation du bon de commande doit le savoir pour continuer une fois l'approbation donnée. Ce modèle de communication en duplex est pris en charge dans les workflows à l'aide de la corrélation. Pour implémenter un modèle duplex, utilisez les activités <xref:System.ServiceModel.Activities.Send> et <xref:System.ServiceModel.Activities.Receive>. Sur le <xref:System.ServiceModel.Activities.Receive> activité, initialisez une corrélation à l’aide de la valeur de clé spéciale <!--zz <xref:System.ServiceModel.Activities.CorrelationHandle.CallbackHandleName%2A>--> `System.ServiceModel.Activities.CorrelationHandle.CallbackHandleName`. Sur l'activité <xref:System.ServiceModel.Activities.Send>, définissez ce gestionnaire de corrélation comme valeur de la propriété <xref:System.ServiceModel.Activities.Send.CorrelatesWith%2A>. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Duplex durable](../../../../docs/framework/wcf/feature-details/durable-duplex-correlation.md).  
+ En raison de la longue durée d'exécution des workflows, il est important que le modèle duplex de communication prenne également en charge des conversations de longue durée. Pour prendre en charge des conversations de longue durée, les clients qui initialisent la conversation doivent donner au service la possibilité de le rappeler plus tard lorsque les données deviennent disponibles. Par exemple, une demande de bon de commande est soumise à l'approbation du gestionnaire, mais elle risque de ne pas être traitée dans la journée, la semaine ou même l'année ; le workflow qui gère l'approbation du bon de commande doit le savoir pour continuer une fois l'approbation donnée. Ce modèle de communication en duplex est pris en charge dans les workflows à l’aide de la corrélation. Pour implémenter un modèle duplex, utilisez les activités <xref:System.ServiceModel.Activities.Send> et <xref:System.ServiceModel.Activities.Receive>. Sur le <xref:System.ServiceModel.Activities.Receive> activité, initialisez une corrélation à l’aide de la valeur de clé spéciale <!--zz <xref:System.ServiceModel.Activities.CorrelationHandle.CallbackHandleName%2A>--> `System.ServiceModel.Activities.CorrelationHandle.CallbackHandleName`. Sur l'activité <xref:System.ServiceModel.Activities.Send>, définissez ce gestionnaire de corrélation comme valeur de la propriété <xref:System.ServiceModel.Activities.Send.CorrelatesWith%2A>. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Duplex durable](../../../../docs/framework/wcf/feature-details/durable-duplex-correlation.md).  
   
 > [!NOTE]
 >  Implémentation du flux de travail de duplex à l’aide d’une corrélation de rappel (« Duplex Durable ») est destinée aux conversations de longue. Ce n'est pas la même chose qu'un duplex WCF avec des contrats de rappel, où la conversation est de courte durée d'exécution (durée de vie du canal).  
@@ -115,4 +116,4 @@ Request = rcv
   
 ## <a name="see-also"></a>Voir aussi  
  [Comment envoyer et recevoir des erreurs dans les Services de flux de travail](http://go.microsoft.com/fwlink/?LinkId=189151)  
- [Création d’un Service de flux de travail de longue](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)
+ [Création d’un service de workflow de longue durée](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)

@@ -16,11 +16,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2cf83f7c9af667a9efed59ff7a1f86ace6d8821d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a73fa30f1ebae805abd6f3e7e397d005d5b7130d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="serialization-and-deserialization"></a>Sérialisation et désérialisation
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] comprend un nouveau moteur de sérialisation, le <xref:System.Runtime.Serialization.DataContractSerializer>. Le <xref:System.Runtime.Serialization.DataContractSerializer> traduit des objets [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] en langage XML et inversement. Cette rubrique explique comment le sérialiseur fonctionne.  
@@ -213,7 +214,7 @@ ms.lasthandoff: 12/02/2017
 >  L'utilisation de la sérialisation pas à pas peut générer du XML de schéma non valide.  
   
 ## <a name="deserialization"></a>Désérialisation  
- Les informations suivantes s'appliquent à toute classe qui hérite du <xref:System.Runtime.Serialization.XmlObjectSerializer>, y compris les classes <xref:System.Runtime.Serialization.DataContractSerializer> et <xref:System.Runtime.Serialization.NetDataContractSerializer> .  
+ Les informations suivantes s'appliquent à toute classe qui hérite du <xref:System.Runtime.Serialization.XmlObjectSerializer>, y compris les classes <xref:System.Runtime.Serialization.DataContractSerializer> et <xref:System.Runtime.Serialization.NetDataContractSerializer>.  
   
  La méthode la plus simple pour désérialiser un objet est d'appeler l'une des surcharges de méthode <xref:System.Runtime.Serialization.XmlObjectSerializer.ReadObject%2A> . Il y a trois surcharges, chacune pour lire avec un <xref:System.Xml.XmlDictionaryReader>, un `XmlReader`ou un `Stream`. Notez que la surcharge `Stream` crée un <xref:System.Xml.XmlDictionaryReader> textuel qui n'est pas protégé par des quotas, et doit être utilisé uniquement pour lire des données approuvées.  
   

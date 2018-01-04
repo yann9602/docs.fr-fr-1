@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 48a5d2e1d8c5381f322ea1b6ffc9022853683efc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b7447d11e93cf33e69bc52d2cdec239c1be55bcd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="host-lock-renewal-period"></a>Période de renouvellement du verrou de l'hôte
 Le **Host Lock Renewal Period** propriété du magasin d’instances de Workflow SQL vous permet de spécifier la période durant laquelle l’hôte renouvelle son verrou sur une instance de workflow. Le verrou reste valide pendant la période spécifiée pour la propriété Host Lock Renewal Period + 30 secondes. Si l'hôte ne renouvelle pas le verrou (en d'autres termes, s'il étend le bail) durant cette période, le verrou expire et le fournisseur de persistance déverrouille l'instance. La valeur de cette propriété est de type TimeSpan sous la forme « hh : mm : ». La valeur minimale autorisée est « 00 : 00:01 » (1 seconde). La valeur par défaut de cette propriété est « 00 : 00:30 » (30 secondes).  

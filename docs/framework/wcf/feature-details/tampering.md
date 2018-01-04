@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 96ab38de1fb2a932fefd4e37cbfab3d9bfbea616
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6ee041de1a9e009ca68ecc8bba8bc2fa06ba6ca3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tampering"></a>Falsification
 *Falsification* est le fait de modifier un message, ou la remise d’un message et à l’aide de ce message modifié à un usage autre que celles prévues pour.  
@@ -30,9 +31,9 @@ ms.lasthandoff: 12/02/2017
  Pour atténuer ce risque, n'affectez jamais <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> à la propriété <xref:System.ServiceModel.Channels.AddressingVersion.None%2A> et évitez d'utiliser <xref:System.ServiceModel.Channels.MessageVersion>, tel que la propriété statique <xref:System.ServiceModel.Channels.MessageVersion.Soap12%2A>, qui affecte <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> à la propriété <xref:System.ServiceModel.Channels.AddressingVersion.None%2A>.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Considérations sur la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [Considérations relatives à la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
  [Divulgation d’informations](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
  [Élévation de privilèges](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- [Déni de Service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [Déni de service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
  [Scénarios non pris en charge](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)  
  [Attaques par relecture](../../../../docs/framework/wcf/feature-details/replay-attacks.md)

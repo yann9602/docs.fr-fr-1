@@ -17,11 +17,12 @@ caps.latest.revision: "7"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 4ea56330e4de55a7acbc6ccca737cd62b8f151d1
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 335780b600535c066bc822cc5dd6c77233618bb6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="routing"></a>Routage
 Les rubriques de cette section traitent du service de routage. Le service de routage est un intermédiaire SOAP configurable générique qui vous permet de configurer le routage en fonction du contenu, de configurer un pontage de protocoles, de gérer les erreurs de communication et de mettre à jour la logique de routage de manière dynamique, au moment de l'exécution.  

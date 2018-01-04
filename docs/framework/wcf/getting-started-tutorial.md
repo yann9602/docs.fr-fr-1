@@ -17,11 +17,12 @@ caps.latest.revision: "47"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 649fc2572e809238977ca3deb5740ada2dd5dc14
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 182e82eec107c170a793d0d48bcfe5493c04d618
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getting-started-tutorial"></a>Didacticiel de mise en route
 Les rubriques contenues dans cette section visent à vous donner un aperçu de la programmation de [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]. Elles doivent être parcourues dans l'ordre de la liste indiquée au bas de cette rubrique. En suivant ce didacticiel, vous aurez une compréhension de base des étapes requises pour créer un service et des applications clientes [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Un service expose un ou plusieurs points de terminaison, chaque point de terminaison exposant une ou plusieurs opérations de service. Le *point de terminaison* d’un service spécifie une adresse où le service peut être trouvé, une liaison qui contient les informations qui décrivent comment un client doit communiquer avec le service et un contrat qui définit les fonctionnalités fournie par le service pour ses clients.  

@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 44aebb701eb7222773c030994fbaa9c0109dce70
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5d4559f177b05f7d238c9f30649a5b01af7fb6f9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sessions-instancing-and-concurrency"></a>Sessions, instanciation et accès concurrentiel
 Une *session* est une corrélation de tous les messages envoyés entre deux points de terminaison. L'*instanciation* fait référence au contrôle de la durée de vie des objets de service définis par l'utilisateur et de leurs objets <xref:System.ServiceModel.InstanceContext> connexes. La*concurrence* est le terme donné au contrôle du nombre des threads qui s'exécutent simultanément dans un <xref:System.ServiceModel.InstanceContext> .  
@@ -39,7 +40,7 @@ Une *session* est une corrélation de tous les messages envoyés entre deux poin
   
  Si vous êtes familiarisé avec la classe <xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType> des applications [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] et avec les fonctionnalités qu'elle fournit, vous remarquerez les différences suivantes entre ce type de session et les sessions [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] :  
   
--   Les sessions[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] sont systématiquement initialisées par le serveur.  
+-   Les sessions [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] sont systématiquement initialisées par le serveur.  
   
 -   Les sessions[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] sont implicitement non ordonnées.  
   
@@ -47,7 +48,7 @@ Une *session* est une corrélation de tous les messages envoyés entre deux poin
   
  Les applications clientes et de service interagissent avec les sessions de manière différente. Les applications clientes initialisent des sessions, puis reçoivent et traitent les messages envoyés dans la session. Les applications de service peuvent utiliser des sessions comme point d'extensibilité pour ajouter un comportement supplémentaire. Pour ce faire, utilisez directement <xref:System.ServiceModel.InstanceContext> ou implémentez un fournisseur de contexte d'instance personnalisé.  
   
-## <a name="instancing"></a>instanciation  
+## <a name="instancing"></a>Instancing  
  Le comportement d'instanciation (défini à l'aide de propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType>) contrôle la façon dont le <xref:System.ServiceModel.InstanceContext> est créé en réponse à des messages entrants. Par défaut, chaque <xref:System.ServiceModel.InstanceContext> est associé à un objet de service défini par l'utilisateur ; par conséquent (dans le cas par défaut), la définition de la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> contrôle également l'instanciation des objets de service définis par l'utilisateur. L'énumération <xref:System.ServiceModel.InstanceContextMode> définit les modes d'instanciation.  
   
  Les modes d'instanciation disponibles sont les suivants :  
@@ -71,7 +72,7 @@ public class CalculatorService : ICalculatorInstance
  Et pendant que la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> contrôle la fréquence à laquelle <xref:System.ServiceModel.InstanceContext> est diffusé, les propriétés <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> et <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A?displayProperty=nameWithType> contrôlent le moment auquel l'objet de service est diffusé.  
   
 ### <a name="well-known-singleton-services"></a>Services singleton connus  
- L'une des variantes des objets de service d'instance unique s'avère parfois utile : vous pouvez créer un objet de service vous-même, puis créer l'hôte de service à l'aide de cet objet. Pour ce faire, vous devez également affecter <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> à la propriété <xref:System.ServiceModel.InstanceContextMode.Single>, sans quoi une exception est levée lorsque l'hôte de service est ouvert.  
+ L'une des variantes des objets de service d'instance unique s'avère parfois utile : vous pouvez créer un objet de service vous-même, puis créer l'hôte de service à l'aide de cet objet. Pour ce faire, vous devez également affecter <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> à la propriété <xref:System.ServiceModel.InstanceContextMode.Single>, sans quoi une exception est levée lorsque l'hôte de service est ouvert.  
   
  Utilisez le constructeur <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29?displayProperty=nameWithType> pour créer un service de ce type. Il fournit une alternative à l'implémentation d'un <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> personnalisé lorsque vous souhaitez fournir une instance d'objet spécifique qui sera utilisée par un service singleton. Vous pouvez utiliser cette surcharge lorsque votre type d'implémentation de service est difficile à construire (par exemple, s'il n'implémente pas de constructeur public sans paramètre par défaut).  
   
@@ -119,8 +120,8 @@ public class CalculatorService : ICalculatorConcurrency
   
 ## <a name="see-also"></a>Voir aussi  
  [Utilisation de sessions](../../../../docs/framework/wcf/using-sessions.md)  
- [Comment : créer un Service qui requiert des Sessions](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)  
- [Comment : Service de contrôle d’instanciation](../../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)  
+ [Guide pratique pour créer un service qui requiert des sessions](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)  
+ [Guide pratique pour contrôler l’instanciation de service](../../../../docs/framework/wcf/feature-details/how-to-control-service-instancing.md)  
  [Concurrence](../../../../docs/framework/wcf/samples/concurrency.md)  
  [Instanciation](../../../../docs/framework/wcf/samples/instancing.md)  
  [Session](../../../../docs/framework/wcf/samples/session.md)

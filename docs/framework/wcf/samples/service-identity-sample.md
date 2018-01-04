@@ -13,11 +13,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cde8966e89a22b19109688d5da0ff5b45eee55ef
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bc2e179109a8015a16684c20e3a1ef46b781b8f0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-identity-sample"></a>Service Identity, exemple
 Cet exemple montre comment définir l'identité d'un service. Au moment du design, un client peut récupérer l'identité à l'aide des métadonnées du service, puis au miment de l'exécution, il peut authentifier l'identité du service. Le concept d'identité de service consiste à permettre à un client d'authentifier un service avant d'appeler l'une de ses opérations, ce qui protège le client contre les appels non authentifiés. Sur une connexion sécurisée, le service authentifie également les informations d'identification d'un client avant de lui autoriser l'accès, mais ce n'est pas l'objet traité dans cet exemple. Consultez les exemples de [Client](../../../../docs/framework/wcf/samples/client.md) qui indiquent l’authentification du serveur.  
@@ -27,7 +28,7 @@ Cet exemple montre comment définir l'identité d'un service. Au moment du desig
   
  Cet exemple illustre les fonctionnalités suivantes :  
   
--   Comment définir les divers types d'identité sur différents points de terminaison d'un service. Chaque type d'identité possède des fonctionnalités différentes. Le type d'identité à utiliser dépend du type d'informations d'identification de sécurité utilisé sur la liaison du point de terminaison.  
+-   Comment définir les divers types d'identité sur différents points de terminaison d'un service. Chaque type d'identité possède des fonctionnalités différentes. Le type d’identité à utiliser dépend du type d’informations d’identification de sécurité utilisé sur la liaison du point de terminaison.  
   
 -   L'identité peut être définie de façon déclarative dans la configuration ou de façon impérative dans le code. Pour le client et le service, vous devez généralement utiliser la configuration.  
   

@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f103ac9e6b78122cc684e4d2c9d76e7802b0b124
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 83421a0d071ef7745f6d381bb7131606c50913f5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="getoperationcounterinstancename"></a>GetOperationCounterInstanceName
 Récupère le nom d'instance du compteur de performance d'opération.  
@@ -35,7 +36,7 @@ string GetOperationCounterInstanceName(
 ### <a name="operation"></a>Opération  
  Chaîne [in]  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

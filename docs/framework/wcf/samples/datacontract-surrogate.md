@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8ffb8ec71d6a8bbbdf365b78ad13af7524cc33ba
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f14b69cba50839f3c4105b286af4de0523385b38
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="datacontract-surrogate"></a>DataContract Surrogate
 Cet exemple illustre comment personnaliser des processus tels que la sérialisation, la désérialisation, l’exportation et l’importation de schémas à l’aide d’une classe de substitution d’un contrat de données. Cet exemple indique comment utiliser un substitut dans un scénario de client et serveur où les données sont sérialisées et transmises entre un client et un service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -198,7 +199,7 @@ public void GetKnownCustomDataTypes(
   
  L'attribut n'est pas nécessaire dans ce cas. Il est utilisé à des fins d'illustration dans cet exemple. Les utilisateurs peuvent également activer un substitut en ajoutant manuellement un `IContractBehavior`, `IEndpointBehavior` ou `IOperationBehavior` similaire à l'aide du code ou de la configuration.  
   
- L'implémentation `IContractBehavior` recherche les opérations qui utilisent DataContract en vérifiant si un comportement `DataContractSerializerOperationBehavior` leur correspondant est enregistré. Si tel est le cas, elle définit la propriété `DataContractSurrogate` sur ce comportement. L'exemple de code suivant illustre les modalités de ce processus. La définition du substitut sur ce comportement d'opération permet à ce dernier d'être sérialisé et désérialisé.  
+ L'implémentation `IContractBehavior` recherche les opérations qui utilisent DataContract en vérifiant si un comportement `DataContractSerializerOperationBehavior` leur correspondant est enregistré. Si tel est le cas, elle définit la propriété `DataContractSurrogate` sur ce comportement. L'exemple de code suivant illustre les modalités de ce processus. La définition du substitut sur ce comportement d’opération permet pour ce dernier une sérialisation et une désérialisation.  
   
 ```  
 public void ApplyClientBehavior(ContractDescription description, ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.ClientRuntime proxy)  

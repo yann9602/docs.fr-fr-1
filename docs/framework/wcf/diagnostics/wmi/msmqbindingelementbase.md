@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b70b4b4a1529085cba8625598f56a9eece07e866
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 10e476931ef07ec694dff200e64ce2ded74c8dfb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="msmqbindingelementbase"></a>MsmqBindingElementBase
 MsmqBindingElementBase  
@@ -108,7 +109,7 @@ class MsmqBindingElementBase : TransportBindingElement
   
  Type d'accès : lecture seule  
   
- Intervalle qui indique combien de temps les messages traités par cette liaison peuvent séjourner dans la file d'attente avant expiration.  
+ Intervalle qui indique combien de temps les messages traités par cette liaison peuvent séjourner dans la file d’attente avant expiration.  
   
 ### <a name="usemsmqtracing"></a>UseMsmqTracing  
  Type de données : booléen  
@@ -124,7 +125,7 @@ class MsmqBindingElementBase : TransportBindingElement
   
  Valeur booléenne qui indique si les copies des messages traités par cette liaison doivent être stockées dans la file d'attente du journal source.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

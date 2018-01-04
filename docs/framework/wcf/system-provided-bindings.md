@@ -14,11 +14,12 @@ caps.latest.revision: "60"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ea5cd7f8510836b17a20b523dc2455611cdb2382
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c5f8df31e31c9617fe7bcd92789671d220382a82
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="system-provided-bindings"></a>Liaisons fournies par le système
 Les liaisons spécifient le mécanisme de communication à utiliser pour communiquer avec un point de terminaison et indiquer comment se connecter à un point de terminaison. Une liaison contient les éléments suivants :  
@@ -42,7 +43,7 @@ Les liaisons spécifient le mécanisme de communication à utiliser pour communi
 ## <a name="system-provided-bindings"></a>Liaisons fournies par le système  
  Les liaisons suivantes sont fournies avec [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
   
-|Binding|Élément de configuration|Description|  
+|Liaison|Élément de configuration|Description|  
 |-------------|---------------------------|-----------------|  
 |<xref:System.ServiceModel.BasicHttpBinding>|[\<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)|Une liaison qui est appropriée pour communiquer avec les services Web conformes à WS-Basic Profil, par exemple, les services basés sur les services Web ASP.NET (ASMX). Cette liaison utilise HTTP comme le transport et texte/XML comme encodage de message par défaut.|  
 |<xref:System.ServiceModel.WSHttpBinding>|[\<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)|Une liaison sécurisée et interopérable adaptée aux contrats de service non duplex.|  
@@ -62,14 +63,14 @@ Les liaisons spécifient le mécanisme de communication à utiliser pour communi
   
  Le tableau suivant affiche les fonctionnalités de chacune des liaisons fournies par le système. Les liaisons figurent dans les colonnes du tableau ; les fonctionnalités sont répertoriées dans les lignes et décrites dans un deuxième tableau. Le tableau suivant fournit une clé pour les abréviations de liaison utilisées. Pour sélectionner une liaison, déterminez quelle colonne satisfait toutes les fonctionnalités de ligne dont vous avez besoin.  
   
-|Binding|Interopérabilité|Sécurité (valeur par défaut)|Session<br /><br /> (Default)|Transactions|Duplex|Encodage (Valeur par défaut)|Diffusion en continu<br /><br /> (Default)|  
+|Liaison|Interopérabilité|Sécurité (valeur par défaut)|Session<br /><br /> (Default)|Transactions|Duplex|Encodage (Valeur par défaut)|Diffusion en continu<br /><br /> (Default)|  
 |-------------|----------------------|--------------------------|-----------------------------|------------------|------------|--------------------------|-------------------------------|  
 |<xref:System.ServiceModel.BasicHttpBinding>|Basic Profile 1.1|(Aucun), transport, message, mixte|(Aucun)|(Aucun)|N/A|Texte, (MTOM)|Oui<br /><br /> (mis en mémoire tampon)|  
 |<xref:System.ServiceModel.WSHttpBinding>|WS|Transport, (message), mixte|(Aucun), session fiable, session de sécurité|(Aucun), oui|N/A|(Texte), MTOM|Non|  
 |<xref:System.ServiceModel.WSDualHttpBinding>|WS|(Message), aucun|(Session fiable), session de sécurité|(Aucun), oui|Oui|(Texte), MTOM|Non|  
 |<xref:System.ServiceModel.WSFederationHttpBinding>|WS-Federation|(Message), mixte, aucun|(Aucun), session fiable, session de sécurité|(Aucun), oui|Non|(Texte), MTOM|Non|  
-|<xref:System.ServiceModel.NetHttpBinding>|.NET|(None), Transport, Message, TransportWithMessageCredential, TransportCredentialOnly|Voir la remarque ci-dessous|None|Voir la remarque ci-dessous|(Binary), Text,MTOM|Oui (mis en mémoire tampon)|  
-|<xref:System.ServiceModel.NetHttpsBinding>|.NET|(Transport), TransportWithMessageCredential|Voir la remarque ci-dessous|None|Voir la remarque ci-dessous|(Binary), Text,MTOM|Oui (mis en mémoire tampon)|  
+|<xref:System.ServiceModel.NetHttpBinding>|.NET|(None), Transport, Message, TransportWithMessageCredential, TransportCredentialOnly|Voir la remarque ci-dessous|Aucun.|Voir la remarque ci-dessous|(Binary), Text,MTOM|Oui (mis en mémoire tampon)|  
+|<xref:System.ServiceModel.NetHttpsBinding>|.NET|(Transport), TransportWithMessageCredential|Voir la remarque ci-dessous|Aucun.|Voir la remarque ci-dessous|(Binary), Text,MTOM|Oui (mis en mémoire tampon)|  
 |<xref:System.ServiceModel.NetTcpBinding>|.NET|(Transport), message, aucun, mixte|(Transport), session fiable, session de sécurité|(Aucun), oui|Oui|Binaire|Oui<br /><br /> (mis en mémoire tampon)|  
 |<xref:System.ServiceModel.NetNamedPipeBinding>|.NET|(Transport), aucun|Aucun, (Transport)|(Aucun), oui|Oui|Binaire|Oui<br /><br /> (mis en mémoire tampon)|  
 |<xref:System.ServiceModel.NetMsmqBinding>|.NET|Message, (Transport), Aucun|(Aucun), Transport|Aucun, (Oui)|Non|Binaire|Non|  

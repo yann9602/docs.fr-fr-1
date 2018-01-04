@@ -13,11 +13,12 @@ caps.latest.revision: "19"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 78fbde5f83d4a24594e06b787756c7ab3762d75a
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: cad98ab0df372b19efcf102cce3f80e3f7b0632f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-secure-metadata-endpoint"></a>Point de terminaison de métadonnées sécurisé personnalisée
 Cet exemple montre comment implémenter un service avec un point de terminaison de métadonnées sécurisé qui utilise l’une des liaisons non-metadata exchange et comment configurer [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ou aux clients d’extraire le métadonnées à partir de ce un point de terminaison de métadonnées. Il existe deux liaisons fournies par le système pour exposer des points de terminaison de métadonnées : mexHttpBinding et mexHttpsBinding. mexHttpBinding est utilisé pour exposer un point de terminaison de métadonnées sur HTTP de façon non sécurisée. mexHttpsBinding est utilisé pour exposer un point de terminaison de métadonnées sur HTTPS de façon sécurisée. Cet exemple montre comment exposer un point de terminaison de métadonnées sécurisé à l'aide du <xref:System.ServiceModel.WSHttpBinding>. Cette opération peut être utile lorsque vous souhaitez modifier les paramètres de sécurité de la liaison sans devoir utiliser HTTPS. Si vous utilisez mexHttpsBinding, votre point de terminaison de métadonnées sera sécurisé, mais il n'existe aucun moyen de modifier les paramètres de la liaison.  
@@ -73,7 +74,7 @@ Cet exemple montre comment implémenter un service avec un point de terminaison 
 svcutil http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
- ce qui fonctionnera parfaitement. Cependant, dans cet exemple, le serveur n'utilise pas de point de terminaison défini par défaut pour héberger les métadonnées. Vous devez donc indiquer à l'outil Svcutil.exe quelle liaison il doit utiliser. Pour ce faire, vous pouvez notamment utiliser un fichier Svcutil.exe.config.  
+ ce qui fonctionnera parfaitement. Cependant, dans cet exemple, le serveur n'utilise pas de point de terminaison défini par défaut pour héberger les métadonnées. Vous devez donc indiquer à l’outil Svcutil.exe quelle liaison il doit utiliser. Pour ce faire, vous pouvez notamment utiliser un fichier Svcutil.exe.config.  
   
  Ce fichier ressemble à un fichier de configuration client standard. Le nom et le contrat de point de terminaison client qui y figurent sont les deux seuls points qui diffèrent :  
   

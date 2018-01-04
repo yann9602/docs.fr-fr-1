@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 50bd1492c4e2e8941a77f344c04414a763390e89
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 63641f7a99b7c567e871d6a67dd72380f0c077ed
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>Transport: WSE 3.0 TCP Interoperability
 Cet exemple indique comment implémenter une session duplex TCP en tant que transport [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] personnalisé. Il décrit également comment utiliser l'extensibilité de la couche du canal pour assurer l'interface sur le câble avec les systèmes déployés existants. Les étapes suivantes indiquent comment générer ce transport [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] personnalisé :  
@@ -101,8 +102,8 @@ Cet exemple indique comment implémenter une session duplex TCP en tant que tran
   
  Lorsqu'un nouveau socket est accepté, un canal serveur est initialisé avec celui-ci. Toutes les entrées et sorties étant déjà implémentées dans la classe de base, ce canal est donc chargé d'initialiser le socket.  
   
-## <a name="adding-a-binding-element"></a>Ajout d'un élément de liaison  
- Maintenant que les fabriques de canaux sont générées, elles doivent être exposées à l'exécution de ServiceModel via une liaison. Une liaison est une collection d'éléments de liaison qui représente la pile de communication associée à une adresse de service. Chaque élément de la pile est représenté par un élément de liaison.  
+## <a name="adding-a-binding-element"></a>Ajout d’un élément de liaison  
+ Maintenant que les fabriques de canaux sont générées, elles doivent être exposées à l’exécution de ServiceModel via une liaison. Une liaison est une collection d’éléments de liaison qui représente la pile de communication associée à une adresse de service. Chaque élément de la pile est représenté par un élément de liaison.  
   
  Dans notre exemple, l'élément de liaison est `WseTcpTransportBindingElement`, lequel dérive de <xref:System.ServiceModel.Channels.TransportBindingElement>. Il prend en charge <xref:System.ServiceModel.Channels.IDuplexSessionChannel> et substitue les méthodes suivantes pour générer les fabriques associées à notre liaison.  
   
@@ -167,7 +168,7 @@ Received Body: to me.
 Press enter.  
 ```  
   
- Serveur :  
+ Serveur :  
   
 ```  
 Listening for messages at soap://stockservice.contoso.com/wse/samples/2003/06/TcpSyncStockService  

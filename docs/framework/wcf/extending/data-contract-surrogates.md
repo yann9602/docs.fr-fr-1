@@ -14,11 +14,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b8d353b50cf9439a9741199a52ca650e02e4d49f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f6fcae1989b75a668fd6ff38596b06feca7be9e8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-contract-surrogates"></a>Substituts de contrats de données
 Le contrat de données *substitut* est une fonctionnalité avancée reposant sur le modèle de contrat de données. Cette fonctionnalité est destinée à la personnalisation et à la substitution de type dans les situations où les utilisateurs souhaitent changer la manière dont un type est sérialisé, désérialisé ou projeté dans des métadonnées. On peut par exemple utiliser un substitut lorsque aucun contrat de données n'a été spécifié pour le type, que les champs et propriétés ne sont pas marqués avec l'attribut <xref:System.Runtime.Serialization.DataMemberAttribute> ou que les utilisateurs souhaitent créer des variations de schéma de manière dynamique.  
@@ -42,7 +43,7 @@ Le contrat de données *substitut* est une fonctionnalité avancée reposant sur
 ### <a name="getdatacontracttype"></a>GetDataContractType  
  La méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> établit une correspondance entre les types. Cette méthode est requise pour la sérialisation, la désérialisation, l'importation et l'exportation.  
   
- La première tâche consiste à définir les types qui seront mappés à d'autres types. Exemple :  
+ La première tâche consiste à définir les types qui seront mappés à d’autres types. Exemple :  
   
  [!code-csharp[C_IDataContractSurrogate#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#3)]  
   
@@ -58,7 +59,7 @@ Le contrat de données *substitut* est une fonctionnalité avancée reposant sur
   
  La méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> n'est pas appelée pour les primitives de contrat de données intégrées, telles que <xref:System.Int32> ou <xref:System.String>. Pour d'autres types, tels que les tableaux, les types définis par l'utilisateur et autres structures de données, cette méthode sera appelée pour chaque type.  
   
- Dans l'exemple précédent, la méthode vérifie si les paramètres `type` et `Inventory` sont comparables. Si c'est le cas, la méthode le mappe à `InventorySurrogated`. Chaque fois qu'une sérialisation, une désérialisation, un schéma d'importation ou un schéma d'exportation est appelé(e), cette fonction est appelée en premier afin de déterminer le mappage entre les types.  
+ Dans l'exemple précédent, la méthode vérifie si les paramètres `type` et `Inventory` sont comparables. Si c'est le cas, la méthode le mappe à `InventorySurrogated`. Chaque fois qu’une sérialisation, une désérialisation, un schéma d’importation ou un schéma d’exportation est appelé(e), cette fonction est appelée en premier afin de déterminer le mappage entre les types.  
   
 ### <a name="getobjecttoserialize-method"></a>Méthode GetObjectToSerialize  
  La méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> convertit l'instance de type d'origine en instance de type substitué. La méthode est requise pour la sérialisation.  
@@ -80,7 +81,7 @@ Le contrat de données *substitut* est une fonctionnalité avancée reposant sur
 ### <a name="getdeserializedobject-method"></a>Méthode GetDeserializedObject  
  La méthode <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%2A> convertit l'instance de type substitué en instance de type d'origine. Elle est requise pour la désérialisation.  
   
- La tâche suivante consiste à définir la façon dont les données physiques seront mappées de l'instance de substitution à l'original. Exemple :  
+ La tâche suivante consiste à définir la façon dont les données physiques seront mappées de l’instance de substitution à l’original. Exemple :  
   
  [!code-csharp[C_IDataContractSurrogate#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#5)]  
   
@@ -109,7 +110,7 @@ Le contrat de données *substitut* est une fonctionnalité avancée reposant sur
 #### <a name="getcustomdatatoexport-method-memberinfo-type"></a>Méthode GetCustomDataToExport (MemberInfo, Type)  
  Le <xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%28System.Reflection.MemberInfo%2CSystem.Type%29?displayProperty=nameWithType> est appelé pendant l'exportation pour chaque membre dans les types exportés. Cette fonction vous permet de personnaliser tout commentaire pour les membres qui seront inclus dans le schéma lors de l'exportation. Les informations pour chaque membre dans la classe sont envoyées à cette méthode afin de vérifier si des données supplémentaires doivent être ajoutées dans le schéma.  
   
- L'exemple suivant recherche dans le `dataContractType` pour chaque membre du substitut. Il retourne ensuite le modificateur d'accès approprié pour chaque champ. Sans cette personnalisation, la valeur par défaut pour les modificateurs d'accès est publique. Par conséquent, tous les membres seraient définis comme publics dans le code généré à l'aide du schéma exporté, quelles que soient leurs restrictions d'accès réelles. Si cette implémentation n'était pas utilisée, le membre `numpens` serait public dans le schéma exporté bien qu'il ait été défini comme privé dans le substitut. Grâce à l'utilisation de cette méthode, dans le schéma exporté, le modificateur d'accès peut être généré comme privé.  
+ L'exemple suivant recherche dans le `dataContractType` pour chaque membre du substitut. Il retourne ensuite le modificateur d'accès approprié pour chaque champ. Sans cette personnalisation, la valeur par défaut pour les modificateurs d’accès est publique. Par conséquent, tous les membres seraient définis comme publics dans le code généré à l'aide du schéma exporté, quelles que soient leurs restrictions d'accès réelles. Si cette implémentation n'était pas utilisée, le membre `numpens` serait public dans le schéma exporté bien qu'il ait été défini comme privé dans le substitut. Grâce à l’utilisation de cette méthode, dans le schéma exporté, le modificateur d’accès peut être généré comme privé.  
   
 ### <a name="getreferencedtypeonimport-method"></a>Méthode GetReferencedTypeOnImport  
  Cette méthode mappe le <xref:System.Type> du substitut au type d'origine. Cette méthode est facultative pour l'importation de schéma.  
@@ -135,7 +136,7 @@ Le contrat de données *substitut* est une fonctionnalité avancée reposant sur
   
  Si des données personnalisées sont insérées pendant l'exportation des métadonnées, elles doivent être fournies à l'utilisateur pendant l'importation afin de pouvoir être utilisées. Ces données personnalisées peuvent être utilisées pour des conseils de modèle de programmation ou autres commentaires. Chaque instance `CodeTypeDeclaration` et <xref:System.CodeDom.CodeTypeMember> inclut des données personnalisées en tant que propriété <xref:System.CodeDom.CodeObject.UserData%2A>, faisant l'objet d'un cast en type `IDataContractSurrogate`.  
   
- L'exemple ci-dessus apporte des modifications au schéma importé. Le code conserve des membres privés du type d'origine en utilisant un substitut. Le modificateur d'accès par défaut lors de l'importation d'un schéma est `public`. Par conséquent, tous les membres du schéma de substitution seront publics à moins d'être modifiés, comme dans cet exemple. Pendant l'exportation, des données personnalisées sont insérées dans les métadonnées à propos des membres privés. L'exemple consulte les données personnalisées, vérifie si le modificateur d'accès est privé, puis rend le membre approprié privé en définissant ses attributs. Sans cette personnalisation, le membre `numpens` serait défini comme public au lieu de privé.  
+ L'exemple ci-dessus apporte des modifications au schéma importé. Le code conserve des membres privés du type d'origine en utilisant un substitut. Le modificateur d'accès par défaut lors de l'importation d'un schéma est `public`. Par conséquent, tous les membres du schéma de substitution seront publics à moins d'être modifiés, comme dans cet exemple. Pendant l'exportation, des données personnalisées sont insérées dans les métadonnées à propos des membres privés. L’exemple consulte les données personnalisées, vérifie si le modificateur d’accès est privé, puis rend le membre approprié privé en définissant ses attributs. Sans cette personnalisation, le membre `numpens` serait défini comme public au lieu de privé.  
   
 ### <a name="getknowncustomdatatypes-method"></a>Méthode GetKnownCustomDataTypes  
  Cette méthode obtient des types de données personnalisés définis à partir du schéma. Elle est facultative pour l'importation de schéma.  
@@ -206,4 +207,4 @@ Le contrat de données *substitut* est une fonctionnalité avancée reposant sur
  <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>  
  <xref:System.Runtime.Serialization.ImportOptions>  
  <xref:System.Runtime.Serialization.ExportOptions>  
- [À l’aide de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+ [Utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)

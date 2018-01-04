@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bdd547a62391d11050071e1ede648b28c28bd3f4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0184d07210322e6ed04441f7190857cf07205b15
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-a-bindingelement"></a>Création d’un élément de liaison
 Les liaisons et les éléments de liaison (qui étendent respectivement les objets <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> et <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>) correspondent à l'emplacement où le modèle d'application [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est associé aux fabrications de canaux ainsi qu'aux écouteurs de canal. Sans liaisons, à l’aide de canaux personnalisés nécessite une programmation au niveau du canal comme décrit dans [de programmation au niveau du canal de Service](../../../../docs/framework/wcf/extending/service-channel-level-programming.md) et [de programmation au niveau du canal de Client](../../../../docs/framework/wcf/extending/client-channel-level-programming.md). Cette rubrique décrit la configuration minimale requise pour permettre à l’aide de votre canal dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], le développement d’un <xref:System.ServiceModel.Channels.BindingElement> pour votre canal, puis activer l’utilisation de l’application, comme décrit à l’étape 4 de [développement canaux](../../../../docs/framework/wcf/extending/developing-channels.md).  
@@ -62,7 +63,7 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
 #### <a name="transport-binding-elements"></a>Éléments de liaison de transport  
  Pour créer un nouvel élément de liaison de transport, étendez l'interface <xref:System.ServiceModel.Channels.TransportBindingElement>. Vous devez ensuite implémenter au minimum la méthode <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> et la propriété <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A?displayProperty=nameWithType>.  
   
- <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> doit retourner une nouvelle copie de cet élément de liaison.  Dans le cadre de nos meilleures pratiques, nous vous recommandons d'implémenter, en tant que créateur de cet élément de liaison, la méthode de clonage à l'aide d'un constructeur de copie qui appelle le constructeur de copie de base, puis clone tous les champs supplémentaires figurant dans cette classe.  
+ <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> doit retourner une nouvelle copie de cet élément de liaison.  Dans le cadre de nos meilleures pratiques, nous vous recommandons d’implémenter, en tant que créateur de cet élément de liaison, la méthode de clonage à l’aide d’un constructeur de copie qui appelle le constructeur de copie de base, puis clone tous les champs supplémentaires figurant dans cette classe.  
   
  <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> : la propriété <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> retourne le modèle URI correspondant au protocole de transport représenté par l'élément de liaison. Par exemple, le <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> et <xref:System.ServiceModel.Channels.TcpTransportBindingElement?displayProperty=nameWithType> retournent « http » et « net.tcp » à partir de leurs détenteurs respectifs <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> propriétés.  
   
@@ -84,4 +85,4 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.Channels.BindingElement>  
  [Développement de canaux](../../../../docs/framework/wcf/extending/developing-channels.md)  
- [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md)
+ [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md)

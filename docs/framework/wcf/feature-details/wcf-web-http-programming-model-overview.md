@@ -13,11 +13,12 @@ caps.latest.revision: "45"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eb32d1c9c0c0922dae27b2933259df9470cceeba
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 70d1b76108c9eab0280e6499ab2b4d0c70def853
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Vue d'ensemble du modèle de programmation Web HTTP WCF
 Le modèle de programmation Web HTTP [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournit les éléments de base requis pour générer des services Web HTTP avec [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Les services Web HTTP [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont conçus pour être accessibles à l'éventail de clients le plus large possible (y compris les navigateurs Web) et ont les spécifications uniques suivantes :  
@@ -155,5 +156,5 @@ interface ICustomer
   
 ## <a name="see-also"></a>Voir aussi  
  [Syndication WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)  
- [Modèle objet de programmation Web HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)  
- [Modèle de programmation HTTP Web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+ [Modèle objet de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)  
+ [Modèle de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

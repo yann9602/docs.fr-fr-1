@@ -16,11 +16,12 @@ caps.latest.revision: "23"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 98bce70d7092a8ce9b9244479f7ff6d999bb0825
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: bb7a40bc38a3fdf3f7be2b31e30e768e26be2d15
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-considerations-for-data"></a>Considérations sur la sécurité des données
 Lorsque vous traitez des données dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vous devez considérer plusieurs catégories de menaces. Le tableau suivant répertorie les classes de menace les plus importantes concernant le traitement de données. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit des outils pour atténuer ces menaces.  
@@ -41,14 +42,14 @@ Lorsque vous traitez des données dans [!INCLUDE[indigo1](../../../../includes/i
   
  Le dernier exemple de code fourni par l'utilisateur correspond au code figurant à l'intérieur de votre implémentation de service pour chaque opération. La sécurité de votre implémentation de service relève de votre responsabilité. Il est facile de créer par inadvertance des implémentations d'opérations incertaines qui peuvent provoquer des vulnérabilités au déni de service. Par exemple, une opération qui prend une chaîne et renvoie la liste des clients d'une base de données dont le nom commence par cette chaîne. Si vous utilisez une base de données volumineuse et que la chaîne passée comporte une seule lettre, votre code risque d'essayer de créer un message plus volumineux que toute la mémoire disponible, ce qui entraîne l'échec du service entier. (Une <xref:System.OutOfMemoryException> n'est pas récupérable dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] et engendre toujours l'arrêt de votre application.)  
   
- Vous devez garantir qu'aucun code malveillant n'est intégré dans les divers points d'extensibilité. Cela est particulièrement vrai pour l'exécution en confiance partielle, pour le traitement des types issus d'assemblys d'un niveau de confiance partiel ou pour créer des composants utilisables par un code de niveau de confiance partiel. Pour plus d'informations, consultez « Menaces liées à une confiance partielle » dans une section ultérieure.  
+ Vous devez garantir qu'aucun code malveillant n'est intégré dans les divers points d'extensibilité. Cela est particulièrement vrai pour l'exécution en confiance partielle, pour le traitement des types issus d'assemblys d'un niveau de confiance partiel ou pour créer des composants utilisables par un code de niveau de confiance partiel. Pour plus d'informations, consultez « Menaces liées à une confiance partielle » dans une section ultérieure.  
   
  Notez que lors de l'exécution en confiance partielle, l'infrastructure de sérialisation de contrat de données prend en charge uniquement un sous-ensemble limité du modèle de programmation de contrat de données, par exemple, des types ou des membres de données privés qui utilisent l'attribut <xref:System.SerializableAttribute> ne sont pas pris en charge. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Confiance partielle](../../../../docs/framework/wcf/feature-details/partial-trust.md).  
   
 ## <a name="avoiding-unintentional-information-disclosure"></a>Éviter la divulgation d'informations involontaire  
  Dans le cadre de la conception de types sérialisables en gardant la sécurité à l'esprit, la divulgation d'informations est une préoccupation possible.  
   
- Considérez les points suivants :  
+ Considérez les points suivants :  
   
 -   Le modèle de programmation <xref:System.Runtime.Serialization.DataContractSerializer> autorise l'exposition de données privées et internes en dehors du type ou assembly pendant la sérialisation. En outre, la forme d'un type peut être exposée pendant l'exportation de schéma. Veillez à comprendre la projection de sérialisation de votre type. Si vous souhaitez que rien ne soit exposé, désactivez-en la sérialisation (par exemple, en n'appliquant pas l'attribut <xref:System.Runtime.Serialization.DataMemberAttribute> dans le cas d'un contrat de données).  
   
@@ -63,7 +64,7 @@ Lorsque vous traitez des données dans [!INCLUDE[indigo1](../../../../includes/i
   
  Les attaques par déni de service sont habituellement atténuées à l'aide de quotas. Lorsqu'un quota est dépassé, une exception <xref:System.ServiceModel.QuotaExceededException> est normalement levée. Sans le quota, un message malveillant peut provoquer l'accès à toute la mémoire disponible, ce qui engendre une exception <xref:System.OutOfMemoryException> , ou l'accès à toutes les piles disponibles, ce qui engendre une <xref:System.StackOverflowException>.  
   
- Le scénario du dépassement de quota est récupérable ; s'il se produit dans un service en cours d'exécution, le message en cours de traitement est ignoré et le service continue à s'exécuter et traite d'autres messages. En revanches, les scénarios de mémoire insuffisante et de dépassement de capacité de la pile ne sont pas récupérables où que ce soit dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]; le service s'arrête s'il rencontre de telles exceptions.  
+ Le scénario du dépassement de quota est récupérable ; s'il se produit dans un service en cours d'exécution, le message en cours de traitement est ignoré et le service continue à s'exécuter et traite d'autres messages. En revanches, les scénarios de mémoire insuffisante et de dépassement de capacité de la pile ne sont pas récupérables où que ce soit dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]; le service s'arrête s'il rencontre de telles exceptions.  
   
  Les quotas dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] n'impliquent aucune préallocation. Par exemple, si le quota <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> (existant sur différentes classes) a la valeur 128 Ko, cela ne signifie pas que 128 Ko sont automatiquement alloués pour chaque message. La quantité réelle allouée dépend de la taille réelle du message entrant.  
   
@@ -99,7 +100,7 @@ Lorsque vous traitez des données dans [!INCLUDE[indigo1](../../../../includes/i
 ### <a name="mixing-streaming-and-buffering-programming-models"></a>Combinaison des modèles de programmation de diffusion en continu et de mise en mémoire tampon  
  De nombreuses attaques possibles émanent du mélange de modèles de programmation de diffusion en continu et de non-diffusion en continu dans le même service. Supposez qu'il existe un contrat de service contenant deux opérations : une qui prend un <xref:System.IO.Stream> et une autre qui prend un tableau de type personnalisé. Supposez également qu'une valeur élevée est affectée à `MaxReceivedMessageSize` pour permettre à la première opération de traiter des flux volumineux. Malheureusement, cela signifie que des messages volumineux peuvent à présent être envoyés à la seconde opération, et que le désérialiseur met en mémoire tampon des données sous la forme d'un tableau avant d'appeler l'opération. Il s'agit d'une attaque par déni de service potentielle : le quota `MaxBufferSize` ne limite pas la taille du corps du message, avec laquelle le désérialiseur fonctionne.  
   
- Pour cette raison, évitez de combiner des opérations de diffusion et des opérations non diffusées dans le même contrat. Si vous devez absolument associer les deux modèles de programmation, prenez les précautions suivantes :  
+ Pour cette raison, évitez de combiner des opérations de diffusion et des opérations non diffusées dans le même contrat. Si vous devez absolument associer les deux modèles de programmation, prenez les précautions suivantes :  
   
 -   Désactivez la fonctionnalité <xref:System.Runtime.Serialization.IExtensibleDataObject> en affectant à la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> de <xref:System.ServiceModel.ServiceBehaviorAttribute> la valeur `true`. Cette désactivation permet de veiller à ce que seuls les membres qui font partie du contrat soient désérialisés.  
   
@@ -202,7 +203,7 @@ Lorsque vous traitez des données dans [!INCLUDE[indigo1](../../../../includes/i
  Les sections suivantes présentent de manière plus approfondie ces classes de menaces.  
   
 ## <a name="datacontractserializer"></a>DataContractSerializer  
- (Pour obtenir des informations de sécurité sur <xref:System.Xml.Serialization.XmlSerializer>, consultez la documentation correspondante.) Le modèle de sécurité pour <xref:System.Xml.Serialization.XmlSerializer> est similaire à celui de <xref:System.Runtime.Serialization.DataContractSerializer> et diffère principalement dans les détails. Par exemple, l'attribut <xref:System.Xml.Serialization.XmlIncludeAttribute> est utilisé pour l'inclusion de type au lieu de l'attribut <xref:System.Runtime.Serialization.KnownTypeAttribute>. Toutefois, certaines menaces propres à <xref:System.Xml.Serialization.XmlSerializer> sont présentées plus loin dans cette rubrique.  
+ (Pour obtenir des informations de sécurité sur <xref:System.Xml.Serialization.XmlSerializer>, consultez la documentation correspondante.) Le modèle de sécurité pour <xref:System.Xml.Serialization.XmlSerializer> est similaire à celui de <xref:System.Runtime.Serialization.DataContractSerializer> et diffère principalement dans les détails. Par exemple, l'attribut <xref:System.Xml.Serialization.XmlIncludeAttribute> est utilisé pour l'inclusion de type au lieu de l'attribut <xref:System.Runtime.Serialization.KnownTypeAttribute> . Toutefois, certaines menaces propres à <xref:System.Xml.Serialization.XmlSerializer> sont présentées plus loin dans cette rubrique.  
   
 ### <a name="preventing-unintended-types-from-being-loaded"></a>Prévention du chargement de types involontaires  
  Le chargement de types involontaires peut avoir de lourdes conséquences, que le type soit malveillant ou qu'il implique simplement des effets secondaires sensibles pour la sécurité. Un type peut contenir une faille de sécurité exploitable, exécuter des actions sensibles pour la sécurité dans son constructeur ou son constructeur de classe, subir un grand encombrement de mémoire qui facilite les attaques par déni de service ou lever des exceptions irrécupérables. Les types peuvent avoir des constructeurs de classe qui s'exécutent dès que le type est chargé et avant qu'une instance ne soit créée. Pour ces raisons, il est important de contrôler le jeu de types que le désérialiseur peut charger.  
@@ -264,7 +265,7 @@ Lorsque vous traitez des données dans [!INCLUDE[indigo1](../../../../includes/i
   
 -   Faites preuve de prudence lorsque vous utilisez des types hérités marqués avec l'attribut <xref:System.SerializableAttribute> . Beaucoup d'entre eux ont été conçus pour fonctionner avec [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Remoting à des fins d'utilisation avec des données approuvées uniquement. Les types existants marqués avec cet attribut n'ont peut-être pas été conçus en tenant compte de la sécurité des états.  
   
--   Ne comptez pas sur la propriété <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> de l'attribut `DataMemberAttribute` pour garantir la présence des données en ce qui concerne la sécurité des états. Les données pourraient toujours être `null`, `zero`ou `invalid`.  
+-   Ne comptez pas sur la propriété <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> de l'attribut `DataMemberAttribute` pour garantir la présence des données en ce qui concerne la sécurité des états. Les données pourraient toujours être `null`, `zero` ou `invalid`.  
   
 -   N'approuvez jamais un graphique d'objets désérialisé provenant d'une source de données non fiable sans le valider au préalable. Chaque objet individuel peut être dans un état cohérent, à la différence du graphique d'objets dans son ensemble. En outre, même si le mode de conservation des graphiques d'objets est désactivé, le graphique désérialisé peut avoir plusieurs références au même objet ou des références circulaires. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Sérialisation et désérialisation](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   
@@ -367,4 +368,4 @@ Lorsque vous traitez des données dans [!INCLUDE[indigo1](../../../../includes/i
  <xref:System.Runtime.Serialization.DataContractSerializer>  
  <xref:System.Xml.XmlDictionaryReader>  
  <xref:System.Xml.Serialization.XmlSerializer>  
- [Types connus de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+ [Types connus de contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)

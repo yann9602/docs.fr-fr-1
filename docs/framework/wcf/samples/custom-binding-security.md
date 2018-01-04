@@ -13,14 +13,15 @@ caps.latest.revision: "30"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 943a56095707efdba0e20c40b2c96e24e8fd4ea3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 6ac67f79a5fb527acd793778111dad6970922d71
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-binding-security"></a>Custom Binding Security
-L’exemple suivant illustre comment configurer la sécurité à l’aide d’une liaison personnalisée. Il indique également comment utiliser une liaison personnalisée afin d'activer la sécurité de niveau message à l'aide d'un transport sécurisé. Cette configuration est utile lorsqu'un transport sécurisé est requis pour la transmission des messages entre le client et le service et que ces messages doivent en même temps bénéficier d'une sécurité de niveau message. Cette configuration n'est pas prise en charge par les liaisons fournies par le système.  
+L’exemple suivant illustre comment configurer la sécurité à l’aide d’une liaison personnalisée. Il indique également comment utiliser une liaison personnalisée afin d’activer la sécurité de niveau message à l’aide d’un transport sécurisé. Cette configuration est utile lorsqu'un transport sécurisé est requis pour la transmission des messages entre le client et le service et que ces messages doivent en même temps bénéficier d'une sécurité de niveau message. Cette configuration n’est pas prise en charge par les liaisons fournies par le système.  
   
  Cet exemple comporte un programme de console client (EXE) et un programme de console service (EXE). Le service implémente un contrat duplex. Le contrat est défini par l'interface `ICalculatorDuplex`, laquelle expose les opérations mathématiques suivantes : addition, soustraction, multiplication et division. L'interface `ICalculatorDuplex` permet au client d'effectuer des opérations mathématiques, en calculant le résultat de l'exécution sur une session. Indépendamment de l'interface précédente, le service peut retourner ses propres résultats sur l'interface `ICalculatorDuplexCallback`. Un contrat duplex requiert une session, un contexte devant être établi pour mettre en relation l'ensemble des messages échangés entre le client et le service. Une liaison personnalisée et sécurisée prenant en charge la communication duplex est définie.  
   
@@ -51,7 +52,7 @@ L’exemple suivant illustre comment configurer la sécurité à l’aide d’un
 </bindings>  
 ```  
   
- La liaison personnalisée utilise un certificat de service afin d'authentifier le service au niveau du transport et de protéger les messages pendant leur transmission entre le client et le service. Cette tâche est effectuée par l'élément de liaison `sslStreamSecurity`. Le certificat du service est configuré à l'aide d'un comportement de service, tel qu'illustré dans l'exemple de configuration suivant.  
+ La liaison personnalisée utilise un certificat de service afin d’authentifier le service au niveau du transport et de protéger les messages pendant leur transmission entre le client et le service. Cette tâche est effectuée par l'élément de liaison `sslStreamSecurity`. Le certificat du service est configuré à l'aide d'un comportement de service, tel qu'illustré dans l'exemple de configuration suivant.  
   
 ```xml  
 <behaviors>  
@@ -123,7 +124,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
   
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Pour exécuter l'exemple sur le même ordinateur  
   
-1.  Ouvrez une fenêtre d'invite de commandes de Visual Studio avec des privilèges d'administrateur et exécutez Setup.bat à partir du dossier d'installation de l'exemple. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.  
+1.  Ouvrez une fenêtre d’invite de commandes de Visual Studio avec des privilèges d’administrateur et exécutez Setup.bat à partir du dossier d’installation de l’exemple. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.  
   
     > [!NOTE]
     >  Le fichier de commandes Setup.bat est conçu pour être exécuté à partir d'une invite de commandes de [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]. La variable d'environnement PATH définie dans l'invite de commandes [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] pointe vers le répertoire qui contient les exécutables requis par le script Setup.bat.  
@@ -147,7 +148,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
     4.  Exécutez la commande suivante dans une invite de commandes Visual Studio ouverte avec des privilèges d’administrateur : `Setup.bat service`. L'exécution de cette commande crée un certificat de service dont le nom du sujet correspond au nom de l'ordinateur sur lequel le fichier de commandes a été exécuté.  
   
         > [!NOTE]
-        >  Le fichier de commandes Setup.bat est conçu pour s'exécuter à partir d'une invite de commandes de Visual Studio 2010. La variable d'environnement PATH doit pointer vers le répertoire d'installation du Kit de développement SDK. Cette variable est définie automatiquement dans une invite de commandes de Visual Studio 2010.  
+        >  Le fichier de commandes Setup.bat est conçu pour s'exécuter à partir d'une invite de commandes de Visual Studio 2010. La variable d’environnement PATH doit pointer vers le répertoire d’installation du Kit de développement SDK. Cette variable est définie automatiquement dans une invite de commandes de Visual Studio 2010.  
   
     5.  Modifier la [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) dans le fichier Service.exe.config afin de refléter le nom du sujet du certificat généré à l’étape précédente.  
   
@@ -155,7 +156,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
   
 2.  Sur l'ordinateur client :  
   
-    1.  Copiez les fichiers programme du client à partir du dossier \client\bin\ sur l'ordinateur client. Copiez également le fichier Cleanup.bat.  
+    1.  Copiez les fichiers programme du client à partir du dossier \client\bin\ sur l’ordinateur client. Copiez également le fichier Cleanup.bat.  
   
     2.  Exécutez Cleanup.bat pour supprimer tous les anciens certificats d'exemples précédents.  
   

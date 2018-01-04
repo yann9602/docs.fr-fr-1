@@ -16,11 +16,12 @@ caps.latest.revision: "29"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 04de29891bcf5d8cdbac32ffc85d64a4003e3184
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0fbed530a1b968bb049ee20262eb2b8fa9ba13c2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="integrating-with-com-applications-overview"></a>Vue d'ensemble de l'intégration à des applications COM+
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournit un environnement riche permettant de créer des applications distribuées. Si vous vous servez déjà d'une logique d'application à base de composants hébergée dans COM+, vous pouvez utiliser [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour étendre votre logique existante plutôt que devoir la réécrire. Un scénario courant consiste à exposer une logique métier COM+ ou Enterprise Services existante par le biais de services Web.  
@@ -112,4 +113,4 @@ ms.lasthandoff: 12/02/2017
  Les fonctionnalités de recyclage de processus COM+ ne peuvent pas être utilisées sur des applications intégrées. Si l'application est configurée pour utiliser le recyclage de processus et que les composants s'exécutent dans un processus hébergé par COM+, le service ne démarre pas. Cette exigence ne concerne pas les services utilisant le mode Hébergé sur le Web dans un processus car les paramètres de recyclage de processus ne sont pas appliqués.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Intégration de la vue d’ensemble des Applications COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)
+ [Vue d’ensemble de l’intégration à des applications COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)

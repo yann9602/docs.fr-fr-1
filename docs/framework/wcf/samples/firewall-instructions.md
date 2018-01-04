@@ -13,14 +13,15 @@ caps.latest.revision: "32"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 38d1f0f6bf9245048f21bbe1cb0aa6a0b8d768dd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 270df09f709dfdfeb78b9bd72bc3744c6614bc5e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="firewall-instructions"></a>Instructions sur les pare-feu
-Pour que les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fonctionnent, vous devez activer plusieurs ports ou programmes dans le pare-feu. Un grand nombre d'exemples communique en utilisant des ports contenus dans la plage 8000-8003, ainsi que le port 9000. Le pare-feu est activé par défaut et empêche l'accès à ces ports. Pour activer le pare-feu pour les exemples, exécutez l'une des procédures suivantes, selon vos besoins et votre environnement de sécurité :  
+Pour que les exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fonctionnent, vous devez activer plusieurs ports ou programmes dans le pare-feu. Un grand nombre d'exemples communique en utilisant des ports contenus dans la plage 8000-8003, ainsi que le port 9000. Le pare-feu est activé par défaut et empêche l'accès à ces ports. Pour activer le pare-feu pour les exemples, exécutez l’une des procédures suivantes, selon vos besoins et votre environnement de sécurité :  
   
 -   Option 1: Activation interactive des exemples en cours d'exécution. N'apportez aucune modification à l'avance à votre configuration de pare-feu et lancez la création et l'exécution des exemples. Lorsqu’un exemple est exécuté, un **alerte de sécurité Windows** boîte de dialogue s’affiche. L'exemple de programme en question peut ensuite être ajouté interactivement à une liste non bloquée. Dans le cadre de cette procédure, vous devrez peut-être redémarrer l'exemple.  
   

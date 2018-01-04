@@ -12,14 +12,15 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 440f3ee85fe24707c6bb433736bf6104d9e0dfc5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d75f03a9af5caa5569cbfd4d1d09cda8936f6562
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-activity-validation"></a>Configuration de la validation d’activité
-La validation d'activité permet aux auteurs et aux utilisateurs d'activités d'identifier et de signaler des erreurs dans la configuration de toute activité, avant son exécution. [!INCLUDE[wf](../../../includes/wf-md.md)] fournit les trois types suivants de validation des activités :  
+La validation d’activité permet aux auteurs et aux utilisateurs d’activités d’identifier et de signaler des erreurs dans la configuration de toute activité, avant son exécution. [!INCLUDE[wf](../../../includes/wf-md.md)] fournit les trois types suivants de validation des activités :  
   
 -   attributs `RequiredArgument` et `OverloadGroup` ;  
   

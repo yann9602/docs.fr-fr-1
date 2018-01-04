@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 88d9b6b8b4aa1d551e292057e0fecf746b17cecd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 81aa47747d27f135c270959f2c8abf03c522bf87
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-host-a-wcf-service-written-with-net-framework-35-in-iis-running-under-net-framework-4"></a>Procédure : héberger un service WCF écrit avec le .NET Framework 3.5 dans IIS s'exécutant sous le .NET Framework 4
 Lorsque vous hébergez un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] écrit avec [!INCLUDE[netfx35_long](../../../includes/netfx35-long-md.md)] sur un ordinateur qui exécute [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)], vous risquez d'obtenir une exception <xref:System.ServiceModel.ProtocolException> avec le texte suivant.  

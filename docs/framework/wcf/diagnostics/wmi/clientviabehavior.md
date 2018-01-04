@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f3ba95d94f720cacbad9733a243f14f00da8e22a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 44b675ad4d4b9cf33a3869722c1ff1c97abcea3f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clientviabehavior"></a>ClientViaBehavior
 ClientViaBehavior  
@@ -37,14 +38,14 @@ class ClientViaBehavior : Behavior
 ## <a name="properties"></a>Propriétés  
  La classe ClientViaBehavior a la propriété suivante :  
   
-### <a name="uri"></a>Uri  
+### <a name="uri"></a>URI  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
   
  ViaUri.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

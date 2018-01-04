@@ -13,17 +13,18 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 68edbf5a2c96893bdf0e3a7a923084adea9e3c21
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 8bfcd632846510f8f62280bfb1620ba1f8c35ce3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-resource-service"></a>Basic Resource Service
 Cet exemple montre comment implémenter un service HTTP à l'aide du modèle de programmation REST [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] qui expose une collection de clients prenant en charge les opérations de récupération, d'ajout, de suppression et de remplacement. Cet exemple est constitué de 2 composants : un service HTTP [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] auto-hébergé (Service.cs) et une application console (program.cs) qui crée le service et lui passe des appels.  
   
 ## <a name="sample-details"></a>Détails de l'exemple  
- Le service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] expose une collection de clients d'une manière orientée ressources/REST. En résumé, cela implique de disposer d'URI uniques pour la collection de clients et chaque client de la collection. Le service prend en charge l'envoi d'un HTTP `GET` à l'URI de la collection pour récupérer la collection entière et d'un HTTP `POST` à l'URI de la collection pour ajouter un nouveau client à la collection. Il prend aussi en charge, à l'URI d'un client individuel, HTTP `GET` pour obtenir les informations du client, HTTP `PUT` pour remplacer les informations du client et HTTP `DELETE` pour supprimer le client de la collection. Lorsqu'un nouveau client est ajouté à la collection, le service lui assigne un URI unique et stocke l'URI avec les informations du client. Il communique aussi l'URI au client à l'aide de l'en-tête HTTP Location de la réponse.  
+ Le service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] expose une collection de clients d'une manière orientée ressources/REST. En résumé, cela implique de disposer d’URI uniques pour la collection de clients et chaque client de la collection. Le service prend en charge l'envoi d'un HTTP `GET` à l'URI de la collection pour récupérer la collection entière et d'un HTTP `POST` à l'URI de la collection pour ajouter un nouveau client à la collection. Il prend aussi en charge, à l'URI d'un client individuel, HTTP `GET` pour obtenir les informations du client, HTTP `PUT` pour remplacer les informations du client et HTTP `DELETE` pour supprimer le client de la collection. Lorsqu’un nouveau client est ajouté à la collection, le service lui assigne un URI unique et stocke l’URI avec les informations du client. Il communique aussi l'URI au client à l'aide de l'en-tête HTTP Location de la réponse.  
   
  Le fichier App.config configure le service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec un <xref:System.ServiceModel.Description.WebHttpEndpoint> par défaut dont la propriété <xref:System.ServiceModel.Description.WebHttpEndpoint.HelpEnabled%2A> a la valeur `true`. Par conséquent, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] crée une page d'aide HTML automatique sous `http://localhost:8000/Customers/help`, qui fournit des informations sur la façon de construire des requêtes HTTP adressées au service et d'accéder à la réponse HTTP du service. Il peut s'agir d'un exemple de la façon dont les informations concernant les clients sont représentées aux formats XML et JSON.  
   
@@ -50,4 +51,4 @@ Cet exemple montre comment implémenter un service HTTP à l'aide du modèle de 
   
 ## <a name="see-also"></a>Voir aussi  
  [Service HTTP de base](../../../../docs/framework/wcf/samples/basic-http-service.md)  
- [Sélection automatique du Format](../../../../docs/framework/wcf/samples/automatic-format-selection.md)
+ [Sélection automatique du format](../../../../docs/framework/wcf/samples/automatic-format-selection.md)

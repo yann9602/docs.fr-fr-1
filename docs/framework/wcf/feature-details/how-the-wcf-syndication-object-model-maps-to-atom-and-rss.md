@@ -16,11 +16,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 00c5b310fbda189cfffe74767c9d77ac86481afe
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 01030ed226a5cdc384db56933325d7c4eeade989
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a>Comment le modèle objet Syndication WCF est mappé à Atom et RSS
 Lorsque vous développez un service de syndication [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], vous créez des flux et des éléments à l'aide des classes suivantes :  
@@ -408,8 +409,8 @@ Lorsque vous développez un service de syndication [!INCLUDE[indigo1](../../../.
  `</content>`  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble de la Syndication WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
- [Architecture de Syndication](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)  
- [Comment : créer un flux RSS de base](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)  
- [Comment : créer un flux Atom de base](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)  
- [Comment : exposer un flux en tant qu’Atom et RSS](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)
+ [Vue d’ensemble de la syndication WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
+ [Architecture de syndication](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)  
+ [Guide pratique pour créer un flux RSS de base](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)  
+ [Guide pratique pour créer un flux Atom de base](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)  
+ [Guide pratique pour exposer un flux en tant que flux Atom et flux RSS](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)

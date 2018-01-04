@@ -14,11 +14,12 @@ caps.latest.revision: "7"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 7ae79ad13b360a61e1d9b10f94dff5a37aae1d89
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 3ef101a9a5f78e1b85ac7cb983b4766088b83317
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="routing-scenarios"></a>Scénarios de routage
 Bien que le service de routage soit entièrement personnalisable, concevoir une logique de routage efficace lors de la création d'une configuration à partir de zéro peut s'avérer difficile.  Toutefois, il existe plusieurs scénarios courants que suivent la plupart des configurations de service de routage. Bien que ces scénarios puissent ne pas s'appliquer directement à votre configuration spécifique, comprendre comment configurer le service de routage en vue de gérer ces scénarios vous permet de mieux maîtriser le fonctionnement du service de routage.  
@@ -77,13 +78,13 @@ Bien que le service de routage soit entièrement personnalisable, concevoir une 
  Pour les étapes permettant de configurer la gestion des erreurs, consultez [procédure : gestion des erreurs](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md). Pour obtenir un exemple d’implémentation de la gestion des erreurs, consultez le [pontage et la gestion des erreurs](../../../../docs/framework/wcf/samples/bridging-and-error-handling.md) et [avancées de gestion des erreurs](../../../../docs/framework/wcf/samples/advanced-error-handling.md) exemples.  
   
 ### <a name="in-this-section"></a>Dans cette section  
- [Procédure : Service de contrôle de version](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
+ [Guide pratique pour traiter la gestion de version](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
   
- [Procédure : Partitionnement des données du Service](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
+ [Guide pratique pour traiter le partitionnement des données](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
   
- [Comment : Mettre à jour les dynamiques](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)  
+ [Guide pratique pour effectuer une mise à jour dynamique](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)  
   
- [Procédure : Gestion des erreurs](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)  
+ [Guide pratique pour effectuer la gestion des erreurs](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)  
   
 ## <a name="see-also"></a>Voir aussi  
  [Introduction au routage](../../../../docs/framework/wcf/feature-details/routing-introduction.md)

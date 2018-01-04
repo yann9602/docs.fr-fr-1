@@ -13,11 +13,12 @@ caps.latest.revision: "18"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 2a1b2ba0ab49ebf470c0245f0827f82e1fe20ce8
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e2aedb06ec694f6c7dfb12b70ab919ae23eed17e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-specify-channel-security-credentials"></a>Comment : spécifier des informations d'identification pour la sécurité des canaux
 Le moniker de service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] permet aux applications COM d'appeler des services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. La plupart des services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] requièrent que le client spécifie des informations d'identification pour l'authentification et l'autorisation. Lorsque vous appelez un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] d'un client [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], vous pouvez spécifier ces informations d'identification en code managé ou dans un fichier de configuration de l'application. Lorsque vous appelez un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] depuis une application COM, vous pouvez utiliser l'interface <xref:System.ServiceModel.ComIntegration.IChannelCredentials> pour spécifier les informations d'identification. Cette rubrique illustre diverses méthodes pour spécifier des informations d'identification à l'aide de l'interface <xref:System.ServiceModel.ComIntegration.IChannelCredentials>.  
@@ -149,7 +150,7 @@ Le moniker de service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] pe
   
 ## <a name="see-also"></a>Voir aussi  
  [Fédération](../../../../docs/framework/wcf/feature-details/federation.md)  
- [Comment : configurer les informations d’identification sur un Service de fédération](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
- [Comment : créer un Client fédéré](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
- [Sécurité des messages](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)  
+ [Guide pratique pour configurer des informations d’identification sur un service FS (Federation Service)](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
+ [Guide pratique pour créer un client fédéré](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
+ [Sécurité de message](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)  
  [Liaisons et sécurité](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)

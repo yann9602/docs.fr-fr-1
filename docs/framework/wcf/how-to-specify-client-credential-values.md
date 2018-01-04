@@ -16,11 +16,12 @@ caps.latest.revision: "28"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 42c6390fb2bd39a0003beecbbe10cd72a38ed63d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cd818a2342ff5b44e4e8ab1b237f7c657d3bf438
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-specify-client-credential-values"></a>Comment : spécifier des valeurs d'informations d'identification du client
 Grâce à [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], le service peut spécifier comment un client est authentifié auprès du service. Par exemple, un service peut stipuler que le client soit authentifié avec un certificat.  
@@ -107,8 +108,8 @@ Grâce à [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], le service peut 
  <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential>  
  <xref:System.ServiceModel.ClientBase%601>  
  <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>  
- [Programmation de la sécurité WCF](../../../docs/framework/wcf/feature-details/programming-wcf-security.md)  
- [Sélection d’un Type d’informations d’identification](../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
+ [Programmation de la sécurité dans WCF](../../../docs/framework/wcf/feature-details/programming-wcf-security.md)  
+ [Sélection d’un type d’informations d’identification](../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
  [Outil ServiceModel Metadata Utility (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
  [Utilisation des certificats](../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  [Guide pratique pour créer un client](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  

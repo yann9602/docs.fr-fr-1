@@ -19,11 +19,12 @@ caps.latest.revision: "22"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f107e4d1a9779c04a33060af34ee1fc873305eab
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: c379cf39f30bf7e75907dba5fb06ba4e3862e299
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="understanding-protection-level"></a>Fonctionnement des niveaux de protection
 La propriété `ProtectionLevel` est partagée par de nombreuses classes différentes, par exemple par les classes <xref:System.ServiceModel.ServiceContractAttribute> et <xref:System.ServiceModel.OperationContractAttribute>. Cette propriété contrôle tout ou partie des modalités de protection d'un message. Cette rubrique contient des explications sur la fonctionnalité [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] ainsi que sur son fonctionnement.  
@@ -34,7 +35,7 @@ La propriété `ProtectionLevel` est partagée par de nombreuses classes différ
 >  Les niveaux de protection peuvent uniquement être définis dans le code et non dans la configuration.  
   
 ## <a name="basics"></a>Principes de base  
- Le fonctionnement des niveaux de protection ne peut être correctement appréhendé sans comprendre au préalable les principes de base les régissant :  
+ Pour appréhender les fonctionnalités des niveaux de protection, il est nécessaire de comprendre au préalable les principes de base les régissant :  
   
 -   Il existe trois niveaux de base de protection pour les différentes parties d'un message. La propriété (où qu'elle intervienne) a la valeur de l'une des valeurs d'énumération <xref:System.Net.Security.ProtectionLevel>. Ces valeurs sont (par niveau de protection croissant) :  
   
@@ -58,7 +59,7 @@ La propriété `ProtectionLevel` est partagée par de nombreuses classes différ
   
 -   Si vous sélectionnez une liaison dont la sécurité n'est pas activée (par exemple, la sécurité de la classe `BasicHttpBinding` est désactivée par défaut) et que la propriété `ProtectionLevel` n'est pas définie explicitement, alors aucune des données d'application ne sera protégée.  
   
--   Si vous utilisez une liaison qui applique la sécurité au niveau du transport, toutes les données d'application seront sécurisées en fonction des paramètres de sécurité du transport.  
+-   Si vous utilisez une liaison qui applique la sécurité au niveau du transport, toutes les données d’application seront sécurisées en fonction des paramètres de sécurité du transport.  
   
 -   Si vous utilisez une liaison qui applique la sécurité au niveau du message, les données d'application seront sécurisées en fonction des niveaux de protection définis sur le contrat. Si vous ne spécifiez aucun niveau de protection, toutes les données d'application figurant dans les messages seront chiffrées et signées.  
   
@@ -115,4 +116,4 @@ La propriété `ProtectionLevel` est partagée par de nombreuses classes différ
  [Sécurisation de services](../../../docs/framework/wcf/securing-services.md)  
  [Guide pratique pour définir la propriété ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)  
  [Spécification et gestion des erreurs dans les contrats et les services](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)  
- [À l’aide de contrats de Message](../../../docs/framework/wcf/feature-details/using-message-contracts.md)
+ [Utilisation de contrats de message](../../../docs/framework/wcf/feature-details/using-message-contracts.md)

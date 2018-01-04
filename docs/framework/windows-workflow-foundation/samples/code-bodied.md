@@ -12,11 +12,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 41d0b2ccd126416a625e37e6bfdca8f4fd96faf2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1e9c0cecbf398fb024bda672cf9085e9c779d620
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="code-bodied"></a>Code-Bodied
 Cette section contient des exemples d'activités personnalisées créées de façon déclarative dans le code.  
@@ -25,7 +26,7 @@ Cette section contient des exemples d'activités personnalisées créées de fa�
  [Signets](../../../../docs/framework/windows-workflow-foundation/samples/bookmarks.md)  
  Cet exemple montre comment écrire une activité personnalisée qui crée un signet destiné à recevoir une entrée externe.  
   
- [Composite personnalisé à l’aide d’une activité Native](../../../../docs/framework/windows-workflow-foundation/samples/custom-composite-using-native-activity.md)  
+ [Composite personnalisé à l’aide de NativeActivity](../../../../docs/framework/windows-workflow-foundation/samples/custom-composite-using-native-activity.md)  
  Cet exemple montre comment écrire un <xref:System.Activities.NativeActivity> qui planifie d'autres objets <xref:System.Activities.Activity> pour contrôler le flux d'exécution d'un workflow.  
   
  [Propriétés d’exécution](../../../../docs/framework/windows-workflow-foundation/samples/execution-properties.md)  

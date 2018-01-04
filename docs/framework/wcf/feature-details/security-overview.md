@@ -16,11 +16,12 @@ caps.latest.revision: "37"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 74a2e5c15b25dc9958b74ddeb0abf9adcad10bc0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: c4c6ecbfc3407e3ebc321e92cd9e78dc2d80a3a6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-overview"></a>Vue d'ensemble de la sécurité
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] est une plateforme de programmation distribuée basée sur les messages SOAP, et la sécurisation des messages entre les clients et les services est essentielle à la protection des données. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit une plateforme souple et interopérable pour échanger des messages sécurisés qui reposent sur l'infrastructure de sécurité existante et les normes de sécurité reconnues pour les messages SOAP.  
@@ -112,12 +113,12 @@ ms.lasthandoff: 11/21/2017
  [Sécurisation de services](../../../../docs/framework/wcf/securing-services.md)  
  [Scénarios de sécurité courants](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
  [Liaisons et sécurité](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
- [Sécurisation des Services et Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Authentification](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)  
  [Autorisation](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)  
  [Fédération et jetons émis](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
- [L’audit](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
- [Guide de sécurité et les meilleures pratiques](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+ [Audit](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
+ [Aide sur la sécurité et bonnes pratiques](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  [Configuration des services à l’aide de fichiers de configuration](../../../../docs/framework/wcf/configuring-services-using-configuration-files.md)  
  [Liaisons fournies par le système](../../../../docs/framework/wcf/system-provided-bindings.md)  
  [Vue d’ensemble de la création de points de terminaison](../../../../docs/framework/wcf/endpoint-creation-overview.md)  

@@ -13,23 +13,24 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d2e4771ac7ed2c9dce94bc4e9da62bb0017daa30
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9e27134c9a18d5125566b582ac17cf6a95b3b83f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="message-queueing-integration"></a>Intégration de Message Queueing
 Cette section contient des exemples qui illustrent l'intégration entre Message Queuing et [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Message Queuing à Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  
+ [Message Queuing vers Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)  
  Montre comment une application MSMQ (Message Queuing) peut envoyer un message MSMQ à un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  [Demux personnalisé](../../../../docs/framework/wcf/samples/custom-demux.md)  
  Montre comment les en-têtes de message MSMQ peuvent être mappés à différentes opérations de service afin que les services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] qui utilisent <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> ne soient pas limités à l'utilisation d'une opération de service.  
   
- [Windows Communication Foundation à Message Queuing](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)  
+ [Windows Communication Foundation vers Message Queuing](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)  
  Montre comment une application [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] peut envoyer un message à une application MSMQ (Message Queuing).  
   
  [Corrélation de messages](../../../../docs/framework/wcf/samples/message-correlation.md)  

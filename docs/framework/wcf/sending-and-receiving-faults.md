@@ -17,11 +17,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5897d107fc27b56ffd1eb476dff1fa1d507f5de5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 248202e07d3b74f5d71b40155ae8f617f7ed15ce
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sending-and-receiving-faults"></a>Envoi et réception des erreurs
 Les erreurs SOAP acheminent des informations de condition d'erreur d'un service à un client et, dans le cas duplex, d'un client à un service d'une manière interopérable. En général un service définit le contenu des erreurs personnalisées et spécifie quelles opérations peuvent les retourner. (Pour plus d’informations, consultez [définition et en spécifiant les erreurs](../../../docs/framework/wcf/defining-and-specifying-faults.md).) Cette rubrique explique comment un service ou un client duplex peut envoyer ces erreurs lorsque la condition d'erreur correspondante s'est produite et comment un client ou une application de service gère ces erreurs. Pour une vue d’ensemble de la gestion des erreurs dans [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] les applications, consultez [spécification et gestion des erreurs dans les contrats et les Services](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
@@ -98,7 +99,7 @@ Les erreurs SOAP acheminent des informations de condition d'erreur d'un service 
   
 -   Lorsque l'application cliente appelle une opération qui est une opération de fin pour une session.  
   
- Dans tous les cas, la fermeture du canal fait en sorte que celui-ci commence à fermer tous les canaux sous-jacents qui peuvent envoyer des messages pour prendre en charge la fonctionnalité complexe au niveau application. Par exemple, lorsqu'un contrat requiert des sessions, une liaison tente d'établir une session en échangeant des messages avec le canal de service jusqu'à ce qu'une session soit établie. Lorsque le canal est fermé, le canal de session sous-jacent signale au service que la session est terminée. Dans ce cas, si le canal a déjà abandonné, est déjà fermé ou est inutilisable (par exemple, lorsqu'un câble réseau est débranché), le canal client ne peut pas signaler au canal de service que la session est terminée et une exception peut être déclenchée.  
+ Dans tous les cas, la fermeture du canal fait en sorte que celui-ci commence à fermer tous les canaux sous-jacents qui peuvent envoyer des messages pour prendre en charge la fonctionnalité complexe au niveau application. Par exemple, lorsqu’un contrat requiert des sessions, une liaison tente d’établir une session en échangeant des messages avec le canal de service jusqu’à ce qu’une session soit établie. Lorsque le canal est fermé, le canal de session sous-jacent signale au service que la session est terminée. Dans ce cas, si le canal a déjà abandonné, est déjà fermé ou est inutilisable (par exemple, lorsqu'un câble réseau est débranché), le canal client ne peut pas signaler au canal de service que la session est terminée et une exception peut être déclenchée.  
   
 ### <a name="abort-the-channel-if-necessary"></a>Abandon du canal si nécessaire  
  La fermeture du canal pouvant également lever des exceptions, en plus d'intercepter les exceptions dans l'ordre correct il est important d'abandonner le canal utilisé pour effectuer l'appel dans le bloc catch.  

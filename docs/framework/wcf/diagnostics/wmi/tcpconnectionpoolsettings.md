@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eaec1b7d179810faaba016cfa0c5eb7e6c950ab6
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 04e6a457a9f4c3f93a52f851aafe70578b7d7444
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tcpconnectionpoolsettings"></a>TcpConnectionPoolSettings
 TcpConnectionPoolSettings  
@@ -45,7 +46,7 @@ class TcpConnectionPoolSettings
   
  Type d'accès : lecture seule  
   
- Nom de groupe du pool de connexions utilisé par l'élément de liaison.  
+ Nom de groupe du pool de connexions utilisé par l’élément de liaison.  
   
 ### <a name="idletimeout"></a>IdleTimeout  
  Type de données : datetime  
@@ -68,7 +69,7 @@ class TcpConnectionPoolSettings
   
  Nombre maximal de connexions sortantes pour chaque point de terminaison.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

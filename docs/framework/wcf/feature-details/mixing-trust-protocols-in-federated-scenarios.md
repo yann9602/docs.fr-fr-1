@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 007dec81766423ea2826e98ae0b6b399a1508f11
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 7031e222b152bfa61e13e0e4a44b5ad9418b07c9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mixing-trust-protocols-in-federated-scenarios"></a>Combinaison de protocoles d'approbation dans les scénarios fédérés
 Il peut exister des scénarios où des clients fédérés communiquent avec un WSDL de service et un service de jeton de sécurité (STS) qui n'ont pas la même version d'approbation. Le WSDL de service peut contenir une assertion `RequestSecurityTokenTemplate` avec les éléments WS-Trust qui sont de versions différentes par rapport à STS. Dans ce cas, un client [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] convertit les éléments WS-Trust reçus depuis `RequestSecurityTokenTemplate` de façon à ce qu'ils correspondent à la version d'approbation de STS. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] gère les versions d'approbation qui ne correspondent pas uniquement pour les liaisons standard. Tous les paramètres d'algorithme standard reconnus par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] font partie de la liaison standard. Cette rubrique décrit le comportement de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec divers paramètres d'approbation entre le service et STS.  

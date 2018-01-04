@@ -14,11 +14,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7eb8e0853adbc24deb43fc1006804d7707d9a4b8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2ea157ea1ac73a287ba39c1468e7e9a5781d40a0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-and-extending-the-runtime-with-behaviors"></a>Configuration et extension de l'exécution à l'aide de comportements
 Les comportements vous permettent de modifier le comportement par défaut et d'ajouter des extensions personnalisées qui inspectent et valident la configuration de service ou modifient le comportement d'exécution dans les applications de service et clientes [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Cette rubrique décrit les interfaces de comportement, la méthode utilisée pour les implémenter, et comment les ajouter par programme à la description de service (dans une application de service), au point de terminaison (dans une application cliente) ou dans un fichier de configuration. Pour plus d’informations sur l’utilisation des comportements fournis par le système, consultez [spécification du comportement de Service runtime](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md) et [comportement d’exécution Client spécifiant](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md).  
@@ -55,7 +56,7 @@ Les comportements vous permettent de modifier le comportement par défaut et d'a
   
 -   Les comportements d'opération (types <xref:System.ServiceModel.Description.IOperationBehavior>) activent la personnalisation des classes <xref:System.ServiceModel.Dispatcher.ClientOperation> et <xref:System.ServiceModel.Dispatcher.DispatchOperation> à nouveau sur le client et le service.  
   
- Vous pouvez ajouter ces comportements aux divers objets de description en implémentant des attributs personnalisés, à l'aide de fichiers de configuration d'application, ou en les ajoutant directement à la collection de comportements sur l'objet de description approprié. Cependant, ils doivent être ajoutés à un objet de description de service ou de description de point de terminaison de service avant d'appeler <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> sur le <xref:System.ServiceModel.ServiceHost> ou un <xref:System.ServiceModel.ChannelFactory%601>.  
+ Vous pouvez ajouter ces comportements aux divers objets de description en implémentant des attributs personnalisés, à l’aide de fichiers de configuration d’application, ou en les ajoutant directement à la collection de comportements sur l’objet de description approprié. Cependant, ils doivent être ajoutés à un objet de description de service ou de description de point de terminaison de service avant d'appeler <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> sur le <xref:System.ServiceModel.ServiceHost> ou un <xref:System.ServiceModel.ChannelFactory%601>.  
   
 ### <a name="behavior-scopes"></a>Portées de comportement  
  Il existe quatre types de comportement, chacun d'entre eux correspondant à une portée spécifique d'accès d'exécution.  
@@ -205,7 +206,7 @@ Les comportements vous permettent de modifier le comportement par défaut et d'a
   
 4.  Opération  
   
- Dans une collection de comportements, aucun ordre n'est garanti.  
+ Dans une collection de comportements, aucun ordre n’est garanti.  
   
  <xref:System.ServiceModel.ChannelFactory%601> applique les comportements dans l'ordre suivant :  
   
@@ -215,7 +216,7 @@ Les comportements vous permettent de modifier le comportement par défaut et d'a
   
 3.  Opération  
   
- Dans une collection de comportements, à nouveau aucun ordre n'est garanti.  
+ Dans une collection de comportements, à nouveau aucun ordre n’est garanti.  
   
 ### <a name="adding-behaviors-programmatically"></a>Ajout de comportements par programme  
  Les propriétés de <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> dans l'application de service ne doivent pas être modifiées à l'issue de la méthode <xref:System.ServiceModel.Channels.CommunicationObject.OnOpening%2A?displayProperty=nameWithType> sur <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType>. Certains membres, tels que la propriété <xref:System.ServiceModel.ServiceHostBase.Credentials%2A?displayProperty=nameWithType> et les méthodes `AddServiceEndpoint` sur <xref:System.ServiceModel.ServiceHostBase> et <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType>, lèvent une exception s'ils sont modifiés une fois ce stade passé. D'autres membres peuvent être modifiés, mais le résultat n'est pas défini.  

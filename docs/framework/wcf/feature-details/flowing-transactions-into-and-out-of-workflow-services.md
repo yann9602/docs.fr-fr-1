@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d097068720bb937911316fdb29a83ba0e8e67713
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a38c0c224c93941efa767d142aa7738296a62f15
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>Flux de transactions vers et depuis des services de workflow
 Les services et clients de workflow peuvent participer aux transactions.  Pour qu'une opération de service fasse partie d'une transaction ambiante, placez une activité <xref:System.ServiceModel.Activities.Receive> dans une activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>. Tous les appels effectués par une activité <xref:System.ServiceModel.Activities.Send> ou <xref:System.ServiceModel.Activities.SendReply> au sein de l'activité <xref:System.ServiceModel.Activities.TransactedReceiveScope> seront également effectués dans la transaction ambiante. Une application cliente de workflow peut créer une transaction ambiante en utilisant l'activité <xref:System.Activities.Statements.TransactionScope> et appeler des opérations de service à l'aide de la transaction ambiante. Cette rubrique vous guide dans la création d'un service de workflow et d'un client de workflow qui participent à des transactions.  
@@ -109,7 +110,7 @@ Les services et clients de workflow peuvent participer aux transactions.  Pour q
   
 6.  Faites glisser et déposez un <xref:System.ServiceModel.Activities.Receive> activité dans le **demande** section de la <xref:System.ServiceModel.Activities.TransactedReceiveScope> activité. Définissez les propriétés suivantes :  
   
-    |Propriété|Valeur|  
+    |Propriété|Value|  
     |--------------|-----------|  
     |CanCreateInstance|True (activez la case à cocher)|  
     |OperationName|StartSample|  
@@ -125,7 +126,7 @@ Les services et clients de workflow peuvent participer aux transactions.  Pour q
   
 8.  Faites glisser une activité <xref:System.Activities.Statements.Sequence> dans la section de corps du <xref:System.ServiceModel.Activities.TransactedReceiveScope>. Dans l'activité <xref:System.Activities.Statements.Sequence>, faites glisser deux activités <xref:System.Activities.Statements.WriteLine> et définissez les propriétés <xref:System.Activities.Statements.WriteLine.Text%2A> conformément aux indications du tableau suivant.  
   
-    |Activité|Valeur|  
+    |Activité|Value|  
     |--------------|-----------|  
     |1re WriteLine|« Service : réception terminée »|  
     |2e WriteLine|"Service: Received = " + requestMessage|  
@@ -140,10 +141,10 @@ Les services et clients de workflow peuvent participer aux transactions.  Pour q
   
 10. Faites glisser une activité <xref:System.Activities.Statements.Assign> après l'activité `PrintTransactionInfo` et définissez ses propriétés conformément aux indications du tableau suivant.  
   
-    |Propriété|Valeur|  
+    |Propriété|Value|  
     |--------------|-----------|  
-    |Pour|replyMessage|  
-    |Valeur|"Service: Sending reply."|  
+    |À|replyMessage|  
+    |Value|"Service: Sending reply."|  
   
 11. Faites glisser une activité <xref:System.Activities.Statements.WriteLine> après l'activité <xref:System.Activities.Statements.Assign> et affectez à sa propriété <xref:System.Activities.Statements.WriteLine.Text%2A> la valeur "Service: Begin reply."  
   
@@ -189,7 +190,7 @@ Les services et clients de workflow peuvent participer aux transactions.  Pour q
   
 8.  Faites glisser une activité <xref:System.ServiceModel.Activities.Send> après l'activité <xref:System.Activities.Statements.Assign> et définissez les propriétés suivantes :  
   
-    |Propriété|Valeur|  
+    |Propriété|Value|  
     |--------------|-----------|  
     |EndpointConfigurationName|workflowServiceEndpoint|  
     |OperationName|StartSample|  
@@ -324,5 +325,5 @@ Les services et clients de workflow peuvent participer aux transactions.  Pour q
   
 ## <a name="see-also"></a>Voir aussi  
  [Services de workflow](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
- [Vue d’ensemble des Transactions de Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/transactions-overview.md)  
+ [Vue d’ensemble des transactions Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/transactions-overview.md)  
  [Utilisation de TransactedReceiveScope](../../../../docs/framework/windows-workflow-foundation/samples/use-of-transactedreceivescope.md)

@@ -19,11 +19,12 @@ caps.latest.revision: "18"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 12599c0bdf249271e8cd28e5a7591c130b1fd920
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 978cb7dcfd132ea253fcb5f13174e14c7341f11a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="guidelines-and-best-practices"></a>Indications et meilleures pratiques
 Cette section contient des rubriques qui fournissent des indications sur la création des applications [!INCLUDE[indigo1](../../../includes/indigo1-md.md)].  
@@ -33,7 +34,7 @@ Cette section contient des rubriques qui fournissent des indications sur la cré
  Explique comment et quand créer des contrats de données qui ne s'interrompent pas lorsque des futures versions sont créées.  
   
  [Gestion des versions des services](../../../docs/framework/wcf/service-versioning.md)  
- Explique comment tenir compte du contrôle de version dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Après le déploiement, il peut s'avérer nécessaire de modifier les services (et les points de terminaison qu'ils exposent) pour, par exemple, satisfaire les spécifications informatiques et commerciales en constante évolution, ou résoudre des problèmes. Chaque modification introduit une nouvelle version du service.  
+ Explique comment tenir compte du contrôle de version dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Après le déploiement, il peut s’avérer nécessaire de modifier les services (et les points de terminaison qu’ils exposent) pour, par exemple, satisfaire les exigences informatiques et commerciales en constante évolution, ou résoudre des problèmes. Chaque modification introduit une nouvelle version du service.  
   
  [Équilibrage de charge](../../../docs/framework/wcf/load-balancing.md)  
  Répertorie des indications sur l'équilibrage de charge avec une batterie de serveurs Web.  

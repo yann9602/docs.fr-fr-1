@@ -19,23 +19,24 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b69c17b9fcb14bbd70b60c32965fb1163c22e765
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: db0a304a908e906b635672eed1a84f0277284ad7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Gestion des revendications et autorisation avec le modèle d'identité
-Une autorisation correspond au processus permettant d'identifier les entités autorisées à changer ou à consulter des ressources informatiques ou à y accéder d'une manière ou d'une autre. Par exemple, dans une entreprise, seuls les responsables peuvent avoir accès aux fichiers des employés. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] prend en charge deux mécanismes pour exécuter le traitement des autorisations. Le premier mécanisme vous permet de contrôler les processus d'autorisation à l'aide des constructions CLR (Common Language Runtime) existantes. Le deuxième est un modèle basé sur les revendications appelé le *modèle d’identité*. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise le modèle d'identité pour créer des revendications à partir des messages entrants. Les classes de ce modèle peuvent être étendues pour assurer la prise en charge de nouveaux types de revendication lorsqu'un schéma d'autorisation personnalisé est utilisé. Cette rubrique présente les principaux concepts de programmation du modèle d'identité et répertorie les principales classes utilisées par cette fonctionnalité.  
+Une autorisation correspond au processus permettant d'identifier les entités autorisées à changer ou à consulter des ressources informatiques ou à y accéder d'une manière ou d'une autre. Par exemple, dans une entreprise, seuls les responsables peuvent avoir accès aux fichiers des employés. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] prend en charge deux mécanismes pour exécuter le traitement des autorisations. Le premier mécanisme vous permet de contrôler les processus d'autorisation à l'aide des constructions CLR (Common Language Runtime) existantes. Le deuxième est un modèle basé sur les revendications appelé le *modèle d’identité*. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise le modèle d'identité pour créer des revendications à partir des messages entrants. Les classes de ce modèle peuvent être étendues pour assurer la prise en charge de nouveaux types de revendication lorsqu'un schéma d'autorisation personnalisé est utilisé. Cette rubrique présente les principaux concepts de programmation de la fonctionnalité modèle d’identité et répertorie les principales classes utilisées par cette fonctionnalité.  
   
 ## <a name="identity-model-scenarios"></a>Scénarios d'utilisation du modèle d'identité  
  Les scénarios suivants présentent différents cas d'utilisation de la fonctionnalité Modèle d'identité.  
   
 ### <a name="scenario-1-supporting-identity-role-and-group-claims"></a>Scénario 1 : Prise en charge des revendications de groupe, de rôle et d'identité  
- Les utilisateurs envoient des messages à un service Web. Les spécifications de contrôle d'accès du service Web utilisent les groupes, les rôles et l'identité. L'expéditeur du message est mappé à un ensemble de rôles ou de groupes. Les informations concernant les rôles et les groupe sont utilisées pour effectuer les vérifications requises en matière d'accès.  
+ Les utilisateurs envoient des messages à un service Web. Les exigences de contrôle d’accès du service Web utilisent les groupes, les rôles et l’identité. L'expéditeur du message est mappé à un ensemble de rôles ou de groupes. Les informations concernant les rôles et les groupe sont utilisées pour effectuer les vérifications requises en matière d'accès.  
   
 ### <a name="scenario-2-supporting-rich-claims"></a>Scénario 2 : prise en charge des revendications enrichies  
- Les utilisateurs envoient des messages à un service Web. Les spécifications de contrôle d'accès du service Web nécessitent le recours à un modèle enrichi, l'identité, les rôles ou les groupes étant insuffisants. Le service Web détermine si un utilisateur donné est autorisé à accéder à une ressource protégée particulière en utilisant le modèle basé sur les revendications enrichies. Par exemple, un utilisateur peut être autorisé à consulter des informations particulières, telles que les informations concernant les salaires, auxquelles les autres utilisateurs ne sont pas autorisés à accéder.  
+ Les utilisateurs envoient des messages à un service Web. Les exigences de contrôle d’accès du service Web nécessitent le recours à un modèle enrichi, l’identité, les rôles ou les groupes étant insuffisants. Le service Web détermine si un utilisateur donné est autorisé à accéder à une ressource protégée particulière en utilisant le modèle basé sur les revendications enrichies. Par exemple, un utilisateur peut être autorisé à consulter des informations particulières, telles que les informations concernant les salaires, auxquelles les autres utilisateurs ne sont pas autorisés à accéder.  
   
 ### <a name="scenario-3-mapping-disparate-claims"></a>Scénario 3 : mappage de revendications distinctes  
  Un utilisateur envoie un message à un service Web. L'utilisateur peut spécifier ses informations d'identification de différentes façons : Certificat X.509, jeton de nom d'utilisateur ou jeton Kerberos. Le service Web doit effectuer les contrôles d'accès de la même façon, quel que soit le type utilisé pour définir les informations d'identification de l'utilisateur. Si, au fil du temps, de nouveaux types d'informations d'identification sont pris en charge, le système devra évoluer en conséquence.  
@@ -74,12 +75,12 @@ Une autorisation correspond au processus permettant d'identifier les entités au
  Il s'agit de l'ensemble des informations associées à un contexte d'évaluation ou d'autorisation.  
   
  Ressources protégées  
- Il s'agit de ressources pouvant être utilisées ou manipulées d'une manière ou d'une autre uniquement si certaines conditions sont remplies.  
+ Il s’agit de ressources pouvant être utilisées ou manipulées d’une manière ou d’une autre uniquement si certaines conditions sont remplies.  
   
- Droite  
+ Droit  
  Les droits correspondent aux fonctions pouvant être exécutées sur une ressource donnée. Les droits définis par l'API du modèle d'identité sont des propriétés de la classe <xref:System.IdentityModel.Claims.Rights>. Les types de droits fournis par le système sont notamment <xref:System.IdentityModel.Claims.Rights.Identity%2A> et <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>.  
   
- Valeur  
+ Value  
  Il s'agit de la valeur sur laquelle l'utilisateur a des droits.  
   
 ## <a name="claims"></a>Revendications  
@@ -124,13 +125,13 @@ Une autorisation correspond au processus permettant d'identifier les entités au
  Évaluer un groupe de stratégies d'autorisation associées s'apparente à utiliser une machine pour fabriquer des clés. Après évaluation de toutes les stratégies d'autorisation, des ensembles de revendications sont générés, donnant ainsi leur forme aux clés. Lorsque les clés ont leur forme définitive, elles peuvent être utilisées afin de tenter d'ouvrir certaines serrures. La forme des clés est stockée dans un « contexte d'autorisation », lequel est créé par un gestionnaire d'autorisations.  
   
 ### <a name="authorization-context"></a>Contexte d'autorisation  
- Les gestionnaires d'autorisations évaluent les différentes stratégies d'autorisation comme décrit. Le résultat de cette évaluation correspond à un contexte d'autorisation, c'est-à-dire à un ensemble d'ensembles de revendications et de propriétés afférentes. Le contexte d'autorisation peut être examiné afin d'identifier les revendications, les relations qu'elles entretiennent entre elles (par exemple, s'agissant des ensembles de revendications remplissant la fonction d'émetteur) et enfin afin de les comparer avec les spécifications requises pour accéder à une ressource donnée.  
+ Les gestionnaires d'autorisations évaluent les différentes stratégies d'autorisation comme décrit. Le résultat de cette évaluation correspond à un contexte d'autorisation, c'est-à-dire à un ensemble d'ensembles de revendications et de propriétés afférentes. Le contexte d’autorisation peut être examiné afin d’identifier les revendications, les relations qu’elles entretiennent entre elles (par exemple, s’agissant des ensembles de revendications remplissant la fonction d’émetteur) et enfin afin de les comparer avec les exigences requises pour accéder à une ressource donnée.  
   
 ### <a name="locks"></a>Serrures  
  Si un contexte d'autorisation (c'est-à-dire un ensemble de revendications) correspond à une clé, les spécifications qui doivent être respectées pour permettre l'accès à une ressource protégée sont la serrure que cette clé doit ouvrir. Le modèle d'identité ne spécifie pas formellement les modalités selon lesquelles ces spécifications sont exprimées, mais, en raison de la nature du système, c'est-à-dire basée sur des revendications, implique la comparaison des revendications présentes dans le contexte d'autorisation avec certains ensembles de revendications requises.  
   
 ### <a name="a-recap"></a>En résumé  
- Le modèle d'identité s'appuie sur le concept des revendications. Les revendications sont regroupées dans des ensembles, lesquels sont regroupées dans un contexte d'autorisation. Un contexte d'autorisation contient un ensemble de revendications et correspond au résultat de l'évaluation d'une ou plusieurs stratégies d'autorisation associées à un gestionnaire d'autorisations. Cet ensemble de revendications peut ensuite être examiné afin de déterminer si les spécifications d'accès requises sont respectées. L'illustration suivante révèle la manière dont ces différents concepts du modèle d'identité sont liés entre eux.  
+ Le modèle d'identité s'appuie sur le concept des revendications. Les revendications sont regroupées dans des ensembles, lesquels sont regroupées dans un contexte d'autorisation. Un contexte d'autorisation contient un ensemble de revendications et correspond au résultat de l'évaluation d'une ou plusieurs stratégies d'autorisation associées à un gestionnaire d'autorisations. Cet ensemble de revendications peut ensuite être examiné afin de déterminer si les exigences d’accès requises sont respectées. L'illustration suivante révèle la manière dont ces différents concepts du modèle d'identité sont liés entre eux.  
   
  ![Gestion des revendications et autorisation](../../../../docs/framework/wcf/feature-details/media/xsi-recap.gif "xsi_recap")  
   
@@ -138,7 +139,7 @@ Une autorisation correspond au processus permettant d'identifier les entités au
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise l'infrastructure du modèle d'identité pour effectuer les contrôles d'autorisation. Dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], le <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> classe vous permet de spécifier *autorisation* stratégies en tant que partie d’un service. Ces stratégies d’autorisation sont appelées *stratégies d’autorisation externes*, et ils peuvent effectuer le traitement des revendications basé sur la stratégie locale ou en interagissant avec un service distant. Le Gestionnaire d’autorisations, représenté par le <xref:System.ServiceModel.ServiceAuthorizationManager> classe évalue les stratégies d’autorisation externes ainsi que des stratégies d’autorisation reconnaissant divers types (jetons) des informations d’identification et remplit ce que l'on appelle un  *contexte d’autorisation* des revendications associées à un message entrant. Le contexte d'autorisation est représenté par la classe <xref:System.IdentityModel.Policy.AuthorizationContext>.  
   
 ## <a name="identity-model-programming"></a>Programmation du modèle d'identité  
- La table suivante décrit le modèle d'objet utilisé pour programmer les extensions du modèle d'identité. Toutes ces classes existent dans <xref:System.IdentityModel.Policy> ou dans les espaces de noms <xref:System.IdentityModel.Claims>.  
+ La table suivante décrit le modèle d’objet utilisé pour programmer les extensions du modèle d’identité. Toutes ces classes existent dans <xref:System.IdentityModel.Policy> ou dans les espaces de noms <xref:System.IdentityModel.Claims>.  
   
 |Classe|Description|  
 |-----------|-----------------|  
@@ -182,10 +183,10 @@ Une autorisation correspond au processus permettant d'identifier les entités au
  <xref:System.IdentityModel.Selectors>  
  [Revendications et jetons](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)  
  [Revendications et refus de l’accès aux ressources](../../../../docs/framework/wcf/feature-details/claims-and-denying-access-to-resources.md)  
- [Création de revendications et des valeurs de ressource](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)  
- [Comment : créer une revendication personnalisée](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)  
- [Comment : comparer des revendications](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)  
- [Comment : créer une stratégie d’autorisation personnalisée](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-policy.md)  
- [Comment : créer un gestionnaire d’autorisation personnalisé pour un Service](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)  
+ [Création de revendications et valeurs de ressource](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)  
+ [Guide pratique pour créer une revendication personnalisée](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)  
+ [Guide pratique pour comparer des revendications](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)  
+ [Guide pratique pour créer une stratégie d’autorisation personnalisée](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-policy.md)  
+ [Guide pratique pour créer un gestionnaire d’autorisations personnalisé pour un service](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)  
  [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Autorisation](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)

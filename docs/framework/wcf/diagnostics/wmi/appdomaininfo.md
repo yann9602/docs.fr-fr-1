@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 76fee9673514287dd120a215fc843e4d995e68c0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ed5053dd69628a9f5ff7318ce7fe772f42de6e24
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="appdomaininfo"></a>AppDomainInfo
 Informations du domaine d'application  
@@ -90,7 +91,7 @@ class AppDomainInfo
   
  Écouteurs de suivi de la collection qui écoutent la source de suivi System.Wmi.MessageLogging.  
   
-### <a name="name"></a>Nom  
+### <a name="name"></a>Name  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
@@ -116,7 +117,7 @@ class AppDomainInfo
   
  Type d'accès : lecture seule  
   
- Chemin d'accès à la configuration du service.  
+ Chemin d’accès à la configuration du service.  
   
 ### <a name="tracelevel"></a>TraceLevel  
  Type de données : chaîne  
@@ -130,9 +131,9 @@ class AppDomainInfo
   
  Type d'accès : lecture seule  
   
- Collection d'écouteurs de la source de suivi System.ServiceModel.  
+ Collection d’écouteurs de la source de suivi System.ServiceModel.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

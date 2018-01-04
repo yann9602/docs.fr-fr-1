@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cd96404adea7fb8e7d59dcea322b2d3832f2bfe4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: df2a7a78e876ec3228491569c918ad9add2e080d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="replay-attacks"></a>Attaques par relecture
 A *attaque par relecture* se produit lorsqu’un intrus copie un flux de messages entre deux correspondants et relit le flux à un ou plusieurs des parties. Sauf atténuation, les ordinateurs sujets à l'attaque traitent le flux comme messages légitimes, ce qui a des conséquences néfastes telles que des ordres redondants d'un élément.  
@@ -35,7 +36,7 @@ A *attaque par relecture* se produit lorsqu’un intrus copie un flux de message
   
  Les seules liaisons susceptibles aux attaques de réflexion sont celles sans WS-Addressing : des liaisons personnalisées pour lesquelles WS-Addressing est désactivé et qui utilisent la sécurité basée sur clé symétrique. Le <xref:System.ServiceModel.BasicHttpBinding> n'utilise pas WS-Addressing par défaut, mais il n'utilise pas la sécurité basée sur clé symétrique d'une manière qui lui permet d'être vulnérable à cette attaque.  
   
- La limitation des risques pour les liaisons personnalisées consiste à ne pas établir de contexte de sécurité ou à requérir des en-têtes WS-Addressing.  
+ L’atténuation pour les liaisons personnalisées consiste à ne pas établir de contexte de sécurité ou à requérir des en-têtes WS-Addressing.  
   
 ## <a name="web-farm-attacker-replays-request-to-multiple-nodes"></a>Batterie de serveurs Web : l'intrus relit la demande à plusieurs nœuds  
  Un client utilise un service implémenté sur une batterie de serveurs Web. Un intrus relit une demande qui a été envoyée à un nœud de la ferme à un autre nœud de la ferme. De plus, si un service est redémarré, le cache de relecture est vidé, ce qui permet à un intrus de relire la demande. (Le cache contient des valeurs de signature de message utilisées et vues précédemment et il empêche toute relecture ; ces signatures ne peuvent donc être utilisées qu'une seule fois. Les caches de relecture ne sont pas partagés dans une batterie de serveurs Web.)  
@@ -47,9 +48,9 @@ A *attaque par relecture* se produit lorsqu’un intrus copie un flux de message
 -   Configurez le service pour utiliser la sécurité de niveau transport.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Considérations sur la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [Considérations relatives à la sécurité](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
  [Divulgation d’informations](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
  [Élévation de privilèges](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- [Déni de Service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [Déni de service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
  [Falsification](../../../../docs/framework/wcf/feature-details/tampering.md)  
  [Scénarios non pris en charge](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)

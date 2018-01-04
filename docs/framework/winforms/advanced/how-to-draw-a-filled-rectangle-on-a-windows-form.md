@@ -22,11 +22,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: dce1a8d1070ed1d016da0c94c1f3ecc1ed9df389
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 17d143c0c265fea876d084ebc21663d93553fe9d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-draw-a-filled-rectangle-on-a-windows-form"></a>Comment : dessiner un rectangle rempli dans un Windows Form
 Cet exemple dessine un rectangle rempli dans un formulaire.  

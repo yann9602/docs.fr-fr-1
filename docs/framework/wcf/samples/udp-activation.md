@@ -13,11 +13,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 32c452042ffee0a09143042900d24b7429234bec
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 65bbc7d8b6b4cb74be12e9460b173e73e1873765
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="udp-activation"></a>UDP Activation
 Cet exemple est basé sur le [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) exemple. Il étend le [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) exemple pour prendre en charge l’activation de processus à l’aide du Service de l’Activation des processus Windows (WAS).  
@@ -93,9 +94,9 @@ Cet exemple est basé sur le [Transport : UDP](../../../../docs/framework/wcf/s
   
 2.  Générez le projet sur Windows Vista. Après la compilation, il effectue également les opérations suivantes dans la phase de post-génération :  
   
-    -   Installe la liaison UDP avec le site « Site Web par défaut » ;  
+    -   Installe la liaison UDP avec le site « Site web par défaut » ;  
   
-    -   Crée l'application virtuelle « ServiceModelSamples » qui doit pointer vers le chemin d'accès physique : « %SystemDrive%\inetpub\wwwroot\servicemodelsamples » ;  
+    -   Crée l’application virtuelle « ServiceModelSamples » qui doit pointer vers le chemin d’accès physique : « %SystemDrive%\inetpub\wwwroot\servicemodelsamples » ;  
   
     -   Il active également le protocole « net.udp » pour cette application virtuelle.  
   
@@ -108,7 +109,7 @@ Cet exemple est basé sur le [Transport : UDP](../../../../docs/framework/wcf/s
 4.  Cliquez sur le **Activation** onglet de l’application d’interface utilisateur « WasNetActivator.exe ». Cliquez sur le **Démarrer** bouton pour démarrer l’adaptateur d’écouteur. Vous êtes maintenant prêt à exécuter le programme.  
   
     > [!NOTE]
-    >  Lorsque vous avez terminé avec cet exemple, vous devez exécuter Cleanup.bat pour supprimer la liaison net.udp du « Site Web par défaut ».  
+    >  Lorsque vous avez terminé avec cet exemple, vous devez exécuter Cleanup.bat pour supprimer la liaison net.udp du « Site web par défaut ».  
   
 ## <a name="sample-usage"></a>Utilisation de l'exemple  
  Après la compilation, quatre binaires différents sont générés :  

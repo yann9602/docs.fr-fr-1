@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 31006331f5e8a71bf3f4fb9a68c31cb32d0b6f2b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fde00011a7fffde4c4c75f9605758971b42627f4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="operating-system-resources-required-by-wcf"></a>Ressources de système d'exploitation requises par WCF
 Le fonctionnement de [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] dépend de plusieurs ressources fournies par le système d'exploitation. Le tableau suivant répertorie ces ressources.  

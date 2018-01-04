@@ -13,11 +13,12 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8f001f4f8fac2e0366aa705d1998fe33d6dc4438
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 89fb080a890ee866ab16882065bd35495fadfddb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="basic-binding"></a>Liaisons de base
 Cette section contient des exemples de base qui illustrent l’utilisation de l’attribut de liaison d’un élément de point de terminaison.  
@@ -26,7 +27,7 @@ Cette section contient des exemples de base qui illustrent l’utilisation de l�
  [Exemple de sécurité de message](../../../../docs/framework/wcf/samples/message-security-sample.md)  
  Montre comment implémenter une application qui utilise le `basicHttpBinding` et la sécurité du message.  
   
- [BasicBinding avec la sécurité de Transport](../../../../docs/framework/wcf/samples/basicbinding-with-transport-security.md)  
+ [BasicBinding avec sécurité de transport](../../../../docs/framework/wcf/samples/basicbinding-with-transport-security.md)  
  Illustre l’utilisation de la sécurité de transport SSL avec la liaison de base.  
   
  [BasicBinding](../../../../docs/framework/wcf/samples/basicbinding.md)  

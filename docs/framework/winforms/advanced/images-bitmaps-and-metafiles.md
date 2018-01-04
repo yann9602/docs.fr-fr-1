@@ -18,11 +18,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3f48027e413f9573158cfa2c3748fc93408b3f83
-ms.sourcegitcommit: c2e216692ef7576a213ae16af2377cd98d1a67fa
+ms.workload: dotnet
+ms.openlocfilehash: 67f72847e5dca20acd623c566a882e0094e94f68
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="images-bitmaps-and-metafiles"></a>Images, bitmaps et métafichiers
 La classe `Image` est une classe de base abstraite qui fournit des méthodes pour utiliser des images raster (bitmaps) et des images vectorielles (métafichiers). La classe `Bitmap` et la classe <xref:System.Drawing.Imaging.Metafile> héritent toutes deux de la classe `Image`. La classe `Bitmap` étend les fonctionnalités de la classe `Image` en fournissant des méthodes supplémentaires pour le chargement, l'enregistrement et la manipulation d'images raster. La classe <xref:System.Drawing.Imaging.Metafile> étend les fonctionnalités de la classe `Image` en fournissant des méthodes supplémentaires pour l'enregistrement et l'examen d'images vectorielles.  

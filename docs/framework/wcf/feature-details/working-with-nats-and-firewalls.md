@@ -16,11 +16,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5587300edf739eedb99084735eda81538ab61ef7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
-ms.translationtype: HT
+ms.workload: dotnet
+ms.openlocfilehash: cae680c8958c86dc57a2aff3c2d567e1fdac981d
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="working-with-nats-and-firewalls"></a>Utilisation des NAT et des pare-feu
 Il arrive fréquemment que les client et serveur d’une connexion réseau ne disposent pas d’une voie de communication directe et ouverte. Les paquets sont filtrés, acheminés, analysés et transformés par les ordinateurs de point de terminaison ainsi que par les ordinateurs intermédiaires sur le réseau. Ces ordinateurs intermédiaires, qui participent à la communication, sont notamment les applications de traduction d'adresses réseau (Network address translation, NAT) et les pare-feu.  
@@ -65,14 +66,14 @@ Il arrive fréquemment que les client et serveur d’une connexion réseau ne di
   
 |Adressabilité|Serveur Direct|Serveur Direct avec parcours NAT|Serveur NAT|Serveur NAT avec parcours NAT|  
 |--------------------|-------------------|--------------------------------------|----------------|-----------------------------------|  
-|Client direct|Tout transport et MEP|Tout transport et MEP|Non prise en charge.|Non prise en charge.|  
-|Client direct avec parcours NAT|Tout transport et MEP|Tout transport et MEP|Non prise en charge.|TCP avec Teredo et tout MEP. [!INCLUDE[wv](../../../../includes/wv-md.md)] dispose d'une option de configuration à l'échelle de l'ordinateur permettant de prendre en charge HTTP avec Teredo.|  
-|Client NAT|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Non prise en charge.|Non prise en charge.|  
-|Client NAT avec parcours NAT|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport sauf HTTP double et tout MEP. Un MEP duplex nécessite un transport TCP. Un transport TCP double nécessite Teredo. [!INCLUDE[wv](../../../../includes/wv-md.md)] dispose d'une option de configuration à l'échelle de l'ordinateur permettant de prendre en charge HTTP avec Teredo.|Non prise en charge.|TCP avec Teredo et tout MEP. [!INCLUDE[wv](../../../../includes/wv-md.md)] dispose d'une option de configuration à l'échelle de l'ordinateur permettant de prendre en charge HTTP avec Teredo.|  
+|Client direct|Tout transport et MEP|Tout transport et MEP|Non pris en charge.|Non pris en charge.|  
+|Client direct avec parcours NAT|Tout transport et MEP|Tout transport et MEP|Non pris en charge.|TCP avec Teredo et tout MEP. [!INCLUDE[wv](../../../../includes/wv-md.md)] dispose d'une option de configuration à l'échelle de l'ordinateur permettant de prendre en charge HTTP avec Teredo.|  
+|Client NAT|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Non pris en charge.|Non pris en charge.|  
+|Client NAT avec parcours NAT|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport sauf HTTP double et tout MEP. Un MEP duplex nécessite un transport TCP. Un transport TCP double nécessite Teredo. [!INCLUDE[wv](../../../../includes/wv-md.md)] dispose d'une option de configuration à l'échelle de l'ordinateur permettant de prendre en charge HTTP avec Teredo.|Non pris en charge.|TCP avec Teredo et tout MEP. [!INCLUDE[wv](../../../../includes/wv-md.md)] dispose d'une option de configuration à l'échelle de l'ordinateur permettant de prendre en charge HTTP avec Teredo.|  
   
 |Restrictions de pare-feu|Serveur ouvert|Serveur avec pare-feu managé|Serveur avec pare-feu autorisant uniquement HTTP|Serveur avec pare-feu autorisant uniquement les connexions sortantes|  
 |---------------------------|-----------------|----------------------------------|-------------------------------------|-----------------------------------------|  
-|Client ouvert|Tout transport et MEP|Tout transport et MEP|Tout transport HTTP et MEP|Non prise en charge.|  
-|Client avec pare-feu managé|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport HTTP et MEP|Non prise en charge.|  
-|Client avec pare-feu autorisant uniquement HTTP|Tout transport HTTP et MEP|Tout transport HTTP et MEP|Tout transport HTTP et MEP|Non prise en charge.|  
-|Client avec pare-feu autorisant uniquement les connexions sortantes|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport HTTP et tout MEP non duplex.|Non prise en charge.|
+|Client ouvert|Tout transport et MEP|Tout transport et MEP|Tout transport HTTP et MEP|Non pris en charge.|  
+|Client avec pare-feu managé|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport HTTP et MEP|Non pris en charge.|  
+|Client avec pare-feu autorisant uniquement HTTP|Tout transport HTTP et MEP|Tout transport HTTP et MEP|Tout transport HTTP et MEP|Non pris en charge.|  
+|Client avec pare-feu autorisant uniquement les connexions sortantes|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport non double et tout MEP. Un MEP duplex nécessite un transport TCP.|Tout transport HTTP et tout MEP non duplex.|Non pris en charge.|

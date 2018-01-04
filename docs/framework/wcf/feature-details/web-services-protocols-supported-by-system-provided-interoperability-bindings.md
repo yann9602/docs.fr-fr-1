@@ -17,11 +17,12 @@ caps.latest.revision: "39"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1cc61b1b777de7149b8f12c0b2f6030b305a73c
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4bfc4342435580796423056889b1c3bd22153740
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protocoles de services Web pris en charge par des liaisons d’interopérabilité fournies par le système
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a été conçu pour interagir avec les services Web qui prennent en charge un ensemble de spécifications connues sous le nom de spécifications de services Web. Pour simplifier la configuration de service afin d'obtenir les meilleures pratiques d'interopérabilité, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] introduit trois liaisons interopérables fournies par le système : <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>et <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. Afin de permettre l'interopérabilité avec les standards OASIS (Organization for the Advancement of Structured Information Standards), [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] inclut une liaison interopérable fournie par le système : <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>. Pour la publication des métadonnées, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] inclut deux liaisons interopérables fournies par le système : [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) et [ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). Cette rubrique répertorie les spécifications prises en charge par les liaisons interopérable fournies par le système.  
@@ -34,10 +35,10 @@ ms.lasthandoff: 12/02/2017
 > [!NOTE]
 >  Pour plus d’informations sur les liaisons utilisées pour publier des métadonnées, consultez la section « Liaisons de métadonnées fournies par le système » développée ultérieurement dans cette rubrique.  
   
-|Catégorie|Protocole|Spécification et utilisation|  
+|Category|Protocole|Spécification et utilisation|  
 |--------------|--------------|-----------------------------|  
 |Transport|HTTP 1.1|[PROTOCOLE HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> `BasicHttpBinding`, `WSHttpBinding` et `WS2007HttpBinding` utilisent les transports HTTP et HTTPS.|  
-|Messagerie|MTOM|[MTOM](http://go.microsoft.com/fwlink/?LinkId=95326)<br /><br /> `basicHttpBinding`, `wsHttpBinding` et `ws2007HttpBinding` prennent en charge MTOM (Message Transmission Optimization Mechanism). Non utilisé par défaut. Pour utiliser MTOM, affectez `messageEncoding` à l'attribut `"Mtom"`.<br /><br /> Exemple :<br /><br /> `<wsHttpBinding> <binding messageEncoding="Mtom"/> </wsHttpBinding>`|  
+|Messagerie|MTOM|[MTOM](http://go.microsoft.com/fwlink/?LinkId=95326)<br /><br /> `basicHttpBinding`, `wsHttpBinding` et `ws2007HttpBinding` prennent en charge MTOM (Message Transmission Optimization Mechanism). Non utilisé par défaut. Pour utiliser MTOM, affectez `messageEncoding` à l'attribut `"Mtom"`.<br /><br /> Exemple :<br /><br /> `<wsHttpBinding> <binding messageEncoding="Mtom"/> </wsHttpBinding>`|  
 |Métadonnées|WSDL 1.1|[WSDL 1.1](http://go.microsoft.com/fwlink/?LinkId=94859)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise WSDL (Web Services Description Language) pour décrire des services.|  
 |Métadonnées|WS-Policy|[WS-Policy.](http://go.microsoft.com/fwlink/?LinkId=94864)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise la spécification WS-Policy avec des assertions spécifiques au domaine pour décrire des spécifications de service et des fonctions.|  
 |Métadonnées|WS-Policy 1.5|[WS-Policy 1.5](http://go.microsoft.com/fwlink/?LinkId=95327)<br /><br /> [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise la spécification WS-Policy avec des assertions spécifiques au domaine pour décrire des spécifications de service et des fonctions.|  
@@ -46,7 +47,7 @@ ms.lasthandoff: 12/02/2017
   
 ### <a name="basichttpbinding"></a>basicHttpBinding  
   
-|Catégorie|Protocole|Spécification et utilisation|  
+|Category|Protocole|Spécification et utilisation|  
 |--------------|--------------|-----------------------------|  
 |Messagerie|SOAP 1,1|[SOAP 1.1](http://go.microsoft.com/fwlink/?LinkId=90520)<br /><br /> Conformément à Basic Profile 1.1, l'élément `basicHttpBinding` implémente le protocole de messagerie SOAP 1.1.|  
 |Sécurité|WSS SOAP Message Security 1.0|[WSS SOAP Message Security 1.0](http://go.microsoft.com/fwlink/?LinkId=94684)<br /><br /> Conformément à Basic Security Profile, l'élément `basicHttpBinding` implémente la spécification WSS (Web Services Security) SOAP Message Security 1.0 pour le nom d'utilisateur/mot de passe et la sécurité basée sur les certificats X.509.<br /><br /> `<basicHttpBinding> <binding name="Binding1"> <security mode="TransportWithMessageCredential &#124;                     "Message" .../> </binding> </basicHttpBinding>`|  
@@ -55,7 +56,7 @@ ms.lasthandoff: 12/02/2017
   
 ### <a name="wshttpbinding-ws2007httpbinding-and-wsdualhttpbinding"></a>wsHttpBinding, ws2007HttpBinding et wsDualHttpBinding  
   
-|Catégorie|Protocole|Spécification et utilisation|  
+|Category|Protocole|Spécification et utilisation|  
 |--------------|--------------|-----------------------------|  
 |Messagerie|SOAP 1.2|[Manuel de](http://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Infrastructure de messagerie](http://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Compléments (y compris la liaison HTTP)](http://go.microsoft.com/fwlink/?LinkId=95329)|  
 |Messagerie|WS-Addressing 2005/08|[Web Services Addressing 1.0 - éléments principaux](http://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Les Services Web 1.0 - SOAP adressage](http://go.microsoft.com/fwlink/?LinkId=95330)<br /><br /> `wsHttpBinding`, `ws2007HttpBinding` et `wsDualHttpBinding` implémentent la recommandation W3C (World Wide Web Consortium) WS-Addressing pour activer la messagerie asynchrone, la corrélation de messages et les mécanismes d'adressage indépendant du transport.<br /><br /> WCF ne prend pas en charge le chiffrement des en-têtes WS-Addressing bien que cela soit autorisé par les spécifications WS-*.|  
@@ -101,7 +102,7 @@ ms.lasthandoff: 12/02/2017
 ### <a name="mexhttpbinding"></a>mexHttpBinding  
  Le [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) liaison prend en charge les protocoles suivants. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]à l’aide de cette liaison, consultez [publication des métadonnées](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
   
-|Catégorie|Protocole|Spécification et utilisation|  
+|Category|Protocole|Spécification et utilisation|  
 |--------------|--------------|-----------------------------|  
 |Transport|HTTP 1.1|[PROTOCOLE HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)|  
 |Messagerie|SOAP 1.2|[Manuel de](http://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Infrastructure de messagerie](http://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Compléments (y compris la liaison HTTP)](http://go.microsoft.com/fwlink/?LinkId=95329)|  
@@ -111,7 +112,7 @@ ms.lasthandoff: 12/02/2017
 ### <a name="mexhttpsbinding"></a>mexHttpsBinding  
  [\<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md) prend en charge les protocoles suivants. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]à l’aide de cette liaison, consultez [publication des métadonnées](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
   
-|Catégorie|Protocole|Spécification et utilisation|  
+|Category|Protocole|Spécification et utilisation|  
 |--------------|--------------|-----------------------------|  
 |Transport|HTTP 1.1|[PROTOCOLE HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> La sécurité de transport est activée.|  
 |Messagerie|SOAP 1.2|[Manuel de](http://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Infrastructure de messagerie](http://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Compléments (y compris la liaison HTTP)](http://go.microsoft.com/fwlink/?LinkId=95329)|  

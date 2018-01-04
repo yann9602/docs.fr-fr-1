@@ -16,11 +16,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 718f3c8fd2d6ed3434f7231e3ccaf8cf1a663875
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0a1a6ef03b3ee0cc68809ec6ba80a7eadbc44cb1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="service-channel-level-programming"></a>Programmation de service au niveau du canal
 Cette rubrique décrit comment écrire une application de service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] sans utiliser le <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> et son modèle objet associé.  
@@ -38,7 +39,7 @@ Cette rubrique décrit comment écrire une application de service [!INCLUDE[indi
   
 5.  Fermer tous les objets de canal.  
   
-#### <a name="creating-a-binding"></a>Création d'une liaison  
+#### <a name="creating-a-binding"></a>Création d’une liaison  
  La première étape pour écouter et recevoir des messages consiste à créer une liaison. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est fourni avec plusieurs liaisons intégrées ou fournies par le système qui peuvent être utilisées directement ou par instanciation. Vous pouvez également créer votre propre liaison personnalisée en instanciant une classe CustomBinding, comme dans le code n°1.  
   
  L'exemple de code suivant crée une instance de <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> et ajoute un <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> à sa collection Elements qui est une collection d'éléments de liaison utilisés pour générer la pile de canaux. Dans cet exemple, la collection d'éléments ayant uniquement le <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, la pile de canaux résultante dispose uniquement du canal de transport HTTP.  

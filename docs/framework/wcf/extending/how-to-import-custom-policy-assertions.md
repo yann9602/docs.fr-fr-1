@@ -16,11 +16,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3cc7eecbef66c3e4a80759912260b973d441a8a3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 916f5b820ce9e1c30c13a9834548c83e32bc3579
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-import-custom-policy-assertions"></a>Comment : importer des assertions de stratégie personnalisées
 Les assertions de stratégie décrivent les fonctions et les exigences d’un point de terminaison de service.  Les applications clientes peuvent utiliser des assertions de stratégie dans les métadonnées de service pour configurer la liaison cliente ou personnaliser le contrat de service d'un point de terminaison de service.  
@@ -46,9 +47,9 @@ Les assertions de stratégie décrivent les fonctions et les exigences d’un po
      [!code-csharp[CustomPolicySample#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/custompolicysample/cs/policyimporter.cs#9)]
      [!code-vb[CustomPolicySample#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/custompolicysample/vb/policyimporter.vb#9)]  
   
-2.  Traitez les assertions de stratégie. Notez que le système de stratégie ne normalise pas les stratégies imbriquées et `wsp:optional`. Vous devez traiter ces constructions dans votre implémentation d'extension d'importation de stratégie.  
+2.  Traitez les assertions de stratégie. Notez que le système de stratégie ne normalise pas les stratégies imbriquées et `wsp:optional`. Vous devez traiter ces constructions dans votre implémentation d’extension d’importation de stratégie.  
   
-3.  Exécutez la personnalisation sur la liaison ou le contrat qui prend en charge la fonction ou la spécification spécifiée par l'assertion de stratégie. En général, les assertions indiquent qu'une liaison requiert une configuration particulière ou un élément de liaison spécifique. Apportez ces modifications en accédant à la propriété <xref:System.ServiceModel.Description.PolicyConversionContext.BindingElements%2A?displayProperty=nameWithType>. D'autres assertions requièrent la modification du contrat.  Vous pouvez accéder et modifier le contrat à l'aide de la propriété <xref:System.ServiceModel.Description.PolicyConversionContext.Contract%2A?displayProperty=nameWithType>.  Notez que votre importateur de stratégie peut être appelé plusieurs fois pour la même liaison et le même contrat, mais pour des alternatives de stratégie différentes en cas d'échec de l'importation d'une alternative de stratégie. Votre code doit être résilient à ce comportement.  
+3.  Exécutez la personnalisation sur la liaison ou le contrat qui prend en charge la fonction ou l’exigence spécifiée par l’assertion de stratégie. En général, les assertions indiquent qu'une liaison requiert une configuration particulière ou un élément de liaison spécifique. Apportez ces modifications en accédant à la propriété <xref:System.ServiceModel.Description.PolicyConversionContext.BindingElements%2A?displayProperty=nameWithType>. D'autres assertions requièrent la modification du contrat.  Vous pouvez accéder et modifier le contrat à l'aide de la propriété <xref:System.ServiceModel.Description.PolicyConversionContext.Contract%2A?displayProperty=nameWithType>.  Notez que votre importateur de stratégie peut être appelé plusieurs fois pour la même liaison et le même contrat, mais pour des alternatives de stratégie différentes en cas d’échec de l’importation d’une alternative de stratégie. Votre code doit être résilient à ce comportement.  
   
 4.  Supprimez l'assertion de stratégie personnalisée de la collection d'assertions. Si vous ne supprimez pas l'assertion, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] suppose que l'importation de stratégie a échoué et n'importe pas la liaison associée. Si vous avez utilisé la méthode <xref:System.ServiceModel.Description.PolicyAssertionCollection.Remove%2A?displayProperty=nameWithType> pour localiser l'assertion de stratégie personnalisée et la supprimer de la collection en une étape, cette étape n'est pas nécessaire.  
   

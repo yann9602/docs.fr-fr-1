@@ -12,11 +12,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e60ed6fb2fb85faa1d2d744bf29e40d3eaa639c3
-ms.sourcegitcommit: 8ed4ebc15b5ef89d06a7507dc9d5e306e30accf7
+ms.workload: dotnet
+ms.openlocfilehash: 6943a7eaeaecf8f11de7c10237979067c83c24d8
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Fonctionnalités spécifiques à Windows Workflow Foundation
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] ajoute un certain nombre de fonctionnalités à Windows Workflow Foundation. Ce document décrit quelques-unes de ces nouvelles fonctionnalités et donne des détails relatifs à certains scénarios dans lesquels elles peuvent être utiles.  
@@ -112,11 +113,11 @@ ms.lasthandoff: 12/14/2017
   
 -   Enfin, le <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> permet d'effectuer la gestion centralisée de la configuration du client [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], ce qui est utile dans les cas où une configuration est sélectionnée ou modifiée après le chargement du domaine d'application.  
   
-### <a name="getting-started"></a>Commencer  
+### <a name="getting-started"></a>Prise en main  
   
 -   [Guide du développeur pour WCF 4.0](http://go.microsoft.com/fwlink/?LinkId=204940)  
   
--   [Fabrication de canal de configuration](http://go.microsoft.com/fwlink/?LinkId=204941)  
+-   [Fabrique de canaux de configuration](http://go.microsoft.com/fwlink/?LinkId=204941)  
   
 -   [Élément de point de terminaison standard](http://go.microsoft.com/fwlink/?LinkId=204942)  
   
@@ -141,7 +142,7 @@ ms.lasthandoff: 12/14/2017
   
  Le [DataContractResolver](../../../docs/framework/wcf/samples/datacontractresolver.md) résout ces problèmes dans .NET 4.5.  
   
-### <a name="getting-started"></a>Commencer  
+### <a name="getting-started"></a>Prise en main  
   
 -   [Documentation sur les API de programme de résolution de contrat de données](http://go.microsoft.com/fwlink/?LinkId=204946)  
   
@@ -180,9 +181,9 @@ ms.lasthandoff: 12/14/2017
   
 -   Exemples :  
   
-    -   [Gestion des erreurs dans une activité d’organigramme à l’aide de TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)  
+    -   [Gestion des erreurs dans une activité Flowchart à l’aide de TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)  
   
-    -   [Scénario StateMachine à l’aide d’une combinaison de FlowChart et de choix](../../../docs/framework/windows-workflow-foundation/samples/statemachine-scenario-using-a-combination-of-flowchart-and-pick.md)  
+    -   [Scénario StateMachine à l’aide d’une combinaison de FlowChart et de Pick](../../../docs/framework/windows-workflow-foundation/samples/statemachine-scenario-using-a-combination-of-flowchart-and-pick.md)  
   
     -   [Processus d’embauche](../../../docs/framework/windows-workflow-foundation/samples/hiring-process.md)  
   
@@ -258,9 +259,9 @@ ms.lasthandoff: 12/14/2017
   
 -   Exemples :  
   
-    1.  [Gestion des erreurs dans une activité d’organigramme à l’aide de TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)  
+    1.  [Gestion des erreurs dans une activité Flowchart à l’aide de TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)  
   
-    2.  [À l’aide des activités procédurales](../../../docs/framework/windows-workflow-foundation/samples/using-procedural-activities.md)  
+    2.  [Utilisation d’activités procédurales](../../../docs/framework/windows-workflow-foundation/samples/using-procedural-activities.md)  
   
 -   Documentation relative au concepteur : [concepteurs d’activités de gestion des erreurs](/visualstudio/workflow-designer/error-handling-activity-designers)  
   
@@ -300,7 +301,7 @@ ms.lasthandoff: 12/14/2017
   
 4.  Mise à jour dynamique (en mémoire) de <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601> et configuration du routage.  
   
-### <a name="getting-started"></a>Commencer  
+### <a name="getting-started"></a>Prise en main  
   
 1.  Documentation : [routage](../../../docs/framework/wcf/feature-details/routing.md)  
   
@@ -332,7 +333,7 @@ ms.lasthandoff: 12/14/2017
   
  Par ailleurs, les messages de découverte ne dépendent pas du protocole réseau ; vous pouvez les utiliser avec tout protocole qui prend en charge les besoins de chaque mode. Par exemple, découverte des messages multidiffusion peuvent être envoyés via le canal UDP ou tout autre réseau qui prend en charge la messagerie de multidiffusion.  Ces points, combinées avec une grande souplesse de la fonctionnalité, vous permettent d’adapter la détection spécifiquement à votre solution de conception.  
   
-### <a name="getting-started"></a>Commencer  
+### <a name="getting-started"></a>Prise en main  
   
 -   Documentation : [découverte WCF](../../../docs/framework/wcf/feature-details/wcf-discovery.md)  
   

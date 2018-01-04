@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c97279b553a615feda1dd3a195ad033744d82983
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: a7e7187eb6ed444ba2c28aa301ce4b3b16129030
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="migrating-wse-30-web-services-to-wcf"></a>Migration des services Web WSE 3.0 vers WCF
 Les avantages liés à la migration des services Web WSE 3.0 vers [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] incluent l'amélioration des performances et la prise en charge de transports supplémentaires, de scénarios de sécurité supplémentaires et des spécifications WS-*. Un service Web migré à partir de WSE 3.0 vers [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] peut présenter une amélioration des performances comprise entre 200 % et 400 %. Pour plus d’informations sur les transports pris en charge par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], consultez [choisir un Transport](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). Pour obtenir la liste des scénarios pris en charge par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], consultez [des scénarios de sécurité courants](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md). Pour obtenir la liste des spécifications qui sont pris en charge par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], consultez [Guide de l’interopérabilité de protocoles de Services Web](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md).  
@@ -60,7 +61,7 @@ Les avantages liés à la migration des services Web WSE 3.0 vers [!INCLUDE[ind
 </customBinding>  
 ```  
   
- Pour migrer les paramètres de sécurité d'un service Web WSE 3.0 spécifiés dans un fichier de stratégie vers [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], une liaison personnalisée doit être créée dans un fichier de configuration et l'assertion de sécurité clé en main doit avoir pour valeur son mode d'authentification équivalent. En outre, la liaison personnalisée doit être configurée de façon à utiliser la spécification WS-Addressing d'août 2004 lorsque des clients WSE 3.0 communiquent avec le service. Lorsque le service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] migré ne nécessite pas de communication avec des clients WSE 3.0 et doit uniquement maintenir la parité de sécurité, envisagez d'utiliser les liaisons définies par le système [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec les paramètres de sécurité appropriés au lieu de créer une liaison personnalisée.  
+ Pour migrer les paramètres de sécurité d'un service Web WSE 3.0 spécifiés dans un fichier de stratégie vers [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], une liaison personnalisée doit être créée dans un fichier de configuration et l'assertion de sécurité clé en main doit avoir pour valeur son mode d'authentification équivalent. En outre, la liaison personnalisée doit être configurée de façon à utiliser la spécification WS-Addressing d’août 2004 lorsque des clients WSE 3.0 communiquent avec le service. Lorsque le service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] migré ne nécessite pas de communication avec des clients WSE 3.0 et doit uniquement maintenir la parité de sécurité, envisagez d'utiliser les liaisons définies par le système [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] avec les paramètres de sécurité appropriés au lieu de créer une liaison personnalisée.  
   
  Le tableau suivant répertorie le mappage entre un fichier de stratégie WSE 3.0 et la liaison personnalisée équivalente dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
@@ -135,5 +136,5 @@ Les avantages liés à la migration des services Web WSE 3.0 vers [!INCLUDE[ind
 ## <a name="see-also"></a>Voir aussi  
  [Cycle de vie de la programmation de base](../../../../docs/framework/wcf/basic-programming-lifecycle.md)  
  [Liaisons personnalisées](../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
- [Comment : créer un SecurityBindingElement pour un Mode d’authentification spécifié](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
+ [Guide pratique pour créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
+ [Guide pratique pour créer un SecurityBindingElement pour un mode d’authentification spécifié](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

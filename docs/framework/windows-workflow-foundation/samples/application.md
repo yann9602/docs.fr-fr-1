@@ -12,17 +12,18 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3122119c84b747f74f753bb10a066aaa0cd0bf21
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 2b3037f6229c16ef6a5164cb0e7053f5993d2a9c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="application"></a>Application
 Cette section contient des exemples liés aux applications de workflow dans [!INCLUDE[wf](../../../../includes/wf-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Processus d’approbation de document](../../../../docs/framework/windows-workflow-foundation/samples/document-approval-process.md)  
+ [Processus d’approbation des documents](../../../../docs/framework/windows-workflow-foundation/samples/document-approval-process.md)  
  Illustre l'utilisation d'un workflow dans une application métier.  
   
  [Processus d’achat d’entreprise](../../../../docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)  
@@ -31,8 +32,8 @@ Cette section contient des exemples liés aux applications de workflow dans [!IN
  [Processus d’embauche](../../../../docs/framework/windows-workflow-foundation/samples/hiring-process.md)  
  Montre comment implémenter un processus d'entreprise à l'aide d'activités de messagerie et de deux workflows hébergés en tant que services de workflow.  
   
- [Suivi de Workflow visuel](../../../../docs/framework/windows-workflow-foundation/samples/visual-workflow-tracking.md)  
+ [Suivi de workflow visuel](../../../../docs/framework/windows-workflow-foundation/samples/visual-workflow-tracking.md)  
  Montre comment implémenter un processus d'entreprise à l'aide d'activités de messagerie et de deux workflows hébergés en tant que services de workflow.  
   
- [Gestion de l’Instance suspendue](../../../../docs/framework/windows-workflow-foundation/samples/suspended-instance-management.md)  
+ [Gestion de l’instance interrompue](../../../../docs/framework/windows-workflow-foundation/samples/suspended-instance-management.md)  
  Montre comment gérer des instances de workflow qui ont été interrompues.

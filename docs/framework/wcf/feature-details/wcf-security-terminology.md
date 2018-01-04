@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 386e58c5b04ed82f9ee42c7f04eacd4610c2a598
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: d63871f45fc8e209eb562fec7b208b10f67414b1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wcf-security-terminology"></a>Terminologie relative à la sécurité dans WCF
 La terminologie utilisée pour aborder la sécurité peut vous sembler peu familière. Cette rubrique explique rapidement certains des termes relatifs à la sécurité, mais ne fournit pas d'informations complètes pour chaque élément.  
@@ -55,13 +56,13 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  Informations passées d'une entité à une autre et utilisées pour établir l'identité de l'expéditeur. Par exemple, un nom d'utilisateur et un jeton de mot de passe, ou un certificat X.509.  
   
  certificat de client  
- Fait référence à un certificat utilisé pour l'authentification du client, telle que l'authentification d'un navigateur Web sur un serveur Web. Lorsqu'un client de navigateur Web essaie d'accéder à un serveur Web sécurisé, le client envoie son certificat au serveur pour lui permettre de vérifier son identité.  
+ Fait référence à un certificat utilisé pour l'authentification du client, telle que l'authentification d'un navigateur Web sur un serveur Web. Lorsqu’un client de navigateur Web essaie d’accéder à un serveur web sécurisé, le client envoie son certificat au serveur pour lui permettre de vérifier son identité.  
   
  credentials  
  Données d'ouverture de session qu'un principal de sécurité utilise pour établir sa propre identité, telles qu'un mot de passe, ou un ticket de protocole Kerberos. Les informations d'identification sont utilisées pour contrôler l'accès aux ressources.  
   
  données condensées  
- Type de données défini par la norme de chiffrement de clé publique (PKCS) #7 qui se compose de tout type de données plus un hachage de message (condensé) du contenu.  
+ Type de données défini par la norme de chiffrement de clé publique (PKCS) #7 qui se compose de tout type de données plus un hachage de message (condensat) du contenu.  
   
  signature numérique  
  Données qui lient l'identité d'un expéditeur aux informations qui sont envoyées. Une signature numérique peut être fournie avec tout message, fichier, ou autre information encodée numériquement, ou transmise séparément. Les signatures numériques sont utilisées dans les environnements de clé publique et fournissent des services d'authentification et d'intégrité.  
@@ -108,7 +109,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  clé privée  
  Moitié secrète d'une paire de clés utilisée dans un algorithme de clé publique. Les clés privées sont utilisées en général pour chiffrer une clé de session symétrique, signer numériquement un message ou déchiffrer un message qui a été chiffré avec la clé publique correspondante. Consultez également « clé publique ».  
   
- processus  
+ process  
  Contexte de sécurité dans lequel une application s'exécute. En général, le contexte de sécurité est associé à un utilisateur, donc toutes les applications qui s'exécutent dans un processus donné récupèrent les autorisations et les privilèges de l'utilisateur à qui elles appartiennent.  
   
  paire de clés publique/privée  
@@ -130,7 +131,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  Autorité de certification en haut d'une hiérarchie d'autorités de certification. L'autorité racine certifie les autorités de certification dans le niveau suivant de la hiérarchie.  
   
  algorithme de hachage sécurisé (Secure Hash Algorithm ou SHA)  
- Algorithme de hachage qui génère un résumé du message. L'algorithme de hachage est utilisé avec l'algorithme de signature numérique (DSA) dans la norme de signature numérique (DSS), entre autres. Il existe quatre types de SHA : SHA-1, SHA-256, SHA-384 et SHA-512. SHA-1 génère un résumé de message en 160 bits. SHA-256, SHA-384 et SHA-512 génèrent respectivement des résumés du message en 256, 384 et 512 bits. L'algorithme SHA a été développé par le National Institute of Standards and Technology (NIST) et par la National Security Agency (NSA).  
+ Algorithme de hachage qui génère un résumé du message. L'algorithme de hachage est utilisé avec l'algorithme de signature numérique (DSA) dans la norme de signature numérique (DSS), entre autres. Il existe quatre types de SHA : SHA-1, SHA-256, SHA-384 et SHA-512. SHA-1 génère un résumé de message en 160 bits. SHA-256, SHA-384 et SHA-512 génèrent respectivement des condensats du message en 256, 384 et 512 bits. L'algorithme SHA a été développé par le National Institute of Standards and Technology (NIST) et par la National Security Agency (NSA).  
   
  SSL (Secure Sockets Layer)  
  Protocole pour les communications réseau sécurisées à l'aide d'une combinaison de technologies de clés publique et secrète.  
@@ -151,7 +152,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  Services conçus pour publier et gérer des jetons de sécurité personnalisés (jetons émis) dans un scénario multiservices. Les jetons personnalisés sont en général des jetons SAML (Security Assertions Markup Language) qui incluent des informations d'identification personnalisées.  
   
  certificat de serveur  
- Fait référence à un certificat utilisé pour l'authentification du serveur, telle que l'authentification d'un serveur Web sur un navigateur Web. Lorsqu'un client de navigateur Web essaie d'accéder à un serveur Web sécurisé, le serveur envoie son certificat au navigateur pour lui permettre de vérifier son identité.  
+ Fait référence à un certificat utilisé pour l’authentification du serveur, telle que l’authentification d’un serveur web sur un navigateur Web. Lorsqu’un client de navigateur Web essaie d’accéder à un serveur web sécurisé, le serveur envoie son certificat au navigateur pour lui permettre de vérifier son identité.  
   
  session  
  Échange de messages sous la protection d'un morceau unique d'élément de génération de clé. Par exemple, les sessions SSL utilisent une clé unique pour envoyer plusieurs messages sous cette clé.  
@@ -193,5 +194,5 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
   
 ## <a name="see-also"></a>Voir aussi  
  [Concepts fondamentaux de Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md)  
- [Concepts de sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
+ [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
  [Modèle de sécurité pour Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

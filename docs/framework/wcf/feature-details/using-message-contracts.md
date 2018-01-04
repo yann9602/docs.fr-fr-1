@@ -17,11 +17,12 @@ caps.latest.revision: "46"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 14020e62e936ae6a9acad25c6c24d937feb150af
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: db19b5188c98d157b98d65422ee38d4ed59f733a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="using-message-contracts"></a>Utilisation de contrats de message
 En général lors de la génération d'applications [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], les développeurs accordent une attention particulière aux structures de données et aux problèmes de sérialisation, et n'ont pas à se soucier de la structure des messages dans lesquels les données sont stockées. Pour ces applications, créer des contrats de données pour les paramètres ou les valeurs de retour est une procédure simple. ([!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Spécifiant le transfert de données dans les contrats de Service](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).)  
@@ -68,7 +69,7 @@ void Reconcile(BankingTransaction bt1, BankingTransaction bt2);
 // Invalid, there is more than one parameter.  
 ```  
   
- Une exception est levée pour toute opération qui implique un type de contrat de message et ne suit pas l'un des modèles valides. Bien évidemment, les opérations qui n'impliquent pas de types de contrats de message ne sont pas soumises à ces restrictions.  
+ Une exception est levée pour toute opération qui implique un type de contrat de message et ne suit pas l’un des modèles valides. Bien évidemment, les opérations qui n'impliquent pas de types de contrats de message ne sont pas soumises à ces restrictions.  
   
  Si un type dispose à la fois d'un contrat de message et d'un contrat de données, seul son contrat de message est pris en compte lorsque le type est utilisé dans une opération.  
   
@@ -210,7 +211,7 @@ public class BankingDepositLog
   
  Le nom par défaut des entrées de tableau correspond à celui du membre auquel l'attribut <xref:System.ServiceModel.MessageHeaderArrayAttribute> est appliqué.  
   
- L'attribut <xref:System.ServiceModel.MessageHeaderArrayAttribute> hérite de <xref:System.ServiceModel.MessageHeaderAttribute>. Il a le même jeu de fonctionnalités que les attributs non-tableau ; il est possible, par exemple, de définir l'ordre, le nom et l'espace de noms d'un tableau d'en-têtes de la même façon que pour un en-tête unique. Lorsque vous utilisez la propriété `Order` sur un tableau, elle s'applique à l'ensemble de celui-ci.  
+ L'attribut <xref:System.ServiceModel.MessageHeaderArrayAttribute> hérite de <xref:System.ServiceModel.MessageHeaderAttribute>. Il a le même jeu de fonctionnalités que les attributs non-tableau ; il est possible, par exemple, de définir l’ordre, le nom et l’espace de noms d’un tableau d’en-têtes de la même façon que pour un en-tête unique. Lorsque vous utilisez la propriété `Order` sur un tableau, elle s'applique à l'ensemble de celui-ci.  
   
  Vous ne pouvez appliquer <xref:System.ServiceModel.MessageHeaderArrayAttribute> qu'aux tableaux, et non pas aux collections.  
   
@@ -368,7 +369,7 @@ public class PatientRecord : PersonRecord
  La classe `PatientRecord` décrit un message avec un en-tête appelé `ID`. L'en-tête correspond à `personID` et non pas au membre `patientID`, car le membre le plus de base est choisi. Par conséquent, le champ `patientID` est inutile dans ce cas. Le corps du message contient l'élément `diagnosis` suivi par l'élément `patientName`, car il s'agit de l'ordre alphabétique. Notez que l'exemple présente un modèle qui est fortement déconseillé : les contrats de message de base et dérivés ont tous deux des parties de corps de message.  
   
 ## <a name="wsdl-considerations"></a>Considérations sur WSDL  
- Lors de la génération d'un contrat WSDL (Web Services Description Language) à partir d'un service qui utilise des contrats de message, il est important de se souvenir que les fonctionnalités de contrat de message ne sont pas toutes répercutées dans le WSDL résultant. Considérez les points suivants :  
+ Lors de la génération d’un contrat WSDL (Web Services Description Language) à partir d’un service qui utilise des contrats de message, il est important de se souvenir que les fonctionnalités de contrat de message ne sont pas toutes répercutées dans le WSDL résultant. Considérez les points suivants :  
   
 -   WSDL ne peut pas exprimer le concept d'un tableau d'en-têtes. Lors de la création de messages avec un tableau d'en-têtes à l'aide de <xref:System.ServiceModel.MessageHeaderArrayAttribute>, le WSDL résultant ne reflète qu'un seul en-tête au lieu du tableau.  
   
@@ -457,5 +458,5 @@ public class OperationDetails
  Pour recevoir l'objet message comme la propriété `Result` et que les valeurs retournées sur cet objet soient des propriétés, utilisez l'option de commande `/messageContract`. Cette opération génère une signature qui retourne le message de réponse comme la propriété `Result` sur l'objet <xref:System.EventArgs>. Toutes les valeurs de retour internes sont ensuite des propriétés de l'objet de message de réponse.  
   
 ## <a name="see-also"></a>Voir aussi  
- [À l’aide de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
+ [Utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
  [Conception et implémentation de services](../../../../docs/framework/wcf/designing-and-implementing-services.md)

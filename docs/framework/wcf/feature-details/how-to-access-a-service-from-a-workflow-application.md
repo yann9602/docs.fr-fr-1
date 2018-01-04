@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fed03374a21406866b19d0028ee24edfc7edb707
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0ffac399e3f7cb3f860128b072251131ac356a2a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-access-a-service-from-a-workflow-application"></a>Procédure : accéder à un service à partir d'une application de workflow
 Cette rubrique décrit comment appeler un service de workflow à partir d'une application console de workflow. Il dépend de l’achèvement de la [Comment : créer un Service de flux de travail avec les activités de messagerie](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) rubrique. Cette rubrique décrit comment appeler un service de workflow à partir d'une application de workflow, mais les mêmes méthodes peuvent être utilisées pour appeler n'importe quel service [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] à partir d'une application de workflow.  
@@ -74,5 +75,5 @@ Cette rubrique décrit comment appeler un service de workflow à partir d'une ap
   
 ## <a name="see-also"></a>Voir aussi  
  [Services de workflow](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
- [Comment : créer un Service de Workflow avec les activités de messagerie](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md)  
+ [Guide pratique pour créer un service de workflow avec les activités de messagerie](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md)  
  [Utilisation d’un Service WCF à partir d’un flux de travail dans un projet Web](http://go.microsoft.com/fwlink/?LinkId=207725)

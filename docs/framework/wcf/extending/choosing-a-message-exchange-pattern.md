@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ab9a894ad57a5324d466e0eb94e49e2cf6104a19
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 961f5e84fb46a791127a9d80c0f03d2b87fdea77
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="choosing-a-message-exchange-pattern"></a>Sélection d’un modèle d’échange de messages
 La première étape de l’écriture d’un transport personnalisé consiste à décider quels *modèles d’échange de messages* (ou MEP) sont requis pour le canal que vous développez. Cette rubrique contient des explications sur les options disponibles ainsi que sur les différentes exigences. C’est la première tâche dans la liste de tâches de développement channel décrite dans [développement canaux](../../../../docs/framework/wcf/extending/developing-channels.md).  
@@ -84,7 +85,7 @@ Les trois modèles d’échange de messages de base. De haut en bas : datagramm
   
 -   Créer une nouvelle session (pour chaque nouveau canal) et y associer un nouvel ID de session correspondant à une chaîne unique. Ou obtenir une nouvelle session à partir du canal de session figurant en dessous du vôtre dans la pile.  
   
--   Si votre canal a créé la session (c'est-à-dire qu'il ne l'a pas obtenue à partir de la couche figurant en dessous du vôtre dans la pile), vous devez associer chaque message envoyé à l'aide de ce canal à cette session. Pour les canaux de protocole, cette association s'effectue en principe en ajoutant un en-tête SOAP. Pour les canaux de transport, cette association s'effectue en principe en créant une nouvelle connexion de transport ou en ajoutant des informations de session au protocole de tramage.  
+-   Si votre canal a créé la session (c’est-à-dire qu’il ne l’a pas obtenue à partir de la couche figurant en dessous du vôtre dans la pile), vous devez associer chaque message envoyé à l’aide de ce canal à cette session. Pour les canaux de protocole, cette association s'effectue en principe en ajoutant un en-tête SOAP. Pour les canaux de transport, cette association s'effectue en principe en créant une nouvelle connexion de transport ou en ajoutant des informations de session au protocole de tramage.  
   
 -   Pour chaque message envoyé à l'aide de ce canal, vous devez également fournir les garanties de remise mentionnées ci-dessus. Si vous utilisez le canal figurant en dessous du vôtre dans la pile pour générer la session, ce canal fournira également les garanties de remise requises. Si la session est générée par votre propre canal, vous devrez implémenter ces garanties dans le cadre de votre propre protocole. En principe, si vous rédigez un canal de protocole en supposant que WCF est utilisé de part et d'autre, vous aurez vraisemblablement besoin d'un transport TCP ou d'un canal de messagerie fiable pour générer la session.  
   

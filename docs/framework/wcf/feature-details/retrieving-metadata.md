@@ -14,11 +14,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6e41a3cc65df5576c538864aa9e1fe1aacbe7e94
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: bfc96c585ba55fbf63283d7cb23fae5b364b0465
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="retrieving-metadata"></a>Récupération de métadonnées
 Le processus de récupération de métadonnées consiste à demander et à récupérer les métadonnées d'un point de terminaison de métadonnées, tel que WS-MetadataExchange (MEX) ou HTTP/GET.  
@@ -32,13 +33,13 @@ Le processus de récupération de métadonnées consiste à demander et à récu
  Par défaut, une instance <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> est attachée à une instance <xref:System.ServiceModel.ChannelFactory> unique. Vous pouvez modifier ou remplacer l'instance <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> utilisée par <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> en substituant la méthode virtuelle <xref:System.ServiceModel.Description.MetadataExchangeClient.GetChannelFactory%2A>. De la même façon, vous pouvez modifier ou remplacer l'instance <xref:System.Net.HttpWebRequest> utilisée par <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> pour effectuer des requêtes HTTP/GET en substituant la méthode virtuelle <xref:System.ServiceModel.Description.MetadataExchangeClient.GetWebRequest%2A?displayProperty=nameWithType>.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Comment : utiliser Svcutil.exe pour télécharger des Documents de métadonnées](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)  
+ [Guide pratique pour utiliser Svcutil.exe pour télécharger des documents de métadonnées](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)  
  Indique comment utiliser Svcutil.exe pour télécharger des documents de métadonnées.  
   
- [Comment : utiliser MetadataResolver pour obtenir les métadonnées de liaison dynamiquement](../../../../docs/framework/wcf/feature-details/how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md)  
+ [Guide pratique pour utiliser MetadataResolver pour obtenir des métadonnées de liaison dynamiquement](../../../../docs/framework/wcf/feature-details/how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md)  
  Indique comment utiliser <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType> pour obtenir dynamiquement des métadonnées de liaison pendant l'exécution.  
   
- [Comment : utiliser MetadataExchangeClient pour récupérer des métadonnées](../../../../docs/framework/wcf/feature-details/how-to-use-metadataexchangeclient-to-retrieve-metadata.md)  
+ [Guide pratique pour utiliser MetadataExchangeClient pour récupérer des métadonnées](../../../../docs/framework/wcf/feature-details/how-to-use-metadataexchangeclient-to-retrieve-metadata.md)  
  Indique comment utiliser la classe <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> pour télécharger des fichiers de métadonnées dans un objet <xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType> qui contient des objets <xref:System.ServiceModel.Description.MetadataSection?displayProperty=nameWithType> à écrire dans des fichiers ou destinés à d'autres fins.  
   
 ## <a name="see-also"></a>Voir aussi  

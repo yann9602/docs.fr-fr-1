@@ -13,11 +13,12 @@ caps.latest.revision: "16"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f2789c6756d8e22dae9eb3189dfb616d162ad906
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e3d2de4dd5510b212e030ea537cea0be3dce24f0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="streaming-feeds-sample"></a>Streaming Feeds, exemple
 Cet exemple indique comment gérer des flux de syndication qui contiennent de grandes quantités d'éléments. Sur le serveur, l'exemple décrit comment différer la création d'objets <xref:System.ServiceModel.Syndication.SyndicationItem> individuels dans le flux jusqu'au moment précédant immédiatement l'écriture de l'élément dans le flux de données réseau.  
@@ -109,7 +110,7 @@ private IEnumerable<SyndicationItem> DelayReadItems(XmlReader reader, Syndicatio
   
  En conséquence, aucun élément n'est lu depuis le réseau avant que l'application cliente qui parcourt les résultats de `ReadItems()` ne soit prête à l'utiliser. Vous pouvez observer ce comportement en définissant un point d’arrêt sur la `yield``return` instruction à l’intérieur de `StreamedAtom10FeedFormatter.DelayReadItems()` et en remarquant que ce point d’arrêt est rencontré pour la première fois après l’appel à `ReadFrom()` se termine.  
   
- Les instructions suivantes indiquent comment générer et exécuter l'exemple. Notez que bien que le serveur cesse de générer des éléments après que le client a lu 10 éléments, la sortie indique que le client lit bien plus que 10 éléments. Cela est dû au fait que la liaison de mise en réseau utilisée par l'exemple transmet les données dans des segments de quatre kilo-octets (Ko). Le client reçoit donc 4 Ko de données d'éléments avant qu'il ait la possibilité de lire ne serait-ce qu'un élément. Il s'agit du comportement normal (l'envoi de données HTTP diffusées en continu dans des segments de taille raisonnable améliore les performances).  
+ Les instructions suivantes indiquent comment générer et exécuter l'exemple. Notez que bien que le serveur cesse de générer des éléments après que le client a lu 10 éléments, la sortie indique que le client lit bien plus que 10 éléments. Cela est dû au fait que la liaison de mise en réseau utilisée par l’exemple transmet les données dans des segments de quatre kilo-octets (Ko). Le client reçoit donc 4 Ko de données d’éléments avant qu’il ait la possibilité de lire ne serait-ce qu’un élément. Il s'agit du comportement normal (l'envoi de données HTTP diffusées en continu dans des segments de taille raisonnable améliore les performances).  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
@@ -129,4 +130,4 @@ private IEnumerable<SyndicationItem> DelayReadItems(XmlReader reader, Syndicatio
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StreamingFeeds`  
   
 ## <a name="see-also"></a>Voir aussi  
- [Flux de Diagnostics autonome](../../../../docs/framework/wcf/samples/stand-alone-diagnostics-feed-sample.md)
+ [Flux de diagnostics autonome](../../../../docs/framework/wcf/samples/stand-alone-diagnostics-feed-sample.md)

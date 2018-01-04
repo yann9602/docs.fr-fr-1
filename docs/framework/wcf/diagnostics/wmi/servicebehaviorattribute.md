@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0a3bc0116ec34a3370012472c31a9191cf26f720
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7d6b0620e9cb2575bcfe9cd6f01b5d87669df69b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="servicebehaviorattribute"></a>ServiceBehaviorAttribute
 ServiceBehaviorAttribute  
@@ -99,7 +100,7 @@ Type d'accès : lecture seule
   
  Nombre maximal d'éléments autorisés dans un objet sérialisé.  
   
-### <a name="name"></a>Nom  
+### <a name="name"></a>Name  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
@@ -139,7 +140,7 @@ Type d'accès : lecture seule
   
  Type d'accès : lecture seule  
   
- Période pendant laquelle une transaction doit s'effectuer.  
+ Période pendant laquelle une transaction doit s’effectuer.  
   
 ### <a name="usesynchronizationcontext"></a>UseSynchronizationContext  
  Type de données : booléen  
@@ -155,7 +156,7 @@ Type d'accès : lecture seule
   
  Spécifie si le système ou l'application applique le traitement d'en-tête SOAP MustUnderstand.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

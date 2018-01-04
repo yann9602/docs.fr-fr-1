@@ -13,11 +13,12 @@ caps.latest.revision: "26"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: cc39a282cbb12b014c0749b3eb807f3248fca16e
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: d520a46bc3380fc5dff76f5df866ae3411d5a6a7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuration-based-activation"></a>Activation basée sur la configuration
 Cet exemple montre comment activer des services [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] sans avoir à utiliser un fichier .svc.  
@@ -49,7 +50,7 @@ Cet exemple montre comment activer des services [!INCLUDE[indigo1](../../../../i
 <serviceActivations>  
 ```  
   
- L'observation à formuler est que la configuration semble très similaire à celle de fichiers .svc. Un attribut supplémentaire, `relativeAddress`, qui fournit l'adresse du service, a été introduit. L'adresse relative constitue également le chemin d'accès virtuel du service. L'hôte récupère le fichier Web.config du fichier à partir de l'emplacement `virtualPath`, s'il existe ; sinon, l'hôte effectue une recherche récursive dans son dossier parent.  
+ L'observation à formuler est que la configuration semble très similaire à celle de fichiers .svc. Un attribut supplémentaire, `relativeAddress`, qui fournit l'adresse du service, a été introduit. L’adresse relative constitue également le chemin d’accès virtuel du service. L'hôte récupère le fichier Web.config du fichier à partir de l'emplacement `virtualPath`, s'il existe ; sinon, l'hôte effectue une recherche récursive dans son dossier parent.  
   
 > [!NOTE]
 >  Pour fonctionner, cet exemple requiert un hébergement dans IIS.  

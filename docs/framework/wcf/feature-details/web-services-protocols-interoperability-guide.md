@@ -13,11 +13,12 @@ caps.latest.revision: "20"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a7dfcd092cb7b21e31ec1098df5e9534cd27cfc9
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 6b962452b6127d259733418969f1fb7b5036b1e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Guide de l'interopérabilité des protocoles de services Web
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implémente plusieurs protocoles de services Web. Un grand nombre de ces protocoles incluent plusieurs options et points d'extensibilité qui sont laissés à la discrétion de l'implémenteur. Cette rubrique fournit une liste des protocoles des services Web implémentés par [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Des détails d'implémentation pour chaque protocole pris en charge sont fournis dans les autres rubriques de cette section.  
@@ -75,7 +76,7 @@ ms.lasthandoff: 12/02/2017
 |WS-Secure Conversation|[Langue de Conversation sécurisée de Services Web](http://go.microsoft.com/fwlink/?LinkId=95317)|  
 |WS-Trust 1.4 (page pouvant être en anglais)|[Services Web confiance Language](http://go.microsoft.com/fwlink/?LinkId=169514)|  
 |WS-SecurityPolicy 2005/07|[Langue de Conversation sécurisée de Services Web](http://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> Selon les corrections des errata soumis au comité technique OASIS WS-SX.<br /><br /> [message de ws-sx.](http://go.microsoft.com/fwlink/?LinkId=96700)|  
-|WS-ReliableMessaging 1.1|[Protocole de messagerie fiable version 1,1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)|  
+|WS-ReliableMessaging 1.1|[Protocole de messagerie fiable version 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)|  
   
  <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> prend en charge les spécifications présentées dans le tableau suivant :  
   
@@ -111,12 +112,12 @@ ms.lasthandoff: 12/02/2017
 -   [Basic Security Profile 1.0 travail brouillon](http://go.microsoft.com/fwlink/?LinkId=96711)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Protocoles pris en charge par les liaisons d’interopérabilité fournies par le système des Services Web](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
+ [Protocoles de services web pris en charge par des liaisons d’interopérabilité fournies par le système](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
  [Protocoles de messagerie](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)  
- [Référence de schéma de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
+ [Informations de référence sur les schémas de contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
  [WSDL et stratégie](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)  
  [Protocoles de sécurité](../../../../docs/framework/wcf/feature-details/security-protocols.md)  
  [Protocole de messagerie fiable version 1.0](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-0.md)  
- [Protocole de messagerie fiable version 1,1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)  
+ [Protocole de messagerie fiable version 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)  
  [Protocoles de transaction](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)  
  [Protocole d’échange de contexte](../../../../docs/framework/wcf/feature-details/context-exchange-protocol.md)

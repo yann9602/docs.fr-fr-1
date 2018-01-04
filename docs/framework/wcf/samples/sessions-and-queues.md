@@ -13,11 +13,12 @@ caps.latest.revision: "27"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b9479308dd29c6d65599ffa1bfcc88f6baefae16
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0de2668eb03a658632bb8a18c711f780b333e86b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sessions-and-queues"></a>Sessions and Queues
 Cet exemple montre comment envoyer et recevoir un ensemble de messages connexes dans une communication en file d'attente sur le transport (Message Queuing ou MSMQ). Cet exemple utilise la liaison `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.  
@@ -36,9 +37,9 @@ Cet exemple montre comment envoyer et recevoir un ensemble de messages connexes 
   
  Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente. Cela signifie que le client envoie ses messages à cette file d'attente. Le service reçoit des messages de la file d'attente. Par conséquent, dans le cadre d'une communication en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.  
   
- Quelquefois, un client envoie un ensemble de messages connexes dans un groupe. Lorsque les messages doivent être traités ensemble ou dans un ordre spécifié, une file d'attente peut être utilisée pour les regrouper, afin qu'ils soient traités par une application de réception unique. Cela est particulièrement important lorsqu'il existe plusieurs applications de réception sur un groupe de serveurs et qu'il est nécessaire de garantir qu'un groupe de messages sera traité par la même application de réception. Les sessions mises en file d'attente sont un mécanisme utilisé pour envoyer et recevoir un ensemble de messages connexes qui doivent être traités en une fois. Les sessions mises en file d'attente requièrent qu'une transaction expose ce modèle.  
+ Quelquefois, un client envoie un ensemble de messages connexes dans un groupe. Lorsque les messages doivent être traités ensemble ou dans un ordre spécifié, une file d'attente peut être utilisée pour les regrouper, afin qu'ils soient traités par une application de réception unique. Cela est particulièrement important lorsqu'il existe plusieurs applications de réception sur un groupe de serveurs et qu'il est nécessaire de garantir qu'un groupe de messages sera traité par la même application de réception. Les sessions mises en file d'attente sont un mécanisme utilisé pour envoyer et recevoir un ensemble de messages connexes qui doivent être traités en une fois. Les sessions mises en file d’attente requièrent qu’une transaction expose ce modèle.  
   
- Dans l'exemple, le client envoie plusieurs messages au service dans le cadre d'une session, dans une étendue de transaction unique.  
+ Dans l’exemple, le client envoie plusieurs messages au service dans le cadre d’une session, dans une étendue de transaction unique.  
   
  Le contrat de service est `IOrderTaker`, qui définit un service monodirectionnel qui peut être utilisé avec des files d'attente. Le <xref:System.ServiceModel.SessionMode> utilisé dans le contrat illustré dans l'exemple de code suivant indique que les messages font partie de la session.  
   
@@ -57,7 +58,7 @@ public interface IOrderTaker
 }  
 ```  
   
- Le service définit des opérations de service de manière à ce que la première opération s'inscrive dans une transaction mais ne complète pas automatiquement la transaction. Les opérations suivantes s'inscrivent également dans la même transaction mais ne se complètent pas automatiquement. La dernière opération de la session complète automatiquement la transaction. Donc, la même transaction est utilisée pour plusieurs appels d'opération dans le contrat de service. Si chacune des opérations lève une exception, la transaction est restaurée et la session est remise dans la file d'attente. À l'achèvement réussi de la dernière opération, la transaction est validée. Le service utilise `PerSession` comme <xref:System.ServiceModel.InstanceContextMode> pour recevoir tous les messages dans une session sur la même instance du service.  
+ Le service définit des opérations de service de manière à ce que la première opération s’inscrive dans une transaction mais ne complète pas automatiquement la transaction. Les opérations suivantes s’inscrivent également dans la même transaction mais ne se complètent pas automatiquement. La dernière opération de la session complète automatiquement la transaction. Donc, la même transaction est utilisée pour plusieurs appels d’opération dans le contrat de service. Si chacune des opérations lève une exception, la transaction est restaurée et la session est remise dans la file d'attente. À l'achèvement réussi de la dernière opération, la transaction est validée. Le service utilise `PerSession` comme <xref:System.ServiceModel.InstanceContextMode> pour recevoir tous les messages dans une session sur la même instance du service.  
   
 ```  
 [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]  

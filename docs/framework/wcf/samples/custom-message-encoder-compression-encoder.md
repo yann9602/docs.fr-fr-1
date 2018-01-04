@@ -13,11 +13,12 @@ caps.latest.revision: "37"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: c3c59a574d2206de7722958f676a721b51fbc2d7
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 517b37ca1ed92cf36f447a4d634b8f487f2b4abe
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="custom-message-encoder-compression-encoder"></a>Custom Message Encoder: Compression Encoder
 Cet exemple montre comment implémenter un encodeur personnalisé à l'aide de la plateforme [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -41,9 +42,9 @@ Cet exemple montre comment implémenter un encodeur personnalisé à l'aide de l
   
 -   Création d'un encodeur personnalisé et d'une fabrique d'encodeur.  
   
--   Développement d'un élément de liaison pour un encodeur personnalisé.  
+-   Développement d’un élément de liaison pour un encodeur personnalisé.  
   
--   Utilisation de la configuration de liaison personnalisée permettant d'intégrer des éléments de liaison personnalisés.  
+-   Utilisation de la configuration de liaison personnalisée permettant d’intégrer des éléments de liaison personnalisés.  
   
 -   Développement d'un gestionnaire de configuration personnalisé afin de permettre la configuration de fichier d'un élément de liaison personnalisé.  
   
@@ -57,9 +58,9 @@ Cet exemple montre comment implémenter un encodeur personnalisé à l'aide de l
   
     2.  L'hôte de service est créé et ouvert.  
   
-    3.  L'élément de configuration personnalisé crée et retourne l'élément de liaison personnalisé.  
+    3.  L’élément de configuration personnalisé crée et retourne l’élément de liaison personnalisé.  
   
-    4.  L'élément de liaison personnalisé crée et retourne une fabrique d'encodeur de message.  
+    4.  L’élément de liaison personnalisé crée et retourne une fabrique d’encodeur de message.  
   
 3.  Un message est reçu.  
   
@@ -75,7 +76,7 @@ Cet exemple montre comment implémenter un encodeur personnalisé à l'aide de l
   
  L'encodeur et la fabrique d'encodeur étant maintenant définis, ils peuvent être utilisés avec un client et un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Toutefois, ces encodeurs doivent être ajoutés à la pile de canaux. Vous pouvez dériver des classes des classes <xref:System.ServiceModel.ServiceHost> et <xref:System.ServiceModel.ChannelFactory%601>, et substituer les méthodes `OnInitialize` pour ajouter cette fabrique d'encodeur manuellement. Vous pouvez également exposer la fabrique d'encodeur via un élément de liaison personnalisé.  
   
- Pour créer un élément de liaison personnalisé, dérivez une classe de la classe <xref:System.ServiceModel.Channels.BindingElement>. Cependant, il existe plusieurs types d'éléments de liaison. Pour s'assurer que l'élément de liaison personnalisé est reconnu en tant qu'élément de liaison d'encodage de message, vous devez également implémenter <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>. <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> expose une méthode permettant de créer une nouvelle fabrique d'encodeur de message (`CreateMessageEncoderFactory`), laquelle est implémentée pour retourner une instance de la fabrique d'encodeur de message correspondante. En outre, <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> possède une propriété permettant d'indiquer la version d'adressage. Cet exemple encapsulant les encodeurs existants, l'implémentation encapsule également les éléments de liaison d'encodeur existants et fournit un élément de liaison d'encodeur interne comme paramètre au constructeur, puis l'expose via une propriété. L'exemple de code suivant présente l'implémentation de la classe `GZipMessageEncodingBindingElement`.  
+ Pour créer un élément de liaison personnalisé, dérivez une classe de la classe <xref:System.ServiceModel.Channels.BindingElement>. Cependant, il existe plusieurs types d’éléments de liaison. Pour s'assurer que l'élément de liaison personnalisé est reconnu en tant qu'élément de liaison d'encodage de message, vous devez également implémenter <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>. <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> expose une méthode permettant de créer une nouvelle fabrique d'encodeur de message (`CreateMessageEncoderFactory`), laquelle est implémentée pour retourner une instance de la fabrique d'encodeur de message correspondante. En outre, <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> possède une propriété permettant d'indiquer la version d'adressage. Cet exemple encapsulant les encodeurs existants, l'implémentation encapsule également les éléments de liaison d'encodeur existants et fournit un élément de liaison d'encodeur interne comme paramètre au constructeur, puis l'expose via une propriété. L'exemple de code suivant présente l'implémentation de la classe `GZipMessageEncodingBindingElement`.  
   
 ```  
 public sealed class GZipMessageEncodingBindingElement   
@@ -217,7 +218,7 @@ GZipMessageEncoderFactory(innerBindingElement.CreateMessageEncoderFactory());
 </configuration>  
 ```  
   
- Maintenant qu'un élément de liaison correspondant existe pour l'encodeur de compression, il peut être raccordé par programme au service ou au client en construisant un nouvel objet de liaison personnalisé et en lui ajoutant l'élément de liaison personnalisé, tel qu'indiqué dans l'exemple de code suivant.  
+ Maintenant qu’un élément de liaison correspondant existe pour l’encodeur de compression, il peut être raccordé par programme au service ou au client en construisant un nouvel objet de liaison personnalisé et en lui ajoutant l’élément de liaison personnalisé, tel qu’indiqué dans l’exemple de code suivant.  
   
 ```  
 ICollection<BindingElement> bindingElements = new List<BindingElement>();  
@@ -230,7 +231,7 @@ binding.Name = "SampleBinding";
 binding.Namespace = "http://tempuri.org/bindings";  
 ```  
   
- Même si cela peut s'avérer suffisant pour la majorité de scénarios utilisateur, la prise en charge d'une configuration de fichier est critique si un service doit être hébergé sur le Web. Pour prendre en charge le scénario hébergé sur le Web, vous devez développer un gestionnaire de configuration personnalisé afin de permettre la configuration d'un élément de liaison personnalisé dans un fichier.  
+ Même si cela peut s'avérer suffisant pour la majorité de scénarios utilisateur, la prise en charge d'une configuration de fichier est critique si un service doit être hébergé sur le Web. Pour prendre en charge le scénario hébergé sur le Web, vous devez développer un gestionnaire de configuration personnalisé afin de permettre la configuration d’un élément de liaison personnalisé dans un fichier.  
   
  Vous pouvez créer un gestionnaire de configuration pour l'élément de liaison en plus du système de configuration fourni par [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. Ce gestionnaire de configuration doit dériver de la classe <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. La propriété `BindingElementType` permet d'indiquer au système de configuration le type d'élément de liaison à créer pour cette section. Tous les aspects de `BindingElement` qui peuvent être définis doivent être exposés en tant que propriétés dans la classe dérivée <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. <xref:System.Configuration.ConfigurationPropertyAttribute> permet de mapper les attributs d'élément de configuration aux propriétés et d'affecter des valeurs par défaut si les attributs ne sont pas définis. Après avoir chargé et appliqué les valeurs de la configuration aux propriétés, la méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A> est appelée et convertit les propriétés en instance concrète d'un élément de liaison. La méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A> permet de convertir les propriétés sur la classe dérivée <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> en valeurs à définir sur l'élément de liaison récemment créé.  
   

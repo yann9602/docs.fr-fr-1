@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 647b551e9b78d89cee3ddaf8f47ba8174a23fc5a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: fd0812125c63a5a89cf8a87f0ca72cf9a9f168d9
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-create-a-transactional-service"></a>Comment : créer un service transactionnel
 Cet exemple présente les divers aspects de la création d’un service transactionnel et l’utilisation d’une transaction initialisée par le client pour coordonner des opérations de service.  
@@ -192,7 +193,7 @@ Cet exemple présente les divers aspects de la création d’un service transact
   
 ### <a name="controlling-the-lifetime-of-a-transactional-service-instance"></a>Contrôle de la durée de vie d'une instance de service transactionnelle  
   
-1.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> pour spécifier si l'instance de service sous-jacente est diffusée lorsqu'une transaction s'exécute. La valeur par défaut étant `true`, sauf configuration autre, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] expose un comportement d'activation « juste-à-temps » efficace et prédictible. Les appels à un service sur une transaction suivante sont assurés de disposer d'une nouvelle instance de service sans restes de l'état de la transaction précédente. Bien que cela s'avère souvent utile, vous pouvez souhaiter conserver l'état dans l'instance de service après l'exécution de la transaction. Ce peut être le cas, par exemple, lorsque l'état requis ou des handles vers des ressources sont coûteux à récupérer ou à reconstituer. Pour ce faire, vous pouvez affecter <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> à la propriété `false`. Avec ce paramètre, l'instance et les états associés seront disponibles sur les appels suivants. Lorsque vous utilisez ce paramètre, tenez compte du moment auquel et de la manière dont les transactions et l'état seront effacés et exécutés. L'exemple suivant montre comment procéder en conservant l'instance avec la variable `runningTotal`.  
+1.  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] utilise la propriété <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> pour spécifier si l'instance de service sous-jacente est diffusée lorsqu'une transaction s'exécute. La valeur par défaut étant `true`, sauf configuration autre, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] expose un comportement d'activation « juste-à-temps » efficace et prédictible. Les appels à un service sur une transaction suivante sont assurés de disposer d’une nouvelle instance de service sans restes de l’état de la transaction précédente. Bien que cela s’avère souvent utile, vous pouvez souhaiter conserver l’état dans l’instance de service après l’exécution de la transaction. Ce peut être le cas, par exemple, lorsque l'état requis ou des handles vers des ressources sont coûteux à récupérer ou à reconstituer. Pour ce faire, vous pouvez affecter <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> à la propriété `false`. Avec ce paramètre, l'instance et les états associés seront disponibles sur les appels suivants. Lorsque vous utilisez ce paramètre, tenez compte du moment auquel et de la manière dont les transactions et l'état seront effacés et exécutés. L'exemple suivant montre comment procéder en conservant l'instance avec la variable `runningTotal`.  
   
     ```  
     [ServiceBehavior(TransactionIsolationLevel = [ServiceBehavior(  

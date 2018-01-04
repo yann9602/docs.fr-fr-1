@@ -14,11 +14,12 @@ caps.latest.revision: "23"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: a3950b156ede806382bbe4e013db5d94a8b20a23
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ecbbaac0023ca528967abe2cb60c3d790772fb2e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extending-security"></a>Extension de la sécurité
 Pour vous adapter aux nouveaux types de revendications et jetons personnalisés, vous pouvez étendre l'infrastructure de sécurité de [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Les rubriques de cette section vous montrent comment procéder.  
@@ -27,7 +28,7 @@ Pour vous adapter aux nouveaux types de revendications et jetons personnalisés,
  [Architecture de sécurité](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)  
  Présente en détail l'architecture du système de sécurité [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
- [Informations d’identification personnalisées et Validation des informations d’identification](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  
+ [Informations d’identification personnalisées et validation d’informations d’identification](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  
  Explique comment le modèle d'identité est utilisé lors de la validation d'informations d'identification personnalisées.  
   
  [Jetons personnalisés](../../../../docs/framework/wcf/extending/custom-tokens.md)  
@@ -36,16 +37,16 @@ Pour vous adapter aux nouveaux types de revendications et jetons personnalisés,
  [Autorisation personnalisée](../../../../docs/framework/wcf/extending/custom-authorization.md)  
  Explique comment implémenter une autorisation personnalisée.  
   
- [Substitution de l’identité d’un Service pour l’authentification](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)  
+ [Substitution de l’identité d’un service pour l’authentification](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)  
  Décrit comment remplacer l'identité d'un service pour l'authentification.  
   
- [Comment : créer un vérificateur d’identité Client personnalisés](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
+ [Guide pratique pour créer un vérificateur d’identité du client personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
  Montre comment valider une identité de point de terminaison personnalisée.  
   
- [Comment : utiliser des certificats X.509 distincts pour la signature et chiffrement](../../../../docs/framework/wcf/extending/how-to-use-separate-x-509-certificates-for-signing-and-encryption.md)  
+ [Guide pratique pour utiliser des certificats X.509 distincts pour les signatures et le chiffrement](../../../../docs/framework/wcf/extending/how-to-use-separate-x-509-certificates-for-signing-and-encryption.md)  
  Les messages sont généralement signés et chiffrés à l'aide d'un certificat unique. Cette rubrique explique comment deux certificats peuvent être utilisés, s'ils sont requis.  
   
- [Comment : modifier le fournisseur de services de chiffrement pour la clé privée d’un certificat X.509](../../../../docs/framework/wcf/extending/change-cryptographic-provider-x509-certificate-private-key.md)  
+ [Guide pratique pour remplacer le fournisseur de services de chiffrement par la clé privée d’un certificat X.509](../../../../docs/framework/wcf/extending/change-cryptographic-provider-x509-certificate-private-key.md)  
  Explique comment modifier le fournisseur de services de chiffrement utilisé pour fournir la clé privée d'un certificat X.509 et comment intégrer ce fournisseur dans l'infrastructure [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
   
 ## <a name="reference"></a>Référence  

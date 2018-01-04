@@ -12,11 +12,12 @@ caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: aa388328b1fee73aef829a512dcbcadbd3889781
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1d06f825b96f66e35bdd30db272b99bb4e2e3e1e
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-asynchronous-activities-in-wf"></a>Création d'activités asynchrones dans WF
 <xref:System.Activities.AsyncCodeActivity> fournit aux auteurs d'activités une classe de base qui permet aux activités dérivées d'implémenter la logique d'exécution asynchrone. Les activités personnalisées peuvent ainsi effectuer un travail asynchrone sans maintenir le thread du service de planification de workflow. Elles peuvent également bloquer toute activité qui peut s'exécuter en parallèle. Cette rubrique fournit une vue d'ensemble de la méthode de création des activités asynchrones personnalisées à l'aide de l'objet <xref:System.Activities.AsyncCodeActivity>.  
@@ -48,7 +49,7 @@ ms.lasthandoff: 12/02/2017
  Dans l'exemple précédent, l'objet <xref:System.IO.FileStream> créé dans <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> était accessible dans le <xref:System.Activities.AsyncCodeActivity.EndExecute%2A>. Cela s'avère possible, car la variable `file` a été passée dans la propriété <xref:System.Activities.AsyncCodeActivityContext.UserState%2A?displayProperty=nameWithType> dans <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A>. Il s'agit de la méthode correcte pour partager l'état entre <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> et <xref:System.Activities.AsyncCodeActivity.EndExecute%2A>. Il est incorrect d'utiliser une variable membre dans la classe dérivée (`FileWriter` dans ce cas) pour partager l'état entre <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> et <xref:System.Activities.AsyncCodeActivity.EndExecute%2A>, car l'objet activité peut être référencé par plusieurs instances d'activité. Toute tentative d'utilisation d'une variable membre pour partager l'état peut générer des valeurs d'un <xref:System.Activities.ActivityInstance> qui remplacent ou consomment des valeurs d'un autre <xref:System.Activities.ActivityInstance>.  
   
 ### <a name="accessing-argument-values"></a>Accès aux valeurs des arguments  
- L'environnement d'un objet <xref:System.Activities.AsyncCodeActivity> se compose d'arguments définis sur l'activité. Ces arguments sont accessibles à partir de la <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> / <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> se substitue à l’aide de le <xref:System.Activities.AsyncCodeActivityContext> paramètre. Il est impossible d'accéder aux arguments dans le délégué, mais les valeurs d'argument ou toutes autres données peuvent être passées dans celui-ci à l'aide de ses paramètres. L'exemple suivant consiste à définir une activité générant un nombre aléatoire qui obtient la limite supérieure inclusive de son argument `Max`. La valeur de l'argument est passée dans le code asynchrone lors de l'appel du délégué.  
+ L'environnement d'un objet <xref:System.Activities.AsyncCodeActivity> se compose d'arguments définis sur l'activité. Ces arguments sont accessibles à partir de la <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> / <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> se substitue à l’aide de le <xref:System.Activities.AsyncCodeActivityContext> paramètre. Il est impossible d’accéder aux arguments dans le délégué, mais les valeurs d’argument ou toutes autres données peuvent être passées dans celui-ci à l’aide de ses paramètres. L'exemple suivant consiste à définir une activité générant un nombre aléatoire qui obtient la limite supérieure inclusive de son argument `Max`. La valeur de l'argument est passée dans le code asynchrone lors de l'appel du délégué.  
   
  [!code-csharp[CFX_ActivityExample#9](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#9)]  
   

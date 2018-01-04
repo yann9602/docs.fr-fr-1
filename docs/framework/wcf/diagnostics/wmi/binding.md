@@ -13,11 +13,12 @@ caps.latest.revision: "8"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b9e44d161e1229db9145f4ed7e337396bbd98c68
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f6553d1e1c030a30eed74ff81d3e07e28a9f25b7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="binding"></a>Liaison
 WMI Binding  
@@ -58,7 +59,7 @@ class Binding
   
  Intervalle de temps spécifié pour l'exécution d'une opération de fermeture.  
   
-### <a name="name"></a>Nom  
+### <a name="name"></a>Name  
  Type de données : chaîne  
   
  Type d'accès : lecture seule  
@@ -100,7 +101,7 @@ class Binding
   
  Intervalle de temps spécifié pour l'exécution d'une opération d'envoi.  
   
-## <a name="requirements"></a>Spécifications  
+## <a name="requirements"></a>Configuration requise  
   
 |MOF|Déclaré dans Servicemodel.mof.|  
 |---------|-----------------------------------|  

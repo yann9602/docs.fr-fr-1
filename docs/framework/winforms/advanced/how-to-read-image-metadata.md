@@ -19,11 +19,12 @@ caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9df2866251e08b8989f8550d045b587c9de8d2cb
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b610e499ff980d2e705ad855ae98c1d54ff412e7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-read-image-metadata"></a>Comment : lire des métadonnées d'image
 Certains fichiers image contiennent des métadonnées que vous pouvez lire pour déterminer les fonctionnalités de l’image. Par exemple, une photographie numérique peut contenir des métadonnées que vous pouvez lire pour déterminer la marque et le modèle de l’appareil photo utilisé pour capturer l’image. Avec [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], vous pouvez lire des métadonnées existantes et vous pouvez également écrire de nouvelles métadonnées dans des fichiers image.  
@@ -39,7 +40,7 @@ Certains fichiers image contiennent des métadonnées que vous pouvez lire pour 
 |-----------------------|-----------------|  
 |0x0320<br /><br /> 0x010F<br /><br /> 0 x 0110<br /><br /> 0x9003<br /><br /> 0x829A<br /><br /> 0x5090<br /><br /> 0x5091|Titre de l’image<br /><br /> Fabricant de matériel<br /><br /> Modèle de matériel<br /><br /> ExifDTOriginal<br /><br /> Temps d’exposition EXIF<br /><br /> Tableau de luminance<br /><br /> Tableau de chrominance|  
   
-## <a name="value"></a>Valeur  
+## <a name="value"></a>Value  
  Un tableau de valeurs. Le format des valeurs est déterminé par le <xref:System.Drawing.Imaging.PropertyItem.Type%2A> propriété.  
   
 ## <a name="len"></a>Len  
@@ -56,7 +57,7 @@ Certains fichiers image contiennent des métadonnées que vous pouvez lire pour 
 |4|Un entier 32 bits|  
 |5|Un tableau de deux `Byte` objets qui représentent un nombre rationnel|  
 |6|Non utilisé|  
-|7|Non défini|  
+|7|Undefined|  
 |8|Non utilisé|  
 |9|`SLong`|  
 |10|`SRational`|  

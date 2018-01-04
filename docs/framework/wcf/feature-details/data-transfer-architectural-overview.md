@@ -17,11 +17,12 @@ caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 7ef0886fe5319d2ddd8c4c4be1b61f629f2aa6f4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 829635bd7fd73b58004c59862f4d589e95f67f9b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="data-transfer-architectural-overview"></a>Vue d'ensemble de l'architecture de transfert de données
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] peut être considéré comme une infrastructure de messagerie. Il peut recevoir des messages, les traiter et les distribuer au code utilisateur pour action ultérieure, ou il peut construire des messages à partir des données fournies par le code utilisateur et les transmettre vers une destination. Cette rubrique, conçue à l'attention des développeurs avancés, décrit l'architecture de gestion des messages et des données qu'ils contiennent. Pour une approche plus simple des tâches d’envoi et de réception des données, consultez [Specifying Data Transfer in Service Contracts](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
@@ -236,7 +237,7 @@ ms.lasthandoff: 12/02/2017
  [!code-csharp[C_DataArchitecture#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_dataarchitecture/cs/source.cs#9)]
  [!code-vb[C_DataArchitecture#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_dataarchitecture/vb/source.vb#9)]  
   
- Les éléments marqués pour la sérialisation (avec <xref:System.ServiceModel.MessageBodyMemberAttribute>, <xref:System.ServiceModel.MessageHeaderAttribute>ou d'autres attributs associés) doivent être sérialisables pour participer à un contrat de message. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] la section « sérialisation » plus loin dans cette rubrique.  
+ Les éléments marqués pour la sérialisation (avec <xref:System.ServiceModel.MessageBodyMemberAttribute>, <xref:System.ServiceModel.MessageHeaderAttribute>ou d'autres attributs associés) doivent être sérialisables pour participer à un contrat de message. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] la section « sérialisation » plus loin dans cette rubrique.  
   
 ### <a name="4-parameters"></a>4. Paramètres  
  Bien souvent, un développeur qui souhaite décrire une opération qui agit sur plusieurs éléments de données n'a pas besoin du niveau de contrôle fourni par les contrats de message. Par exemple, lors de la création de services, on ne souhaite généralement pas prendre de décision de type « nu ou encapsulé » et décider du nom de l'élément wrapper. Prendre ces décisions requiert souvent une connaissance approfondie des services Web et de SOAP.  
@@ -250,7 +251,7 @@ ms.lasthandoff: 12/02/2017
   
  Décrire les informations à envoyer ou à recevoir sous forme d'une liste simple de paramètres de contrat d'opération est l'approche que nous recommandons, à moins qu'il existe des raisons particulières de passer à des modèles de programmation basée sur `Message` ou de contrat de message plus complexes.  
   
-### <a name="5-stream"></a>5. Flux de données  
+### <a name="5-stream"></a>5. Flux  
  L'utilisation de `Stream` ou de l'une de ses sous-classes dans un contrat d'opération en tant que partie de corps de message unique dans un contrat de message peut être considérée comme un modèle de programmation distincts de ceux décrits précédemment. L'utilisation de `Stream` de cette manière est le seul moyen de garantir que votre contrat sera utilisable dans le cadre d'une diffusion en continu, en écrivant en abrégé votre propre sous-classe `Message` compatible avec la diffusion en continu. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Des données volumineuses et diffusion en continu](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
   
  Lorsque `Stream` ou l'une de ses sous-classes est utilisée de cette manière, le sérialiseur n'est pas appelé. Pour les messages sortants, une sous-classe `Message` de diffusion en continu spéciale est créée et le flux est écrit tel qu'indiqué dans la section sur l'interface <xref:System.Xml.IStreamProvider> . Pour les messages entrants, l'infrastructure de service crée une sous-classe `Stream` sur le message entrant et la fournit à l'opération.  
@@ -282,4 +283,4 @@ ms.lasthandoff: 12/02/2017
  <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> et <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> sont les comportements d'opération chargés de brancher les formateurs de messages de `DataContractSerializer` et `XmlSerializer`, respectivement. Le comportement <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> peut réellement fonctionner avec n'importe quel sérialiseur qui dérive de <xref:System.Runtime.Serialization.XmlObjectSerializer>, y compris <xref:System.Runtime.Serialization.NetDataContractSerializer> (décrit en détail dans Utilisation de la sérialisation autonome). Le comportement appelle l'une des surcharges de méthode virtuelle `CreateSerializer` pour obtenir le sérialiseur. Pour brancher un autre sérialiseur, créez une sous-classe <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> et substituez les deux surcharges `CreateSerializer` .  
   
 ## <a name="see-also"></a>Voir aussi  
- [Specifying Data Transfer in Service Contracts](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
+ [Spécification du transfert de données dans des contrats de service](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)

@@ -17,11 +17,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 91994fc31e4b0f30d575cd43ad44e66dcdb0a7f0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0e77cf5cc271e86c02e8355dde6f721fe7751416
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="configuring-system-provided-bindings"></a>Configuration des liaisons fournies par le système
 Les liaisons spécifient le mécanisme de communication à utiliser pour communiquer avec un point de terminaison et indiquer comment se connecter à un point de terminaison. Les liaisons se composent des éléments qui définissent comment les canaux [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] sont posés en couches pour fournir les fonctionnalités de communication requises. Une liaison contient trois types d'éléments :  
@@ -30,7 +31,7 @@ Les liaisons spécifient le mécanisme de communication à utiliser pour communi
   
 -   Éléments de liaison de canal de transport qui déterminent le protocole de transport sous-jacent à utiliser lors de l'envoi des messages au point de terminaison, par exemple, le protocole TCP ou HTTP.  
   
--   Éléments de liaison d'encodage de message qui déterminent le code de câble à utiliser pour les messages envoyés au point de terminaison, par exemple, texte/XML, binaire ou MTOM (Message Transmission Optimization Mechanism).  
+-   Éléments de liaison d’encodage de message qui déterminent le code de câble à utiliser pour les messages envoyés au point de terminaison, par exemple, texte/XML, binaire ou MTOM (Message Transmission Optimization Mechanism).  
   
  Cette rubrique présente toutes les liaisons [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournies par le système. Si aucun de ces éléments ne répond aux spécifications exactes de votre application, vous pouvez créer une liaison à l'aide de la classe <xref:System.ServiceModel.Channels.CustomBinding>. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Création de liaisons personnalisées, consultez [des liaisons personnalisées](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   
@@ -38,7 +39,7 @@ Les liaisons spécifient le mécanisme de communication à utiliser pour communi
 >  Sélectionnez une liaison dont la sécurité est activée. Par défaut, toutes les liaisons, à l'exception de la liaison <xref:System.ServiceModel.BasicHttpBinding>, ont la sécurité activée. Si vous ne sélectionnez pas de liaison sécurisée, ou si vous désactivez la sécurité, assurez-vous que vos échanges de réseau sont protégés d'une autre manière, comme le fait d'appartenir à un centre de données sûr ou à un réseau isolé.  
   
 > [!IMPORTANT]
->  N'utilisez pas de contrats duplex avec les liaisons qui ne prennent pas en charge la sécurité, ou dont la sécurité est désactivée, sauf si l'échange de réseau est sécurisé par d'autres moyens.  
+>  N’utilisez pas de contrats duplex avec les liaisons qui ne prennent pas en charge la sécurité, ou dont la sécurité est désactivée, sauf si l’échange de réseau est sécurisé par d’autres moyens.  
   
 ## <a name="system-provided-bindings"></a>Liaisons fournies par le système  
  Les liaisons suivantes sont livrées avec [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
@@ -61,7 +62,7 @@ Les liaisons spécifient le mécanisme de communication à utiliser pour communi
 ## <a name="binding-features"></a>Fonctionnalités de liaison  
  Le tableau suivant répertorie certaines des fonctionnalités clés fournies par chacune des liaisons fournies par le système. Les liaisons sont répertoriées dans la première colonne et les information concernant les fonctionnalités sont décrites dans le tableau. Le tableau suivant fournit une clé pour les abréviations de liaison utilisées. Pour sélectionner une liaison, déterminez quelle colonne satisfait toutes les fonctionnalités de ligne dont vous avez besoin.  
   
-|Binding|Interopérabilité|Mode de sécurité (valeur par défaut)|Session<br /><br /> (Default)|Transactions|Duplex|  
+|Liaison|Interopérabilité|Mode de sécurité (valeur par défaut)|Session<br /><br /> (Default)|Transactions|Duplex|  
 |-------------|----------------------|----------------------------------|-----------------------------|------------------|------------|  
 |<xref:System.ServiceModel.BasicHttpBinding>|Basic Profile 1.1|(Aucun), transport, message, mixte|Aucun, (aucun)|(Aucun)|N/A|  
 |<xref:System.ServiceModel.WSHttpBinding>|WS|Aucun, transport, (message), mixte|(Aucun), transport, session fiable|(Aucun), oui|N/A|  

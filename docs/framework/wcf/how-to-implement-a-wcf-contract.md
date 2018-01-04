@@ -17,11 +17,12 @@ caps.latest.revision: "38"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eabb1ed36ff6f653361a64960e4d02037ab42980
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 4bf590b2f508cc6661b5acb045a7d66b38ed169c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-implement-a-windows-communication-foundation-service-contract"></a>Comment : implémenter un contrat de service Windows Communication Foundation
 Il s'agit de la deuxième des six tâches requises pour créer un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] de base et un client pouvant appeler le service. Pour une vue d’ensemble des tâches, consultez la [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md) rubrique.  
@@ -279,4 +280,4 @@ End Namespace
   
 ## <a name="see-also"></a>Voir aussi  
  [Prise en main](../../../docs/framework/wcf/samples/getting-started-sample.md)  
- [L’auto-hébergement](../../../docs/framework/wcf/samples/self-host.md)
+ [Auto-hébergement](../../../docs/framework/wcf/samples/self-host.md)

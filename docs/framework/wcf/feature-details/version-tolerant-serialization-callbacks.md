@@ -22,11 +22,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 70b89ff741d2a2036d5684ebc4526a6cb7ec49d4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b6e8606b8dbc0733632c2a6dc6aeb039f5277990
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="version-tolerant-serialization-callbacks"></a>Rappels de sérialisation avec tolérance de version
 Le modèle de programmation de contrat de données prend entièrement en charge les méthodes de rappel de sérialisation avec tolérance de version que les classes <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> et <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> prennent en charge.  
@@ -43,7 +44,7 @@ Le modèle de programmation de contrat de données prend entièrement en charge 
   
  Les méthodes doivent accepter un paramètre <xref:System.Runtime.Serialization.StreamingContext>.  
   
- Ces méthodes sont principalement destinées à une utilisation avec le versioning ou l'initialisation. Pendant la désérialisation, aucun constructeur n'est appelé. Par conséquent, des membres de données risquent de ne pas être initialisés correctement (avec les valeurs par défaut prévues) si les données de ces membres ne figurent pas dans le flux entrant, par exemple, si les données viennent d'une version antérieure d'un type auquel il manque certains membres de données. Pour corriger ce problème, utilisez la méthode de rappel marquée avec <xref:System.Runtime.Serialization.OnDeserializingAttribute>, comme indiqué dans l'exemple suivant.  
+ Ces méthodes sont principalement destinées à une utilisation avec le versioning ou l'initialisation. Pendant la désérialisation, aucun constructeur n’est appelé. Par conséquent, des membres de données risquent de ne pas être initialisés correctement (avec les valeurs par défaut prévues) si les données de ces membres ne figurent pas dans le flux entrant, par exemple, si les données viennent d'une version antérieure d'un type auquel il manque certains membres de données. Pour corriger ce problème, utilisez la méthode de rappel marquée avec <xref:System.Runtime.Serialization.OnDeserializingAttribute>, comme indiqué dans l'exemple suivant.  
   
  Vous pouvez marquer uniquement une méthode par type avec chacun des attributs de rappel précédents.  
   

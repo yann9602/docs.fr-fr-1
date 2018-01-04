@@ -13,11 +13,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 15c018dfe3afdee05cc3d6ae1e605090d970536f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0a79503b8f0d56402b2e32b4f54e7f7b143a1f92
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="peer-nodes"></a>Nœuds homologues
 Un nœud homologue est un point de terminaison unique dans une maille de canal homologue. Une application peut disposer de plusieurs nœuds homologues participant à différentes mailles. Par exemple, une application de conversation en réseau pair à pair peut participer à deux mailles distincts : le premier réservé aux discussions avec des camarades de classe et le second réservé aux discussions avec les collègues de travail.  

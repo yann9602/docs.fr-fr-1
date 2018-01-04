@@ -17,11 +17,12 @@ caps.latest.revision: "11"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 550ef4951cc7d5b0a9b25c5e7d038588b0a911f7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1f157ea4afcaccfffde548c26a440fa6686c87aa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="clickonce-deployment-for-windows-forms"></a>Déploiement ClickOnce pour les Windows Forms
 Les rubriques suivantes décrivent [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)], une technologie destinée à faciliter le déploiement des applications Windows Forms sur les ordinateurs clients.  

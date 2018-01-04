@@ -13,11 +13,12 @@ caps.latest.revision: "13"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 377c2425ff1647c43687aa0a5d9584930cb6b1c2
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 7358852ffc50576f892c70fa2b212a8102d8ab85
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="securing-peer-channel-applications"></a>Sécurisation des applications de canal homologue
 Comme d'autres liaisons sous le [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], `NetPeerTcpBinding` a la sécurité activée par défaut et offre les sécurités de transport et de message. Cette rubrique traite de ces deux types de sécurité. Le type de sécurité est spécifié par la balise de mode de sécurité dans la spécification de liaison (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`).  
@@ -53,4 +54,4 @@ Comme d'autres liaisons sous le [!INCLUDE[vstecwinfx](../../../../includes/vstec
   
 ## <a name="see-also"></a>Voir aussi  
  [Sécurité de canal homologue](../../../../docs/framework/wcf/feature-details/peer-channel-security.md)  
- [Création d’une Application de canal homologue](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+ [Création d’une application de canal homologue](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

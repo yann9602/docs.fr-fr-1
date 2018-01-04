@@ -14,17 +14,18 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 4b5d0b90ed28928e734089265cb8c58839b6d0cd
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 814df9ff4fb11b0aa59270ac251b5dbd9ed7fe96
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="enabling-transaction-flow"></a>Activation du flux de transaction
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] fournit des options très flexibles pour contrôler le flux de transaction. Les paramètres de flux de transaction d'un service peuvent être exprimés à l'aide d'une combinaison d'attributs et de configuration.  
   
 ## <a name="transaction-flow-settings"></a>Paramètres de flux de transaction  
- Les paramètres de flux de transaction sont générés pour un point de terminaison de service suite à l'intersection des trois valeurs suivantes :  
+ Les paramètres de flux de transaction sont générés pour un point de terminaison de service suite à l’intersection des trois valeurs suivantes :  
   
 -   Attribut <xref:System.ServiceModel.TransactionFlowAttribute> spécifié pour chaque méthode dans le contrat de service.  
   
@@ -38,17 +39,17 @@ ms.lasthandoff: 12/02/2017
 ### <a name="oletransactions-protocol"></a>Protocole OleTransactions  
  Le protocole OleTransactions est utile pour les scénarios où l'interopérabilité avec les piles de protocoles tiers n'est pas requise et où le responsable du déploiement d'un service sait à l'avance que le service de protocole WS-AT est désactivé localement ou que la topologie du réseau existante ne favorise pas l'utilisation de WS-AT.  
   
- Le tableau ci-dessous indique les différents types de flux de transaction qui peuvent être générés à l'aide de ces différentes combinaisons.  
+ Le tableau ci-dessous indique les différents types de flux de transaction qui peuvent être générés à l’aide de ces différentes combinaisons.  
   
 |Liaison<br /><br /> liaison|Propriété de liaison TransactionFlow|Protocole de liaison TransactionFlowProtocol|Type de flux de transaction|  
 |---------------------------------|--------------------------------------|----------------------------------------------|------------------------------|  
 |Obligatoire|true|WS-AT|La transaction doit être transmise dans le format WS-AT interopérable.|  
 |Obligatoire|true|OleTransactions|La transaction doit être transmise dans le format OleTransactions [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].|  
-|Obligatoire|false|Non applicable|Non applicable parce qu'il s'agit d'une configuration non valide.|  
+|Obligatoire|False|Non applicable|Non applicable parce qu'il s'agit d'une configuration non valide.|  
 |Allowed|true|WS-AT|La transaction peut être transmise dans le format WS-AT interopérable.|  
 |Allowed|true|OleTransactions|La transaction peut être transmise dans le format OleTransactions [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].|  
-|Allowed|false|Valeur quelconque|Une transaction n'est pas transmise.|  
-|NotAllowed|Valeur quelconque|Valeur quelconque|Une transaction n'est pas transmise.|  
+|Allowed|False|Valeur quelconque|Une transaction n'est pas transmise.|  
+|NotAllowed|Valeur quelconque|Valeur quelconque|Une transaction n’est pas transmise.|  
   
  Le tableau ci-dessous résume les résultats de traitement de message.  
   
@@ -59,7 +60,7 @@ ms.lasthandoff: 12/02/2017
 |La transaction ne correspond pas au format de protocole prévu|Allowed|`MustUnderstand` est égal à `false`.|Rejet car l'en-tête n'est pas compris|  
 |Transaction utilisant un format de protocole quelconque|NotAllowed|`MustUnderstand` est égal à `false`.|Rejet car l'en-tête n'est pas compris|  
 |Aucune transaction|Obligatoire|N/A|Rejet car une transaction est requise|  
-|Aucune transaction|Allowed|N/A|Processus|  
+|Aucune transaction|Allowed|N/A|Process|  
 |Aucune transaction|NotAllowed|N/A|Processus|  
   
  Alors que chaque méthode sur un contrat peut avoir des spécifications de flux de transaction différentes, le paramètre de protocole de flux de transaction est délimité au niveau de la liaison. Cela signifie que toutes les méthodes qui partagent le même point de terminaison (et par conséquent la même liaison) partagent également la même stratégie qui autorise ou requiert un flux de transaction, ainsi que le même protocole de transaction, le cas échéant.  
@@ -72,14 +73,14 @@ ms.lasthandoff: 12/02/2017
   
  Cela est effectué à l'aide de <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>, qui vous permet d'activer ou de désactiver le flux de transaction entrant dans les paramètres de liaison d'un point de terminaison, ainsi que de spécifier le format de protocole de transaction souhaité pour les transactions entrantes.  
   
- Si le flux de transaction est désactivé pour la liaison, alors qu'une des opérations sur un contrat de service requiert une transaction entrante, une exception de validation est levée au démarrage du service.  
+ Si le flux de transaction est désactivé pour la liaison, alors qu’une des opérations sur un contrat de service requiert une transaction entrante, une exception de validation est levée au démarrage du service.  
   
  La plupart des liaisons standard que [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] fournit contiennent les attributs `transactionFlow` et `transactionProtocol` qui vous permettent de configurer la liaison spécifique pour accepter les transactions entrantes. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]les éléments de configuration, consultez [ \<liaison >](../../../../docs/framework/misc/binding.md).  
   
  Un administrateur ou un responsable du déploiement peuvent utiliser le flux de transaction au niveau du point de terminaison pour configurer des spécifications ou des contraintes de flux de transaction au moment du déploiement, à l’aide du fichier de configuration.  
   
 ## <a name="security"></a>Sécurité  
- Pour garantir la sécurité et l'intégrité du système, vous devez sécuriser les échanges de messages lorsque vous transmettez des transactions entre des applications. Vous ne devez pas transmettre ni divulguer les détails d'une transaction à toute application qui n'est pas habilitée à participer à cette même transaction.  
+ Pour garantir la sécurité et l’intégrité du système, vous devez sécuriser les échanges de messages lorsque vous transmettez des transactions entre des applications. Vous ne devez pas transmettre ni divulguer les détails d’une transaction à toute application qui n’est pas habilitée à participer à cette même transaction.  
   
  Lorsque vous générez des clients [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour des services Web inconnus ou non approuvés par le biais de l'échange de métadonnées, les appels aux opérations sur ces services Web doivent supprimer la transaction actuelle, si possible. L'exemple suivant illustre la procédure à suivre pour réaliser cette opération.  
   

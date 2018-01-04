@@ -12,11 +12,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8a7dd9e0ccc29c81426064110eda3e00d2f27b99
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 54ed92ee666a55b52db22abbbe46922189b3f8fb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="non-persisted-workflow-instances"></a>Instances de workflow non persistantes
 Lorsqu'une nouvelle instance de workflow est créée, qui rend son état persistant dans le <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, l'hôte de service crée une entrée pour ce service dans le magasin d'instances. Par la suite, lorsque l'instance de workflow est rendue persistante pour la première fois, le <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> stocke l'état de l'instance actuelle. Si le workflow est hébergé dans le service d'activation des processus Windows, les données de déploiement du service sont aussi écrites dans le magasin d'instances lorsque l'instance est rendue persistante pour la première fois.  

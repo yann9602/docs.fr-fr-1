@@ -13,11 +13,12 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: d8dadf09434778bc32bb75c5eff5ff4cb0494373
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b061f9395c3917c196030678ede007071e681027
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extended-protection-for-authentication-overview"></a>Vue d'ensemble de la protection étendue de l'authentification
 La protection étendue de l'authentification contribue à la protection contre les attaques de l'intercepteur (« man-in-the-middle ») au cours desquelles un intrus intercepte les informations d'identification d'un client et les transmet à un serveur.  
@@ -28,13 +29,13 @@ La protection étendue de l'authentification contribue à la protection contre l
   
  La solution consiste à utiliser un canal externe sécurisé TLS et un canal interne authentifié par le client, puis à transmettre un jeton de liaison de canal (CBT, Channel Binding Token) au serveur. Le CBT est une propriété du canal externe sécurisé TLS et permet d'établir la liaison entre le canal externe et une conversation via le canal interne authentifié par le client.  
   
- Dans le scénario précédent, le CBT du canal TLS client-intercepteur est fusionné avec les informations d'autorisation envoyées au serveur. Un serveur reconnaissant CBT compare le CBT contenu dans les informations d'authentification du client, qui correspond au canal client-intercepteur, avec le CBT joint au canal intercepteur-serveur. Un CBT est spécifique à la destination d'un canal, afin que le CBT client-intercepteur ne corresponde pas au CBT intercepteur-serveur. Cela permet au serveur de détecter l'attaque MITM de l'intercepteur et de refuser la demande d'authentification.  
+ Dans le scénario précédent, le CBT du canal TLS client-intercepteur est fusionné avec les informations d’autorisation envoyées au serveur. Un serveur reconnaissant CBT compare le CBT contenu dans les informations d'authentification du client, qui correspond au canal client-intercepteur, avec le CBT joint au canal intercepteur-serveur. Un CBT est spécifique à la destination d'un canal, afin que le CBT client-intercepteur ne corresponde pas au CBT intercepteur-serveur. Cela permet au serveur de détecter l'attaque MITM de l'intercepteur et de refuser la demande d'authentification.  
   
  Côté client, aucun paramètre de configuration n'est requis. Une fois que le client a été mis à jour pour transmettre le CBT au serveur, il procède toujours de cette façon. Si le serveur a également été mis à jour, il peut être configuré de manière à utiliser le CBT ou à l'ignorer. S'il n'a pas été mis à jour, il l'ignore.  
   
  Le serveur peut présenter les niveaux de protection suivants :  
   
--   Aucun Aucune validation de liaison de canal n'est exécutée. Il s'agit du comportement de tous les serveurs qui n'ont pas été mis à jour.  
+-   Aucun. Aucune validation de liaison de canal n'est exécutée. Il s'agit du comportement de tous les serveurs qui n'ont pas été mis à jour.  
   
 -   Partiel. Tous les clients qui ont été mis à jour doivent fournir les informations de liaison de canal au serveur. Les clients qui n'ont pas été mis à jour n'ont pas à le faire. Il s'agit d'une option intermédiaire qui permet la compatibilité des applications.  
   

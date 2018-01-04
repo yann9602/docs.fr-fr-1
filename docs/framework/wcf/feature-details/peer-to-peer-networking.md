@@ -13,11 +13,12 @@ caps.latest.revision: "17"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d3ef21d4ab431ea4e1e1ac0392b3f088a7053c80
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 496c1191ebb55181ddb999a5a4327d5ff699828c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="peer-to-peer-networking"></a>Réseaux homologues
 Le canal homologue est une technologie de communication P2P (peer-to-peer) entre plusieurs parties de [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Elle fournit un canal de communication P2P basé sur des messages sécurisé et évolutif pour les développeurs d'applications. Un exemple courant d'application entre plusieurs parties pouvant bénéficier du canal homologue concerne une application collaborative telle que la conversation, dans le cadre de laquelle un groupe de personnes discutent les unes avec les autres d'égal à égal sans qu'un serveur soit nécessaire. Le canal homologue permet la collaboration P2P, la distribution de contenu, l'équilibrage de charge et le traitement distribué des scénarios consommateur et d'entreprise.  

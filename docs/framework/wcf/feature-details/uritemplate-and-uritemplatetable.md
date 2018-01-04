@@ -13,11 +13,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: b9d08fa0e0ec556779d246af5ec11fcbeb54dedc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: ac77fe2c83828d2cc9473417d2b29b2d2e540923
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate et UriTemplateTable
 Les développeurs de sites Web ont besoin de pouvoir décrire la forme et la disposition des URI auxquels leurs services répondent. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] a ajouté deux nouvelles classes pour permettre aux développeurs de mieux contrôler leurs URI. <xref:System.UriTemplate> et <xref:System.UriTemplateTable> forment la base du moteur de répartition reposant sur les URI dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Ces classes peuvent également être utilisées seules, ce qui permet aux développeurs de tirer parti des modèles et du mécanisme du mappage des URI sans avoir à implémenter un service [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
@@ -71,7 +72,7 @@ Les développeurs de sites Web ont besoin de pouvoir décrire la forme et la dis
 "/weather/{state}/{city}?forecast={length)#frag1  
 ```  
   
- Le chemin d'accès est "/météo/{état}/{ville}", la demande est "?prévision={durée}, et le fragment est "#frag1".  
+ Le chemin d’accès est "/météo/{état}/{ville}", la demande est "?prévision={durée}, et le fragment est "#frag1".  
   
  Les barres obliques de début et de fin sont facultatives dans l'expression du chemin d'accès. Les expressions de la requête et du fragment peuvent toutes deux être complètement omises. Un chemin d’accès se compose d’une série de segments délimités par '/', chaque segment peut avoir une valeur littérale, un nom de variable (écrit entre {accolades}) ou un caractère générique (écrit comme\*'). Dans le modèle précédent, le segment "\météo\" est une valeur littérale tandis que "{état}" et "{ville}" sont des variables. Variables tirent leur nom à partir du contenu de leurs accolades et elles peuvent être remplacées ultérieurement par une valeur concrète pour créer un *URI fermé*. Le caractère générique est facultatif, mais il ne peut apparaître qu’à la fin de l’URI, où il correspond logiquement à « la suite du chemin d’accès ».  
   
@@ -122,7 +123,7 @@ Les développeurs de sites Web ont besoin de pouvoir décrire la forme et la dis
 -   « ? y = 2 & & X = 3 » – chaîne de requête doit être des paires nom-valeur, les noms ne peut pas commencer par '&'.  
   
 ### <a name="compound-path-segments"></a>Segments de chemin d’accès composés  
- Les segments de chemin d'accès composés permettent à un segment du chemin d'accès de l'URI unique de contenir plusieurs variables ainsi que des variables associées à des littéraux. Les éléments suivants illustrent des segments de chemin d'accès composés valides.  
+ Les segments de chemin d’accès composés permettent à un segment du chemin d’accès de l’URI unique de contenir plusieurs variables ainsi que des variables associées à des littéraux. Les éléments suivants illustrent des segments de chemin d’accès composés valides.  
   
 -   /nom_de_fichier.{ext}/  
   
@@ -142,7 +143,7 @@ Les développeurs de sites Web ont besoin de pouvoir décrire la forme et la dis
  Les segments de chemin d’accès composés vous permettent de définit un modèle d’URI ayant plusieurs variables dans un seul segment de chemin d’accès. Par exemple, dans la chaîne de modèle suivant : « adresses / {état}. {Ville} » deux variables (état et ville) sont définis dans le même segment. Ce modèle correspondrait à une URL comme « http://example.com/Washington.Redmond », mais il correspond également à une URL comme « http://example.com/Washington.Redmond.Microsoft ». Dans ce cas, la variable d’état contiendra « Washington » et la variable ville contiendra « Redmond.Microsoft ». Dans ce cas, tout texte (sauf ‘/’) correspondra à la variable {ville}. Si vous souhaitez un modèle qui ne corresponde pas le texte « supplémentaire », placez la variable dans un segment de modèle séparé, par exemple : « adresses / {état} / {ville}.  
   
 ### <a name="named-wildcard-segments"></a>Segments de caractère générique nommés  
- Un segment de caractère générique nommé est tout segment variable de chemin d'accès dont le nom de variable commence par le caractère générique '*'. La chaîne de modèle suivante contient un segment de caractère générique nommé « chaussure ».  
+ Un segment de caractère générique nommé est tout segment variable de chemin d’accès dont le nom de variable commence par le caractère générique ’*’. La chaîne de modèle suivante contient un segment de caractère générique nommé « chaussure ».  
   
 ```  
 "literal/{*shoe}"  
@@ -266,7 +267,7 @@ Console.WriteLine("Bound URI: {0}", boundUri);
   
 -   Si un modèle contient des barres obliques de début, seule la première est ignorée.  
   
--   Lors de la comparaison des chaînes de modèles pour rechercher une équivalence structurelle, la casse est ignorée pour les noms de variables et les segments de chemin d'accès, mais les chaînes de demande respectent la casse.  
+-   Lors de la comparaison des chaînes de modèles pour rechercher une équivalence structurelle, la casse est ignorée pour les noms de variables et les segments de chemin d’accès, mais les chaînes de demande respectent la casse.  
   
 -   Les chaînes de demande ne sont pas ordonnées.  
   
@@ -343,8 +344,8 @@ Console.WriteLine("Bound URI: {0}", boundUri);
 >  Les caractères á et Á sont considérés comme des caractères différents lorsqu'ils apparaissent dans le cadre d'un chemin d'accès d'URI ou d'un littéral de segment de chemin d'accès <xref:System.UriTemplate> (en revanche, les caractères a et A sont considérés comme identiques). Les caractères á et Á sont considérés comme identiques lorsqu'ils apparaissent dans le cadre d'un {nomVariable} <xref:System.UriTemplate> ou d'une chaîne de demande (a et A sont également considérés comme identiques).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Vue d’ensemble du modèle de programmation Web HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)  
- [Modèle objet de programmation Web HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)  
+ [Vue d’ensemble du modèle de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)  
+ [Modèle objet de programmation HTTP web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)  
  [UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-sample.md)  
- [UriTemplate Table](../../../../docs/framework/wcf/samples/uritemplate-table-sample.md)  
- [UriTemplate Table Dispatcher](../../../../docs/framework/wcf/samples/uritemplate-table-dispatcher-sample.md)
+ [Table UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-table-sample.md)  
+ [Répartiteur de table UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-table-dispatcher-sample.md)
