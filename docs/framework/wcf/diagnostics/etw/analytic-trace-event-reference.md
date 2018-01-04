@@ -14,11 +14,12 @@ caps.latest.revision: "50"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 616751adfd14e2f07de764b37d684ecdc276847b
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9a07aed6ade7d5eb806b666711a49c0b9507d3ee
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="analytic-trace-event-reference"></a>Référence d'événement de trace analytique
 Le tableau suivant définit les niveaux, les identificateurs et les messages d'événement, associés au traçage analytique [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)].  
@@ -49,17 +50,17 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[216 - MessageSentByTransport](../../../../../docs/framework/wcf/diagnostics/etw/216-messagesentbytransport.md)|Information|Le transport a envoyé un message à '%1.'|Dépannage, ServiceModel|  
 |[217 - ClientOperationPrepared](../../../../../docs/framework/wcf/diagnostics/etw/217-clientoperationprepared.md)|Information|Le client exécute l'opération '%1' définie dans le contrat '%2'. Le message sera envoyé à '%3'.|Dépannage, ServiceModel|  
 |[218 - ClientOperationCompleted](../../../../../docs/framework/wcf/diagnostics/etw/218-clientoperationcompleted.md)|Information|Le client a terminé l'exécution de l'opération '%1' définie dans le contrat '%2'. Le message a été envoyé à '%3'.|Dépannage, ServiceModel|  
-|[219 - ServiceException](../../../../../docs/framework/wcf/diagnostics/etw/219-serviceexception.md)|Erreur|Une exception non gérée de type '%2' s'est produite lors du traitement du message.  Exception totale ToString : %1.|HealthMonitoring, EndToEndMonitoring, Dépannage, ServiceModel|  
+|[219 - ServiceException](../../../../../docs/framework/wcf/diagnostics/etw/219-serviceexception.md)|Error|Une exception non gérée de type '%2' s'est produite lors du traitement du message.  Exception totale ToString : %1.|HealthMonitoring, EndToEndMonitoring, Dépannage, ServiceModel|  
 |[220 - MessageSentToTransport](../../../../../docs/framework/wcf/diagnostics/etw/220-messagesenttotransport.md)|Information|Le répartiteur a envoyé un message au transport. ID de corrélation == '%1.'|EndToEndMonitoring, Dépannage, ServiceModel|  
 |[221 - MessageReceivedFromTransport](../../../../../docs/framework/wcf/diagnostics/etw/221-messagereceivedfromtransport.md)|Information|Le répartiteur a reçu un message du transport. ID de corrélation == '%1.'|EndToEndMonitoring, Dépannage, ServiceModel|  
 |[222 - OperationFailed](../../../../../docs/framework/wcf/diagnostics/etw/222-operationfailed.md)|Warning|La méthode '%1' a levé une exception non gérée lors de l'appel effectué par l'OperationInvoker. Durée de l'appel de méthode : '%2' ms.|HealthMonitoring, EndToEndMonitoring, Dépannage, ServiceModel|  
 |[223 - OperationFaulted](../../../../../docs/framework/wcf/diagnostics/etw/223-operationfaulted.md)|Warning|La méthode '%1' a levé un FaultException lors de l'appel effectué par l'OperationInvoker. Durée de l'appel de méthode : '%2' ms.|HealthMonitoring, EndToEndMonitoring, Dépannage, ServiceModel|  
 |[224 - MessageThrottleAtSeventyPercent](../../../../../docs/framework/wcf/diagnostics/etw/224-messagethrottleatseventypercent.md)|Warning|La valeur de la limitation '%1' de '%2' est à 70%.|HealthMonitoring, EndToEndMonitoring, Dépannage, ServiceModel|  
 |[226 - IdleServicesClosed](../../../../../docs/framework/wcf/diagnostics/etw/226-idleservicesclosed.md)|LogAlways|%1 services inactifs sur un total de %2 services activés ont été fermés.|HealthMonitoring WebHost|  
-|[301 - UserDefinedErrorOccurred](../../../../../docs/framework/wcf/diagnostics/etw/301-userdefinederroroccurred.md)|Erreur|Nom : '%1', Référence : '%2', Charge : %3.|UserEvents, HealthMonitoring, EndToEndMonitoring, Dépannage, ServiceModel|  
+|[301 - UserDefinedErrorOccurred](../../../../../docs/framework/wcf/diagnostics/etw/301-userdefinederroroccurred.md)|Error|Nom : '%1', Référence : '%2', Charge : %3.|UserEvents, HealthMonitoring, EndToEndMonitoring, Dépannage, ServiceModel|  
 |[302 - UserDefinedWarningOccurred](../../../../../docs/framework/wcf/diagnostics/etw/302-userdefinedwarningoccurred.md)|Warning|Nom : '%1', Référence : '%2', Charge : %3.|UserEvents, HealthMonitoring, EndToEndMonitoring, Dépannage, ServiceModel|  
 |[303 - UserDefinedInformationEventOccured](../../../../../docs/framework/wcf/diagnostics/etw/303-userdefinedinformationeventoccured.md)|Information|Nom : '%1', Référence : '%2', Charge : %3.|UserEvents, HealthMonitoring, EndToEndMonitoring, Dépannage, ServiceModel|  
-|[401 - StopSignPostEvent](../../../../../docs/framework/wcf/diagnostics/etw/401-stopsignpostevent.md)|Information|Limite d'activité.|Résolution des problèmes|  
+|[401- StopSignPostEvent](../../../../../docs/framework/wcf/diagnostics/etw/401-stopsignpostevent.md)|Information|Limite d'activité.|Résolution des problèmes|  
 |[402 - StartSignpostEvent](../../../../../docs/framework/wcf/diagnostics/etw/402-startsignpostevent.md)|Information|Limite d'activité.|Résolution des problèmes|  
 |[403 - SuspendSignpostEvent](../../../../../docs/framework/wcf/diagnostics/etw/403-suspendsignpostevent.md)|Information|Limite d'activité.|Résolution des problèmes|  
 |[404 - ResumeSignpostEvent](../../../../../docs/framework/wcf/diagnostics/etw/404-resumesignpostevent.md)|Information|Limite d'activité.|Résolution des problèmes|  
@@ -74,7 +75,7 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[506 - CreateServiceHostStop](../../../../../docs/framework/wcf/diagnostics/etw/506-createservicehoststop.md)|Information|Arrêter CreateServiceHost.|WebHost|  
 |[507 - HostedTransportConfigurationManagerConfigInitStart](../../../../../docs/framework/wcf/diagnostics/etw/507-hostedtransportconfigurationmanagerconfiginitstart.md)|Information|Initialisation du début de la configuration HostedTransportConfigurationManager.|WebHost|  
 |[508 - HostedTransportConfigurationManagerConfigInitStop](../../../../../docs/framework/wcf/diagnostics/etw/508-hostedtransportconfigurationmanagerconfiginitstop.md)|Information|Initialisation de la fin de la configuration HostedTransportConfigurationManager.|WebHost|  
-|[-509 ServiceHostOpenStart](../../../../../docs/framework/wcf/diagnostics/etw/509-servicehostopenstart.md)|Information|Initialisation de la fin de la configuration HostedTransportConfigurationManager.|ServiceHost|  
+|[509 - ServiceHostOpenStart](../../../../../docs/framework/wcf/diagnostics/etw/509-servicehostopenstart.md)|Information|Initialisation de la fin de la configuration HostedTransportConfigurationManager.|ServiceHost|  
 |[510 - ServiceHostOpenStop](../../../../../docs/framework/wcf/diagnostics/etw/510-servicehostopenstop.md)|Information|Ouverture de ServiceHost terminée.|ServiceHost|  
 |[513 - WebHostRequestStart](../../../../../docs/framework/wcf/diagnostics/etw/513-webhostrequeststart.md)|Information|Réception d'une requête avec le chemin d'accès virtuel « %2 » en provenance de l'AppDomain « %1 ».|WebHost|  
 |[514 - WebHostRequestStop](../../../../../docs/framework/wcf/diagnostics/etw/514-webhostrequeststop.md)|Information|Arrêt de WebHostRequest.|WebHost|  
@@ -98,20 +99,20 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[715 - ClientChannelOpenStart](../../../../../docs/framework/wcf/diagnostics/etw/715-clientchannelopenstart.md)|Information|Début de l'ouverture de ServiceChannel.|ServiceModel|  
 |[716 - ClientChannelOpenStop](../../../../../docs/framework/wcf/diagnostics/etw/716-clientchannelopenstop.md)|Information|Arrêt de l'ouverture de ServiceChannel.|ServiceModel|  
 |[717 - HttpSendStreamedMessageStart](../../../../../docs/framework/wcf/diagnostics/etw/717-httpsendstreamedmessagestart.md)|Information|Message diffusé en continu par envoi HTTP démarré.|HTTP|  
-|[1400 - ChannelInitializationTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1400-channelinitializationtimeout.md)|Erreur|1%|ServiceModel|  
-|[1401 - CloseTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1401-closetimeout.md)|Erreur|1%|ServiceModel|  
-|[1402 - IdleTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1402-idletimeout.md)|Erreur|Clé de pool de connexion %1 : %2|ServiceModel|  
+|[1400 - ChannelInitializationTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1400-channelinitializationtimeout.md)|Error|1%|ServiceModel|  
+|[1401 - CloseTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1401-closetimeout.md)|Error|1%|ServiceModel|  
+|[1402 - IdleTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1402-idletimeout.md)|Error|Clé de pool de connexion %1 : %2|ServiceModel|  
 |[1403 - LeaseTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1403-leasetimeout.md)|Information|Clé de pool de connexion %1 : %2|ServiceModel|  
-|[1405 - OpenTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1405-opentimeout.md)|Erreur|%1|ServiceModel|  
-|[1406 - ReceiveTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1406-receivetimeout.md)|Erreur|%1|ServiceModel|  
-|[1407 - SendTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1407-sendtimeout.md)|Erreur|%1|ServiceModel|  
+|[1405 - OpenTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1405-opentimeout.md)|Error|%1|ServiceModel|  
+|[1406 - ReceiveTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1406-receivetimeout.md)|Error|%1|ServiceModel|  
+|[1407 - SendTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1407-sendtimeout.md)|Error|%1|ServiceModel|  
 |[1409 - InactivityTimeout](../../../../../docs/framework/wcf/diagnostics/etw/1409-inactivitytimeout.md)|Information|%1|ServiceModel|  
-|[1416 - MaxReceivedMessageSizeExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1416-maxreceivedmessagesizeexceeded.md)|Erreur|%1|Quota|  
-|[1417 - MaxSentMessageSizeExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1417-maxsentmessagesizeexceeded.md)|Erreur|%1|Quota|  
+|[1416 - MaxReceivedMessageSizeExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1416-maxreceivedmessagesizeexceeded.md)|Error|%1|Quota|  
+|[1417 - MaxSentMessageSizeExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1417-maxsentmessagesizeexceeded.md)|Error|%1|Quota|  
 |[1418 - MaxOutboundConnectionsPerEndpointExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1418-maxoutboundconnectionsperendpointexceeded.md)|Information|%1|Quota|  
 |[1419 - MaxPendingConnectionsExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1419-maxpendingconnectionsexceeded.md)|Information|%1|Quota|  
-|[1420 - ReaderQuotaExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1420-readerquotaexceeded.md)|Erreur|%1|Quota|  
-|[1422 - NegotiateTokenAuthenticatorStateCacheExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1422-negotiatetokenauthenticatorstatecacheexceeded.md)|Erreur|%1|Quota|  
+|[1420 - ReaderQuotaExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1420-readerquotaexceeded.md)|Error|%1|Quota|  
+|[1422 - NegotiateTokenAuthenticatorStateCacheExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1422-negotiatetokenauthenticatorstatecacheexceeded.md)|Error|%1|Quota|  
 |[1423 - NegotiateTokenAuthenticatorStateCacheRatio](../../../../../docs/framework/wcf/diagnostics/etw/1423-negotiatetokenauthenticatorstatecacheratio.md)|Verbose|Ratio du cache de l'état de l'authentificateur de jetons Negotiate : %1/%2|Quota|  
 |[1424 - SecuritySessionRatio](../../../../../docs/framework/wcf/diagnostics/etw/1424-securitysessionratio.md)|Verbose|Ratio de la session de sécurité : %1/%2|Quota|  
 |[1430 - PendingConnectionsRatio](../../../../../docs/framework/wcf/diagnostics/etw/1430-pendingconnectionsratio.md)|Verbose|Ratio des connexions en attente : %1/%2|Quota|  
@@ -124,10 +125,10 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[1439 - PendingAcceptsAtZero](../../../../../docs/framework/wcf/diagnostics/etw/1439-pendingacceptsatzero.md)|Information|Aucune acceptation en attente restante|Quota|  
 |[1441 - MaxSessionSizeReached](../../../../../docs/framework/wcf/diagnostics/etw/1441-maxsessionsizereached.md)|Warning|1%|Quota|  
 |[1442 - ReceiveRetryCountReached](../../../../../docs/framework/wcf/diagnostics/etw/1442-receiveretrycountreached.md)|Warning|Nombre de tentatives de réceptions atteint dans le message MSMQ avec l'ID « %1 »|Quota|  
-|[1443 - MaxRetryCyclesExceededMsmq](../../../../../docs/framework/wcf/diagnostics/etw/1443-maxretrycyclesexceededmsmq.md)|Erreur|Nombre maximal de cycles de tentatives dépassé dans le message MSMQ avec l'ID « %1 »|Quota|  
+|[1443 - MaxRetryCyclesExceededMsmq](../../../../../docs/framework/wcf/diagnostics/etw/1443-maxretrycyclesexceededmsmq.md)|Error|Nombre maximal de cycles de tentatives dépassé dans le message MSMQ avec l'ID « %1 »|Quota|  
 |[1445 - ReadPoolMiss](../../../../../docs/framework/wcf/diagnostics/etw/1445-readpoolmiss.md)|Verbose|Création de « %1 »|Quota|  
 |[1446 - WritePoolMiss](../../../../../docs/framework/wcf/diagnostics/etw/1446-writepoolmiss.md)|Verbose|Création de « %1 »|Quota|  
-|[1451 - MaxRetryCyclesExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1451-maxretrycyclesexceeded.md)|Erreur|1%|Quota|  
+|[1451 - MaxRetryCyclesExceeded](../../../../../docs/framework/wcf/diagnostics/etw/1451-maxretrycyclesexceeded.md)|Error|1%|Quota|  
 |[3300 - ReceiveContextCompleteFailed](../../../../../docs/framework/wcf/diagnostics/etw/3300-receivecontextcompletefailed.md)|Warning|Impossible de terminer %1.|Canal|  
 |[3301 - ReceiveContextAbandonFailed](../../../../../docs/framework/wcf/diagnostics/etw/3301-receivecontextabandonfailed.md)|Warning|Impossible d'abandonner %1.|Canal|  
 |[3303 - ReceiveContextAbandonWithException](../../../../../docs/framework/wcf/diagnostics/etw/3303-receivecontextabandonwithexception.md)|Warning|Contexte de réception erroné.|ServiceModel|  
@@ -137,11 +138,11 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[3307 - ClientBaseChannelFactoryCacheHit](../../../../../docs/framework/wcf/diagnostics/etw/3307-clientbasechannelfactorycachehit.md)|Information|Une fabrique de canaux correspondante trouvée dans le cache a été utilisée.|ServiceModel|  
 |[3308 - ClientBaseUsingLocalChannelFactory](../../../../../docs/framework/wcf/diagnostics/etw/3308-clientbaseusinglocalchannelfactory.md)|Information|Aucune fabrique de canaux à partir du cache, c'est-à-dire mise en cache désactivée pour l’instance.|ServiceModel|  
 |[3309 - QueryCompositionExecuted](../../../../../docs/framework/wcf/diagnostics/etw/3309-querycompositionexecuted.md)|Information|La composition de requête à l'aide de « %1 » a été exécutée sur l'URI de requête : « %2 ».|ServiceModel|  
-|[3310 - DispatchFailed](../../../../../docs/framework/wcf/diagnostics/etw/3310-dispatchfailed.md)|Erreur|L'opération « %1 »' a été distribuée avec des erreurs.|ServiceModel|  
+|[3310 - DispatchFailed](../../../../../docs/framework/wcf/diagnostics/etw/3310-dispatchfailed.md)|Error|L'opération « %1 »' a été distribuée avec des erreurs.|ServiceModel|  
 |[3311 - DispatchSuccessful](../../../../../docs/framework/wcf/diagnostics/etw/3311-dispatchsuccessful.md)|Information|L'opération « %1 » a été distribuée.|ServiceModel|  
 |[3312 - MessageReadByEncoder](../../../../../docs/framework/wcf/diagnostics/etw/3312-messagereadbyencoder.md)|Information|Un message d'une taille de « %1 » octets a été lu par l'encodeur.|Canal|  
 |[3312 - MessageReadByEncoder](../../../../../docs/framework/wcf/diagnostics/etw/3312-messagereadbyencoder.md)|Information|Un message d'une taille de '%1' octets a été écrit par l'encodeur.|Canal|  
-|[3314 - SessionIdleTimeout](../../../../../docs/framework/wcf/diagnostics/etw/3314-sessionidletimeout.md)|Erreur|Abandon de la session du canal inactif de l'URI : « %1 ».|ServiceModel|  
+|[3314 - SessionIdleTimeout](../../../../../docs/framework/wcf/diagnostics/etw/3314-sessionidletimeout.md)|Error|Abandon de la session du canal inactif de l'URI : « %1 ».|ServiceModel|  
 |[3319 - SocketAcceptEnqueued](../../../../../docs/framework/wcf/diagnostics/etw/3319-socketacceptenqueued.md)|Verbose|Acceptation de la connexion commencée.|TCP|  
 |[3320 - SocketAccepted](../../../../../docs/framework/wcf/diagnostics/etw/3320-socketaccepted.md)|Verbose|ListenerId : %1 a accepté SocketId : %2|TCP|  
 |[3321 - ConnectionPoolMiss](../../../../../docs/framework/wcf/diagnostics/etw/3321-connectionpoolmiss.md)|Verbose|Le pool de %1 ne dispose d'aucune connexion disponible et dispose de %2 connexions occupées.|Canal|  
@@ -168,18 +169,18 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[3342 - EstablishConnectionStart](../../../../../docs/framework/wcf/diagnostics/etw/3342-establishconnectionstart.md)|Verbose|Début de l'établissement de la connexion pour %1.|Canal|  
 |[3343 - EstablishConnectionStop](../../../../../docs/framework/wcf/diagnostics/etw/3343-establishconnectionstop.md)|Verbose|Connexion établie.|Canal|  
 |[3345 - SessionPreambleUnderstood](../../../../../docs/framework/wcf/diagnostics/etw/3345-sessionpreambleunderstood.md)|Verbose|Préambule de session pour « %1 » compris.|Canal|  
-|[3346 - ConnectionReaderSendFault](../../../../../docs/framework/wcf/diagnostics/etw/3346-connectionreadersendfault.md)|Erreur|Envoi de l'erreur « %1 » par le lecteur de connexion.|Canal|  
+|[3346 - ConnectionReaderSendFault](../../../../../docs/framework/wcf/diagnostics/etw/3346-connectionreadersendfault.md)|Error|Envoi de l'erreur « %1 » par le lecteur de connexion.|Canal|  
 |[3347 - SocketAcceptClosed](../../../../../docs/framework/wcf/diagnostics/etw/3347-socketacceptclosed.md)|Verbose|Acceptation du socket fermée.|TCP|  
 |[3348 - ServiceHostFaulted](../../../../../docs/framework/wcf/diagnostics/etw/3348-servicehostfaulted.md)|Critique|L'hôte de service a rencontré une erreur.|TCP|  
 |[3349 - ListenerOpenStart](../../../../../docs/framework/wcf/diagnostics/etw/3349-listeneropenstart.md)|Verbose|Ouverture de l'écouteur pour « %1 ».|Canal|  
 |[3350 - ListenerOpenStop](../../../../../docs/framework/wcf/diagnostics/etw/3350-listeneropenstop.md)|Verbose|Ouverture de l'écouteur terminée.|Canal|  
 |[3351 - ServerMaxPooledConnectionsQuotaReached](../../../../../docs/framework/wcf/diagnostics/etw/3351-servermaxpooledconnectionsquotareached.md)|Verbose|Le quota maximal de connexions regroupées du serveur a été atteint.|Quota|  
-|[3352 - TcpConnectionTimedOut](../../../../../docs/framework/wcf/diagnostics/etw/3352-tcpconnectiontimedout.md)|Erreur|Le SocketId %1 à l'adresse distante %2 a expiré.|TCP|  
+|[3352 - TcpConnectionTimedOut](../../../../../docs/framework/wcf/diagnostics/etw/3352-tcpconnectiontimedout.md)|Error|Le SocketId %1 à l'adresse distante %2 a expiré.|TCP|  
 |[3353 - TcpConnectionResetError](../../../../../docs/framework/wcf/diagnostics/etw/3353-tcpconnectionreseterror.md)|Warning|Le SocketId %1 à l'adresse distante %2 a rencontré une erreur lors de la réinitialisation de la connexion.|TCP|  
 |[3354 - ServiceSecurityNegotiationCompleted](../../../../../docs/framework/wcf/diagnostics/etw/3354-servicesecuritynegotiationcompleted.md)|Verbose|Négociation de sécurité du service terminée.|Sécurité|  
-|[3355 - SecurityNegotiationProcessingFailure](../../../../../docs/framework/wcf/diagnostics/etw/3355-securitynegotiationprocessingfailure.md)|Erreur|Échec du traitement de la négociation de sécurité.|Sécurité|  
+|[3355 - SecurityNegotiationProcessingFailure](../../../../../docs/framework/wcf/diagnostics/etw/3355-securitynegotiationprocessingfailure.md)|Error|Échec du traitement de la négociation de sécurité.|Sécurité|  
 |[3356 - SecurityIdentityVerificationSuccess](../../../../../docs/framework/wcf/diagnostics/etw/3356-securityidentityverificationsuccess.md)|Verbose|Vérification de sécurité effectuée.|Sécurité|  
-|[3357 - SecurityIdentityVerificationFailure](../../../../../docs/framework/wcf/diagnostics/etw/3357-securityidentityverificationfailure.md)|Erreur|Échec de la vérification de sécurité.|Sécurité|  
+|[3357 - SecurityIdentityVerificationFailure](../../../../../docs/framework/wcf/diagnostics/etw/3357-securityidentityverificationfailure.md)|Error|Échec de la vérification de sécurité.|Sécurité|  
 |[3358 - PortSharingDuplicatedSocket](../../../../../docs/framework/wcf/diagnostics/etw/3358-portsharingduplicatedsocket.md)|Verbose|Socket dupliqué pour %1.|ActivationServices|  
 |[3359 - SecurityImpersonationSuccess](../../../../../docs/framework/wcf/diagnostics/etw/3359-securityimpersonationsuccess.md)|Verbose|Emprunt d'identité de sécurité effectué.|Sécurité|  
 |[3360 - SecurityImpersonationFailure](../../../../../docs/framework/wcf/diagnostics/etw/3360-securityimpersonationfailure.md)|Warning|Échec de l'emprunt d'identité de sécurité.|Sécurité|  
@@ -188,8 +189,8 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[3363 - HttpAuthFailed](../../../../../docs/framework/wcf/diagnostics/etw/3363-httpauthfailed.md)|Warning|Échec de l'authentification HTTP.|HTTP|  
 |[3364 - SharedListenerProxyRegisterStart](../../../../../docs/framework/wcf/diagnostics/etw/3364-sharedlistenerproxyregisterstart.md)|Verbose|Début de l'inscription SharedListenerProxy pour l'URI « %1 ».|ActivationServices|  
 |[3365 - SharedListenerProxyRegisterStop](../../../../../docs/framework/wcf/diagnostics/etw/3365-sharedlistenerproxyregisterstop.md)|Verbose|Arrêt de l'inscription SharedListenerProxy.|ActivationServices|  
-|[3366 - SharedListenerProxyRegisterFailed](../../../../../docs/framework/wcf/diagnostics/etw/3366-sharedlistenerproxyregisterfailed.md)|Erreur|Échec de l'inscription SharedListenerProxy avec l'état « %1 ».|ActivationServices|  
-|[3367 - ConnectionPoolPreambleFailed](../../../../../docs/framework/wcf/diagnostics/etw/3367-connectionpoolpreamblefailed.md)|Erreur|ConnectionPoolPreambleFailed.|Canal|  
+|[3366 - SharedListenerProxyRegisterFailed](../../../../../docs/framework/wcf/diagnostics/etw/3366-sharedlistenerproxyregisterfailed.md)|Error|Échec de l'inscription SharedListenerProxy avec l'état « %1 ».|ActivationServices|  
+|[3367 - ConnectionPoolPreambleFailed](../../../../../docs/framework/wcf/diagnostics/etw/3367-connectionpoolpreamblefailed.md)|Error|ConnectionPoolPreambleFailed.|Canal|  
 |[3368 - SslOnInitiateUpgrade](../../../../../docs/framework/wcf/diagnostics/etw/3368-ssloninitiateupgrade.md)|Verbose|SslOnAcceptUpgradeStart|Sécurité|  
 |[3369 - SslOnAcceptUpgrade](../../../../../docs/framework/wcf/diagnostics/etw/3369-sslonacceptupgrade.md)|Verbose|SslOnAcceptUpgradeStop|Sécurité|  
 |[3370 - BinaryMessageEncodingStart](../../../../../docs/framework/wcf/diagnostics/etw/3370-binarymessageencodingstart.md)|Verbose|BinaryMessageEncoder a démarré l'encodage du message.|Canal|  
@@ -231,7 +232,7 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[3408 - HttpPipelineBeginProcessInboundRequestStart](../../../../../docs/framework/wcf/diagnostics/etw/3408-httppipelinebeginprocessinboundrequeststart.md)|Verbose|Le gestionnaire de messages HTTP a démarré le traitement asynchrone de la demande entrante.|HTTP|  
 |[3409 - HttpPipelineProcessInboundRequestStop](../../../../../docs/framework/wcf/diagnostics/etw/3409-httppipelineprocessinboundrequeststop.md)|Verbose|Le gestionnaire de messages HTTP a terminé le traitement d'une demande entrante.|HTTP|  
 |[3410 - HttpPipelineFaulted](../../../../../docs/framework/wcf/diagnostics/etw/3410-httppipelinefaulted.md)|Warning|Le gestionnaire de messages HTTP est défectueux.|HTTP|  
-|[3411 - HttpPipelineTimeoutException](../../../../../docs/framework/wcf/diagnostics/etw/3411-httppipelinetimeoutexception.md)|Erreur|La connexion WebSocket a expiré.|HTTP|  
+|[3411 - HttpPipelineTimeoutException](../../../../../docs/framework/wcf/diagnostics/etw/3411-httppipelinetimeoutexception.md)|Error|La connexion WebSocket a expiré.|HTTP|  
 |[3412 - HttpPipelineProcessResponseStart](../../../../../docs/framework/wcf/diagnostics/etw/3412-httppipelineprocessresponsestart.md)|Verbose|Le gestionnaire de messages HTTP a démarré le traitement de la réponse.|HTTP|  
 |[3413 - HttpPipelineBeginProcessResponseStart](../../../../../docs/framework/wcf/diagnostics/etw/3413-httppipelinebeginprocessresponsestart.md)|Verbose|Le gestionnaire de messages HTTP a démarré le traitement asynchrone de la réponse.|HTTP|  
 |[3414 - HttpPipelineProcessResponseStop](../../../../../docs/framework/wcf/diagnostics/etw/3414-httppipelineprocessresponsestop.md)|Verbose|Le gestionnaire de messages HTTP a terminé le traitement de la réponse.|HTTP|  
@@ -239,9 +240,9 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[3416 - WebSocketConnectionRequestSendStop](../../../../../docs/framework/wcf/diagnostics/etw/3416-websocketconnectionrequestsendstop.md)|Verbose|Demande de connexion à l'élément WebSocketId %1 envoyée.|HTTP|  
 |[3417 - WebSocketConnectionAcceptStart](../../../../../docs/framework/wcf/diagnostics/etw/3417-websocketconnectionacceptstart.md)|Verbose|Début de l'acceptation de la connexion à l'élément WebSocket.|HTTP|  
 |[3418 - WebSocketConnectionAccepted](../../../../../docs/framework/wcf/diagnostics/etw/3418-websocketconnectionaccepted.md)|Verbose|La connexion à l'élément WebSocketId %1 est acceptée.|HTTP|  
-|[3419 - WebSocketConnectionDeclined](../../../../../docs/framework/wcf/diagnostics/etw/3419-websocketconnectiondeclined.md)|Erreur|Connexion à l'élément WebSocket refusée avec le code d'état « %1 »|HTTP|  
-|[3420 - WebSocketConnectionFailed](../../../../../docs/framework/wcf/diagnostics/etw/3420-websocketconnectionfailed.md)|Erreur|Échec de la demande de connexion à l'élément WebSocket : « %1 »|HTTP|  
-|[3421 - WebSocketConnectionAborted](../../../../../docs/framework/wcf/diagnostics/etw/3421-websocketconnectionaborted.md)|Erreur|La connexion à l'élément WebSocketId %1 est abandonnée.|HTTP|  
+|[3419 - WebSocketConnectionDeclined](../../../../../docs/framework/wcf/diagnostics/etw/3419-websocketconnectiondeclined.md)|Error|Connexion à l'élément WebSocket refusée avec le code d'état « %1 »|HTTP|  
+|[3420 - WebSocketConnectionFailed](../../../../../docs/framework/wcf/diagnostics/etw/3420-websocketconnectionfailed.md)|Error|Échec de la demande de connexion à l'élément WebSocket : « %1 »|HTTP|  
+|[3421 - WebSocketConnectionAborted](../../../../../docs/framework/wcf/diagnostics/etw/3421-websocketconnectionaborted.md)|Error|La connexion à l'élément WebSocketId %1 est abandonnée.|HTTP|  
 |[3422 - WebSocketAsyncWriteStart](../../../../../docs/framework/wcf/diagnostics/etw/3422-websocketasyncwritestart.md)|Verbose|L'élément WebSocketId %1 a écrit « %2 » octets dans « %3 ».|HTTP|  
 |[3423 - WebSocketAsyncWriteStop](../../../../../docs/framework/wcf/diagnostics/etw/3423-websocketasyncwritestop.md)|Verbose|Arrêt de l'écriture asynchrone de l'élément WebSocketId %1.|HTTP|  
 |[3424 - WebSocketAsyncReadStart](../../../../../docs/framework/wcf/diagnostics/etw/3424-websocketasyncreadstart.md)|Verbose|Début de lecture de l'élément WebSocketId : %1.|HTTP|  
@@ -262,7 +263,7 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[3800 - RoutingServiceClosingClient](../../../../../docs/framework/wcf/diagnostics/etw/3800-routingserviceclosingclient.md)|Information|Le service de routage ferme le client « %1 ».|RoutingServices|  
 |[3800 - RoutingServiceClosingClient](../../../../../docs/framework/wcf/diagnostics/etw/3800-routingserviceclosingclient.md)|Warning|Le client de service de routage « %1 » a généré une erreur.|RoutingServices|  
 |[3802 - RoutingServiceCompletingOneWay](../../../../../docs/framework/wcf/diagnostics/etw/3802-routingservicecompletingoneway.md)|Information|Fin du message unidirectionnel par le service de routage.|RoutingServices|  
-|[3803 - RoutingServiceProcessingFailure](../../../../../docs/framework/wcf/diagnostics/etw/3803-routingserviceprocessingfailure.md)|Erreur|Échec du service de routage lors du traitement d'un message sur le point de terminaison avec l'adresse « %1 ».|RoutingServices|  
+|[3803 - RoutingServiceProcessingFailure](../../../../../docs/framework/wcf/diagnostics/etw/3803-routingserviceprocessingfailure.md)|Error|Échec du service de routage lors du traitement d'un message sur le point de terminaison avec l'adresse « %1 ».|RoutingServices|  
 |[3804 - RoutingServiceCreatingClientForEndpoint](../../../../../docs/framework/wcf/diagnostics/etw/3804-routingservicecreatingclientforendpoint.md)|Information|Le service de routage crée un client pour le point de terminaison : « 1% ».|RoutingServices|  
 |[3805 - RoutingServiceDisplayConfig](../../../../../docs/framework/wcf/diagnostics/etw/3805-routingservicedisplayconfig.md)|Verbose|Le service de routage est configuré avec RouteOnHeadersOnly : %1, SoapProcessingEnabled : %2, EnsureOrderedDispatch : %3.|RoutingServices|  
 |[3807 - RoutingServiceCompletingTwoWay](../../../../../docs/framework/wcf/diagnostics/etw/3807-routingservicecompletingtwoway.md)|Information|Fin du message de réponse à la demande du service de routage.|RoutingServices|  
@@ -271,7 +272,7 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[3815 - RoutingServiceProcessingMessage](../../../../../docs/framework/wcf/diagnostics/etw/3815-routingserviceprocessingmessage.md)|Information|Le service de routage traite un message avec l'ID : « %1 », action : « %2 », URL entrante : « %3 », Reçu dans la transaction : %4.|RoutingServices|  
 |[3816 - RoutingServiceTransmittingMessage](../../../../../docs/framework/wcf/diagnostics/etw/3816-routingservicetransmittingmessage.md)|Information|Le service de routage transmet le message avec l'ID « %1 » [opération %2] à « %3 ».|RoutingServices|  
 |[3817 - RoutingServiceCommittingTransaction](../../../../../docs/framework/wcf/diagnostics/etw/3817-routingservicecommittingtransaction.md)|Information|Le service de routage valide la transaction avec l'ID « %1 ».|RoutingServices|  
-|[3818 - RoutingServiceDuplexCallbackException](../../../../../docs/framework/wcf/diagnostics/etw/3818-routingserviceduplexcallbackexception.md)|Erreur|Le composant du service de routage %1 a rencontré une exception de rappel duplex.|RoutingServices|  
+|[3818 - RoutingServiceDuplexCallbackException](../../../../../docs/framework/wcf/diagnostics/etw/3818-routingserviceduplexcallbackexception.md)|Error|Le composant du service de routage %1 a rencontré une exception de rappel duplex.|RoutingServices|  
 |[3819 - RoutingServiceMovedToBackup](../../../../../docs/framework/wcf/diagnostics/etw/3819-routingservicemovedtobackup.md)|Information|Message du service de routage avec l'ID %1 [opération %2] déplacé vers le point de terminaison de sauvegarde « %3 ».|RoutingServices|  
 |[3820 - RoutingServiceCreatingTransaction](../../../../../docs/framework/wcf/diagnostics/etw/3820-routingservicecreatingtransaction.md)|Information|Le service de routage a créé une nouvelle transaction avec l'id « %1 »' pour le traitement des messages.|RoutingServices|  
 |[3821 - RoutingServiceCloseFailed](../../../../../docs/framework/wcf/diagnostics/etw/3821-routingserviceclosefailed.md)|Warning|Échec du service de routage lors de la fermeture du client sortant « %1 ».|RoutingServices|  
@@ -288,28 +289,28 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[3832 - RoutingServiceTransmitSucceeded](../../../../../docs/framework/wcf/diagnostics/etw/3832-routingservicetransmitsucceeded.md)|Information|Le service de routage a correctement transmis le message avec l'ID « %1 » [opération %2] à « %3 ».|RoutingServices|  
 |[4001 - TransportListenerSessionsReceived](../../../../../docs/framework/wcf/diagnostics/etw/4001-transportlistenersessionsreceived.md)|Verbose|Session de l'écouteur de transport reçue via « %1 »|ActivationServices|  
 |[4002 - FailFastException](../../../../../docs/framework/wcf/diagnostics/etw/4002-failfastexception.md)|Critique|FailFastException.|ActivationServices|  
-|[4003 - ServiceStartPipeError](../../../../../docs/framework/wcf/diagnostics/etw/4003-servicestartpipeerror.md)|Erreur|Erreur de canal relative au démarrage du service.|ActivationServices|  
+|[4003 - ServiceStartPipeError](../../../../../docs/framework/wcf/diagnostics/etw/4003-servicestartpipeerror.md)|Error|Erreur de canal relative au démarrage du service.|ActivationServices|  
 |[4008 - DispatchSessionStart](../../../../../docs/framework/wcf/diagnostics/etw/4008-dispatchsessionstart.md)|Verbose|Début de la distribution de sessions.|ActivationServices|  
 |[4008 - DispatchSessionStart](../../../../../docs/framework/wcf/diagnostics/etw/4008-dispatchsessionstart.md)|Warning|La distribution de sessions pour « %1 » a échoué, car la file d'attente des sessions en attente contient « %2 » éléments en attente, et est donc pleine.|ActivationServices|  
 |[4011 - MessageQueueRegisterStart](../../../../../docs/framework/wcf/diagnostics/etw/4011-messagequeueregisterstart.md)|Verbose|Début de l'inscription à la file d'attente des messages.|ActivationServices|  
-|[4012 - MessageQueueRegisterAbort](../../../../../docs/framework/wcf/diagnostics/etw/4012-messagequeueregisterabort.md)|Erreur|Abandon de l'inscription à la file d'attente des messages avec l'état : « %1 » pour l'URI : « %2 ».|ActivationServices|  
+|[4012 - MessageQueueRegisterAbort](../../../../../docs/framework/wcf/diagnostics/etw/4012-messagequeueregisterabort.md)|Error|Abandon de l'inscription à la file d'attente des messages avec l'état : « %1 » pour l'URI : « %2 ».|ActivationServices|  
 |[4013 - MessageQueueUnregisterSucceeded](../../../../../docs/framework/wcf/diagnostics/etw/4013-messagequeueunregistersucceeded.md)|Verbose|Désinscription de la file d'attente des messages effectuée pour l'URI : « %1 ».|ActivationServices|  
-|[4014 - MessageQueueRegisterFailed](../../../../../docs/framework/wcf/diagnostics/etw/4014-messagequeueregisterfailed.md)|Erreur|Échec de l'inscription à la file d'attente des messages pour l'URI « %1 » avec l'état « %2 ».|ActivationServices|  
+|[4014 - MessageQueueRegisterFailed](../../../../../docs/framework/wcf/diagnostics/etw/4014-messagequeueregisterfailed.md)|Error|Échec de l'inscription à la file d'attente des messages pour l'URI « %1 » avec l'état « %2 ».|ActivationServices|  
 |[4015 - MessageQueueRegisterCompleted](../../../../../docs/framework/wcf/diagnostics/etw/4015-messagequeueregistercompleted.md)|Information|Inscription à la file d'attente des messages terminée pour l'URI « %1 ».|ActivationServices|  
-|[4016 - MessageQueueDuplicatedSocketError](../../../../../docs/framework/wcf/diagnostics/etw/4016-messagequeueduplicatedsocketerror.md)|Erreur|Échec de la duplication de socket par la file d'attente des messages.|ActivationServices|  
+|[4016 - MessageQueueDuplicatedSocketError](../../../../../docs/framework/wcf/diagnostics/etw/4016-messagequeueduplicatedsocketerror.md)|Error|Échec de la duplication de socket par la file d'attente des messages.|ActivationServices|  
 |[4019 - MessageQueueDuplicatedSocketComplete](../../../../../docs/framework/wcf/diagnostics/etw/4019-messagequeueduplicatedsocketcomplete.md)|Verbose|MessageQueueDuplicatedSocketComplete|ActivationServices|  
 |[4020 - TcpTransportListenerListeningStart](../../../../../docs/framework/wcf/diagnostics/etw/4020-tcptransportlistenerlisteningstart.md)|Verbose|Début de l'écoute de l'URI « %1 » par l'écouteur de transport TCP.|ActivationServices|  
 |[4021 - TcpTransportListenerListeningStop](../../../../../docs/framework/wcf/diagnostics/etw/4021-tcptransportlistenerlisteningstop.md)|Verbose|Écouteur de transport TCP à l'écoute.|ActivationServices|  
-|[4022 - WebhostUnregisterProtocolFailed](../../../../../docs/framework/wcf/diagnostics/etw/4022-webhostunregisterprotocolfailed.md)|Erreur|Code d'erreur : %1|ActivationServices|  
+|[4022 - WebhostUnregisterProtocolFailed](../../../../../docs/framework/wcf/diagnostics/etw/4022-webhostunregisterprotocolfailed.md)|Error|Code d'erreur : %1|ActivationServices|  
 |[4023 - WasCloseAllListenerChannelInstancesCompleted](../../../../../docs/framework/wcf/diagnostics/etw/4023-wasclosealllistenerchannelinstancescompleted.md)|Information|Fermeture de toutes les instances du canal de l'écouteur à l'aide de WAS terminée.|ActivationServices|  
-|[4024 - WasCloseAllListenerChannelInstancesFailed](../../../../../docs/framework/wcf/diagnostics/etw/4024-wasclosealllistenerchannelinstancesfailed.md)|Erreur|Code d'erreur : %1|ActivationServices|  
-|[4025 - OpenListenerChannelInstanceFailed](../../../../../docs/framework/wcf/diagnostics/etw/4025-openlistenerchannelinstancefailed.md)|Erreur|Code d'erreur : %1|ActivationServices|  
+|[4024 - WasCloseAllListenerChannelInstancesFailed](../../../../../docs/framework/wcf/diagnostics/etw/4024-wasclosealllistenerchannelinstancesfailed.md)|Error|Code d'erreur : %1|ActivationServices|  
+|[4025 - OpenListenerChannelInstanceFailed](../../../../../docs/framework/wcf/diagnostics/etw/4025-openlistenerchannelinstancefailed.md)|Error|Code d'erreur : %1|ActivationServices|  
 |[4026 - WasConnected](../../../../../docs/framework/wcf/diagnostics/etw/4026-wasconnected.md)|Verbose|WAS est connecté.|ActivationServices|  
 |[4027 - WasDisconnected](../../../../../docs/framework/wcf/diagnostics/etw/4027-wasdisconnected.md)|Verbose|WAS est déconnecté.|ActivationServices|  
 |[4028 - PipeTransportListenerListeningStart](../../../../../docs/framework/wcf/diagnostics/etw/4028-pipetransportlistenerlisteningstart.md)|Verbose|Début de l'écoute de l'URI %1 par l'écouteur de transport du canal.|ActivationServices|  
 |[4029 - PipeTransportListenerListeningStop](../../../../../docs/framework/wcf/diagnostics/etw/4029-pipetransportlistenerlisteningstop.md)|Verbose|Arrêt de l'écoute par l'écouteur de transport du canal.|ActivationServices|  
 |[4030 - DispatchSessionSuccess](../../../../../docs/framework/wcf/diagnostics/etw/4030-dispatchsessionsuccess.md)|Information|Distribution de sessions effectuée.|ActivationServices|  
-|[4031 - DispatchSessionFailed](../../../../../docs/framework/wcf/diagnostics/etw/4031-dispatchsessionfailed.md)|Erreur|Échec de la distribution de sessions.|ActivationServices|  
+|[4031 - DispatchSessionFailed](../../../../../docs/framework/wcf/diagnostics/etw/4031-dispatchsessionfailed.md)|Error|Échec de la distribution de sessions.|ActivationServices|  
 |[4032 - WasConnectionTimedout](../../../../../docs/framework/wcf/diagnostics/etw/4032-wasconnectiontimedout.md)|Critique|Expiration de la connexion WAS.|ActivationServices|  
 |[4033 - RoutingTableLookupStart](../../../../../docs/framework/wcf/diagnostics/etw/4033-routingtablelookupstart.md)|Verbose|Début de la recherche dans la table de routage.|ActivationServices|  
 |[4034 - RoutingTableLookupStop](../../../../../docs/framework/wcf/diagnostics/etw/4034-routingtablelookupstop.md)|Verbose|Recherche dans la table de routage terminée.|ActivationServices|  
@@ -357,9 +358,9 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[5204 - JsonMessageEncodingStart](../../../../../docs/framework/wcf/diagnostics/etw/5204-jsonmessageencodingstart.md)|Verbose|JsonMessageEncoder a démarré le codage du message.|Canal|  
 |[5402 - TokenValidationStarted](../../../../../docs/framework/wcf/diagnostics/etw/5402-tokenvalidationstarted.md)|Verbose|Début de la validation de SecurityToken (type « %1 » et ID « %2 »).|Sécurité|  
 |[5403 - TokenValidationSuccess](../../../../../docs/framework/wcf/diagnostics/etw/5403-tokenvalidationsuccess.md)|Verbose|Validation de SecurityToken (type « %1 » et ID « %2 ») effectuée.|Sécurité|  
-|[5404 - TokenValidationFailure](../../../../../docs/framework/wcf/diagnostics/etw/5404-tokenvalidationfailure.md)|Erreur|Échec de la validation de SecurityToken (type « %1 » et ID « %2 »). %3|Sécurité|  
+|[5404 - TokenValidationFailure](../../../../../docs/framework/wcf/diagnostics/etw/5404-tokenvalidationfailure.md)|Error|Échec de la validation de SecurityToken (type « %1 » et ID « %2 »). %3|Sécurité|  
 |[5405 - GetIssuerNameSuccess](../../../../../docs/framework/wcf/diagnostics/etw/5405-getissuernamesuccess.md)|Verbose|Récupération du nom de l'émetteur %1 à partir de tokenId %2 effectuée.|Sécurité|  
-|[5406 - GetIssuerNameFailure](../../../../../docs/framework/wcf/diagnostics/etw/5406-getissuernamefailure.md)|Erreur|Échec de la récupération du nom de l'émetteur à partir de tokenId : %1.|Sécurité|  
+|[5406 - GetIssuerNameFailure](../../../../../docs/framework/wcf/diagnostics/etw/5406-getissuernamefailure.md)|Error|Échec de la récupération du nom de l'émetteur à partir de tokenId : %1.|Sécurité|  
 |[5600 - FederationMessageProcessingStarted](../../../../../docs/framework/wcf/diagnostics/etw/5600-federationmessageprocessingstarted.md)|Verbose|Début du traitement du message de fédération.|Sécurité|  
 |[5601 - FederationMessageProcessingSuccess](../../../../../docs/framework/wcf/diagnostics/etw/5601-federationmessageprocessingsuccess.md)|Verbose|Traitement du message de fédération effectué.|Sécurité|  
 |[5602 - FederationMessageCreationStarted](../../../../../docs/framework/wcf/diagnostics/etw/5602-federationmessagecreationstarted.md)|Verbose|Début de la création d'un message de fédération à partir de la publication de formulaire.|Sécurité|  
@@ -368,13 +369,13 @@ Le tableau suivant définit les niveaux, les identificateurs et les messages d'�
 |[5605 - SessionCookieReadingSuccess](../../../../../docs/framework/wcf/diagnostics/etw/5605-sessioncookiereadingsuccess.md)|Verbose|Lecture du jeton de session à partir du cookie de session effectuée.|Sécurité|  
 |[5606 - PrincipalSettingFromSessionTokenStarted](../../../../../docs/framework/wcf/diagnostics/etw/5606-principalsettingfromsessiontokenstarted.md)|Verbose|Début du paramétrage du principal à partir du jeton de session.|Sécurité|  
 |[5607 - PrincipalSettingFromSessionTokenSuccess](../../../../../docs/framework/wcf/diagnostics/etw/5607-principalsettingfromsessiontokensuccess.md)|Verbose|Paramétrage du principal à partir du jeton de session effectué.|Sécurité|  
-|[57393 - appDomainUnload](../../../../../docs/framework/wcf/diagnostics/etw/57393-appdomainunload.md)|Information|Déchargement d'AppDomain. AppDomain.FriendlyName %1, ProcessName %2, ProcessId %3.|Infrastructure|  
+|[57393 - AppDomainUnload](../../../../../docs/framework/wcf/diagnostics/etw/57393-appdomainunload.md)|Information|Déchargement d'AppDomain. AppDomain.FriendlyName %1, ProcessName %2, ProcessId %3.|Infrastructure|  
 |[57394 - HandledException](../../../../../docs/framework/wcf/diagnostics/etw/57394-handledexception.md)|Information|Traitement d'une exception.|Infrastructure|  
-|[57395 - ShipAssertExceptionMessage](../../../../../docs/framework/wcf/diagnostics/etw/57395-shipassertexceptionmessage.md)|Erreur|Une erreur inattendue s'est produite. Les applications ne doivent pas essayer de gérer cette erreur. À des fins de diagnostic, ce message en anglais est associé à l'échec : %1.|Infrastructure|  
+|[57395 - ShipAssertExceptionMessage](../../../../../docs/framework/wcf/diagnostics/etw/57395-shipassertexceptionmessage.md)|Error|Une erreur inattendue s'est produite. Les applications ne doivent pas essayer de gérer cette erreur. À des fins de diagnostic, ce message en anglais est associé à l'échec : %1.|Infrastructure|  
 |[57396 - ThrowingException](../../../../../docs/framework/wcf/diagnostics/etw/57396-throwingexception.md)|Warning|Levée d'une exception. Source : %1.|Infrastructure|  
 |[57397 - UnhandledException](../../../../../docs/framework/wcf/diagnostics/etw/57397-unhandledexception.md)|Critique|Exception non gérée.|Infrastructure|  
 |[57399 - TraceCodeEventLogCritical](../../../../../docs/framework/wcf/diagnostics/etw/57399-tracecodeeventlogcritical.md)|Critique|Écriture dans le journal d'événements.|Infrastructure|  
-|[57400 - TraceCodeEventLogError](../../../../../docs/framework/wcf/diagnostics/etw/57400-tracecodeeventlogerror.md)|Erreur|Écriture dans le journal d'événements.|Infrastructure|  
+|[57400 - TraceCodeEventLogError](../../../../../docs/framework/wcf/diagnostics/etw/57400-tracecodeeventlogerror.md)|Error|Écriture dans le journal d'événements.|Infrastructure|  
 |[57401 - TraceCodeEventLogInfo](../../../../../docs/framework/wcf/diagnostics/etw/57401-tracecodeeventloginfo.md)|Information|Écriture dans le journal d'événements.|Infrastructure|  
 |[57402 - TraceCodeEventLogVerbose](../../../../../docs/framework/wcf/diagnostics/etw/57402-tracecodeeventlogverbose.md)|Verbose|Écriture dans le journal d'événements.|Infrastructure|  
 |[57403 - TraceCodeEventLogWarning](../../../../../docs/framework/wcf/diagnostics/etw/57403-tracecodeeventlogwarning.md)|Warning|Écriture dans le journal d'événements.|Infrastructure|  

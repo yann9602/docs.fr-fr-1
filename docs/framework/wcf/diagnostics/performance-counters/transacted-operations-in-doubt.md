@@ -13,14 +13,15 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 1e7e0a8cfda1046087f8ec94f31a873eef552fb8
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f01caf603f515a2bb628c81d690b539655912f97
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="transacted-operations-in-doubt"></a>Opérations traitées avec des résultats incertains
 Nom du compteur : Opérations traitées avec des résultats incertains.  
   
 ## <a name="description"></a>Description  
- Nombre d'opérations transactionnelles avec un résultat incertain dans ce service.
+ Nombre d’opérations transactionnelles avec un résultat incertain dans ce service.

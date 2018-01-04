@@ -13,11 +13,12 @@ caps.latest.revision: "17"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 1f3d62e8b6771666dd3a55855ca0c5e41853f439
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 87815be1f0951d54a8d9eedbfdcaca038fa6fe09
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-concerns-for-message-logging"></a>Problèmes de sécurité relatifs à la journalisation des messages
 Cette rubrique contient des instructions permettant de protéger des données sensibles afin d'éviter qu'elles ne soient visibles dans les journaux des messages et de protéger les événements générés par l'enregistrement des messages.  
@@ -35,7 +36,7 @@ Cette rubrique contient des instructions permettant de protéger des données se
   
 -   Choisissez une extension de fichier qui ne peut pas être facilement fournie à l'aide d'une demande Web. Par exemple, l'extension de fichier .xml n'est pas un choix sûr. Consultez le guide d'administration IIS (Internet Information Services) pour obtenir la liste des extensions qui peuvent être fournies.  
   
--   Spécifiez un chemin d'accès absolu pour l'emplacement de fichier journal, qui doit se trouver hors du répertoire public de la racine virtuelle de l'hôte Web afin d'empêcher tout intervenant externe d'y accéder à l'aide d'un navigateur Web.  
+-   Spécifiez un chemin d’accès absolu pour l’emplacement de fichier journal, qui doit se trouver hors du répertoire public de la racine virtuelle de l’hôte Web afin d’empêcher tout intervenant externe d’y accéder à l’aide d’un navigateur Web.  
   
  Par défaut, les clés et informations personnelles, telles que le nom d'utilisateur et le mot de passe, ne sont pas enregistrées dans les traces et les messages consignés. Toutefois, un administrateur d'ordinateur peut utiliser l'attribut `enableLoggingKnownPII` dans l'élément `machineSettings` du fichier Machine.config pour autoriser les applications s'exécutant sur l'ordinateur à enregistrer les informations personnelles connues. La configuration suivante montre comment procéder :  
   
@@ -120,5 +121,5 @@ Cette rubrique contient des instructions permettant de protéger des données se
  Ces événements peuvent être affichés dans l'outil Observateur d'événements fourni avec Windows. Pour plus d’informations, consultez [l’enregistrement des événements](../../../../docs/framework/wcf/diagnostics/event-logging/index.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [Enregistrement des messages](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
- [Problèmes de sécurité et des conseils utiles pour le suivi](../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)
+ [Journalisation des messages](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
+ [Problèmes de sécurité et conseils utiles pour le suivi](../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)

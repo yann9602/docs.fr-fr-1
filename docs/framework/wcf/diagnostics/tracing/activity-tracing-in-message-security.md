@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 60156e284c55d765de417fe891185d1aba720816
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: db9b05217bbbf91bfc3cd315801b4e511f82d04c
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="activity-tracing-in-message-security"></a>Suivi d'activité dans la sécurité de message
 Cette rubrique décrit le suivi d'activité pour le traitement de sécurité, qui se produit dans les trois phases suivantes.  
@@ -63,4 +64,4 @@ Cette rubrique décrit le suivi d'activité pour le traitement de sécurité, qu
 ||Occurrence de l'autorisation|Activités|Suivis|  
 |-|-------------------------------------|----------------|------------|  
 |Local (valeur par défaut)|Après que le message a été déchiffré sur le serveur|Les suivis sont émis dans l'activité ProcessAction au niveau du serveur.|Utilisateur autorisé.|  
-|À distance|Après que le message a été déchiffré sur le serveur|Les suivis sont émis dans une nouvelle activité appelée par l'activité ProcessAction.|Utilisateur autorisé.|
+|Remote|Après que le message a été déchiffré sur le serveur|Les suivis sont émis dans une nouvelle activité appelée par l'activité ProcessAction.|Utilisateur autorisé.|

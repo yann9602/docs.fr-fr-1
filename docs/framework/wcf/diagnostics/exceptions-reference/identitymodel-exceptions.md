@@ -13,11 +13,12 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: f38d09ef9b1ee2e620b42082a05c6832eec7c746
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 26bf6cb88d77fc9890a23c482913514f1dc856aa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="identitymodel-exceptions"></a>Exceptions IdentityModel
 Cette rubrique répertorie toutes les exceptions générées par IdentityModel.  
@@ -77,7 +78,7 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |TraceCodeSecurityTokenProviderOpened|Le fournisseur de jetons de sécurité a été ouvert.|  
 |PublicKeyNotRSA|La clé publique n'est pas une clé RSA.|  
 |InvalidReaderState|L'état spécifique est non valide pour le lecteur d'entrée fourni.|  
-|UnableToResolveReferenceUriForSignature|Impossible de résoudre l'URI spécifique dans la signature pour calculer le message condensé.|  
+|UnableToResolveReferenceUriForSignature|Impossible de résoudre l’URI spécifique dans la signature pour calculer le condensat.|  
 |EmptyBase64Attribute|Une valeur vide a été trouvée pour l'espace de noms et le nom d'attribut en base64 requis.|  
 |SAMLSubjectRequiresConfirmationMethodWhenConfirmationDataOrKeyInfoIsSpecified|L'élément SAML SubjectConfirmation nécessite une méthode de confirmation lorsque les données de confirmation ou les informations de clé sont spécifiées.|  
 |SAMLAudienceRestrictionShouldHaveOneAudienceOnRead|L'élément SamlAudienceRestrictionCondition qui est lu doit contenir au moins une valeur 'Audience'. Aucune n'a été trouvée.|  
@@ -94,7 +95,7 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |SspiWrapperEncryptDecryptAssert2|SSPIWrapper :: EncryptDecryptHelper &#124;' taille » est hors limites. SecurityTokenManagerCannotCreateAuthenticatorForRequirement=Le gestionnaire de jetons de sécurité ne peut pas créer d’authentificateur de jeton pour l’exigence spécifique.|  
 |UnableToCreateKeyedHashAlgorithm|Création d'un élément KeyedHashAlgorithm impossible à partir de la valeur spécifique pour l'algorithme de signature spécifique.|  
 |SAMLUnableToLoadAssertion|Le \<SAML : assertion > Échec du chargement de l’élément.|  
-|X509FindValueMismatchMulti|L'élément X509FindType spécifique requiert que le type de l'argument findValue soit l'une des 2 valeurs. L'argument findValue est d'un autre type.|  
+|X509FindValueMismatchMulti|L’élément X509FindType spécifique requiert que le type de l’argument findValue soit l’une des 2 valeurs. L’argument findValue est d’un autre type.|  
 |TraceCodeSecurityIdentityDeterminationSuccess|L'identité a été déterminée pour un élément EndpointAddress.|  
 |UndefinedUseOfPrefixAtElement|Aucun espace de noms n'est défini pour le préfixe spécifique utilisé au niveau de l'élément.|  
 |TraceCodeSecuritySessionResponderOperationFailure|Échec de l'opération de session sur le serveur.|  
@@ -135,7 +136,7 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |AESCryptGetKeyParamFailed|Échec de l'obtention du paramètre de clé spécifique.|  
 |InvalidNamespaceForEmptyPrefix|L'espace de noms est non valide pour le préfixe vide.|  
 |AESCipherModeNotSupported|Le mode de chiffrement spécifique n'est pas pris en charge. Seul CBC est pris en charge.|  
-|ArgumentCannotBeEmptyString|L'argument doit être une chaîne non vide.|  
+|ArgumentCannotBeEmptyString|L’argument doit être une chaîne non vide.|  
 |SAMLAssertionMissingMinorVersionAttributeOnRead|L'attribut MinorVersion pour l'élément SamlAssertion qui est lu est manquant ou de longueur 0.|  
 |SpecifiedStringNotAvailableInDictionary|La chaîne spécifiée n'est pas une entrée du dictionnaire actuel.|  
 |KerberosApReqInvalidOrOutOfMemory|Le message AP-REQ (Application Request) est non valide ou la mémoire du système est insuffisante.|  
@@ -190,7 +191,7 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |SAMLUnableToLoadUnknownElement|L'entité SamlSerializer sélectionné est incapable de désérialiser l'élément. Inscrivez un SamlSerializer personnalisé pour désérialiser des éléments personnalisés.|  
 |CreateSequenceRefused|La demande de la séquence création a été refusée par la destination de messagerie fiable.|  
 |TraceCodeSecuritySessionRedirectApplied|La session de sécurité du client a été redirigée.|  
-|SecurityTokenRequirementDoesNotContainProperty|L'exigence du jeton ne contient pas la propriété spécifiée.|  
+|SecurityTokenRequirementDoesNotContainProperty|L’exigence du jeton ne contient pas la propriété spécifiée.|  
 |SAMLAttributeValueCannotBeNull|L'une des valeurs de attributeValues trouvées dans l'élément SamlAttribute s'est avérée null. Vérifiez que les valeurs des listes ne sont pas null lors de la création de l'élément SamlAttribute.|  
 |ValueMustBeGreaterThanZero|La valeur de cet argument doit être supérieure à 0.|  
 |TraceCodeNegotiationAuthenticatorAttached|NegotiationTokenAuthenticator a été joint.|  
@@ -276,9 +277,9 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |FailAcceptSecurityContext|Échec de AcceptSecurityContext.|  
 |EmptyXmlElementError|L'élément spécifié ne peut pas être vide.|  
 |PrefixNotDefinedForNamespace|Un préfixe pour l'espace de noms spécifié n'est pas défini dans ce contexte et il est impossible de déclarer ce contexte.|  
-|SAMLAuthorizationDecisionHasMoreThanOneEvidence|L'entité SamlAuthorizationDecisionStatement qui est lue s'est avérée contenir plusieurs éléments Evidence. Cela n'est pas autorisé.|  
+|SAMLAuthorizationDecisionHasMoreThanOneEvidence|L'entité SamlAuthorizationDecisionStatement qui est lue s'est avérée contenir plusieurs éléments Evidence. Cette opération n’est pas autorisée.|  
 |SamlTokenAuthenticatorCanOnlyProcessSamlTokens|L'élément SamlSecurityTokenAuthenticator ne peut traiter que les éléments SamlSecurityTokens. L'élément SecurityTokenType spécifié a été reçu.|  
-|SAMLAttributeStatementMissingAttributeOnRead|L'élément SamlAttributeStatement qui est lu ne contient pas d'élément 'SamlAttribute'. Cela n'est pas autorisé.|  
+|SAMLAttributeStatementMissingAttributeOnRead|L'élément SamlAttributeStatement qui est lu ne contient pas d'élément 'SamlAttribute'. Cette opération n’est pas autorisée.|  
 |CouldNotFindNamespaceForPrefix|Impossible de rechercher le préfixe spécifié dans l'espace de noms.|  
 |TraceCodeExportSecurityChannelBindingExit|Security ExportChannelBinding terminé.|  
 |AESCryptDecryptFailed|Échec du déchiffrement des données spécifiées.|  

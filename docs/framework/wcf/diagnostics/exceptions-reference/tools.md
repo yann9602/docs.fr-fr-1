@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 174459c23bd6ecd336394146b6d91e265cb820d3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5badbb9142261fc1dc6c2b2d5af3c89c7af776b6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tools"></a>Outils
 Cette rubrique répertorie toutes les exceptions générées par les outils [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  
@@ -38,9 +39,9 @@ Cette rubrique répertorie toutes les exceptions générées par les outils [!IN
 |HelpImportXmlType|Configure le sérialiseur DataContract de façon à importer des types non-DataContract comme types IXmlSerializable.|  
 |ErrExclusiveOptionsSpecified|L'option spécifiée ne peut pas être utilisée lorsque l'autre option spécifiée a été spécifiée.|  
 |WrnHttpGetFailed|Erreur GET HTTP avec l'URI spécifié.|  
-|ErrInputFileNotAssemblyOrMetadata|Le fichier à l'emplacement spécifié lu via l'argument d'entrée spécifié semble ne pas être un fichier de métadonnées XML ou un assembly valide.|  
+|ErrInputFileNotAssemblyOrMetadata|Le fichier à l’emplacement spécifié lu via l’argument d’entrée spécifié semble ne pas être un fichier de métadonnées XML ou un assembly valide.|  
 |WrnUnknownMetadataFound|Impossible d'enregistrer le document de métadonnées non reconnu du type spécifié.|  
-|ErrDirectoryContainsInvalidCharacters|La valeur non valide spécifiée a été passée à l'option spécifiée. Le caractère spécifié n'est pas autorisé dans un chemin d'accès.|  
+|ErrDirectoryContainsInvalidCharacters|La valeur non valide spécifiée a été passée à l'option spécifiée. Le caractère spécifié n’est pas autorisé dans un chemin d’accès.|  
 |WrnCannotResolveServiceForValidation|Impossible de charger un service avec le configName spécifié. Pour valider un service, fournissez à la fois l'assembly qui contient le type de service et un fichier exécutable avec la configuration pour ce service.|  
 |ErrUnexpectedValue|L'option spécifiée ne prend pas en charge de valeurs.|  
 |#InvalidArg|Le spécifié contient un argument non valide.|  
@@ -55,7 +56,7 @@ Cette rubrique répertorie toutes les exceptions générées par les outils [!IN
 |WrnNoServiceContractTypes|Impossible de générer des types XmlSerializer pour l'assembly spécifié. Aucun type de contrat de service n'a été trouvé.|  
 |WrnCouldNotLoadTypesFromReferenceAssemblyAt|Une erreur s'est produite lors du chargement des types dans un assembly qui a été chargé à partir du spécifié. Certains types dans l'assembly ne peuvent pas être chargés et sont inaccessibles à l'outil.|  
 |ErrDirectoryPointsToAFile|La valeur non valide spécifiée a été passée à l'option spécifiée. La valeur spécifiée est un chemin d'accès à un fichier.|  
-|Erreur|Erreur :|  
+|Error|Erreur :|  
 |ErrDuplicateReferenceValues|L'assembly spécifié a été chargé deux fois à l'aide de l'option spécifiée. Un assembly ne peut être référencé qu'une seule fois.|  
 |WrnNoXmlSerializerOperationBehavior|Impossible de générer XmlSerializer pour l'assembly spécifié. Aucun contrat de service dans l'assembly n'a une opération avec XmlSerializerOperationBehavior.|  
 |ErrCannotCreateDirectory|Impossible de créer le répertoire spécifié.|  
@@ -86,7 +87,7 @@ Cette rubrique répertorie toutes les exceptions générées par les outils [!IN
 |ErrDuplicateValuePassedToTypeArg|La valeur spécifiée a été passée plusieurs fois à l'option spécifiée. Chaque type ne peut être spécifié qu'une seule fois.|  
 |ErrInputEPRFileParseError|Impossible de lire la référence du point de terminaison à partir du spécifié. Vérifiez que le XML est correctement structuré et valide.|  
 |ErrCouldNotCreateCodeProvider|Impossible de créer un fournisseur de code pour la valeur spécifiée, qui a été passée à l'argument /{1}. Vérifiez que le fournisseur de code est installé et configuré correctement.|  
-|ErrPathTooLongDirOnly|Le chemin d'accès spécifié résultant est trop long. Examinez l'argument spécifié.|  
+|ErrPathTooLongDirOnly|Le chemin d’accès spécifié résultant est trop long. Examinez l’argument spécifié.|  
 |HelpDataContractSerializer|Générez des types de données qui utilisent le sérialiseur DataContract pour la sérialisation et la désérialisation.|  
 |ErrUnableToExportEndpoint|Une erreur s'est produite lors de l'exportation du nom de point de terminaison spécifié dans l'espace de noms spécifié dans le type de service spécifié mentionné dans le fichier de configuration chargé pour l'assembly.|  
 |HelpUsage1|Affiche l'utilisation de l'aide.|  
@@ -98,12 +99,12 @@ Cette rubrique répertorie toutes les exceptions générées par les outils [!IN
 |ErrUnableToLoadFile|Impossible de lire le fichier spécifié.|  
 |ErrNoFilesFound|Le chemin d'accès d'entrée spécifié semble ne faire référence à aucun fichier existant.|  
 |ParametersConfig|\<configFile >|  
-|ErrDirectoryInsteadOfFile|Le chemin d'accès d'entrée spécifié semble être un répertoire. L'entrée doit être un URL ou un chemin d'accès de fichier.|  
+|ErrDirectoryInsteadOfFile|Le chemin d'accès d'entrée spécifié semble être un répertoire. L’entrée doit être un URL ou un chemin d’accès de fichier.|  
 |HelpConfig|Fait en sorte que les outils génèrent un fichier de configuration avec le nom fourni. Par défaut : output.config.|  
 |ErrSingleUseSwitch|L'option spécifiée ne peut pas être spécifiée à plusieurs reprises.|  
 |Warning|Avertissement :|  
 |WrnAmbiguousServiceConfig|Plusieurs configurations de service ont été détectées avec le nom de configuration spécifié, les assemblys suivants sont spécifiés.|  
-|ErrInvalidInputPath|Le chemin d'accès d'entrée spécifié semble ne faire référence à aucun fichier existant et ne semble pas être un URI valide.|  
+|ErrInvalidInputPath|Le chemin d’accès d’entrée spécifié semble ne faire référence à aucun fichier existant et ne semble pas être un URI valide.|  
 |ErrUnableToLoadInputs|Une erreur s'est produite lors de la lecture des métadonnées chargées.|  
 |GeneratingSerializer|Génération des sérialiseurs XML...|  
 |HelpToolConfig|Fichier de configuration personnalisé à utiliser à la place du fichier de configuration de l'application. Cela peut être utilisé pour modifier la configuration de métadonnées ou pour inscrire des extensions de configuration sans modifier le fichier de configuration de l'outil.|  
@@ -120,13 +121,13 @@ Cette rubrique répertorie toutes les exceptions générées par les outils [!IN
 |ErrCannotDisambiguateSpecifiedTypes|Il existe plusieurs types avec le même nom dans l'ensemble d'assemblys référencés. Utilisez des noms d'assemblys complets pour effectuer la distinction entre les types spécifiés pour l'option spécifiée.|  
 |RetreivingMetadataWithMexOnly|Tentative de téléchargement de métadonnées à partir de l'emplacement spécifié à l'aide de WS-Metadata Exchange. Cette URL ne prend pas en charge DISCO.|  
 |ErrInvalidTarget|La cible spécifiée n'est pas valide lorsqu'elle est spécifiée à l'aide de l'option spécifiée. Les cibles prises en charge sont spécifiées.|  
-|ErrPathTooLong|Le chemin d'accès résultant est trop long. Examinez les arguments spécifiés.|  
+|ErrPathTooLong|Le chemin d’accès résultant est trop long. Examinez les arguments spécifiés.|  
 |HelpCommonOptionsCategory|- = OPTIONS COURANTES = -|  
 |ParametersServiceName|\<serviceConfigName >|  
 |ErrNoValidInputFilesSpecified|Aucun fichier d'entrée valide n'a été spécifié. Spécifiez des documents de métadonnées ou des fichiers d'assembly.|  
 |ParametersLanguage|\<langue >|  
 |ErrUnableToLoadMetadataDocument|Une erreur s'est produite lors de la lecture des métadonnées à partir de l'un des documents chargés. L'identificateur de document est spécifié.|  
-|ErrConflictingInputs|L'argument d'entrée spécifié est en conflit avec le spécifié car ils impliquent différents modes d'opération d'outil.|  
+|ErrConflictingInputs|L’argument d’entrée spécifié est en conflit avec le spécifié car ils impliquent différents modes d’opération d’outil.|  
 |WrnUnableToLoadContractForValidation|Une erreur s'est produite lors du chargement d'un type de contrat. Le type et les détails sont spécifiés.|  
 |WrnAttributeReflectionErrors|La réflexion d'attribut a échoué pour certains des types dans l'assembly qui ont été chargés à partir du spécifié. Vérifiez que cet assembly peut être chargé à partir de cet emplacement avec les privilèges de sécurité corrects.|  
 |HelpMetadataExportCategory|- = EXPORT DE MÉTADONNÉES = -|  
@@ -138,7 +139,7 @@ Cette rubrique répertorie toutes les exceptions générées par les outils [!IN
 |ParametersOut|\<fichier >|  
 |NoCodeWasGeneratedSuggestDCOnly|Pour générer des contrats à partir des schémas, utilisez l'option spécifiée.|  
 |ErrUnableToLoadInputConfig|Impossible de charger le fichier de configuration spécifié.|  
-|ErrUnexpectedDelimiter|Un séparateur d'arguments non valide (':' ou '=') ne peut pas démarrer l'option.|  
+|ErrUnexpectedDelimiter|Un séparateur d’arguments non valide (’:’ ou ’=’) ne peut pas démarrer l’option.|  
 |ErrMergeConfigUsedWithoutConfig|Impossible d'utiliser l'option spécifiée sans spécifier l'autre option spécifiée.|  
 |ErrUnableToExportContract|Une erreur s'est produite lors de l'exportation du contrat chargé à partir du type spécifié.|  
 |GeneratingMetadata|Génération de fichiers de métadonnées…|  

@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 0c1b3e921714d104ab2bb5018184a9517c7ad345
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 431226f8ce56300f83df64a713b477f0065e2f56
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="security-exceptions"></a>Exceptions de sécurité
 Cette rubrique répertorie toutes les exceptions de sécurité.  
@@ -32,10 +33,10 @@ Cette rubrique répertorie toutes les exceptions de sécurité.
 |AtMostOnePrimarySignatureInReceiveSecurityHeader|Une seule signature principale est autorisée dans un en-tête de sécurité.|  
 |BadContextTokenFaultReason|Le jeton de contexte de sécurité a expiré ou n'est pas valide. Le message n'a pas été traité.|  
 |BadEncryptionState|L'élément EncryptedData ou EncryptedKey présente un état non valide pour cette opération.|  
-|BasicHttpMessageSecurityRequiresCertificate|La liaison BasicHttp exige que le type BasicHttpBinding.Security.Message.ClientCredentialType soit équivalent à celui des informations d'identification BasicHttpMessageCredentialType.Certificate pour les messages sécurisés. Sélectionnez la sécurité TransportWithMessageCredential ou Transport pour les informations d'identification UserName.|  
+|BasicHttpMessageSecurityRequiresCertificate|La liaison BasicHttp exige que le type BasicHttpBinding.Security.Message.ClientCredentialType soit équivalent à celui des informations d’identification BasicHttpMessageCredentialType.Certificate pour les messages sécurisés. Sélectionnez la sécurité TransportWithMessageCredential ou Transport pour les informations d'identification UserName.|  
 |BasicTokenCannotBeWrittenWithoutEncryption|Le jeton de base ne peut pas être écrit sans chiffrement.|  
 |BindingDoesNotSupportProtectionForRst|La liaison spécifiée pour le contrat spécifié est configurée avec SecureConversation, mais le mode d'authentification n'est pas en mesure de fournir l'intégrité et la confidentialité demande/réponse requises pour la négociation.|  
-|BindingDoesNotSupportWindowsIdenityForImpersonation|L'opération de contrat spécifiée requiert l'identité Windows pour l'emprunt d'identité automatique. Une identité Windows qui représente l'appelant n'est pas fournie par la liaison spécifiée pour le contrat spécifié.|  
+|BindingDoesNotSupportWindowsIdenityForImpersonation|L'opération de contrat spécifiée requiert l'identité Windows pour l'emprunt d'identité automatique. Une identité Windows qui représente l’appelant n’est pas fournie par la liaison spécifiée pour le contrat spécifié.|  
 |CachedNegotiationStateQuotaReached|Le service ne peut pas mettre l'état de la négociation en mémoire cache car la capacité spécifiée est atteinte. Faites une nouvelle tentative pour cette demande.|  
 |CacheQuotaReached|Ajout de l'élément impossible. La taille maximale de la mémoire cache est spécifiée.|  
 |CannotDetermineSPNBasedOnAddress|Le client ne peut pas déterminer le nom de principal du service (SPN) basé sur l'identité dans l'adresse cible spécifiée pour les besoins de SspiNegotiation/Kerberos. L’identité de l’adresse cible doit être une identité UPN (comme acmedomain\\\alice) ou une identité SPN (comme host/bobs-machine).|  
@@ -44,11 +45,11 @@ Cette rubrique répertorie toutes les exceptions de sécurité.
 |CannotFindCorrelationStateForApplyingSecurity|Impossible de trouver l'état de corrélation pour appliquer la sécurité et répliquer au répondeur.|  
 |CannotFindNegotiationState|Impossible de trouver l'état de négociation pour le contexte spécifié.|  
 |CannotFindSecuritySession|Impossible de trouver la session de sécurité avec l'ID spécifié.|  
-|CannotImportProtectionLevelForContract|La stratégie d'importation d'un processus ne peut pas importer de liaison pour le contrat spécifié. Les exigences en matière de protection pour la liaison ne sont pas compatibles avec une liaison déjà importée pour le contrat. Vous devez reconfigurer la liaison.|  
-|CannotImportSupportingTokensForOperationWithoutRequestAction|Échec de l'importation de la stratégie de sécurité. Cette stratégie de sécurité contient les exigences de jeton prises en charge dans le cadre de l'opération. La description du contrat ne précise pas l'action pour le message de demande qui est associé à cette opération.|  
+|CannotImportProtectionLevelForContract|La stratégie d’importation d’un processus ne peut pas importer de liaison pour le contrat spécifié. Les exigences en matière de protection pour la liaison ne sont pas compatibles avec une liaison déjà importée pour le contrat. Vous devez reconfigurer la liaison.|  
+|CannotImportSupportingTokensForOperationWithoutRequestAction|Échec de l'importation de la stratégie de sécurité. Cette stratégie de sécurité contient les exigences de jeton prises en charge dans le cadre de l’opération. La description du contrat ne précise pas l'action pour le message de demande qui est associé à cette opération.|  
 |CannotIssueRstTokenType|Émission du type de jeton spécifié impossible.|  
 |CannotObtainIssuedTokenKeySize|Impossible de déterminer la taille de la clé du jeton émis.|  
-|CannotPerformImpersonationOnUsernameToken|L'emprunt d'identité par le biais du jeton client est impossible. La liaison spécifiée pour le contrat spécifié utilise le jeton de sécurité du nom d'utilisateur pour l'authentification client avec un fournisseur d'appartenances inscrit. Utilisez un type de jeton de sécurité différent pour le client.|  
+|CannotPerformImpersonationOnUsernameToken|L'emprunt d'identité par le biais du jeton client est impossible. La liaison spécifiée pour le contrat spécifié utilise le jeton de sécurité du nom d’utilisateur pour l’authentification client avec un fournisseur d’appartenances inscrit. Utilisez un type de jeton de sécurité différent pour le client.|  
 |CannotPerformS4UImpersonationOnPlatform|La liaison spécifiée pour le contrat spécifié prend en charge uniquement l'emprunt d'identité sur [!INCLUDE[ws2003](../../../../../includes/ws2003-md.md)] et les versions de Windows plus récentes. Utilisez l'authentification SspiNegotiated et une liaison avec SecureConversation dont l'annulation est activée.|  
 |CannotReadKeyIdentifier|Lecture de l'élément KeyIdentifier impossible à partir de l'élément spécifié avec l'espace de noms spécifié.|  
 |CannotReadToken|Lecture du jeton impossible à partir de l'élément spécifié avec le nom d'espace spécifié pour BinarySecretSecurityToken, avec un élément ValueType spécifié . S'il est prévu que cet élément soit valide, assurez-vous que la sécurité est configurée pour consommer des jetons dotés du nom, de l'espace de noms et du type valeur spécifiés.|  
@@ -62,9 +63,9 @@ Cette rubrique répertorie toutes les exceptions de sécurité.
 |DnsIdentityCheckFailedForOutgoingMessage|La vérification d'identité a échoué pour le message sortant. Le point de terminaison distant aurait dû avoir l'identité DNS spécifiée. Le point de terminaison distant a fourni la revendication DNS. S'il s'agit d'un point de terminaison distant légitime, vous pouvez résoudre le problème en spécifiant de manière explicite l'identité DNS comme propriété Identity d'EndpointAddress lors de la création du proxy de canal.|  
 |DuplicateIdInMessageToBeVerified|L'identificateur spécifié figure deux fois dans le message qui est fourni pour vérification.|  
 |EmptyBase64Attribute|Une valeur vide a été trouvée pour le nom d'attribut et l'espace de noms en base 64 requis.|  
-|ExportOfBindingWithAsymmetricAndTransportSecurityNotSupported|L'exportation de la stratégie de sécurité a échoué. La liaison contient à la fois un élément AsymmetricSecurityBindingElement et un élément de liaison de transport sécurisé. L'exportation de stratégie pour une telle liaison n'est pas prise en charge.|  
+|ExportOfBindingWithAsymmetricAndTransportSecurityNotSupported|L'exportation de la stratégie de sécurité a échoué. La liaison contient à la fois un élément AsymmetricSecurityBindingElement et un élément de liaison de transport sécurisé. L’exportation de stratégie pour une telle liaison n’est pas prise en charge.|  
 |ExportOfBindingWithSymmetricAndTransportSecurityNotSupported|L'exportation de la stratégie de sécurité a échoué. La liaison contient à la fois un élément SymmetricSecurityBindingElement et un élément de liaison de transport sécurisé. L'exportation de stratégie pour une telle liaison n'est pas prise en charge.|  
-|ExportOfBindingWithTransportSecurityBindingElementAndNoTransportSecurityNotSupported|L'exportation de la stratégie de sécurité a échoué. La liaison contient un élément TransportSecurityBindingElement, mais pas d'élément de transport qui implémente l'interface ITransportTokenAssertionProvider. L'exportation de stratégie pour une telle liaison n'est pas prise en charge. Vérifiez que l'élément de liaison de transport de la liaison implémente l'interface ITransportTokenAssertionProvider.|  
+|ExportOfBindingWithTransportSecurityBindingElementAndNoTransportSecurityNotSupported|L'exportation de la stratégie de sécurité a échoué. La liaison contient un élément TransportSecurityBindingElement, mais pas d’élément de transport qui implémente l’interface ITransportTokenAssertionProvider. L’exportation de stratégie pour une telle liaison n’est pas prise en charge. Vérifiez que l'élément de liaison de transport de la liaison implémente l'interface ITransportTokenAssertionProvider.|  
 |FoundMultipleCerts|Plusieurs certificats X.509 ont été trouvés en utilisant les critères de recherche spécifiés : StoreName, StoreLocation, FindType, FindValue. Indiquez une valeur de recherche plus précise.|  
 |FoundMultipleCertsForTarget|Plusieurs certificats X.509 ont été trouvés en utilisant les critères de recherche spécifiés : StoreName, StoreLocation, FindType, FindValue pour la cible spécifiée. Indiquez une valeur de recherche plus précise.|  
 |HeaderDecryptionNotSupportedInWsSecurityJan2004|SecurityVersion.WSSecurityJan2004 ne prend pas en charge le déchiffrement d'en-tête. Utilisez SecurityVersion.WsSecurityXXX2005 et les versions ultérieures ou bien utilisez la sécurité de transport pour chiffrer la totalité du message.|  
@@ -79,7 +80,7 @@ Cette rubrique répertorie toutes les exceptions de sécurité.
 |IssuerBindingNotPresentInTokenRequirement|Le gestionnaire de jetons de sécurité impose que l'élément de liaison de sécurité de démarrage soit spécifié dans la spécification de jeton qui décrit la conversation sécurisée. La spécification de jeton est spécifiée comme suit.|  
 |KeyLengthMustBeMultipleOfEight|La longueur de clé spécifiée n'est pas un multiple de 8 pour les clés symétriques.|  
 |LsaAuthorityNotContacted|Erreur SSL interne (pour plus d'informations, consultez le code d'état Win32). Vérifiez le certificat du serveur pour déterminer s'il lui est possible d'échanger des clés.|  
-|MaximumPolicyRedirectionsExceeded|La limite d'extraction de stratégie récursive a été atteinte. Effectuez des vérifications pour déterminer s'il y a une boucle dans la chaîne du service de fédération.|  
+|MaximumPolicyRedirectionsExceeded|La limite de récupération de stratégie récursive a été atteinte. Effectuez des vérifications pour déterminer s'il y a une boucle dans la chaîne du service de fédération.|  
 |MessagePartSpecificationMustBeImmutable|La spécification des parties d'un message doit être déclarée constante avant d'être définie.|  
 |MissingCustomCertificateValidator|X509CertificateValidationMode.Custom requiert CustomCertificateValidator. Spécifiez la propriété CustomCertificateValidator.|  
 |MissingCustomUserNamePasswordValidator|UserNamePasswordValidationMode.Custom requiert CustomUserNamePasswordValidator. Spécifiez la propriété CustomUserNamePasswordValidator.|  
@@ -116,13 +117,13 @@ Cette rubrique répertorie toutes les exceptions de sécurité.
 |RequireNonCookieMode|La liaison spécifiée avec l'espace de noms spécifié est configuré pour émettre des jetons de contexte de sécurité des cookies. Les services d'intégration COM+ ne prennent pas en charge les jetons de contexte de sécurité des cookies.|  
 |RevertingPrivilegeFailed|L'opération de rétablissement a échoué avec l'exception spécifiée.|  
 |RSTRAuthenticatorIncorrect|CombinedHash de RequestSecurityTokenResponse est incorrect.|  
-|SecureConversationCancelNotAllowedFaultReason|Une annulation de conversation sécurisée n'est pas autorisée par la liaison.|  
+|SecureConversationCancelNotAllowedFaultReason|Une annulation de conversation sécurisée n’est pas autorisée par la liaison.|  
 |SecureConversationDriverVersionDoesNotSupportSession|La version configurée de SecureConversation ne prend pas en charge les sessions. Utilisez WSSecureConversationFeb2005 ou ultérieur.|  
 |SecureConversationRequiredByReliableSession|Impossible d'établir une session fiable sans conversation sécurisée. Activez la conversation sécurisée.|  
 |SecurityAuditFailToLoadDll|Le chargement de la bibliothèque de liens dynamiques (DLL) spécifié a échoué.|  
 |SecurityAuditNotSupportedOnChannelFactory|SecurityAuditBehavior n'est pas pris en charge sur la fabrication de canal.|  
 |SecurityAuditPlatformNotSupported|L'écriture de messages d'audit dans le journal de sécurité n'est pas prise en charge par la plateforme actuelle. Vous devez écrire les messages d'audit dans le journal des applications.|  
-|SecurityBindingElementCannotBeExpressedInConfig|Une stratégie de sécurité a été importée pour le point de terminaison. La stratégie de sécurité contient des conditions qui ne peuvent pas être représentées dans une configuration Windows Communication Foundation. Recherchez un commentaire sur les paramètres SecurityBindingElement qui sont nécessaires dans le fichier de configuration généré. Créez l'élément de liaison correct avec le code. La configuration de liaison figurant dans le fichier de configuration n'est pas sécurisée.|  
+|SecurityBindingElementCannotBeExpressedInConfig|Une stratégie de sécurité a été importée pour le point de terminaison. La stratégie de sécurité contient des exigences qui ne peuvent pas être représentées dans une configuration Windows Communication Foundation. Recherchez un commentaire sur les paramètres SecurityBindingElement qui sont nécessaires dans le fichier de configuration généré. Créez l’élément de liaison correct avec le code. La configuration de liaison figurant dans le fichier de configuration n’est pas sécurisée.|  
 |SecurityBindingSupportsOneWayOnly|SecurityBinding pour la liaison spécifiée du contrat spécifié prend en charge l'opération OneWay uniquement.|  
 |SecurityContextDoesNotAllowImpersonation|Impossible de démarrer l'emprunt d'identité car SecurityContext pour le rôle UltimateReceiver du message de demande avec l'action spécifiée n'est pas mappé à une identité Windows.|  
 |SecurityListenerClosing|L'écouteur n'accepte pas de nouvelle conversation sécurisée car il est en cours de fermeture.|  
@@ -135,7 +136,7 @@ Cette rubrique répertorie toutes les exceptions de sécurité.
 |SecurityTokenParametersHasIncompatibleInclusionMode|La liaison spécifiée est configurée à l'aide d'un paramètre de jeton de sécurité dont le mode d'inclusion de jetons de sécurité spécifié n'est pas compatible. Spécifiez un autre mode d'inclusion de jeton de sécurité.|  
 |SecurityVersionDoesNotSupportEncryptedKeyBinding|La liaison spécifiée du contrat spécifié a été configurée à l'aide d'une version de sécurité non compatible qui ne prend pas en charge les références non liées à EncryptedKeys. Utilisez la version de sécurité spécifiée ou ultérieure pour la liaison.|  
 |SecurityVersionDoesNotSupportSignatureConfirmation|La SecurityVersion spécifiée ne prend pas en charge la confirmation de signature. Utilisez une SecurityVersion ultérieure.|  
-|SecurityVersionDoesNotSupportThumbprintX509KeyIdentifierClause|La liaison spécifiée du contrat spécifié a été configurée à l'aide d'une version de sécurité qui ne prend pas en charge les références externes aux jetons X.509 utilisant la valeur d'empreinte numérique du certificat. Utilisez la version de sécurité spécifiée ou ultérieure pour la liaison.|  
+|SecurityVersionDoesNotSupportThumbprintX509KeyIdentifierClause|La liaison spécifiée du contrat spécifié a été configurée à l’aide d’une version de sécurité qui ne prend pas en charge les références externes aux jetons X.509 utilisant la valeur d’empreinte numérique du certificat. Utilisez la version de sécurité spécifiée ou ultérieure pour la liaison.|  
 |SenderSideSupportingTokensMustSpecifySecurityTokenParameters|Les paramètres de jeton de sécurité doivent être spécifiés avec les jetons associés pour chaque message.|  
 |ServerCertificateNotProvided|Le destinataire n'a pas fourni son certificat. Ce certificat est exigé par le protocole TLS. Les deux parties doivent avoir accès à leur certificat.|  
 |SignatureConfirmationNotSupported|La SecurityVersion configurée ne prend pas en charge la confirmation de signature. Utilisez WSSecurityXXX2005 ou version ultérieure.|  
@@ -152,7 +153,7 @@ Cette rubrique répertorie toutes les exceptions de sécurité.
 |TimeStampWasCreatedTooLongAgo|L'horodatage de sécurité est périmé car son heure de création est trop lointaine dans le passé. Le temps actuel, la durée de vie maximale de l'horodatage et l'inclinaison autorisée de l'horloge sont spécifiés.|  
 |TokenProviderCannotGetTokensForTarget|Le fournisseur de jetons ne peut pas obtenir de jeton pour la cible spécifiée.|  
 |TooManyIssuedSecurityTokenParameters|Une section de la chaîne de sécurité fédérée contient plusieurs IssuedSecurityTokenParameters. Windows CardSpace ne prend en charge qu'un élément IssuedSecurityTokenParameters par section.|  
-|TransportDoesNotProtectMessage|La liaison spécifiée pour le contrat spécifié est configurée avec un mode d'authentification qui nécessite une intégrité et une confidentialité de niveau de transport. Le transport ne peut toutefois pas fournir l'intégrité et la confidentialité.|  
+|TransportDoesNotProtectMessage|La liaison spécifiée pour le contrat spécifié est configurée avec un mode d’authentification qui nécessite une intégrité et une confidentialité de niveau de transport. Le transport ne peut toutefois pas fournir l'intégrité et la confidentialité.|  
 |TrustApr2004DoesNotSupportCertainIssuedTokens|WSTrustApr2004 ne prend pas en charge l'émission de certificats X.509 ou d'éléments EncryptedKey. Utilisez WsTrustFeb2005 ou une version ultérieure.|  
 |TrustDriverVersionDoesNotSupportSession|La version de Trust configurée ne prend pas en charge les sessions. Utilisez WSTrustFeb2005 ou une version ultérieure.|  
 |UnableToCreateICryptoFromTokenForSignatureVerification|Impossible de créer une interface ICrypto à partir du jeton spécifié pour la vérification de la signature.|  

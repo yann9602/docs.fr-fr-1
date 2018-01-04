@@ -13,11 +13,12 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5fb11f5dbdcd0cf0a6d7b8bcf51b71c44b5f52af
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e798c0be052dc0d7987d99263117bf21a93ba9c0
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="systemservicemodelchannelshttpsclientcertificateinvalid"></a>System.ServiceModel.Channels.HttpsClientCertificateInvalid
 Certificat client non valide.  
@@ -26,6 +27,6 @@ Certificat client non valide.
  Ce suivi indique le certificat fourni par le client a été jugé non valide par l'écouteur HTTP.  L'écouteur HTTPS a tenté de valider l'authenticité du client à l'aide de ce certificat.  Un certificat peut être non valide si son autorité de certification n'est pas reconnue par le serveur qui héberge le service.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Le suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Utilisation du suivi pour dépanner votre Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3c3b478d88eff022d8cb28f4123291f4662644ba
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5e7a371d43237b795536711cf1745030e14d6eca
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="activity-list"></a>Liste des activités
 Cette rubrique répertorie toutes les activités définies par [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)].  
@@ -28,7 +29,7 @@ Cette rubrique répertorie toutes les activités définies par [!INCLUDE[indigo1
 ## <a name="servicemodel-activities"></a>Activités ServiceModel  
  Le tableau suivant répertorie toutes les activités pour les principaux scénarios d'utilisation.  
   
-|Label|Nom de l'activité|Type d'activité|Description|  
+|Ajouter des contrôles|Nom de l'activité|Type d'activité|Description|  
 |-----------|-------------------|-------------------|-----------------|  
 |A, M|Activité ambiante|N/A (non contrôlé par ServiceModel)|Activité dont l'ID est défini dans TLS avant les appels au code ServiceModel (côté client ou côté serveur).<br /><br /> Exemple : activité dans laquelle l'ouverture est appelée sur le client [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] ou dans laquelle serviceHost.open est appelé.|  
 |B|Construction<br /><br /> ChannelFactory. ContractType : '[Type]'.|Construction||  
@@ -39,7 +40,7 @@ Cette rubrique répertorie toutes les activités définies par [!INCLUDE[indigo1
 |Z|Fermer ServiceHost. ServiceType: '[Type]'.|Fermer||  
 |O|Écouter à '[address]'.|ListenAt|Cette activité et la suivante sont spécifiques au transport. L'activité ListenAt représente le contenu qui mappe à l'adresse à laquelle l'écouteur de canal écoute. Dans le cas de MSMQ, c'est la file d'attente elle-même qui depuis la file d'attente mappe à une adresse. Cette activité écoute les connexions entrantes dans le cas des transports orientés connexion, et les messages MSMQ dans le cas de MSMQ. Cette activité est créée pendant ServiceHost.Open (), et contient les suivis relatifs à la création et à la suppression de l'écouteur, ainsi qu'au transfert vers toutes les activités ReceiveBytes.|  
 |P|Recevoir les octets sur la connexion '[address]'. Recevoir le message MSMQ.|ReceiveBytes|Dans cette activité, les données qui au final obtiendront un message [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] sont traitées. Des octets entrants sont attendus dans le cas du transport orienté connexion ou http. Pour le TCP/canal nommé, la durée de vie de cette activité correspond à celle de la connexion, car elle est créée à la création de la connexion. Pour http, elle correspond à la durée de vie d'une demande de message et est créée à l'envoi du message. Cette activité contient les suivis relatifs à la création et à la suppression de la connexion le cas échéant, ainsi qu'aux transferts vers toutes les activités de traitement (objet) des messages.<br /><br /> Dans le cas de MSMQ, il s'agit de l'activité dans laquelle le message MSMQ est récupéré.|  
-|Q|Traiter le message [number]. (Notez que [number] est une valeur qui augmente de manière monotone et commence à 1.)|ProcessMessage|Cette activité traite un message entrant. Elle démarre lorsque toutes les données (octets, message MSMQ) sont reçues pour former un objet de message [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]. Les suivis dans cette activité gèrent le traitement d'en-tête.<br /><br /> Une fois qu'un message pouvant être distribué est formé, l'activité de ServiceHost ProcessAction est basculée après avoir recherché l'ID d'activité correspondant.|  
+|N|Traiter le message [number]. (Notez que [number] est une valeur qui augmente de manière monotone et commence à 1.)|ProcessMessage|Cette activité traite un message entrant. Elle démarre lorsque toutes les données (octets, message MSMQ) sont reçues pour former un objet de message [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]. Les suivis dans cette activité gèrent le traitement d'en-tête.<br /><br /> Une fois qu'un message pouvant être distribué est formé, l'activité de ServiceHost ProcessAction est basculée après avoir recherché l'ID d'activité correspondant.|  
 |D, S|Traiter l'action '[action]'.|ProcessAction|Cette activité traite le message via la pile Transport/Security/RM permettant de distribuer le message au code utilisateur lors de la réception, et dans l'ordre inverse lors de l'envoi.<br /><br /> Sur le serveur, cette activité utilise l’ID d’activité propagé s’il est envoyé dans l’en-tête de message via la « Propagation d’activité » ; Sinon, un nouveau GUID est créé.<br /><br /> Le message de réponse pour les contrats demande/réponse est également traité dans cette activité.|  
 |T|Exécuter '[IContract.Operation]'.|ExecuteUserCode|Cette activité exécute le code utilisateur après distribution sur le côté service. Elle fournit une limite permettant de définir le code ServiceHost à partir du code fourni par l'utilisateur.|  
   

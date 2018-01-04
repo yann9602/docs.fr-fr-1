@@ -13,11 +13,12 @@ caps.latest.revision: "12"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 3d57517daaf78e737ea4417d5d46cf33400ff97a
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 75870850a7df01d255d3512dde2a550e2a6c205a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tracing"></a>Traçage
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] fournit des données de diagnostic et d'instrumentation d'application à des fins de contrôle et d'analyse des erreurs. Vous pouvez utiliser le suivi au lieu d'un débogueur pour comprendre le comportement d'une application ou la raison de sa défaillance. Vous pouvez également mettre en corrélation les erreurs et le traitement sur l'ensemble des composants afin de fournir une expérience de bout en bout.  
@@ -29,7 +30,7 @@ ms.lasthandoff: 12/02/2017
 -   Événements d’erreur Windows en cas de dysfonctionnement de la fonctionnalité de suivi.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Configuration du traçage](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
+ [Configuration du suivi](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
   
  Cette rubrique décrit comment configurer le suivi à différents niveaux en fonction de vos besoins spécifiques.  
   
@@ -37,15 +38,15 @@ ms.lasthandoff: 12/02/2017
   
  Cette section décrit comment utiliser le suivi et la propagation d'activité pour la corrélation de bout en bout à des fins de débogage.  
   
- [Utilisation du suivi pour dépanner votre Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [Utilisation du suivi pour résoudre les problèmes posés par votre application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
   
  Cette section décrit comment utiliser le suivi pour déboguer votre application.  
   
- [Problèmes de sécurité et des conseils utiles pour le suivi](../../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)  
+ [Problèmes de sécurité et conseils utiles pour le suivi](../../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)  
   
  Cette rubrique décrit comment empêcher l'exposition des informations sensibles et fournit également des conseils utiles en cas d'utilisation de WebHost.  
   
- [Référence des suivis](../../../../../docs/framework/wcf/diagnostics/tracing/traces-reference.md)  
+ [Informations de référence sur les suivis](../../../../../docs/framework/wcf/diagnostics/tracing/traces-reference.md)  
   
  Cette rubrique répertorie l'ensemble des suivis générés par [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)].  
   

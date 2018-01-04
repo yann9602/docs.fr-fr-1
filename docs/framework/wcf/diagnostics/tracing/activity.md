@@ -13,11 +13,12 @@ caps.latest.revision: "10"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 382197f2a8d2375903f286dc5aa54ce5dc632bce
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: cbcf33aa734cde1d2458e46cd161f9ea5197a827
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="activity"></a>Activité
 Cette rubrique contient des informations sur les suivis d'activité dans le modèle de suivi [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)]. Les activités traitent des unités permettant à l'utilisateur de réduire la portée d'un échec. Les erreurs qui se produisent au cours d'une même activité sont directement liées entre elles. Par exemple, une opération peut échouer parce que le déchiffrement d'un message a échoué auparavant. Les suivis générés pour les échecs respectifs de l'opération et du déchiffrement apparaissent dans la même activité, dénotant l'existence d'un lien direct entre l'erreur relative au déchiffrement et celle relative à la demande.  
@@ -55,7 +56,7 @@ Cette rubrique contient des informations sur les suivis d'activité dans le mod�
 ## <a name="trace-schema"></a>Schéma de suivi  
  Les traces peuvent être émises à l'aide de tout schéma et sur toutes les plateformes Microsoft. « e2e » (pour « bout en bout ») est un schéma couramment utilisé. Ce schéma comporte l'identificateur à 128 bits (gAId), le nom de la source de suivi et l'ID de processus. Dans le code managé, l'écouteur <xref:System.Diagnostics.XmlWriterTraceListener> émet des suivis dans le schéma E2E.  
   
- Pour définir l'identificateur AID émis avec un suivi, les développeurs peuvent définir la propriété <xref:System.Diagnostics.CorrelationManager.ActivityId%2A> en utilisant un Guid pour le stockage local des threads (Thread Local Storage, TLS). Cela est illustré par l'exemple suivant.  
+ Pour définir l’identificateur AID émis avec un suivi, les développeurs peuvent définir la propriété <xref:System.Diagnostics.CorrelationManager.ActivityId%2A> en utilisant un Guid pour le stockage local des threads (Thread Local Storage, TLS). Cela est illustré par l'exemple suivant.  
   
 ```  
 // set the current Activity ID to a new GUID.  
@@ -84,11 +85,11 @@ traceSource.TraceEvent(TraceEventType.Warning, eventId, "Information");
   
 -   Transfert :, Car certaines activités sont dus à d’autres, ou se rapportent à d’autres personnes, les activités peuvent être associées à d’autres activités suivis de « Transfert ». Un suivi de transfert enregistre la relation directe existant entre deux activités.  
   
- Les suivis Démarrer et Arrêter ne sont pas critiques pour la corrélation. Toutefois, ils peuvent améliorer les performances, le profilage et la validation de la portée de l'activité.  
+ Les suivis Démarrer et Arrêter ne sont pas critiques pour la corrélation. Toutefois, ils peuvent améliorer les performances, le profilage et la validation de la portée de l’activité.  
   
  Grâce à ces suivis, les outils peuvent optimiser la navigation dans les journaux de suivi. Les événements d'une même activité ou les événements d'activités reliées entre elles (lorsque ces outils prennent en charge les suivis de transfert) peuvent donc être trouvés plus rapidement et facilement. Par exemple, les outils cesseront d'analyser les journaux pour une activité donnée lorsqu'ils verront un suivi Démarrer/Arrêter.  
   
- Ces types de suivis peuvent également être utilisés pour le profilage. Les ressources consommées entre les marqueurs de démarrage et d'arrêt représentent le temps inclusif de l'activité, dont les activités logiques contenues. La soustraction des intervalles de temps entre les suivis Interrompre et Reprendre fournit le temps d'activité réelle.  
+ Ces types de suivis peuvent également être utilisés pour le profilage. Les ressources consommées entre les marqueurs de démarrage et d’arrêt représentent le temps inclusif de l’activité, dont les activités logiques contenues. La soustraction des intervalles de temps entre les suivis Interrompre et Reprendre fournit le temps d'activité réelle.  
   
  Les suivis de fin sont également très utiles lorsqu'il s'agit de valider la portée des activités implémentées. Si certains suivis de traitement apparaissent après le suivi Arrêter au lieu d'apparaître dans une activité donnée, cela peut suggérer une erreur de code.  
   
@@ -108,8 +109,8 @@ traceSource.TraceEvent(TraceEventType.Warning, eventId, "Information");
 -   Les activités représentent des activités, par nécessairement des objets. Une activité doit être interprétée en tant que « cela se produisait quand. . . (un suivi significatif a été émis). »  
   
 ## <a name="see-also"></a>Voir aussi  
- [Configuration du traçage](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
+ [Configuration du suivi](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
  [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
  [Scénarios de suivi de bout en bout](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  
  [Outil Service Trace Viewer (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)  
- [L’émission de Traces de Code utilisateur](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)
+ [Émission de suivis dans du code utilisateur](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)
