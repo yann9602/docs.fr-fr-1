@@ -13,19 +13,20 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 9d942124f63fdb021535555ead4805d5f56cb432
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5f01fec9a1387edc52ecd6b055caeeec99b67cd1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelspeerneighbormessagereceived"></a><span data-ttu-id="446db-102">System.ServiceModel.Channels.PeerNeighborMessageReceived</span><span class="sxs-lookup"><span data-stu-id="446db-102">System.ServiceModel.Channels.PeerNeighborMessageReceived</span></span>
-<span data-ttu-id="446db-103">Un message a été reçu d'un voisin pair.</span><span class="sxs-lookup"><span data-stu-id="446db-103">A message was received from a peer neighbor.</span></span>  
+# <a name="systemservicemodelchannelspeerneighbormessagereceived"></a><span data-ttu-id="ca656-102">System.ServiceModel.Channels.PeerNeighborMessageReceived</span><span class="sxs-lookup"><span data-stu-id="ca656-102">System.ServiceModel.Channels.PeerNeighborMessageReceived</span></span>
+<span data-ttu-id="ca656-103">Un message a été reçu d'un voisin pair.</span><span class="sxs-lookup"><span data-stu-id="ca656-103">A message was received from a peer neighbor.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="446db-104">Description</span><span class="sxs-lookup"><span data-stu-id="446db-104">Description</span></span>  
- <span data-ttu-id="446db-105">Cette trace se produit pendant le traitement d'un message entrant depuis un nœud figurant dans la liste de voisins.</span><span class="sxs-lookup"><span data-stu-id="446db-105">This trace occurs during the processing of an incoming message from a node in the neighbor list.</span></span>  
+## <a name="description"></a><span data-ttu-id="ca656-104">Description</span><span class="sxs-lookup"><span data-stu-id="ca656-104">Description</span></span>  
+ <span data-ttu-id="ca656-105">Cette trace se produit pendant le traitement d'un message entrant depuis un nœud figurant dans la liste de voisins.</span><span class="sxs-lookup"><span data-stu-id="ca656-105">This trace occurs during the processing of an incoming message from a node in the neighbor list.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="446db-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="446db-106">See Also</span></span>  
- [<span data-ttu-id="446db-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="446db-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="446db-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="446db-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="446db-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="446db-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="ca656-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ca656-106">See Also</span></span>  
+ [<span data-ttu-id="ca656-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="ca656-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="ca656-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="ca656-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="ca656-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="ca656-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

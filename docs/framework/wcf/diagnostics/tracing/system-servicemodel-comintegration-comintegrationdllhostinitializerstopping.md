@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 74173fdd14f2258306ea044f865f47f0561c1818
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 0a223ec13088a7dde1ad24363453967433824777
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelcomintegrationcomintegrationdllhostinitializerstopping"></a><span data-ttu-id="a94dc-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopping</span><span class="sxs-lookup"><span data-stu-id="a94dc-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopping</span></span>
-<span data-ttu-id="a94dc-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopping</span><span class="sxs-lookup"><span data-stu-id="a94dc-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopping</span></span>  
+# <a name="systemservicemodelcomintegrationcomintegrationdllhostinitializerstopping"></a><span data-ttu-id="f34bd-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopping</span><span class="sxs-lookup"><span data-stu-id="f34bd-102">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopping</span></span>
+<span data-ttu-id="f34bd-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopping</span><span class="sxs-lookup"><span data-stu-id="f34bd-103">System.ServiceModel.ComIntegration.ComIntegrationDllHostInitializerStopping</span></span>  
   
-## <a name="description"></a><span data-ttu-id="a94dc-104">Description</span><span class="sxs-lookup"><span data-stu-id="a94dc-104">Description</span></span>  
- <span data-ttu-id="a94dc-105">ComPlus : Arrêt de l'initialiseur DllHost.</span><span class="sxs-lookup"><span data-stu-id="a94dc-105">ComPlus: Stopping the DllHost initializer.</span></span>  
+## <a name="description"></a><span data-ttu-id="f34bd-104">Description</span><span class="sxs-lookup"><span data-stu-id="f34bd-104">Description</span></span>  
+ <span data-ttu-id="f34bd-105">ComPlus : Arrêt de l'initialiseur DllHost.</span><span class="sxs-lookup"><span data-stu-id="f34bd-105">ComPlus: Stopping the DllHost initializer.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a94dc-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a94dc-106">See Also</span></span>  
- [<span data-ttu-id="a94dc-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="a94dc-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="a94dc-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="a94dc-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="a94dc-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="a94dc-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="f34bd-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f34bd-106">See Also</span></span>  
+ [<span data-ttu-id="f34bd-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="f34bd-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="f34bd-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="f34bd-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="f34bd-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="f34bd-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

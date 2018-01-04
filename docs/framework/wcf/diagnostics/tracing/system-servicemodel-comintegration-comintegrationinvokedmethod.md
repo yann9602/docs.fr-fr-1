@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d8b211e97e06c342d679ed3f66288141f989e7b0
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: b34239a2e104a4003b62928704aea428a7c9d8f6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelcomintegrationcomintegrationinvokedmethod"></a><span data-ttu-id="0c237-102">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span><span class="sxs-lookup"><span data-stu-id="0c237-102">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span></span>
-<span data-ttu-id="0c237-103">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span><span class="sxs-lookup"><span data-stu-id="0c237-103">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span></span>  
+# <a name="systemservicemodelcomintegrationcomintegrationinvokedmethod"></a><span data-ttu-id="9dbd8-102">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span><span class="sxs-lookup"><span data-stu-id="9dbd8-102">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span></span>
+<span data-ttu-id="9dbd8-103">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span><span class="sxs-lookup"><span data-stu-id="9dbd8-103">System.ServiceModel.ComIntegration.ComIntegrationInvokedMethod</span></span>  
   
-## <a name="description"></a><span data-ttu-id="0c237-104">Description</span><span class="sxs-lookup"><span data-stu-id="0c237-104">Description</span></span>  
- <span data-ttu-id="0c237-105">ComPlus : Méthode appelée.</span><span class="sxs-lookup"><span data-stu-id="0c237-105">ComPlus: Invoked method.</span></span>  
+## <a name="description"></a><span data-ttu-id="9dbd8-104">Description</span><span class="sxs-lookup"><span data-stu-id="9dbd8-104">Description</span></span>  
+ <span data-ttu-id="9dbd8-105">ComPlus : Méthode appelée.</span><span class="sxs-lookup"><span data-stu-id="9dbd8-105">ComPlus: Invoked method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0c237-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0c237-106">See Also</span></span>  
- [<span data-ttu-id="0c237-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="0c237-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="0c237-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="0c237-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="0c237-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="0c237-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="9dbd8-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9dbd8-106">See Also</span></span>  
+ [<span data-ttu-id="9dbd8-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="9dbd8-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="9dbd8-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="9dbd8-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="9dbd8-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="9dbd8-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

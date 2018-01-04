@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 6b26f8b74a5d6eba8f63d088545bd3a6e232fcae
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 71fc7111e4f2dc4c93529c87823065f38386bce4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsnamedpipechannelmessagereceivefailed"></a><span data-ttu-id="5cfe1-102">System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed</span><span class="sxs-lookup"><span data-stu-id="5cfe1-102">System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed</span></span>
-<span data-ttu-id="5cfe1-103">System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed</span><span class="sxs-lookup"><span data-stu-id="5cfe1-103">System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed</span></span>  
+# <a name="systemservicemodelchannelsnamedpipechannelmessagereceivefailed"></a><span data-ttu-id="a2e05-102">System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed</span><span class="sxs-lookup"><span data-stu-id="a2e05-102">System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed</span></span>
+<span data-ttu-id="a2e05-103">System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed</span><span class="sxs-lookup"><span data-stu-id="a2e05-103">System.ServiceModel.Channels.NamedPipeChannelMessageReceiveFailed</span></span>  
   
-## <a name="description"></a><span data-ttu-id="5cfe1-104">Description</span><span class="sxs-lookup"><span data-stu-id="5cfe1-104">Description</span></span>  
- <span data-ttu-id="5cfe1-105">La recherche d'un canal pour recevoir un message entrant a échoué.</span><span class="sxs-lookup"><span data-stu-id="5cfe1-105">Failed to lookup a channel to receive an incoming message.</span></span> <span data-ttu-id="5cfe1-106">Point de terminaison ou action SOAP introuvable.</span><span class="sxs-lookup"><span data-stu-id="5cfe1-106">Either the endpoint or the SOAP action was not found.</span></span>  
+## <a name="description"></a><span data-ttu-id="a2e05-104">Description</span><span class="sxs-lookup"><span data-stu-id="a2e05-104">Description</span></span>  
+ <span data-ttu-id="a2e05-105">La recherche d'un canal pour recevoir un message entrant a échoué.</span><span class="sxs-lookup"><span data-stu-id="a2e05-105">Failed to lookup a channel to receive an incoming message.</span></span> <span data-ttu-id="a2e05-106">Point de terminaison ou action SOAP introuvable.</span><span class="sxs-lookup"><span data-stu-id="a2e05-106">Either the endpoint or the SOAP action was not found.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5cfe1-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5cfe1-107">See Also</span></span>  
- [<span data-ttu-id="5cfe1-108">Le suivi</span><span class="sxs-lookup"><span data-stu-id="5cfe1-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="5cfe1-109">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="5cfe1-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="5cfe1-110">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="5cfe1-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="a2e05-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a2e05-107">See Also</span></span>  
+ [<span data-ttu-id="a2e05-108">Suivi</span><span class="sxs-lookup"><span data-stu-id="a2e05-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="a2e05-109">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="a2e05-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="a2e05-110">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="a2e05-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

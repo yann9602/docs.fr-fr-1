@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: eb3acde02a11d73066bcfb1e6e0d377e1d4368a5
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9d55167b95b46926061fe7121722eaa6b019543a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelperformancecountersfailed"></a><span data-ttu-id="b2d8e-102">System.ServiceModel.PerformanceCountersFailed</span><span class="sxs-lookup"><span data-stu-id="b2d8e-102">System.ServiceModel.PerformanceCountersFailed</span></span>
-<span data-ttu-id="b2d8e-103">System.ServiceModel.PerformanceCountersFailed</span><span class="sxs-lookup"><span data-stu-id="b2d8e-103">System.ServiceModel.PerformanceCountersFailed</span></span>  
+# <a name="systemservicemodelperformancecountersfailed"></a><span data-ttu-id="f4067-102">System.ServiceModel.PerformanceCountersFailed</span><span class="sxs-lookup"><span data-stu-id="f4067-102">System.ServiceModel.PerformanceCountersFailed</span></span>
+<span data-ttu-id="f4067-103">System.ServiceModel.PerformanceCountersFailed</span><span class="sxs-lookup"><span data-stu-id="f4067-103">System.ServiceModel.PerformanceCountersFailed</span></span>  
   
-## <a name="description"></a><span data-ttu-id="b2d8e-104">Description</span><span class="sxs-lookup"><span data-stu-id="b2d8e-104">Description</span></span>  
- <span data-ttu-id="b2d8e-105">Échec du chargement du compteur de performance spécifié.</span><span class="sxs-lookup"><span data-stu-id="b2d8e-105">Failed to load the specified performance counter.</span></span> <span data-ttu-id="b2d8e-106">Certains compteurs de performance ne sont pas disponibles.</span><span class="sxs-lookup"><span data-stu-id="b2d8e-106">Some performance counters are not available.</span></span>  
+## <a name="description"></a><span data-ttu-id="f4067-104">Description</span><span class="sxs-lookup"><span data-stu-id="f4067-104">Description</span></span>  
+ <span data-ttu-id="f4067-105">Échec du chargement du compteur de performance spécifié.</span><span class="sxs-lookup"><span data-stu-id="f4067-105">Failed to load the specified performance counter.</span></span> <span data-ttu-id="f4067-106">Certains compteurs de performance ne sont pas disponibles.</span><span class="sxs-lookup"><span data-stu-id="f4067-106">Some performance counters are not available.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b2d8e-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b2d8e-107">See Also</span></span>  
- [<span data-ttu-id="b2d8e-108">Le suivi</span><span class="sxs-lookup"><span data-stu-id="b2d8e-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="b2d8e-109">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="b2d8e-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="b2d8e-110">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="b2d8e-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="f4067-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f4067-107">See Also</span></span>  
+ [<span data-ttu-id="f4067-108">Suivi</span><span class="sxs-lookup"><span data-stu-id="f4067-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="f4067-109">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="f4067-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="f4067-110">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="f4067-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: edd832277ef27ee8f09b514d4d50a281efa8b1f1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 40c7164a0370865f6cfc79446e00a7393f626410
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsstreamsecurityupgradeaccepted"></a><span data-ttu-id="fd672-102">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span><span class="sxs-lookup"><span data-stu-id="fd672-102">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span></span>
-<span data-ttu-id="fd672-103">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span><span class="sxs-lookup"><span data-stu-id="fd672-103">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span></span>  
+# <a name="systemservicemodelchannelsstreamsecurityupgradeaccepted"></a><span data-ttu-id="05d66-102">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span><span class="sxs-lookup"><span data-stu-id="05d66-102">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span></span>
+<span data-ttu-id="05d66-103">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span><span class="sxs-lookup"><span data-stu-id="05d66-103">System.ServiceModel.Channels.StreamSecurityUpgradeAccepted</span></span>  
   
-## <a name="description"></a><span data-ttu-id="fd672-104">Description</span><span class="sxs-lookup"><span data-stu-id="fd672-104">Description</span></span>  
- <span data-ttu-id="fd672-105">La mise à niveau de la sécurité du flux s'est correctement déroulée.</span><span class="sxs-lookup"><span data-stu-id="fd672-105">The stream security upgrade was accepted successfully.</span></span>  
+## <a name="description"></a><span data-ttu-id="05d66-104">Description</span><span class="sxs-lookup"><span data-stu-id="05d66-104">Description</span></span>  
+ <span data-ttu-id="05d66-105">La mise à niveau de la sécurité du flux s'est correctement déroulée.</span><span class="sxs-lookup"><span data-stu-id="05d66-105">The stream security upgrade was accepted successfully.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fd672-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fd672-106">See Also</span></span>  
- [<span data-ttu-id="fd672-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="fd672-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="fd672-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="fd672-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="fd672-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="fd672-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="05d66-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="05d66-106">See Also</span></span>  
+ [<span data-ttu-id="05d66-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="05d66-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="05d66-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="05d66-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="05d66-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="05d66-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

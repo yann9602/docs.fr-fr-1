@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 0a172855b117d590c220266598c62d732b2a134f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 244dbc0a8466ac9494a57365fce705cb003ce08a
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsmsmqpoisonmessagemovedpoison"></a><span data-ttu-id="bbc11-102">System.ServiceModel.Channels.MsmqPoisonMessageMovedPoison</span><span class="sxs-lookup"><span data-stu-id="bbc11-102">System.ServiceModel.Channels.MsmqPoisonMessageMovedPoison</span></span>
-<span data-ttu-id="bbc11-103">System.ServiceModel.Channels.MsmqPoisonMessageMovedPoison</span><span class="sxs-lookup"><span data-stu-id="bbc11-103">System.ServiceModel.Channels.MsmqPoisonMessageMovedPoison</span></span>  
+# <a name="systemservicemodelchannelsmsmqpoisonmessagemovedpoison"></a><span data-ttu-id="9384b-102">System.ServiceModel.Channels.MsmqPoisonMessageMovedPoison</span><span class="sxs-lookup"><span data-stu-id="9384b-102">System.ServiceModel.Channels.MsmqPoisonMessageMovedPoison</span></span>
+<span data-ttu-id="9384b-103">System.ServiceModel.Channels.MsmqPoisonMessageMovedPoison</span><span class="sxs-lookup"><span data-stu-id="9384b-103">System.ServiceModel.Channels.MsmqPoisonMessageMovedPoison</span></span>  
   
-## <a name="description"></a><span data-ttu-id="bbc11-104">Description</span><span class="sxs-lookup"><span data-stu-id="bbc11-104">Description</span></span>  
- <span data-ttu-id="bbc11-105">Message empoisonné déplacé dans la sous-file d'attente empoisonnée.</span><span class="sxs-lookup"><span data-stu-id="bbc11-105">Poison message moved to the poison sub-queue.</span></span>  
+## <a name="description"></a><span data-ttu-id="9384b-104">Description</span><span class="sxs-lookup"><span data-stu-id="9384b-104">Description</span></span>  
+ <span data-ttu-id="9384b-105">Message empoisonné déplacé dans la sous-file d'attente empoisonnée.</span><span class="sxs-lookup"><span data-stu-id="9384b-105">Poison message moved to the poison sub-queue.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="bbc11-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bbc11-106">See Also</span></span>  
- [<span data-ttu-id="bbc11-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="bbc11-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="bbc11-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="bbc11-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="bbc11-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="bbc11-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="9384b-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9384b-106">See Also</span></span>  
+ [<span data-ttu-id="9384b-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="9384b-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="9384b-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="9384b-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="9384b-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="9384b-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

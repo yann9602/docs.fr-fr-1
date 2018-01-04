@@ -13,19 +13,20 @@ caps.latest.revision: "7"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 8bcaf08f1a67c0a4cc597b4df69f27c4d01b9dfb
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 24cef211bfc13769b54a69458b31d825afa86567
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelspeerneighborstatechangefailed"></a><span data-ttu-id="29b54-102">System.ServiceModel.Channels.PeerNeighborStateChangeFailed</span><span class="sxs-lookup"><span data-stu-id="29b54-102">System.ServiceModel.Channels.PeerNeighborStateChangeFailed</span></span>
-<span data-ttu-id="29b54-103">L'état d'un voisin a été endommagé.</span><span class="sxs-lookup"><span data-stu-id="29b54-103">A neighbor's state was corrupted.</span></span>  
+# <a name="systemservicemodelchannelspeerneighborstatechangefailed"></a><span data-ttu-id="6a1c2-102">System.ServiceModel.Channels.PeerNeighborStateChangeFailed</span><span class="sxs-lookup"><span data-stu-id="6a1c2-102">System.ServiceModel.Channels.PeerNeighborStateChangeFailed</span></span>
+<span data-ttu-id="6a1c2-103">L'état d'un voisin a été endommagé.</span><span class="sxs-lookup"><span data-stu-id="6a1c2-103">A neighbor's state was corrupted.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="29b54-104">Description</span><span class="sxs-lookup"><span data-stu-id="29b54-104">Description</span></span>  
- <span data-ttu-id="29b54-105">Ce suivi se produit après l'échec d'une tentative de modification de l'état d'un voisin.</span><span class="sxs-lookup"><span data-stu-id="29b54-105">This trace occurs upon a failed attempt to change a neighbor's state.</span></span> <span data-ttu-id="29b54-106">Cela indique une erreur interne inattendue ou une mémoire endommagée.</span><span class="sxs-lookup"><span data-stu-id="29b54-106">This indicates an unexpected internal error, or corrupted memory.</span></span>  
+## <a name="description"></a><span data-ttu-id="6a1c2-104">Description</span><span class="sxs-lookup"><span data-stu-id="6a1c2-104">Description</span></span>  
+ <span data-ttu-id="6a1c2-105">Ce suivi se produit après l'échec d'une tentative de modification de l'état d'un voisin.</span><span class="sxs-lookup"><span data-stu-id="6a1c2-105">This trace occurs upon a failed attempt to change a neighbor's state.</span></span> <span data-ttu-id="6a1c2-106">Cela indique une erreur interne inattendue ou une mémoire endommagée.</span><span class="sxs-lookup"><span data-stu-id="6a1c2-106">This indicates an unexpected internal error, or corrupted memory.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="29b54-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="29b54-107">See Also</span></span>  
- [<span data-ttu-id="29b54-108">Le suivi</span><span class="sxs-lookup"><span data-stu-id="29b54-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="29b54-109">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="29b54-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="29b54-110">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="29b54-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="6a1c2-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6a1c2-107">See Also</span></span>  
+ [<span data-ttu-id="6a1c2-108">Suivi</span><span class="sxs-lookup"><span data-stu-id="6a1c2-108">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="6a1c2-109">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="6a1c2-109">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="6a1c2-110">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="6a1c2-110">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

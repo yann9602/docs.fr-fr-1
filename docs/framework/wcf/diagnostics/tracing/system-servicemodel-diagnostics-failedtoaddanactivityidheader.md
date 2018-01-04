@@ -13,19 +13,20 @@ caps.latest.revision: "5"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 2336eb909e3e2ea893291d017d30b2328fc283cc
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 1ca797d1a1c67e4996f76869fcc6a3b341524318
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodeldiagnosticsfailedtoaddanactivityidheader"></a><span data-ttu-id="e1dc2-102">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span><span class="sxs-lookup"><span data-stu-id="e1dc2-102">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span></span>
-<span data-ttu-id="e1dc2-103">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span><span class="sxs-lookup"><span data-stu-id="e1dc2-103">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span></span>  
+# <a name="systemservicemodeldiagnosticsfailedtoaddanactivityidheader"></a><span data-ttu-id="43810-102">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span><span class="sxs-lookup"><span data-stu-id="43810-102">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span></span>
+<span data-ttu-id="43810-103">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span><span class="sxs-lookup"><span data-stu-id="43810-103">System.ServiceModel.Diagnostics.FailedToAddAnActivityIdHeader</span></span>  
   
-## <a name="description"></a><span data-ttu-id="e1dc2-104">Description</span><span class="sxs-lookup"><span data-stu-id="e1dc2-104">Description</span></span>  
- <span data-ttu-id="e1dc2-105">Échec de la définition d'un en-tête d'identificateur de l'activité sur un message sortant.</span><span class="sxs-lookup"><span data-stu-id="e1dc2-105">Failed to set an activity id header on an outgoing message.</span></span>  
+## <a name="description"></a><span data-ttu-id="43810-104">Description</span><span class="sxs-lookup"><span data-stu-id="43810-104">Description</span></span>  
+ <span data-ttu-id="43810-105">Échec de la définition d'un en-tête d'identificateur de l'activité sur un message sortant.</span><span class="sxs-lookup"><span data-stu-id="43810-105">Failed to set an activity id header on an outgoing message.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e1dc2-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e1dc2-106">See Also</span></span>  
- [<span data-ttu-id="e1dc2-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="e1dc2-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="e1dc2-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="e1dc2-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="e1dc2-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="e1dc2-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="43810-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="43810-106">See Also</span></span>  
+ [<span data-ttu-id="43810-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="43810-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="43810-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="43810-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="43810-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="43810-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

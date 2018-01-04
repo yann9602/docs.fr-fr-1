@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 612dfe1c11e133da5920cecd4231637070a4f933
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 2b5fc300fed38f40ea8ce24fc6dba85e0e93cc30
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecurityactiveserversessionremoved"></a><span data-ttu-id="cea46-102">System.ServiceModel.Security.SecurityActiveServerSessionRemoved</span><span class="sxs-lookup"><span data-stu-id="cea46-102">System.ServiceModel.Security.SecurityActiveServerSessionRemoved</span></span>
-<span data-ttu-id="cea46-103">System.ServiceModel.Security.SecurityActiveServerSessionRemoved</span><span class="sxs-lookup"><span data-stu-id="cea46-103">System.ServiceModel.Security.SecurityActiveServerSessionRemoved</span></span>  
+# <a name="systemservicemodelsecuritysecurityactiveserversessionremoved"></a><span data-ttu-id="416a8-102">System.ServiceModel.Security.SecurityActiveServerSessionRemoved</span><span class="sxs-lookup"><span data-stu-id="416a8-102">System.ServiceModel.Security.SecurityActiveServerSessionRemoved</span></span>
+<span data-ttu-id="416a8-103">System.ServiceModel.Security.SecurityActiveServerSessionRemoved</span><span class="sxs-lookup"><span data-stu-id="416a8-103">System.ServiceModel.Security.SecurityActiveServerSessionRemoved</span></span>  
   
-## <a name="description"></a><span data-ttu-id="cea46-104">Description</span><span class="sxs-lookup"><span data-stu-id="cea46-104">Description</span></span>  
- <span data-ttu-id="cea46-105">Une session de sécurité active a été supprimée par le serveur.</span><span class="sxs-lookup"><span data-stu-id="cea46-105">An active security session was removed by the server.</span></span>  
+## <a name="description"></a><span data-ttu-id="416a8-104">Description</span><span class="sxs-lookup"><span data-stu-id="416a8-104">Description</span></span>  
+ <span data-ttu-id="416a8-105">Une session de sécurité active a été supprimée par le serveur.</span><span class="sxs-lookup"><span data-stu-id="416a8-105">An active security session was removed by the server.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="cea46-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cea46-106">See Also</span></span>  
- [<span data-ttu-id="cea46-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="cea46-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="cea46-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="cea46-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="cea46-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="cea46-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="416a8-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="416a8-106">See Also</span></span>  
+ [<span data-ttu-id="416a8-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="416a8-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="416a8-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="416a8-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="416a8-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="416a8-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

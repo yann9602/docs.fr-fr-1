@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 9ed2a08d8ed10fe46eb1ab1641d59a56306d6197
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e4ee609f71bbd59a8c77deb4de5f633b108e3878
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecuritybindingverifyincomingmessagefailure"></a><span data-ttu-id="93431-102">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span><span class="sxs-lookup"><span data-stu-id="93431-102">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span></span>
-<span data-ttu-id="93431-103">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span><span class="sxs-lookup"><span data-stu-id="93431-103">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span></span>  
+# <a name="systemservicemodelsecuritysecuritybindingverifyincomingmessagefailure"></a><span data-ttu-id="ed99a-102">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span><span class="sxs-lookup"><span data-stu-id="ed99a-102">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span></span>
+<span data-ttu-id="ed99a-103">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span><span class="sxs-lookup"><span data-stu-id="ed99a-103">System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure</span></span>  
   
-## <a name="description"></a><span data-ttu-id="93431-104">Description</span><span class="sxs-lookup"><span data-stu-id="93431-104">Description</span></span>  
- <span data-ttu-id="93431-105">Le protocole de sécurité ne peut pas vérifier le message entrant.</span><span class="sxs-lookup"><span data-stu-id="93431-105">The security protocol cannot verify the incoming message.</span></span>  
+## <a name="description"></a><span data-ttu-id="ed99a-104">Description</span><span class="sxs-lookup"><span data-stu-id="ed99a-104">Description</span></span>  
+ <span data-ttu-id="ed99a-105">Le protocole de sécurité ne peut pas vérifier le message entrant.</span><span class="sxs-lookup"><span data-stu-id="ed99a-105">The security protocol cannot verify the incoming message.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="93431-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="93431-106">See Also</span></span>  
- [<span data-ttu-id="93431-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="93431-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="93431-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="93431-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="93431-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="93431-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="ed99a-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ed99a-106">See Also</span></span>  
+ [<span data-ttu-id="ed99a-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="ed99a-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="ed99a-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="ed99a-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="ed99a-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="ed99a-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

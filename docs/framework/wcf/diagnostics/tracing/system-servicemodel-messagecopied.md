@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ac630e08364cb2a9b6c56b662ca1242f34c4c9b3
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: f0a6465615cae9bad084f3c001894d905b749517
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelmessagecopied"></a><span data-ttu-id="2322d-102">System.ServiceModel.MessageCopied</span><span class="sxs-lookup"><span data-stu-id="2322d-102">System.ServiceModel.MessageCopied</span></span>
-<span data-ttu-id="2322d-103">System.ServiceModel.MessageCopied</span><span class="sxs-lookup"><span data-stu-id="2322d-103">System.ServiceModel.MessageCopied</span></span>  
+# <a name="systemservicemodelmessagecopied"></a><span data-ttu-id="852ef-102">System.ServiceModel.MessageCopied</span><span class="sxs-lookup"><span data-stu-id="852ef-102">System.ServiceModel.MessageCopied</span></span>
+<span data-ttu-id="852ef-103">System.ServiceModel.MessageCopied</span><span class="sxs-lookup"><span data-stu-id="852ef-103">System.ServiceModel.MessageCopied</span></span>  
   
-## <a name="description"></a><span data-ttu-id="2322d-104">Description</span><span class="sxs-lookup"><span data-stu-id="2322d-104">Description</span></span>  
- <span data-ttu-id="2322d-105">Un message a été copié.</span><span class="sxs-lookup"><span data-stu-id="2322d-105">A message was copied.</span></span>  
+## <a name="description"></a><span data-ttu-id="852ef-104">Description</span><span class="sxs-lookup"><span data-stu-id="852ef-104">Description</span></span>  
+ <span data-ttu-id="852ef-105">Un message a été copié.</span><span class="sxs-lookup"><span data-stu-id="852ef-105">A message was copied.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2322d-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2322d-106">See Also</span></span>  
- [<span data-ttu-id="2322d-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="2322d-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="2322d-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="2322d-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="2322d-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="2322d-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="852ef-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="852ef-106">See Also</span></span>  
+ [<span data-ttu-id="852ef-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="852ef-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="852ef-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="852ef-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="852ef-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="852ef-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

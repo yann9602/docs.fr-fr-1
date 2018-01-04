@@ -13,16 +13,17 @@ caps.latest.revision: "8"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: 1ce712bbdb258c477a2ee56f47281b1a1d09ec54
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: ea9c04c201ff022fcea54b81a998b7020fb2a836
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="servicesecurityauditbehavior"></a><span data-ttu-id="6f3e5-102">ServiceSecurityAuditBehavior</span><span class="sxs-lookup"><span data-stu-id="6f3e5-102">ServiceSecurityAuditBehavior</span></span>
-<span data-ttu-id="6f3e5-103">ServiceSecurityAuditBehavior</span><span class="sxs-lookup"><span data-stu-id="6f3e5-103">ServiceSecurityAuditBehavior</span></span>  
+# <a name="servicesecurityauditbehavior"></a><span data-ttu-id="30e63-102">ServiceSecurityAuditBehavior</span><span class="sxs-lookup"><span data-stu-id="30e63-102">ServiceSecurityAuditBehavior</span></span>
+<span data-ttu-id="30e63-103">ServiceSecurityAuditBehavior</span><span class="sxs-lookup"><span data-stu-id="30e63-103">ServiceSecurityAuditBehavior</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6f3e5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6f3e5-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="30e63-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="30e63-104">Syntax</span></span>  
   
 ```  
 class ServiceSecurityAuditBehavior : Behavior  
@@ -34,45 +35,45 @@ class ServiceSecurityAuditBehavior : Behavior
 };  
 ```  
   
-## <a name="methods"></a><span data-ttu-id="6f3e5-105">Méthodes</span><span class="sxs-lookup"><span data-stu-id="6f3e5-105">Methods</span></span>  
- <span data-ttu-id="6f3e5-106">La classe ServiceSecurityAuditBehavior ne définit pas de méthode.</span><span class="sxs-lookup"><span data-stu-id="6f3e5-106">The ServiceSecurityAuditBehavior class does not define any methods.</span></span>  
+## <a name="methods"></a><span data-ttu-id="30e63-105">Méthodes</span><span class="sxs-lookup"><span data-stu-id="30e63-105">Methods</span></span>  
+ <span data-ttu-id="30e63-106">La classe ServiceSecurityAuditBehavior ne définit pas de méthode.</span><span class="sxs-lookup"><span data-stu-id="30e63-106">The ServiceSecurityAuditBehavior class does not define any methods.</span></span>  
   
-## <a name="properties"></a><span data-ttu-id="6f3e5-107">Propriétés</span><span class="sxs-lookup"><span data-stu-id="6f3e5-107">Properties</span></span>  
- <span data-ttu-id="6f3e5-108">La classe ServiceSecurityAuditBehavior a les propriétés suivantes :</span><span class="sxs-lookup"><span data-stu-id="6f3e5-108">The ServiceSecurityAuditBehavior class has the following properties:</span></span>  
+## <a name="properties"></a><span data-ttu-id="30e63-107">Propriétés</span><span class="sxs-lookup"><span data-stu-id="30e63-107">Properties</span></span>  
+ <span data-ttu-id="30e63-108">La classe ServiceSecurityAuditBehavior a les propriétés suivantes :</span><span class="sxs-lookup"><span data-stu-id="30e63-108">The ServiceSecurityAuditBehavior class has the following properties:</span></span>  
   
-### <a name="auditloglocation"></a><span data-ttu-id="6f3e5-109">AuditLogLocation</span><span class="sxs-lookup"><span data-stu-id="6f3e5-109">AuditLogLocation</span></span>  
- <span data-ttu-id="6f3e5-110">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="6f3e5-110">Data type: string</span></span>  
+### <a name="auditloglocation"></a><span data-ttu-id="30e63-109">AuditLogLocation</span><span class="sxs-lookup"><span data-stu-id="30e63-109">AuditLogLocation</span></span>  
+ <span data-ttu-id="30e63-110">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="30e63-110">Data type: string</span></span>  
   
- <span data-ttu-id="6f3e5-111">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="6f3e5-111">Access type: Read-only</span></span>  
+ <span data-ttu-id="30e63-111">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="30e63-111">Access type: Read-only</span></span>  
   
- <span data-ttu-id="6f3e5-112">Emplacement du journal d'audit.</span><span class="sxs-lookup"><span data-stu-id="6f3e5-112">The location of the audit log.</span></span>  
+ <span data-ttu-id="30e63-112">Emplacement du journal d'audit.</span><span class="sxs-lookup"><span data-stu-id="30e63-112">The location of the audit log.</span></span>  
   
-### <a name="messageauthenticationauditlevel"></a><span data-ttu-id="6f3e5-113">MessageAuthenticationAuditLevel</span><span class="sxs-lookup"><span data-stu-id="6f3e5-113">MessageAuthenticationAuditLevel</span></span>  
- <span data-ttu-id="6f3e5-114">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="6f3e5-114">Data type: string</span></span>  
+### <a name="messageauthenticationauditlevel"></a><span data-ttu-id="30e63-113">MessageAuthenticationAuditLevel</span><span class="sxs-lookup"><span data-stu-id="30e63-113">MessageAuthenticationAuditLevel</span></span>  
+ <span data-ttu-id="30e63-114">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="30e63-114">Data type: string</span></span>  
   
- <span data-ttu-id="6f3e5-115">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="6f3e5-115">Access type: Read-only</span></span>  
+ <span data-ttu-id="30e63-115">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="30e63-115">Access type: Read-only</span></span>  
   
- <span data-ttu-id="6f3e5-116">Type de niveau d'authentification de message utilisé pour enregistrer des événements d'audit.</span><span class="sxs-lookup"><span data-stu-id="6f3e5-116">The type of message authentication level that is used to log audit events.</span></span>  
+ <span data-ttu-id="30e63-116">Type de niveau d'authentification de message utilisé pour enregistrer des événements d'audit.</span><span class="sxs-lookup"><span data-stu-id="30e63-116">The type of message authentication level that is used to log audit events.</span></span>  
   
-### <a name="serviceauthorizationauditlevel"></a><span data-ttu-id="6f3e5-117">ServiceAuthorizationAuditLevel</span><span class="sxs-lookup"><span data-stu-id="6f3e5-117">ServiceAuthorizationAuditLevel</span></span>  
- <span data-ttu-id="6f3e5-118">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="6f3e5-118">Data type: string</span></span>  
+### <a name="serviceauthorizationauditlevel"></a><span data-ttu-id="30e63-117">ServiceAuthorizationAuditLevel</span><span class="sxs-lookup"><span data-stu-id="30e63-117">ServiceAuthorizationAuditLevel</span></span>  
+ <span data-ttu-id="30e63-118">Type de données : chaîne</span><span class="sxs-lookup"><span data-stu-id="30e63-118">Data type: string</span></span>  
   
- <span data-ttu-id="6f3e5-119">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="6f3e5-119">Access type: Read-only</span></span>  
+ <span data-ttu-id="30e63-119">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="30e63-119">Access type: Read-only</span></span>  
   
- <span data-ttu-id="6f3e5-120">Types d'événement d'autorisation enregistrés dans le journal d'audit.</span><span class="sxs-lookup"><span data-stu-id="6f3e5-120">The types of authorization events that are recorded in the audit log.</span></span>  
+ <span data-ttu-id="30e63-120">Types d'événement d'autorisation enregistrés dans le journal d'audit.</span><span class="sxs-lookup"><span data-stu-id="30e63-120">The types of authorization events that are recorded in the audit log.</span></span>  
   
-### <a name="suppressauditfailure"></a><span data-ttu-id="6f3e5-121">SuppressAuditFailure</span><span class="sxs-lookup"><span data-stu-id="6f3e5-121">SuppressAuditFailure</span></span>  
- <span data-ttu-id="6f3e5-122">Type de données : booléen</span><span class="sxs-lookup"><span data-stu-id="6f3e5-122">Data type: boolean</span></span>  
+### <a name="suppressauditfailure"></a><span data-ttu-id="30e63-121">SuppressAuditFailure</span><span class="sxs-lookup"><span data-stu-id="30e63-121">SuppressAuditFailure</span></span>  
+ <span data-ttu-id="30e63-122">Type de données : booléen</span><span class="sxs-lookup"><span data-stu-id="30e63-122">Data type: boolean</span></span>  
   
- <span data-ttu-id="6f3e5-123">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="6f3e5-123">Access type: Read-only</span></span>  
+ <span data-ttu-id="30e63-123">Type d'accès : lecture seule</span><span class="sxs-lookup"><span data-stu-id="30e63-123">Access type: Read-only</span></span>  
   
- <span data-ttu-id="6f3e5-124">Valeur booléenne qui spécifie le comportement permettant de supprimer les erreurs d'écriture dans le journal d'audit.</span><span class="sxs-lookup"><span data-stu-id="6f3e5-124">A boolean value that specifies the behavior for suppressing failures of writing to the audit log.</span></span>  
+ <span data-ttu-id="30e63-124">Valeur booléenne qui spécifie le comportement permettant de supprimer les erreurs d'écriture dans le journal d'audit.</span><span class="sxs-lookup"><span data-stu-id="30e63-124">A boolean value that specifies the behavior for suppressing failures of writing to the audit log.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6f3e5-125">Spécifications</span><span class="sxs-lookup"><span data-stu-id="6f3e5-125">Requirements</span></span>  
+## <a name="requirements"></a><span data-ttu-id="30e63-125">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="30e63-125">Requirements</span></span>  
   
-|<span data-ttu-id="6f3e5-126">MOF</span><span class="sxs-lookup"><span data-stu-id="6f3e5-126">MOF</span></span>|<span data-ttu-id="6f3e5-127">Déclaré dans Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="6f3e5-127">Declared in Servicemodel.mof.</span></span>|  
+|<span data-ttu-id="30e63-126">MOF</span><span class="sxs-lookup"><span data-stu-id="30e63-126">MOF</span></span>|<span data-ttu-id="30e63-127">Déclaré dans Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="30e63-127">Declared in Servicemodel.mof.</span></span>|  
 |---------|-----------------------------------|  
-|<span data-ttu-id="6f3e5-128">Espace de noms</span><span class="sxs-lookup"><span data-stu-id="6f3e5-128">Namespace</span></span>|<span data-ttu-id="6f3e5-129">Défini dans root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="6f3e5-129">Defined in root\ServiceModel</span></span>|  
+|<span data-ttu-id="30e63-128">Espace de noms</span><span class="sxs-lookup"><span data-stu-id="30e63-128">Namespace</span></span>|<span data-ttu-id="30e63-129">Défini dans root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="30e63-129">Defined in root\ServiceModel</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="6f3e5-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6f3e5-130">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="30e63-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="30e63-130">See Also</span></span>  
  <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>

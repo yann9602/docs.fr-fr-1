@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: bba6323c24eae80330b145dcfaf90674f7c6ffe1
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: eecea25e683ece7650e46ee69e61ed0e9474ce26
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelmetadataexchangeclientreceivereply"></a><span data-ttu-id="10bd4-102">System.ServiceModel.MetadataExchangeClientReceiveReply</span><span class="sxs-lookup"><span data-stu-id="10bd4-102">System.ServiceModel.MetadataExchangeClientReceiveReply</span></span>
-<span data-ttu-id="10bd4-103">System.ServiceModel.MetadataExchangeClientReceiveReply</span><span class="sxs-lookup"><span data-stu-id="10bd4-103">System.ServiceModel.MetadataExchangeClientReceiveReply</span></span>  
+# <a name="systemservicemodelmetadataexchangeclientreceivereply"></a><span data-ttu-id="ccacf-102">System.ServiceModel.MetadataExchangeClientReceiveReply</span><span class="sxs-lookup"><span data-stu-id="ccacf-102">System.ServiceModel.MetadataExchangeClientReceiveReply</span></span>
+<span data-ttu-id="ccacf-103">System.ServiceModel.MetadataExchangeClientReceiveReply</span><span class="sxs-lookup"><span data-stu-id="ccacf-103">System.ServiceModel.MetadataExchangeClientReceiveReply</span></span>  
   
-## <a name="description"></a><span data-ttu-id="10bd4-104">Description</span><span class="sxs-lookup"><span data-stu-id="10bd4-104">Description</span></span>  
- <span data-ttu-id="10bd4-105">MetadataExchangeClient a reçu une réponse.</span><span class="sxs-lookup"><span data-stu-id="10bd4-105">The MetadataExchangeClient received a reply.</span></span>  
+## <a name="description"></a><span data-ttu-id="ccacf-104">Description</span><span class="sxs-lookup"><span data-stu-id="ccacf-104">Description</span></span>  
+ <span data-ttu-id="ccacf-105">MetadataExchangeClient a reçu une réponse.</span><span class="sxs-lookup"><span data-stu-id="ccacf-105">The MetadataExchangeClient received a reply.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="10bd4-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="10bd4-106">See Also</span></span>  
- [<span data-ttu-id="10bd4-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="10bd4-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="10bd4-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="10bd4-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="10bd4-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="10bd4-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="ccacf-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ccacf-106">See Also</span></span>  
+ [<span data-ttu-id="ccacf-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="ccacf-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="ccacf-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="ccacf-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="ccacf-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="ccacf-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

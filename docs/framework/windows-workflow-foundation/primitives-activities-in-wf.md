@@ -12,19 +12,20 @@ caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: ab01c6e490aeed4a216dc0e8495c63a3d030abc4
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e411d922577dcb9d3ca322d61c0e10911a006027
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="primitives-activities-in-wf"></a><span data-ttu-id="1a781-102">Activités de primitives dans WF</span><span class="sxs-lookup"><span data-stu-id="1a781-102">Primitives Activities in WF</span></span>
-[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]<span data-ttu-id="1a781-103"> offre plusieurs activités fournies par le système qui proposent un mécanisme commode pour exécuter les tâches courantes.</span><span class="sxs-lookup"><span data-stu-id="1a781-103"> provides several system-provided activities that provide a convenient mechanism for performing common tasks.</span></span>  
+# <a name="primitives-activities-in-wf"></a><span data-ttu-id="c86c6-102">Activités de primitives dans WF</span><span class="sxs-lookup"><span data-stu-id="c86c6-102">Primitives Activities in WF</span></span>
+[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]<span data-ttu-id="c86c6-103"> offre plusieurs activités fournies par le système qui proposent un mécanisme commode pour exécuter les tâches courantes.</span><span class="sxs-lookup"><span data-stu-id="c86c6-103"> provides several system-provided activities that provide a convenient mechanism for performing common tasks.</span></span>  
   
-|<span data-ttu-id="1a781-104">Activité</span><span class="sxs-lookup"><span data-stu-id="1a781-104">Activity</span></span>|<span data-ttu-id="1a781-105">Description</span><span class="sxs-lookup"><span data-stu-id="1a781-105">Description</span></span>|  
+|<span data-ttu-id="c86c6-104">Activité</span><span class="sxs-lookup"><span data-stu-id="c86c6-104">Activity</span></span>|<span data-ttu-id="c86c6-105">Description</span><span class="sxs-lookup"><span data-stu-id="c86c6-105">Description</span></span>|  
 |--------------|-----------------|  
-|<xref:System.Activities.Statements.Assign>|<span data-ttu-id="1a781-106">Affecte une valeur à une variable au niveau de la portée actuelle.</span><span class="sxs-lookup"><span data-stu-id="1a781-106">Assigns a value to a variable at the current scope.</span></span>|  
-|<xref:System.Activities.Statements.Delay>|<span data-ttu-id="1a781-107">Place un chemin d’exécution dans un état d’inactivité, en autorisant éventuellement le déchargement du workflow.</span><span class="sxs-lookup"><span data-stu-id="1a781-107">Puts one path of execution into an idle state, possibly allowing the workflow to be unloaded.</span></span>|  
-|<xref:System.Activities.Statements.InvokeDelegate>|<span data-ttu-id="1a781-108">Exécute un délégué qui dérive de <xref:System.Activities.ActivityDelegate> et est exposé en tant que propriété.</span><span class="sxs-lookup"><span data-stu-id="1a781-108">Executes a delegate that derives from <xref:System.Activities.ActivityDelegate> and is exposed as a property.</span></span>|  
-|<xref:System.Activities.Statements.InvokeMethod>|<span data-ttu-id="1a781-109">Exécute une méthode publique d'un objet CLR.</span><span class="sxs-lookup"><span data-stu-id="1a781-109">Executes a public method of a CLR object.</span></span>|  
-|<xref:System.Activities.Statements.WriteLine>|<span data-ttu-id="1a781-110">Écrit une chaîne spécifiée dans la console ou un objet <xref:System.IO.TextWriter> spécifié.</span><span class="sxs-lookup"><span data-stu-id="1a781-110">Writes a specified string to the console or a specified <xref:System.IO.TextWriter> object.</span></span>|
+|<xref:System.Activities.Statements.Assign>|<span data-ttu-id="c86c6-106">Affecte une valeur à une variable au niveau de la portée actuelle.</span><span class="sxs-lookup"><span data-stu-id="c86c6-106">Assigns a value to a variable at the current scope.</span></span>|  
+|<xref:System.Activities.Statements.Delay>|<span data-ttu-id="c86c6-107">Place un chemin d'exécution dans un état d'inactivité, en autorisant éventuellement le déchargement du workflow.</span><span class="sxs-lookup"><span data-stu-id="c86c6-107">Puts one path of execution into an idle state, possibly allowing the workflow to be unloaded.</span></span>|  
+|<xref:System.Activities.Statements.InvokeDelegate>|<span data-ttu-id="c86c6-108">Exécute un délégué qui dérive de <xref:System.Activities.ActivityDelegate> et est exposé en tant que propriété.</span><span class="sxs-lookup"><span data-stu-id="c86c6-108">Executes a delegate that derives from <xref:System.Activities.ActivityDelegate> and is exposed as a property.</span></span>|  
+|<xref:System.Activities.Statements.InvokeMethod>|<span data-ttu-id="c86c6-109">Exécute une méthode publique d'un objet CLR.</span><span class="sxs-lookup"><span data-stu-id="c86c6-109">Executes a public method of a CLR object.</span></span>|  
+|<xref:System.Activities.Statements.WriteLine>|<span data-ttu-id="c86c6-110">Écrit une chaîne spécifiée dans la console ou un objet <xref:System.IO.TextWriter> spécifié.</span><span class="sxs-lookup"><span data-stu-id="c86c6-110">Writes a specified string to the console or a specified <xref:System.IO.TextWriter> object.</span></span>|

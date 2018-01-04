@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a8c4d096957413bc24f0cdb51d47b61181b28f2d
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 9d92e9926da5befafde428361cf1d6c77ea7b0c1
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelchannelsmaxpendingconnectionsreached"></a><span data-ttu-id="6028b-102">System.ServiceModel.Channels.MaxPendingConnectionsReached</span><span class="sxs-lookup"><span data-stu-id="6028b-102">System.ServiceModel.Channels.MaxPendingConnectionsReached</span></span>
-<span data-ttu-id="6028b-103">System.ServiceModel.Channels.MaxPendingConnectionsReached</span><span class="sxs-lookup"><span data-stu-id="6028b-103">System.ServiceModel.Channels.MaxPendingConnectionsReached</span></span>  
+# <a name="systemservicemodelchannelsmaxpendingconnectionsreached"></a><span data-ttu-id="e4cf9-102">System.ServiceModel.Channels.MaxPendingConnectionsReached</span><span class="sxs-lookup"><span data-stu-id="e4cf9-102">System.ServiceModel.Channels.MaxPendingConnectionsReached</span></span>
+<span data-ttu-id="e4cf9-103">System.ServiceModel.Channels.MaxPendingConnectionsReached</span><span class="sxs-lookup"><span data-stu-id="e4cf9-103">System.ServiceModel.Channels.MaxPendingConnectionsReached</span></span>  
   
-## <a name="description"></a><span data-ttu-id="6028b-104">Description</span><span class="sxs-lookup"><span data-stu-id="6028b-104">Description</span></span>  
- <span data-ttu-id="6028b-105">Le nombre maximal de connexions en attente a été atteint.</span><span class="sxs-lookup"><span data-stu-id="6028b-105">Maximum number of pending connections has been reached.</span></span>  
+## <a name="description"></a><span data-ttu-id="e4cf9-104">Description</span><span class="sxs-lookup"><span data-stu-id="e4cf9-104">Description</span></span>  
+ <span data-ttu-id="e4cf9-105">Le nombre maximal de connexions en attente a été atteint.</span><span class="sxs-lookup"><span data-stu-id="e4cf9-105">Maximum number of pending connections has been reached.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6028b-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6028b-106">See Also</span></span>  
- [<span data-ttu-id="6028b-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="6028b-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="6028b-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="6028b-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="6028b-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="6028b-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="e4cf9-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e4cf9-106">See Also</span></span>  
+ [<span data-ttu-id="e4cf9-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="e4cf9-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="e4cf9-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="e4cf9-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="e4cf9-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="e4cf9-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

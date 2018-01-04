@@ -13,18 +13,19 @@ caps.latest.revision: "3"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5333316409fb8f68b390a882a14a3660f3d2dc47
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 5559b36e52e8cb5b5111b9c98f9d039a67bca729
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="message-encoder-extensibility"></a><span data-ttu-id="9411a-102">Extensibilité de l'encodeur de message</span><span class="sxs-lookup"><span data-stu-id="9411a-102">Message Encoder Extensibility</span></span>
-<span data-ttu-id="9411a-103">Cette section contient des exemples qui illustrent l'encodage de message personnalisé.</span><span class="sxs-lookup"><span data-stu-id="9411a-103">This section contains samples that demonstrate custom message encoding.</span></span>  
+# <a name="message-encoder-extensibility"></a><span data-ttu-id="1e0da-102">Extensibilité de l'encodeur de message</span><span class="sxs-lookup"><span data-stu-id="1e0da-102">Message Encoder Extensibility</span></span>
+<span data-ttu-id="1e0da-103">Cette section contient des exemples qui illustrent l'encodage de message personnalisé.</span><span class="sxs-lookup"><span data-stu-id="1e0da-103">This section contains samples that demonstrate custom message encoding.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="9411a-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="9411a-104">In This Section</span></span>  
- [<span data-ttu-id="9411a-105">L’encodeur de Message personnalisé : Encodeur de texte personnalisé</span><span class="sxs-lookup"><span data-stu-id="9411a-105">Custom Message Encoder: Custom Text Encoder</span></span>](../../../../docs/framework/wcf/samples/custom-message-encoder-custom-text-encoder.md)  
- <span data-ttu-id="9411a-106">Indique comment implémenter un encodeur de message texte personnalisé à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9411a-106">Demonstrates how to implement a custom text message encoder using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="1e0da-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="1e0da-104">In This Section</span></span>  
+ [<span data-ttu-id="1e0da-105">Encodeur de message personnalisé : encodeur de texte personnalisé</span><span class="sxs-lookup"><span data-stu-id="1e0da-105">Custom Message Encoder: Custom Text Encoder</span></span>](../../../../docs/framework/wcf/samples/custom-message-encoder-custom-text-encoder.md)  
+ <span data-ttu-id="1e0da-106">Indique comment implémenter un encodeur de message texte personnalisé à l'aide de [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1e0da-106">Demonstrates how to implement a custom text message encoder using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span></span>  
   
- [<span data-ttu-id="9411a-107">L’encodeur de Message personnalisé : Encodeur de Compression</span><span class="sxs-lookup"><span data-stu-id="9411a-107">Custom Message Encoder: Compression Encoder</span></span>](../../../../docs/framework/wcf/samples/custom-message-encoder-compression-encoder.md)  
- <span data-ttu-id="9411a-108">Indique comment implémenter un encodeur personnalisé à l'aide de la plate-forme [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9411a-108">Demonstrates how to implement a custom encoder using the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] platform.</span></span>
+ [<span data-ttu-id="1e0da-107">Encodeur de message personnalisé : encodeur de compression</span><span class="sxs-lookup"><span data-stu-id="1e0da-107">Custom Message Encoder: Compression Encoder</span></span>](../../../../docs/framework/wcf/samples/custom-message-encoder-compression-encoder.md)  
+ <span data-ttu-id="1e0da-108">Indique comment implémenter un encodeur personnalisé à l'aide de la plate-forme [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1e0da-108">Demonstrates how to implement a custom encoder using the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] platform.</span></span>

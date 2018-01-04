@@ -13,19 +13,20 @@ caps.latest.revision: "4"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
-ms.openlocfilehash: b3cd4f3ea65102bc6068d24992171689dda48a54
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 78156e1c99e9772d296a486e1c5e0a6d1caf36bd
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="systemservicemodelsecuritysecurityserversessionclosereceived"></a><span data-ttu-id="08dc7-102">System.ServiceModel.Security.SecurityServerSessionCloseReceived</span><span class="sxs-lookup"><span data-stu-id="08dc7-102">System.ServiceModel.Security.SecurityServerSessionCloseReceived</span></span>
-<span data-ttu-id="08dc7-103">System.ServiceModel.Security.SecurityServerSessionCloseResponseReceived</span><span class="sxs-lookup"><span data-stu-id="08dc7-103">System.ServiceModel.Security.SecurityServerSessionCloseResponseReceived</span></span>  
+# <a name="systemservicemodelsecuritysecurityserversessionclosereceived"></a><span data-ttu-id="1f708-102">System.ServiceModel.Security.SecurityServerSessionCloseReceived</span><span class="sxs-lookup"><span data-stu-id="1f708-102">System.ServiceModel.Security.SecurityServerSessionCloseReceived</span></span>
+<span data-ttu-id="1f708-103">System.ServiceModel.Security.SecurityServerSessionCloseResponseReceived</span><span class="sxs-lookup"><span data-stu-id="1f708-103">System.ServiceModel.Security.SecurityServerSessionCloseResponseReceived</span></span>  
   
-## <a name="description"></a><span data-ttu-id="08dc7-104">Description</span><span class="sxs-lookup"><span data-stu-id="08dc7-104">Description</span></span>  
- <span data-ttu-id="08dc7-105">La session de sécurité du serveur a reçu un message de réponse de fermeture du client.</span><span class="sxs-lookup"><span data-stu-id="08dc7-105">The server security session received a Close response message from client.</span></span>  
+## <a name="description"></a><span data-ttu-id="1f708-104">Description</span><span class="sxs-lookup"><span data-stu-id="1f708-104">Description</span></span>  
+ <span data-ttu-id="1f708-105">La session de sécurité du serveur a reçu un message de réponse de fermeture du client.</span><span class="sxs-lookup"><span data-stu-id="1f708-105">The server security session received a Close response message from client.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="08dc7-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="08dc7-106">See Also</span></span>  
- [<span data-ttu-id="08dc7-107">Le suivi</span><span class="sxs-lookup"><span data-stu-id="08dc7-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="08dc7-108">Utilisation du suivi pour dépanner votre Application</span><span class="sxs-lookup"><span data-stu-id="08dc7-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="08dc7-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="08dc7-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="1f708-106">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1f708-106">See Also</span></span>  
+ [<span data-ttu-id="1f708-107">Suivi</span><span class="sxs-lookup"><span data-stu-id="1f708-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [<span data-ttu-id="1f708-108">Utilisation du suivi pour résoudre les problèmes posés par votre application</span><span class="sxs-lookup"><span data-stu-id="1f708-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="1f708-109">Administration et diagnostics</span><span class="sxs-lookup"><span data-stu-id="1f708-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
