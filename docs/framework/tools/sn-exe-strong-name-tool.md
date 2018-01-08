@@ -21,11 +21,12 @@ caps.latest.revision: "44"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e303246737d52f76d893074973804710b2dc9b71
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: ff7036bce069aa24742f7ead7bb0735fed0f3678
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (outil Strong Name Tool)
 L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms forts](../../../docs/framework/app-domains/strong-named-assemblies.md). Sn.exe fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.  
@@ -37,7 +38,7 @@ L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms for
 > [!NOTE]
 >  Sur les ordinateurs 64 bits, exécutez la version 32 bits de Sn.exe à l'aide de l'invite de commandes Visual Studio et la version 64 bits à l'aide de l'invite de commandes Visual Studio x64 Win64.  
   
- À l'invite de commandes, tapez le texte suivant :  
+ À l'invite de commandes, tapez le texte suivant :  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -84,7 +85,7 @@ sn [-quiet][option [parameter(s)]]
 > [!NOTE]
 >  Toutes les options de Sn.exe respectent la casse et doivent être tapées exactement comme indiqué pour pouvoir être reconnues par l'outil.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les options **-R** et **-Rc** sont utiles avec les assemblys dont la signature a été différée. Dans ce cas, seule la clé publique est définie au moment de la compilation et la signature a lieu par la suite, lorsque la clé privée est connue.  
   
 > [!NOTE]

@@ -16,18 +16,19 @@ caps.latest.revision: "68"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: 5bb802df171990eca411dda37fc4743de15fc169
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 405503ac824ccf443d8ada7387d65e55876cb3e5
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (outil Manifest Generation and Editing)
 L'outil Manifest Generation and Editing (Mage.exe) est un outil de ligne de commande qui prend en charge la création et la modification de manifestes de déploiement et d'application. En tant qu'outil en ligne de commande, Mage.exe peut être exécuté à partir de scripts de commandes et d'autres applications Windows, notamment les applications [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] .  
   
  Vous pouvez également utiliser MageUI.exe, une application graphique, à la place de Mage.exe. Pour plus d'informations, consultez [MageUI.exe (Manifest Generation and Editing Tool, Graphical Client)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md).  
   
- Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d’informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
  Deux versions ultérieures de Mage.exe et MageUI.exe sont incluses en tant que composant d'installation de [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)]. Pour afficher les informations de version, exécutez MageUI.exe et sélectionnez **Aide / ?**, puis **À propos de**. Cette documentation décrit la version 4.0.x.x de Mage.exe et MageUI.exe.  
   
@@ -90,7 +91,7 @@ Mage [commands] [commandOptions]
 |**-pwd, -Password** `passwd`|Mot de passe utilisé pour signer un manifeste avec un certificat numérique. Cette option doit être utilisée conjointement avec l’option **-CertFile** .|  
 |**-t, -ToFile** `filePath`|Spécifie le chemin de sortie du fichier créé ou modifié.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Tous les arguments passés à Mage.exe ne respectent pas la casse. Les commandes et options peuvent être précédées d'un tiret (-) ou d'une barre oblique (/).  
   
  Tous les arguments utilisés avec la commande **-Sign** peuvent être toujours utilisés avec les commandes **-New** ou **-Update** . Les commandes suivantes sont équivalentes.  

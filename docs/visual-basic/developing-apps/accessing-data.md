@@ -11,11 +11,11 @@ ms.assetid: 3086ab38-3be5-4b22-9385-7d0e16b04f6a
 caps.latest.revision: "23"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: fd4dbc66f37325afa64b7bf9720cad23e08c6bfb
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: ae0611fdadabd6ab684f3f97995f3be3e348e648
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a>Accès aux données dans les applications Visual Basic
 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] inclut plusieurs nouvelles fonctionnalités conçues pour vous aider à développer des applications qui accèdent à des données. Vous pouvez créer des formulaires liés aux données pour des applications Windows en faisant glisser des éléments de la [fenêtre Sources de données](/visualstudio/data-tools/add-new-data-sources) sur les formulaires. Vous pouvez également lier des contrôles aux données en faisant glisser des éléments de la **fenêtre Sources de données** sur des contrôles existants.  
@@ -30,11 +30,11 @@ ms.lasthandoff: 12/09/2017
  [LINQ](../../visual-basic/programming-guide/language-features/linq/index.md)  
  Fournit des liens vers des rubriques qui expliquent comment utiliser LINQ avec Visual Basic.  
   
- [LINQ to SQL](../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](../../framework/data/adonet/sql/linq/index.md)  
  Fournit des informations sur [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]. Inclut des exemples de programmation.  
   
  [Outils LINQ to SQL dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  
- Fournit des liens vers des rubriques qui expliquent comment créer un modèle d’objet [LINQ to SQL](../../../docs/framework/data/adonet/sql/linq/index.md) dans les applications.  
+ Fournit des liens vers des rubriques qui expliquent comment créer un modèle d’objet [LINQ to SQL](../../framework/data/adonet/sql/linq/index.md) dans les applications.  
   
  [Utilisation de datasets dans des applications multiniveaux](/visualstudio/data-tools/work-with-datasets-in-n-tier-applications)  
  Fournit des liens vers des rubriques qui expliquent comment créer des applications de données multicouches.  
@@ -57,7 +57,7 @@ ms.lasthandoff: 12/09/2017
  [Enregistrer les données dans la base de données](/visualstudio/data-tools/save-data-back-to-the-database)  
  Fournit des liens vers des pages qui expliquent comment envoyer les données mises à jour d’une application à la base de données.  
   
- [ADO.NET](https://msdn.microsoft.com/library/e80y5yhx.aspx)  
+ [ADO.NET](../../framework/data/adonet/index.md)  
  Décrit les classes ADO.NET, qui exposent des services d’accès aux données au programmeur .NET Framework.
 
  [Données dans les solutions Office](https://msdn.microsoft.com/library/xx069ybh)  

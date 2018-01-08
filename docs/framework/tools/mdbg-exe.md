@@ -16,11 +16,12 @@ caps.latest.revision: "27"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 04a96cfe492add5c0216528dc07efc5f40912412
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: a4c4e06a5969aa6f7555a191f9950ddf64879e98
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mdbgexe-net-framework-command-line-debugger"></a>MDbg.exe (débogueur de ligne de commande du .NET Framework)
 Le débogueur de ligne de commande du .NET Framework aide les fournisseurs d'outils et les développeurs d'applications à trouver et à corriger les bogues dans les programmes qui ont pour cible le Common Language Runtime du .NET Framework. Cet outil utilise l'API de débogage du runtime pour fournir des services de débogage. Vous pouvez utiliser MDbg.exe pour déboguer uniquement du code managé ; il n'y a pas de prise en charge du débogage du code non managé.  
@@ -60,7 +61,7 @@ MDbg [ProgramName[arguments]] [options]
 |**fo**[**reach**] [*OtherCommand*]|Exécute une commande sur tous les threads. *OtherCommand* est une commande valide qui fonctionne sur un thread ; **foreach** *OtherCommand* exécute la même commande sur tous les threads.|  
 |**f**[**unceval**] [`-ad` *Num*] *functionName* [*args ...* ]|Exécute une évaluation de fonction sur le thread actif actuel où la fonction à évaluer est *functionName*. Le nom de fonction doit être pleinement qualifié, espaces de noms compris.<br /><br /> L'option `-ad` spécifie le domaine d'application à utiliser pour résoudre la fonction. Si l'option `-ad` n'est pas spécifiée, le domaine d'application pour la résolution est par défaut le domaine d'application où se trouve le thread qui est utilisé pour l'évaluation de la fonction.<br /><br /> Si la fonction qui est évaluée n'est pas statique, le premier paramètre passé doit être un pointeur `this`. Les arguments de l'évaluation de fonction sont recherchés dans tous les domaines d'application.<br /><br /> Pour demander une valeur d'un domaine d'application, préfixez la variable avec le module et le nom du domaine d'application, par exemple `funceval -ad 0 System.Object.ToString hello.exe#0!MyClass.g_rootRef`. Cette commande évalue la fonction `System.Object.ToString` dans le domaine d'application `0`. Étant donné que la méthode `ToString` est une fonction d'instance, le premier paramètre doit être un pointeur `this`.|  
 |**g**[**o**]|Avec cette commande, le programme continue jusqu'à ce qu'il rencontre un point d'arrêt, que le programme se termine ou qu'un événement (par exemple, une exception non gérée) provoque l'arrêt du programme.|  
-|**h**[**elp**] [*command*]<br /><br /> ou<br /><br /> **?** [*command*]|Affiche une description de toutes les commandes ou une description détaillée d'une commande spécifiée.|  
+|**h**[**elp**] [*command*]<br /><br /> - ou -<br /><br /> **?** [*command*]|Affiche une description de toutes les commandes ou une description détaillée d'une commande spécifiée.|  
 |**ig**[**nore**] [*event*]|Entraîne l'arrêt du débogueur uniquement sur les exceptions non gérées.|  
 |**int**[**ercept**] *FrameNumber*|Restaure le débogueur à un numéro de frame spécifié.<br /><br /> Si le débogueur rencontre une exception, utilisez cette commande pour restaurer le débogueur au numéro de frame spécifié. Vous pouvez modifier l’état du programme à l’aide de la commande **set** et continuer à utiliser la commande **go**.|  
 |**k**[**ill**]|Arrête le processus actif.|  
@@ -93,7 +94,7 @@ MDbg [ProgramName[arguments]] [options]
 |**w**[**here**] [`-v`] [`-c` *depth*] [*threadID*]|Affiche des informations de débogage sur des frames de pile.<br /><br /> -   L’option `-v` fournit des informations détaillées sur chacun des frames de pile affichés.<br />-   La spécification d’un nombre pour `depth` limite le nombre de frames affichés. Utilisez la commande **all** pour afficher tous les frames. La valeur par défaut est 100.<br />-   Si vous spécifiez le paramètre *threadID*, vous pouvez contrôler le thread qui est associé à la pile. La valeur par défaut est le thread actuel uniquement. Utilisez la commande **all** pour obtenir tous les threads.|  
 |**x** [`-c`*numSymbols*] [*module*[`!`*pattern*]]|Affiche les fonctions qui correspondent à `pattern` pour un module.<br /><br /> Si *numSymbols* est spécifié, la sortie est limitée au nombre spécifié. Si `!` (indiquant une expression régulière) n’est pas spécifié pour *pattern*, toutes les fonctions sont affichées. Si *module* n’est pas fourni, tous les modules chargés sont affichés. Les symboles (*~#*) peuvent être utilisés pour définir des points d’arrêt à l’aide de la commande **break**.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Compilez l'application à déboguer à l'aide d'indicateurs spécifiques au compilateur, ce qui oblige ce dernier à générer des symboles de débogage. Pour plus d'informations sur ces indicateurs, consultez la documentation de votre compilateur. Il est toujours possible de déboguer des applications optimisées, mais il manquera certaines informations de débogage. Par exemple, un grand nombre de variables locales ne seront pas visibles et certaines lignes sources seront incorrectes.  
   
  Après avoir compilé votre application, tapez **mdbg** à l’invite de commandes pour démarrer une session de débogage, comme le montre l’exemple suivant.  

@@ -22,11 +22,12 @@ caps.latest.revision: "23"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: babd0f6a9b1babf02677d6c6c41c664e0a6541b4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6fe5fbb5299c8e9c130538f99fe13081f8f26a55
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Comment : signer un assembly avec un nom fort
 Il existe plusieurs façons de signer un assembly avec un nom fort :  
@@ -47,7 +48,7 @@ Il existe plusieurs façons de signer un assembly avec un nom fort :
   
 2.  Choisissez l'onglet **Signature** .  
   
-3.  Sélectionnez la zone **Signer l’assembly**.  
+3.  Sélectionnez la zone **Signer l'assembly** .  
   
 4.  Dans la zone **Choisir un fichier de clé de nom fort**, choisissez **\<<Parcourir...>**, puis recherchez le fichier de clé. Pour créer un fichier de clé, choisissez **\<<Nouveau...>** et entrez son nom dans la boîte de dialogue **Créer une clé de nom fort**.  
   

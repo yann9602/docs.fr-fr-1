@@ -10,17 +10,18 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: fcc3ed2e-9265-4d50-b59e-dc2e5c190b34
-ms.openlocfilehash: d64881380febee08414f57a36ed92079e8d69ed6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: f5815e1ad2a36a8ef3279f6ff83465dba9ec5d50
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-new"></a>dotnet new
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet new` : crée un projet, un fichier de configuration ou une solution en fonction du modèle spécifié.
 
@@ -74,7 +75,7 @@ La commande contient une liste par défaut de modèles. Utilisez `dotnet new -l`
 | Config NuGet                                 | nugetconfig    |               |
 | config web                                   | webconfig      |               |
 | Fichier solution                                | sln            |               |
-| Page Razor                                   | page           |               |
+| Page Razor                                   | du compte client           |               |
 | MVC/ViewImports                              | viewimports    |               |
 | ViewStart MVC                                | viewstart      |               |
 
@@ -189,7 +190,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 `-p|--enable-pack` : permet l’empaquetage pour le projet à l’aide de [dotnet pack](dotnet-pack.md).
 
-`--no-restore` : n’effectue pas de restauration implicite pendant la création du projet.
+`--no-restore` : n’effectue pas de restauration implicite pendant la création du projet.
 
 **globaljson**
 
@@ -224,11 +225,11 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 `-r|--org-read-access` : accorde à cette application un accès en lecture au répertoire. S’applique uniquement à l’authentification `SingleOrg` ou `MultiOrg`.
 
-`--use-launch-settings` : inclut *launchSettings.json* dans la sortie de modèle générée.
+`--use-launch-settings` : inclut *launchSettings.json* dans la sortie de modèle générée.
 
 `-uld|--use-local-db` : spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
 
-`--no-restore` : n’effectue pas de restauration implicite pendant la création du projet.
+`--no-restore` : n’effectue pas de restauration implicite pendant la création du projet.
 
 **mvc, razor**
 

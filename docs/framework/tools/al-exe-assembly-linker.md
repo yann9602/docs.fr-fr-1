@@ -18,11 +18,12 @@ caps.latest.revision: "37"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 71600e0771c31392f568e11a7f51fc258ac5b362
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 830c141a13f2a7676e120600e05d786093a5ff44
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (Assembly Linker)
 
@@ -31,7 +32,7 @@ Assembly Linker génère un fichier doté d'un manifeste d'assembly provenant d'
 > [!NOTE]
 > Dans [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)], les deux compilateurs C# et Visual Basic incorporent automatiquement un manifeste Win32 dans l'assembly. Pour plus d’informations, consultez [/win32manifest (Options du compilateur C#)](~/docs/csharp/language-reference/compiler-options/win32manifest-compiler-option.md).
 
-Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d’informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
 
 À l'invite de commandes, tapez le texte suivant :
 
@@ -87,7 +88,7 @@ Vous pouvez spécifier les `options` ci-dessous. L’option **/out** est obligat
 |`@filename`|Spécifie un fichier réponse qui contient les commandes *Al.exe*.<br /><br /> Les commandes du fichier réponse peuvent apparaître chacune sur une ligne ou sur la même ligne, séparées par un ou plusieurs espaces.|
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Tous les compilateurs Visual Studio génèrent des assemblys. Si, toutefois, vous disposez d'un ou de plusieurs modules (métadonnées sans manifeste), vous pouvez utiliser *Al.exe* pour créer un assembly avec le manifeste dans un fichier séparé.
 
@@ -97,7 +98,7 @@ Pour installer des assemblys dans le cache, supprimer des assemblys du cache ou 
 
 Le tableau suivant liste les erreurs générées par *Al.exe*.
 
-| Erreur | Description |
+| Error | Description |
 | ----- | ----------- |
 |al1001|Erreur interne du compilateur<br /><br /> Essayez de déterminer si *Al.exe* échoue en raison de l’impossibilité d’analyser une syntaxe inattendue. Ensuite, contactez les services de support technique Microsoft.|
 |al1002|Mémoire insuffisante<br /><br /> *Al.exe* a manqué de mémoire et s'est arrêté. Augmentez la quantité de mémoire disponible.|
