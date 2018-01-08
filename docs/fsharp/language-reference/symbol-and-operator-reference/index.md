@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: ab453800-d4d0-4a11-9d55-2b358d56af27
-ms.openlocfilehash: d1000e991a6c07693f2e639ee8f0a386d53a2aae
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: cb21ef7385cb679f9d445f8ee419db3d727fa057
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="symbol-and-operator-reference"></a>Informations de référence sur les symboles et les opérateurs
 
@@ -92,7 +92,7 @@ Le tableau suivant décrit les symboles utilisés dans le langage F#, fournit de
 |`>?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Calcule l'opération « supérieur à » lorsque la partie droite est un type Nullable.<br /></li><ul/>|
 |`>>`|[Fonctions](../functions/index.md)|<ul><li>Compose deux fonctions (opérateur de composition avant).<br /></li><ul/>|
 |`>>>`|[Opérateurs au niveau du bit](bitwise-operators.md)|<ul><li>Décale les bits de la quantité côté gauche vers la droite selon le nombre d'emplacements spécifié côté droit.<br /></li><ul/>|
-|`>=`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Retourne `true` si le côté droit est supérieur ou égal au côté gauche ; sinon, retourne `false`.<br /></li><ul/>|
+|`>=`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Retourne `true` si le côté gauche est supérieur ou égal au côté droit ; sinon, retourne `false`.<br /></li><ul/>|
 |`>=?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Calcule l'opération « supérieur ou égal à » lorsque la partie droite est un type Nullable.<br /></li><ul/>|
 |`?`|[Paramètres et arguments](../parameters-and-arguments.md)|<ul><li>Spécifie un argument facultatif.<br /></li><li>Utilisé comme opérateur pour les appels de méthodes et de propriétés dynamiques. Vous devez fournir votre propre implémentation.<br /></li><ul/>|
 |`? ... <- ...`|Aucune information supplémentaire n'est disponible.|<ul><li>Utilisé comme opérateur pour définir les propriétés dynamiques. Vous devez fournir votre propre implémentation.<br /></li><ul/>|

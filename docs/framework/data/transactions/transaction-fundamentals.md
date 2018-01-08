@@ -13,11 +13,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: b7fd2b0ce2a8f5ab77fd654863a1e68baad6a41e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fa26531b1d2573b4bef49ec93f4205716227e25b
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="transaction-fundamentals"></a>Notions de base des transactions
 Les transactions servent à lier plusieurs tâches ensemble. Par exemple, imaginez qu'une application effectue deux tâches. Une table est d'abord créée dans une base de données. Un objet spécialisé est ensuite appelé pour collecter, formater et insérer des données dans la nouvelle table. Ces deux tâches sont liées et sont même interdépendantes. Cela vous évite de créer une nouvelle table sauf si vous devez y insérer des données. L'exécution des deux tâches au sein de l'étendue d'une seule transaction effectue la connexion entre les deux. Si la seconde tâche échoue, la première est restaurée à un point intervenant avant la création de la nouvelle table.  
@@ -30,7 +30,7 @@ Les transactions servent à lier plusieurs tâches ensemble. Par exemple, imagin
   
  Lors du développement d'une application transactionnelle à l'aide des classes fournies par <xref:System.Transactions>, il n'est pas nécessaire de s'interroger sur le type de transaction requise ou sur le gestionnaire de transactions concerné. L'infrastructure <xref:System.Transactions> gère automatiquement ces questions pour vous.  
   
- Lorsque vous créez une transaction, vous pouvez spécifier le niveau d'isolation qui s'y applique. Le niveau d'isolation, défini par la classe <xref:System.Transactions.IsolationLevel>, détermine le niveau d'accès d'autres transactions aux données affectées par votre transaction.  
+ Lorsque vous créez une transaction, vous pouvez spécifier le niveau d’isolation qui s’y applique. Le niveau d’isolement, défini par le <xref:System.Transactions.IsolationLevel> enum, détermine le niveau d’accès d’autres transactions a aux données affecté par votre transaction.  
   
  Vous pouvez créer des transactions à l’aide d’ADO.NET, <xref:System.EnterpriseServices>, ou le modèle de programmation transactionnels fournie par le <xref:System.Transactions> espace de noms. Le [fonctionnalités fournies par System.Transactions](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md) aborde les fonctionnalités que vous pouvez utiliser pour écrire une application transactionnelle à l’aide de la <xref:System.Transactions> espace de noms.  
   

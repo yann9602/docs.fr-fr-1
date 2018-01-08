@@ -14,16 +14,16 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 28098a4e598d1c3bede3b05e3afe1001c3944d42
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 18866260c5d14cf27634afcd8391b159abac1dd1
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>Client test WCF (WcfTestClient.exe)
 Le client test [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] (WcfTestClient.exe) est un outil GUI qui permet aux utilisateurs d'entrer des paramètres de test, d'envoyer ces entrées au service et d'afficher la réponse renvoyée par ce dernier. Il offre des conditions de test de service transparentes lorsqu'il est associé à l'Hôte de service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
   
- Vous pouvez trouver le client test [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] (WcfTestClient.exe) à l'emplacement suivant : C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\  
+ Vous trouverez généralement le [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Client de Test (WcfTestClient.exe) à l’emplacement suivant : C:\Program Files (x86) \Microsoft Visual Studio\2017\Community\Common7\IDE - Communauté peut être « Enterprise », « Professionnel » ou « Community » selon le niveau de Visual Studio est installé.
   
 ## <a name="scenarios-for-using-test-client"></a>Scénarios d'utilisation du client test  
  Les sections suivantes décrivent les scénarios les plus classiques dans lesquels vous pouvez utiliser le client test [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] pour rendre votre processus de développement transparent.  
