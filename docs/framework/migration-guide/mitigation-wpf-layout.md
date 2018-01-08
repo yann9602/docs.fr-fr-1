@@ -13,38 +13,39 @@ caps.latest.revision: "3"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: d3ba5ac792169cc076f9621025f35444281cec6e
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: 1dcbe970281f3d9cf3b8ffe9adb543afc120ae6b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="mitigation-wpf-layout"></a><span data-ttu-id="26bd8-102">Atténuation : disposition WPF</span><span class="sxs-lookup"><span data-stu-id="26bd8-102">Mitigation: WPF Layout</span></span>
-<span data-ttu-id="26bd8-103">La disposition des contrôles WPF peut varier légèrement.</span><span class="sxs-lookup"><span data-stu-id="26bd8-103">The layout of WPF controls can change slightly.</span></span>  
+# <a name="mitigation-wpf-layout"></a><span data-ttu-id="aea09-102">Atténuation : disposition WPF</span><span class="sxs-lookup"><span data-stu-id="aea09-102">Mitigation: WPF Layout</span></span>
+<span data-ttu-id="aea09-103">La disposition des contrôles WPF peut varier légèrement.</span><span class="sxs-lookup"><span data-stu-id="aea09-103">The layout of WPF controls can change slightly.</span></span>  
   
-## <a name="impact"></a><span data-ttu-id="26bd8-104">Impact</span><span class="sxs-lookup"><span data-stu-id="26bd8-104">Impact</span></span>  
- <span data-ttu-id="26bd8-105">Résultat de cette modification :</span><span class="sxs-lookup"><span data-stu-id="26bd8-105">As a result of this change:</span></span>  
+## <a name="impact"></a><span data-ttu-id="aea09-104">Impact</span><span class="sxs-lookup"><span data-stu-id="aea09-104">Impact</span></span>  
+ <span data-ttu-id="aea09-105">Résultat de cette modification :</span><span class="sxs-lookup"><span data-stu-id="aea09-105">As a result of this change:</span></span>  
   
--   <span data-ttu-id="26bd8-106">La largeur ou la hauteur d'éléments peut croître ou diminuer d'un pixel au plus.</span><span class="sxs-lookup"><span data-stu-id="26bd8-106">The width or height of elements may grow or shrink by at most one pixel.</span></span>  
+-   <span data-ttu-id="aea09-106">La largeur ou la hauteur d'éléments peut croître ou diminuer d'un pixel au plus.</span><span class="sxs-lookup"><span data-stu-id="aea09-106">The width or height of elements may grow or shrink by at most one pixel.</span></span>  
   
--   <span data-ttu-id="26bd8-107">La position d'un objet peut se déplacer d'un pixel au plus.</span><span class="sxs-lookup"><span data-stu-id="26bd8-107">The placement of an object can move by at most one pixel.</span></span>  
+-   <span data-ttu-id="aea09-107">La position d'un objet peut se déplacer d'un pixel au plus.</span><span class="sxs-lookup"><span data-stu-id="aea09-107">The placement of an object can move by at most one pixel.</span></span>  
   
--   <span data-ttu-id="26bd8-108">Les éléments centrés peuvent être décalés verticalement ou horizontalement d'un pixel au plus.</span><span class="sxs-lookup"><span data-stu-id="26bd8-108">Centered elements can be vertically or horizontally off center by at most one pixel.</span></span>  
+-   <span data-ttu-id="aea09-108">Les éléments centrés peuvent être décalés verticalement ou horizontalement d'un pixel au plus.</span><span class="sxs-lookup"><span data-stu-id="aea09-108">Centered elements can be vertically or horizontally off center by at most one pixel.</span></span>  
   
- <span data-ttu-id="26bd8-109">Par défaut, cette nouvelle disposition est activée uniquement pour les applications qui ciblent le .NET. Framework 4.6.</span><span class="sxs-lookup"><span data-stu-id="26bd8-109">By default, this new layout is enabled only for apps that target the .NET Framework 4.6.</span></span>  
+ <span data-ttu-id="aea09-109">Par défaut, cette nouvelle disposition est activée uniquement pour les applications qui ciblent le .NET. Framework 4.6.</span><span class="sxs-lookup"><span data-stu-id="aea09-109">By default, this new layout is enabled only for apps that target the .NET Framework 4.6.</span></span>  
   
-## <a name="mitigation"></a><span data-ttu-id="26bd8-110">Atténuation</span><span class="sxs-lookup"><span data-stu-id="26bd8-110">Mitigation</span></span>  
- <span data-ttu-id="26bd8-111">Dans la mesure où cette modification tend à éliminer le découpage droit ou inférieur des contrôles WPF dont le PPP est élevé, les applications qui ciblent les versions antérieures du .NET Framework, mais qui s'exécutent sur le .NET Framework 4.6, peuvent choisir ce nouveau comportement en ajoutant la ligne suivante à la section `<runtime>` du fichier app.config :</span><span class="sxs-lookup"><span data-stu-id="26bd8-111">Since this modification tends to eliminate clipping of the right or bottom of WPF controls at high DPIs, apps that target earlier versions of the .NET Framework but are running on the .NET Framework 4.6 can opt into this new behavior by adding the following line to the `<runtime>` section of the app.config file:</span></span>  
+## <a name="mitigation"></a><span data-ttu-id="aea09-110">Atténuation</span><span class="sxs-lookup"><span data-stu-id="aea09-110">Mitigation</span></span>  
+ <span data-ttu-id="aea09-111">Dans la mesure où cette modification tend à éliminer le découpage droit ou inférieur des contrôles WPF dont le PPP est élevé, les applications qui ciblent les versions antérieures du .NET Framework, mais qui s'exécutent sur le .NET Framework 4.6, peuvent choisir ce nouveau comportement en ajoutant la ligne suivante à la section `<runtime>` du fichier app.config :</span><span class="sxs-lookup"><span data-stu-id="aea09-111">Since this modification tends to eliminate clipping of the right or bottom of WPF controls at high DPIs, apps that target earlier versions of the .NET Framework but are running on the .NET Framework 4.6 can opt into this new behavior by adding the following line to the `<runtime>` section of the app.config file:</span></span>  
   
 ```xml  
 <AppContextSwitchOverrides value="Switch.MS.Internal.DoNotApplyLayoutRoundingToMarginsAndBorderThickness=false" />  
 ```  
   
- <span data-ttu-id="26bd8-112">Les applications qui ciblent le .NET Framework 4.6, mais veulent que les contrôles WPF soient rendus à l'aide de l'algorithme de disposition précédent peuvent y parvenir en ajoutant la ligne suivante à la section `<runtime>` du fichier app.config :</span><span class="sxs-lookup"><span data-stu-id="26bd8-112">Apps that target the .NET Framework 4.6 but want WPF controls to render using the previous layout algorithm can do so by adding the following line to the  `<runtime>` section of the app.config file:</span></span>  
+ <span data-ttu-id="aea09-112">Les applications qui ciblent le .NET Framework 4.6, mais veulent que les contrôles WPF soient rendus à l'aide de l'algorithme de disposition précédent peuvent y parvenir en ajoutant la ligne suivante à la section `<runtime>` du fichier app.config :</span><span class="sxs-lookup"><span data-stu-id="aea09-112">Apps that target the .NET Framework 4.6 but want WPF controls to render using the previous layout algorithm can do so by adding the following line to the  `<runtime>` section of the app.config file:</span></span>  
   
 ```xml  
 <AppContextSwitchOverrides value="Switch.MS.Internal.DoNotApplyLayoutRoundingToMarginsAndBorderThickness=true" />  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="26bd8-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="26bd8-113">See Also</span></span>  
- [<span data-ttu-id="26bd8-114">Modifications de reciblage</span><span class="sxs-lookup"><span data-stu-id="26bd8-114">Retargeting Changes</span></span>](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)
+## <a name="see-also"></a><span data-ttu-id="aea09-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="aea09-113">See Also</span></span>  
+ [<span data-ttu-id="aea09-114">Modifications de reciblage</span><span class="sxs-lookup"><span data-stu-id="aea09-114">Retargeting Changes</span></span>](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)
