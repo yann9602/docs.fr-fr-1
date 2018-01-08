@@ -13,11 +13,12 @@ caps.latest.revision: "21"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: d1364aa4284bcc858a9164f78e14daecc1a3ad54
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: 3c50bbc54d56d3fdc7a848af0e77cfbb2c15c9bb
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="queuing-in-wcf"></a>Mise en file d'attente dans WCF
 Cette section décrit comment utiliser la communication mise en file d'attente dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -115,28 +116,28 @@ Cette section décrit comment utiliser la communication mise en file d'attente d
 ### <a name="sample-code"></a>Exemple de code  
  Pour obtenir des instructions étape par étape sur la manière d'écrire des services WCF qui utilisent MSMQ, consultez les rubriques suivantes :  
   
--   [Comment : échanger des Messages avec des points de terminaison WCF et les Applications Message Queuing](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+-   [Guide pratique pour échanger des messages avec des points de terminaison WCF et des applications Message Queuing](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
   
--   [Comment : Exchange en file d’attente de Messages avec des points de terminaison WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+-   [Guide pratique pour échanger des messages en file d’attente avec des points de terminaison WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
   
  Pour obtenir un exemple de code complet illustrant l'utilisation de MSMQ dans WCF, consultez les rubriques suivantes :  
   
--   [Liaison MSMQ transactionnelles](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)  
+-   [Liaison MSMQ de transaction](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)  
   
--   [Volatile en file d’attente de Communication](../../../../docs/framework/wcf/samples/volatile-queued-communication.md)  
+-   [Communications mises en file d’attente volatiles](../../../../docs/framework/wcf/samples/volatile-queued-communication.md)  
   
 -   [Files d’attente de lettres mortes](../../../../docs/framework/wcf/samples/dead-letter-queues.md)  
   
--   [Files d’attente et sessions](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
+-   [Sessions et files d’attente](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
   
--   [Communication bidirectionnelle](../../../../docs/framework/wcf/samples/two-way-communication.md)  
+-   [Communications bidirectionnelles](../../../../docs/framework/wcf/samples/two-way-communication.md)  
   
 -   [Traitement transactionnel par lots](../../../../docs/framework/wcf/samples/transacted-batching.md)  
   
--   [LE PROTOCOLE SRMP](../../../../docs/framework/wcf/samples/srmp.md)  
+-   [SRMP](../../../../docs/framework/wcf/samples/srmp.md)  
   
--   [Sécurité de message sur Message Queuing](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)  
+-   [Sécurité du message sur Message Queuing](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Points de terminaison de service et l’adressage de file d’attente](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)  
- [Web hébergeant une Application en file d’attente](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)
+ [Points de terminaison de service et adressage de files d’attente](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)  
+ [Hébergement sur le web d’une application en file d’attente](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)

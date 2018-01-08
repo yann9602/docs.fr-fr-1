@@ -16,11 +16,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: 3648340050e5ee3a761efcbedd89f649ff8d9c91
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 6df0b6a06240a5f59c888ddcfb2b34764fd888fa
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="populating-a-dataset-from-a-dataadapter"></a>Remplissage d'un DataSet à partir d'un DataAdapter
 L’objet [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]<xref:System.Data.DataSet> est une représentation résidente en mémoire de données, qui propose un modèle de programmation relationnel cohérent, indépendant de la source de données. Le `DataSet` représente un jeu de données complet qui comprend des tables, des contraintes et des relations entre les tables. Étant donné que le `DataSet` est indépendant de la source de données, le `DataSet` peut inclure des données locales par rapport à l'application ainsi que des données provenant de plusieurs sources. L'interaction avec les sources de données existantes est contrôlée par le `DataAdapter`.  
@@ -133,7 +134,7 @@ foreach (DataRow pRow in customerOrders.Tables["Customers"].Rows)
  [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 a introduit une prise en charge avancée de <xref:System.Data.SqlTypes> dans le `DataSet`. Pour plus d'informations, consultez [SqlTypes and the DataSet](../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md).  
   
 ## <a name="ole-db-chapters"></a>Chapitres OLE DB  
- Les jeux de lignes hiérarchiques ou chapitres ( `DBTYPE_HCHAPTER`de type OLE DB, `adChapter`de type ADO) peuvent être utilisés pour remplir le contenu d'un `DataSet`. Lorsque l'objet <xref:System.Data.OleDb.OleDbDataAdapter> rencontre une colonne chapitre pendant une opération `Fill` , un `DataTable` est créé pour cette colonne et la table correspondante est remplie avec les colonnes et les lignes provenant du chapitre. La table créée pour la colonne chapitre est nommée à l'aide des noms de la table parente et de la colonne chapitre sous la forme «*ParentTableNameChapteredColumnName*». Si une table correspondant au nom de la colonne chapitre existe déjà dans le `DataSet` , la table actuelle est remplie avec les données du chapitre. S'il n'y a pas de colonne, dans une table existante, qui corresponde à une colonne trouvée dans le chapitre, une nouvelle colonne est ajoutée.  
+ Les jeux de lignes hiérarchiques ou chapitres (`DBTYPE_HCHAPTER` de type OLE DB, `adChapter` de type ADO) peuvent être utilisés pour remplir le contenu d'un `DataSet`. Lorsque l'objet <xref:System.Data.OleDb.OleDbDataAdapter> rencontre une colonne chapitre pendant une opération `Fill` , un `DataTable` est créé pour cette colonne et la table correspondante est remplie avec les colonnes et les lignes provenant du chapitre. La table créée pour la colonne chapitre est nommée à l'aide des noms de la table parente et de la colonne chapitre sous la forme «*ParentTableNameChapteredColumnName*». Si une table correspondant au nom de la colonne chapitre existe déjà dans le `DataSet` , la table actuelle est remplie avec les données du chapitre. S'il n'y a pas de colonne, dans une table existante, qui corresponde à une colonne trouvée dans le chapitre, une nouvelle colonne est ajoutée.  
   
  Avant que les tables du `DataSet` ne soient remplies avec les données des colonnes chapitres, une relation est créée entre les tables parent et enfant du jeu de lignes hiérarchique par l'ajout d'une colonne d'entiers aux deux tables, la définition de l'incrémentation automatique de la colonne parente et la création d'un `DataRelation` à l'aide des colonnes ajoutées des deux tables. La relation ajoutée est nommée à l'aide des noms de table parente et de colonne chapitre sous la forme «*ParentTableNameChapterColumnName*».  
   
@@ -194,6 +195,6 @@ adapter.Fill(customers, "Customers");
 ## <a name="see-also"></a>Voir aussi  
  [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
  [Mappages de types de données dans ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
- [Modification des données à l’aide d’un DbDataAdapter](../../../../docs/framework/data/adonet/modifying-data-with-a-dbdataadapter.md)  
- [Jeux de résultats actifs multiples (MARS)](../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)  
+ [Modification des données avec un DbDataAdapter](../../../../docs/framework/data/adonet/modifying-data-with-a-dbdataadapter.md)  
+ [MARS (Multiple Active Result Sets)](../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

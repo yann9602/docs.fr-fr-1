@@ -13,11 +13,12 @@ caps.latest.revision: "6"
 author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
-ms.openlocfilehash: ade4a0531ae11b3707115956ef0218c0d1c3349c
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 60da108fd77465917cdfe1dd744067eac9e88d7b
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="side-by-side-execution-in-adonet"></a>Exécution côte à côte dans ADO.NET
 L'exécution côte à côte dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] représente la capacité à exécuter une application sur un ordinateur sur lequel plusieurs versions du[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] sont installées, en utilisant exclusivement la version pour laquelle l'application a été compilée. Pour plus d’informations sur la configuration de l’exécution de côte à côte, consultez [côte-à-côte exécution](../../../../docs/framework/deployment/side-by-side-execution.md).  
@@ -27,7 +28,7 @@ L'exécution côte à côte dans le [!INCLUDE[dnprdnshort](../../../../includes/
 ## <a name="forward-compatibility-and-backward-compatibility"></a>Compatibilités descendante et ascendante  
  La compatibilité ascendante signifie qu'une application peut être compilée avec une version antérieure du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] et qu'elle fonctionnera correctement avec une version ultérieure du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Le code [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] écrit pour le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] version 1.1 sera compatible avec les versions ultérieures.  
   
- La compatibilité descendante signifie qu'une application est compilée pour une version plus récente du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] et que [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] continue de s'exécuter sur des versions antérieures, sans dégradation des fonctionnalités. Évidemment, ce ne sera pas le cas pour les fonctions introduites dans une nouvelle version du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
+ La compatibilité descendante signifie qu'une application est compilée pour une version plus récente du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] et qu'elle continue de s'exécuter sur des versions antérieures de la [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] sans dégradation des fonctionnalités. Évidemment, ce ne sera pas le cas pour les fonctions introduites dans une nouvelle version du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
   
 ## <a name="the-net-framework-data-provider-for-odbc"></a>Fournisseur de données .NET Framework pour ODBC  
  Le fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour ODBC (<xref:System.Data.Odbc>), à partir de la version 1.1, fait partie intégrante du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Le fournisseur de données ODBC est disponible pour [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] téléchargement des développeurs de la version 1.0 comme un site Web à partir de la [accès aux données et le centre de développement](http://go.microsoft.com/fwlink/?linkid=4173). L’espace de noms téléchargé [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] fournisseur de données pour ODBC est **Microsoft.Data.Odbc**.  

@@ -20,11 +20,12 @@ caps.latest.revision: "19"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e22763f78d8a40ced4350a93a1f1833e19aac17f
-ms.sourcegitcommit: ce279f2d7fe2220e6ea0a25a8a7a5370ddf8d9f0
+ms.workload: dotnet
+ms.openlocfilehash: e74bd7d90d5653890fd5cf48e76c81d0227c6172
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="collection-types-in-data-contracts"></a>Types de collections dans les contrats de données
 Une *collection* est une liste d'éléments d'un certain type. Dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], ces listes peuvent être représentées à l'aide de tableaux ou de divers autres types (liste générique, <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>ou <xref:System.Collections.ArrayList>générique). Par exemple, une collection peut contenir une liste d'adresses pour un client donné. Ces collections sont appelées *collections liste*, indépendamment de leur type réel.  
@@ -35,14 +36,14 @@ Une *collection* est une liste d'éléments d'un certain type. Dans le [!INCLUDE
   
  Les types qui implémentent l'interface <xref:System.Collections.IEnumerable> , y compris des tableaux et des collections génériques, sont reconnus en tant que collections. Parmi eux, les types qui implémentent les interfaces <xref:System.Collections.IDictionary> ou <xref:System.Collections.Generic.IDictionary%602> générique sont des collections dictionnaire ; tous les autres sont des collections liste.  
   
- Des spécifications supplémentaires relatives aux types de collections, telles qu'avoir une méthode appelée `Add` et un constructeur par défaut, sont présentées en détail dans les sections ci-dessous. Cela garantit que les types de collections peuvent être à la fois sérialisés et désérialisés. Cela signifie que certaines collections ne sont pas prises en charge directement, telles que <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> générique (car elle n'a aucun constructeur par défaut). Toutefois, pour plus d'informations sur la façon de contourner ces restrictions, consultez la section « Utilisation des types d'interfaces de collection et des collections en lecture seule » plus loin dans cette rubrique.  
+ Des spécifications supplémentaires relatives aux types de collections, telles qu'avoir une méthode appelée `Add` et un constructeur par défaut, sont présentées en détail dans les sections ci-dessous. Cela garantit que les types de collections peuvent être à la fois sérialisés et désérialisés. Cela signifie que certaines collections ne sont pas prises en charge directement, telles que <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> générique (car elle n'a aucun constructeur par défaut). Toutefois, pour plus d'informations sur la façon de contourner ces restrictions, consultez la section « Utilisation des types d'interfaces de collection et des collections en lecture seule » plus loin dans cette rubrique.  
   
  Les types contenus dans les collections doivent être des types de contrat de données ou, dans le cas contraire, ils doivent être sérialisables. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Pris en charge par le sérialiseur de contrat de données](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
   
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] ce qui est et ce qui n'est pas considéré comme une collection valide, ainsi que sur la façon dont les collections sont sérialisées, consultez les informations relatives à la sérialisation des collections à la section « Règles de collection avancées » de cette rubrique.  
   
 ## <a name="interchangeable-collections"></a>Collections interchangeables  
- Toutes les collections liste du même type sont considérées comme ayant le même contrat de données (à moins d'être personnalisées à l'aide de l'attribut <xref:System.Runtime.Serialization.CollectionDataContractAttribute> , comme cela est présenté ultérieurement dans cette rubrique). Ainsi, par exemple, les contrats de données suivants sont équivalents :  
+ Toutes les collections liste du même type sont considérées comme ayant le même contrat de données (à moins d'être personnalisées à l'aide de l'attribut <xref:System.Runtime.Serialization.CollectionDataContractAttribute> , comme cela est présenté ultérieurement dans cette rubrique). Ainsi, par exemple, les contrats de données suivants sont équivalents :  
   
  [!code-csharp[c_collection_types_in_data_contracts#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_collection_types_in_data_contracts/cs/program.cs#0)]
  [!code-vb[c_collection_types_in_data_contracts#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_collection_types_in_data_contracts/vb/program.vb#0)]  
@@ -81,7 +82,7 @@ Une *collection* est une liste d'éléments d'un certain type. Dans le [!INCLUDE
  [!code-csharp[c_collection_types_in_data_contracts#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_collection_types_in_data_contracts/cs/program.cs#1)]
  [!code-vb[c_collection_types_in_data_contracts#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_collection_types_in_data_contracts/vb/program.vb#1)]  
   
- Pendant la sérialisation, lorsque le type déclaré est une interface, le type d'instance réel utilisé peut être tout type qui implémente cette interface. Les restrictions présentées précédemment (avoir un constructeur par défaut et une méthode `Add` ) ne s'appliquent pas. Par exemple, vous pouvez définir les adresses dans Customer2 sur une instance de <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> générique d'adresse, bien que vous ne puissiez pas déclarer directement un membre de données de type <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>générique.  
+ Pendant la sérialisation, lorsque le type déclaré est une interface, le type d'instance réel utilisé peut être tout type qui implémente cette interface. Les restrictions présentées précédemment (avoir un constructeur par défaut et une méthode `Add`) ne s'appliquent pas. Par exemple, vous pouvez définir les adresses dans Customer2 sur une instance de <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> générique d'adresse, bien que vous ne puissiez pas déclarer directement un membre de données de type <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>générique.  
   
  Pendant la désérialisation, lorsque le type déclaré est une interface, le moteur de sérialisation choisit un type qui implémente l'interface déclarée, et ce type est instancié. Le mécanisme des types connus (décrit dans [Data Contract Known Types](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)) n’a aucun effet ici ; le choix du type est intégré dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
@@ -236,7 +237,7 @@ Une *collection* est une liste d'éléments d'un certain type. Dans le [!INCLUDE
   
  Par défaut, les types ne sont pas générés pour les collections non personnalisées dans le code importé. Les membres de données des types de collections liste sont importés en tant que tableaux, alors que les membres de données des types de collections dictionnaire sont importés en tant que dictionnaire générique.  
   
- Toutefois, pour les collections personnalisées, des types distincts sont générés, marqués avec l'attribut <xref:System.Runtime.Serialization.CollectionDataContractAttribute>. (Un type de collection personnalisée dans le schéma est un type qui n'utilise pas l'espace de noms, le nom, le nom d'élément répétitif ou les noms des éléments clé/valeur par défaut.) Ces types sont des types vides qui dérivent de la <xref:System.Collections.Generic.List%601> générique pour les types liste et du dictionnaire générique pour les types dictionnaire.  
+ Toutefois, pour les collections personnalisées, des types distincts sont générés, marqués avec l'attribut <xref:System.Runtime.Serialization.CollectionDataContractAttribute> . (Un type de collection personnalisée dans le schéma est un type qui n’utilise pas l’espace de noms, le nom, le nom d’élément répétitif ou les noms des éléments clé/valeur par défaut.) Ces types sont des types vides qui dérivent de la <xref:System.Collections.Generic.List%601> générique pour les types liste et du dictionnaire générique pour les types dictionnaire.  
   
  Par exemple, vous pouvez avoir les types ci-dessous sur le serveur.  
   
@@ -331,12 +332,12 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
 |Le type de collection implémente|Méthodes appelées lors de la sérialisation|Méthodes appelées lors de la désérialisation|  
 |--------------------------------|-----------------------------------------|-------------------------------------------|  
-|<xref:System.Collections.Generic.IDictionary%602>|`get_Keys`, `get_Values`|Generic Add|  
+|<xref:System.Collections.Generic.IDictionary%602> générique|`get_Keys`, `get_Values`|Generic Add|  
 |<xref:System.Collections.IDictionary>|`get_Keys`, `get_Values`|`Add`|  
-|<xref:System.Collections.Generic.IList%601>|Indexeur <xref:System.Collections.Generic.IList%601> générique|Generic Add|  
-|<xref:System.Collections.Generic.ICollection%601>|Enumerator|Generic Add|  
+|<xref:System.Collections.Generic.IList%601> générique|Indexeur <xref:System.Collections.Generic.IList%601> générique|Generic Add|  
+|<xref:System.Collections.Generic.ICollection%601> générique|Enumerator|Generic Add|  
 |<xref:System.Collections.IList>|Indexeur<xref:System.Collections.IList> |`Add`|  
-|<xref:System.Collections.Generic.IEnumerable%601>|`GetEnumerator`|Méthode non statique nommée `Add` qui accepte un paramètre du type approprié (le type du paramètre générique ou un de ses types de base). Une telle méthode doit exister pour que le sérialiseur traite un type de collection comme une collection lors de la sérialisation et de la désérialisation.|  
+|<xref:System.Collections.Generic.IEnumerable%601> générique|`GetEnumerator`|Méthode non statique nommée `Add` qui accepte un paramètre du type approprié (le type du paramètre générique ou un de ses types de base). Une telle méthode doit exister pour que le sérialiseur traite un type de collection comme une collection lors de la sérialisation et de la désérialisation.|  
 |<xref:System.Collections.IEnumerable> (et donc <xref:System.Collections.ICollection>, qui en dérive)|`GetEnumerator`|Méthode non statique nommée `Add` qui accepte un paramètre de type `Object`. Une telle méthode doit exister pour que le sérialiseur traite un type de collection comme une collection lors de la sérialisation et de la désérialisation.|  
   
  Le tableau précédent répertorie les interfaces de collection dans l'ordre de priorité décroissant. Cela signifie, par exemple, que si un type implémente à la fois <xref:System.Collections.IList> et <xref:System.Collections.Generic.IEnumerable%601>générique, la collection est sérialisée et désérialisée en fonction des règles <xref:System.Collections.IList> :  
