@@ -16,11 +16,12 @@ caps.latest.revision: "11"
 author: wadepickett
 ms.author: wpickett
 manager: wpickett
-ms.openlocfilehash: 3fcf99bf52f6870ba4c8dcbab30a86b70c32491b
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 30d94534f0da0e3946d036fd8e0db59971615c0f
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="xamlservices-class-and-basic-xaml-reading-or-writing"></a>Classe XAMLServices et lecture ou écriture XAML de base
 <xref:System.Xaml.XamlServices> est une classe fournie par les services XAML .NET Framework et qui peut être utilisée dans le cadre des scénarios XAML ne nécessitant pas d'accès spécifique au flux de nœud XAML ou aux informations de système de type XAML obtenues à partir de ces nœuds. L'API de<xref:System.Xaml.XamlServices> peut se résumer comme suit : `Load` ou `Parse` to suppout a XAML load path, `Save` to suppout a XAML save path, and `Transform` pour fournir une technique qui associe un chemin de chargement et un chemin d'enregistrement. `Transform` peut être utilisé pour passer d'un schéma XAML à un autre. Cette rubrique résume chacune de ces classifications d'API et décrit les différences qui existent entre des surcharges de méthode particulières.  
@@ -35,7 +36,7 @@ ms.lasthandoff: 11/21/2017
   
  <xref:System.Xaml.XamlServices.Load%28System.IO.TextReader%29> et <xref:System.Xaml.XamlServices.Load%28System.Xml.XmlReader%29> sont des surcharges qui reposent sur des lecteurs de formats des versions antérieures du .NET Framework. Pour utiliser ces surcharges, vous devez déjà avoir créé une instance de lecteur et utiliser son API une instance de lecteur et utilisé son API `Create` pour charger le code XAML au format approprié (texte ou XML). Si vous avez déjà déplacé des pointeurs d'enregistrement dans les autres lecteurs ou exécuté d'autres opérations les concernant, cela ne pose aucun problème. La logique du chemin de chargement de <xref:System.Xaml.XamlServices.Load%2A> traite toujours l'entrée XAML entière à partir de la racine. Les scénarios associés à ces surcharges peuvent inclure les éléments suivants :  
   
--   les aires de conception dans lesquelles vous fournissez des fonctions d'édition XAML simples à partir d'un éditeur de texte XML existant ;  
+-   les aires de conception dans lesquelles vous fournissez des fonctions d'édition XAML simples à partir d'un éditeur de texte XML existant ;  
   
 -   les variantes des scénarios <xref:System.IO> de base dans lesquels vous utilisez les lecteurs dédiés pour ouvrir des fichiers ou des flux. Votre logique procède à un contrôle ou un traitement rudimentaire du contenu avant de tenter de le charger en tant que code XAML.  
   
