@@ -18,11 +18,12 @@ caps.latest.revision: "24"
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: dd3adbeebc0cc2a9e201bbe6492eb311f18a711d
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: b826bff9f16dcd564e9b5bd91aab8b2170db6ce3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>UI Automation et Microsoft Active Accessibility
 > [!NOTE]
@@ -90,7 +91,7 @@ ms.lasthandoff: 10/18/2017
 |ROLE_SYSTEM_DOCUMENT|Document|  
 |ROLE_SYSTEM_TEXT|Modifier|  
 |ROLE_SYSTEM_GROUPING|Regrouper|  
-|ROLE_SYSTEM_LIST|En-tête|  
+|ROLE_SYSTEM_LIST|Header|  
 |ROLE_SYSTEM_COLUMNHEADER|Élément d’en-tête|  
 |ROLE_SYSTEM_LINK|Lien hypertexte|  
 |ROLE_SYSTEM_GRAPHIC|Image|  
@@ -134,7 +135,7 @@ ms.lasthandoff: 10/18/2017
   
  Le tableau suivant montre la correspondance entre les propriétés dans les deux modèles.  
   
-|Accesseur de propriété[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] |ID de propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] |Remarques|  
+|Accesseur de propriété[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] |ID de propriété[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] |Notes|  
 |-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-------------|  
 |`get_accKeyboardShortcut`|<xref:System.Windows.Automation.AutomationElement.AccessKeyProperty> ou <xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>|Si les deux sont présents,`AccessKeyProperty` est prioritaire.|  
 |`get_accName`|<xref:System.Windows.Automation.AutomationElement.NameProperty>||  
@@ -170,7 +171,7 @@ ms.lasthandoff: 10/18/2017
   
  Les états suivants n’ont pas été implémentés par la plupart des serveurs de contrôle [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] ou n’ont aucun équivalent dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
-|État[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] |Remarques|  
+|État[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] |Notes|  
 |-----------------------------------------------------------------------|-------------|  
 |STATE_SYSTEM_BUSY|Non disponible dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
 |STATE_SYSTEM_DEFAULT|Non disponible dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  

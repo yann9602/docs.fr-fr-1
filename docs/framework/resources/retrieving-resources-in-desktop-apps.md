@@ -29,11 +29,12 @@ caps.latest.revision: "22"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4c1b751fc5fb5717ad4bf030777359bef2e69545
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: b1227aa30d854d736bb24413b37d4722e729b2ff
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Récupération de ressources dans des applications de bureau
 Quand vous utilisez des ressources localisées dans des applications de bureau du .NET Framework, vous devez, dans l’idéal, empaqueter les ressources pour la culture neutre ou par défaut avec l’assembly principal et créer un assembly satellite séparé pour chaque langue ou culture prise en charge par votre application. Vous pouvez ensuite utiliser la classe <xref:System.Resources.ResourceManager> pour accéder aux ressources nommées, comme indiqué dans la section suivante. Si vous choisissez de ne pas incorporer les ressources dans l’assembly principal et les assemblys satellites, vous pouvez également accéder directement aux fichiers .resources binaires, comme cela est expliqué dans la section [Récupération de ressources de fichiers .resources](#from_file) , plus loin dans cet article.  Pour récupérer des ressources dans des applications du [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] , consultez [Création et récupération de ressources dans les applications du Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=241674) dans le Centre de développement Windows.  
@@ -67,7 +68,7 @@ TimeHeader=L'heure actuelle est
 TimeHeader=Текущее время —  
 ```  
   
- Le code source de cet exemple provient d’un fichier GetString.cs pour la version C# du code et d’un fichier GetString.vb pour la version Visual Basic. Ce code définit un tableau de chaînes qui contient le nom de quatre cultures : les trois cultures pour lesquelles des ressources sont disponibles et la culture Espagnol (Espagne). Une boucle exécutée cinq fois de façon aléatoire sélectionne l’une de ces cultures et l’affecte aux propriétés <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> . Elle appelle ensuite la méthode <xref:System.Resources.ResourceManager.GetString%28System.String%29> pour récupérer la chaîne localisée, qui s’affiche avec l’heure actuelle.  
+ Le code source de cet exemple provient d’un fichier GetString.cs pour la version C# du code et d’un fichier GetString.vb pour la version Visual Basic. Ce code définit un tableau de chaînes qui contient le nom de quatre cultures : les trois cultures pour lesquelles des ressources sont disponibles et la culture Espagnol (Espagne). Une boucle exécutée cinq fois de façon aléatoire sélectionne l’une de ces cultures et l’affecte aux propriétés <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> . Elle appelle ensuite la méthode <xref:System.Resources.ResourceManager.GetString%28System.String%29> pour récupérer la chaîne localisée, qui s’affiche avec l’heure actuelle.  
   
  [!code-csharp[Conceptual.Resources.Retrieving#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/getstring.cs#3)]
  [!code-vb[Conceptual.Resources.Retrieving#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/getstring.vb#3)]  
@@ -102,7 +103,7 @@ al /embed:strings.ru-RU.resources /culture:ru-RU /out:ru-RU\GetString.resources.
  [!code-csharp[Conceptual.Resources.Retrieving#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/getstream.cs#5)]
  [!code-vb[Conceptual.Resources.Retrieving#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/getstream.vb#5)]  
   
- Vous pouvez utiliser le fichier de commandes suivant pour générer l’exemple C#. Pour Visual Basic, remplacez `csc` par `vbc`, et modifiez l’extension du fichier de code source `.cs` en `.vb`.  
+ Vous pouvez utiliser le fichier de commandes suivant pour générer l’exemple C#. Pour Visual Basic, remplacez `csc` par `vbc`, et modifiez l’extension du fichier de code source `.cs` en `.vb`.  
   
 ```  
 csc CreateResources.cs  
@@ -163,7 +164,7 @@ GetObject.exe
 Structure de répertoires et conventions de nommage pour les fichiers .resources  
   
 ### <a name="using-the-resource-manager"></a>Utilisation du Gestionnaire des ressources  
- Une fois que vous avez créé vos ressources et les avez placées dans le répertoire approprié, créez un objet <xref:System.Resources.ResourceManager> qui utilise ces ressources en appelant la méthode <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%28System.String%2CSystem.String%2CSystem.Type%29> . Le premier paramètre spécifie le nom racine du fichier .resources par défaut de l’application (« strings » dans l’exemple de la section précédente). Le deuxième paramètre spécifie l’emplacement des ressources (« Resources » dans l’exemple précédent). Le troisième paramètre spécifie l’implémentation de <xref:System.Resources.ResourceSet> à utiliser. Si ce paramètre est `null`, le runtime par défaut <xref:System.Resources.ResourceSet> est utilisé.  
+ Une fois que vous avez créé vos ressources et les avez placées dans le répertoire approprié, créez un objet <xref:System.Resources.ResourceManager> qui utilise ces ressources en appelant la méthode <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%28System.String%2CSystem.String%2CSystem.Type%29> . Le premier paramètre spécifie le nom racine du fichier .resources par défaut de l’application (« strings » dans l’exemple de la section précédente). Le deuxième paramètre spécifie l’emplacement des ressources (« Resources » dans l’exemple précédent). Le troisième paramètre spécifie l’implémentation de <xref:System.Resources.ResourceSet> à utiliser. Si ce paramètre est `null`, le runtime par défaut <xref:System.Resources.ResourceSet> est utilisé.  
   
 > [!NOTE]
 >  Ne déployez pas d’applications ASP.NET à l’aide de fichiers .resources autonomes, car cela peut entraîner des problèmes de verrouillage et l’arrêt du déploiement XCOPY. Nous vous recommandons de déployer les ressources ASP.NET dans des assemblys satellites. Pour plus d'informations, consultez [ASP.NET Web Page Resources Overview](http://msdn.microsoft.com/library/0936b3b2-9e6e-4abe-9c06-364efef9dbbd).  
@@ -197,7 +198,7 @@ Prompt=Как вас зовут?
  [!code-csharp[Conceptual.Resources.Retrieving#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.retrieving/cs/example3.cs#9)]
  [!code-vb[Conceptual.Resources.Retrieving#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.retrieving/vb/example3.vb#9)]  
   
- Vous pouvez compiler la version C# de l’exemple en exécutant le fichier de commandes suivant. Si vous utilisez Visual Basic, remplacez `csc` par `vbc` et modifiez l’extension `.cs` en `.vb`.  
+ Vous pouvez compiler la version C# de l’exemple en exécutant le fichier de commandes suivant. Si vous utilisez Visual Basic, remplacez `csc` par `vbc` et modifiez l’extension `.cs` en `.vb`.  
   
 ```  
 Md Resources  

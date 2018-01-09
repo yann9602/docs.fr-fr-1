@@ -1,5 +1,5 @@
 ---
-title: "Itérateurs"
+title: Iterators
 description: "Apprenez à utiliser les itérateurs C# intégrés et à créer vos propres méthodes d’itérateur personnalisées."
 keywords: .NET, .NET Core
 author: BillWagner
@@ -10,13 +10,13 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: 18a5819402c752f32aecd0cd4c3bd5a490292ebf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 0a78fe3aa4d88cd5ea1c98f372e4d6672cff5236
+ms.sourcegitcommit: d095094e942eedf09530ea5636fbaf9029853027
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/19/2017
 ---
-# <a name="iterators"></a>Itérateurs
+# <a name="iterators"></a>Iterators
 
 Presque chaque programme que vous écrivez doit itérer au sein d’une collection. Vous allez écrire du code qui examine chaque élément d’une collection. 
 
@@ -171,7 +171,7 @@ Examinez les méthodes ci-dessus. La première utilise l’instruction `return` 
 
 ## <a name="deeper-dive-into-foreach"></a>Aller plus loin avec `foreach`
 
-L’instruction `foreach` se développe en un idiome standard qui utilise les interfaces `IEnumable<T>` et `IEnumerator<T>` pour itérer à travers tous les éléments d’une collection. Elle réduit également les erreurs que font les développeurs en ne gérant pas correctement les ressources. 
+L’instruction `foreach` se développe en un idiome standard qui utilise les interfaces `IEnumerable<T>` et `IEnumerator<T>` pour itérer à travers tous les éléments d’une collection. Elle réduit également les erreurs que font les développeurs en ne gérant pas correctement les ressources. 
 
 Le compilateur traduit la boucle `foreach` présentée dans le premier exemple en quelque chose de similaire à cette construction :
 

@@ -16,23 +16,24 @@ caps.latest.revision: "38"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: a7b7b77622ee4305dde3d126cb2e062055aa9df4
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1450acd6c4b68be79ad769106dfebc7d89484525
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (outil Manifest Generation and Editing, client graphique)
 MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de commande Mage.exe, mais avec une interface utilisateur Windows. Avec cet outil, vous pouvez créer, modifier et signer les manifestes de déploiement et d'application. Les nouveaux manifestes créés avec MageUI.exe ciblent le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Les versions antérieures de MageUI.exe doivent être utilisées pour cibler des versions précédentes de .NET Framework. Lors de l'ajout ou de la suppression d'assemblys dans un manifeste, ou lors de la nouvelle signature de manifestes existants, MageUI.exe ne met pas à jour le manifeste pour cibler [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Pour plus d’informations, consultez [Mage.exe (outil Manifest Generation and Editing)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md).  
   
- Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d’informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
  Deux versions ultérieures de Mage.exe et MageUI.exe sont incluses en tant que composant d'installation de [!INCLUDE[vs_dev10_long](../../../includes/vs-dev10-long-md.md)]. Pour afficher les informations de version, exécutez MageUI.exe et sélectionnez **Aide / ?**, puis **À propos de**. Cette documentation décrit la version 4.0.x.x de Mage.exe et MageUI.exe.  
   
 > [!NOTE]
 >  MageUI.exe ne prend pas en charge l’élément [compatibleFrameworks](/visualstudio/deployment/compatibleframeworks-element-clickonce-deployment) lors de l’enregistrement d’un manifeste d’application qui a déjà été signé avec un certificat utilisant MageUI.exe. À la place, vous devez utiliser [Mage.exe](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md).  
   
-## <a name="uielement-list"></a>Liste UIElement  
+## <a name="uielement-list"></a>Liste des éléments d’interface  
  Le tableau ci-dessous répertorie les éléments de menu et de barre d'outils disponibles.  
   
 |Commande|Menu|Raccourci|Description|  
@@ -88,7 +89,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
   
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
-|**Nom**|Spécifie les informations d'identification sur ce déploiement.|  
+|**Name**|Spécifie les informations d'identification sur ce déploiement.|  
 |**Description**|Spécifie des informations sur l'éditeur, le produit et la prise en charge.|  
 |**Options des applications**|Indique s'il s'agit d'une application de navigateur et si ce manifeste est la source des données de confiance.|  
 |**Fichiers**|Spécifie tous les fichiers qui constituent ce déploiement.|  
@@ -99,7 +100,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
   
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
-|**Nom**|Obligatoire. Nom du manifeste d'application. Généralement identique au nom de fichier.|  
+|**Name**|Obligatoire. Nom du manifeste d'application. Généralement identique au nom de fichier.|  
 |**Version**|Obligatoire. Numéro de version du déploiement sous la forme *N.N.N.N*. Seul le premier numéro de build majeur est obligatoire. Par exemple, pour la version 1.0 d’une application, les valeurs valides incluent `1`, `1.0`, `1.0.0` et `1.0.0.0`.|  
 |**Processeur**|Facultatif. Architecture d'ordinateur sur laquelle ce déploiement peut s'exécuter. La valeur par défaut est `msil` (Microsoft Intermediate Language), ce qui correspond au format par défaut de tous les assemblys managés. Modifiez ce champ si vous avez précompilé les assemblys dans votre application pour une architecture spécifique. Pour plus d’informations sur la précompilation, consultez [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|  
 |**Culture**|Facultatif. Code pays et région ISO en deux parties dans lequel cette application s'exécute. La valeur par défaut est `neutral`.|  
@@ -145,7 +146,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
   
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
-|**Nom**|Spécifie les informations d'identification sur ce déploiement.|  
+|**Name**|Spécifie les informations d'identification sur ce déploiement.|  
 |**Description**|Spécifie des informations sur l'éditeur, le produit et la prise en charge.|  
 |**Options de déploiement**|Spécifie des informations supplémentaires sur le déploiement, telles que le type d'application et l'emplacement de départ.|  
 |**Options de mise à jour**|Spécifie à quelle fréquence [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] doit vérifier les mises à jour de l'application.|  
@@ -156,7 +157,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
   
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
-|**Nom**|Obligatoire. Nom du manifeste de déploiement. Généralement identique au nom de fichier.|  
+|**Name**|Obligatoire. Nom du manifeste de déploiement. Généralement identique au nom de fichier.|  
 |**Version**|Obligatoire. Numéro de version du déploiement sous la forme *N.N.N.N*. Seul le premier numéro de build majeur est obligatoire. Par exemple, pour la version 1.0 d’une application, les valeurs valides incluent `1`, `1.0`, `1.0.0` et `1.0.0.0`.|  
 |**Processeur**|Facultatif. Architecture d'ordinateur sur laquelle ce déploiement peut s'exécuter. La valeur par défaut est `msil` (Microsoft Intermediate Language), ce qui correspond au format par défaut de tous les assemblys managés. Modifiez ce champ si vous avez compilé les assemblys dans votre application pour une architecture spécifique.|  
 |**Culture**|Facultatif. Code pays/région ISO en deux parties dans lequel cette application s'exécute. La valeur par défaut est `neutral`.|  

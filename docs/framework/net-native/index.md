@@ -20,11 +20,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 92dac407ace9a039f5e6edc16b093fea5c485f63
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dec4d465b53f939f8fa711950ba6a000bd304e13
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="compiling-apps-with-net-native"></a>Compilation d'applications avec .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)]est une technologie de précompilation pour générer et déployer des applications Windows qui est fournie avec Visual Studio 2015 et versions ultérieures. Elle compile automatiquement la version commerciale des applications écrites en code managé (C# ou Visual Basic) et qui ciblent .NET Framework et Windows 10 en code natif.  
@@ -48,7 +48,7 @@ ms.lasthandoff: 12/22/2017
 -   Utilisation de la mémoire optimisée d’application.  
 
 > [!IMPORTANT]
-> Pour la plupart des applications et des scénarios, .NET Native offre des temps de démarrage beaucoup plus rapides et des performances supérieures par rapport à une application compilée pour le langage intermédiaire ou à une image NGEN. Toutefois, les résultats peuvent varier. Pour vous assurer que votre application a bénéficié d’améliorations des performances de .NET Native, vous devez comparer ses performances avec celle de la version non - .NET Native de votre application. Pour plus d’informations, consultez [vue d’ensemble de la Session de Performance](https:/docs.microsoft.com/visualstudio/profiling/performance-session-overview).
+> Pour la plupart des applications et des scénarios, .NET Native offre des temps de démarrage beaucoup plus rapides et des performances supérieures par rapport à une application compilée pour le langage intermédiaire ou à une image NGEN. Toutefois, les résultats peuvent varier. Pour vous assurer que votre application a bénéficié d’améliorations des performances de .NET Native, vous devez comparer ses performances avec celle de la version non - .NET Native de votre application. Pour plus d’informations, consultez [vue d’ensemble de la Session de Performance](https://docs.microsoft.com/visualstudio/profiling/performance-session-overview).
  
 Toutefois, [!INCLUDE[net_native](../../../includes/net-native-md.md)] va au-delà d'une simple compilation en code natif. Il transforme la façon dont les applications .NET Framework sont intégrées et exécutées. En particulier :  
   
