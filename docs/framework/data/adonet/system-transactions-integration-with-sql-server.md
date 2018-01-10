@@ -17,18 +17,18 @@ author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
 ms.workload: dotnet
-ms.openlocfilehash: 7765779187156866c20374b60a4b541d36ac9a5b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3b56d61593aed1a0cdce2fd45d902d9f4ac00cda
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="systemtransactions-integration-with-sql-server"></a>Intégration de System.Transactions à SQL Server
 La version 2.0 du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] a introduit une nouvelle infrastructure de transactions à laquelle il est possible d'accéder via l'espace de noms <xref:System.Transactions> . Cette infrastructure expose des transactions de manière totalement intégrée au [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], y compris à [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
   
  Outre les améliorations en termes de programmabilité, <xref:System.Transactions> et [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] peuvent collaborer pour coordonner les optimisations lorsque vous utilisez des transactions. Une transaction susceptible d'être promue est une transaction légère (locale) qui peut être promue automatiquement en une transaction entièrement distribuée en fonction des besoins.  
   
- À partir de la version 2.0 d' [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] , <xref:System.Data.SqlClient> prend en charge des transactions pouvant être promues lorsque vous utilisez [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. Une transaction pouvant être promue n'invoque pas la charge supplémentaire d'une transaction distribuée à moins qu'elle ne soit requise. Les transactions pouvant être promues sont automatiques et ne requièrent aucune intervention du développeur.  
+ À partir de la version 2.0 d' [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] , <xref:System.Data.SqlClient> prend en charge des transactions pouvant être promues lorsque vous utilisez [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)]. Une transaction pouvant être promue n'invoque pas la charge supplémentaire d'une transaction distribuée à moins qu'elle ne soit requise. Transactions pouvant être promues sont automatiques et ne requièrent aucune intervention du développeur.  
   
  Les transactions pouvant être promues sont disponibles uniquement lorsque vous utilisez le fournisseur de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour SQL Server (`SqlClient`) avec [!INCLUDE[ssNoVersion](../../../../includes/ssnoversion-md.md)].  
   

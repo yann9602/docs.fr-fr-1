@@ -20,11 +20,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 893bbc94d909d5c94b7f8727912a298575617c2c
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: ea0a111727093cb65a98e48255b06b3c4516d258
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>Développement interplateforme avec la bibliothèque de classes portable
 Le type de projet de bibliothèque de classes portables .NET Framework dans Visual Studio vous permet de créer rapidement et facilement des applications interplateformes et des bibliothèques pour les plateformes Microsoft.  
@@ -57,7 +57,7 @@ Le type de projet de bibliothèque de classes portables .NET Framework dans Visu
   
 |Référence Visual Studio|Prise en charge de la création d'une bibliothèque de classes portables|  
 |-----------------------|---------------------------------------------------|  
-|Visual Studio 2010 Professional, Premium ou Ultimate|Oui, quand vous installez le [outils de bibliothèque Portable](http://go.microsoft.com/fwlink/?LinkId=210823).|  
+|Visual Studio 2010 Professional, Premium ou Ultimate|Oui, quand vous installez le [outils de bibliothèque Portable](https://marketplace.visualstudio.com/items?itemName=BCLTeam.PortableLibraryTools2).|  
 |Versions Visual Studio Express 2010|Non.|  
 |Visual Studio 2012 Professional, Premium ou Ultimate|Oui. Pour un support téléphonique, vous devez installer le [Windows Phone SDK 8.0](http://go.microsoft.com/fwlink/?LinkId=265772).|  
 |Versions Visual Studio Express 2012|Non.|  
@@ -171,7 +171,7 @@ Boîte de dialogue Modifier les cibles dans Visual Studio 2012
   
  Par exemple, la bibliothèque de classes portables ne contient des types liés à l'interface utilisateur que quand vous ciblez Windows 8.1 et Windows Phone 8.1. En outre, vous pouvez rencontrer des limitations si vous ciblez les plateformes (telles que Xbox, .NET Framework 4 et Windows Phone 7) qui sont sorties avant l'introduction de la bibliothèque de classes portables. Par le biais de NuGet, le .NET Framework publie des packages qui améliorent la prise en charge de la bibliothèque de classes portables pour certaines de ces anciennes plateformes. Pour plus d’informations et une liste des packages NuGet, consultez [du .NET Framework et les versions hors-bande](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md).  
   
- Si un membre est pris en charge dans la bibliothèque de classes portables et pour les cibles que vous avez sélectionnées, il apparaît dans votre projet dans IntelliSense. En outre, l’icône de bibliothèque de classes portables ![pris en charge par la bibliothèque Portable](../../../docs/standard/cross-platform/media/portablelibrary-referenceicon.png "PortableLibrary_ReferenceIcon") apparaît dans les tables membres, dans le [bibliothèque de classes .NET Framework](http://go.microsoft.com/fwlink/?LinkId=211358) suivant pour les membres pris en charge. Par exemple, la table de membres suivante montre que la propriété <xref:System.String.Chars%2A> de la classe <xref:System.String> est prise en charge dans la bibliothèque de classes portables :  
+ Si un membre est pris en charge dans la bibliothèque de classes portables et pour les cibles que vous avez sélectionnées, il apparaît dans votre projet dans IntelliSense. En outre, l’icône de bibliothèque de classes portables ![pris en charge par la bibliothèque Portable](../../../docs/standard/cross-platform/media/portablelibrary-referenceicon.png "PortableLibrary_ReferenceIcon") apparaît dans les tables membres, dans le [bibliothèque de classes .NET Framework](https://msdn.microsoft.com/library/mt472912.aspx) suivant pour les membres pris en charge. Par exemple, la table de membres suivante montre que la propriété <xref:System.String.Chars%2A> de la classe <xref:System.String> est prise en charge dans la bibliothèque de classes portables :  
   
  ![Icône membre pris en charge](../../../docs/standard/cross-platform/media/plibsupportedmemberlist.png "PlibSupportedMemberList")  
 Icône de bibliothèque de classes portables  
