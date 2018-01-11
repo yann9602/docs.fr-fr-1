@@ -23,14 +23,14 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 33d33826037197a0c679dacfff57eb77de5f5341
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 9ddb94119d009d61e8126724df2a4b852b7ad3f5
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="file-and-stream-io"></a>Fichier et flux de données E/S
-E/S de fichier et de flux (entrées/sorties) fait référence au transfert de données vers ou depuis un support de stockage. Dans le .NET Framework, les espaces de noms [System.IO](http://go.microsoft.com/fwlink/?LinkId=231142) contiennent des types qui permettent la lecture et l'écriture, de façon synchrone ou asynchrone, sur les flux de données et les fichiers. Ces espaces de noms contiennent également les types qui exécutent la compression et la décompression sur les fichiers, et ceux qui permettent la communication via des canaux et des ports série.  
+E/S de fichier et de flux (entrées/sorties) fait référence au transfert de données vers ou depuis un support de stockage. Dans le .NET Framework, les espaces de noms `System.IO` contiennent des types qui permettent la lecture et l'écriture, de façon synchrone ou asynchrone, sur les flux de données et les fichiers. Ces espaces de noms contiennent également les types qui exécutent la compression et la décompression sur les fichiers, et ceux qui permettent la communication via des canaux et des ports série.  
   
  Un fichier est une collection ordonnée et nommée d'octets ayant un stockage persistant. Lorsque vous travaillez sur des fichiers, vous manipulez des chemins d'accès aux répertoires, du stockage disque et des noms de fichiers et de répertoires. En revanche, un flux est une séquence d'octets que vous pouvez lire et écrire dans un magasin de stockage, qui peut être l'un des nombreux supports de stockage (par exemple, des disques ou de la mémoire). De même qu'il existe d'autres magasins de stockage que les disques, il existe d'autres flux que les flux de fichiers, tels que les flux de réseau, de mémoire et de canaux.  
   
@@ -51,7 +51,7 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
   
  En plus d'utiliser ces classes, les utilisateurs de Visual Basic peuvent utiliser les méthodes et les propriétés fournies par la classe <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> pour l'E/S de fichier.  
   
- Voir [Comment : copier des répertoires](../../../docs/standard/io/how-to-copy-directories.md), [Comment : créer une liste de répertoires](http://msdn.microsoft.com/en-us/4d2772b1-b991-4532-a8a6-6ef733277e69) et [Comment : énumérer des répertoires et des fichiers](../../../docs/standard/io/how-to-enumerate-directories-and-files.md).  
+ Voir [Comment : copier des répertoires](../../../docs/standard/io/how-to-copy-directories.md), [Comment : créer une liste de répertoires](http://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69) et [Comment : énumérer des répertoires et des fichiers](../../../docs/standard/io/how-to-enumerate-directories-and-files.md).  
   
 ## <a name="streams"></a>Flux  
  La classe abstraite de base <xref:System.IO.Stream> prend en charge la lecture et l'écriture d'octets. Toutes les classes qui représentent des flux héritent de la classe <xref:System.IO.Stream>. La classe <xref:System.IO.Stream> et ses classes dérivées donnent une vue globale des sources de données et des référentiels, isolant ainsi le programmeur des détails propres au système d'exploitation et aux périphériques sous-jacents.  
@@ -128,7 +128,7 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
 ## <a name="isolated-storage"></a>Stockage isolé  
  Le stockage isolé est un mécanisme de stockage de données qui offre une isolation et une sécurité en définissant des méthodes standardisées pour associer du code à des données enregistrées. Le stockage fournit un système de fichiers virtuel qui est isolé par utilisateur, assembly et (éventuellement) domaine. Le stockage isolé est particulièrement utile lorsque votre application n'a pas l'autorisation d'accès aux fichiers utilisateur. Enregistrez les paramètres ou les fichiers de votre application d'une façon contrôlée par la stratégie de sécurité de l'ordinateur.  
   
- Le stockage isolé n'est pas disponible pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. Utilisez à la place les classes de données d'application de l'espace de noms [Windows.Storage](http://msdn.microsoft.com/library/windows/apps/windows.storage.aspx). Pour plus d’informations, consultez [Données d’applications](http://go.microsoft.com/fwlink/?LinkId=229175) dans le Centre de développement Windows.  
+ Le stockage isolé n'est pas disponible pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. Utilisez à la place les classes de données d'application de l'espace de noms [Windows.Storage](/uwp/api/Windows.Storage). Pour plus d’informations, consultez [Données d’applications](/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.  
   
  Les classes suivantes sont fréquemment utilisées lors d'une implémentation de stockage isolé :  
   
@@ -147,7 +147,7 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
   
 -   Les types spécifiquement liés aux opérations sur les fichiers, tels que <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> et <xref:System.IO.DirectoryInfo> ne sont pas inclus dans [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. À la place, utilisez les types de l'espace de noms [Windows.Storage](http://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) de [!INCLUDE[wrt](../../../includes/wrt-md.md)], comme [StorageFile](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.aspx) et [StorageFolder](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx).  
   
--   Le stockage isolé n'est pas disponible ; à la place, utilisez les [données d'application](http://go.microsoft.com/fwlink/?LinkId=229175).  
+-   Le stockage isolé n'est pas disponible ; à la place, utilisez les [données d'application](/previous-versions/windows/apps/hh464917(v=win.10)).  
   
 -   Utilisez les méthodes asynchrones, telles que <xref:System.IO.Stream.ReadAsync%2A> et <xref:System.IO.Stream.WriteAsync%2A> pour empêcher le blocage du thread d'interface utilisateur.  
   
@@ -160,7 +160,7 @@ E/S de fichier et de flux (entrées/sorties) fait référence au transfert de do
 ## <a name="io-and-security"></a>E/S et sécurité  
  Lorsque vous utilisez les classes de l'espace de noms <xref:System.IO?displayProperty=nameWithType>, vous devez suivre les spécifications de sécurité du système d'exploitation telles que les listes de contrôle d'accès (ACL) pour contrôler l'accès aux fichiers et aux répertoires. Ces spécifications s'ajoutent aux spécifications <xref:System.Security.Permissions.FileIOPermission> existantes. Les listes de contrôle d'accès peuvent être gérées par programmation. Pour plus d'informations, consultez [Comment : ajouter ou supprimer des entrées dans la liste de contrôle d'accès](../../../docs/standard/io/how-to-add-or-remove-access-control-list-entries.md).  
   
- Les stratégies de sécurité par défaut empêchent les applications provenant d'Internet ou de l'intranet d'accéder aux fichiers sur l'ordinateur de l'utilisateur. Par conséquent, n’utilisez pas les classes d’E/S qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. À la place, utilisez le [stockage isolé](../../../docs/standard/io/isolated-storage.md) pour les applications .NET Framework traditionnelles ou les [données d'application](http://go.microsoft.com/fwlink/?LinkId=229175) pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].  
+ Les stratégies de sécurité par défaut empêchent les applications provenant d'Internet ou de l'intranet d'accéder aux fichiers sur l'ordinateur de l'utilisateur. Par conséquent, n’utilisez pas les classes d’E/S qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. À la place, utilisez le [stockage isolé](../../../docs/standard/io/isolated-storage.md) pour les applications .NET Framework traditionnelles ou les [données d'application](/previous-versions/windows/apps/hh464917(v=win.10)) pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].  
   
  La vérification de sécurité n'est exécutée qu'à la création du flux. Par conséquent, n'ouvrez pas de flux pour le passer ensuite à du code ou à des domaines d'application d'un niveau de sécurité inférieur.  
   

@@ -23,11 +23,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 80f95099644552aed34553385544f21d07b29114
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: 49355c4271efc37a40c025c0f8275ec42e13723e
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="handling-and-raising-events"></a>Gestion et déclenchement d'événements
 Les événements dans le .NET Framework sont basés sur le modèle délégué. Le modèle délégué suit le modèle de conception observateur, qui permet à un abonné de s'inscrire pour recevoir des notifications d'un fournisseur. Un émetteur d'événements émet une notification d'événement, et un récepteur d'événements reçoit cette notification et définit une réponse à celle-ci. Cet article décrit les principaux composants du modèle délégué, comment consommer les événements des applications, et comment implémenter des événements dans votre code.  
@@ -102,6 +102,6 @@ Les événements dans le .NET Framework sont basés sur le modèle délégué. L
  <xref:System.EventHandler%601>  
  <xref:System.EventArgs>  
  <xref:System.Delegate>  
- [Vue d’ensemble des événements et des événements routés (applications du Windows Store)](http://go.microsoft.com/fwlink/?LinkId=261485)  
+ [Vue d’ensemble des événements et des événements routés (applications UWP)](/windows/uwp/xaml-platform/events-and-routed-events-overview)  
  [Événements (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)  
  [Événements (Guide de programmation C#)](../../csharp/programming-guide/events/index.md)
