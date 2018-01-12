@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 88f1a22fc15e85e687c7b7eeb0a6e01445277d09
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6b603599232a5cb4d33e2b7c9ad00e7ab3a24649
+ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="binding-sources-overview"></a>Vue d'ensemble des sources de liaison
 Dans la liaison de données, l’objet de source de liaison fait référence à l’objet à partir duquel vous obtenez des données. Cette rubrique décrit les types d’objets que vous pouvez utiliser comme source de liaison.  
@@ -39,7 +39,7 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
 |objets dynamiques|Vous pouvez lier à des propriétés disponibles et indexeurs d’un objet qui implémente le <xref:System.Dynamic.IDynamicMetaObjectProvider> interface. Si vous pouvez accéder au membre dans le code, vous pouvez lier celui-ci. Par exemple, si un objet dynamique vous permet d’accéder à un membre dans le code via `someObjet.AProperty`, vous pouvez le lier en affectant le chemin de liaison `AProperty`.|  
 |Objets [!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)].|Vous pouvez lier à [!INCLUDE[TLA2#tla_adonet](../../../../includes/tla2sharptla-adonet-md.md)] objets, tels que <xref:System.Data.DataTable>. Le [!INCLUDE[TLA2#tla_adonet](../../../../includes/tla2sharptla-adonet-md.md)] <xref:System.Data.DataView> implémente la <xref:System.ComponentModel.IBindingList> interface, qui fournit des notifications de modification que le moteur de liaison écoute.|  
 |Objets [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)].|Vous pouvez lier et exécuter `XPath` les requêtes sur un <xref:System.Xml.XmlNode>, <xref:System.Xml.XmlDocument>, ou <xref:System.Xml.XmlElement>. Un moyen pratique pour accéder à [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] les données qui sont la source de liaison dans le balisage consiste à utiliser un <xref:System.Windows.Data.XmlDataProvider> objet. Pour plus d’informations, consultez [Effectuer une liaison à des données XML à l'aide d'un XMLDataProvider et de requêtes XPath](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).<br /><br /> Vous pouvez également lier à un <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XDocument>, ou de la liaison aux résultats de requêtes exécutées sur des objets de ces types à l’aide de LINQ to XML. Un moyen pratique pour utiliser LINQ to XML pour accéder aux données XML qui est la source de liaison dans le balisage consiste à utiliser un <xref:System.Windows.Data.ObjectDataProvider> objet. Pour plus d’informations, consultez [Effectuer une liaison avec XDocument, XElement ou LINQ pour des résultats de requête XML](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md).|  
-|Objets <xref:System.Windows.DependencyObject>.|Vous pouvez lier à des propriétés de dépendance les <xref:System.Windows.DependencyObject>. Pour obtenir un exemple, consultez [Lier les propriétés de deux contrôles](../../../../docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md).|  
+|Objets <xref:System.Windows.DependencyObject>.|Vous pouvez lier à des propriétés de dépendance de n’importe quel <xref:System.Windows.DependencyObject>. Pour obtenir un exemple, consultez [Lier les propriétés de deux contrôles](../../../../docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md).|  
   
 <a name="classes"></a>   
 ## <a name="implementing-a-class-for-the-binding-source"></a>Implémentation d’une classe pour la source de liaison  
