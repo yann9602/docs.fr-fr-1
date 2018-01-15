@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 109e0ac5-2a9c-48b4-ac68-9b6219cdbccf
-ms.openlocfilehash: 4ca87c8410a04e9198e9dd6c379760e7b6596585
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: db481c18a79f55b079ec2558b884ce288e2a9933
+ms.sourcegitcommit: 6a9030eb5bd0f00e1d144f81958adb195cfb1f6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="executing-expression-trees"></a>Exécution d’arborescences d’expressions
 
@@ -28,7 +28,7 @@ Le type d’expression `Expression<TDelegate>` est le seul exemple concret dans 
 
 Dans la plupart des cas, cela crée un mappage simple entre une expression et son délégué correspondant. Par exemple, une arborescence d’expressions représentée par `Expression<Func<int>>` serait convertie en un délégué du type `Func<int>`. Pour une expression lambda avec tout type de retour et liste d’arguments, il existe un type délégué qui est le type cible pour le code exécutable représenté par cette expression lambda.
 
-Le type `LamdbaExpression` contient des membres `Compile` et `CompileToMethod` que vous utiliseriez pour convertir une arborescence d’expressions en code exécutable. La méthode `Compile` crée un délégué. La méthode `ConmpileToMethod` met à jour un objet `MethodBuilder` avec le langage intermédiaire qui représente la sortie compilée de l’arborescence d’expressions. Notez que `CompileToMethod` n’est disponible que sur le framework de bureau complet, et non sur le framework .NET Core.
+Le type `LamdbaExpression` contient des membres `Compile` et `CompileToMethod` que vous utiliseriez pour convertir une arborescence d’expressions en code exécutable. La méthode `Compile` crée un délégué. La méthode `CompileToMethod` met à jour un objet `MethodBuilder` avec le langage intermédiaire qui représente la sortie compilée de l’arborescence d’expressions. Notez que `CompileToMethod` n’est disponible que sur le framework de bureau complet, et non sur le framework .NET Core.
 
 Si vous le souhaitez, vous pouvez également fournir un `DebugInfoGenerator` qui recevra les informations de débogage de symbole pour l’objet délégué généré. Cela vous permet de convertir l’arborescence d’expressions en objet délégué et de disposer d’informations de débogage complètes sur le délégué généré.
 

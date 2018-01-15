@@ -17,11 +17,11 @@ author: JennieHubbard
 ms.author: jhubbard
 manager: jhubbard
 ms.workload: dotnet
-ms.openlocfilehash: f7b002c1439a95929ca177aeced91164430220c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5d9498454cfee02e5749a7ed87783b5476469b8d
+ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/13/2018
 ---
 # <a name="local-transactions"></a>Transactions locales
 Dans [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], vous pouvez utiliser des transactions lorsque vous souhaitez lier plusieurs tâches entre elles afin qu'elles s'exécutent comme une seule unité de travail. Par exemple, imaginez qu'une application effectue deux tâches. Premièrement, elle met à jour une table avec des informations de commande. Deuxièmement, elle met à jour une table qui contient des informations de stock, en débitant les articles commandés. Si des tâches échoue, puis les mises à jour sont restaurées.  
@@ -29,10 +29,10 @@ Dans [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], vous pouvez util
 ## <a name="determining-the-transaction-type"></a>Détermination du type de transaction  
  Une transaction est considéré comme une transaction locale lorsqu’il existe une transaction en une seule phase et est gérée directement par la base de données. Une transaction est considéré comme une transaction distribuée lorsqu’il est coordonné par un moniteur de transaction et utilise des mécanismes de prévention de défaillance (tels que la validation en deux phases) pour la résolution de la transaction.  
   
- Chacun des fournisseurs de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] a son propre objet `Transaction` pour l'exécution des transactions locales. Si vous avez besoin qu'une transaction soit effectuée dans une base de données SQL Server, sélectionnez une transaction <xref:System.Data.SqlClient>. Pour une transaction Oracle, utilisez le fournisseur <xref:System.Data.OracleClient>. En outre, il y a une nouvelle classe <xref:System.Data.Common.DbTransaction> disponible pour l'écriture de code indépendant du fournisseur qui requiert des transactions.  
+ Chacun des fournisseurs de données [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] a son propre objet `Transaction` pour l'exécution des transactions locales. Si vous avez besoin qu'une transaction soit effectuée dans une base de données SQL Server, sélectionnez une transaction <xref:System.Data.SqlClient>. Pour une transaction Oracle, utilisez le fournisseur <xref:System.Data.OracleClient>. En outre, il existe un <xref:System.Data.Common.DbTransaction> classe qui est disponible pour l’écriture de code indépendant du fournisseur qui requiert des transactions.  
   
 > [!NOTE]
->  Les transactions ont une efficacité maximale lorsqu'elles sont exécutées sur le serveur. Si vous utilisez une base de données SQL Server qui utilise beaucoup des transactions explicites, envisagez de les écrire sous la forme de procédures stockées à l'aide de l'instruction Transact-SQL BEGIN TRANSACTION. Pour plus d'informations sur l'exécution de transactions côté serveur, consultez la documentation en ligne de SQL Server.  
+>  Les transactions ont une efficacité maximale lorsqu’elles sont exécutées sur le serveur. Si vous utilisez une base de données SQL Server qui utilise beaucoup des transactions explicites, envisagez de les écrire sous la forme de procédures stockées à l'aide de l'instruction Transact-SQL BEGIN TRANSACTION. Pour plus d'informations sur l'exécution de transactions côté serveur, consultez la documentation en ligne de SQL Server.  
   
 ## <a name="performing-a-transaction-using-a-single-connection"></a>Exécution d'une transaction à l'aide d'une connexion unique  
  Dans [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], vous contrôlez les transactions à l'aide de l'objet `Connection`. Vous pouvez initier une transaction locale avec la méthode `BeginTransaction`. Après avoir commencé une transaction, vous pouvez inscrire une commande dans cette transaction avec la propriété `Transaction` d'un objet `Command`. Vous pouvez ensuite valider ou annuler les modifications apportées à la source de données en fonction de la réussite ou de l'échec des composants de la transaction.  
