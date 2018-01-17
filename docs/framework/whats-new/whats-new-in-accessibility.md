@@ -13,11 +13,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9fe4b24f14dd8f08d1168cc26b91e04faa4bf183
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e6a6759ae285f2dd101bddf71ea8e5ca792e87df
+ms.sourcegitcommit: 957c696f25e39f923a827fc3ad5e8ab72768838c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/13/2018
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Nouveautés du .NET Framework dans le domaine de l’accessibilité
 
@@ -241,9 +241,9 @@ Windows Forms dans .NET Framework 4.7.1 inclut les améliorations en matière d�
  
 - <xref:System.Windows.Forms.DataGridViewCheckBoxCell> prend maintenant en charge le [modèle Basculer](../ui-automation/implementing-the-ui-automation-toggle-control-pattern.md).
  
-- Le contrôle <xref:System.Windows.Forms.ToolStripItem> prend en charge la propriété <xref:System.Windows.Automation.AutomationElement.Name> et le [modèle Développer/Réduire](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md).
+- Le contrôle <xref:System.Windows.Forms.ToolStripItem> prend en charge la propriété <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name> et le [modèle Développer/Réduire](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md).
 
-- Les contrôles <xref:System.Windows.Forms.NumericUpDown> et <xref:System.Windows.Forms.DomainUpDown> prennent en charge la propriété <xref:System.Windows.Automation.automationElement.Name>.
+- Les contrôles <xref:System.Windows.Forms.NumericUpDown> et <xref:System.Windows.Forms.DomainUpDown> prennent en charge la propriété <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name>.
 
 **Expérience améliorée avec l’Explorateur de propriétés**
 
