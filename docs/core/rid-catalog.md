@@ -6,11 +6,12 @@ ms.author: mairaw
 ms.date: 09/07/2017
 ms.topic: article
 ms.prod: .net-core
-ms.openlocfilehash: 067f9cfc283a14b7ea59a7454b7f593ce6eb5806
-ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
+ms.workload: dotnetcore
+ms.openlocfilehash: 180aac7635746f9ede146c3e561deb9bba9a61ab
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="net-core-rid-catalog"></a>Catalogue RID .NET Core
 
@@ -85,7 +86,7 @@ Lorsque vous utilisez les RID, il existe quelques remarques que vous devez garde
 Pour utiliser des RID, vous devez savoir lesquels existent. De nouvelles valeurs sont régulièrement ajoutées à la plateforme.
 Pour en connaître la version complète la plus récente, consultez le fichier [runtime.json](https://github.com/dotnet/corefx/blob/master/pkg/Microsoft.NETCore.Platforms/runtime.json) dans le référentiel CoreFX.
 
-Le kit SDK .NET Core 2.0 introduit le concept d’identificateurs RID portables. Il s’agit de nouvelles valeurs ajoutées au graphe RID qui ne sont liées à aucune version ou distribution du système d’exploitation spécifique. Ils sont particulièrement utiles lors du traitement de plusieurs versions de Linux.
+Le kit SDK .NET Core 2.0 introduit le concept d’identificateurs RID portables. Il s’agit de nouvelles valeurs ajoutées au graphe RID qui ne sont liées à aucune version ou distribution du système d’exploitation spécifique. Elles sont particulièrement utiles lors du traitement de plusieurs distributions Linux.
 
 La liste suivante présente les RID les plus courants utilisés pour chaque système d’exploitation. Elle ne traite pas les valeurs `arm` ou `corert`.
 
@@ -111,7 +112,7 @@ La liste suivante présente les RID les plus courants utilisés pour chaque syst
   - `win10-arm`
   - `win10-arm64`
 
-Consultez [configuration requise pour .NET Core sur Windows](windows-prerequisites.md) pour plus d’informations.
+Pour plus d’informations, consultez [Configuration requise pour .NET Core sur Windows](windows-prerequisites.md).
 
 ## <a name="linux-rids"></a>RID Linux
 
@@ -165,19 +166,19 @@ Consultez [configuration requise pour .NET Core sur Windows](windows-prerequisit
   - `linuxmint.18-x64`
   - `linuxmint.18.1-x64` (.NET Core 2.0 ou versions ultérieures)
 
-Consultez [configuration requise pour .NET Core sur Linux](linux-prerequisites.md) pour plus d’informations.
+Pour plus d’informations, consultez [Configuration requise pour .NET Core sur Linux](linux-prerequisites.md).
 
-## <a name="macos-rids"></a>macOS RID
+## <a name="macos-rids"></a>RID macOS
 
-macOS RID utiliser la personnalisation de « OSX » plus anciens.
+Les RID macOS utilisent l’ancien logo « OSX ».
 
-- `osx-x64`(.NET core 2.0 ou versions ultérieures, la version minimale est `osx.10.12-x64`)
+- `osx-x64` (.NET Core 2.0 ou versions ultérieures, la version minimale est `osx.10.12-x64`)
 - `osx.10.10-x64`
 - `osx.10.11-x64`
 - `osx.10.12-x64` (.NET Core 1.1 ou versions ultérieures)
 - `osx.10.13-x64`
 
-Consultez [configuration requise pour .NET Core sur macOS](macos-prerequisites.md) pour plus d’informations.
+Pour plus d’informations, consultez [Configuration requise pour .NET Core sur macOS](macos-prerequisites.md).
 
 ## <a name="android-rids-net-core-20-or-later-versions"></a>RID Android (.NET Core 2.0 ou versions ultérieures)
 

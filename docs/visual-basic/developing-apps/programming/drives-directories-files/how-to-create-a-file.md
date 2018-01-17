@@ -14,11 +14,11 @@ ms.assetid: 0253bb6d-5519-4a50-b882-b93ef5cca0d9
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 96e6785086f8c97f983c6dcd6fd713c01e34e258
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c1ce74601136c870097d6d558e1f3ff12ba1c212
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="how-to-create-a-file-in-visual-basic"></a>Guide pratique pour créer un fichier en Visual Basic
 Cet exemple crée un fichier texte vide à l’emplacement spécifié à l’aide de la méthode <xref:System.IO.File.Create%2A> de la classe <xref:System.IO.File>.  
@@ -56,5 +56,5 @@ Cet exemple crée un fichier texte vide à l’emplacement spécifié à l’aid
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.IO>  
  <xref:System.IO.File.Create%2A>  
- [L’utilisation de bibliothèques à partir du Code partiellement fiable](../../../../framework/misc/using-libraries-from-partially-trusted-code.md)  
- [Notions fondamentales de la sécurité d’accès du code](https://msdn.microsoft.com/library/33tceax8)
+ [Utilisation de bibliothèques à partir de code d’un niveau de confiance partiel](../../../../framework/misc/using-libraries-from-partially-trusted-code.md)  
+ [Notions fondamentales de la sécurité d’accès du code](../../../../framework/misc/code-access-security-basics.md)

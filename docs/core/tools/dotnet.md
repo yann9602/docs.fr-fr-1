@@ -7,17 +7,18 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: bba8d77cda7538bf008dc0f510f9279d3c695c3d
-ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
+ms.workload: dotnetcore
+ms.openlocfilehash: 6db2bb6003e630aab900222eb20e33af287cf9c5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet` - Pilote général pour l’exécution des commandes de ligne de commande.
 
@@ -47,7 +48,7 @@ Le seul cas où la commande `dotnet` est utilisée seule est l’exécution d’
 
 `--additionaldeps <PATH>`
 
-Chemin d’accès à d’autres *deps.json* fichier.
+Chemin du fichier *deps.json* supplémentaire.
 
 `--additionalprobingpath <PATH>`
 

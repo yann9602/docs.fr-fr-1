@@ -19,11 +19,12 @@ caps.latest.revision: "47"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: fba53a19810a91a2e679616e73ea8c5fc8d38da1
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 124c9321623fd6fe9c5414fc1eed2e41be1e75f3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-using-client-application-services"></a>Procédure pas à pas : utilisation des services d'application cliente
 Cette rubrique décrit comment créer une application Windows qui utilise des services d'application cliente pour authentifier les utilisateurs et récupérer des rôles d'utilisateur et des paramètres.  
@@ -44,7 +45,7 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
   
 -   activer le mode hors connexion. Vous fournirez une case à cocher afin que les utilisateurs puissent spécifier leur état de connexion. Vous utiliserez ensuite cette valeur pour spécifier si les fournisseurs de services d'application cliente utiliseront les données mises en cache localement au lieu d'accéder à leurs services web. Enfin, vous authentifierez une nouvelle fois l'utilisateur actuel lorsque l'application repassera en mode en ligne.  
   
-## <a name="prerequisites"></a>Conditions préalables  
+## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous devez disposer du composant suivant :  
   
 -   [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)].  
@@ -269,10 +270,10 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
      [!code-csharp[ClientApplicationServices#300](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#300)]
      [!code-vb[ClientApplicationServices#300](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#300)]  
   
- Vous pouvez maintenant appuyer sur F5 pour exécuter l'application : étant donné que vous fournissez un nom d'utilisateur et un mot de passe corrects, le formulaire s'affiche.  
+ Vous pouvez maintenant appuyer sur F5 pour exécuter l'application : étant donné que vous fournissez un nom d'utilisateur et un mot de passe corrects, le formulaire s'affiche.  
   
 > [!NOTE]
->  Si vous ne pouvez pas exécuter l'application, essayez d'arrêter le serveur de développement ASP.NET. Lorsque le serveur redémarre, vérifiez que la valeur 55555 est définie pour le port.  
+>  Si vous ne pouvez pas exécuter l'application, essayez d'arrêter le serveur de développement ASP.NET. Lorsque le serveur redémarre, vérifiez que la valeur 55555 est définie pour le port.  
   
  Pour afficher à la place le message d'erreur, modifiez les paramètres <xref:System.Web.Security.Membership.ValidateUser%2A> . Par exemple, remplacez le deuxième paramètre `"manager!"` par un mot de passe incorrect tel que `"MANAGER"`.  
   
@@ -374,7 +375,7 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
   
 3.  Dans la fenêtre **Propriétés** , définissez les propriétés suivantes pour le bouton.  
   
-  	|Propriété|Valeur|  
+  	|Propriété|Value|  
   	|--------------|-----------|  
   	|**(Name)**|managerOnlyButton|  
   	|**Text**|&Manager task|  
@@ -536,7 +537,7 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
   
  Cela termine l'exemple d'application. Pour tester la fonction hors connexion, exécutez l'application, connectez-vous en tant qu'employé (« employee ») ou en tant que gestionnaire (« manager »), puis sélectionnez **Travailler hors connexion**. Modifiez la valeur de la zone de texte, puis fermez l'application. Redémarrez-la. Avant de vous connecter, cliquez avec le bouton droit sur l'icône Serveur de développement ASP.NET dans la zone de notification de la barre des tâches, puis cliquez sur **Arrêt**. Ensuite, connectez-vous normalement. Même si le serveur n'est pas en cours d'exécution, vous pouvez toujours vous connecter. Modifiez la valeur de la zone de texte, quittez l'application, puis redémarrez-la pour vérifier le changement de valeur.  
   
-## <a name="summary"></a>Résumé  
+## <a name="summary"></a>Récapitulatif  
  Dans cette procédure pas à pas, vous avez appris à activer et à utiliser les services d'application cliente dans une application Windows Forms. Après avoir configuré un serveur de test, vous avez ajouté du code à votre application pour authentifier les utilisateurs et récupérer du serveur des rôles d'utilisateur et des paramètres d'application. Vous avez également appris à activer le mode hors connexion pour que votre application utilise un cache de données local au lieu des services distants lorsque la connectivité n'est pas disponible.  
   
 ## <a name="next-steps"></a>Étapes suivantes  
@@ -548,6 +549,6 @@ Cette rubrique décrit comment créer une application Windows qui utilise des se
  [Services d’application cliente](../../../docs/framework/common-client-technologies/client-application-services.md)  
  [Vue d'ensemble des services d'application cliente](../../../docs/framework/common-client-technologies/client-application-services-overview.md)  
  [Comment : configurer les services d’application cliente](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)  
- [Outil Administration de Site Web ASP.NET](http://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec)  
+ [Outil Administration de site web ASP.NET](http://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec)  
  [Création et configuration de la base de données des services d'application pour SQL Server](http://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2)  
  [Procédure pas à pas : utilisation des services d’application ASP.NET](http://msdn.microsoft.com/library/f3f394f0-20d6-4361-aa8f-4b21bf4933eb)

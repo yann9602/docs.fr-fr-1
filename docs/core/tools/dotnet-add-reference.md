@@ -7,17 +7,18 @@ ms.date: 09/19/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: 9c6b0f434a9d6b1431e375ec6a437497aaddfc61
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 9a79468168979a7c89efe48e11175f926e39cf4f
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-add-reference"></a>dotnet-add reference
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet add reference` : ajoute des références entre projets (P2P).
 
@@ -63,7 +64,7 @@ Ajouter une référence de projet :
 
 `dotnet add app/app.csproj reference lib/lib.csproj`
 
-Ajoutez plusieurs références de projet au projet dans le répertoire actif :
+Ajouter plusieurs références de projet au projet dans le répertoire actuel :
 
 `dotnet add reference lib1/lib1.csproj lib2/lib2.csproj`
 

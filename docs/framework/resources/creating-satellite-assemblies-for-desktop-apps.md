@@ -34,11 +34,12 @@ caps.latest.revision: "11"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 11d455f16c5ee3ce78c26c7642831900e527b960
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 0d360dc5b95c1cdb8de54bcbd723d0056c81c9c2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Création d'assemblys satellites pour les applications bureautiques
 Les fichiers de ressources jouent un rôle central dans les applications localisées. Ils permettent à une application d’afficher des chaînes, des images et d’autres données dans la langue et la culture de l’utilisateur, et de fournir des données de remplacement si les ressources relatives à la langue et la culture de l’utilisateur ne sont pas disponibles. Le .NET Framework utilise un modèle Hub and Spoke pour localiser et récupérer les ressources localisées. Le hub est l’assembly principal qui contient le code exécutable non localisable et les ressources pour une culture unique, appelée culture neutre ou par défaut. La culture par défaut est la culture de secours de l’application ; elle est utilisée quand aucune ressource localisée n’est disponible. Vous utilisez l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute> pour désigner la culture de la culture par défaut de l’application. Chaque spoke se connecte à un assembly satellite qui contient les ressources d’une culture localisée unique, mais ne contient pas de code. Dans la mesure où les assemblys satellites ne font pas partie de l’assembly principal, vous pouvez facilement remplacer ou mettre à jour les ressources correspondant à une culture spécifique sans remplacer l’assembly principal de l’application.  
@@ -108,7 +109,7 @@ al /target:lib /embed:strings.de.resources /culture:de /out:Example.resources.dl
   
     -   Pour prendre en charge la culture « fr-FR » ou Français (France), créez un fichier de ressources nommé Greeting.fr-FR.resx ou Greeting.fr-FR.txt et stockez-le dans une chaîne unique nommée `HelloString` dont la valeur est « Salut tout le monde ! ».  
   
-    -   Pour prendre en charge la culture « ru-RU » ou Russe (Russie), créez un fichier de ressources nommé Greeting.ru-RU.resx ou Greeting.ru-RU.txt et stockez-le dans une chaîne unique nommée `HelloString` dont la valeur est « Всем привет! ».  
+    -   Pour prendre en charge la culture « ru-RU » ou Russe (Russie), créez un fichier de ressources nommé Greeting.ru-RU.resx ou Greeting.ru-RU.txt et stockez-le dans une chaîne unique nommée `HelloString` dont la valeur est « Всем привет! ».  
   
 4.  Utilisez [Resgen.exe](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) pour compiler chaque fichier de ressources texte ou XML en un fichier .resources binaire. La sortie est un ensemble de fichiers ayant le même nom de fichier racine que les fichiers .resx ou .txt, mais avec l’extension .resources. Si vous créez l’exemple avec Visual Studio, le processus de compilation est géré automatiquement. Si vous n’utilisez pas Visual Studio, exécutez les commandes suivantes pour compiler les fichiers .resx en fichiers .resources :  
   
@@ -237,7 +238,7 @@ gacutil /i:StringLibrary.resources.dll
   
     -   Pour prendre en charge la culture « fr-FR » ou Français (France), créez un fichier de ressources nommé Strings.fr-FR.resx ou Strings.fr-FR.txt et stockez-le dans une chaîne unique nommée `Greeting` dont la valeur est « Bonjour ! ».  
   
-    -   Pour prendre en charge la culture « ru-RU » ou Russe (Russie), créez un fichier de ressources nommé Strings.ru-RU.resx ou Strings.ru-RU.txt et stockez-le dans une chaîne unique nommée `Greeting` dont la valeur est « Привет! ».  
+    -   Pour prendre en charge la culture « ru-RU » ou Russe (Russie), créez un fichier de ressources nommé Strings.ru-RU.resx ou Strings.ru-RU.txt et stockez-le dans une chaîne unique nommée `Greeting` dont la valeur est « Привет! ».  
   
 6.  Utilisez [Resgen.exe](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) pour compiler chaque fichier de ressources texte ou XML en un fichier .resources binaire. La sortie est un ensemble de fichiers ayant le même nom de fichier racine que les fichiers .resx ou .txt, mais avec l’extension .resources. Si vous créez l’exemple avec Visual Studio, le processus de compilation est géré automatiquement. Si vous n’utilisez pas Visual Studio, exécutez la commande suivante pour compiler les fichiers .resx en fichiers .resources :  
   
@@ -250,7 +251,7 @@ gacutil /i:StringLibrary.resources.dll
 7.  Compilez le code source suivant pour StringLibrary.vb ou StringLibrary.cs avec les ressources de la culture par défaut dans un assembly de bibliothèque à signature différée nommé StringLibrary.dll :  
   
     > [!IMPORTANT]
-    >  Si vous utilisez la ligne de commande plutôt que Visual Studio pour créer l’exemple, vous devez modifier l’appel à la <xref:System.Resources.ResourceManager> constructeur de classe `ResourceManager rm = new ResourceManager("Strings",` `typeof(Example).Assembly);`.  
+    >  Si vous utilisez la ligne de commande plutôt que Visual Studio pour créer l’exemple, vous devez remplacer l’appel au constructeur de la classe <xref:System.Resources.ResourceManager> par `ResourceManager rm = new ResourceManager("Strings",` `typeof(Example).Assembly);`.  
   
      [!code-csharp[Conceptual.Resources.Satellites#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#1)]
      [!code-vb[Conceptual.Resources.Satellites#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#1)]  

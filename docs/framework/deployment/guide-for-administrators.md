@@ -16,11 +16,12 @@ caps.latest.revision: "40"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: d208867789fc78a82a2e339596a5692280d95ff3
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 3af5e301e57350b72ac0ea50448c7a46ca6c5387
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>Guide de déploiement du .NET Framework pour les administrateurs
 Cet article explique étape par étape comment un administrateur système peut déployer [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] et ses dépendances système dans un réseau à l'aide de Microsoft System Center Configuration Manager (SCCM). Cet article suppose que tous les ordinateurs clients cibles ont la configuration minimale requise pour le .NET Framework. Pour obtenir la liste des configurations logicielle et matérielle requises pour installer le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], consultez [Configuration système requise](../../../docs/framework/get-started/system-requirements.md).  
@@ -32,7 +33,7 @@ Cet article explique étape par étape comment un administrateur système peut d
   
  Cette rubrique contient les sections suivantes :  
   
- [Le processus de déploiement](#the_deployment_process)  
+ [Processus de déploiement](#the_deployment_process)  
  [Déploiement du .NET Framework](#deploying_in_a_test_environment)  
  [Créer un regroupement](#creating_a_collection)  
  [Créer un package et un programme](#creating_a_package)  
@@ -138,7 +139,7 @@ Cet article explique étape par étape comment un administrateur système peut d
 |**/norestart**|Empêche le programme d'installation de redémarrer automatiquement. Si vous utilisez cette option, Configuration Manager doit gérer le redémarrage de l'ordinateur.|  
 |**/chainingpackage** *nom_package*|Spécifie le nom du package qui effectue le chaînage. Ces informations sont stockées avec d’autres informations de session d’installation pour les personnes inscrites au [Programme d’amélioration du produit Microsoft (CEIP)](http://go.microsoft.com/fwlink/p/?LinkId=248244). Si le nom du package inclut des espaces, utilisez des guillemets doubles comme délimiteurs. Par exemple : **/chainingpackage "Chaining Product"**.|  
   
- Les étapes suivantes créent un package nommé .Net Framework 4.5. Le programme déploie une installation sans assistance de .Net Framework 4.5. Dans une installation sans assistance, les utilisateurs n’interagissent pas avec le processus d’installation et l’application de chaînage doit capturer le code de retour et gérer le redémarrage ; consultez [obtention d’informations sur la progression d’un Package d’Installation](http://go.microsoft.com/fwlink/?LinkId=179606).  
+ Les étapes suivantes créent un package nommé .Net Framework 4.5. Le programme déploie une installation sans assistance de .Net Framework 4.5. Dans une installation sans assistance, les utilisateurs n’interagissent pas avec le processus d’installation et l’application de chaînage doit capturer le code de retour et gérer le redémarrage. Pour plus d’informations, consultez [Getting Progress Information from an Installation Package](http://go.microsoft.com/fwlink/?LinkId=179606).  
  
 <a name="select_dist_point"></a>   
 ### <a name="select-a-distribution-point"></a>Sélectionner un point de distribution  

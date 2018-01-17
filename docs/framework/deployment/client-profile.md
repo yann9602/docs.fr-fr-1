@@ -20,11 +20,12 @@ caps.latest.revision: "44"
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 0c93019b2024029fd27d78ac191f0f99bc9b0ce9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1f05290486b107f325e61cfffad052311258eee3
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-client-profile"></a>.NET Framework Client Profile
 .NET Client Profile est un sous-ensemble du .NET Framework fourni avec [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] et les versions antérieures, et optimisé pour les applications clientes. Le .NET Framework est une plateforme de développement pour Windows Phone et Microsoft Azure qui fournit un environnement managé d'exécution d'applications et la bibliothèque de classes .NET Framework. Le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] et les versions antérieures fournissaient deux options de déploiement : le .NET Framework complet et Client Profile. Client Profile a permis d'accélérer le déploiement et de réduire les packages d'installation par rapport au .NET Framework complet.  
@@ -36,7 +37,7 @@ ms.lasthandoff: 11/21/2017
  Lorsque vous installez [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], .NET Framework 4 Client Profile est mis à jour vers la version complète du .NET Framework. Pour plus d’informations sur l’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], consultez [Installer le .NET Framework pour les développeurs](../../../docs/framework/install/guide-for-developers.md).  
   
 ## <a name="see-also"></a>Voir aussi  
- [.NET framework Client Profile (.NET Framework 4)](http://msdn.microsoft.com/library/cc656912\(v=vs.100\).aspx)  
+ [.NET Framework Client Profile (.NET Framework 4)](http://msdn.microsoft.com/library/cc656912\(v=vs.100\).aspx)  
  [Vue d’ensemble du multiciblage Visual Studio](http://msdn.microsoft.com/library/b1702c33-0672-4ebc-b779-2b324d6ea880)  
  [Dépannage des erreurs de ciblage du .NET Framework](http://msdn.microsoft.com/library/830e3e45-9a93-4279-a249-75b84599aefb)  
  [Guide pratique pour cibler une version du .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework)

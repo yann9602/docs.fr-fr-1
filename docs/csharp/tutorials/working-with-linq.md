@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: ec86c558b9aa9c6269fcf9890978f61a934c081f
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e9707d3b67a80fface2c26c589780c60c2e293f7
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="working-with-linq"></a>Utilisation de LINQ
 
@@ -329,6 +329,6 @@ Compilez, puis réexécutez-la. La sortie est un peu plus propre, et le code est
 
 ## <a name="conclusion"></a>Conclusion
 
-Cet exemple vous a montré quelques-unes des méthodes utilisées dans LINQ, comment créer vos propres méthodes, faciles à utiliser avec du code compatible LINQ. Il vous a également montré les différences entre l’évaluation paresseuse et l’évaluation stricte, ainsi que l’impact de cette décision sur les performances.
+Cet exemple vous a montré quelques-unes des méthodes utilisées dans LINQ et comment créer vos propres méthodes, faciles à utiliser avec du code compatible LINQ. Il vous a également montré les différences entre l’évaluation paresseuse et l’évaluation stricte, ainsi que l’impact de cette décision sur les performances.
 
 Vous avez appris une technique de magicien. Les magiciens utilisent le mélange faro pour pouvoir contrôler le déplacement de chaque carte dans le jeu. Dans certains tours, le magicien invite un spectateur à placer une carte au-dessus du jeu et le mélange plusieurs fois, tout en sachant l’emplacement de la carte. D’autres illusions nécessitent que le jeu soit préparé d’une certaine manière. Le magicien prépare le jeu avant de réaliser le tour. Ensuite, il effectue cinq mélanges intérieurs. Sur scène, il peut montrer que le jeu paraît mélangé, le mélanger trois fois de plus et se retrouver avec le jeu organisé de la façon souhaitée.

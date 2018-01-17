@@ -13,11 +13,12 @@ ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 166d61339d2b74f378b50ade4b78fd41e9692f76
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 45bb0174bd4c757b6e51621f36b25eb5f4354c94
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>Compatibilité de versions dans le .NET Framework
 La compatibilité descendante signifie qu'une application développée pour une version particulière d'une plateforme s'exécutera sur les versions ultérieures de cette plateforme. Le .NET Framework essaie d'optimiser la compatibilité descendante : le code source écrit pour une version du .NET Framework doit se compiler sur les versions ultérieures du .NET Framework, et les fichiers binaires qui s'exécutent sur une version du .NET Framework doivent se comporter de la même manière sur les versions ultérieures du .NET Framework.  
@@ -45,21 +46,21 @@ La compatibilité descendante signifie qu'une application développée pour une 
  À cause de cette restriction, les garanties de compatibilité sont particulièrement importantes pour les composants. Depuis .NET Framework 4, vous pouvez spécifier le degré auquel un composant est supposé rester compatible entre plusieurs versions en appliquant l'attribut <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute?displayProperty=nameWithType> à ce composant. Les outils peuvent utiliser cet attribut pour détecter des violations potentielles de la garantie de compatibilité dans les versions ultérieures d'un composant.  
   
 ## <a name="backward-compatibility-and-the-net-framework-45"></a>Compatibilité descendante et .NET Framework 4.5  
- Le .NET Framework 4.5 et versions ultérieures sont à compatibilité descendante avec les applications qui ont été générées avec des versions antérieures du .NET Framework. En d’autres termes, applications et composants générés avec les versions précédentes fonctionnent sans modification sur le .NET Framework 4.5 et versions ultérieures. Toutefois, par défaut, les applications s’exécutent sur la version du common language runtime pour lequel elles ont été développées, il vous faudra peut-être fournir un fichier de configuration pour activer votre application s’exécute sur le .NET Framework 4.5 ou versions ultérieures. Pour plus d’informations, consultez la section [Compatibilité des versions pour les applications](#Apps) plus haut dans cet article.  
+ .NET Framework 4.5 et versions ultérieures présentent une compatibilité descendante avec les applications générées à l’aide des versions antérieures du .NET Framework. En d’autres termes, les applications et composants générés avec les versions antérieures du .NET Framework fonctionneront sur .NET Framework 4.5 et versions ultérieures sans être modifiés. Toutefois, par défaut, les applications sont exécutées sur la version du common language runtime pour laquelle elles ont été développées. Par conséquent, il est possible que vous deviez fournir un fichier de configuration pour permettre à votre application de s’exécuter sur .NET Framework 4.5 ou versions ultérieures. Pour plus d’informations, consultez la section [Compatibilité des versions pour les applications](#Apps) plus haut dans cet article.  
   
  Dans la pratique, cette compatibilité peut être arrêtée par des modifications apparemment sans importance du .NET Framework et des modifications des techniques de programmation. Par exemple, les améliorations des performances dans le .NET Framework 4.5 peuvent exposer une condition de concurrence critique qui ne se produit pas sur les versions antérieures. De la même façon, l’utilisation d’un chemin d’accès codé en dur aux assemblys .NET Framework, la comparaison d’égalité avec une version particulière du .NET Framework, et l’obtention de la valeur d’un champ privé à l’aide de la réflexion ne sont pas des pratiques à compatibilités descendante. De plus, chaque version du .NET Framework inclut des résolutions de bogue et des modifications relatives à la sécurité qui peuvent affecter la compatibilité de certains composants et applications.  
   
- Si votre application ou le composant ne fonctionne pas comme prévu sur le .NET Framework 4.5 (y compris ses versions intermédiaires, le [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7 ou 4.7.1, utilisez les listes de vérification suivantes :  
+ Si votre application ou composant ne fonctionne pas comme prévu sur .NET Framework 4.5 (avec ses versions intermédiaires, [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7 ou 4.7.1), utilisez les listes de vérification suivantes :  
   
--  Si votre application a été développée pour s’exécuter sur n’importe quelle version du .NET Framework en commençant par le .NET Framework 4.0, consultez [compatibilité des applications dans le .NET Framework](application-compatibility.md) pour générer des listes des modifications entre votre version de .NET Framework ciblée et la version sur laquelle votre application est en cours d’exécution.  
+-  Si votre application a été développée pour s’exécuter sur n’importe quelle version du .NET Framework en commençant par .NET Framework 4.0, consultez [Compatibilité des applications dans le .NET Framework](application-compatibility.md) pour générer des listes de modifications entre votre version du .NET Framework ciblée et la version sur laquelle votre application est en cours d’exécution.  
 
-- Si vous avez une application .NET Framework 3.5, consultez également [problèmes de Migration de .NET Framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md).
+- S’il s’agit d’une application .NET Framework 3.5, consultez également [Problèmes de migration de .NET Framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md).
 
-- Si vous avez une application .NET Framework 2.0, consultez également [modifications dans .NET Framework 3.5 SP1](http://go.microsoft.com/fwlink/?LinkId=186989).
+- S’il s’agit d’une application .NET Framework 2.0, consultez également [Modifications dans .NET Framework 3.5 SP1](http://go.microsoft.com/fwlink/?LinkId=186989).
 
-- Si vous avez une application .NET Framework 1.1, consultez également [modifications dans .NET Framework 2.0](http://go.microsoft.com/fwlink/?LinkID=125263).  
+- S’il s’agit d’une application .NET Framework 1.1, consultez également [Modifications dans .NET Framework 2.0](http://go.microsoft.com/fwlink/?LinkID=125263).  
   
--   Si vous recompilez le code source existant pour s’exécuter sur le .NET Framework 4.5 ou de son point de mises en production, ou si vous développez une nouvelle version d’une application ou un composant qui cible le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] ou ses versions intermédiaires à partir d’une vérification de base, de code source existante [ Nouveautés obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md) pour les types et membres obsolètes et appliquer la solution de contournement décrite. (Le code précédemment compilé continuera à s'exécuter sur des types et des membres marqués comme obsolètes.)  
+-   Si vous recompilez le code source existant pour l’exécuter sur .NET Framework 4.5 ou ses versions intermédiaires, ou si vous développez une nouvelle version d’une application ou d’un composant qui cible [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] ou ses versions intermédiaires à partir d’une base de code source existante, consultez [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md) pour connaître les types et les membres obsolètes, et appliquer la solution de contournement décrite. (Le code précédemment compilé continuera à s'exécuter sur des types et des membres marqués comme obsolètes.)  
   
 -   Si vous déterminez qu’une modification du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a endommagé votre application, consultez le [schéma des paramètres d’exécution](../../../docs/framework/configure-apps/file-schema/runtime/index.md) pour déterminer si vous pouvez utiliser un paramètre d’exécution dans le fichier de configuration de votre application afin de restaurer le comportement précédent.  
   

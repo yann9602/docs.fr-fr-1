@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: bdc29497-64f2-4d11-a21b-4097e0bdf5c9
-ms.openlocfilehash: 288012e5f1f48ed60a388790ca42371496df92c3
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 329a74cf083819896aafd7fc7993fa0e8ac8f8c2
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Ajouts au format csproj pour .NET Core
 
@@ -37,11 +38,11 @@ Les métapackages sont référencés implicitement en fonction du ou des framewo
 ### <a name="recommendations"></a>Recommandations
 Comme les métapackages `Microsoft.NETCore.App` ou `NetStandard.Library` sont implicitement référencés, voici les bonnes pratiques que nous recommandons :
 
-* Lorsque vous ciblez .NET Core ou .NET Standard, n’ont jamais une référence explicite à la `Microsoft.NETCore.App` ou `NetStandard.Library` metapackages via un `<PackageReference>` élément dans votre fichier projet.
-* Si vous avez besoin d’une version spécifique du runtime lors du ciblage du .NET Core, vous devez utiliser le `<RuntimeFrameworkVersion>` propriété dans votre projet (par exemple, `1.0.4`) au lieu de référencer le metapackage.
+* Quand vous ciblez .NET Core ou .NET Standard, n’incluez jamais de référence explicite aux métapackages `Microsoft.NETCore.App` ou `NetStandard.Library` via un élément `<PackageReference>` dans votre fichier projet.
+* Si vous avez besoin d’une version spécifique du runtime quand vous ciblez .NET Core, vous devez utiliser la propriété `<RuntimeFrameworkVersion>` dans votre projet (par exemple, `1.0.4`) au lieu de référencer le métapackage.
     * Cela peut se produire si vous utilisez des [déploiements autonomes](../deploying/index.md#self-contained-deployments-scd) et que vous devez utiliser une version de correctif spécifique du runtime 1.0.0 LTS, par exemple.
-* Si vous avez besoin d’une version spécifique de la `NetStandard.Library` metapackage lorsque vous ciblez .NET Standard, vous pouvez utiliser le `<NetStandardImplicitPackageVersion>` propriété et définissez la version que vous avez besoin.
-* N’ajoutez pas explicitement ou mettre à jour les références à un le `Microsoft.NETCore.App` ou `NetStandard.Library` metapackage dans les projets .NET Framework. Si n’importe quelle version de `NetStandard.Library` est nécessaire lors de l’aide d’un package NuGet de basée sur .NET Standard, NuGet automatiquement installe cette version.
+* Si vous avez besoin d’une version spécifique du métapackage `NetStandard.Library` quand vous ciblez .NET Standard, vous pouvez utiliser la propriété `<NetStandardImplicitPackageVersion>` et définir la version dont vous avez besoin.
+* Vous ne devez pas ajouter ni mettre à jour explicitement les références au métapackage `Microsoft.NETCore.App` ou `NetStandard.Library` dans les projets .NET Framework. Si une version de `NetStandard.Library` est nécessaire lors de l’utilisation d’un package NuGet basé sur .NET Standard, NuGet installe automatiquement cette version.
 
 ## <a name="default-compilation-includes-in-net-core-projects"></a>Inclusions de compilation par défaut dans les projets .NET Core
 Dans le cadre du passage au format *csproj* dans les dernières versions du SDK, nous avons déplacé les inclusions et exclusions par défaut pour les éléments de compilation et les ressources incorporées dans les fichiers de propriétés du SDK. Cela signifie que vous n’avez plus besoin de spécifier ces éléments dans votre fichier projet. 
@@ -54,7 +55,7 @@ Le tableau suivant montre les éléments et les modèles [Glob](https://en.wikip
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
 | Compile           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | N/A                        |
 | EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | N/A                        |
-| Aucun              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | - \*\*/\*.cs ; \*\*/\*.resx |
+| Aucun.              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | - \*\*/\*.cs ; \*\*/\*.resx |
 
 Si vous avez des modèles Glob dans votre projet et que vous essayez de le générer à l’aide du dernier SDK, vous obtenez l’erreur suivante :
 
@@ -71,9 +72,9 @@ La définition de cette propriété sur `false` remplace l’inclusion implicite
 
 Ce changement ne modifie pas le mécanisme principal des autres inclusions. Toutefois, si vous voulez, par exemple, spécifier certains fichiers à publier avec votre application, vous pouvez toujours utiliser les mécanismes connus dans *csproj* correspondants (par exemple, l’élément `<Content>`).
 
-`<EnableDefaultCompileItems>`désactive uniquement `Compile` globs mais n’affecte pas les autres globs, comme l’implicite `None` glob, qui s’applique également aux \*.cs éléments. Par conséquent, **l’Explorateur de solutions** continueront à afficher \*.cs des éléments dans le cadre du projet, inclus en tant que `None` éléments. De la même façon, vous pouvez utiliser `<EnableDefaultNoneItems>` pour désactiver l’implicite `None` glob.
+`<EnableDefaultCompileItems>` désactive uniquement les modèles Glob `Compile`, mais n’affecte pas les autres modèles Glob, comme le modèle Glob implicite `None`, qui s’applique également aux éléments \*.cs. Par conséquent, **l’Explorateur de solutions** continue d’afficher des éléments \*.cs dans le cadre du projet, inclus en tant qu’éléments `None`. De la même façon, vous pouvez utiliser `<EnableDefaultNoneItems>` pour désactiver le modèle Glob implicite `None`.
 
-Pour désactiver **globs implicites tous les**, vous pouvez définir le `<EnableDefaultItems>` propriété `false` comme dans l’exemple suivant :
+Pour désactiver **tous les modèles Glob implicites**, vous pouvez affecter à la propriété `<EnableDefaultItems>` la valeur `false` comme dans l’exemple suivant :
 ```xml
 <PropertyGroup>
     <EnableDefaultItems>false</EnableDefaultItems>

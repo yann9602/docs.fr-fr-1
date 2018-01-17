@@ -1,5 +1,5 @@
 ---
-title: Prise en main Code c# et Visual Studio - Guide c#
+title: "Bien démarrer avec C# et Visual Studio Code - Guide C#"
 description: "Découvrez comment créer et déboguer votre première application .NET Core en C# à l’aide de Visual Studio Code."
 keywords: "C#, bien démarrer, acquisition, installer, Visual Studio Code, multiplateforme"
 author: kendrahavens
@@ -10,17 +10,18 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: 76c23597-4cf9-467e-8a47-0c3703ce37e7
-ms.openlocfilehash: 3a9de689946507e4b6d89f684461d65049b3375a
-ms.sourcegitcommit: a53799f81351ad9afb3007cd68846ce6aeeb10cb
+ms.workload: dotnetcore
+ms.openlocfilehash: 95052da1688ec1026f11ff679dda6aad50a340fa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Bien démarrer avec C# et Visual Studio Code
 
 .NET Core vous offre une plateforme rapide et évolutive pour la création d’applications qui s’exécutent sur Windows, Linux et Mac OS. Utilisez Visual Studio Code avec l’extension de langage C# pour une expérience d’édition puissante avec prise en charge complète de C# IntelliSense (saisie semi-automatique intelligente de code).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 1. Installez [Visual Studio Code](https://code.visualstudio.com/).
 2. Installez le [SDK .NET Core](https://www.microsoft.com/net/download/core).
@@ -34,20 +35,20 @@ Commençons par un programme « Hello World » simple sur .NET Core :
 
     * Ouvrez Visual Studio Code.
     * Cliquez sur l’icône Explorer dans le menu de gauche, puis sur **Ouvrir le dossier**.
-    * Sélectionnez **fichier** > **ouvrir le dossier** dans le menu principal pour ouvrir le dossier vous souhaitez que votre projet c# et cliquez sur **sélectionner le dossier**. Dans notre exemple, nous créons un dossier pour notre projet nommé *HelloWorld*.
+    * Sélectionnez **Fichier** > **Ouvrir le dossier** dans le menu principal pour ouvrir le dossier dans lequel vous souhaitez que votre projet C# se trouve et cliquez sur **Sélectionner le dossier**. Dans notre exemple, nous créons un dossier pour notre projet nommé *HelloWorld*.
 
       ![VSCodeOpenFolder](media/with-visual-studio-code/vscodeopenfolder.png)
 
 2. Initialiser un projet C# :
-    * Ouvrez le Terminal intégrée à partir de Code Visual Studio en sélectionnant **vue** > **Terminal Server intégré** dans le menu principal.
+    * Ouvrez le terminal intégré à partir de Visual Studio Code en sélectionnant **Vue** > **Terminal intégré** dans le menu principal.
     * Dans la fenêtre de Terminal, tapez `dotnet new console`.
-    * Cette commande crée un `Program.cs` fichier dans votre dossier avec un programme simple « Hello World » déjà écrit, ainsi que d’un fichier de projet c# nommé `HelloWorld.csproj`.
+    * Cette commande crée un fichier `Program.cs` dans votre dossier avec un simple programme « Hello World » déjà écrit, ainsi qu’un fichier projet C# nommé `HelloWorld.csproj`.
 
       ![La nouvelle commande dotnet](media/with-visual-studio-code/dotnetnew.png)
 
 3. Résolution des ressources de génération :
 
-    * Pour **.NET Core 1.x**, type `dotnet restore`. Exécuter `dotnet restore` vous donne accès aux packages .NET Core qui sont nécessaires pour générer votre projet.
+    * Pour **.NET Core 1.x**, tapez `dotnet restore`. Exécuter `dotnet restore` vous donne accès aux packages .NET Core qui sont nécessaires pour générer votre projet.
 
       ![La commande dotnet restore](media/with-visual-studio-code/dotnetrestore.png)
 
@@ -63,11 +64,11 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
 
 ## <a name="debug"></a>Débogage
 
-1. Ouvrez *Program.cs* en cliquant dessus. La première fois que vous ouvrez un fichier c# dans Visual Studio Code, [OmniSharp](http://www.omnisharp.net/) se charge dans l’éditeur.
+1. Ouvrez *Program.cs* en cliquant dessus. La première fois que vous ouvrez un fichier C# dans Visual Studio Code, [OmniSharp](http://www.omnisharp.net/) se charge dans l’éditeur.
 
     ![Ouvrez le fichier Program.cs](media/with-visual-studio-code/opencs.png)
 
-2. Code Visual Studio vous invite à entrer pour ajouter les composants manquants pour générer et déboguer votre application. Sélectionnez **Oui**. 
+2. Visual Studio Code doit vous inviter à ajouter les ressources manquantes pour générer et déboguer votre application. Sélectionnez **Oui**. 
 
     ![Invite pour les fichiers manquants](media/with-visual-studio-code/missing-assets.png)
 
@@ -79,12 +80,12 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
 
     ![Sélection de .NET Core](media/with-visual-studio-code/selectcore.png)
 
-5. Ajouter un point d’arrêt à votre projet en cliquant sur le **marge de l’éditeur**, qui est l’espace à gauche des numéros de ligne dans l’éditeur, en regard de la ligne 9.
+5. Ajoutez un point d’arrêt à votre projet en cliquant sur la **marge de l’éditeur**, qui est l’espace à gauche des numéros de ligne dans l’éditeur, à côté de la ligne 9.
 
     ![Définition d'un point d'arrêt](media/with-visual-studio-code/setbreakpoint.png)
 
-6. Pour démarrer le débogage, sélectionnez <kbd>F5</kbd> ou sur la flèche verte. Le débogueur arrête l’exécution de votre programme lorsqu’il atteint le point d’arrêt que vous avez défini à l’étape précédente.
-    * Pendant le débogage, vous pouvez afficher vos variables locales dans le volet supérieur gauche, ou utiliser la console de débogage.
+6. Pour démarrer le débogage, sélectionnez <kbd>F5</kbd> ou la flèche verte. Le débogueur arrête l’exécution de votre programme lorsqu’il atteint le point d’arrêt que vous avez défini à l’étape précédente.
+    * Pendant le débogage, vous pouvez afficher vos variables locales dans le volet supérieur gauche ou utiliser la console de débogage.
 
     ![Exécuter et déboguer](media/with-visual-studio-code/rundebug.png)
 

@@ -18,11 +18,12 @@ caps.latest.revision: "26"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: b62a737a5106c64d08a342365867c460075011b5
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 78de2016e02c242fcf6ec454a56a4beff41c2d12
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="dynamic-language-runtime-overview"></a>Vue d'ensemble du Dynamic Language Runtime
 Le *Dynamic Language Runtime* (DLR) est un environnement d’exécution ajoutant au Common Language Runtime (CLR) un ensemble de services pour les langages dynamiques. Le DLR simplifie le développement de langages dynamiques à exécuter sur le .NET Framework et l’ajout de fonctionnalités dynamiques aux langages typés statiquement.  
@@ -103,5 +104,5 @@ Architecture du DLR
  <xref:System.Dynamic.ExpandoObject>  
  <xref:System.Dynamic.DynamicObject>  
  [Common Language Runtime](../../../docs/standard/clr.md)  
- [Arborescences de l’expression](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)  
+ [Arborescences d’expressions](http://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)  
  [Procédure pas à pas : création et utilisation d’objets dynamiques](~/docs/csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)

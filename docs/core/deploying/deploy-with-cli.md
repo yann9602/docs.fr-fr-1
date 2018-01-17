@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 82ebe16d-5e1c-46cc-91e8-71974296429c
-ms.openlocfilehash: fc7a40667c9b0a623bb0ebdf4ad60783fa58e6c5
-ms.sourcegitcommit: 7e99f66ef09d2903e22c789c67ff5a10aa953b2f
+ms.workload: dotnetcore
+ms.openlocfilehash: 302383ec44afd91d1df7f6c717b268d5f965c8c9
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="deploying-net-core-apps-with-command-line-interface-cli-tools"></a>Déploiement d’applications .NET Core avec les outils de l’interface de ligne de commande (CLI)
 
@@ -48,7 +49,7 @@ Le déploiement d’un déploiement dépendant du framework sans dépendances ti
 
 1. Mettez à jour les dépendances et les outils du projet.
  
-   Exécutez le [dotnet restauration](../tools/dotnet-restore.md) ([voir la Remarque](#dotnet-restore-note)) pour restaurer les dépendances spécifiées dans votre projet.
+   Exécutez la commande [dotnet restore](../tools/dotnet-restore.md) ([voir la remarque](#dotnet-restore-note)) pour restaurer les dépendances spécifiées dans votre projet.
 
 1. Créez une build Debug de votre application.
 
@@ -71,7 +72,7 @@ Outre les binaires de l’application, votre programme d’installation doit ég
 
 ## <a name="framework-dependent-deployment-with-third-party-dependencies"></a>Déploiement dépendant du framework avec des dépendances tierces
 
-Pour exécuter un déploiement dépendant du framework avec une ou plusieurs dépendances tierces, ces dépendances doivent être accessibles à votre projet. Deux étapes supplémentaires sont nécessaires avant de pouvoir exécuter le `dotnet restore` ([voir la Remarque](#dotnet-restore-note)) commande :
+Pour exécuter un déploiement dépendant du framework avec une ou plusieurs dépendances tierces, ces dépendances doivent être accessibles à votre projet. Avant de pouvoir exécuter la commande `dotnet restore` ([voir la remarque](#dotnet-restore-note)), vous devez effectuer les deux étapes suivantes :
 
 1. Ajoutez les références aux bibliothèques tierces exigées à la section `<ItemGroup>` de votre fichier *csproj*. La section `<ItemGroup>` suivante contient une dépendance à [Json.NET](http://www.newtonsoft.com/json) comme bibliothèque tierce :
 
@@ -81,7 +82,7 @@ Pour exécuter un déploiement dépendant du framework avec une ou plusieurs dé
       </ItemGroup>
       ```
 
-1. Si vous ne l’avez pas encore fait, téléchargez le package NuGet contenant les dépendances tierces. Pour télécharger le package, vous devez exécuter le `dotnet restore` ([voir la Remarque](#dotnet-restore-note)) commande après l’ajout de la dépendance. Comme la dépendance est résolue à partir du cache NuGet local au moment de la publication, elle doit être disponible sur votre système.
+1. Si vous ne l’avez pas encore fait, téléchargez le package NuGet contenant les dépendances tierces. Pour télécharger le package, exécutez la commande `dotnet restore` ([voir la remarque](#dotnet-restore-note)) après avoir ajouté la dépendance. Comme la dépendance est résolue à partir du cache NuGet local au moment de la publication, elle doit être disponible sur votre système.
 
 Notez qu’un déploiement dépendant du framework avec des dépendances tierces n’est portable que dans la mesure de la portabilité de ses dépendances tierces. Par exemple, si une bibliothèque tierce prend uniquement en charge macOS, l’application n’est pas portable sur des systèmes Windows. Cela se produit si la dépendance tierce elle-même dépend du code natif. Un [serveur Kestrel](/aspnet/core/fundamentals/servers/kestrel) constitue un bon exemple, car il nécessite une dépendance native à [libuv](https://github.com/libuv/libuv). Quand un déploiement dépendant du framework est créé pour une application avec ce type de dépendance tierce, le résultat publié contient un dossier pour chaque [identificateur de runtime](../rid-catalog.md) pris en charge par la dépendance native (et qui existe dans le package NuGet).
 
@@ -119,7 +120,7 @@ L’exécution d’un déploiement autonome sans dépendances tierces implique l
 
 1. Mettez à jour les dépendances et les outils du projet.
 
-   Exécutez le [dotnet restauration](../tools/dotnet-restore.md) ([voir la Remarque](#dotnet-restore-note)) pour restaurer les dépendances spécifiées dans votre projet.
+   Exécutez la commande [dotnet restore](../tools/dotnet-restore.md) ([voir la remarque](#dotnet-restore-note)) pour restaurer les dépendances spécifiées dans votre projet.
 
 1. Créez une build Debug de votre application.
 
@@ -154,7 +155,7 @@ Voici le fichier *csproj* complet pour ce projet.
 
 ## <a name="self-contained-deployment-with-third-party-dependencies"></a>Déploiement autonome avec des dépendances tierces
 
-L’exécution d’un déploiement autonome avec une ou plusieurs dépendances tierces implique l’ajout des dépendances. Deux étapes supplémentaires sont nécessaires avant de pouvoir exécuter le `dotnet restore` ([voir la Remarque](#dotnet-restore-note)) commande :
+L’exécution d’un déploiement autonome avec une ou plusieurs dépendances tierces implique l’ajout des dépendances. Avant de pouvoir exécuter la commande `dotnet restore` ([voir la remarque](#dotnet-restore-note)), vous devez effectuer les deux étapes suivantes :
 
 1. Ajoutez les références aux bibliothèques tierces à la section `<ItemGroup>` de votre fichier *csproj*. La section `<ItemGroup>` suivante utilise Json.NET comme bibliothèque tierce.
 
@@ -164,7 +165,7 @@ L’exécution d’un déploiement autonome avec une ou plusieurs dépendances t
       </ItemGroup>
     ```
 
-1. Si vous ne l’avez pas encore fait, téléchargez le package NuGet contenant les dépendances tierces sur votre système. Pour que la dépendance disponibles pour votre application, exécutez le `dotnet restore` ([voir la Remarque](#dotnet-restore-note)) commande après l’ajout de la dépendance. Comme la dépendance est résolue à partir du cache NuGet local au moment de la publication, elle doit être disponible sur votre système.
+1. Si vous ne l’avez pas encore fait, téléchargez le package NuGet contenant les dépendances tierces sur votre système. Pour rendre la dépendance disponible pour votre application, exécutez la commande `dotnet restore` ([voir la remarque](#dotnet-restore-note)) après l’ajout de la dépendance. Comme la dépendance est résolue à partir du cache NuGet local au moment de la publication, elle doit être disponible sur votre système.
 
 Voici le fichier *csproj* complet pour ce projet :
 

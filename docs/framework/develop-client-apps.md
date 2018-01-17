@@ -24,11 +24,12 @@ caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: daf09f94b4c0854365274773f8c426cc07e8c6dd
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 1f90cbac0e7f78d8965a75df281c0db6b213d9e4
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="developing-client-applications-with-the-net-framework"></a>Développement d'applications clientes avec .NET Framework
 Il existe plusieurs moyens de développer des applications Windows avec le .NET Framework s'exécutant localement sur les ordinateurs ou appareils des utilisateurs. Cette section contient des rubriques qui décrivent comment créer des applications Windows à l'aide de WPF (Windows Presentation Foundation) ou à l'aide de Windows Forms. Toutefois, vous pouvez aussi créer des applications web avec .NET Framework, et des applications clientes pour les ordinateurs et les appareils que vous mettez à disposition sur Windows Store ou Windows Phone Store.  
@@ -63,5 +64,5 @@ Il existe plusieurs moyens de développer des applications Windows avec le .NET 
  [Bibliothèque de classes portable](../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)  
  [Vue d’ensemble](../../docs/framework/get-started/overview.md)  
  [Guide de développement](../../docs/framework/development-guide.md)  
- [Comment : créer une Application de bureau Windows](http://msdn.microsoft.com/library/47021403-eaca-4c34-946a-a26c42a64148)  
+ [Guide pratique pour créer une application de bureau Windows](http://msdn.microsoft.com/library/47021403-eaca-4c34-946a-a26c42a64148)  
  [Applications de service Windows](../../docs/framework/windows-services/index.md)

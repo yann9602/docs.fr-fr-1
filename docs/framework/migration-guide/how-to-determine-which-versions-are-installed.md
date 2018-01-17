@@ -15,11 +15,12 @@ ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: edd5a8e8cc32037d45d95d544f6eae5097d0c468
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 83de6036a9b86478546cdb8356ce132ef32e6be2
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Guide pratique pour déterminer les versions .NET Framework installées
 Les utilisateurs peuvent installer et exécuter plusieurs versions de .NET Framework sur leurs ordinateurs. Quand vous développez ou déployez votre application, vous pouvez avoir besoin de savoir quelles versions de .NET Framework sont installées sur l'ordinateur de l'utilisateur. Notez que .NET Framework comporte deux principaux composants, dont les versions sont définies séparément :  
@@ -96,7 +97,7 @@ Les utilisateurs peuvent installer et exécuter plusieurs versions de .NET Frame
     |Sur les systèmes Windows intégrant la mise à jour du 10 novembre : 394254<br /><br /> Sur toutes les autres versions de système d'exploitation : 394271|[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]|
     |Sur Windows 10 - Mise à jour anniversaire : 394802<br /><br /> Sur toutes les autres versions de système d’exploitation : 394806|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]| 
     |Sur Windows 10 Creators Update : 460798<br/><br/> Sur toutes les autres versions du système d’exploitation : 460805 | .NET Framework 4.7 |
-    |Sur Windows 10 sont classées de mise à jour de créateurs : 461308<br/><br/> Sur toutes les autres versions de système d’exploitation : 461310 | .NET framework 4.7.1 |
+    |Sur Windows 10 Fall Creators Update : 461308<br/><br/> Sur toutes les autres versions de système d’exploitation : 461310 | .NET Framework 4.7.1 |
 <a name="net_c"></a> 
 #### <a name="to-find-net-framework-versions-by-querying-the-registry-in-code-net-framework-1-4"></a>Pour déterminer les versions de .NET Framework en interrogeant le Registre à l'aide de code (.NET Framework 1-4)
 
@@ -133,17 +134,17 @@ Les utilisateurs peuvent installer et exécuter plusieurs versions de .NET Frame
     |.NET Framework 4.5|378389|
     |.NET Framework 4.5.1 installé avec Windows 8.1|378675|
     |.NET Framework 4.5.1 installé sur Windows 8, Windows 7 SP1, ou Windows Vista SP2|378758|
-    |.NET Framework 4.5.2|379893|
-    |[!INCLUDE[net_v46](../../../includes/net-v46-md.md)] installé avec Windows 10|393295|
-    |[!INCLUDE[net_v46](../../../includes/net-v46-md.md)] installé sur toutes les autres versions de système d'exploitation Windows|393297|
-    |[!INCLUDE[net_v461](../../../includes/net-v461-md.md)] installé sur Windows 10|394254|
-    |[!INCLUDE[net_v461](../../../includes/net-v461-md.md)] installé sur toutes les autres versions de système d'exploitation Windows|394271|
-    |[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] installé sur la Mise à jour anniversaire Windows 10|394802|
-    |[!INCLUDE[net_v462](../../../includes/net-v462-md.md)] installé sur toutes les autres versions de système d'exploitation Windows|394806|
+    |.NET Framework 4.5.2|379893|
+    |.NET Framework 4.6 installé avec Windows 10|393295|
+    |.NET Framework 4.6 installé sur toutes les autres versions du système d’exploitation Windows|393297|
+    |.NET Framework 4.6.1 installé sur Windows 10|394254|
+    |.NET Framework 4.6.1 installé sur toutes les autres versions du système d’exploitation Windows|394271|
+    |.NET Framework 4.6.2 installé sur la Mise à jour anniversaire Windows 10|394802|
+    |.NET Framework 4.6.2 installé sur toutes les autres versions du système d’exploitation Windows|394806|
     |.NET Framework 4.7 est installé sur Windows 10 Creators Update|460798|
     |.NET Framework 4.7 installé sur toutes les autres versions du système d’exploitation Windows|460805|
-    |4.7.1 installé sur Windows 10 automne créateurs de mise à jour de .NET framework|461308|
-    |.NET framework 4.7.1 installé sur toutes les autres versions de système d’exploitation Windows|461310|
+    |.NET Framework 4.7.1 installé sur Windows 10 Fall Creators Update|461308|
+    |.NET Framework 4.7.1 installé sur toutes les autres versions du système d’exploitation Windows|461310|
 
      L’exemple suivant vérifie la valeur `Release` dans le Registre pour déterminer si le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] ou version ultérieure du .NET Framework est installée.
 
@@ -169,14 +170,14 @@ Les utilisateurs peuvent installer et exécuter plusieurs versions de .NET Frame
   
     |Version|Valeur minimale du paramètre DWORD Release|
     |-------------|--------------------------------|
-    |.NET Framework 4.5|378389|
+    |.NET Framework 4.5|378389|
     |.NET Framework 4.5.1|378675|
     |.NET Framework 4.5.2|379893|
     |[!INCLUDE[net_v46](../../../includes/net-v46-md.md)]|393295|
     |[!INCLUDE[net_v461](../../../includes/net-v461-md.md)]|394254|
     |[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]|394802|
     |.NET Framework 4.7|460798|
-    |.NET framework 4.7.1|461308|
+    |.NET Framework 4.7.1|461308|
     
 <a name="clr_a"></a> 
 #### <a name="to-find-the-current-runtime-version-by-using-the-clrver-tool"></a>Pour déterminer la version actuelle du runtime à l'aide de l'outil Clrver

@@ -7,17 +7,18 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: d2c99df730d90e0a6b69197cf036c62073cf8749
-ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
+ms.workload: dotnetcore
+ms.openlocfilehash: 7fad6bf67dfe7b0d6f70ce527a153080aa17d888
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="dotnet-migrate"></a>dotnet migrate
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet migrate` : migre un projet .NET Core Preview 2 vers un projet SDK .NET Core 1.0.
 
@@ -38,7 +39,7 @@ La migration est effectuée sur les éléments suivants :
 * Un fichier *solution.sln*, où il migre les projets référencés dans la solution.
 * Sur tous les sous-répertoires du répertoire donné de manière récursive.
 
-La commande `dotnet migrate` conserve le fichier *project.json* migré dans un répertoire `backup`, qu’elle crée s’il n’existe pas. Ce comportement est substitué à l’aide de la `--skip-backup` option.
+La commande `dotnet migrate` conserve le fichier *project.json* migré dans un répertoire `backup`, qu’elle crée s’il n’existe pas. Ce comportement est remplacé à l’aide de l’option `--skip-backup`.
 
 Par défaut, l’opération de migration affiche l’état du processus de migration dans la sortie standard (STDOUT). Si vous utilisez l’option `--report-file <REPORT_FILE>`, la sortie est enregistrée dans le fichier spécifié. 
 

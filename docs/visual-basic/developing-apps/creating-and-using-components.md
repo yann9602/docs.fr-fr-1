@@ -9,11 +9,11 @@ ms.assetid: ee6a4156-73f7-4e9b-8e01-c74c4798b65c
 caps.latest.revision: "9"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: 453d341961207dd851136aa47a52759b0841424d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 17c9b7440d60c38ba30d230f8412c3ca1a21830a
+ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="creating-and-using-components-in-visual-basic"></a>Création et utilisation de composants dans Visual Basic
 Un *composant* est une classe qui implémente l’interface <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> ou qui dérive directement ou indirectement d’une classe implémentant <xref:System.ComponentModel.IComponent>. Un composant [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] est un objet réutilisable qui peut interagir avec d’autres objets, qui permet de contrôler les ressources externes et qui offre une prise en charge au moment du design.  
@@ -32,8 +32,6 @@ Un *composant* est une classe qui implémente l’interface <xref:System.Compone
 -   Si votre composant doit être marshalé par valeur, dérivez de <xref:System.ComponentModel.MarshalByValueComponent>.  
   
 -   Si votre composant ne peut pas dériver de l’une des implémentations de base en raison d’un héritage unique, implémentez <xref:System.ComponentModel.IComponent>.  
-  
- Pour plus d’informations sur la prise en charge au moment du design, consultez [Attributs en mode design pour les composants](http://msdn.microsoft.com/library/12050fe3-9327-4509-9e21-4ee2494b95c3) et [Extension de la prise en charge au moment du design](http://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2).  
   
 ## <a name="component-classes"></a>Classes de composant  
  L’espace de noms <xref:System.ComponentModel> fournit des classes utilisées pour implémenter le comportement des composants et des contrôles au moment de l’exécution et au moment du design. Cet espace de noms inclut les classes et les interfaces de base servant à l’implémentation des attributs et des convertisseurs de type, à la liaison à des sources de données et à la gestion des licences des composants.  
@@ -65,22 +63,9 @@ Un *composant* est une classe qui implémente l’interface <xref:System.Compone
 -   <xref:System.ComponentModel.PropertyDescriptor>. Fournit des informations sur une propriété.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Comparaison entre classe, composant et contrôle](http://msdn.microsoft.com/library/db8b842e-44d9-40cc-a0f8-70fd189632c3)  
- Définit les concepts de *composant* et de *contrôle*, et décrit les différences entre eux et les classes.  
-  
- [Création de composants](http://msdn.microsoft.com/library/4a5a5e49-0378-4a31-83bc-24da0f1a727d)  
- Documentation de présentation des composants.  
-  
- [Procédures pas à pas de la création de composants](http://msdn.microsoft.com/library/c414cca9-2489-4208-8b38-954586d91c13)  
- Liens vers des rubriques fournissant des instructions étape par étape pour la programmation de composants.  
-  
- [Classes de composant](http://msdn.microsoft.com/library/ce2e5647-e673-4c2b-8125-ffebbd9d71bc)  
- Explique comment une classe devient un composant, comment exposer les fonctionnalités des composants, comment contrôler l’accès aux composants et comment contrôler la création des instances de composants.  
-  
  [Dépannage de la création de contrôles et de composants](../../framework/winforms/controls/troubleshooting-control-and-component-authoring.md)  
  Explique comment résoudre certains problèmes courants.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Comment : accéder à la prise en charge au moment du Design dans les Windows Forms](http://msdn.microsoft.com/library/a84f8579-1f47-41b9-ba37-69030b0aff09)  
- [Comment : étendre l’apparence et le comportement des contrôles en Mode Création](http://msdn.microsoft.com/library/68f85054-2253-47f5-a4f2-3f1ac8c9f27b)  
- [Comment : effectuer une initialisation personnalisée pour les contrôles en mode design](http://msdn.microsoft.com/library/914eaa03-092f-4556-9160-b8a2a40641d9)
+ [Guide pratique pour accéder à la prise en charge au moment du design dans les Windows Forms](../../framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)  
+ 

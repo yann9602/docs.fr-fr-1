@@ -7,17 +7,18 @@ ms.date: 08/14/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: c5a7ee0ba306cea641b0ff34f0b521c92bd03719
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: f2ad875430b2dc7f0ffbadfb9a39dd83854557cb
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="dotnet-vstest"></a>dotnet vstest
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet-vstest` - Exécute les tests à partir des fichiers spécifiés.
 
@@ -117,6 +118,10 @@ Exécuter des tests dans `mytestproject.dll` :
 
 `dotnet vstest mytestproject.dll`
 
+Exécuter des tests dans `mytestproject.dll`, en exportant vers un dossier personnalisé avec un nom personnalisé :
+
+`dotnet vstest mytestproject.dll --logger:"trx;LogFileName=custom_file_name.trx" --ResultsDirectory:custom/file/path`
+
 Exécuter des tests dans `mytestproject.dll` et `myothertestproject.exe` :
 
 `dotnet vstest mytestproject.dll myothertestproject.exe`
@@ -128,3 +133,4 @@ Exécuter des tests `TestMethod1` :
 Exécuter des tests `TestMethod1` et `TestMethod2` :
 
 `dotnet vstest /Tests:TestMethod1,TestMethod2`
+

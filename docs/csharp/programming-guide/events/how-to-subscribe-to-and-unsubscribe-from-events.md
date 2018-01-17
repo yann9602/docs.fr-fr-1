@@ -12,11 +12,11 @@ ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
 caps.latest.revision: "15"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: deeed6f6b572e04780f0eda1e7e42f1dd6233567
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5555cc8913bff953601c54aa7430143dc22173c0
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Guide pratique pour s'abonner et se désabonner d’événements (guide de programmation C#)
 Vous vous abonnez à un événement publié par une autre classe lorsque vous voulez écrire du code personnalisé qui doit être appelé quand cet événement est déclenché. Par exemple, vous pouvez vous abonner à l’événement `click` d’un bouton pour permettre à votre application de réagir lorsque l’utilisateur clique sur le bouton.  
@@ -35,7 +35,7 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
   
      La ligne de code qui est nécessaire pour s’abonner à l’événement est aussi générée automatiquement dans la méthode `InitializeComponent`, dans le fichier Form1.Designer.cs de votre projet. Elle ressemble à ceci :  
   
-    ```  
+    ```csharp
     this.Load += new System.EventHandler(this.Form1_Load);  
     ```  
   
@@ -43,7 +43,7 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
   
 1.  Définissez une méthode de gestionnaire d’événements dont la signature correspond à la signature du délégué de l’événement. Par exemple, si l’événement est basé sur le type délégué <xref:System.EventHandler>, le code suivant représente le stub de méthode :  
   
-    ```  
+    ```csharp
     void HandleCustomEvent(object sender, CustomEventArgs a)  
     {  
        // Do something useful here.  
@@ -52,19 +52,19 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
   
 2.  Utilisez l’opérateur d’assignation d’addition (`+=`) pour attacher votre gestionnaire d’événements à l’événement. Dans l’exemple suivant, nous allons supposer qu’un objet nommé `publisher` a un événement nommé `RaiseCustomEvent`. Notez que la classe d’abonné nécessite une référence à la classe d’éditeur pour s’abonner à ses événements.  
   
-    ```  
+    ```csharp
     publisher.RaiseCustomEvent += HandleCustomEvent;  
     ```  
   
      Notez que la syntaxe précédente est une nouveauté du langage C# 2.0. Elle équivaut exactement à la syntaxe du C# 1.0, dans laquelle le délégué d’encapsulation doit être explicitement créé à l’aide du mot clé `new` :  
   
-    ```  
+    ```csharp
     publisher.RaiseCustomEvent += new CustomEventHandler(HandleCustomEvent);  
     ```  
   
      Vous pouvez également ajouter un gestionnaire d’événements à l’aide d’une expression lambda :  
   
-    ```  
+    ```csharp
     public Form1()  
     {  
         InitializeComponent();  
@@ -80,7 +80,7 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
   
 -   Si vous savez que vous n’aurez pas à vous désabonner d’un événement, vous pouvez utiliser l’opérateur d’assignation d’addition (`+=`) pour attacher une méthode anonyme à l’événement. Dans l’exemple suivant, nous supposons qu’un objet nommé `publisher` a un événement nommé `RaiseCustomEvent`, et qu’une classe `CustomEventArgs` a également été définie pour contenir des informations d’événements spécialisés. Notez que la classe d’abonné nécessite une référence à `publisher` pour s’abonner à ses événements.  
   
-    ```  
+    ```csharp
     publisher.RaiseCustomEvent += delegate(object o, CustomEventArgs e)  
     {  
       string s = o.ToString() + " " + e.ToString();  
@@ -97,7 +97,7 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
   
 -   Utilisez l’opérateur d’assignation de soustraction (`-=`) pour vous désabonner d’un événement :  
   
-    ```  
+    ```csharp
     publisher.RaiseCustomEvent -= HandleCustomEvent;  
     ```  
   
@@ -107,5 +107,5 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
  [Événements](../../../csharp/programming-guide/events/index.md)  
  [event](../../../csharp/language-reference/keywords/event.md)  
  [Comment : publier des événements conformes aux indications du .NET Framework](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)  
- [-=, Opérateur (référence c#)](../../language-reference/operators/subtraction-assignment-operator.md)  
+ [-=, opérateur (référence C#)](../../language-reference/operators/subtraction-assignment-operator.md)  
  [+= (opérateur)](../../../csharp/language-reference/operators/addition-assignment-operator.md)

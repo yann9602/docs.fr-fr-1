@@ -17,11 +17,12 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 91b0cc4614834f2ad8f7b54d9364d484ca9a6990
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: c724620c987b2ee871dc282bca0dd3da1a5031bf
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>Émission d'assemblys et de méthodes dynamiques
 Cette section décrit un ensemble de types managés dans l'espace de noms <xref:System.Reflection.Emit>, qui permettent à un compilateur ou à un outil d'émettre des métadonnées et du langage MSIL (Microsoft Intermediate Language) au moment de l'exécution et de générer éventuellement un fichier exécutable portable sur le disque. Les moteurs de script et les compilateurs sont les principaux utilisateurs de cet espace de noms. Dans cette section, la fonctionnalité fournies par l'espace de noms <xref:System.Reflection.Emit> est appelée émission de réflexion.  
@@ -46,16 +47,16 @@ Cette section décrit un ensemble de types managés dans l'espace de noms <xref:
   
 ## <a name="in-this-section"></a>Dans cette section
   
-[Émettre des problèmes de sécurité dans la réflexion](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)  
+[Problèmes de sécurité dans l’émission de réflexion](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)  
 Décrit les problèmes de sécurité liés à la création d'assemblys dynamiques en utilisant l'émission de réflexion.  
 
-[Comment : définir et exécuter des méthodes dynamiques](how-to-define-and-execute-dynamic-methods.md)   
-Montre comment exécuter une méthode dynamique simple et une méthode dynamique est lié à une instance d’une classe.
+[Guide pratique pour définir et exécuter des méthodes dynamiques](how-to-define-and-execute-dynamic-methods.md)   
+Montre comment exécuter une méthode dynamique simple et une méthode dynamique liée à une instance d’une classe.
 
-[Comment : définir un type générique avec la réflexion émettre](how-to-define-a-generic-type-with-reflection-emit.md)   
-Montre comment créer un type générique simple avec deux paramètres de type, comment appliquer une classe, interface et les contraintes spéciales aux paramètres de type et comment créer memers qui utilisent des paramètres de type de la classe comme types de paramètres et types de retour.
+[Guide pratique pour définir un type générique avec l’émission de réflexion](how-to-define-a-generic-type-with-reflection-emit.md)   
+Montre comment créer un type générique simple avec deux paramètres de type, comment appliquer des contraintes de classe, des contraintes d’interface et des contraintes spéciales aux paramètres de type, et comment créer des membres qui utilisent les paramètres de type de la classe comme types de paramètres et types de retour.
 
-[Comment : définir une méthode générique avec la réflexion émettre](how-to-define-a-generic-method-with-reflection-emit.md)   
+[Guide pratique pour définir une méthode générique avec l’émission de réflexion](how-to-define-a-generic-method-with-reflection-emit.md)   
 Montre comment créer, émettre et appeler une méthode générique simple.
 
 [Assemblys pouvant être collectés pour la génération de type dynamique](collectible-assemblies.md)   

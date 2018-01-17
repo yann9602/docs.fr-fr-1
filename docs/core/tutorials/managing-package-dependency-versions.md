@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 4424a947-bdf9-4775-8d48-dc350a4e0aee
-ms.openlocfilehash: b0d4082d020da782b334a5b3999905f7de744e64
-ms.sourcegitcommit: 5d0e069655439984862a835f400058b7e8bbadc6
+ms.workload: dotnetcore
+ms.openlocfilehash: 2bb55f3bcd6678a127f099afbb9461cafe1a9c94
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="how-to-manage-package-dependency-versions-for-net-core-10"></a>Guide pratique pour gérer les versions de dépendances de package pour .NET Core 1.0
 
@@ -49,7 +50,7 @@ Pour restaurer des packages et écrire du code de manière fiable, il est import
 
 ### <a name="why-does-this-matter"></a>Pourquoi est-ce important ?
 
-Nous garantissons que si vous corrigez vos dépendances à quelles est fourni en même temps que le .NET Core 1.0, ces packages tous fonctionnent ensemble. Par contre, nous ne garantissons rien si vous utilisez des packages qui ne sont pas fixés de cette façon.
+Nous garantissons que, si vous fixez vos dépendances sur celles fournies avec .NET Core 1.0, ces packages fonctionneront ensemble. Par contre, nous ne garantissons rien si vous utilisez des packages qui ne sont pas fixés de cette façon.
 
 ### <a name="scenarios"></a>Scénarios
 
@@ -57,11 +58,11 @@ Bien qu’il existe une longue liste de tous les packages et de leurs versions p
 
 **Dépendez-vous uniquement de** `NETStandard.Library`**?**
 
-Si, par conséquent, vous devez corriger votre `NETStandard.Library` package vers la version `1.6`.  Comme il s’agit d’un métapackage organisé, sa fermeture de package est également fixée sur 1.0.
+Si c’est le cas, vous devez fixer votre package `NETStandard.Library` sur la version `1.6`.  Comme il s’agit d’un métapackage organisé, sa fermeture de package est également fixée sur 1.0.
 
 **Dépendez-vous uniquement de** `Microsoft.NETCore.App`**?**
 
-Si, par conséquent, vous devez corriger votre `Microsoft.NETCore.App` package vers la version `1.0.0`.  Comme il s’agit d’un métapackage organisé, sa fermeture de package est également fixée sur 1.0.
+Si c’est le cas, vous devez fixer votre package `Microsoft.NETCore.App` sur la version `1.0.0`.  Comme il s’agit d’un métapackage organisé, sa fermeture de package est également fixée sur 1.0.
 
 **[Supprimez](../deploying/reducing-dependencies.md)-vous vos dépendances de métapackage** `NETStandard.Library` **ou** `Microsoft.NETCore.App` **?**
 

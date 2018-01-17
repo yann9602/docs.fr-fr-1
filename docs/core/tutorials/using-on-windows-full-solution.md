@@ -9,17 +9,18 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: ba7e082c-a7c8-431e-a342-f67734b660f6
-ms.openlocfilehash: 694201c1a2a2c373f62b0e0d8e3c1d8aa7e6e881
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: e922a2c91fab5c513f5c560920d37d77da2d6f84
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Génération d’une solution .NET Core complète sur Windows à l’aide de Visual Studio 2017
 
 Visual Studio 2017 fournit un environnement de développement complet pour le développement d’applications .NET Core. Les procédures décrites dans ce document expliquent comment créer une solution .NET Core classique qui inclut des bibliothèques réutilisables, des tests et utilise des bibliothèques tierces. 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Suivez les instructions stipulées dans [notre page de prérequis](../windows-prerequisites.md) pour mettre à jour votre environnement.
 
@@ -27,7 +28,7 @@ Suivez les instructions stipulées dans [notre page de prérequis](../windows-pr
 
 ### <a name="writing-the-library"></a>Écriture de la bibliothèque
 
-1. Dans Visual Studio, choisissez **Fichier**, **Nouveau**, **Projet**. Dans le **nouveau projet** boîte de dialogue, développez le **Visual C#** nœud et choisissez la **.NET Standard** nœud, puis choisissez **bibliothèque de classes (.NET Standard)**. 
+1. Dans Visual Studio, sélectionnez **Fichier**, **Nouveau**, **Projet**. Dans la boîte de dialogue **Nouveau projet**, développez le nœud **Visual C#**, choisissez le nœud **.NET Standard**, puis choisissez **Bibliothèque de classes (.NET Standard)**. 
 
 2. Nommez le projet « Library » et la solution « Golden ». Laissez l’option **Créer le répertoire pour la solution** activée. Cliquez sur **OK**.
 

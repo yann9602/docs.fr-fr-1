@@ -21,11 +21,12 @@ caps.latest.revision: "14"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 10289ebf73c39b266c83eabb6f87ed0acf7430b0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: e10f0f4ad1552c7b8ba7e6bc5175ffe7576ec986
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Guide pratique pour définir un type générique avec l'émission de réflexion
 Cette rubrique montre comment créer un type générique simple avec deux paramètres de type, comment appliquer des contraintes de classe, des contraintes d’interface et des contraintes spéciales aux paramètres de type, et comment créer des membres qui utilisent les paramètres de type de la classe comme types de paramètres et types de retour.  
@@ -145,5 +146,5 @@ Cette rubrique montre comment créer un type générique simple avec deux param�
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Reflection.Emit.GenericTypeParameterBuilder>  
- [À l’aide de la réflexion d’émission](http://msdn.microsoft.com/en-us/ccc6540d-0e2c-4d89-b456-eb7353f9e9ac)  
+ [Utilisation de l’émission de réflexion](http://msdn.microsoft.com/en-us/ccc6540d-0e2c-4d89-b456-eb7353f9e9ac)  
  [Scénarios d’assemblys dynamiques avec émission de réflexion](http://msdn.microsoft.com/en-us/e1cc6750-e20f-473b-bb4e-f43bc66aecce)

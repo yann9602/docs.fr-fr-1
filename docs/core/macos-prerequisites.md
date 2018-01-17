@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
-ms.openlocfilehash: 16f3cfd482bddfff1b9ad56e7ffe58ae2aed4980
-ms.sourcegitcommit: 62d3e3e74c1b7ffa927590012c0b9f87de1b0848
+ms.workload: dotnetcore
+ms.openlocfilehash: 5aac7566f532312c890bad07c901929ae826ece3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="prerequisites-for-net-core-on-macos"></a>Configuration requise pour .NET Core sur macOS
 
@@ -23,15 +24,15 @@ Cet article vous présente les versions macOS et les dépendances .NET Core pris
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-.NET core 2.x est pris en charge sur les versions suivantes de macOS :
+.NET Core 2.x est pris en charge par les versions suivantes de macOS :
 
-* macOS 10.12 « Sierra » et les versions ultérieures
+* macOS 10.12 « Sierra » et versions ultérieures
 
 Consultez [.NET Core 2.x - Versions des systèmes d’exploitation prises en charge](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md) pour obtenir la liste complète des systèmes d’exploitation pris en charge par .NET Core 2.x, les systèmes d’exploitation non pris en charge et des liens sur la politique concernant le cycle de vie.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-.NET core 1.x est pris en charge sur les versions suivantes de macOS :
+.NET Core 1.x est pris en charge par les versions suivantes de macOS :
 
 * macOS 10.12 "Sierra"
 * macOS 10.11 "El Capitan"
@@ -64,13 +65,13 @@ Téléchargez et installez le kit SDK .NET Core à partir de [Téléchargements 
 
 ---
 
-## <a name="increase-the-maximum-open-file-limit"></a>Augmenter la limite maximale de fichier ouvert
+## <a name="increase-the-maximum-open-file-limit"></a>Augmenter la limite maximale d’ouverture de fichier
 
-La limite d’ouvrir un fichier par défaut sur macOS peut ne pas suffire pour certaines charges de travail .NET Core, telles que la restauration de projets ou l’exécution de tests unitaires.
+La limite d’ouverture de fichier par défaut sur macOS peut ne pas suffire pour certaines charges de travail .NET Core, telles que la restauration de projets ou l’exécution de tests unitaires.
 
-Vous pouvez augmenter cette limite en procédant comme suit :
+Vous pouvez augmenter cette limite en effectuant les étapes suivantes :
 
-1. À l’aide d’un éditeur de texte, créez un nouveau fichier _/Library/LaunchDaemons/limit.maxfiles.plist_, enregistrez le fichier avec ce contenu :
+1. À l’aide d’un éditeur de texte, créez un fichier _/Library/LaunchDaemons/limit.maxfiles.plist_ et enregistrez le fichier avec le contenu suivant :
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -96,7 +97,7 @@ Vous pouvez augmenter cette limite en procédant comme suit :
 </plist>
 ```
 
-2. Dans une fenêtre de terminal, exécutez la commande suivante :
+2. Dans une fenêtre de terminal, exécutez la commande suivante :
 
 ```console
 echo 'ulimit -n 2048' | sudo tee -a /etc/profile

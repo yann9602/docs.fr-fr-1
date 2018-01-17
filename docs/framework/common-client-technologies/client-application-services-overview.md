@@ -16,14 +16,15 @@ caps.latest.revision: "25"
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.openlocfilehash: e5719cf7cfb5ec99f1bfbf952048e98c9465e1fa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 55b4ab154f9f3a9b17274697c30ca826218322ab
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="client-application-services-overview"></a>Vue d'ensemble des services d'application cliente
-Les services d’application cliente fournissent un accès simplifié aux services de connexion, de rôles et de profil [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] depuis les applications Windows Forms et WPF (Windows Presentation Foundation). Les services d'application [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] sont compris dans les extensions AJAX Microsoft ASP.NET 2.0, qui sont incluses avec [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)] et [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]. Ces services permettent à plusieurs applications web et Windows de partager des informations utilisateur et fonctionnalités de gestion des utilisateurs à partir d'un seul serveur.  
+Les services d’application cliente fournissent un accès simplifié aux services de connexion, de rôles et de profil [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] à partir des applications Windows Forms et WPF (Windows Presentation Foundation). Les services d'application [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] sont compris dans les extensions AJAX Microsoft ASP.NET 2.0, qui sont incluses avec [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)] et [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]. Ces services permettent à plusieurs applications web et Windows de partager des informations utilisateur et fonctionnalités de gestion des utilisateurs à partir d'un seul serveur.  
   
  Les services d'application cliente incluent des fournisseurs de services clients qui se connectent au modèle d'extensibilité de services web pour activer les fonctionnalités suivantes pour les applications Windows :  
   
@@ -92,10 +93,10 @@ Les services d’application cliente fournissent un accès simplifié aux servic
  [Comment : implémenter la connexion utilisateur avec les services d'application cliente](../../../docs/framework/common-client-technologies/how-to-implement-user-login-with-client-application-services.md)  
  [Procédure pas à pas : utilisation des services d'application cliente](../../../docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)  
  [Vue d'ensemble des paramètres d'application](../../../docs/framework/winforms/advanced/application-settings-overview.md)  
- [Vue d’ensemble des Services d’Application ASP.NET](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013)  
+ [Vue d’ensemble des services d’application ASP.NET](http://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013)  
  [Utilisation de l’authentification par formulaire avec Microsoft Ajax](http://msdn.microsoft.com/library/c50f7dc5-323c-4c63-b4f3-96edfc1e815e)  
- [À l’aide des informations sur les rôles avec Microsoft Ajax](http://msdn.microsoft.com/library/280f6ad9-ba1a-4fc9-b0cc-22e39e54a82d)  
- [À l’aide des informations de profil avec Microsoft Ajax](http://msdn.microsoft.com/library/91239ae6-d01c-4f4e-a433-eb9040dbed61)  
+ [Utilisation des informations sur les rôles avec Microsoft Ajax](http://msdn.microsoft.com/library/280f6ad9-ba1a-4fc9-b0cc-22e39e54a82d)  
+ [Utilisation des informations de profil avec Microsoft Ajax](http://msdn.microsoft.com/library/91239ae6-d01c-4f4e-a433-eb9040dbed61)  
  [Authentification ASP.NET](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)  
  [Gestion des autorisations à l’aide de rôles](http://msdn.microsoft.com/library/01954ce4-39a2-487f-8153-a69f6f6f3195)  
  [Création et configuration de la base de données des services d'application pour SQL Server](http://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2)

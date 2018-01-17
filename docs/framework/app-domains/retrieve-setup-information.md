@@ -21,11 +21,12 @@ caps.latest.revision: "10"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: ed6674580649e645ea3e647fa00682f2545255e9
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 33ad9ca3f98f868b49c8e08d66ca7aef1a19da30
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="retrieving-setup-information-from-an-application-domain"></a>Récupération d'informations d'installation à partir d'un domaine d'application
 Chaque instance d’un domaine d’application se compose des deux propriétés et d’informations <xref:System.AppDomainSetup>. Vous pouvez récupérer les informations d’installation à partir d’un domaine d’application à l’aide de la classe <xref:System.AppDomain?displayProperty=nameWithType>. Cette classe fournit plusieurs membres qui récupèrent les informations de configuration sur un domaine d’application.  
@@ -45,5 +46,5 @@ Chaque instance d’un domaine d’application se compose des deux propriétés 
  [!code-vb[AppDomain_Setup#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AppDomain_Setup/VB/source3.vb#3)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Programmation avec des domaines d’Application](http://msdn.microsoft.com/en-us/bd36055b-56bd-43eb-b4d8-820c37172131)  
+ [Programmation avec des domaines d’application](http://msdn.microsoft.com/en-us/bd36055b-56bd-43eb-b4d8-820c37172131)  
  [Utilisation des domaines d’application](../../../docs/framework/app-domains/use.md)

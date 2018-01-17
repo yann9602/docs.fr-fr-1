@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 519b910a-6efe-4394-9b81-0546aa3e7462
-ms.openlocfilehash: c3955951c0367e1933342172c1bc1888fb58f60c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: 44b4ff6b870a6515f623c690ad722917c9ea5bd3
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="create-a-custom-template-for-dotnet-new"></a>Créer un modèle personnalisé pour dotnet new
 
@@ -32,14 +33,14 @@ Si vous souhaitez utiliser l’exemple téléchargé avec une distribution à pa
 - Supprimez le dossier *content* vide.
 - Supprimez le fichier *nuspec*.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 - Installez le [SDK .NET Core 2.0](https://www.microsoft.com/net/core) ou ultérieur.
 - Lisez la rubrique de référence [Modèles personnalisés pour dotnet new](../tools/custom-templates.md).
 
 ## <a name="create-a-template-from-a-project"></a>Créer un modèle à partir d’un projet
 
-Utilisez un projet existant que vous avez confirmé compile et s’exécute ou créer un nouveau projet d’application console dans un dossier sur votre disque dur. Ce didacticiel suppose que le dossier de projet porte le nom *GarciaSoftware.ConsoleTemplate.CSharp* et qu’il est stocké à l’emplacement *Documents/Templates* dans le profil de l’utilisateur. Le nom du modèle de projet du didacticiel est au format *\<nom de la société>.\<type de modèle>.\<langage de programmation>*, mais vous êtes libre de nommer votre projet et votre modèle comme vous le souhaitez.
+Utilisez un projet existant dont vous savez qu’il peut être compilé et exécuté, ou créez un projet d’application console dans un dossier de votre disque dur. Ce didacticiel suppose que le dossier de projet porte le nom *GarciaSoftware.ConsoleTemplate.CSharp* et qu’il est stocké à l’emplacement *Documents/Templates* dans le profil de l’utilisateur. Le nom du modèle de projet du didacticiel est au format *\<nom de la société>.\<type de modèle>.\<langage de programmation>*, mais vous êtes libre de nommer votre projet et votre modèle comme vous le souhaitez.
 
 1. Ajoutez un dossier nommé *.template.config* à la racine du projet.
 1. Dans le dossier *.template.config*, créez un fichier *template.json* pour configurer votre modèle. Pour obtenir plus d’informations et connaître les définitions de membre du fichier *template.json*, consultez la rubrique [Modèles personnalisés pour dotnet new](../tools/custom-templates.md#templatejson) et le schéma [*template.json* dans le magasin de schémas JSON](http://json.schemastore.org/template).

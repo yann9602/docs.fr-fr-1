@@ -6,11 +6,12 @@ ms.author: johalex
 ms.date: 08/13/2017
 ms.topic: article
 ms.prod: .net-core
-ms.openlocfilehash: 16a72edde39e4857dbdfb400f195deb9975f993c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: fdbba188cf939ce3eb969a1f780e086fcf17da13
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Configuration requise pour .NET Core sur Windows
 
@@ -38,7 +39,7 @@ Consultez [.NET Core 1.x - Versions des systèmes d’exploitation prises en cha
 
 ## <a name="net-core-dependencies"></a>Dépendances .NET Core
 
-.NET core 1.1 et antérieur requiert le package redistribuable Visual C++ lors de l’exécution sur les versions de Windows antérieures à Windows 10 et Windows Server 2016. Cette dépendance est installée automatiquement par le programme d’installation de .NET Core.
+.NET Core 1.1 et versions antérieures nécessitent le package redistribuable Visual C++ lors de l’exécution sur des versions Windows antérieures à Windows 10 et Windows Server 2016. Cette dépendance est installée automatiquement par le programme d’installation de .NET Core.
 
 Vous devez installer [Microsoft Visual C++ 2015 Redistributable Update 3](https://www.microsoft.com/download/details.aspx?id=52685) manuellement quand :
 

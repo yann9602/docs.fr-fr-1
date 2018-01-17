@@ -1,40 +1,40 @@
 ---
-title: "La relation entre les fonctionnalités de langage et les types de bibliothèque | Documents Microsoft"
-description: "Fonctionnalités de langage souvent se baser sur les types de bibliothèque pour l’implémentation. Comprendre cette relation."
-keywords: "Conception du langage c#, bibliothèque standard"
+title: "Relations entre les fonctionnalités de langage et les types de bibliothèque | Microsoft Docs"
+description: "Les fonctionnalités de langage se basent souvent sur les types de bibliothèque pour l’implémentation. Vous devez donc bien comprendre ces relations."
+keywords: "conception du langage C#, bibliothèque standard"
 author: billwagner
 ms.author: wiwagn
 ms.date: 07/20/2017
 ms.topic: article
 ms.prod: .net
 ms.devlang: devlang-csharp
-ms.openlocfilehash: 93fd26a72743fcf45df3904cb8d0c787d8a228a8
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.openlocfilehash: b7de4fdb4356e8822dba6aaaf67d615980ff09cd
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="relationships-between-language-features-and-library-types"></a>Relations entre les fonctionnalités de langage et les types de bibliothèque
 
-La définition du langage c# nécessite une bibliothèque standard pour que certains types et certains membres accessibles sur ces types. Le compilateur génère du code qui utilise ces types requis et des membres pour de nombreuses fonctionnalités de langue différente. Lorsque cela est nécessaire, il existe des packages NuGet qui contiennent les types nécessaires pour les versions plus récentes de la langue lors de l’écriture de code pour les environnements où les types ou les membres n'ont pas encore été déployés.
+La définition du langage C# nécessite une bibliothèque standard avec certains types et certains membres accessibles sur ces types. Le compilateur génère du code qui a besoin d’utiliser ces types et membres pour de nombreuses fonctionnalités de langage différentes. Quand cela est nécessaire, il existe des packages NuGet qui contiennent tous les types à utiliser pour des versions plus récentes du langage si vous écrivez du code destiné à des environnements où ces types ou membres n’ont pas encore été déployés.
 
-Cette dépendance sur les fonctionnalités de bibliothèque standard fait partie du langage c# depuis sa première version. Dans cette version, les exemples inclus :
+Cette dépendance sur les fonctionnalités de la bibliothèque standard fait partie du langage C# depuis le début. Dans la première version, il y avait les types suivants :
 
-* <xref:System.Exception>-utilisé pour toutes les exceptions générées par le compilateur.
-* <xref:System.String>-C# `string` type est un synonyme de <xref:System.String>.
-* <xref:System.Int32>-synonyme de `int`.
+* <xref:System.Exception> : utilisé pour toutes les exceptions générées par le compilateur.
+* <xref:System.String> : le type `string` C# est un synonyme de <xref:System.String>.
+* <xref:System.Int32> : synonyme de `int`.
 
-Cette première version était simple : le compilateur et la bibliothèque standard fournis ensemble, et il n’a qu’une seule version de chaque.
+Cette première version était simple : le compilateur et la bibliothèque standard étaient fournis ensemble, et il n’y avait qu’une seule version de chacun.
 
-Les versions ultérieures de c# ont parfois ajoutés les nouveaux types ou membres aux dépendances. Exemples : <xref:System.Runtime.CompilerServices.INotifyCompletion>, <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> et <xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>. C# 7.0 Cela continue en ajoutant une dépendance sur <xref:System.ValueTuple> pour implémenter le [tuples](../tuples.md) fonctionnalité de langage.
+Dans les versions ultérieures de C#, de nouveaux types ou membres ont parfois été ajoutés aux dépendances. Par exemple, <xref:System.Runtime.CompilerServices.INotifyCompletion>, <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> et <xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>. C# 7.0 poursuit dans ce sens en ajoutant une dépendance sur <xref:System.ValueTuple> pour implémenter la fonctionnalité de langage [tuples](../tuples.md).
 
-L’équipe de conception de langage fonctionne pour réduire la surface d’exposition des types et membres nécessaires dans une bibliothèque standard conforme. Cet objectif est évalué par rapport à une nouvelle conception où les nouvelles fonctionnalités de bibliothèque sont incorporées en toute transparence dans la langue. Il y aura nouvelles fonctionnalités dans les versions ultérieures du langage c# qui nécessitent des nouveaux types et membres dans une bibliothèque standard. Il est important de comprendre comment gérer ces dépendances dans votre travail.
+L’équipe de conception du langage s’efforce de réduire la surface d’exposition des types et des membres requis dans une bibliothèque standard conforme. Cet objectif s’ajoute à la nécessité de conserver une conception épurée à mesure que de nouvelles fonctionnalités de bibliothèque sont incorporées au langage. De nouvelles fonctionnalités seront ajoutées dans les futures versions du langage C# qui nécessiteront de nouveaux types et membres dans une bibliothèque standard. Il est donc important de bien comprendre comment gérer ces dépendances dans votre travail.
 
-## <a name="managing-your-dependencies"></a>La gestion de vos dépendances
+## <a name="managing-your-dependencies"></a>Gestion des dépendances
 
-Les outils du compilateur c# sont maintenant découplés du cycle de version des bibliothèques .NET sur les plateformes prises en charge. En fait, les bibliothèques .NET différentes ont des différents cycles de publication : relesed comme une mise à jour de Windows, le .NET Framework sur Windows .NET Core est fourni sur une planification séparée et les versions Xamarin de livraison de mises à jour de bibliothèque avec les outils Xamarin pour chaque plateforme cible.
+Les outils du compilateur C# sont maintenant dissociés du cycle de mise en production des bibliothèques .NET sur les plateformes prises en charge. En effet, les bibliothèques .NET n’ont pas toutes les mêmes cycles de mise en production : le .NET Framework sur Windows est fourni en tant que mise à jour Windows Update, .NET Core est fourni selon une planification distincte, et les versions Xamarin des mises à jour de bibliothèque sont fournies avec les outils Xamarin pour chaque plateforme cible.
 
-La plupart du temps, vous ne remarquerez ces modifications. Toutefois, lorsque vous travaillez avec une version plus récente de la langue qui requiert des fonctionnalités non encore dans les bibliothèques .NET sur cette plateforme, vous devez référencer les packages NuGet pour fournir ces nouveaux types.
-Comme les plateformes que votre application prend en charge est mis à jour avec les nouvelles installations d’infrastructure, vous pouvez supprimer la référence supplémentaire.
+La plupart du temps, ces changements passeront inaperçus pour les utilisateurs. Toutefois, si vous utilisez une version du langage plus récente qui fait appel à des fonctionnalités actuellement non disponibles dans les bibliothèques .NET sur cette plateforme, vous devez référencer les packages NuGet pour fournir ces nouveaux types nécessaires.
+Une fois que les plateformes prises en charge par votre application auront été mises à jour avec les nouvelles versions de framework, vous pourrez supprimer la référence ajoutée.
 
-Cette séparation signifie que vous pouvez utiliser les nouvelles fonctionnalités de langage même lorsque vous ciblez des ordinateurs qui ne disposent pas de l’infrastructure correspondante.
+Grâce à cette dissociation, vous pouvez utiliser les nouvelles fonctionnalités de langage même quand vous ciblez des machines qui n’ont pas le framework approprié.

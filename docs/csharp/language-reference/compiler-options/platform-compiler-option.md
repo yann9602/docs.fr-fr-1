@@ -13,11 +13,11 @@ ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
 caps.latest.revision: "46"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d03e12ae60b9a0145dcb58765ae00f756f84ca56
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5d35a91805f6189f60803056c541ce8344c024f0
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="platform-c-compiler-options"></a>/platform (Options du compilateur C#)
 Spécifie la version du CLR (Common Language Runtime) qui peut exécuter l’assembly.  
@@ -32,7 +32,7 @@ Spécifie la version du CLR (Common Language Runtime) qui peut exécuter l’ass
  `string`  
  anycpu (valeur par défaut), anycpu32bitpreferred, ARM, x64, x86 ou Itanium.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 -   **anycpu** (valeur par défaut) compile votre assembly pour qu’il s’exécute sur n’importe quelle plateforme. Votre application s’exécute en tant que processus 64 bits dans la mesure du possible et repasse en 32 bits quand seul ce mode est disponible.  
   
@@ -40,11 +40,11 @@ Spécifie la version du CLR (Common Language Runtime) qui peut exécuter l’ass
   
 -   **ARM** compile votre assembly pour qu’il s’exécute sur un ordinateur doté d’un processeur ARM (Advanced RISC Machine).  
   
--   **x64** compile votre assembly pour qu’il soit exécuté par le CLR 64 bits sur un ordinateur qui prend en charge le jeu d’instructions AMD64 ou EM64T.  
+-   **x64** compile votre assembly pour qu’il soit exécuté par le CLR 64 bits sur un ordinateur qui prend en charge le jeu d’instructions AMD64 ou EM64T.  
   
--   **x86** compile votre assembly pour qu’il soit exécuté par le CLR 32 bits x86.  
+-   **x86** compile votre assembly pour qu’il soit exécuté par le CLR 32 bits x86.  
   
--   **Itanium** compile votre assembly pour qu’il soit exécuté par le CLR 64 bits sur un ordinateur doté d’un processeur Itanium.  
+-   **Itanium** compile votre assembly pour qu’il soit exécuté par le CLR 64 bits sur un ordinateur doté d’un processeur Itanium.  
   
  Sur un système d'exploitation Windows 64 bits :  
   

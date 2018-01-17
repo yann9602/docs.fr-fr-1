@@ -21,16 +21,17 @@ caps.latest.revision: "29"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: e87568cc6ac86e7bdc24fd7e31f5b8c3ed260c88
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: 9a9774a9811d5c53d44d66fba452098367846bf6
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (Type Library Importer)
 L''importateur de bibliothèques de types convertit les définitions de types présentes dans une bibliothèque de types COM en définitions équivalentes dans un assembly de Common Language Runtime. Le résultat de Tlbimp.exe est un fichier binaire (un assembly) qui contient les métadonnées de runtime pour les types définis dans la bibliothèque de types d'origines. Vous pouvez examiner ce fichier à l’aide d’outils comme [Ildasm.exe](../../../docs/framework/tools/ildasm-exe-il-disassembler.md).  
   
- Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d’informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
  À l'invite de commandes, tapez le texte suivant :  
   
@@ -81,7 +82,7 @@ tlbimp tlbFile [options]
 > [!NOTE]
 >  Les options de ligne de commande de Tlbimp.exe ne font pas l'objet d'une distinction minuscules/majuscules et peuvent être fournies dans n'importe quel ordre. Il vous suffit de spécifier les éléments de l'option nécessaires à son identification de manière unique. Ainsi, **/n** équivaut à **/nologo** et **/ou:** *outfile.dll* équivaut à **/out:** *outfile.dll*.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Tlbimp.exe effectue d'un seul tenant les conversions sur la totalité d'une bibliothèque de types. Vous ne pouvez pas utiliser cet outil dans le but de générer des informations de type pour un sous-ensemble de types définis dans une bibliothèque de types unique.  
   
  Il est souvent utile ou nécessaire d’assigner des [noms forts](../../../docs/framework/app-domains/strong-named-assemblies.md) aux assemblys. Par conséquent, Tlbimp.exe comprend des options permettant de fournir les informations nécessaires pour générer des assemblys portant un nom fort. Les options **/keyfile:** et **/keycontainer:** permettent de signer les assemblys avec des noms forts. Par conséquent, il est logique de fournir uniquement une seule de ces options à la fois.  
@@ -141,5 +142,5 @@ void SomeMethod(out bool x);
  [Ildasm.exe (désassembleur IL)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)  
  [Sn.exe (outil Strong Name)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)  
  [Assemblys avec nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md)  
- [Attributs pour l’importation de bibliothèques de types dans les assemblys d’interopérabilité](http://msdn.microsoft.com/en-us/81e587b8-393f-43e1-9add-c4b05e65cbfd)  
+ [Attributs d’importation de bibliothèques de types dans les assemblys d’interopérabilité](http://msdn.microsoft.com/en-us/81e587b8-393f-43e1-9add-c4b05e65cbfd)  
  [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

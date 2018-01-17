@@ -7,17 +7,18 @@ ms.date: 09/01/2017
 ms.topic: article
 ms.prod: .net-core
 ms.technology: dotnet-cli
-ms.openlocfilehash: d59ba8cf74a63c7d4a2234989477b5778fa0148f
-ms.sourcegitcommit: a19548e5167cbe7e9e58df4ffd8c3b23f17d5c7a
+ms.workload: dotnetcore
+ms.openlocfilehash: e29d5269ab5e9e2c9fd08811552c09ec1c95363d
+ms.sourcegitcommit: 3fd4e718d1bac9769fe0c1dd08ca1b2323ae272b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet publish` - Empaquette l’application et ses dépendances dans un dossier en vue d’un déploiement sur un système d’hébergement.
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 11/02/2017
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 ```
-dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [no-dependencies] [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
+dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-dependencies] [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
 dotnet publish [-h|--help]
 ```
 
@@ -91,11 +92,11 @@ N’effectue pas de restauration implicite à l’exécution de la commande.
 `-o|--output <OUTPUT_DIRECTORY>`
 
 Spécifie le chemin d’accès du répertoire de sortie. Si aucune valeur n’est spécifiée, il s’agit par défaut de *./bin/[configuration]/[framework]/* pour un déploiement dépendant du framework ou de *./bin/[configuration]/[framework]/[runtime]* pour un déploiement autonome.
-Si un chemin d’accès relatif est fournie, le répertoire de sortie généré par rapport à l’emplacement du fichier projet, pas au répertoire de travail actuel.
+Si un chemin d’accès relatif est fourni, le répertoire de sortie généré est relatif à l’emplacement du fichier projet, et non au répertoire de travail actuel.
 
 `--self-contained`
 
-Publie le runtime .NET Core avec votre application ; ainsi, vous n’avez pas besoin d’installer le runtime sur l’ordinateur cible. Si un identificateur de runtime est spécifié, sa valeur par défaut est `true`. Pour plus d’informations sur les différents types de déploiement, consultez [déploiement d’application .NET Core](../deploying/index.md).
+Publie le runtime .NET Core avec votre application ; ainsi, vous n’avez pas besoin d’installer le runtime sur l’ordinateur cible. Si un identificateur de runtime est spécifié, sa valeur par défaut est `true`. Pour plus d’informations sur les différents types de déploiement, consultez [Déploiement d’applications .NET Core](../deploying/index.md).
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
@@ -130,7 +131,7 @@ Spécifie un ou plusieurs [manifestes cibles](../deploying/runtime-store.md) à 
 `-o|--output <OUTPUT_DIRECTORY>`
 
 Spécifie le chemin d’accès du répertoire de sortie. Si aucune valeur n’est spécifiée, il s’agit par défaut de *./bin/[configuration]/[framework]/* pour un déploiement dépendant du framework ou de *./bin/[configuration]/[framework]/[runtime]* pour un déploiement autonome.
-Si un chemin d’accès relatif est fournie, le répertoire de sortie généré par rapport à l’emplacement du fichier projet, pas au répertoire de travail actuel.
+Si un chemin d’accès relatif est fourni, le répertoire de sortie généré est relatif à l’emplacement du fichier projet, et non au répertoire de travail actuel.
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 

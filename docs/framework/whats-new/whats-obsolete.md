@@ -13,11 +13,12 @@ ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 4560988445b91939deef84211a1c8c13ed938560
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnet
+ms.openlocfilehash: d5fc41473c4a3ea812013ee7e5204c22d0a694d7
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="what39s-obsolete-in-the-net-framework-class-library"></a>Éléments obsolètes dans la bibliothèque de classes .NET Framework
 Le .NET Framework évolue. Chaque nouvelle version comporte de nouveaux types et membres de type qui fournissent de nouvelles fonctionnalités. Les types existants et leurs membres évoluent aussi. Par exemple, certains types deviennent moins importants quand la technologie qu'ils prennent en charge est remplacée par une nouvelle, tandis que certaines méthodes sont remplacées par de nouvelles méthodes qui sont soit plus pratiques, soit plus complètes.  
@@ -39,7 +40,7 @@ Le .NET Framework évolue. Chaque nouvelle version comporte de nouveaux types et
   
 -   Modifiez votre code en supprimant l'utilisation du type ou membre, si possible.  
   
-     ou  
+     - ou -  
   
 -   Examinez la documentation de ce domaine technologique pour savoir que faire face à des éléments obsolètes.  
   
@@ -61,7 +62,7 @@ Le .NET Framework évolue. Chaque nouvelle version comporte de nouveaux types et
   
 |Version du .NET Framework|Chaîne `version`|
 |-|-|  
-|4.7 (y compris 4.7.1)|v4.0|  
+|4.7 (avec 4.7.1)|v4.0|  
 |4.6 (y compris 4.6.1 et 4.6.2)|v4.0|  
 |4.5 (y compris 4.5.1 et 4.5.2)|v4.0|  
 |4|v4.0|  

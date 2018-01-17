@@ -37,11 +37,12 @@ caps.latest.revision: "26"
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: c91195c4e70366a3feb7a96f80e4e44dda89239e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload: dotnet
+ms.openlocfilehash: f170c3e7174b231153a9e201f617faa786291056
+ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="packaging-and-deploying-resources-in-desktop-apps"></a>Empaquetage et déploiement de ressources dans des applications de bureau
 Les applications s’appuient sur le gestionnaire des ressources du .NET Framework, représenté par la classe <xref:System.Resources.ResourceManager>, pour récupérer des ressources localisées. Le gestionnaire des ressources suppose qu’un modèle Hub and Spoke est utilisé pour empaqueter et déployer des ressources. Le hub est l’assembly principal qui contient le code exécutable non localisable et les ressources pour une culture unique, appelée culture neutre ou par défaut. La culture par défaut est la culture de secours de l’application ; il s’agit de la culture dont les ressources sont utilisées si aucune ressource localisée ne peut être trouvée. Chaque spoke se connecte à un assembly satellite qui contient les ressources d’une culture unique, mais ne contient pas de code.  
@@ -64,7 +65,7 @@ Les applications s’appuient sur le gestionnaire des ressources du .NET Framewo
  Quand vous empaquetez les ressources de votre application, vous devez les nommer en utilisant les conventions d’affectation de noms pour les ressources que le Common Language Runtime attend. Le runtime identifie une ressource par son nom de culture. Chaque culture a un nom unique, qui est en général une combinaison d’un nom de culture à deux lettres en minuscules associé à une langue et, si nécessaire, un nom de sous-culture à deux lettres en majuscules associé à un pays ou une région. Le nom de la sous-culture suit le nom de la culture, séparés par un tiret (-). Les exemples incluent ja-JP pour le japonais tel qu’il est parlé au Japon, en-US pour l’anglais tel qu’il est parlé aux États-Unis, de-DE pour l’allemand tel qu’il est parlé en Allemagne ou de-AT pour l’allemand tel qu’il est parlé en Autriche. Consultez [Informations de référence sur l’API NLS (National Language Support)](http://go.microsoft.com/fwlink/?LinkId=200048) sur le centre de développement Go Global pour obtenir une liste complète des noms de cultures.  
   
 > [!NOTE]
->  Pour plus d’informations sur la création de fichiers de ressources, consultez [création de fichiers de ressources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md) et [création d’assemblys satellites](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md).  
+>  Pour plus d’informations sur la création de fichiers de ressources, consultez [Création de fichiers de ressources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md) et [Création d’assemblys satellites](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md).  
   
 <a name="cpconpackagingdeployingresourcesanchor1"></a>   
 ## <a name="the-resource-fallback-process"></a>Processus de secours pour les ressources  

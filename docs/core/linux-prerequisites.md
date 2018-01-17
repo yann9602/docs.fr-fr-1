@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: c33b1241-ab66-4583-9eba-52cf51146f5a
-ms.openlocfilehash: 04fdf26e150e6d489c0641588563f69f24835615
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload: dotnetcore
+ms.openlocfilehash: ec08d9fa3ad672400b61c269da0c6a70ed9ef2f5
+ms.sourcegitcommit: 2142a4732bb4ff519b9817db4c24a237b9810d4b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Prérequis pour .NET Core sur Linux
 
@@ -62,7 +63,7 @@ Consultez [.NET Core 1.x - Versions des systèmes d’exploitation prises en cha
 
 ## <a name="linux-distribution-dependencies"></a>Dépendances des distributions Linux
 
-Les éléments suivants sont destinés à être des exemples. Les noms et les versions exactes peuvent varier légèrement sur votre distribution Linux de choix.
+Les éléments suivants sont destinés à être des exemples. Les versions et les noms exacts peuvent varier légèrement sur la distribution Linux que vous choisissez.
 
 ### <a name="ubuntu"></a>Ubuntu
 
@@ -86,7 +87,7 @@ Les distributions CentOS nécessitent l’installation des bibliothèques suivan
 * libunwind
 * lttng-ust
 * libcurl
-* bibliothèques OpenSSL
+* openssl-libs
 * libuuid
 * krb5-libs
 * libicu
@@ -105,7 +106,7 @@ Sur Linux, il existe deux choix pour le package de programme d’installation :
 
 ### <a name="scripting-installs-with-the-net-core-installer-script"></a>Script d’installation avec le script de programme d’installation de .NET Core
 
-Les scripts `dotnet-install` sont utilisés pour effectuer une installation non administrateur de la chaîne d’outils CLI et du runtime partagé. Vous pouvez télécharger le script à partir de : https://dot.net/v1/dotnet-install.sh
+Les scripts `dotnet-install` sont utilisés pour effectuer une installation non administrateur de la chaîne d’outils CLI et du runtime partagé. Vous pouvez télécharger le script à partir de : https://dot.net/v1/dotnet-install.sh
 
 Le script bash du programme d’installation est utilisé dans les scénarios d’automatisation et dans les installations non administratives. Comme ce script lit également les commutateurs PowerShell, ces derniers peuvent être utilisés avec le script sur les systèmes Linux/OS X.
 
@@ -211,6 +212,12 @@ Pour obtenir de l’aide sur l’inscription à l’accès au canal Red Hat .NET
 
 3. Configurez le flux de package hôte de version souhaité.
 
+   **Ubuntu 17.10**
+
+   ```bash
+   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-artful-prod artful main" > /etc/apt/sources.list.d/dotnetdev.list'
+   sudo apt-get update
+   ```
    **Ubuntu 17.04**
 
    ```bash
@@ -235,7 +242,7 @@ Pour obtenir de l’aide sur l’inscription à l’accès au canal Red Hat .NET
 4. Installez .NET Core.
 
    ```bash
-   sudo apt-get install dotnet-sdk-2.0.0
+   sudo apt-get install dotnet-sdk-2.1.3
    ```
 
 4. Exécutez la commande `dotnet --version` pour vérifier que l’installation a réussi.
