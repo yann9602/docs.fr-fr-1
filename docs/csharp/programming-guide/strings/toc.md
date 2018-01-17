@@ -2,7 +2,6 @@
 ## [Comment : concaténer plusieurs chaînes](how-to-concatenate-multiple-strings.md)
 ## [Comment : modifier du contenu de chaîne](how-to-modify-string-contents.md)
 ## [Comment : comparer des chaînes](how-to-compare-strings.md)
-## [Comment : analyser des chaînes à l’aide de String.Split](how-to-parse-strings-using-string-split.md)
 ## [Comment : rechercher des chaînes à l’aide de méthodes String](how-to-search-strings-using-string-methods.md)
 ## [Comment : rechercher des chaînes à l’aide d’expressions régulières](how-to-search-strings-using-regular-expressions.md)
 ## [Comment : déterminer si une chaîne représente une valeur numérique](how-to-determine-whether-a-string-represents-a-numeric-value.md)
