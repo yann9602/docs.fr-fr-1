@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 9cb10eb8-957f-4beb-a271-5f682016fed2
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 37dfeec82339ed4381d158b1bd5ac442223bfe50
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a24b8fe5d0da4b3fa3a13db15bd91be83f102dcf
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="linq-to-sql-n-tier-with-web-services"></a>Applications multicouches LINQ to SQL avec les services Web
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]est conçu notamment pour une utilisation sur la couche intermédiaire dans une couche d’accès faiblement couplées de données (DAL) tel qu’un service Web. Si la couche Présentation est une page Web ASP.NET, vous utilisez le contrôle serveur Web <xref:System.Web.UI.WebControls.LinqDataSource> pour gérer le transfert de données entre l'interface utilisateur et [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] sur la couche intermédiaire. Si la couche de présentation n'est pas une page ASP.NET, la couche intermédiaire et la couche de présentation doivent exécuter des tâches supplémentaires pour gérer la sérialisation et la désérialisation des données.  
