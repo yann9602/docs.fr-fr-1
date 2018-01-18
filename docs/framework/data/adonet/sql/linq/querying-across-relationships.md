@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 297878d0-685b-4c01-b2e0-9d731b7322bc
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 03c2da9f65964a9ed43d1e82abf779b43be733ae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f06297f79807a1548a6b5ac77aed45f52c8d03af
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="querying-across-relationships"></a>Interrogation de relations
 Les références à d’autres objets ou collections d’autres objets dans vos définitions de classe correspondent directement à des relations de clé étrangère dans la base de données. Vous pouvez utiliser ces relations lorsque vous effectuez une interrogation avec la notation par point pour accéder aux propriétés de relation et naviguer entre les objets. Ces opérations d'accès sont traduites en jointures complexes ou en sous-requêtes corrélées plus complexes dans le SQL équivalent.  

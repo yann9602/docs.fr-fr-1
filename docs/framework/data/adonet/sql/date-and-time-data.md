@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
 caps.latest.revision: "7"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a547bbb38d58d5b4c22e78bfd64fef4094865143
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a146cf50639351479d42bff684ea7db21ecf5d3b
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="date-and-time-data"></a>Données de date et d'heure
 SQL Server 2008 introduit de nouveaux types de manipulation de données de date et d'heure. Ces nouveaux types de données incluent des types distincts pour la date et l'heure, ainsi que des types de données étendus prenant en charge une plage plus vaste de valeurs, la précision et les fuseaux horaires. À partir du .NET Framework version 3.5 Service Pack (SP) 1, le fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient>) assure la prise en charge complète de l'ensemble des nouvelles fonctionnalités du moteur de base de données SQL Server 2008. Vous devez installer le .NET Framework 3.5 SP1 (ou version ultérieure) pour utiliser ces nouvelles fonctionnalités avec SqlClient.  
@@ -243,7 +243,7 @@ command.Parameters.AddWithValue( _
 |-----------|-----------------|  
 |[Données de date et heure Types et fonctions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=98360)|Fournit une vue d'ensemble des tous les types de données et fonctions de date et d'heure Transact-SQL.|  
 |[À l’aide des données de Date et heure](http://go.microsoft.com/fwlink/?LinkId=98361)|Fournit des informations sur les types de données et les fonctions de date et d'heure, ainsi que des exemples sur leur utilisation.|  
-|[Types de données (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=98362)|Décrit les types de données système dans SQL Server 2008.|  
+|[Data Types (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=98362)|Décrit les types de données système dans SQL Server 2008.|  
   
 ## <a name="see-also"></a>Voir aussi  
  [Mappages de types de données SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  

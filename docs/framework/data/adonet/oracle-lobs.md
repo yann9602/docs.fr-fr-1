@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 272e8e1e-a31f-475a-8c2a-ae8e1286bdab
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6aa72d4c3ac27b3be6704943819596ad628e4f7f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0586a3cb658acb0732add3e78f68344d887646fc
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="oracle-lobs"></a>LOB Oracle
 Le fournisseur de données .NET Framework pour Oracle inclut la <xref:System.Data.OracleClient.OracleLob> (classe), qui est utilisée pour travailler avec Oracle **LOB** des types de données.  
@@ -27,8 +27,8 @@ Le fournisseur de données .NET Framework pour Oracle inclut la <xref:System.Dat
   
 |Type de données|Description|  
 |---------------|-----------------|  
-|**Objet BLOB**|Oracle **BLOB** type de données qui contient des données binaires d’une taille maximale de 4 giga-octets. Correspond à un **tableau** de type **octets**.|  
-|**CLOB**|Oracle **CLOB** type de données qui contient des données caractères, selon le caractère par défaut défini sur le serveur, avec une taille maximale de 4 gigaoctets. Correspond à **chaîne**.|  
+|**Blob**|Oracle **BLOB** type de données qui contient des données binaires d’une taille maximale de 4 giga-octets. Correspond à un **tableau** de type **octets**.|  
+|**Clob**|Oracle **CLOB** type de données qui contient des données caractères, selon le caractère par défaut défini sur le serveur, avec une taille maximale de 4 gigaoctets. Correspond à **chaîne**.|  
 |**NClob**|Oracle **NCLOB** type de données qui contient des données caractères, selon le jeu sur le serveur avec une taille maximale de 4 gigaoctets de caractères nationaux. Correspond à **chaîne**.|  
   
  Un **OracleLob** diffère d’une <xref:System.Data.OracleClient.OracleBFile> dans la mesure où les données sont stockées sur le serveur et non dans un fichier physique dans le système d’exploitation. Il peut également être un objet en lecture-écriture, contrairement à un **OracleBFile**, qui est toujours en lecture seule.  

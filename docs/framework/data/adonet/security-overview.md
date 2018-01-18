@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 2c0921e154f10abecb7cdedb23092f4341987a26
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 70f8b00ca0f57d4d6bf9fc49ab12443f0a8c9b83
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="security-overview"></a>Vue d'ensemble de la sécurité
 La sécurisation d'une application est un processus permanent. Un développeur ne peut à aucun moment garantir qu'une application est à l'abri de toute attaque car il est impossible de prédire les types d'attaques futures que les nouvelles technologies permettront de faire apparaître. Inversement, le fait que personne n'a encore découvert (ou révélé) les défaillances de la sécurité d'un système ne signifie pas qu'il n'en existe pas ou qu'il ne peut pas en exister. Vous devez planifier la sécurité au cours de la phase de conception du projet, ainsi que la manière dont la sécurité sera maintenue tout au long de la durée de vie de l'application.  

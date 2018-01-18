@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 4528393d3d9491d9c1f12a867eb093e75d028f3d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cc09f3f9b43b70b7f9b302d7a9d75428b5a0e6c7
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="annotating-typed-datasets"></a>Annotation de DataSet typés
 Les annotations vous permettent de modifier le nom des éléments de votre objet <xref:System.Data.DataSet> typé sans pour autant modifier le schéma sous-jacent. Modifier les noms des éléments de votre schéma sous-jacent provoquerait typées **DataSet** pour faire référence aux objets que vous ne pas exister dans la source de données, ainsi que perdrait des références aux objets qui existent dans la source de données.  
@@ -82,7 +82,7 @@ Les annotations vous permettent de modifier le nom des éléments de votre objet
 |**DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|typedName|  
 |**Property**|PropertyName|typedName|  
 |**Enfant** accesseur|GetChildTableNameRows|typedChildren|  
-|**Parent** accesseur|TableNameRow|typedParent|  
+|**Parent** Accessor|TableNameRow|typedParent|  
 |**Jeu de données** événements|TableNameRowChangeEvent<br /><br /> TableNameRowChangeEventHandler|typedName|  
   
  Pour utiliser typées **DataSet** annotations, vous devez inclure les éléments suivants **xmlns** référence dans votre schéma XML Schema definition language (XSD). (Pour créer un schéma xsd à partir des tables de base de données, consultez <xref:System.Data.DataSet.WriteXmlSchema%2A> ou [utilisation de Datasets dans Visual Studio](http://msdn.microsoft.com/library/8bw9ksd6.aspx)).  

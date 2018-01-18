@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 718b257c-bcb2-408e-b004-a7b0adb1c176
 caps.latest.revision: "7"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6bc9a754325f7d01ee36622a23efde1cbc7c4812
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c2de777dbd8bf6ac18db95a1cf647d259a252f8d
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="distributed-transactions"></a>Transactions distribuées
 Une transaction est un ensemble de tâches liées entre elles qui échouent (abort) ou sont validées (commit) globalement, entre autres choses. A *distributed transaction* est une transaction qui affecte plusieurs ressources. Pour qu’une transaction distribuée soit validée, l’ensemble des participants doivent garantir que tout changement apporté aux données sera permanent. Ces modifications doivent persister même en cas de panne du système ou de tout autre événement imprévu. Il suffit qu'un seul des participants n'apporte pas cette garantie pour que l'ensemble de la transaction échoue et toutes les modifications apportées aux données dans le cadre de la transaction sont annulées.  

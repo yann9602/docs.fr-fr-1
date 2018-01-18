@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 743e3755-3ecb-45a2-8d9b-9ed41f0dcf17
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 75ab1e733915349c64742e1a9c1142cad988ade0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cdd3f21d8b02c24db24d2efd08487ef1a290e022
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="linq-to-dataset"></a>LINQ to DataSet
 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] facilite et accélère l'interrogation de données mises en cache dans un objet <xref:System.Data.DataSet>. Plus précisément, [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] simplifie l’interrogation en permettant aux développeurs d’écrire des requêtes dans le langage de programmation, à la place d’à l’aide d’un langage de requête distincte. Cela est particulièrement utile pour [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] développeurs peuvent désormais tirer parti de la vérification de la syntaxe de la compilation, les types statiques et prise en charge de IntelliSense fournis par le [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] dans les requêtes.  

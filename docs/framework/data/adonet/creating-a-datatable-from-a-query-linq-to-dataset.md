@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 1b97afeb-03f8-41e2-8eb3-58aff65f7d18
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 2fb08240c1d3ad58b18733097d0dae10775c0cd5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a3d28c66cfec1d96ef52dfab9265cf41043e4bf7
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>Création d'un DataTable à partir d'une requête (LINQ to DataSet)
 La liaison de données est une utilisation courante de l'objet <xref:System.Data.DataTable>. La méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> prend les résultats d'une requête et copie les données dans un objet <xref:System.Data.DataTable> qui peut ensuite être utilisé pour la liaison de données. Une fois les opérations de données effectuées, le nouveau <xref:System.Data.DataTable> est refusionné dans le <xref:System.Data.DataTable> source.  

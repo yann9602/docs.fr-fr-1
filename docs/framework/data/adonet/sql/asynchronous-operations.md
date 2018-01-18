@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: e7d32c3c-bf78-4bfc-a357-c9e82e4a4b3c
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6f631d785698ae59370053c4e35307514c44087c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 293f1ff1fad193c019a42372a30ae6466c074515
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="asynchronous-operations"></a>Opérations asynchrones
 L'exécution de certaines opérations de base de données, telles que des exécutions de commande, peut prendre du temps. Dans ce cas, les applications mono-thread doivent bloquer d'autres opérations et attendre que l'exécution de la commande s'achève avant de pouvoir continuer leurs propres opérations. En revanche, la possibilité d'assigner l'opération longue à un thread d'arrière-plan permet au thread à l'avant-plan de rester actif pendant toute l'opération. Dans une application Windows, par exemple, vous pouvez déléguer l'opération de longue durée à un thread d'arrière-plan tout en autorisant le thread d'interface utilisateur à rester réactif pendant l'exécution de l'opération.  

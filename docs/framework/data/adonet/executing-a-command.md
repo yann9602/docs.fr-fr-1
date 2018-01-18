@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 40494916-c25a-4cb8-8f7c-fcb8d378464e
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 43fb2d8e42aeae5340874ab082f33257b197eac3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 035d619574707ec7944c80b95d5b7a6ea0de1899
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="executing-a-command"></a>Exécution d'une commande
 Chaque fournisseur de données .NET Framework inclus avec le .NET Framework possède son propre objet de commande qui hérite de <xref:System.Data.Common.DbCommand>. Le fournisseur de données .NET Framework pour OLE DB inclut un objet <xref:System.Data.OleDb.OleDbCommand>, le fournisseur de données .NET Framework pour SQL Server inclut un objet <xref:System.Data.SqlClient.SqlCommand>, le fournisseur de données .NET Framework pour ODBC inclut un objet <xref:System.Data.Odbc.OdbcCommand> et le fournisseur de données .NET Framework pour Oracle inclut un objet <xref:System.Data.OracleClient.OracleCommand>. Chacun de ces objets expose des méthodes pour exécuter les commandes en fonction du type de commande et de la valeur de retour souhaitée, comme cela est décrit dans le tableau ci-dessous.  

@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 78d516bc-c99f-4865-8ff1-d856bc1a01c0
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 64f2d0fbc54900443046bd2c71215cc0928c8658
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c83c1883d00db1da8f0e7945d9cda5f2eb3f56a0
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="connection-strings"></a>Chaînes de connexion
 Une chaîne de connexion contient des informations d'initialisation qui sont passées en tant que paramètre d'un fournisseur de données à une source de données. La syntaxe dépend du fournisseur de données et la chaîne de connexion est analysée lors de la tentative d'ouverture d'une connexion. Les chaînes de connexion utilisées par Entity Framework contiennent des informations utilisées pour la connexion au fournisseur de données ADO.NET sous-jacent qui prend en charge Entity Framework. Elles contiennent également des informations sur les fichiers de modèle et de mappage requis.  

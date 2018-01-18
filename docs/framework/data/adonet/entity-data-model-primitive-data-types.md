@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7635168e-0566-4fdd-8391-7941b0d9f787
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: e9bf1298a5e3fbac82a931abcfb0919238d81bfb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f25c94582ade23b645942a13829a5aa559e3e4f6
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="entity-data-model-primitive-data-types"></a>Entity Data Model : types de données primitifs
 Le modèle EDM (Entity Data Model) prend en charge un ensemble de types de données primitif abstrait (par exemple, String, Boolean, Int32, etc.) qui sont utilisées pour définir [propriétés](../../../../docs/framework/data/adonet/property.md) dans un modèle conceptuel. Ces types de données primitifs sont des proxys pour les types de données primitifs réels qui sont pris en charge dans l'environnement de stockage ou d'hébergement, comme une base de données SQL Server ou le Common Language Runtime (CLR). Le modèle EDM ne définit pas la sémantique des opérations ou des conversions sur les types de données primitifs ; cette sémantique est définie par l'environnement de stockage ou d'hébergement. En général, les types de données primitifs dans le modèle EDM sont mappés aux types de données primitifs correspondants dans l'environnement de stockage ou d'hébergement. Pour plus d’informations sur comment Entity Framework mappe les types primitifs dans le modèle EDM aux types de données SQL Server, consultez [SqlClient pour Entity FrameworkTypes](../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md).  

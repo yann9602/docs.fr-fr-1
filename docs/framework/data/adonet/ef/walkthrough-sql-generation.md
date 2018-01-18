@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 16c38aaa-9927-4f3c-ab0f-81636cce57a3
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: c3d952c2a9e8f1199fa8ef4b6181dabcfbcc4012
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 272d0b8bc58094737d157abfff9f3f026a0f5953
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="walkthrough-sql-generation"></a>Procédure pas à pas : génération SQL
 Cette rubrique illustre comment la génération SQL se produit dans le [fournisseur d’exemples](http://go.microsoft.com/fwlink/?LinkId=180616). La requête Entity SQL suivante utilise le modèle inclus dans le fournisseur d'exemples :  
@@ -119,11 +119,11 @@ LEFT OUTER JOIN [dbo].[InternationalOrders] AS [Extent5] ON [Extent4].[OrderID] 
 ## <a name="first-phase-of-sql-generation-visiting-the-expression-tree"></a>Première phase de la génération SQL : visite de l'arborescence de l'expression  
  La figure suivante illustre l'état vide initial du visiteur.  Dans l'ensemble de cette rubrique, seules les propriétés pertinentes pour l'explication de la procédure pas à pas sont présentées.  
   
- ![Diagramme](../../../../../docs/framework/data/adonet/ef/media/430180f5-4fb9-4bc3-8589-d566512d9703.gif "430180f5-4fb9-4bc3-8589-d566512d9703")  
+ ![Diagram](../../../../../docs/framework/data/adonet/ef/media/430180f5-4fb9-4bc3-8589-d566512d9703.gif "430180f5-4fb9-4bc3-8589-d566512d9703")  
   
  Lorsque le nœud Projet est visité, VisitInputExpression est appelé sur son entrée (Join4), qui déclenche la visite de Join4 par la méthode VisitJoinExpression. En sa qualité de jointure supérieure, IsParentAJoin retourne la valeur false et un nouveau SqlSelectStatement (SelectStatement0) est créé et ajouté à la pile d'instructions SELECT. De même, une nouvelle étendue (scope0) est entrée dans la table de symboles. Avant que la première entrée (gauche) de la jointure soit visitée, la valeur 'true' est ajoutée à la pile IsParentAJoin. Juste avant que Join1, qui est l'entrée gauche de Join4, soit visitée, l'état du visiteur est celui illustré dans la figure suivante.  
   
- ![Diagramme](../../../../../docs/framework/data/adonet/ef/media/406d4f5f-6166-44ea-8e74-c5001d5d5d79.gif "406d4f5f-6166-44ea-8e74-c5001d5d5d79")  
+ ![Diagram](../../../../../docs/framework/data/adonet/ef/media/406d4f5f-6166-44ea-8e74-c5001d5d5d79.gif "406d4f5f-6166-44ea-8e74-c5001d5d5d79")  
   
  Lorsque la méthode de visite de jointure est appelée sur Join4, IsParentAJoin a la valeur true et réutilise donc l'instruction SELECT SelectStatement0 actuelle. Une nouvelle étendue est entrée (scope1). Avant de visiter son enfant gauche, Extent1, une autre valeur true est ajoutée à la pile IsParentAJoin.  
   
@@ -131,11 +131,11 @@ LEFT OUTER JOIN [dbo].[InternationalOrders] AS [Extent5] ON [Extent4].[OrderID] 
   
  Avant que l'entrée droite de Join1 soit visitée, « LEFT OUTER JOIN » est ajouté à la clause FROM de SelectStatement0. L'entrée droite étant une expression SCAN, la valeur true est à nouveau ajoutée à la pile IsParentAJoin. L'état avant la visite de l'entrée droite est illustré dans la figure suivante.  
   
- ![Diagramme](../../../../../docs/framework/data/adonet/ef/media/ca62c31b-7ff6-4836-b209-e16166304fdc.gif "ca62c31b-7ff6-4836-b209-e16166304fdc")  
+ ![Diagram](../../../../../docs/framework/data/adonet/ef/media/ca62c31b-7ff6-4836-b209-e16166304fdc.gif "ca62c31b-7ff6-4836-b209-e16166304fdc")  
   
  L'entrée droite est traitée de la même façon que l'entrée gauche. L'état après la visite de l'entrée droite est illustré dans la figure suivante.  
   
- ![Diagramme](../../../../../docs/framework/data/adonet/ef/media/cd2afa99-7256-4c63-aaa9-c2d13f18a3d8.gif "cd2afa99-7256-4c63-aaa9-c2d13f18a3d8")  
+ ![Diagram](../../../../../docs/framework/data/adonet/ef/media/cd2afa99-7256-4c63-aaa9-c2d13f18a3d8.gif "cd2afa99-7256-4c63-aaa9-c2d13f18a3d8")  
   
  La valeur « false » suivante est ajoutée à la pile IsParentAJoin et la condition de jointure Var(Extent1).CategoryID == Var(Extent2).CategoryID est traitée. Var(Extent1) est résolue en <symbol_Extent1> après une recherche dans la table de symboles. Étant donné que l’instance est résolue en un symbole simple, à la suite du traitement Var(Extent1). CategoryID, un SqlBuilder avec \<symbol1 >. » CategoryID » est retournée. De la même façon, l'autre partie de la comparaison est traitée et le résultat de la visite de la condition de jointure est ajouté à la clause FROM de SelectStatement1 et la valeur « false » est retirée de la pile IsParentAJoin.  
   
@@ -145,13 +145,13 @@ LEFT OUTER JOIN [dbo].[InternationalOrders] AS [Extent5] ON [Extent4].[OrderID] 
   
  Le nœud suivant à traiter est Join3, le deuxième enfant de Join4. En tant qu'enfant droit, la valeur « false » est ajoutée à la pile IsParentAJoin. L'état du visiteur à ce stade est illustré dans la figure suivante.  
   
- ![Diagramme](../../../../../docs/framework/data/adonet/ef/media/1ec61ed3-fcdd-4649-9089-24385be7e423.gif "1ec61ed3-fcdd-4649-9089-24385be7e423")  
+ ![Diagram](../../../../../docs/framework/data/adonet/ef/media/1ec61ed3-fcdd-4649-9089-24385be7e423.gif "1ec61ed3-fcdd-4649-9089-24385be7e423")  
   
  Pour Join3, IsParentAJoin retourne la valeur false et doit démarrer un nouveau SqlSelectStatement (SelectStatement1) et l'ajouter à la pile. Le traitement continue comme pour les jointures précédentes, une nouvelle étendue est ajoutée à la pile et les enfants sont traités. L'enfant gauche est une étendue (Extent3) et l'enfant droit est une jointure (Join2) qui doit également démarrer un nouveau SqlSelectStatement : SelectStatement2. Les enfants sur Join2 sont également des étendues et sont regroupés dans SelectStatement2.  
   
  L'état du visiteur une fois Join2 visité, mais avant que son post-traitement (ProcessJoinInputResult) soit effectué, est illustré dans la figure suivante :  
   
- ![Diagramme](../../../../../docs/framework/data/adonet/ef/media/7510346f-8b09-4c99-b411-40af239c3c4d.gif "7510346f-8b09-4c99-b411-40af239c3c4d")  
+ ![Diagram](../../../../../docs/framework/data/adonet/ef/media/7510346f-8b09-4c99-b411-40af239c3c4d.gif "7510346f-8b09-4c99-b411-40af239c3c4d")  
   
  Dans la figure précédente, SelectStatement2 est flottant parce qu'il a été retiré de la pile, mais pas encore post-traité par le parent. Il doit être ajouté à la partie FROM du parent, mais sans cause SELECT, ce n'est pas une instruction SQL complète. Ainsi, à ce stade, les colonnes par défaut (toutes les colonnes produites par ses entrées) sont ajoutées à la liste de sélection par la méthode AddDefaultColumns. AddDefaultColumns effectue une itération sur les symboles dans FromExtents et pour chaque symbole ajoute toutes les colonnes de l'étendue. Pour un symbole simple, il regarde le type de symbole afin de récupérer toutes ses propriétés à ajouter. Il remplit également le dictionnaire AllColumnNames avec les noms des colonnes. Le SelectStatement2 complété est ajouté à la clause FROM de SelectStatement1.  
   
@@ -165,7 +165,7 @@ LEFT OUTER JOIN [dbo].[InternationalOrders] AS [Extent5] ON [Extent4].[OrderID] 
   
  La condition de jointure de Join4 est traitée de la même façon. Le contrôle retourne à la méthode VisitInputExpression qui a traité le projet supérieur. En observant les FromExtents du SelectStatement0 retourné, l'entrée est identifiée en tant que jointure et supprime les étendues d'origine en les remplaçant par une nouvelle étendue avec seulement le symbole de jointure. La table de symboles est également mise à jour puis la partie de projection du projet est traitée. La résolution des propriétés et l'aplanissement des étendues de jointure s'effectuent comme décrit précédemment.  
   
- ![Diagramme](../../../../../docs/framework/data/adonet/ef/media/9456d6a9-ea2e-40ae-accc-a10e18e28b81.gif "9456d6a9-ea2e-40ae-accc-a10e18e28b81")  
+ ![Diagram](../../../../../docs/framework/data/adonet/ef/media/9456d6a9-ea2e-40ae-accc-a10e18e28b81.gif "9456d6a9-ea2e-40ae-accc-a10e18e28b81")  
   
  Enfin, le SqlSelectStatement suivant est produit :  
   

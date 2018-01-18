@@ -11,15 +11,15 @@ ms.topic: article
 dev_langs: vb
 ms.assetid: c878e457-f715-46e4-a136-ff14d6c86018
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d202aa7b014b457b3990153e9af470c3d0e5b03b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9d72c0e1f432679f4dc818703dafb813ab8ebd19
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="walkthrough-simple-object-model-and-query-visual-basic"></a>Procédure pas à pas : requête et modèle objet simples (Visual basic)
 Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] complet essentiel de complexité minimale. Vous allez créer une classe d'entité qui modélise la table Customers dans l'exemple de base de données Northwind. Vous créerez ensuite une requête simple pour répertorier les clients localisés à Londres.  

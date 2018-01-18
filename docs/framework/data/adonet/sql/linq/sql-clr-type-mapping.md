@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 84c7f870edd1c8082936b380547e181d129f529e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cc6a3d38b8534c9727562cb3fb82f96fa60db7ec
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="sql-clr-type-mapping"></a>Mappage de type SQL-CLR
 Dans <token>vbtecdlinq</token>, le modèle de données d'une base de données relationnelle mappe à un modèle objet qui est exprimé dans le langage de programmation de votre choix. Lors de l'exécution de l'application, LINQ to SQL traduit les requêtes LINQ dans le modèle objet en SQL et les envoie à la base de données pour exécution. Lorsque la base de données retourne les résultats, LINQ to SQL traduit ces derniers en objets que vous pouvez utiliser dans votre propre langage de programmation.  

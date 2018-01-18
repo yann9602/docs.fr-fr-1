@@ -13,18 +13,18 @@ dev_langs:
 - vb
 ms.assetid: c27cb89c-1c1d-4988-9f38-950eda3cb275
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a523ca74ff7d26d1e2b8a3fc7a1f0d56873ffadd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6914fea5c1901cefd18a195d40e9166576b7bedf
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="query-expression-syntax-examples-filtering"></a>Exemples de syntaxe d'expression de requête : filtrage
-Les exemples de cette rubrique montrent comment utiliser le `Where` et `Where…Contains` méthodes permettant d’interroger la [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832) à l’aide de la syntaxe d’expression de requête. Notez que, dans lequel...`Contains` ne peut pas être utilisé en tant que partie d’un [requête compilée](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md).  
+Les exemples de cette rubrique montrent comment utiliser le `Where` et `Where…Contains` méthodes permettant d’interroger la [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832) à l’aide de la syntaxe d’expression de requête. Note, Where…`Contains` ne peut pas être utilisé en tant que partie d’un [requête compilée](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md).  
   
  Le modèle de vente AdventureWorks Sales Model utilisé dans ces exemples est construit à partir des tables Contact, Address, Product, SalesOrderHeader et SalesOrderDetail de l'exemple de base de données AdventureWorks.  
   

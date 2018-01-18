@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 885b3b7b-51c1-42b3-bb29-b925f4f69a6f
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ae9ee83802b71eeab63fe5305b49d79a5cfaaf39
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e8eda365fa1970f4fa836440151cc1ba0d3ae9dd
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="sorting-with-dataview-linq-to-dataset"></a>Tri avec DataView (LINQ to DataSet)
 La possibilité de trier des données en utilisant des critères spécifiques, puis de les présenter à un client via un contrôle d’interface utilisateur, est un important aspect de la liaison de données. <xref:System.Data.DataView> propose plusieurs manières de trier les données et de retourner des sous-ensembles de lignes de données triés suivant des critères de tri spécifiques. En plus de sa chaîne-en fonction des fonctionnalités, de tri <xref:System.Data.DataView> vous permet également d’utiliser [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] expressions pour les critères de tri. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]les expressions permettent des opérations de tri beaucoup plus complexes et puissantes que le tri basé sur chaîne. Cette rubrique décrit les deux approches du tri à l'aide de <xref:System.Data.DataView>.  

@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: d1d7247f-a3b7-460b-b342-5c1a2365aa1a
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 992d9a018f81bbd3f0c9204168f513024769e079
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f40f6c3d94aeeae41c4cce00bac8de863226f287
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="deferred-versus-immediate-loading"></a>Comparaison entre le chargement différé et le chargement immédiat
 Lorsque vous recherchez un objet, vous récupérez en réalité uniquement l'objet que vous avez demandé. Le *connexes* objets ne sont pas automatiquement extraits en même temps. (Pour plus d’informations, consultez [interrogation de relations](../../../../../../docs/framework/data/adonet/sql/linq/querying-across-relationships.md).) Vous ne pouvez pas voir que les objets connexes ne sont pas déjà chargés car une tentative d'accès à ceux-ci génère une demande qui les récupère.  

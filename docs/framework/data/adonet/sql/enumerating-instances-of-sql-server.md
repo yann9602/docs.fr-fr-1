@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: ddf1c83c-9d40-45e6-b04d-9828c6cbbfdc
 caps.latest.revision: "8"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 679196a6cc21705c8cc07e373a928f3c77c6befb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7b0a81fd9b92e626b52c5a74c65798ddedbd94a9
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="enumerating-instances-of-sql-server-adonet"></a>Énumération des instances de SQL Server (ADO.NET)
 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] permet à des applications de trouver des instances de [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] dans le réseau actuel. La classe <xref:System.Data.Sql.SqlDataSourceEnumerator> expose ces informations au développeur d'applications, en fournissant un <xref:System.Data.DataTable> contenant des informations sur tous les serveurs visibles. Cette table retournée contient une liste d’instances de serveur disponibles sur le réseau qui correspond à la liste fournie lorsqu’un utilisateur tente de créer une nouvelle connexion et développe la liste déroulante contenant tous les serveurs disponibles sur le **connexion Propriétés** boîte de dialogue. Les résultats affichés ne sont pas toujours complets.  
@@ -56,8 +56,8 @@ System.Data.DataTable dataTable = instance.GetDataSources();
   
 |Colonne|Description|  
 |------------|-----------------|  
-|**Nom du serveur**|Nom du serveur.|  
-|**Nom de l’instance**|Nom de l'instance du serveur. Vide si le serveur s'exécute comme instance par défaut.|  
+|**ServerName**|Nom du serveur.|  
+|**InstanceName**|Nom de l'instance du serveur. Vide si le serveur s'exécute comme instance par défaut.|  
 |**IsClustered**|Indique si le serveur fait partie d'un cluster.|  
 |**Version**|Version du serveur. Exemple :<br /><br /> -9.00.x ([!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)])<br />-10.0.xx ([!INCLUDE[ssKatmai](../../../../../includes/sskatmai-md.md)])<br />-10.50.x ([!INCLUDE[ssKilimanjaro](../../../../../includes/sskilimanjaro-md.md)])<br />-11.0.xx ([!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012)|  
   

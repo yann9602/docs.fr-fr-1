@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: c0e6cf23-63ac-47dd-bfe9-d5bdca826fac
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6f413eeac1eb399dd9e21706acf1b78bef9e25e2
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: db246037c388408e5722582049cf7a2b902caa18
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="query-execution"></a>Exécution de la requête
 Après avoir été créée par un utilisateur, une requête LINQ est convertie en arborescence de commandes. Une arborescence de commandes est une représentation de requête compatible avec Entity Framework. L'arborescence de requêtes est ensuite exécutée sur la source de données. Pendant l'exécution de la requête, toutes les expressions de la requête (c'est-à-dire, toutes ses composantes) sont évaluées, y compris les expressions utilisées dans la matérialisation des résultats.  

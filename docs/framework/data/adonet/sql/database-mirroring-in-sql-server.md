@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 89befaff-bb46-4290-8382-e67cdb0e3de9
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6956d48163f9b9da66258c0dbb3452beab5420d9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8a955f62aa1e7b2f025a621840753e2213fcefe7
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="database-mirroring-in-sql-server"></a>Mise en miroir de bases de données dans SQL Server
 La mise en miroir des bases de données dans SQL Server vous permet de conserver une copie, ou miroir, d'une base de données SQL Server sur un serveur en veille. La mise en miroir garantit que deux copies distinctes des données existent en permanence, en offrant une haute disponibilité et une redondance complète des données. Le fournisseur de données .NET pour SQL Server offre une prise en charge implicite de la mise en miroir de base de données, de façon à ce que le développeur ne doive pas exécuter d'action ni écrire de code une fois qu'il a été configuré pour une base de données SQL Server. En outre, l'objet <xref:System.Data.SqlClient.SqlConnection> prend en charge un mode de connexion explicite qui permet la fourniture du nom d'un serveur partenaire de basculement dans la propriété <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  

@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 5ad12f94-7459-4a93-a421-4160d1a90715
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 66d6aeffe813d6690a264cbe41eda83661ea1eec
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8a753357719f451ce7acc2d7f42c0493ca2357ab
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="multiple-bulk-copy-operations"></a>Plusieurs opérations de copie en bloc
 Vous pouvez effectuer des opérations de copie multiples en bloc à l'aide d'une seule instance d'une classe <xref:System.Data.SqlClient.SqlBulkCopy>. Si les paramètres d’opération changent entre les copies (par exemple, le nom de la table de destination), vous devez les mettre à jour avant tous les appels suivants à un de le **WriteToServer** méthodes, comme illustré dans l’exemple suivant. Sauf modification explicite, toutes les valeurs de propriété sont identiques à ce qu'elles étaient lors de l'opération de copie en bloc précédente pour une instance donnée.  

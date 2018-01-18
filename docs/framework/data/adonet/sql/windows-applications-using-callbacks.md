@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 4e1ee2acfec989ac76ced5d4f5a47f49d72152ce
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cb20d30122f5478236deab3528dcc225efddf4e0
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-applications-using-callbacks"></a>Applications Windows utilisant des rappels
 Dans la plupart des scénarios de traitement asynchrone, vous devez démarrer une opération de base de données et continuer à exécuter d'autres processus sans attendre que l'opération de base de données soit terminée. Toutefois, de nombreux scénarios exigent de faire quelque chose une fois l'opération de base de données terminée. Dans une application Windows, par exemple, vous pouvez déléguer l'opération de longue durée à un thread d'arrière-plan tout en autorisant le thread d'interface utilisateur à rester réactif. Toutefois, une fois l'opération de base de données terminée, vous pouvez utiliser les résultats pour remplir le formulaire. La meilleure façon d'implémenter ce type de scénario consiste à utiliser un rappel.  

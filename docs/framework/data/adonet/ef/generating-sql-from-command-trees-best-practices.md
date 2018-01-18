@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d94090eadaa634d1cc2912bf60c987c47c1b6a5f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d68194ab83a6606337a33668470411ed8b1c6957
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>Génération SQL à partir d’arborescences de commandes - meilleures pratiques
 Les arborescences de commandes de requête de sortie modèlent de façon précise les requêtes pouvant être exprimées en SQL. Toutefois, les développeurs de fournisseur sont confrontés à des problèmes courants lors de la génération SQL d'une arborescence de commandes de sortie. Cette rubrique expose ces difficultés. Dans la rubrique suivante, le fournisseur d'exemples indique comment résoudre ces problèmes.  

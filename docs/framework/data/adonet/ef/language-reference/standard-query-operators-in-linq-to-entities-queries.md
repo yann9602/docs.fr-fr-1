@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 7fa55a9b-6219-473d-b1e5-2884a32dcdff
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 7413bf21167af129c7e20b199d7ea6a0ac1c8978
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d61dbe2051109273a8616336e0efb46f7bd20864
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="standard-query-operators-in-linq-to-entities-queries"></a>Opérateurs de requête standard dans les requêtes LINQ to Entities
 Dans une requête, vous indiquez les informations que vous voulez extraire de la source de données. Une requête peut également spécifier la manière dont ces informations doivent être triées, regroupées et mises en forme avant d'être retournées. LINQ fournit un ensemble de méthodes de requête standard utilisables dans une requête. La plupart de ces méthodes fonctionne sur des séquences ; Dans ce contexte, une séquence est un objet dont le type implémente le <xref:System.Collections.Generic.IEnumerable%601> interface ou le <xref:System.Linq.IQueryable%601> interface. Les fonctionnalités de requête des opérateurs de requête standard incluent le filtrage, la projection, l'agrégation, le tri, le regroupement, la pagination, etc. Certains des opérateurs de requête standard les plus couramment utilisés ont une syntaxe de mots clés dédiée qui leur permet d'être appelés à l'aide d'une syntaxe d'expression de requête. Une expression de requête est une façon différente et plus lisible d'exprimer une requête que son équivalent fondé sur une méthode. Les clauses d'expression de requête sont traduites en appels aux méthodes de requête lors de la compilation. Pour obtenir la liste des opérateurs de requête standard qui possèdent des clauses d’expression de requête équivalente, consultez [vue d’ensemble des opérateurs de requête Standard](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  

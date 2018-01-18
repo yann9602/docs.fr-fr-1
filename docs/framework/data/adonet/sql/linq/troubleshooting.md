@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 7aba9aca61497b9b3efd1419d0565bdcfcd7ee7e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 56d06fa7adf2690a2cb9194342071c7814a4ec4a
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="troubleshooting"></a>Résolution des problèmes
 Les informations suivantes exposent quelques problèmes que vous pouvez rencontrer dans vos applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] et fournissent des suggestions pour les éviter, ou du moins en réduire l'effet.  

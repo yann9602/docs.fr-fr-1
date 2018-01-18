@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 52ff0e32-3e5a-41de-9a3b-7b04ea52b83e
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 3803d550fe345c6f485dd204cc119f8a927a3501
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 439b951779393d6ac232e6a1a622515905e837ad
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="datatables"></a>DataTables
 Un objet <xref:System.Data.DataSet> est constitué d'une collection de tables, de relations et de contraintes. Dans ADO.NET, <xref:System.Data.DataTable> objets sont utilisés pour représenter les tables dans un **DataSet**. A **DataTable** représente une table de données relationnelles de la mémoire ; les données seront locales pour le. Application basée sur le réseau dans lequel il réside, mais peut être rempli à partir d’une source de données telles que Microsoft SQL Server à l’aide un **DataAdapter** pour plus d’informations, consultez [remplissage d’un DataSet à partir d’un DataAdapter](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md) .  

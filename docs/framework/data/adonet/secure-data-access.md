@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 07892869759ac5856b26099f2421caff1ebaf74d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 428dd4cfb9533dbf57b984c8bc1c557f37bb7d15
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="secure-data-access"></a>Sécuriser l'accès aux données
 Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes de sécurité disponibles dans la base de données ou le magasin de données sous-jacent. Vous devez également prendre en compte les implications relatives à la sécurité des autres fonctionnalités ou composants que votre application peut contenir.  

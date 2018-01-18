@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 1883365f-9d6c-4ccb-9187-df309f47706d
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 7f71a6e380730ce3d622437b28a3722793524968
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6281f2fdd00f210f09c97861d2ea723d259af004
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="generic-field-and-setfield-methods-linq-to-dataset"></a>Méthodes génériques Field et SetField (LINQ to DataSet)
 [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] fournit des méthodes d'extension à la classe <xref:System.Data.DataRow> pour accéder aux valeurs de colonne : la méthode <xref:System.Data.DataRowExtensions.Field%2A> et la méthode <xref:System.Data.DataRowExtensions.SetField%2A>. Ces méthodes facilitent l'accès des développeurs aux valeurs de colonne, particulièrement pour les valeurs Null. Le <xref:System.Data.DataSet> utilise <xref:System.DBNull.Value> pour représenter les valeurs Null, alors que [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] utilise la prise en charge de type Nullable introduite dans [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. À l’aide de l’accesseur de colonne existant dans <xref:System.Data.DataRow> , vous devez effectuer un cast de l’objet de retour vers le type approprié. Si un champ particulier dans une <xref:System.Data.DataRow> peut être null, vous devez vérifier explicitement une valeur null, car le retour <xref:System.DBNull.Value> et effectuer implicitement un cast vers un autre type lève une <xref:System.InvalidCastException>. Dans l’exemple suivant, si le <xref:System.Data.DataRow.IsNull%2A> méthode n’a pas été utilisée pour rechercher une valeur null, une exception serait levée si l’indexeur retournait <xref:System.DBNull.Value> et a tenté d’effectuer un cast en un <xref:System.String>.  

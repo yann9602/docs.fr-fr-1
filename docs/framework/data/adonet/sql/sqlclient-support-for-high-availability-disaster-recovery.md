@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
 caps.latest.revision: "13"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 612f667020522d94b53c3f7e715b9a2ad1177836
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d2a444440af9dfaa2b084a55db9348fa48df7b54
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Prise en charge de SqlClient pour la haute disponibilité et la récupération d'urgence
 Cette rubrique décrit la prise en charge SqlClient (ajoutée dans [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) de la haute disponibilité, récupération d'urgence -- groupes de disponibilité AlwaysOn.  La fonctionnalité Groupes de disponibilité AlwaysOn a été ajoutée à [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012. Pour plus d'informations sur les groupes de disponibilité AlwaysOn, consultez la documentation en ligne de [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  

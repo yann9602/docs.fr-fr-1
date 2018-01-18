@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 61ce7ee1-ffe2-477d-8a9f-835b0a11d900
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 58f30c4c2c220660b62b03ea4eb052bd2cf015eb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: f92fbcf1aaa8f5d2c856fe1acdbc6d3886fa0c25
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="entity-sql-reference"></a>Référence Entity SQL
 Cette section contient des rubriques de référence sur [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Cette rubrique résume et regroupe les [!INCLUDE[esql](../../../../../../includes/esql-md.md)] opérateurs par catégorie.  
@@ -60,9 +60,9 @@ Cette section contient des rubriques de référence sur [!INCLUDE[esql](../../..
 |[EST &#91; PAS &#93; VALEUR NULL](../../../../../../docs/framework/data/adonet/ef/language-reference/isnull-entity-sql.md)|Détermine si une expression de requête a la valeur NULL.|  
 |[< (inférieur à)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-entity-sql.md)|Compare deux expressions pour déterminer si la valeur de l'expression de gauche est inférieure à celle de l'expression de droite.|  
 |[<= (inférieur ou égal à)](../../../../../../docs/framework/data/adonet/ef/language-reference/less-than-or-equal-to-entity-sql.md)|Compare deux expressions pour déterminer si la valeur de l'expression de gauche est inférieure ou égale à celle de l'expression de droite.|  
-|[&#91; PAS &#93; ENTRE](../../../../../../docs/framework/data/adonet/ef/language-reference/between-entity-sql.md)|Détermine si une expression a pour résultat une valeur contenue dans une plage spécifiée.|  
+|[&#91;NOT&#93; BETWEEN](../../../../../../docs/framework/data/adonet/ef/language-reference/between-entity-sql.md)|Détermine si une expression a pour résultat une valeur contenue dans une plage spécifiée.|  
 |[!= (différent de)](../../../../../../docs/framework/data/adonet/ef/language-reference/not-equal-to-entity-sql.md)|Compare deux expressions pour déterminer si l'expression de gauche est différente de l'expression de droite.|  
-|[&#91; PAS &#93; COMME](../../../../../../docs/framework/data/adonet/ef/language-reference/like-entity-sql.md)|Détermine si une chaîne de caractères donnée correspond à un modèle spécifié.|  
+|[&#91;NOT&#93; LIKE](../../../../../../docs/framework/data/adonet/ef/language-reference/like-entity-sql.md)|Détermine si une chaîne de caractères donnée correspond à un modèle spécifié.|  
   
 ## <a name="logical-and-case-expression-operators"></a>Opérateurs logiques et opérateurs d'expression CASE  
  Les opérateurs logiques testent le caractère vrai ou faux d'une condition. L'expression CASE évalue un ensemble d'expressions booléennes pour déterminer le résultat. Le tableau ci-dessous répertorie les opérateurs logiques et d'expression CASE.  
@@ -71,7 +71,7 @@ Cette section contient des rubriques de référence sur [!INCLUDE[esql](../../..
 |--------------|-----------------|  
 |[& & (AND logique)](../../../../../../docs/framework/data/adonet/ef/language-reference/and-entity-sql.md)|AND logique|  
 |[!, (NOT logique)](../../../../../../docs/framework/data/adonet/ef/language-reference/not-entity-sql.md)|NOT logique.|  
-|[&#124; &#124; (Ou logique)](../../../../../../docs/framework/data/adonet/ef/language-reference/or-entity-sql.md)|OR logique|  
+|[&#124;&#124; (Logical OR)](../../../../../../docs/framework/data/adonet/ef/language-reference/or-entity-sql.md)|OR logique|  
 |[CASE](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)|Évalue un ensemble d'expressions booléennes pour déterminer le résultat.|  
 |[THEN](../../../../../../docs/framework/data/adonet/ef/language-reference/then-entity-sql.md)|Le résultat d’une [lorsque](http://msdn.microsoft.com/en-us/6233fe9f-00b0-460e-8372-64e138a5f998) clause lorsqu’il a la valeur true.|  
   
@@ -109,9 +109,9 @@ Cette section contient des rubriques de référence sur [!INCLUDE[esql](../../..
 |--------------|---------|  
 |[ANYELEMENT](../../../../../../docs/framework/data/adonet/ef/language-reference/anyelement-entity-sql.md)|Extrait un élément d'une collection à valeurs multiples.|  
 |[EXCEPT](../../../../../../docs/framework/data/adonet/ef/language-reference/except-entity-sql.md)|Retourne une collection de valeurs distinctes à partir de l'expression de requête située du côté gauche de l'opérande EXCEPT, qui ne sont pas retournées à partir de l'expression de requête située à droite de l'opérande EXCEPT.|  
-|[&#91; PAS &#93; IL EXISTE](../../../../../../docs/framework/data/adonet/ef/language-reference/exists-entity-sql.md)|Détermine si une collection est vide.|  
+|[&#91;NOT&#93; EXISTS](../../../../../../docs/framework/data/adonet/ef/language-reference/exists-entity-sql.md)|Détermine si une collection est vide.|  
 |[FLATTEN](../../../../../../docs/framework/data/adonet/ef/language-reference/flatten-entity-sql.md)|Convertit une collection de collections en collection plane.|  
-|[&#91; PAS &#93; IN](../../../../../../docs/framework/data/adonet/ef/language-reference/in-entity-sql.md)|Détermine si une valeur correspond à une valeur incluse dans une collection.|  
+|[&#91;NOT&#93; IN](../../../../../../docs/framework/data/adonet/ef/language-reference/in-entity-sql.md)|Détermine si une valeur correspond à une valeur incluse dans une collection.|  
 |[INTERSECT](../../../../../../docs/framework/data/adonet/ef/language-reference/intersect-entity-sql.md)|Retourne une collection de valeurs distinctes qui sont retournées par les expressions de requête tant à gauche qu'à droite de l'opérande INTERSECT.|  
 |[OVERLAPS](../../../../../../docs/framework/data/adonet/ef/language-reference/overlaps-entity-sql.md)|Détermine si deux collections ont des éléments en commun.|  
 |[SET](../../../../../../docs/framework/data/adonet/ef/language-reference/set-entity-sql.md)|Permet de convertir une collection d’objets en un ensemble en produisant une nouvelle collection dans laquelle tous les éléments en double ont été supprimés.|  

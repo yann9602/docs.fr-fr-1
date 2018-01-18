@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 7ab93b89-1221-427c-84ad-04803b3c64b4
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d982964b596528b091f5367edd38e0cee5f923c6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5c622dde5e73c84c3b317ffc2652c79632be89e2
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="getschema-and-schema-collections"></a>Collections GetSchema et Schema
 Le **connexion** classes dans chacun de l’implémentation de fournisseurs managés .NET Framework une **GetSchema** méthode qui est utilisée pour récupérer les informations de schéma sur la base de données qui est actuellement connecté, et les informations de schéma retournées par la **GetSchema** méthode se présente sous la forme d’un <xref:System.Data.DataTable>. Le **GetSchema** méthode est une méthode surchargée qui fournit des paramètres facultatifs pour spécifier la collection de schémas à retourner et restreindre la quantité d’informations retournées.  

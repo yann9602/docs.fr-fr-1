@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 0b74bcf8-3f87-449f-bff7-6bcb0d69d212
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 103c7cde61350a1efaf0784964c3f31cc7d55e4b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5ac58f5e98113150123b152dad8d2cc25c61cf97
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="single-table-queries-linq-to-dataset"></a>Requêtes d'analyse unique (LINQ to DataSet)
 [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]les requêtes des sources de données qui implémentent la <xref:System.Collections.Generic.IEnumerable%601> interface ou le <xref:System.Linq.IQueryable%601> interface. Le <xref:System.Data.DataTable> classe n’implémente pas l’interface, vous devez appeler la <xref:System.Data.DataTableExtensions.AsEnumerable%2A> méthode si vous souhaitez utiliser le <xref:System.Data.DataTable> en tant que source dans le `From` clause d’un [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] requête.  

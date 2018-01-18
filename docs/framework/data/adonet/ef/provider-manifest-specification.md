@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: f3e80b5bb62cc785c220e2baeb773e6990c5fee1
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e478f145511266a919b1bc948e3218b60f3de993
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="provider-manifest-specification"></a>Spécification de manifeste du fournisseur
 Cette section explique comment un fournisseur de banques de données peut prendre en charge les types et les fonctions dans la banque de données.  
@@ -72,7 +72,7 @@ Cette section explique comment un fournisseur de banques de données peut prendr
 ## <a name="provider-manifest-discoverability"></a>Manifeste du fournisseur Discoverability  
  Le manifeste est utilisé de manière indirecte par plusieurs types de composants dans les Services d'entités (par exemple Outils ou Requête), mais il est plus directement exploité par les métadonnées via l'utilisation du chargeur de métadonnées de la banque de données.  
   
- ![dfb3d02b &#45; 7a8c &#45; 4D 51 &#45;ac5a &#45; a73d8aa145e6](../../../../../docs/framework/data/adonet/ef/media/dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6.gif "dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6")  
+ ![dfb3d02b&#45;7a8c&#45;4d51&#45;ac5a&#45;a73d8aa145e6](../../../../../docs/framework/data/adonet/ef/media/dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6.gif "dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6")  
   
  Toutefois, un fournisseur donné peut prendre en charge différentes banques ou différentes versions de la même banque. Par conséquent, un fournisseur doit signaler un manifeste différent pour chaque banque de données prise en charge.  
   
@@ -88,7 +88,7 @@ Cette section explique comment un fournisseur de banques de données peut prendr
 ## <a name="provider-manifest-programming-model"></a>Modèle de programmation de manifeste du fournisseur  
  Les fournisseurs dérivent de <xref:System.Data.Common.DbXmlEnabledProviderManifest>, qui leur permet de spécifier leurs manifestes de façon déclarative. L'illustration suivante montre la hiérarchie de classes d'un fournisseur :  
   
- ![Aucun](../../../../../docs/framework/data/adonet/ef/media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3-2ee6-4cd1-88f5-89d0b2582a6c")  
+ ![None](../../../../../docs/framework/data/adonet/ef/media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3-2ee6-4cd1-88f5-89d0b2582a6c")  
   
 ### <a name="discoverability-api"></a>API Discoverability  
  Le manifeste du fournisseur est chargé par le chargeur de métadonnées de la banque (StoreItemCollection), à l'aide d'une connexion de la banque de données ou d'un jeton du manifeste du fournisseur.  
@@ -273,9 +273,9 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 |ReturnType|Chaîne|Non|Void|Type de retour EDM de la fonction|  
 |Aggregate|Boolean|Non|False|True si la fonction est une fonction d'agrégation|  
 |BuiltIn|Boolean|Non|True|True si la fonction est intégrée à la banque de données|  
-|StoreFunctionName|Chaîne|Non|\<Nom >|Nom de fonction dans la banque de données.  Permet un niveau de redirection de noms de fonction.|  
+|StoreFunctionName|Chaîne|Non|\<Name>|Nom de fonction dans la banque de données.  Permet un niveau de redirection de noms de fonction.|  
 |NiladicFunction|Boolean|Non|False|True si la fonction ne requiert pas de paramètres et est appelée sans paramètre|  
-|ParameterType<br /><br /> Sémantique|ParameterSemantics|Non|AllowImplicit<br /><br /> Conversion|Choix de la façon dont le pipeline de requête doit gérer la substitution de type de paramètre :<br /><br /> -ExactMatchOnly<br />-AllowImplicitPromotion<br />-AllowImplicitConversion|  
+|ParameterType<br /><br /> Sémantique|ParameterSemantics|Non|AllowImplicit<br /><br /> Conversion|Choix de la façon dont le pipeline de requête doit gérer la substitution de type de paramètre :<br /><br /> -   ExactMatchOnly<br />-AllowImplicitPromotion<br />-   AllowImplicitConversion|  
   
  **Nœud Paramètres**  
   

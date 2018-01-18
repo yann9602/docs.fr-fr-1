@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: fe8297a1-1fc3-48ce-8eeb-f70f63f857aa
 caps.latest.revision: "6"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ee356fc3e7d6e1279e0cba8014d6d285620add3b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aea41a58697acaad0b089f8e35b9f870e8bf841d
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="edm-generator-edmgenexe"></a>EDM Generator (EdmGen.exe)
 EdmGen.exe est un outil en ligne de commande utilisé avec le modèle [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] et les fichiers de mappage. Vous pouvez utiliser l'outil EdmGen.exe pour effectuer les opérations suivantes :  
@@ -54,26 +54,26 @@ EdmGen /mode:choice [options]
   
 |Option|Description|  
 |------------|-----------------|  
-|`/p[roject]:`\<chaîne >|Spécifie le nom de projet à utiliser. Le nom de projet est utilisé comme valeur par défaut pour le paramètre d'espace de noms, le nom du modèle et des fichiers de mappage, le nom du fichier source de l'objet et le nom de fichier source de génération de vues. Le nom de conteneur d’entités a la valeur \<projet > contexte.|  
-|`/prov[ider]:`\<chaîne >|Nom du fournisseur de données [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] à utiliser pour générer le fichier de modèle de stockage (.ssdl). Le fournisseur par défaut est la [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] fournisseur de données pour SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>).|  
+|`/p[roject]:`\<string>|Spécifie le nom de projet à utiliser. Le nom de projet est utilisé comme valeur par défaut pour le paramètre d'espace de noms, le nom du modèle et des fichiers de mappage, le nom du fichier source de l'objet et le nom de fichier source de génération de vues. Le nom de conteneur d’entités a la valeur \<projet > contexte.|  
+|`/prov[ider]:`\<string>|Nom du fournisseur de données [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] à utiliser pour générer le fichier de modèle de stockage (.ssdl). Le fournisseur par défaut est la [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] fournisseur de données pour SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>).|  
 |`/c[onnectionstring]:`\<chaîne de connexion >|Spécifie la chaîne utilisée pour se connecter à la source de données.|  
-|`/incsdl:`\<fichier >|Spécifie le fichier .csdl ou un répertoire où se trouvent les fichiers .csdl. Cet argument peut être spécifié plusieurs fois afin de pouvoir spécifier plusieurs répertoires ou fichiers .csdl. La spécification de plusieurs répertoires peut être utile pour générer des classes (`/mode:EntityClassGeneration`) ou des vues (`/mode:ViewGeneration`) lorsque le modèle conceptuel est divisé en plusieurs fichiers. Cela peut également être utile lorsque vous voulez valider plusieurs modèles (`/mode:ValidateArtifacts`).|  
-|`/refcsdl:`\<fichier >|Spécifie le ou les fichiers .csdl supplémentaires utilisés pour résoudre toute référence dans le fichier .csdl source. (Le fichier .csdl source est le fichier spécifié par l'option `/incsdl`). Le fichier `/refcsdl` contient des types dont dépend le fichier .csdl source. Cet argument peut être spécifié plusieurs fois.|  
-|`/inmsl:`\<fichier >|Spécifie le fichier .msl ou un répertoire où se trouvent les fichiers .msl. Cet argument peut être spécifié plusieurs fois afin de pouvoir spécifier plusieurs répertoires ou fichiers .msl. La spécification de plusieurs répertoires peut être utile pour générer des vues (`/mode:ViewGeneration`) lorsque le modèle conceptuel est divisé en plusieurs fichiers. Cela peut également être utile lorsque vous voulez valider plusieurs modèles (`/mode:ValidateArtifacts`).|  
-|`/inssdl:`\<fichier >|Spécifie le fichier .ssdl ou un répertoire où se trouvent les fichiers .ssdl. Cet argument peut être spécifié plusieurs fois afin de pouvoir spécifier plusieurs répertoires ou fichiers .ssdl. Cela peut être utile lorsque vous voulez valider plusieurs modèles `(/mode:ValidateArtifacts)`.|  
-|`/outcsdl:`\<fichier >|Spécifie le nom du fichier .csdl qui sera créé.|  
-|`/outmsl:`\<fichier >|Spécifie le nom du fichier .msl qui sera créé.|  
-|`/outssdl:`\<fichier >|Spécifie le nom du fichier .ssdl qui sera créé.|  
-|`/outobjectlayer:`\<fichier >|Spécifie le nom du fichier de code source qui contient les objets générés à partir du fichier .csdl.|  
-|`/outviews:`\<fichier >|Spécifie le nom du fichier de code source qui contient les vues qui ont été générés.|  
-|`/language:`[VB &#124; CSharp]|Spécifie le langage des fichiers de code source générés. Le langage par défaut est C#.|  
-|`/namespace:`\<chaîne >|Spécifie l'espace de noms du modèle à utiliser. L'espace de noms est défini dans le fichier .csdl lors de l'exécution de `/mode:FullGeneration` ou de `/mode:FromSSDLGeneration`. L'espace de noms n'est pas utilisé lors de l'exécution de `/mode:EntityClassGeneration`.|  
-|`/entitycontainer:`\<chaîne >|Spécifie le nom à appliquer à l'élément `<EntityContainer>` dans le modèle et les fichiers de mappage générés.|  
+|`/incsdl:`\<file>|Spécifie le fichier .csdl ou un répertoire où se trouvent les fichiers .csdl. Cet argument peut être spécifié plusieurs fois afin de pouvoir spécifier plusieurs répertoires ou fichiers .csdl. La spécification de plusieurs répertoires peut être utile pour générer des classes (`/mode:EntityClassGeneration`) ou des vues (`/mode:ViewGeneration`) lorsque le modèle conceptuel est divisé en plusieurs fichiers. Cela peut également être utile lorsque vous voulez valider plusieurs modèles (`/mode:ValidateArtifacts`).|  
+|`/refcsdl:`\<file>|Spécifie le ou les fichiers .csdl supplémentaires utilisés pour résoudre toute référence dans le fichier .csdl source. (Le fichier .csdl source est le fichier spécifié par l'option `/incsdl`). Le fichier `/refcsdl` contient des types dont dépend le fichier .csdl source. Cet argument peut être spécifié plusieurs fois.|  
+|`/inmsl:`\<file>|Spécifie le fichier .msl ou un répertoire où se trouvent les fichiers .msl. Cet argument peut être spécifié plusieurs fois afin de pouvoir spécifier plusieurs répertoires ou fichiers .msl. La spécification de plusieurs répertoires peut être utile pour générer des vues (`/mode:ViewGeneration`) lorsque le modèle conceptuel est divisé en plusieurs fichiers. Cela peut également être utile lorsque vous voulez valider plusieurs modèles (`/mode:ValidateArtifacts`).|  
+|`/inssdl:`\<file>|Spécifie le fichier .ssdl ou un répertoire où se trouvent les fichiers .ssdl. Cet argument peut être spécifié plusieurs fois afin de pouvoir spécifier plusieurs répertoires ou fichiers .ssdl. Cela peut être utile lorsque vous voulez valider plusieurs modèles `(/mode:ValidateArtifacts)`.|  
+|`/outcsdl:`\<file>|Spécifie le nom du fichier .csdl qui sera créé.|  
+|`/outmsl:`\<file>|Spécifie le nom du fichier .msl qui sera créé.|  
+|`/outssdl:`\<file>|Spécifie le nom du fichier .ssdl qui sera créé.|  
+|`/outobjectlayer:`\<file>|Spécifie le nom du fichier de code source qui contient les objets générés à partir du fichier .csdl.|  
+|`/outviews:`\<file>|Spécifie le nom du fichier de code source qui contient les vues qui ont été générés.|  
+|`/language:`[VB&#124;CSharp]|Spécifie le langage des fichiers de code source générés. Le langage par défaut est C#.|  
+|`/namespace:`\<string>|Spécifie l'espace de noms du modèle à utiliser. L'espace de noms est défini dans le fichier .csdl lors de l'exécution de `/mode:FullGeneration` ou de `/mode:FromSSDLGeneration`. L'espace de noms n'est pas utilisé lors de l'exécution de `/mode:EntityClassGeneration`.|  
+|`/entitycontainer:`\<string>|Spécifie le nom à appliquer à l'élément `<EntityContainer>` dans le modèle et les fichiers de mappage générés.|  
 |`/pl[uralize]`|Applique aux noms `Entity`, `EntitySet` et `NavigationProperty` dans le modèle conceptuel les règles de la langue anglaise pour les singuliers et les pluriels. Cette option effectuera les actions suivantes :<br /><br /> -Vérifiez tous les `EntityType` noms au singulier.<br />-Vérifiez tous les `EntitySet` noms au pluriel.<br />-Pour chaque `NavigationProperty` qui retourne une entité au plus, vérifiez le nom au singulier.<br />-Pour chaque `NavigationProperty` qui retourne plusieurs entités, utilisez un nom au pluriel.|  
 |`/SupressForeignKeyProperties or /nofk`|Empêche que des colonnes de clé étrangère soient exposées comme propriétés scalaires sur les types d'entité dans le modèle conceptuel.|  
 |`/help` ou `?`|Affiche la syntaxe et les options de commande de l'outil.|  
 |`/nologo`|Supprime l'affichage du message de copyright.|  
-|`/targetversion:`\<chaîne >|Version du .NET Framework qui sera utilisée pour compiler le code généré. Les versions prises en charge sont 4 et 4.5. La valeur par défaut est 4.|  
+|`/targetversion:` \<string>|Version du .NET Framework qui sera utilisée pour compiler le code généré. Les versions prises en charge sont 4 et 4.5. La valeur par défaut est 4.|  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Guide pratique pour utiliser EdmGen.exe pour générer les fichiers de modèle et les fichiers de mappage](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)  

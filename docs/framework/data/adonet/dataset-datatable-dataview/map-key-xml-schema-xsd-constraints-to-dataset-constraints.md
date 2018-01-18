@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 22664196-f270-4ebc-a169-70e16a83dfa1
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 249cb8419d4f032c37a922c9aa640f02f6efbd56
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6b999e6b1d6d73f107b7e1f4cb0d7e14c099a1f6
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapper les contraintes clés de schéma XML (XSD) aux contraintes de DataSet
 Dans un schéma, vous pouvez spécifier une contrainte de clé sur un élément ou d’attribut à l’aide de la **clé** élément. L'élément ou attribut sur lequel une contrainte de clé est spécifiée doit avoir des valeurs uniques dans toute instance du schéma et ne peut pas avoir de valeurs null.  
@@ -29,8 +29,8 @@ Dans un schéma, vous pouvez spécifier une contrainte de clé sur un élément 
   
 |Nom d'attribut|Description|  
 |--------------------|-----------------|  
-|**msdata : ConstraintName**|Si cet attribut est spécifié, sa valeur est utilisée comme nom de la contrainte. Dans le cas contraire, le **nom** attribut fournit la valeur de la contrainte.|  
-|**msdata : PrimaryKey**|Si `PrimaryKey="true"` est présent, le **IsPrimaryKey** contrainte est définie sur **true**, ce qui rend une clé primaire. Le **AllowDBNull** colonne est définie sur **false**, car les clés primaires ne peuvent pas avoir de valeurs null.|  
+|**msdata:ConstraintName**|Si cet attribut est spécifié, sa valeur est utilisée comme nom de la contrainte. Dans le cas contraire, le **nom** attribut fournit la valeur de la contrainte.|  
+|**msdata:PrimaryKey**|Si `PrimaryKey="true"` est présent, le **IsPrimaryKey** contrainte est définie sur **true**, ce qui rend une clé primaire. Le **AllowDBNull** colonne est définie sur **false**, car les clés primaires ne peuvent pas avoir de valeurs null.|  
   
  En convertissant un schéma dans lequel une contrainte de clé est spécifiée, le processus de mappage crée une contrainte unique sur la table avec la **AllowDBNull** propriété column définie sur **false** pour chaque colonne dans le contrainte. Le **IsPrimaryKey** de la contrainte unique est également définie sur **false** , sauf si vous avez spécifié `msdata:PrimaryKey="true"` sur la **clé** élément. Ce mode de fonctionnement est identique à celui d'une contrainte unique dans le schéma faisant apparaître `PrimaryKey="true"`.  
   

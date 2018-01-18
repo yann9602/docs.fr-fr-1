@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: c3133d53-83ed-4a4d-af8b-82edcf3831db
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 84a72642636be2238a81f1b9c00e3ac4e7037272
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6cdf1a859595c82b8eea60311c3c96353849e3dc
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>Récupération de données et opérations CUD dans les applications multicouches (LINQ to SQL)
 Lorsque vous sérialisez des objets d'entité tels que Customers ou Orders vers un client sur un réseau, ces entités sont détachées de leur contexte de données. Le contexte de données ne suit plus leurs modifications ou leurs associations avec d'autres objets. Ceci ne constitue pas un problème tant que les clients lisent uniquement les données. Il est également relativement simple de permettre aux clients d'ajouter de nouvelles lignes à une base de données. Toutefois, si votre application nécessite que les clients puissent mettre à jour ou supprimer des données, vous devez attacher les entités à un nouveau contexte de données avant d'appeler <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>. De plus, si vous utilisez un contrôle d'accès concurrentiel optimiste avec les valeurs d'origine, vous aurez également besoin de trouver une manière de fournir à la base de données à la fois l'entité d'origine et l'entité modifiée. Les méthodes `Attach` sont fournies pour vous permettre de placer des entités dans un nouveau contexte de données après qu'elles ont été détachées.  

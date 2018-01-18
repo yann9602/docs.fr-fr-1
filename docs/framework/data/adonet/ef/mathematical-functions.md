@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: b040c7cb-156d-40f2-9152-61065b18148c
 caps.latest.revision: "2"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ea933d1e6c0245f3bc6cc2a0767b593957b0598a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9b4ef03a2a517b9ce53954bc4576b655afdafc03
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="mathematical-functions"></a>Fonctions mathématiques
 Le fournisseur de données .NET Framework pour SQL Server (SqlClient) propose des fonctions mathématiques qui effectuent des calculs sur des valeurs d’entrée qui sont fournies comme arguments, et retournent une valeur numérique comme résultat. Ces fonctions se trouvent dans l'espace de noms SqlServer, lequel est disponible lorsque vous utilisez SqlClient. La propriété d'espace de noms d'un fournisseur permet à Entity Framework de découvrir le préfixe attribué par ce fournisseur à des constructions spécifiques, telles que des types et des fonctions. Le tableau suivant décrit les fonctions mathématiques SqlClient.  
@@ -42,8 +42,8 @@ Le fournisseur de données .NET Framework pour SQL Server (SqlClient) propose 
 |`LOG10(` `expression` `)`|Retourne le logarithme en base 10 de l'expression `Double` spécifiée.<br /><br /> **Arguments**<br /><br /> `expression` : `Double`.<br /><br /> **Valeur de retour**<br /><br /> `Double`<br /><br /> **Exemple**<br /><br /> `SqlServer.LOG10(100)`|  
 |`PI()`|Retourne la valeur constante de pi sous la forme d'une valeur `Double`.<br /><br /> **Valeur de retour**<br /><br /> `Double`<br /><br /> **Exemple**<br /><br /> `SqlServer.PI()`|  
 |`POWER(` `numeric_expression, power_expression` `)`|Calcule la valeur d'une expression donnée élevée à une puissance spécifiée.<br /><br /> **Arguments**<br /><br /> `numeric_expression` :`Int32`,`Int64`, `Double` ou `Decimal`.<br /><br /> `power_expression` : `Double` qui représente la puissance à laquelle doit être élevé le `numeric_expression`.<br /><br /> **Valeur de retour**<br /><br /> Valeur du paramètre `numeric_expression` donné élevé à la puissance `power_expression` spécifiée.<br /><br /> **Exemple**<br /><br /> `SqlServer.POWER(2,7)`|  
-|`RADIANS(` `expression` `)`|Convertit les degrés en radians.<br /><br /> **Arguments**<br /><br /> `expression` :`Int32`,`Int64`, `Double` ou `Decimal`.<br /><br /> **Valeur de retour**<br /><br /> Un `Int32`, `Int64`,<br /><br /> `Double` ou<br /><br /> `Decimal`.<br /><br /> **Exemple**<br /><br /> `SqlServer.RADIANS(360.0)`|  
-|`RAND(`[valeur de départ]`)`|Retourne une valeur aléatoire comprise entre 0 et 1.<br /><br /> **Arguments**<br /><br /> Retourne la valeur initiale sous la forme d'un `Int32`. Si la valeur initiale n'est pas spécifiée, le moteur de base de données SQL Server affecte une valeur initiale aléatoire. Pour une valeur initiale spécifiée, le résultat retourné est toujours le même.<br /><br /> **Valeur de retour**<br /><br /> Valeur `Double` aléatoire comprise entre 0 et 1.<br /><br /> **Exemple**<br /><br /> `SqlServer.RAND()`|  
+|`RADIANS(` `expression` `)`|Convertit les degrés en radians.<br /><br /> **Arguments**<br /><br /> `expression` :`Int32`,`Int64`, `Double` ou `Decimal`.<br /><br /> **Valeur de retour**<br /><br /> An `Int32`, `Int64`,<br /><br /> `Double` ou<br /><br /> `Decimal`.<br /><br /> **Exemple**<br /><br /> `SqlServer.RADIANS(360.0)`|  
+|`RAND(`[seed]`)`|Retourne une valeur aléatoire comprise entre 0 et 1.<br /><br /> **Arguments**<br /><br /> Retourne la valeur initiale sous la forme d'un `Int32`. Si la valeur initiale n'est pas spécifiée, le moteur de base de données SQL Server affecte une valeur initiale aléatoire. Pour une valeur initiale spécifiée, le résultat retourné est toujours le même.<br /><br /> **Valeur de retour**<br /><br /> Valeur `Double` aléatoire comprise entre 0 et 1.<br /><br /> **Exemple**<br /><br /> `SqlServer.RAND()`|  
 |`ROUND(` `numeric_expression, length` [ ,`function` ]`)`|Retourne une expression numérique, arrondie à la longueur ou à la précision spécifiée.<br /><br /> **Arguments**<br /><br /> `numeric_expression` :`Int32`,`Int64`, `Double` ou `Decimal`.<br /><br /> `length` : `Int32` qui représente la précision à laquelle arrondir `numeric_expression`. Lorsque `length` est un nombre positif, `numeric_expression` est arrondi au nombre de décimales indiqué par `length`. Lorsque `length` est un nombre négatif, `numeric_expression` est arrondi à gauche de la virgule décimale, selon l'indication fournie par `length`.<br /><br /> `function`: (facultatif) une `Int32` qui représente le type d’opération à effectuer. Lorsque function est omise ou a la valeur 0 (valeur par défaut), `numeric_expression` est arrondi. Lorsqu’une valeur autre que 0 est spécifiée, `numeric_expression` est tronqué.<br /><br /> **Valeur de retour**<br /><br /> Valeur du paramètre `numeric_expression` donné élevé à la puissance `power_expression` spécifiée.<br /><br /> **Exemple**<br /><br /> `SqlServer.ROUND(748.58, -3)`|  
 |`SIGN(` `expression` `)`|Retourne le signe positif (+1), nul (0) ou négatif (-1) de l'expression spécifiée.<br /><br /> **Arguments**<br /><br /> `expression` : `Int32`, `Int64`, `Double` ou `Decimal`<br /><br /> **Valeur de retour**<br /><br /> Un `Int32`, `Int64`, `Double`, ou `Decimal`.<br /><br /> **Exemple**<br /><br /> `SqlServer.SIGN(-10)`|  
 |`SIN(` `expression` `)`|Calcule le sinus trigonométrique de l'angle spécifié, en radians, et retourne une expression `Double`.<br /><br /> **Arguments**<br /><br /> `expression` : `Double`.<br /><br /> **Valeur de retour**<br /><br /> `Double`<br /><br /> **Exemple**<br /><br /> `SqlServer.SIN(20)`|  

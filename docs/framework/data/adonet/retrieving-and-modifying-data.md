@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 722e7f87-3691-46c6-87e8-7d159722d675
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 4ea157cd52bf92dace924baaa40f5b1bba6f13a6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ff937e619d449fbfbedb234749292b6acc4bdf50
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>Extraction et modification de données dans ADO.NET
 Une fonction principale de toute application de base de données consiste à se connecter à une source de données et extraire les données qu'elle contient. Les fournisseurs de données .NET Framework d’ADO.NET font Office de passerelle entre une application et une source de données, ce qui vous permet d’exécuter des commandes et d’extraire des données à l’aide un **DataReader** ou un **DataAdapter** . Une fonction clé de toute application de base de données est la capacité à mettre à jour les données stockées dans la base de données. Dans ADO.NET, la mise à jour des données implique l’utilisation de la **DataAdapter** et <xref:System.Data.DataSet>, et **commande** objets ; elle peut également impliquer l’utilisation de transactions.  

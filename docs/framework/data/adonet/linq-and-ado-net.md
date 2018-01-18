@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
 caps.latest.revision: "8"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 9781d97a133a39a7768c853ce80f7524db87df39
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d55185153e3d03ddb2b1726ed25566d6b5f396ae
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="linq-and-adonet"></a>LINQ et ADO.NET
 Aujourd'hui, de nombreux développeurs d'entreprise doivent utiliser au moins deux langages de programmation : un langage de haut niveau pour la logique métier et les couches de présentation (tel que [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] ou [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]), et un langage de requête pour interagir avec la base de données (comme [!INCLUDE[tsql](../../../../includes/tsql-md.md)]). Pour être efficace, le développeur doit être expert en plusieurs langages, et cela peut entraîner des incompatibilités dans l'environnement de développement. Par exemple, une application qui utilise une API d'accès aux données pour exécuter une requête sur une base de données spécifie la requête comme un littéral de chaîne en utilisant des guillemets. Cette chaîne de requête est illisible pour le compilateur et elle ne fait l'objet d'aucun contrôle d'erreur pour vérifier sa syntaxe ou l'existence des colonnes ou lignes auxquelles elle fait référence. Il n'y a aucune vérification de type des paramètres de requête et aucune prise en charge `IntelliSense`.  

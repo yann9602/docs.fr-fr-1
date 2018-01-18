@@ -10,15 +10,15 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 685d4cd3-2c1f-419f-bb46-c9d97a351eeb
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 6aab21c4b22e731f3d85a2f444e82bc04906c320
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1946f2b4a2cef8946eb05f995150fafada954d09
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="composing-nested-entity-sql-queries"></a>Composition de requêtes Entity SQL imbriquées
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] est un langage fonctionnel riche. Le bloc de construction de [!INCLUDE[esql](../../../../../../includes/esql-md.md)] est une expression. Contrairement à SQL classique, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] n’est pas limité à un jeu de résultats tabulaire : [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend en charge la composition d’expressions complexes qui peuvent avoir des littéraux, des paramètres ou des expressions imbriquées. Une valeur de l’expression peut être paramétrée ou composée d’une autre expression.  

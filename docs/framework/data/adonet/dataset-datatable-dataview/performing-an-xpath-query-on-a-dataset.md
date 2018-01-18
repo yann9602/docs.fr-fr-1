@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 62c5cef51e125443d87c47f7f62dc76aa5d352b8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 3a13d6ee9345731e097d0bdc9b6e59772d29b554
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>Exécution d’une requête XPath sur un DataSet
 La relation entre un synchronisé <xref:System.Data.DataSet> et <xref:System.Xml.XmlDataDocument> vous permet d’utiliser des données XML, services, tels que les requêtes XML Path Language (XPath), qui accèdent à la **XmlDataDocument** et peuvent réaliser certaines opérations plus facilement qu’en accédant le **DataSet** directement. Par exemple, au lieu d’utiliser le **sélectionnez** méthode d’un <xref:System.Data.DataTable> Explorer des relations à d’autres tables dans un **DataSet**, vous pouvez effectuer une requête XPath sur un **XmlDataDocument**  qui est synchronisé avec le **DataSet**, afin d’obtenir une liste d’éléments XML sous la forme d’un <xref:System.Xml.XmlNodeList>. Les nœuds dans le **XmlNodeList**, castés en tant que <xref:System.Xml.XmlElement> nœuds, peuvent alors être passés à la **GetRowFromElement** méthode de la **XmlDataDocument**, afin de retourner la mise en correspondance <xref:System.Data.DataRow> références aux lignes de la table synchronisée **DataSet**.  

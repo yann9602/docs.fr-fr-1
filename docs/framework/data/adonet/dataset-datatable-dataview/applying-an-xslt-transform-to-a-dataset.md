@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 35251c5e2a713463510b3ff8b65e9096385c6bcf
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0c2f5c50054be6254c472b8c161c4f9493132da7
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Application d'une transformation XSLT à un DataSet
 Le **WriteXml** méthode de la <xref:System.Data.DataSet> vous permet d’écrire le contenu d’un **DataSet** en tant que données XML. La tâche qui suit généralement consiste à transformer ce XML en un autre format à l’aide de transformations XSL (XSLT). Toutefois, la synchronisation un **DataSet** avec un <xref:System.Xml.XmlDataDocument> vous permet d’appliquer une feuille de style XSLT au contenu d’un **DataSet** sans avoir préalablement à écrire le contenu de la  **Jeu de données** comme à l’aide des données XML **WriteXml**.  

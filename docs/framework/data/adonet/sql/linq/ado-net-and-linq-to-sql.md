@@ -13,15 +13,15 @@ dev_langs:
 - vb
 ms.assetid: 49ac6da0-f2e1-46fa-963e-1b6dcb63fef7
 caps.latest.revision: "3"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ae0b5aeb658b67434cea187839833e24007ee77e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: c95a84bafcb32861e299135feb0b89b931d11165
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="adonet-and-linq-to-sql"></a>ADO.NET et LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]fait partie de la [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] famille de technologies. Il est basé sur des services fournis par le modèle de fournisseur [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)]. Vous pouvez donc combiner [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] code avec existant [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] applications et la migration en cours [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] solutions [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. L'illustration suivante fournit une vue d'ensemble de la relation.  
