@@ -13,28 +13,28 @@ dev_langs:
 - vb
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
 caps.latest.revision: "5"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 5957dee03d7f3cd54b3fdacd0d38dead5bbc077d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7514d2d19b6691fc5a25e17e7ad483d108fe4aa2
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="specifying-xml-values-as-parameters"></a><span data-ttu-id="e2206-102">Spécification de valeurs XML comme paramètres</span><span class="sxs-lookup"><span data-stu-id="e2206-102">Specifying XML Values as Parameters</span></span>
-<span data-ttu-id="e2206-103">Si une requête requiert un paramètre dont la valeur est une chaîne XML, les développeurs peuvent fournir cette valeur à l’aide d’une instance de la **SqlXml** type de données.</span><span class="sxs-lookup"><span data-stu-id="e2206-103">If a query requires a parameter whose value is an XML string, developers can supply that value using an instance of the **SqlXml** data type.</span></span> <span data-ttu-id="e2206-104">Il n'y a réellement pas d'astuces ; les colonnes XML dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] acceptent les valeurs de paramètre exactement de la même manière que d'autres types de données.</span><span class="sxs-lookup"><span data-stu-id="e2206-104">There really are no tricks; XML columns in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] accept parameter values in exactly the same way as other data types.</span></span>  
+# <a name="specifying-xml-values-as-parameters"></a><span data-ttu-id="ac040-102">Spécification de valeurs XML comme paramètres</span><span class="sxs-lookup"><span data-stu-id="ac040-102">Specifying XML Values as Parameters</span></span>
+<span data-ttu-id="ac040-103">Si une requête requiert un paramètre dont la valeur est une chaîne XML, les développeurs peuvent fournir cette valeur à l’aide d’une instance de la **SqlXml** type de données.</span><span class="sxs-lookup"><span data-stu-id="ac040-103">If a query requires a parameter whose value is an XML string, developers can supply that value using an instance of the **SqlXml** data type.</span></span> <span data-ttu-id="ac040-104">Il n'y a réellement pas d'astuces ; les colonnes XML dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] acceptent les valeurs de paramètre exactement de la même manière que d'autres types de données.</span><span class="sxs-lookup"><span data-stu-id="ac040-104">There really are no tricks; XML columns in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] accept parameter values in exactly the same way as other data types.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e2206-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="e2206-105">Example</span></span>  
- <span data-ttu-id="e2206-106">L’application console suivante crée une nouvelle table dans le **AdventureWorks** base de données.</span><span class="sxs-lookup"><span data-stu-id="e2206-106">The following console application creates a new table in the **AdventureWorks** database.</span></span> <span data-ttu-id="e2206-107">La nouvelle table inclut une colonne nommée **SalesID** et une colonne XML nommée **SalesInfo**.</span><span class="sxs-lookup"><span data-stu-id="e2206-107">The new table includes a column named **SalesID** and an XML column named **SalesInfo**.</span></span>  
+## <a name="example"></a><span data-ttu-id="ac040-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="ac040-105">Example</span></span>  
+ <span data-ttu-id="ac040-106">L’application console suivante crée une nouvelle table dans le **AdventureWorks** base de données.</span><span class="sxs-lookup"><span data-stu-id="ac040-106">The following console application creates a new table in the **AdventureWorks** database.</span></span> <span data-ttu-id="ac040-107">La nouvelle table inclut une colonne nommée **SalesID** et une colonne XML nommée **SalesInfo**.</span><span class="sxs-lookup"><span data-stu-id="ac040-107">The new table includes a column named **SalesID** and an XML column named **SalesInfo**.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="e2206-108">Le **AdventureWorks** base de données exemple n’est pas installé par défaut lorsque vous installez [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="e2206-108">The **AdventureWorks** sample database is not installed by default when you install [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span></span> <span data-ttu-id="e2206-109">Vous pouvez l'installer en exécutant l'Installation de SQL Server.</span><span class="sxs-lookup"><span data-stu-id="e2206-109">You can install it by running SQL Server Setup.</span></span>  
+>  <span data-ttu-id="ac040-108">Le **AdventureWorks** base de données exemple n’est pas installé par défaut lorsque vous installez [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span><span class="sxs-lookup"><span data-stu-id="ac040-108">The **AdventureWorks** sample database is not installed by default when you install [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].</span></span> <span data-ttu-id="ac040-109">Vous pouvez l'installer en exécutant l'Installation de SQL Server.</span><span class="sxs-lookup"><span data-stu-id="ac040-109">You can install it by running SQL Server Setup.</span></span>  
   
- <span data-ttu-id="e2206-110">L'exemple prépare un objet <xref:System.Data.SqlClient.SqlCommand> à insérer une ligne dans la nouvelle table.</span><span class="sxs-lookup"><span data-stu-id="e2206-110">The example prepares a <xref:System.Data.SqlClient.SqlCommand> object to insert a row in the new table.</span></span> <span data-ttu-id="e2206-111">Un fichier enregistré fournit les données XML nécessaires pour le **SalesInfo** colonne.</span><span class="sxs-lookup"><span data-stu-id="e2206-111">A saved file provides the XML data needed for the **SalesInfo** column.</span></span>  
+ <span data-ttu-id="ac040-110">L'exemple prépare un objet <xref:System.Data.SqlClient.SqlCommand> à insérer une ligne dans la nouvelle table.</span><span class="sxs-lookup"><span data-stu-id="ac040-110">The example prepares a <xref:System.Data.SqlClient.SqlCommand> object to insert a row in the new table.</span></span> <span data-ttu-id="ac040-111">Un fichier enregistré fournit les données XML nécessaires pour le **SalesInfo** colonne.</span><span class="sxs-lookup"><span data-stu-id="ac040-111">A saved file provides the XML data needed for the **SalesInfo** column.</span></span>  
   
- <span data-ttu-id="e2206-112">Pour créer le fichier nécessaire pour l’exécution de l’exemple, créez un nouveau fichier texte dans le même dossier que votre projet.</span><span class="sxs-lookup"><span data-stu-id="e2206-112">To create the file needed for the example to run, create a new text file in the same folder as your project.</span></span> <span data-ttu-id="e2206-113">Nommez le fichier MyTestStoreData.xml.</span><span class="sxs-lookup"><span data-stu-id="e2206-113">Name the file MyTestStoreData.xml.</span></span> <span data-ttu-id="e2206-114">Ouvrez le fichier dans Bloc-notes, puis copiez et collez le texte suivant :</span><span class="sxs-lookup"><span data-stu-id="e2206-114">Open the file in Notepad and copy and paste the following text:</span></span>  
+ <span data-ttu-id="ac040-112">Pour créer le fichier nécessaire pour l’exécution de l’exemple, créez un nouveau fichier texte dans le même dossier que votre projet.</span><span class="sxs-lookup"><span data-stu-id="ac040-112">To create the file needed for the example to run, create a new text file in the same folder as your project.</span></span> <span data-ttu-id="ac040-113">Nommez le fichier MyTestStoreData.xml.</span><span class="sxs-lookup"><span data-stu-id="ac040-113">Name the file MyTestStoreData.xml.</span></span> <span data-ttu-id="ac040-114">Ouvrez le fichier dans Bloc-notes, puis copiez et collez le texte suivant :</span><span class="sxs-lookup"><span data-stu-id="ac040-114">Open the file in Notepad and copy and paste the following text:</span></span>  
   
 ```xml  
 <StoreSurvey xmlns="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/StoreSurvey">  
@@ -170,7 +170,7 @@ class Class1
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="e2206-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e2206-115">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="ac040-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ac040-115">See Also</span></span>  
  <xref:System.Data.SqlTypes.SqlXml>  
- [<span data-ttu-id="e2206-116">Données XML dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="e2206-116">XML Data in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
- [<span data-ttu-id="e2206-117">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="e2206-117">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [<span data-ttu-id="ac040-116">Données XML dans SQL Server</span><span class="sxs-lookup"><span data-stu-id="ac040-116">XML Data in SQL Server</span></span>](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
+ [<span data-ttu-id="ac040-117">Fournisseurs managés ADO.NET et centre de développement DataSet</span><span class="sxs-lookup"><span data-stu-id="ac040-117">ADO.NET Managed Providers and DataSet Developer Center</span></span>](http://go.microsoft.com/fwlink/?LinkId=217917)

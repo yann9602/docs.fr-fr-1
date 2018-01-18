@@ -10,41 +10,41 @@ ms.tgt_pltfrm:
 ms.topic: article
 ms.assetid: 40db462d-2fd2-4cc1-ad86-d280403e63fa
 caps.latest.revision: "4"
-author: JennieHubbard
-ms.author: jhubbard
-manager: jhubbard
+author: douglaslMS
+ms.author: douglasl
+manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ebff53126b808f679855b43fd8e1d2461b516e66
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5ffdd5e8ba8b4b0d46ac3165ed401179ff6bf630
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="how-to-use-edmgenexe-to-generate-the-model-and-mapping-files"></a><span data-ttu-id="bead6-102">Comment : utiliser EdmGen.exe pour générer les fichiers de modèle et les fichiers de mappage</span><span class="sxs-lookup"><span data-stu-id="bead6-102">How to: Use EdmGen.exe to Generate the Model and Mapping Files</span></span>
-<span data-ttu-id="bead6-103">Cette rubrique montre comment utiliser l'outil EDM Generator (EdmGen.exe) pour générer les fichiers suivants à partir de la base de données School :</span><span class="sxs-lookup"><span data-stu-id="bead6-103">This topic shows how to use the EDM Generator (EdmGen.exe) tool to generate the following files based on the School database:</span></span>  
+# <a name="how-to-use-edmgenexe-to-generate-the-model-and-mapping-files"></a><span data-ttu-id="8fc25-102">Comment : utiliser EdmGen.exe pour générer les fichiers de modèle et les fichiers de mappage</span><span class="sxs-lookup"><span data-stu-id="8fc25-102">How to: Use EdmGen.exe to Generate the Model and Mapping Files</span></span>
+<span data-ttu-id="8fc25-103">Cette rubrique montre comment utiliser l'outil EDM Generator (EdmGen.exe) pour générer les fichiers suivants à partir de la base de données School :</span><span class="sxs-lookup"><span data-stu-id="8fc25-103">This topic shows how to use the EDM Generator (EdmGen.exe) tool to generate the following files based on the School database:</span></span>  
   
--   <span data-ttu-id="bead6-104">un modèle conceptuel (fichier .csdl) ;</span><span class="sxs-lookup"><span data-stu-id="bead6-104">A conceptual model (a .csdl file).</span></span>  
+-   <span data-ttu-id="8fc25-104">un modèle conceptuel (fichier .csdl) ;</span><span class="sxs-lookup"><span data-stu-id="8fc25-104">A conceptual model (a .csdl file).</span></span>  
   
--   <span data-ttu-id="bead6-105">un modèle de stockage (fichier .ssdl) ;</span><span class="sxs-lookup"><span data-stu-id="bead6-105">A storage model (a .ssdl file).</span></span>  
+-   <span data-ttu-id="8fc25-105">un modèle de stockage (fichier .ssdl) ;</span><span class="sxs-lookup"><span data-stu-id="8fc25-105">A storage model (a .ssdl file).</span></span>  
   
--   <span data-ttu-id="bead6-106">un mappage entre les modèles conceptuel et de stockage (fichier .msl) ;</span><span class="sxs-lookup"><span data-stu-id="bead6-106">Mapping between the conceptual and storage models (a .msl file).</span></span>  
+-   <span data-ttu-id="8fc25-106">un mappage entre les modèles conceptuel et de stockage (fichier .msl) ;</span><span class="sxs-lookup"><span data-stu-id="8fc25-106">Mapping between the conceptual and storage models (a .msl file).</span></span>  
   
--   <span data-ttu-id="bead6-107">du code de couche objet en Visual Basic ou C# ;</span><span class="sxs-lookup"><span data-stu-id="bead6-107">Object-layer code in Visual Basic or C#.</span></span>  
+-   <span data-ttu-id="8fc25-107">du code de couche objet en Visual Basic ou C# ;</span><span class="sxs-lookup"><span data-stu-id="8fc25-107">Object-layer code in Visual Basic or C#.</span></span>  
   
--   <span data-ttu-id="bead6-108">des fichiers de vue.</span><span class="sxs-lookup"><span data-stu-id="bead6-108">View files.</span></span>  
+-   <span data-ttu-id="8fc25-108">des fichiers de vue.</span><span class="sxs-lookup"><span data-stu-id="8fc25-108">View files.</span></span>  
   
- <span data-ttu-id="bead6-109">L'outil EdmGen.exe utilise la commande /mode:FullGeneration pour générer les fichiers répertoriés ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="bead6-109">The EdmGen.exe tool uses /mode:FullGeneration to generate the files listed above.</span></span> <span data-ttu-id="bead6-110">Pour plus d’informations sur les commandes d’EdmGen.exe, consultez [EDM Generator (EdmGen.exe)](../../../../../docs/framework/data/adonet/ef/edm-generator-edmgen-exe.md).</span><span class="sxs-lookup"><span data-stu-id="bead6-110">For more information about EdmGen.exe commands, see [EDM Generator (EdmGen.exe)](../../../../../docs/framework/data/adonet/ef/edm-generator-edmgen-exe.md).</span></span>  
+ <span data-ttu-id="8fc25-109">L'outil EdmGen.exe utilise la commande /mode:FullGeneration pour générer les fichiers répertoriés ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="8fc25-109">The EdmGen.exe tool uses /mode:FullGeneration to generate the files listed above.</span></span> <span data-ttu-id="8fc25-110">Pour plus d’informations sur les commandes d’EdmGen.exe, consultez [EDM Generator (EdmGen.exe)](../../../../../docs/framework/data/adonet/ef/edm-generator-edmgen-exe.md).</span><span class="sxs-lookup"><span data-stu-id="8fc25-110">For more information about EdmGen.exe commands, see [EDM Generator (EdmGen.exe)](../../../../../docs/framework/data/adonet/ef/edm-generator-edmgen-exe.md).</span></span>  
   
- <span data-ttu-id="bead6-111">L'utilisation d'EdmGen.exe pour générer les fichiers de modèle et de mappage ne vous dispense pas de configurer votre projet [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] pour qu'il utilise [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].</span><span class="sxs-lookup"><span data-stu-id="bead6-111">If you use EdmGen.exe to generate the model and mapping files, you still need to configure your [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] project to use the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].</span></span> <span data-ttu-id="bead6-112">Pour plus d’informations, consultez [Comment : configurer manuellement un projet Entity Framework](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).</span><span class="sxs-lookup"><span data-stu-id="bead6-112">For more information, see [How to: Manually Configure an Entity Framework Project](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).</span></span>  
+ <span data-ttu-id="8fc25-111">L'utilisation d'EdmGen.exe pour générer les fichiers de modèle et de mappage ne vous dispense pas de configurer votre projet [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] pour qu'il utilise [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8fc25-111">If you use EdmGen.exe to generate the model and mapping files, you still need to configure your [!INCLUDE[vsprvs](../../../../../includes/vsprvs-md.md)] project to use the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].</span></span> <span data-ttu-id="8fc25-112">Pour plus d’informations, consultez [Comment : configurer manuellement un projet Entity Framework](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).</span><span class="sxs-lookup"><span data-stu-id="8fc25-112">For more information, see [How to: Manually Configure an Entity Framework Project](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="bead6-113">Un modèle conceptuel généré par EdmGen.exe comprend tous les objets de la base de données.</span><span class="sxs-lookup"><span data-stu-id="bead6-113">A conceptual model generated by EdmGen.exe includes all the objects in the database.</span></span> <span data-ttu-id="bead6-114">Si vous souhaitez générer un modèle conceptuel qui ne comporte que des objets spécifiques, utilisez l'Assistant EDM.</span><span class="sxs-lookup"><span data-stu-id="bead6-114">If you want to generate a conceptual model that includes only specific objects, use the Entity Data Model Wizard.</span></span> <span data-ttu-id="bead6-115">Pour plus d’informations, consultez [Comment : utiliser l’Assistant Entity Data Model](http://msdn.microsoft.com/en-us/dadb058a-c5d9-4c5c-8b01-28044112231d).</span><span class="sxs-lookup"><span data-stu-id="bead6-115">For more information, see [How to: Use the Entity Data Model Wizard](http://msdn.microsoft.com/en-us/dadb058a-c5d9-4c5c-8b01-28044112231d).</span></span>  
+>  <span data-ttu-id="8fc25-113">Un modèle conceptuel généré par EdmGen.exe comprend tous les objets de la base de données.</span><span class="sxs-lookup"><span data-stu-id="8fc25-113">A conceptual model generated by EdmGen.exe includes all the objects in the database.</span></span> <span data-ttu-id="8fc25-114">Si vous souhaitez générer un modèle conceptuel qui ne comporte que des objets spécifiques, utilisez l'Assistant EDM.</span><span class="sxs-lookup"><span data-stu-id="8fc25-114">If you want to generate a conceptual model that includes only specific objects, use the Entity Data Model Wizard.</span></span> <span data-ttu-id="8fc25-115">Pour plus d’informations, consultez [Comment : utiliser l’Assistant Entity Data Model](http://msdn.microsoft.com/en-us/dadb058a-c5d9-4c5c-8b01-28044112231d).</span><span class="sxs-lookup"><span data-stu-id="8fc25-115">For more information, see [How to: Use the Entity Data Model Wizard](http://msdn.microsoft.com/en-us/dadb058a-c5d9-4c5c-8b01-28044112231d).</span></span>  
   
-### <a name="to-generate-the-school-model-for-a-visual-basic-project-using-edmgenexe"></a><span data-ttu-id="bead6-116">Pour générer à l'aide de l'outil EdmGen.exe le modèle School pour un projet Visual Basic</span><span class="sxs-lookup"><span data-stu-id="bead6-116">To generate the School model for a Visual Basic project using EdmGen.exe</span></span>  
+### <a name="to-generate-the-school-model-for-a-visual-basic-project-using-edmgenexe"></a><span data-ttu-id="8fc25-116">Pour générer à l'aide de l'outil EdmGen.exe le modèle School pour un projet Visual Basic</span><span class="sxs-lookup"><span data-stu-id="8fc25-116">To generate the School model for a Visual Basic project using EdmGen.exe</span></span>  
   
-1.  <span data-ttu-id="bead6-117">Créez la base de données School.</span><span class="sxs-lookup"><span data-stu-id="bead6-117">Create the School database.</span></span> <span data-ttu-id="bead6-118">Pour plus d’informations, consultez [création de la base de données School](http://msdn.microsoft.com/en-us/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).</span><span class="sxs-lookup"><span data-stu-id="bead6-118">For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/en-us/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).</span></span>  
+1.  <span data-ttu-id="8fc25-117">Créez la base de données School.</span><span class="sxs-lookup"><span data-stu-id="8fc25-117">Create the School database.</span></span> <span data-ttu-id="8fc25-118">Pour plus d’informations, consultez [création de la base de données School](http://msdn.microsoft.com/en-us/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).</span><span class="sxs-lookup"><span data-stu-id="8fc25-118">For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/en-us/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).</span></span>  
   
-2.  <span data-ttu-id="bead6-119">À l'invite de commandes, exécutez la commande suivante sans saut de ligne :</span><span class="sxs-lookup"><span data-stu-id="bead6-119">At the command prompt, execute the following command without line breaks:</span></span>  
+2.  <span data-ttu-id="8fc25-119">À l'invite de commandes, exécutez la commande suivante sans saut de ligne :</span><span class="sxs-lookup"><span data-stu-id="8fc25-119">At the command prompt, execute the following command without line breaks:</span></span>  
   
     ```  
     "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:fullgeneration   
@@ -52,11 +52,11 @@ ms.lasthandoff: 12/22/2017
     /project:School /entitycontainer:SchoolEntities /namespace:SchoolModel /language:VB  
     ```  
   
-### <a name="to-generate-the-school-model-for-a-c-project-using-edmgenexe"></a><span data-ttu-id="bead6-120">Pour générer à l'aide de l'outil EdmGen.exe le modèle School pour un projet C#</span><span class="sxs-lookup"><span data-stu-id="bead6-120">To generate the School model for a C# project using EdmGen.exe</span></span>  
+### <a name="to-generate-the-school-model-for-a-c-project-using-edmgenexe"></a><span data-ttu-id="8fc25-120">Pour générer à l'aide de l'outil EdmGen.exe le modèle School pour un projet C#</span><span class="sxs-lookup"><span data-stu-id="8fc25-120">To generate the School model for a C# project using EdmGen.exe</span></span>  
   
-1.  <span data-ttu-id="bead6-121">Créez la base de données School.</span><span class="sxs-lookup"><span data-stu-id="bead6-121">Create the School database.</span></span> <span data-ttu-id="bead6-122">Pour plus d’informations, consultez [création de la base de données School](http://msdn.microsoft.com/en-us/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).</span><span class="sxs-lookup"><span data-stu-id="bead6-122">For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/en-us/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).</span></span>  
+1.  <span data-ttu-id="8fc25-121">Créez la base de données School.</span><span class="sxs-lookup"><span data-stu-id="8fc25-121">Create the School database.</span></span> <span data-ttu-id="8fc25-122">Pour plus d’informations, consultez [création de la base de données School](http://msdn.microsoft.com/en-us/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).</span><span class="sxs-lookup"><span data-stu-id="8fc25-122">For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/en-us/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).</span></span>  
   
-2.  <span data-ttu-id="bead6-123">À l'invite de commandes, exécutez la commande suivante sans saut de ligne :</span><span class="sxs-lookup"><span data-stu-id="bead6-123">At the command prompt, execute the following command without line breaks:</span></span>  
+2.  <span data-ttu-id="8fc25-123">À l'invite de commandes, exécutez la commande suivante sans saut de ligne :</span><span class="sxs-lookup"><span data-stu-id="8fc25-123">At the command prompt, execute the following command without line breaks:</span></span>  
   
     ```  
     "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:fullgeneration   
@@ -64,9 +64,9 @@ ms.lasthandoff: 12/22/2017
     /project:School /entitycontainer:SchoolEntities /namespace:SchoolModel /language:CSharp  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="bead6-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bead6-124">See Also</span></span>  
- [<span data-ttu-id="bead6-125">Modélisation et mappage</span><span class="sxs-lookup"><span data-stu-id="bead6-125">Modeling and Mapping</span></span>](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)  
- [<span data-ttu-id="bead6-126">Comment : configurer manuellement un projet Entity Framework</span><span class="sxs-lookup"><span data-stu-id="bead6-126">How to: Manually Configure an Entity Framework Project</span></span>](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)  
- [<span data-ttu-id="bead6-127">Comment : prégénérer des vues pour améliorer les performances des requêtes</span><span class="sxs-lookup"><span data-stu-id="bead6-127">How to: Pre-Generate Views to Improve Query Performance</span></span>](http://msdn.microsoft.com/en-us/b18a9d16-e10b-4043-ba91-b632f85a2579)  
- [<span data-ttu-id="bead6-128">Outils ADO.NET Entity Data Model</span><span class="sxs-lookup"><span data-stu-id="bead6-128">ADO.NET Entity Data Model  Tools</span></span>](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)  
- [<span data-ttu-id="bead6-129">Guide pratique pour utiliser EdmGen.exe pour valider les fichiers de modèle et les fichiers de mappage</span><span class="sxs-lookup"><span data-stu-id="bead6-129">How to: Use EdmGen.exe to Validate Model and Mapping Files</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)
+## <a name="see-also"></a><span data-ttu-id="8fc25-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8fc25-124">See Also</span></span>  
+ [<span data-ttu-id="8fc25-125">Modélisation et mappage</span><span class="sxs-lookup"><span data-stu-id="8fc25-125">Modeling and Mapping</span></span>](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)  
+ [<span data-ttu-id="8fc25-126">Comment : configurer manuellement un projet Entity Framework</span><span class="sxs-lookup"><span data-stu-id="8fc25-126">How to: Manually Configure an Entity Framework Project</span></span>](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)  
+ [<span data-ttu-id="8fc25-127">Comment : prégénérer des vues pour améliorer les performances des requêtes</span><span class="sxs-lookup"><span data-stu-id="8fc25-127">How to: Pre-Generate Views to Improve Query Performance</span></span>](http://msdn.microsoft.com/en-us/b18a9d16-e10b-4043-ba91-b632f85a2579)  
+ [<span data-ttu-id="8fc25-128">Outils ADO.NET Entity Data Model</span><span class="sxs-lookup"><span data-stu-id="8fc25-128">ADO.NET Entity Data Model  Tools</span></span>](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)  
+ [<span data-ttu-id="8fc25-129">Guide pratique pour utiliser EdmGen.exe pour valider les fichiers de modèle et les fichiers de mappage</span><span class="sxs-lookup"><span data-stu-id="8fc25-129">How to: Use EdmGen.exe to Validate Model and Mapping Files</span></span>](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)
