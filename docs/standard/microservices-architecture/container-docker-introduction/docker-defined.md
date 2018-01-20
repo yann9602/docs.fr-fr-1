@@ -14,7 +14,7 @@ ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/18/2017
 ---
-# <a name="what-is-docker"></a>Qu’est Docker ?
+# <a name="what-is-docker"></a>Qu’est-ce que Docker ?
 
 [Docker](https://www.docker.com/) est un [projet open source](https://github.com/docker/docker) pour automatiser le déploiement d’applications en tant que conteneurs portables et autonomes qui peuvent s’exécuter sur le cloud ou localement. Docker est également une [société](https://www.docker.com/) qui promeut et fait évoluer cette technologie. Docker fonctionne en collaboration avec le cloud, Linux et les fournisseurs de Windows, notamment Microsoft.
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 10/18/2017
 
 **Figure 2-2**. Docker déploie des conteneurs à toutes les couches du cloud hybride
 
-Les images des conteneurs Docker sont exécutés en mode natif sur Linux et Windows. Les images Windows s’exécutent uniquement sur des hôtes Windows et les images Linux s’exécutent uniquement sur les hôtes Linux. L’hôte est un serveur ou une machine virtuelle.
+Les images des conteneurs Docker sont exécutées en mode natif sur Linux et Windows. Les images Windows s’exécutent uniquement sur des hôtes Windows et les images Linux s’exécutent uniquement sur les hôtes Linux. L’hôte est un serveur ou une machine virtuelle.
 
 Vous pouvez développer sur Windows, Linux ou macOS. L’ordinateur de développement exécute un hôte Docker où les images Docker sont déployées, y compris l’application et ses dépendances. Sur Linux ou macOS, vous utilisez un hôte Docker Linux et vous pouvez créer des images uniquement pour les conteneurs Linux. (Sur Mac OS, vous pouvez modifier le code ou exécuter l’interface CLI de Docker, mais au moment de la rédaction, les conteneurs ne s’exécutent pas directement sur macOS.) Sur Windows, vous pouvez créer des images pour les conteneurs Windows ou Linux.
 
