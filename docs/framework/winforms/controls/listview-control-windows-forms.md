@@ -23,11 +23,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9bc771b81e1db87f3d881dc2a0ab84f7aad93247
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8328bc705349ffeaa78d95e95ed0955ac6faa5c3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="listview-control-windows-forms"></a>ListView, contrôle (Windows Forms)
 Le contrôle `ListView` Windows Forms affiche une liste d'éléments avec des icônes. Vous pouvez utiliser un affichage de liste pour créer une interface utilisateur comme le volet droit de l'Explorateur Windows.  
@@ -93,7 +93,7 @@ Le contrôle `ListView` Windows Forms affiche une liste d'éléments avec des ic
  [Guide pratique pour créer une interface utilisateur à plusieurs volets à l'aide des Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)  
  Fournit des instructions pour disposer un Windows Form avec plusieurs volets.  
   
- [Fonctionnalités de Windows XP et contrôles Windows Forms](http://msdn.microsoft.com/en-us/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)  
+ [Fonctionnalités de Windows XP et contrôles Windows Forms](http://msdn.microsoft.com/library/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)  
  Explique comment tirer parti des fonctionnalités spécifiques à Windows XP qui s'appliquent au contrôle <xref:System.Windows.Forms.ListView>.  
   
 ## <a name="see-also"></a>Voir aussi  

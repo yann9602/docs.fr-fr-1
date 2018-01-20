@@ -17,11 +17,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: fd5d812fbedcbef0f6ce10b324d60961eba804cf
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 2aab11481bb23228f9ad920c5d01ef7d345e05d3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-call-custom-database-functions"></a>Comment : appeler des fonctions de base de données personnalisées
 Cette rubrique décrit comment appeler des fonctions personnalisées définies dans la base de données dans des requêtes LINQ to Entities.  
@@ -38,14 +38,14 @@ Cette rubrique décrit comment appeler des fonctions personnalisées définies d
   
 2.  Déclarez une fonction dans la partie SSDL (Store Schema Definition Language) de votre fichier .edmx. Le nom de la fonction doit être le même que le nom de la fonction déclarée dans la base de données.  
   
-     Pour plus d’informations, consultez [élément (fonction) (SSDL)](http://msdn.microsoft.com/en-us/b60cfc3d-8b93-423e-8c99-b867256640a4).  
+     Pour plus d’informations, consultez [élément (fonction) (SSDL)](http://msdn.microsoft.com/library/b60cfc3d-8b93-423e-8c99-b867256640a4).  
   
 3.  Ajoutez une méthode correspondante à une classe dans votre code d'application et appliquez un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> à la méthode. Notez que les paramètres <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> et <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> de l'attribut sont respectivement le nom de l'espace de noms du modèle conceptuel et le nom de la fonction dans le modèle conceptuel. La résolution des noms de fonctions pour LINQ respecte la casse.  
   
 4.  Appelez la méthode dans une requête LINQ to Entities.  
   
 ## <a name="example"></a>Exemple  
- L'exemple suivant montre comment appeler une fonction de base de données personnalisée dans une requête LINQ to Entities. L'exemple utilise le modèle School. Pour plus d’informations sur le modèle School, consultez [création de la base de données School](http://msdn.microsoft.com/en-us/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0) et [générer le fichier de .edmx scolaire](http://msdn.microsoft.com/en-us/c48b3907-a8be-4fe6-884c-e95af1852758).  
+ L'exemple suivant montre comment appeler une fonction de base de données personnalisée dans une requête LINQ to Entities. L'exemple utilise le modèle School. Pour plus d’informations sur le modèle School, consultez [création de la base de données School](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0) et [générer le fichier de .edmx scolaire](http://msdn.microsoft.com/library/c48b3907-a8be-4fe6-884c-e95af1852758).  
   
  Le code suivant ajoute la fonction `AvgStudentGrade` à l'exemple de base de données School.  
   
@@ -72,5 +72,5 @@ Cette rubrique décrit comment appeler des fonctions personnalisées définies d
  [!code-vb[DP L2E MapToDBFunction#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e maptodbfunction/vb/module1.vb#4)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [vue d’ensemble du fichier .edmx](http://msdn.microsoft.com/en-us/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
+ [vue d’ensemble du fichier .edmx](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
  [Requêtes dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)

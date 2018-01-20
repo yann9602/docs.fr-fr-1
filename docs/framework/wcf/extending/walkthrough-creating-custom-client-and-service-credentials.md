@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3a56a3fa5ed8d470216e9c96b53e1ea21762bd2a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 99ee624ef6198ed67141d3d92e63fb9ba815c4fd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a>Procédure pas à pas : création d'informations d'identification de client et de service personnalisées
 Cette rubrique indique comment implémenter des informations d'identification de client et de service personnalisées et comment les utiliser à partir du code d'application.  
@@ -35,7 +35,7 @@ Cette rubrique indique comment implémenter des informations d'identification de
   
  Les deux classes <xref:System.ServiceModel.Description.ClientCredentials> et <xref:System.ServiceModel.Description.ServiceCredentials> héritent de la classe <xref:System.ServiceModel.Security.SecurityCredentialsManager> abstraite qui définit le contrat permettant de retourner <xref:System.IdentityModel.Selectors.SecurityTokenManager>.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]les classes d’informations d’identification et comment elles s’adaptent les [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] architecture de sécurité, consultez [Architecture de sécurité](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]les classes d’informations d’identification et comment elles s’adaptent les [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] architecture de sécurité, consultez [Architecture de sécurité](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
  Les implémentations par défaut fournies dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] prennent en charge les types d'informations d'identification fournis par le système et créent un gestionnaire de jetons de sécurité capable de gérer ces types d'informations d'identification.  
   

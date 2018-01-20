@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c8984016f1f8ad77ab41aa49f8bcc2583406a465
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d3ed2fa4439edd157fa7f009b63f20b21e2bb6fc
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="service-contracts"></a>Contrats de service
 Cette section contient des exemples qui illustrent des contrats de service dans [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -39,7 +39,7 @@ Cette section contient des exemples qui illustrent des contrats de service dans 
  [Flux](../../../../docs/framework/wcf/samples/stream.md)  
  Illustre l'utilisation d'une communication en mode de transfert continu.  
   
- [Asynchrone](http://msdn.microsoft.com/en-us/833db946-f511-4f64-a26f-2759a11217c7)  
+ [Asynchronous](http://msdn.microsoft.com/library/833db946-f511-4f64-a26f-2759a11217c7)  
  Montre comment un client peut accéder à une opération de service de façon asynchrone et comment un service peut implémenter ses opérations de façon asynchrone.  
   
  [Erreurs XmlSerializer](../../../../docs/framework/wcf/samples/xmlserializer-faults.md)  

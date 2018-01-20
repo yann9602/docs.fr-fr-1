@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 0ad577145c26b9c43e8b7fb3b61f27f374ff9298
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 33646bbd7b0043cb5fc036b9b11aa4cf37cd537f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="pipeline-development"></a>Développement de pipeline
 Le pipeline de complément est le chemin d’accès des segments de pipeline que l’application hôte et son complément doivent utiliser pour communiquer entre eux.  
@@ -41,14 +41,14 @@ Pipeline de complément
   
  Si vous chargez l’hôte et le complément dans des domaines d’application distincts, vous avez une limite d’isolation qui sépare la portée de l’application hôte à partir de l’étendue de la macro complémentaire. Le contrat est le seul assembly est chargé dans l’hôte et les domaines d’application du complément. L’ordinateur hôte et le complément chaque font référence uniquement à leur vue des méthodes de contrat. Par conséquent, ils sont séparés par une couche d’abstraction du contrat.  
   
- Pour développer des segments de pipeline, vous devez créer une structure de répertoires qui les contiennent. Pour plus d’informations sur les spécifications de développement et les indications de portée, consultez [les exigences de développement de Pipeline](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
+ Pour développer des segments de pipeline, vous devez créer une structure de répertoires qui les contiennent. Pour plus d’informations sur les spécifications de développement et les indications de portée, consultez [les exigences de développement de Pipeline](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
   
  L’illustration suivante montre les types qui composent les segments de pipeline. Les noms des types indiqués dans l’illustration sont arbitraires, mais tous les types à l’exception de l’hôte et l’ordinateur hôte permet d’afficher les attributs du complément, requièrent afin qu’ils puissent être détectés par les méthodes qui génèrent une banque d’informations.  
   
  ![Ajouter &#45; dans le modèle avec des attributs requis sur les types. ] (../../../docs/framework/add-ins/media/addin-model.png "AddIn_Model")  
 Pipeline de complément avec types  
   
- Le tableau suivant décrit les segments de pipeline pour l’activation d’un complément. Pour plus d’informations sur ces segments, consultez [contrats, les vues et les adaptateurs](http://msdn.microsoft.com/en-us/a6460173-9507-4b87-8c07-d4ee245d715c).  
+ Le tableau suivant décrit les segments de pipeline pour l’activation d’un complément. Pour plus d’informations sur ces segments, consultez [contrats, les vues et les adaptateurs](http://msdn.microsoft.com/library/a6460173-9507-4b87-8c07-d4ee245d715c).  
   
 |Segment de pipeline|Description|  
 |----------------------|-----------------|  
@@ -89,14 +89,14 @@ Chemin d’activation du complément à l’hôte
   
      Décrit un complément calculatrice qui effectue l’addition, soustraction, multiplication et calculs de division pour l’hôte.  
   
--   [Procédure pas à pas : L’activation de la compatibilité descendante lorsque votre hôte change](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
+-   [Procédure pas à pas : L’activation de la compatibilité descendante lorsque votre hôte change](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
   
      Décrit un complément de calculatrice avec des fonctions de calcul améliorées et comment assurer la compatibilité avec le premier calcul complément.  
   
--   [Procédure pas à pas : Passage de Collections entre les hôtes et les compléments](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5)  
+-   [Procédure pas à pas : Passage de Collections entre les hôtes et les compléments](http://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5)  
   
      Explique comment passer des collections de données sur le pipeline à l’aide d’un scénario de librairie.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Scénarios de Pipeline de complément](http://msdn.microsoft.com/en-us/feb70e0b-8734-494c-aeaf-b567f014043e)  
+ [Scénarios de Pipeline de complément](http://msdn.microsoft.com/library/feb70e0b-8734-494c-aeaf-b567f014043e)  
  [Compléments et extensibilité](../../../docs/framework/add-ins/index.md)

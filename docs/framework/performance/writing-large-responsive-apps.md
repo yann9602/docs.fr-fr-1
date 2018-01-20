@@ -14,11 +14,11 @@ author: BillWagner
 ms.author: wiwagn
 manager: wpickett
 ms.workload: wiwagn
-ms.openlocfilehash: ac4052773044e44f546894a54dc21728dbd6634a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a33e065d9daa886c27cde31c8f16f9b9eaa45938
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Conception d'applications .NET Framework complexes et réactives
 Cet article fournit des conseils pour améliorer les performances d'applications .NET Framework volumineuses ou d'applications qui traitent de grandes quantités de données, telles que des fichiers ou des bases de données. Ces conseils proviennent de la réécriture des compilateurs C# et Visual Basic en code managé, et cet article inclut plusieurs exemples réels issus du compilateur C#.  
@@ -47,7 +47,7 @@ Cet article fournit des conseils pour améliorer les performances d'applications
  Vous devez définir des objectifs de performances pour des scénarios ou des expériences clients clés dans votre application, et écrire des tests pour mesurer les performances.  Étudiez les échecs des tests en appliquant un raisonnement scientifique : utilisez des profils pour vous guider, avancez des hypothèses concernant la nature du problème et testez vos hypothèses en faisant des expériences ou en apportant des modifications au code.  Établissez des mesures de performances de référence au fil du temps en effectuant des tests réguliers, afin de pouvoir isoler les changements qui provoquent des régressions des performances.  Grâce à une approche rigoureuse du traitement des performances, vous éviterez de perdre du temps avec des mises à jour de code inutiles.  
   
 ### <a name="fact-3-good-tools-make-all-the-difference"></a>Fait n° 3 : Des outils efficaces font toute la différence  
- Des outils efficaces vous permettent de plonger directement au cœur des principaux problèmes de performances (UC, mémoire ou disque) et vous aident à localiser le code à l'origine des goulots d'étranglement.  Microsoft fournit divers outils d’analyse des performances, tels que le [profileur Visual Studio](/visualstudio/profiling/beginners-guide-to-performance-profiling), l’[outil d’analyse de Windows Phone](http://msdn.microsoft.com/en-us/e67e3199-ea43-4d14-ab7e-f7f19266253f) et [PerfView](http://www.microsoft.com/download/details.aspx?id=28567).  
+ Des outils efficaces vous permettent de plonger directement au cœur des principaux problèmes de performances (UC, mémoire ou disque) et vous aident à localiser le code à l'origine des goulots d'étranglement.  Microsoft fournit divers outils d’analyse des performances, tels que le [profileur Visual Studio](/visualstudio/profiling/beginners-guide-to-performance-profiling), l’[outil d’analyse de Windows Phone](http://msdn.microsoft.com/library/e67e3199-ea43-4d14-ab7e-f7f19266253f) et [PerfView](http://www.microsoft.com/download/details.aspx?id=28567).  
   
  PerfView est un outil gratuit et extrêmement puissant qui vous permet de porter toute votre attention sur des problèmes profonds liés par exemple aux E/S de disque, aux événements du GC et à la mémoire.  Vous pouvez capturer des événements de [suivi d’événements pour Windows](../../../docs/framework/wcf/samples/etw-tracing.md) (ETW) liés aux performances et afficher aisément les informations pour chaque application, processus, pile et thread.  PerfView vous montre la quantité et le type de mémoire que votre application alloue, ainsi que les fonctions ou les piles d'appels qui contribuent aux allocations de mémoire, et pour quels volumes. Pour plus de détails, consultez l’ensemble complet de rubriques d’aide, de démonstrations et de vidéos fournies avec l’outil (par exemple, les [didacticiels PerfView](http://channel9.msdn.com/Series/PerfView-Tutorial) sur Channel 9).  
   
@@ -479,4 +479,4 @@ class Compilation { /*...*/
  [Rechercher des goulots d’étranglement de l’Application avec le profileur Visual Studio](http://msdn.microsoft.com/magazine/cc337887.aspx)  
  [Canal 9 didacticiels PerfView](http://channel9.msdn.com/Series/PerfView-Tutorial)  
  [Conseils de haut niveau de performances](http://curah.microsoft.com/4604/improving-your-net-apps-startup-performance)  
- [référentiel dotnet/roslyn sur GitHub](https://github.com/dotnet/roslyn)
+ [dotnet/roslyn repo on GitHub](https://github.com/dotnet/roslyn)

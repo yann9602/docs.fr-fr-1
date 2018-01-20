@@ -17,11 +17,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 1bd25dd0444c428e000371abe494e62b258eaa63
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d2593df04b93db17f9ca61a98b21aaec1d534d46
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="assembly-binding-redirection-security-permission"></a>Autorisation de sécurité pour la redirection de liaison d’assembly
 La redirection de liaison d’assembly explicite dans un fichier de configuration de l’application nécessite une autorisation de sécurité. Cela s'applique à la redirection des assemblys .NET Framework et des assemblys tiers. L’autorisation est accordée en définissant le <xref:System.Security.Permissions.SecurityPermissionFlag> indicateur sur le <xref:System.Security.Permissions.SecurityPermission>. Les assemblys managés ne possèdent aucuns autorisations par défaut.  
@@ -36,12 +36,12 @@ La redirection de liaison d’assembly explicite dans un fichier de configuratio
 |----------|-----------------------------------|  
 |Zone de confiance (ordinateur local)|**ON**|  
 |Zone intranet|**ON**|  
-|Zone Internet|**DÉSACTIVÉ**|  
-|Zones non fiables|**DÉSACTIVÉ**|  
+|Zone Internet|**OFF**|  
+|Zones non fiables|**OFF**|  
   
  Un administrateur peut modifier ces paramètres de sécurité pour prendre en charge ou restreindre des scénarios spécifiques sur un ordinateur donné. Aucun outil permettant de modifier le **BindingRedirects** indicateur de définition à partir de la valeur par défaut ; un administrateur doit modifier manuellement le fichier Security.config sur l’ordinateur d’un utilisateur.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Fichiers de stratégie d’éditeur et de l’exécution de côte à côte](http://msdn.microsoft.com/en-us/97a042be-4d72-40c3-91c0-76fd36bdf133)  
+ [Fichiers de stratégie d’éditeur et de l’exécution de côte à côte](http://msdn.microsoft.com/library/97a042be-4d72-40c3-91c0-76fd36bdf133)  
  [Comment : activer et désactiver la redirection de liaison automatique](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)  
  [Exécution côte à côte](../../../docs/framework/deployment/side-by-side-execution.md)

@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 085ef918b2828dc754f5b91e0ad61262ce7d8c60
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e4f9720f26458f3dd9cb2411d123fa830b20f3fd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="button-control-windows-forms"></a>Button, contrôle (Windows Forms)
 Le contrôle Windows Forms `Button` permet à l'utilisateur d'effectuer une action en cliquant dessus. Le contrôle `Button` peut afficher du texte et des images. Quand le bouton est activé, il donne l’impression d’être enfoncé puis relâché.  
@@ -52,4 +52,4 @@ Le contrôle Windows Forms `Button` permet à l'utilisateur d'effectuer une acti
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  
   
- Consultez également [une entrée utilisateur vers les boîtes de dialogue](http://msdn.microsoft.com/en-us/63ad8645-6842-45e8-b215-73f778e29a55) et [Comment : fermer les boîtes de dialogue et conserver l’entrée d’utilisateur](http://msdn.microsoft.com/en-us/9e118fad-3bf4-4f70-a3de-a0cda2b0229d).
+ Consultez également [une entrée utilisateur vers les boîtes de dialogue](http://msdn.microsoft.com/library/63ad8645-6842-45e8-b215-73f778e29a55) et [Comment : fermer les boîtes de dialogue et conserver l’entrée d’utilisateur](http://msdn.microsoft.com/library/9e118fad-3bf4-4f70-a3de-a0cda2b0229d).

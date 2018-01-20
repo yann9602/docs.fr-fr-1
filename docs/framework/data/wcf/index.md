@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9b6b9ddd27422c09f21833548634afd7945afa89
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b5b27a51dcec17f72b86e77a7ee2ab773aec1dc3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-data-services-45"></a>WCF Data Services 4.5
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] (autrefois appelé « ADO.NET Data Services ») est un composant du .NET Framework qui permet de créer des services qui utilisent le protocole [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] pour exposer et consommer des données sur le web ou l’intranet en utilisant la sémantique de [REST (representational state transfer)](http://go.microsoft.com/fwlink/?LinkId=113919). [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] expose des données comme des ressources adressables par des URI. Les données sont accessibles et modifiables à l'aide des verbes HTTP standard GET, PUT, POST et DELETE. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] utilise les conventions de relation d’entité dans [EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md) pour exposer des ressources en tant que jeux d’entités liés par des associations.  
@@ -120,7 +120,7 @@ ms.lasthandoff: 12/22/2017
  [Vue d’ensemble](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)  
  Fournit une vue d'ensemble des caractéristiques et des fonctionnalités disponibles dans [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].  
   
- [Nouveautés de WCF Data Services](http://msdn.microsoft.com/en-us/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)  
+ [Nouveautés de WCF Data Services](http://msdn.microsoft.com/library/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)  
  Décrit les nouvelles fonctionnalités de [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] et la prise en charge des nouvelles fonctions de [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].  
   
  [Prise en main](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  

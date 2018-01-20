@@ -17,11 +17,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 6615abdf621217baa7ced4211bfa19abac944be9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 40414f39a1b84e7d07086d0634898de5171db590
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-register-primary-interop-assemblies"></a>Comment : enregistrer des assemblys PIA
 Les classes ne peuvent être marshalées que par COM Interop et sont toujours marshalées en tant qu’interfaces. Dans certains cas, l’interface utilisée pour marshaler la classe est appelée interface de classe. Pour plus d’informations sur la substitution de l’interface de classe par une interface de votre choix, consultez [Wrapper CCW (COM Callable Wrapper)](../../../docs/framework/interop/com-callable-wrapper.md).  
@@ -58,6 +58,6 @@ regasm CompanyA.UtilLib.dll
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Programmation avec des assemblys PIA](http://msdn.microsoft.com/en-us/306fa1d6-0703-4004-9e93-d0a57f1be81e)  
- [Recherche d’assemblys PIA](http://msdn.microsoft.com/en-us/d6768e4b-cd80-414d-a4f8-05d979eb393b)  
- [Redistribution d’assemblys PIA](http://msdn.microsoft.com/en-us/e76384f0-d631-474c-bdbd-13884cba0265)
+ [Programmation avec des assemblys PIA](http://msdn.microsoft.com/library/306fa1d6-0703-4004-9e93-d0a57f1be81e)  
+ [Recherche d’assemblys PIA](http://msdn.microsoft.com/library/d6768e4b-cd80-414d-a4f8-05d979eb393b)  
+ [Redistribution d’assemblys PIA](http://msdn.microsoft.com/library/e76384f0-d631-474c-bdbd-13884cba0265)

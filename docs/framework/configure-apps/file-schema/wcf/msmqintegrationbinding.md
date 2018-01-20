@@ -15,17 +15,17 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 59c1c6be1f02477c7ad2d4c90d09173f9296d1e4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0715952077db755386a0381f68ccc6e33705a031
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltmsmqintegrationbindinggt"></a>&lt;msmqIntegrationBinding&gt;
 Définit une liaison qui prend en charge la mise en file d’attente par routage des messages via MSMQ.  
   
- \<système. ServiceModel >  
-\<liaisons >  
+ \<system.ServiceModel>  
+\<bindings>  
 msmqIntegrationBinding  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -96,13 +96,13 @@ msmqIntegrationBinding
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<sécurité >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-msmqintegrationbinding.md)|Définit les paramètres de sécurité de la liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement>.|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-msmqintegrationbinding.md)|Définit les paramètres de sécurité de la liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<liaisons >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
 ## <a name="remarks"></a>Notes  
  Cet élément de liaison peut être utilisé pour permettre aux applications de Windows Communication Foundation (WCF) envoyer des messages à et recevoir des messages à partir des applications MSMQ existantes qui utilisent MSMQ des API natives COM ou les types définis dans le <xref:System.Messaging?displayProperty=nameWithType> espace de noms vous peut utiliser cet élément de configuration pour spécifier les façons de régler la file d’attente, les assurances de transfert, si les messages doivent être stockés de façon durable, et comment les messages doivent être protégés et authentifiés. Pour plus d’informations, consultez [Comment : échanger des Messages avec les points de terminaison WCF et les Applications Message Queuing](../../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
@@ -144,8 +144,8 @@ msmqIntegrationBinding
  <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement>  
  <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>  
  <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>  
- [\<liaison >](../../../../../docs/framework/misc/binding.md)  
+ [\<binding>](../../../../../docs/framework/misc/binding.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [Files d’attente dans WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)

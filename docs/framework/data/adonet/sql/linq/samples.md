@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ae481527ae4a7a978b183444a053bf773e369099
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 98bcb52d193cffb19f6144364895c040f9860f10
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="samples"></a>Exemples
 Cette rubrique fournit des liens vers les solutions [!INCLUDE[vbprvb](../../../../../../includes/vbprvb-md.md)] et C# qui contiennent l'exemple de code [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -28,7 +28,7 @@ Cette rubrique fournit des liens vers les solutions [!INCLUDE[vbprvb](../../../.
  [Exemples de requêtes (Visual Basic)](~/docs/visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
   
  Version C# de la solution SampleQueries  
- [Solution de C# exemples LINQ](http://msdn.microsoft.com/en-us/23852e6b-b9a9-4a06-aedb-b27a5930ed74)  
+ [Solution de C# exemples LINQ](http://msdn.microsoft.com/library/23852e6b-b9a9-4a06-aedb-b27a5930ed74)  
   
  Suivez ces étapes pour rechercher des exemples supplémentaires de code et d'applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] :  
   
@@ -40,4 +40,4 @@ Cette rubrique fournit des liens vers les solutions [!INCLUDE[vbprvb](../../../.
   
 ## <a name="see-also"></a>Voir aussi  
  [LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md)  
- [Procédures pas à pas LINQ to SQL](http://msdn.microsoft.com/en-us/308e66ac-f704-4e00-9b4e-7af0045a2374)
+ [Procédures pas à pas LINQ to SQL](http://msdn.microsoft.com/library/308e66ac-f704-4e00-9b4e-7af0045a2374)

@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f66f773551f45f9e4c5978ef09bbe4061a3326bd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2d0172b91393e4e9e373a247c33be938a3160e14
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Informations de confidentialité relatives à Windows Communication Foundation
 Microsoft s’engage à protéger la confidentialité des utilisateurs finals. Lorsque vous générez une application à l'aide de [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] version 3.0, votre application peut avoir un impact sur la confidentialité de vos utilisateurs finals. Par exemple, votre application peut recueillir des informations de contact utilisateur de manière explicite ou elle peut demander ou envoyer des informations sur Internet à votre site Web. Si vous incorporez la technologie Microsoft dans votre application, cette technologie peut avoir son propre comportement qui peut affecter la confidentialité. [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] n'envoie pas d'informations à Microsoft à partir de votre application, à moins que vous ou l'utilisateur final ne choisissiez de nous l'envoyer.  
@@ -144,7 +144,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  wst:Entropy  
   
- \-Pour xmlns:wsse = « http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd » et xmlns:wsse = « http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd »  
+ \- For xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" and xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Password  
   
@@ -152,7 +152,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  Informations potentiellement personnelles qui sont supprimées :  
   
- \-Pour xmlns:wsse = « http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd » et xmlns:wsse = « http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd »  
+ \- For xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" and xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Username  
   
@@ -174,15 +174,15 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  >  
   
- \<Les conditions NotBefore = « [horodatage] » NotOnOrAfter = « [horodatage] » >  
+ \<Conditions NotBefore="[dateTime]" NotOnOrAfter="[dateTime]">  
   
- \<AudienceRestrictionCondition >  
+ \<AudienceRestrictionCondition>  
   
- \<Audience > [uri]\</Audience > +  
+ \<Audience>[uri]\</Audience>+  
   
- \</ AudienceRestrictionCondition > *  
+ \</AudienceRestrictionCondition>*  
   
- \<DoNotCacheCondition / > *  
+ \<DoNotCacheCondition />*  
   
  <\!--type de base abstrait  
   
@@ -190,25 +190,25 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  -->  
   
- \</ Conditions > ?  
+ \</Conditions>?  
   
- \<Conseils >  
+ \<Advice>  
   
- \<AssertionIDReference > [ID]\</AssertionIDReference > *  
+ \<AssertionIDReference>[ID]\</AssertionIDReference>*  
   
- \<Assertion > [assertion]\</Assertion > *  
+ \<Assertion>[assertion]\</Assertion>*  
   
  [indifférent]*  
   
- \</ Conseils > ?  
+ \</Advice>?  
   
  <\!--Les types de base abstraits  
   
  \<Instruction / > *  
   
- \<SubjectStatement >  
+ \<SubjectStatement>  
   
- \<Objet >  
+ \<Subject>  
   
  `<NameIdentifier`  
   
@@ -222,19 +222,19 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  `</NameIdentifier>?`  
   
- \<SubjectConfirmation >  
+ \<SubjectConfirmation>  
   
- \<ConfirmationMethod > [anyUri]\</ConfirmationMethod > +  
+ \<ConfirmationMethod>[anyUri]\</ConfirmationMethod>+  
   
- \<SubjectConfirmationData > [Tous]\</SubjectConfirmationData > ?  
+ \<SubjectConfirmationData>[any]\</SubjectConfirmationData>?  
   
- \<DS : KeyInfo >... \</ds:KeyInfo > ?  
+ \<ds:KeyInfo>...\</ds:KeyInfo>?  
   
- \</ SubjectConfirmation > ?  
+ \</SubjectConfirmation>?  
   
- \</ Objet >  
+ \</Subject>  
   
- \</ SubjectStatement > *  
+ \</SubjectStatement>*  
   
  -->  
   
@@ -266,9 +266,9 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  />*  
   
- \</ AuthenticationStatement > *  
+ \</AuthenticationStatement>*  
   
- \<AttributeStatement >  
+ \<AttributeStatement>  
   
  [Objet]  
   
@@ -282,33 +282,33 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  `<AttributeValue>[any]</AttributeValue>+`  
   
- \</ Attribut > +  
+ \</Attribute>+  
   
- \</ AttributeStatement > *  
+ \</AttributeStatement>*  
   
  \<AuthorizationDecisionStatement  
   
  Resource="[uri]"  
   
- La décision = « [permis &#124; Deny &#124; indéterminé] »  
+ Decision="[Permit&#124;Deny&#124;Indeterminate]"  
   
  >  
   
  [Objet]  
   
- \<Action Namespace = « [uri] » > [chaîne] \< /action > +  
+ \<Action Namespace="[uri]">[string]\</Action>+  
   
  \<Preuve >  
   
- \<AssertionIDReference > [ID]\</AssertionIDReference > +  
+ \<AssertionIDReference>[ID]\</AssertionIDReference>+  
   
- \<Assertion > [assertion]\</Assertion > +  
+ \<Assertion>[assertion]\</Assertion>+  
   
  \</ Preuve > ?  
   
- \</ AuthorizationDecisionStatement > *  
+ \</AuthorizationDecisionStatement>*  
   
- \</ Assertion >  
+ \</Assertion>  
   
 #### <a name="information-removed-from-message-bodies-when-logging-decryptedunencrypted-messages"></a>Informations supprimées des corps de messages lors de l'enregistrement des messages déchiffrés/non chiffrés  
  Comme décrit précédemment, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] supprime les clés et les informations potentiellement personnelles connues des en-têtes de messages pour les messages déchiffrés/non chiffrés enregistrés. De plus, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] supprime les clés et les informations potentiellement personnelles connues des corps de messages pour les actions et éléments de corps répertoriés dans la liste suivante, qui décrivent des messages de sécurité impliqués dans l'échange de clé.  
@@ -413,5 +413,5 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
  Le langage WDSL (Web Services Description Language) contient une définition du port. Chaque port a une adresse de point de terminaison et une liaison qui représente les services utilisés par l'application. L'exposition du langage WSDL peut être désactivée à l'aide de la configuration. Aucune information n'est conservée sur l'ordinateur.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Windows Communication Foundation](http://msdn.microsoft.com/en-us/fd327ade-0260-4c40-adbe-b74645ba3277)  
+ [Windows Communication Foundation](http://msdn.microsoft.com/library/fd327ade-0260-4c40-adbe-b74645ba3277)  
  [Sécurité](../../../docs/framework/wcf/feature-details/security.md)

@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c8593b9ceb579f33ba3b37975d88b37f3f5ab628
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 1be6c9873274cbd5e613a0b7b85b34f5ddda0176
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Meilleures pratiques pour l'hébergement dans Internet Information Services
 Cette rubrique définit les meilleures pratiques pour l'hébergement des services [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -93,5 +93,5 @@ Cette rubrique définit les meilleures pratiques pour l'hébergement des service
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Exemples de services d’hébergement](http://msdn.microsoft.com/en-us/f703a3f6-0fba-418a-a92f-7ce75ccfa47e)  
+ [Exemples de services d’hébergement](http://msdn.microsoft.com/library/f703a3f6-0fba-418a-a92f-7ce75ccfa47e)  
  [Fonctionnalités d’hébergement de Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=201276)

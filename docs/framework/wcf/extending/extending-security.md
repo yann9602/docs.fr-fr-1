@@ -15,17 +15,17 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: ecbbaac0023ca528967abe2cb60c3d790772fb2e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cdd9b91ba7ff9b1e431f7d9107e72df084ba8af3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="extending-security"></a>Extension de la sécurité
 Pour vous adapter aux nouveaux types de revendications et jetons personnalisés, vous pouvez étendre l'infrastructure de sécurité de [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Les rubriques de cette section vous montrent comment procéder.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Architecture de sécurité](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)  
+ [Architecture de sécurité](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)  
  Présente en détail l'architecture du système de sécurité [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
  [Informations d’identification personnalisées et validation d’informations d’identification](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  

@@ -20,11 +20,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3667d507f4c35174c1e888c9781b5f74ffd496a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 16ed99181f8462e805638b5d3881464b16f21177
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>Procédure pas à pas : Ma première application de bureau WPF
 Cette procédure pas à pas fournit une introduction au développement d’un [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] application qui inclut les éléments qui sont communes à la plupart des [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications : [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] balisage, code-behind, définitions d’application, contrôles, disposition, liaison de données et styles. 
@@ -56,7 +56,7 @@ Pour plus d’informations sur l’installation de la dernière version de Visua
 ## <a name="creating-the-application-project"></a>Création du projet d’application  
  Dans cette section, vous allez créer l’infrastructure d’application, qui inclut une définition d’application, deux pages et une image. 
   
-1. Créez un projet d’application WPF en Visual Basic ou Visual C# nommé `ExpenseIt`. Pour plus d'informations, consultez [Guide pratique pour créer un projet d'application WPF](http://msdn.microsoft.com/en-us/1f6aea7a-33e1-4d3f-8555-1daa42e95d82). 
+1. Créez un projet d’application WPF en Visual Basic ou Visual C# nommé `ExpenseIt`. Pour plus d'informations, consultez [Guide pratique pour créer un projet d'application WPF](http://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82). 
   
     > [!NOTE]
     >  Cette procédure pas à pas utilise le <xref:System.Windows.Controls.DataGrid> contrôle qui est disponible dans le .NET Framework 4. Être sûr que votre projet cible le .NET Framework 4 ou version ultérieure. Pour plus d’informations, consultez[Comment : cibler une Version du .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework). 
@@ -115,7 +115,7 @@ Pour plus d’informations sur l’installation de la dernière version de Visua
 ## <a name="adding-files-to-the-application"></a>Ajout de fichiers à l’application  
  Dans cette section, vous allez ajouter deux pages et une image à l’application. 
   
-1. Ajouter une nouvelle Page (WPF) au projet nommé `ExpenseItHome.xaml`. Pour plus d’informations, consultez [Comment : ajouter de nouveaux éléments à un projet WPF](http://msdn.microsoft.com/en-us/17e6b238-fc32-4385-98ef-2f66ca09d9ad). 
+1. Ajouter une nouvelle Page (WPF) au projet nommé `ExpenseItHome.xaml`. Pour plus d’informations, consultez [Comment : ajouter de nouveaux éléments à un projet WPF](http://msdn.microsoft.com/library/17e6b238-fc32-4385-98ef-2f66ca09d9ad). 
   
      Cette page est la première page qui s’affiche au lancement de l’application. Elle affiche une liste dans laquelle un utilisateur peut sélectionner une personne pour en afficher les notes de frais. 
   
@@ -171,7 +171,7 @@ Pour plus d’informations sur l’installation de la dernière version de Visua
     [!code-csharp[ExpenseIt#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/ExpenseReportPage.xaml.cs#5)]
     [!code-vb[ExpenseIt#5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseReportPage.xaml.vb#5)]  
   
-10. Ajoutez au projet une image nommée watermark.png. Vous pouvez soit créer votre propre image, soit copier le fichier à partir de l’exemple de code. Pour plus d’informations, consultez [NIB : Comment : ajouter des éléments existants à un projet](http://msdn.microsoft.com/en-us/15f4cfb7-78ab-457f-9f14-099a25a6a2d3). 
+10. Ajoutez au projet une image nommée watermark.png. Vous pouvez soit créer votre propre image, soit copier le fichier à partir de l’exemple de code. Pour plus d’informations, consultez [NIB : Comment : ajouter des éléments existants à un projet](http://msdn.microsoft.com/library/15f4cfb7-78ab-457f-9f14-099a25a6a2d3). 
 
 ## <a name="building-and-running-the-application"></a>Générer et exécuter l’application  
  Dans cette section, vous allez générer et exécuter l’application. 
@@ -280,7 +280,7 @@ Pour plus d’informations sur l’installation de la dernière version de Visua
   
 1. Ouvrez ExpenseItHome.xaml. 
   
-2. Ajouter un <xref:System.Windows.Controls.Primitives.ButtonBase.Click> Gestionnaire d’événements à la <xref:System.Windows.Controls.Button> élément. Pour plus d’informations, consultez [Comment : créer un gestionnaire d’événements Simple](http://msdn.microsoft.com/en-us/b1456e07-9dec-4354-99cf-18666b64f480). 
+2. Ajouter un <xref:System.Windows.Controls.Primitives.ButtonBase.Click> Gestionnaire d’événements à la <xref:System.Windows.Controls.Button> élément. Pour plus d’informations, consultez [Comment : créer un gestionnaire d’événements Simple](http://msdn.microsoft.com/library/b1456e07-9dec-4354-99cf-18666b64f480). 
   
     [!code-xaml[ExpenseIt#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseItHome.xaml#15)]  
   

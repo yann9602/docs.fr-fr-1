@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 27e9391b72ccb65e50ce3154cf7a1c97d796ebd7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cfeacc0d4fb736c523538896246b0f406f995fa7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="data-and-modeling-in-the-net-framework"></a>Données et modélisation dans le .NET Framework
 Cette section fournit des informations sur la façon d'accéder aux données à l'aide d'ADO.NET, de LINQ (Language-Integrated Query), des services de données WCF et de XML.  
@@ -31,7 +31,7 @@ Cette section fournit des informations sur la façon d'accéder aux données à 
  [ADO.NET](../../../docs/framework/data/adonet/index.md)  
  Décrit l'architecture ADO.NET et la façon d'utiliser les classes ADO.NET pour gérer des données d'application et interagir avec des sources de données, dont Microsoft SQL Server, les sources de données OLE DB et XML.  
   
- [Portail LINQ](http://msdn.microsoft.com/en-us/6eb15c76-4ee6-4146-981e-b3429a945e6f)  
+ [Portail LINQ](http://msdn.microsoft.com/library/6eb15c76-4ee6-4146-981e-b3429a945e6f)  
  Fournit des liens vers la documentation relative à LINQ (Language-Integrated Query).  
   
  [Traitement transactionnel](../../../docs/framework/data/transactions/index.md)  
@@ -43,7 +43,7 @@ Cette section fournit des informations sur la façon d'accéder aux données à 
  [Documents et données XML](../../../docs/standard/data/xml/index.md)  
  Donne une vue d'ensemble d'un jeu de classes complet et intégré qui fonctionne avec les documents et les données XML dans le .NET Framework.  
   
- [Référence du standard XML](http://msdn.microsoft.com/en-us/79c78508-c9d0-423a-a00f-672e855de401)  
+ [Référence du standard XML](http://msdn.microsoft.com/library/79c78508-c9d0-423a-a00f-672e855de401)  
  Fournit des informations de référence sur les standards XML que Microsoft prend en charge.  
   
 ## <a name="related-sections"></a>Rubriques connexes  

@@ -25,14 +25,14 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 6276f2dc2bd57dc3eaf81eb2949e3c1ea3727e69
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dd1e5f4fc03da2310022efdeb4530440b5e07f3d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>Consommation de fonctions DLL non managées
-L'appel de code non managé est un service qui permet au code managé d'appeler des fonctions non managées implémentées dans des bibliothèques de liens dynamiques (DLL), telles que celles de l'API Win32. Il localise et appelle une fonction exportée, puis marshale ses arguments (entiers, chaînes, tableaux, structures, etc) au-delà des limites d’interopérabilité, selon les besoins. Pour plus d’informations sur ce service, consultez [Présentation détaillée de l’appel de code non managé](http://msdn.microsoft.com/en-us/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243).  
+L'appel de code non managé est un service qui permet au code managé d'appeler des fonctions non managées implémentées dans des bibliothèques de liens dynamiques (DLL), telles que celles de l'API Win32. Il localise et appelle une fonction exportée, puis marshale ses arguments (entiers, chaînes, tableaux, structures, etc) au-delà des limites d’interopérabilité, selon les besoins. Pour plus d’informations sur ce service, consultez [Présentation détaillée de l’appel de code non managé](http://msdn.microsoft.com/library/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243).  
   
  Cette section présente plusieurs tâches liées à la consommation de fonctions DLL non managées. Outre les tâches suivantes, cette section comprend des remarques d'ordre général, ainsi qu'un lien vers des informations supplémentaires et des exemples.  
   

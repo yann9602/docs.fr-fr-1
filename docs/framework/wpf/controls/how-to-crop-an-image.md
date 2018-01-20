@@ -20,16 +20,16 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 084e3dc7fad2bcb3b7ab787302f55c824ff3739d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 11f5b280635d2fe7b83d8c4496606ed02bc44149
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-crop-an-image"></a>Comment : rogner une image
 Cet exemple montre comment rogner une image à l’aide de <xref:System.Windows.Media.Imaging.CroppedBitmap>.  
   
- <xref:System.Windows.Media.Imaging.CroppedBitmap>est principalement utilisé lors de l’encodage de version d’une image rognée à enregistrer dans un fichier. Pour rogner une image à des fins d’affichage, consultez la [créer une zone de découpage](http://msdn.microsoft.com/en-us/56e4bed6-78d7-4292-b917-d72d0b3e4376) rubrique.  
+ <xref:System.Windows.Media.Imaging.CroppedBitmap>est principalement utilisé lors de l’encodage de version d’une image rognée à enregistrer dans un fichier. Pour rogner une image à des fins d’affichage, consultez la [créer une zone de découpage](http://msdn.microsoft.com/library/56e4bed6-78d7-4292-b917-d72d0b3e4376) rubrique.  
   
 ## <a name="example"></a>Exemple  
  Les éléments suivants [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] définit les ressources utilisées dans les exemples ci-dessous.  
@@ -51,4 +51,4 @@ Cet exemple montre comment rogner une image à l’aide de <xref:System.Windows.
  [!code-vb[imageelementexample#CroppedCSharp2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImageElementExample/VB/CroppedImageExample.xaml.vb#croppedcsharp2)]  
   
 ## <a name="see-also"></a>Voir aussi  
- [Créer une zone de découpage](http://msdn.microsoft.com/en-us/56e4bed6-78d7-4292-b917-d72d0b3e4376)
+ [Créer une zone de découpage](http://msdn.microsoft.com/library/56e4bed6-78d7-4292-b917-d72d0b3e4376)

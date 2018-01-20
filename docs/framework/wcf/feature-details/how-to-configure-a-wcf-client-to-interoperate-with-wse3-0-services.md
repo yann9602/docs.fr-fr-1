@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 214e0de13ba362bf4f101a665e943a424c56363c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ea71737e1e214aa1a035739901bf79f8ef4a9c7a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>Comment : configurer un client WCF pour interagir avec les services WSE 3.0
 Les clients [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] sont compatible au niveau câble avec les services Web Services Enhancements 3.0 for Microsoft .NET (WSE) lorsque les clients [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] sont configurés pour utiliser la version d'août 2004 de la spécification WS-Addressing.  
@@ -36,7 +36,7 @@ Les clients [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] sont compati
   
 2.  Créez une classe qui représente une liaison pouvant communiquer avec les services Web WSE 3.0.  
   
-     La classe suivante fait partie de la [il interagit avec WSE](http://msdn.microsoft.com/en-us/f6816861-96a0-45f9-8736-8e4e82cd3a41) exemple.  
+     La classe suivante fait partie de la [il interagit avec WSE](http://msdn.microsoft.com/library/f6816861-96a0-45f9-8736-8e4e82cd3a41) exemple.  
   
     1.  Créez une classe qui dérive de la classe <xref:System.ServiceModel.Channels.Binding>.  
   
@@ -75,4 +75,4 @@ Les clients [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] sont compati
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.ServiceModel.Channels.Binding>  
- [Il interagit avec WSE](http://msdn.microsoft.com/en-us/f6816861-96a0-45f9-8736-8e4e82cd3a41)
+ [Il interagit avec WSE](http://msdn.microsoft.com/library/f6816861-96a0-45f9-8736-8e4e82cd3a41)

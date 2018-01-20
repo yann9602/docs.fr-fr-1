@@ -15,11 +15,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 0e2f268dc2ab1e2aebe2f51d733a59bd093329d5
-ms.sourcegitcommit: bf8a3ba647252010bdce86dd914ac6c61b5ba89d
+ms.openlocfilehash: 10914281632a6651b3872485b795d9a636dc6bd0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Outil XML Serializer Generator (Sgen.exe)
 L'outil XML Serializer Generator crée un assembly de sérialisation XML pour les types dans un assembly spécifié afin d'améliorer les performances de démarrage d'un <xref:System.Xml.Serialization.XmlSerializer> lorsqu'il sérialise ou désérialise les objets des types spécifiés.  
@@ -34,16 +34,16 @@ sgen [options]
   
 |Option|Description|  
 |------------|-----------------|  
-|**/a**[**ssembly**]**:***nom_fichier*|Génère le code de sérialisation pour tous les types contenus dans l’assembly ou le fichier exécutable spécifié par *nom_fichier*. Un seul nom de fichier peut être fourni. Si cet argument est répété, le dernier nom de fichier est utilisé.|  
+|**/a**[**ssembly**]**:***filename*|Génère le code de sérialisation pour tous les types contenus dans l’assembly ou le fichier exécutable spécifié par *nom_fichier*. Un seul nom de fichier peut être fourni. Si cet argument est répété, le dernier nom de fichier est utilisé.|  
 |**/c[ompiler]:** *options*|Spécifie les options à passer au compilateur C#. Toutes les options csc.exe sont prises en charge à mesure qu'elles sont passées au compilateur. Cette option peut être utilisée pour spécifier que l'assembly doit être signé et pour indiquer le fichier de clé.|  
 |**/d**[**ebug**]|Génère une image qui peut être utilisée avec un débogueur.|  
 |**/f[orce]**|Force l'écrasement par réécriture d'un assembly existant du même nom. La valeur par défaut est **false**.|  
 |**/help ou /?**|Affiche la syntaxe et les options de commande de l'outil.|  
 |**/k**[**eep**]|Efface la suppression des fichiers source générés et d'autres fichiers temporaires une fois qu'ils ont été compilés dans l'assembly de sérialisation. Cette option peut être utilisée afin de déterminer si l'outil génère le code de sérialisation pour un type particulier.|  
 |**/n**[**ologo**]|Supprime l'affichage de la bannière de démarrage Microsoft.|  
-|**/o**[**ut**]**:***chemin*|Spécifie le répertoire dans lequel enregistrer l'assembly généré. **Remarque :** Le nom de l’assembly généré est composé du nom de l’assembly d’entrée suivi de « xmlSerializers.dll ».|  
+|**/o**[**ut**]**:***path*|Spécifie le répertoire dans lequel enregistrer l'assembly généré. **Remarque :** Le nom de l’assembly généré est composé du nom de l’assembly d’entrée suivi de « xmlSerializers.dll ».|  
 |**/p**[**roxytypes**]|Génère un code de sérialisation uniquement pour les types de proxy de service Web XML.|  
-|**/r**[**eference**]**:***fichiers_assembly*|Spécifie les assemblys référencés par les types qui requièrent la sérialisation XML. Accepte plusieurs fichiers d'assembly séparés par des virgules.|  
+|**/r**[**eference**]**:***assemblyfiles*|Spécifie les assemblys référencés par les types qui requièrent la sérialisation XML. Accepte plusieurs fichiers d'assembly séparés par des virgules.|  
 |**/s**[**ilent**]|Supprime l'affichage des messages indiquant la réussite des opérations.|  
 |**/t**[**ype**]**:***type*|Génère un code de sérialisation uniquement pour le type spécifié.|  
 |**/v**[**erbose**]|Affiche la sortie en clair pour le débogage. Répertorie les types à partir de l'assembly cible qui ne peuvent pas être sérialisés avec le <xref:System.Xml.Serialization.XmlSerializer>.|  
@@ -69,5 +69,5 @@ sgen Data.dll
   
 ## <a name="see-also"></a>Voir aussi  
  [Outils](../../../docs/framework/tools/index.md)  
- [Vue d’ensemble des Services Web XML](http://msdn.microsoft.com/en-us/9db0c7b8-bca6-462b-9be5-f5f9a7f05a4d)  
+ [Vue d’ensemble des Services Web XML](http://msdn.microsoft.com/library/9db0c7b8-bca6-462b-9be5-f5f9a7f05a4d)  
  [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

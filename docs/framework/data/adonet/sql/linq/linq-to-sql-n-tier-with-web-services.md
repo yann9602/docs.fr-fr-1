@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: a24b8fe5d0da4b3fa3a13db15bd91be83f102dcf
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 79b9b1270f99720dec6b6369706f8a2f601d249e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="linq-to-sql-n-tier-with-web-services"></a>Applications multicouches LINQ to SQL avec les services Web
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]est conçu notamment pour une utilisation sur la couche intermédiaire dans une couche d’accès faiblement couplées de données (DAL) tel qu’un service Web. Si la couche Présentation est une page Web ASP.NET, vous utilisez le contrôle serveur Web <xref:System.Web.UI.WebControls.LinqDataSource> pour gérer le transfert de données entre l'interface utilisateur et [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] sur la couche intermédiaire. Si la couche de présentation n'est pas une page ASP.NET, la couche intermédiaire et la couche de présentation doivent exécuter des tâches supplémentaires pour gérer la sérialisation et la désérialisation des données.  
@@ -49,4 +49,4 @@ ms.lasthandoff: 01/17/2018
   
 ## <a name="see-also"></a>Voir aussi  
  [Applications multicouches et distantes avec LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
- [NIB : Vue d’ensemble du contrôle serveur Web LinqDataSource](http://msdn.microsoft.com/en-us/104cfc3f-7385-47d3-8a51-830dfa791136)
+ [NIB : Vue d’ensemble du contrôle serveur Web LinqDataSource](http://msdn.microsoft.com/library/104cfc3f-7385-47d3-8a51-830dfa791136)

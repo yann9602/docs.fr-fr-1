@@ -18,11 +18,11 @@ author: mairaw
 ms.author: mairaw
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 86dd0c4349dce8dd9e50fdd44c38a08ec39d90bd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e05af51010e92586a9f1de423f6304ea8db78168
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="making-an-image-easier-to-debug"></a>Simplification du débogage d'une image
 Lors de la compilation de code non managé, vous pouvez configurer une image exécutable pour le débogage en définissant des commutateurs ou des options de ligne de commande de l’IDE. Par exemple, vous pouvez utiliser l’option de ligne de commande /**Zi** dans Visual C++ pour lui demander de produire des fichiers de symboles de débogage (extension de fichier .pdb). De même, l’option de ligne de commande /**Od** indique au compilateur de désactiver l’optimisation. Le code résultant s’exécute plus lentement, mais il est plus facile à déboguer quand c’est nécessaire.  
@@ -67,4 +67,4 @@ AllowOptimize=0
 ## <a name="see-also"></a>Voir aussi  
  [Débogage, traçage et profilage](../../../docs/framework/debug-trace-profile/index.md)  
  [Activation du débogage juste-à-temps](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)  
- [Activation du profilage](http://msdn.microsoft.com/en-us/3b669676-f0e0-4ebf-8674-68986dd2020d)
+ [Activation du profilage](http://msdn.microsoft.com/library/3b669676-f0e0-4ebf-8674-68986dd2020d)

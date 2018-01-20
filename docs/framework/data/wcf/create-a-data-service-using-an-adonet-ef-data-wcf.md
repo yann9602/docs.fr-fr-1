@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9362aa6ea02f5878d2419ee7cbaab349cae27038
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e90b11800685707460171e5e2d250ef757979c44
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Comment : créer un service de données à l’aide d’une source de données Entity Framework ADO.NET (services de données WCF)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] expose les données d'entité comme un service de données. Ces données d’entité sont fournies par le [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] lorsque la source de données est une base de données relationnelle. Cette rubrique vous indique comment créer un modèle de données basé sur [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] dans une application Web [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] qui repose sur une base de données existante et utilise ce modèle de données pour créer un service de données.  
@@ -55,7 +55,7 @@ ms.lasthandoff: 12/22/2017
   
 9. Cliquez sur **Terminer** pour terminer l’Assistant.  
   
-     Cela crée un modèle de données par défaut basé sur la base de données spécifique. [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] permet de personnaliser le modèle de données. Pour plus d’informations, consultez l’article [Tâches MSBuild](http://msdn.microsoft.com/en-us/7166f1f1-4de8-4bd4-86b5-5e20a2ebaccb).  
+     Cela crée un modèle de données par défaut basé sur la base de données spécifique. [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] permet de personnaliser le modèle de données. Pour plus d’informations, consultez l’article [Tâches MSBuild](http://msdn.microsoft.com/library/7166f1f1-4de8-4bd4-86b5-5e20a2ebaccb).  
   
 ### <a name="to-create-the-data-service-by-using-the-new-data-model"></a>Pour créer le service de données à l'aide du nouveau modèle de données  
   

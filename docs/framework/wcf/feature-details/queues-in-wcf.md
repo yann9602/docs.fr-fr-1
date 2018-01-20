@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c87e384b3186a1dd4b53ba6c21d92bf4d0e6a8c7
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4dfc78d355db4bd8c9d43541545e6fac35086b39
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Files d'attente dans Windows Communication Foundation
 Les rubriques de cette section traitent de la prise en charge des files d'attente par [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] prend en charge la mise en file d'attente en utilisant Microsoft Message Queuing (anciennement connu sous le nom MSMQ) comme un transport et active les scénarios suivants :  
@@ -75,4 +75,4 @@ Les rubriques de cette section traitent de la prise en charge des files d'attent
  Explique les meilleures pratiques pour utiliser les communications [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] mises en file d'attente.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Message Queuing](http://msdn.microsoft.com/en-us/ff917e87-05d5-478f-9430-0f560675ece1)
+ [Message Queuing](http://msdn.microsoft.com/library/ff917e87-05d5-478f-9430-0f560675ece1)

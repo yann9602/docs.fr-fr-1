@@ -14,17 +14,17 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 5c645b493a1ffb99f4d60f8011bc05f275b5d10f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 002d4411e4fee10044ea5dc1d04d7a29cdcd6584
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="privacy-and-data-security"></a>Confidentialité et sécurité des données
 La protection et la gestion d'informations sensibles dans une application ADO.NET dépendent des produits et des technologies sous-jacents, utilisés pour les créer. ADO.NET ne fournit pas directement de services pour la sécurisation ou le chiffrement des données.  
   
 ## <a name="cryptography-and-hash-codes"></a>Chiffrement et codes de hachage  
- Les classes figurant dans l'espace de noms .NET Framework <xref:System.Security.Cryptography> peuvent être utilisées à partir de vos applications ADO.NET pour empêcher la lecture et la modification des données par des tiers non autorisés. Certaines classes sont des wrappers pour l'interface Microsoft CryptoAPI non managée, tandis que d'autres sont des implémentations managées. Le [Services de chiffrement](http://msdn.microsoft.com/en-us/68a1e844-c63c-44af-9247-f6716eb23781) rubrique fournit une vue d’ensemble du chiffrement dans le .NET Framework, décrit la manière dont le chiffrement est implémenté et comment vous pouvez effectuer les tâches de chiffrement spécifiques.  
+ Les classes figurant dans l'espace de noms .NET Framework <xref:System.Security.Cryptography> peuvent être utilisées à partir de vos applications ADO.NET pour empêcher la lecture et la modification des données par des tiers non autorisés. Certaines classes sont des wrappers pour l'interface Microsoft CryptoAPI non managée, tandis que d'autres sont des implémentations managées. Le [Services de chiffrement](http://msdn.microsoft.com/library/68a1e844-c63c-44af-9247-f6716eb23781) rubrique fournit une vue d’ensemble du chiffrement dans le .NET Framework, décrit la manière dont le chiffrement est implémenté et comment vous pouvez effectuer les tâches de chiffrement spécifiques.  
   
  À la différence du chiffrement qui permet de chiffrer, puis de déchiffrer des données, le hachage des données est un processus à sens unique. Le hachage des données est utile lorsque vous souhaitez empêcher la falsification en vérifiant que les données n'ont pas été altérées : à partir de chaînes d'entrée identiques, les algorithmes de hachage produisent toujours des valeurs de sortie courtes identiques qui peuvent être facilement comparées. [Intégrité des données avec des Codes de hachage](../../../../docs/standard/security/ensuring-data-integrity-with-hash-codes.md) décrit comment vous pouvez générer et vérifier les valeurs de hachage.  
   

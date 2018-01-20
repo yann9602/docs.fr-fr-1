@@ -25,11 +25,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 14d003c36fd3733c329aad1362c01e91f108ec2f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 335e9487468522abb3a18f51f9a089d25519e71c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Accès plus sécurisé aux fichiers et aux données dans les Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] utilise des autorisations pour aider à protéger les ressources et les données. L'emplacement où votre application peut lire ou écrire des données dépend des autorisations qui lui sont accordées. Quand votre application s'exécute dans un environnement de confiance partielle, vous n'avez peut-être pas accès à vos données ou vous devrez peut-être modifier la manière dont vous accédez aux données.  
@@ -362,7 +362,7 @@ public void Write()
 ## <a name="database-access"></a>Accès aux bases de données  
  Les autorisations nécessaires pour accéder à une base de données varient en fonction du fournisseur de base de données. Toutefois, seules les applications qui s'exécutent avec les autorisations appropriées peuvent accéder à une base de données via une connexion de données. Pour plus d’informations sur les autorisations requises pour accéder à une base de données, consultez [sécurité d’accès du Code et ADO.NET](../../../docs/framework/data/adonet/code-access-security.md).  
   
- Si vous ne pouvez pas accéder directement à une base de données car vous souhaitez que votre application s'exécute en mode de confiance partielle, vous pouvez utiliser un service web comme alternative pour accéder à vos données. Un service web est un élément logiciel accessible par programmation sur un réseau. Avec les services web, les applications peuvent partager des données entre des zones de groupe de code. Par défaut, les applications des zones Intranet local et Internet sont autorisées à accéder à leurs sites d'origine, ce qui leur permet d'appeler un service web hébergé sur le même serveur. Pour plus d’informations, consultez [les Services Web dans ASP.NET AJAX](http://msdn.microsoft.com/en-us/8290e543-7eff-47a4-aace-681f3c07229b) ou [Windows Communication Foundation](http://msdn.microsoft.com/library/ms735119.aspx).  
+ Si vous ne pouvez pas accéder directement à une base de données car vous souhaitez que votre application s'exécute en mode de confiance partielle, vous pouvez utiliser un service web comme alternative pour accéder à vos données. Un service web est un élément logiciel accessible par programmation sur un réseau. Avec les services web, les applications peuvent partager des données entre des zones de groupe de code. Par défaut, les applications des zones Intranet local et Internet sont autorisées à accéder à leurs sites d'origine, ce qui leur permet d'appeler un service web hébergé sur le même serveur. Pour plus d’informations, consultez [les Services Web dans ASP.NET AJAX](http://msdn.microsoft.com/library/8290e543-7eff-47a4-aace-681f3c07229b) ou [Windows Communication Foundation](http://msdn.microsoft.com/library/ms735119.aspx).  
   
 ## <a name="registry-access"></a>Accès au Registre  
  La classe <xref:System.Security.Permissions.RegistryPermission> contrôle l'accès au Registre du système d'exploitation. Par défaut, seules les applications qui s'exécutent localement peuvent accéder au Registre.  <xref:System.Security.Permissions.RegistryPermission> accorde uniquement à une application le droit de tenter d'accéder au Registre. Il ne garantit pas la réussite de l'accès, car le système d'exploitation applique quand même la sécurité sur le Registre.  

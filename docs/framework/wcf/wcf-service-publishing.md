@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 4e3d86153d4192e04e55fb9e99ef588b45511560
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 823edadf7d387d1a509edbdf839ac6eeece5d41f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-service-publishing"></a>Publication du service WCF
 La Publication de service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] vous aide à progresser de l'environnement des premières phases de développement fourni par l'hôte de service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] et le client test [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] au déploiement proprement dit de l'application dans un environnement de production aux fins de test. Avant de vous engager dans un plan de déploiement final, vous pouvez utiliser la Publication de service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] pour vérifier que votre service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] s'exécute correctement et est prêt à être publié. Vous pouvez également choisir de déployer vos bibliothèques de services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] à différents emplacements cibles en vue de les tester.  
@@ -30,7 +30,7 @@ La Publication de service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] v
   
 -   Bibliothèque du service de syndication.  
   
- Vous trouverez ces modèles de service en choisissant **fichier** -> **nouveau projet** -> **Visual Basic** ou **Visual C#**  ->  **WCF**. Pour les autres modèles WCF dans cet emplacement (y compris l’Application de Service de Workflow WCF et d’Application de Service WCF), vous pouvez publier à l’aide de [pour les applications web de publication en un clic](https://msdn.microsoft.com/en-us/library/dd465337\(v=vs.110\).aspx).  
+ Vous trouverez ces modèles de service en choisissant **fichier** -> **nouveau projet** -> **Visual Basic** ou **Visual C#**  ->  **WCF**. Pour les autres modèles WCF dans cet emplacement (y compris l’Application de Service de Workflow WCF et d’Application de Service WCF), vous pouvez publier à l’aide de [pour les applications web de publication en un clic](https://msdn.microsoft.com/library/dd465337\(v=vs.110\).aspx).  
   
  Le service peut être publié aux emplacements cibles suivants.  
   

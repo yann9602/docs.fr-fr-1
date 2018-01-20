@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 428dd4cfb9533dbf57b984c8bc1c557f37bb7d15
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c26854af585fc026ba9abee77bc3b8a95bcaba79
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="secure-data-access"></a>Sécuriser l'accès aux données
 Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes de sécurité disponibles dans la base de données ou le magasin de données sous-jacent. Vous devez également prendre en compte les implications relatives à la sécurité des autres fonctionnalités ou composants que votre application peut contenir.  
@@ -35,7 +35,7 @@ Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes d
 |Ressource|Description|  
 |--------------|-----------------|  
 |[Protection des informations de connexion](../../../../docs/framework/data/adonet/protecting-connection-information.md)|Décrit les techniques et meilleures pratiques de sécurité permettant de protéger les informations de connexion, telles que l'utilisation d'une configuration protégée pour chiffrer les chaînes de connexion.|  
-|[Recommandations pour les stratégies d’accès aux données](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)|Fournit des recommandations pour l'accès aux données et l'exécution d'opérations de base de données.|  
+|[Recommandations pour les stratégies d’accès aux données](http://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)|Fournit des recommandations pour l'accès aux données et l'exécution d'opérations de base de données.|  
 |[Générateurs de chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md)|Décrit comment créer des chaînes de connexion à partir de l'entrée de l'utilisateur au moment de l'exécution.|  
 |[Vue d’ensemble de la sécurité SQL Server](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|Décrit l'architecture de sécurité de SQL Server.|  
   
@@ -89,7 +89,7 @@ Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes d
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Sécurité des rôles COM + et le .NET Framework](http://msdn.microsoft.com/en-us/02ab22ef-e5e2-4d29-b33a-6e03d94c4981)|Explique comment intégrer du code managé à des services de sécurité COM+.|  
+|[Sécurité des rôles COM + et le .NET Framework](http://msdn.microsoft.com/library/02ab22ef-e5e2-4d29-b33a-6e03d94c4981)|Explique comment intégrer du code managé à des services de sécurité COM+.|  
   
 ## <a name="interoperating-with-unmanaged-code"></a>Interopération avec du code non managé  
  Le .NET Framework permet l'interaction avec du code non managé, y compris des composants COM, des services COM+, des bibliothèques de types externes et de nombreux services de système d'exploitation. Travailler avec du code non managé implique de sortir du périmètre de sécurité pour le code managé. Votre code, ainsi que tout code qui l'appelle, doit disposer de l'autorisation de code non managé (<xref:System.Security.Permissions.SecurityPermission> avec l'indicateur <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> spécifié). Du code non managé peut introduire des vulnérabilités involontaires dans votre application. Par conséquent, vous devez éviter d'interagir avec du code non managé à moins que ce soit absolument nécessaire.  
@@ -99,12 +99,12 @@ Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes d
 |Ressource|Description|  
 |--------------|-----------------|  
 |[Interopération avec du code non managé](../../../../docs/framework/interop/index.md)|Contient des rubriques qui décrivent comment exposer les composants COM au .NET Framework et comment exposer les composants .NET Framework à COM.|  
-|[Interopérabilité COM avancée](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|Contient des sujets avancés tels que les assemblys PIA (Primary Interop Assembly), les threads et le marshaling personnalisé.|  
+|[Interopérabilité COM avancée](http://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|Contient des sujets avancés tels que les assemblys PIA (Primary Interop Assembly), les threads et le marshaling personnalisé.|  
   
 ## <a name="see-also"></a>Voir aussi  
  [Sécurisation des applications ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [Sécurité SQL Server](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- [Recommandations pour les stratégies d’accès aux données](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)  
+ [Recommandations pour les stratégies d’accès aux données](http://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)  
  [Protection des informations de connexion](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
  [Générateurs de chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

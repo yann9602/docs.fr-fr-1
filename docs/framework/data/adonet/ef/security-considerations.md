@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 1c68fc09ca1ca50ec544e79ec6fb8bf00a1b09ee
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 68b077ec6c7edd30882c9c84a10aa14060a589e8
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="security-considerations-entity-framework"></a>Considérations sur la sécurité (Entity Framework)
 Cette rubrique décrit les considérations sur la sécurité qui sont spécifiques au développement, au déploiement et à l'exécution d'applications [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Vous devez également suivre ces recommandations pour créer des applications [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] sécurisées. Pour plus d’informations, consultez [vue d’ensemble de la sécurité](../../../../../docs/framework/data/adonet/security-overview.md).  
@@ -109,7 +109,7 @@ Cette rubrique décrit les considérations sur la sécurité qui sont spécifiqu
   
      Les attaques par injection de code SQL peuvent être effectuées dans [!INCLUDE[esql](../../../../../includes/esql-md.md)] en fournissant une entrée malveillante à des valeurs qui sont utilisées dans un prédicat de requête et dans les noms de paramètres. Pour éviter le risque d'injection de code SQL, vous ne devez jamais associer une entrée d'utilisateur à un texte de commande [!INCLUDE[esql](../../../../../includes/esql-md.md)].  
   
-     Les requêtes [!INCLUDE[esql](../../../../../includes/esql-md.md)] acceptent des paramètres partout où des littéraux sont admis. Vous devez utiliser des requêtes paramétrables plutôt que d'injecter des littéraux directement dans la requête à partir d'un agent externe. Vous devez également envisager d’utiliser des méthodes du Générateur de requête pour construire sans risque [Entity SQL](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0).  
+     Les requêtes [!INCLUDE[esql](../../../../../includes/esql-md.md)] acceptent des paramètres partout où des littéraux sont admis. Vous devez utiliser des requêtes paramétrables plutôt que d'injecter des littéraux directement dans la requête à partir d'un agent externe. Vous devez également envisager d’utiliser des méthodes du Générateur de requête pour construire sans risque [Entity SQL](http://msdn.microsoft.com/library/05685434-05e6-41c2-8d5e-8933b88a40b0).  
   
 -   Attaques par injection [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)] :  
   
@@ -143,7 +143,7 @@ Cette rubrique décrit les considérations sur la sécurité qui sont spécifiqu
  Les considérations sur la sécurité suivantes s'appliquent lors de la génération et l'utilisation de types d'entités.  
   
 #### <a name="do-not-share-an-objectcontext-across-application-domains"></a>Ne partagez pas un ObjectContext entre des domaines d'application.  
- Le partage d'un objet <xref:System.Data.Objects.ObjectContext> avec plusieurs domaines d'application peut exposer des informations dans la chaîne de connexion. Il est préférable de transférer les objets sérialisés ou les graphiques d'objets à l'autre domaine d'application, puis d'attacher ces objets à un objet <xref:System.Data.Objects.ObjectContext> dans ce domaine d'application. Pour plus d’informations, consultez [sérialisation d’objets](http://msdn.microsoft.com/en-us/06c77f9b-5b2e-4c78-b3e3-8c148ba0ea99).  
+ Le partage d'un objet <xref:System.Data.Objects.ObjectContext> avec plusieurs domaines d'application peut exposer des informations dans la chaîne de connexion. Il est préférable de transférer les objets sérialisés ou les graphiques d'objets à l'autre domaine d'application, puis d'attacher ces objets à un objet <xref:System.Data.Objects.ObjectContext> dans ce domaine d'application. Pour plus d’informations, consultez [sérialisation d’objets](http://msdn.microsoft.com/library/06c77f9b-5b2e-4c78-b3e3-8c148ba0ea99).  
   
 #### <a name="prevent-type-safety-violations"></a>Évitez les violations de la cohérence des types.  
  Si la cohérence des types est violée, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] ne peut pas garantir l'intégrité des données dans les objets. Les violations de la cohérence des types peuvent se produire si vous permettez à des applications non approuvées de s'exécuter avec une sécurité d'accès du code d'un niveau de confiance totale.  

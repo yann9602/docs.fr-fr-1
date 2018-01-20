@@ -14,11 +14,11 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: af39c3c5788db95eaee248ca8454534022cab659
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 791c86b8f833c6b1a8acb6da3b03cfccdafca0e5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="building-my-first-claims-aware-wcf-service"></a>Génération de mon premier service WCF prenant en charge les revendications
 ## <a name="applies-to"></a>S'applique à  
@@ -48,7 +48,7 @@ ms.lasthandoff: 12/22/2017
   
  AD FS 2.0 fait partie de Windows Server R2 et peut être utilisé comme un STS pour les scénarios sur site. Azure Active Directory Access Control (également appelé Service de contrôle d'accès ou ACS) est un service cloud proposé dans le cadre de Microsoft Azure. À des fins de test ou à titre éducatif, vous pouvez également utiliser d'autres STS pour générer des applications qui prennent en charge les revendications. Par exemple, vous pouvez utiliser le service STS de développement local qui fait partie de l’outil [Identity and Access Tool pour Visual Studio](http://go.microsoft.com/fwlink/?LinkID=245849) (http://go.microsoft.com/fwlink/?LinkID=245849) disponible gratuitement en ligne.  
   
- Pour générer votre premier service WCF prenant en charge les revendications à l’aide de WIF, consultez [Guide pratique pour générer un service WCF prenant en charge les revendications à l’aide de WIF](http://msdn.microsoft.com/en-us/431e6415-62ed-4a9f-af03-f14d2b4dfe6d).  
+ Pour générer votre premier service WCF prenant en charge les revendications à l’aide de WIF, consultez [Guide pratique pour générer un service WCF prenant en charge les revendications à l’aide de WIF](http://msdn.microsoft.com/library/431e6415-62ed-4a9f-af03-f14d2b4dfe6d).  
   
 ## <a name="see-also"></a>Voir aussi  
  [Prise en main de WIF](../../../docs/framework/security/getting-started-with-wif.md)

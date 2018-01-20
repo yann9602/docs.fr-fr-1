@@ -19,11 +19,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 182882d33772054c7ac4208ca9571fa8018c2a07
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4ccd490f6d31ad1d20128497e5115147eddb3df4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Comment : créer une stratégie d'éditeur
 Les fournisseurs d’assemblys peuvent indiquer que les applications doivent utiliser une version plus récente d’un assembly en incluant un fichier de stratégie de serveur de publication avec l’assembly mis à niveau. Le fichier de stratégie d’éditeur spécifie la redirection d’assembly et les paramètres de base de code et utilise le même format comme un fichier de configuration. Le fichier de stratégie d’éditeur est compilé dans un assembly et placé dans le global assembly cache.  
@@ -64,7 +64,7 @@ Les fournisseurs d’assemblys peuvent indiquer que les applications doivent uti
   
 1.  Tapez la commande suivante à l’invite de commandes :  
   
-     **Al /link :** *publisherPolicyFile* **/out :** *publisherPolicyAssemblyFile* **/keyfile :**  *keyPairFile* **/platform :** *processorArchitecture*  
+     **al /link:** *publisherPolicyFile* **/out:** *publisherPolicyAssemblyFile* **/keyfile:** *keyPairFile* **/platform:** *processorArchitecture*  
   
      Dans cette commande :  
   
@@ -100,7 +100,7 @@ Les fournisseurs d’assemblys peuvent indiquer que les applications doivent uti
   
 1.  Tapez la commande suivante à l’invite de commandes :  
   
-     **gacutil /i***publisherPolicyAssemblyFile*   
+     **gacutil /i**  *publisherPolicyAssemblyFile*  
   
      La commande suivante ajoute `policy.1.0.myAssembly.dll` dans le global assembly cache.  
   
@@ -115,7 +115,7 @@ Les fournisseurs d’assemblys peuvent indiquer que les applications doivent uti
  [Programmation à l’aide d’assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)  
  [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Configuration d'applications](../../../docs/framework/configure-apps/index.md)  
- [Configuration des applications .NET Framework](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
+ [Configuration des applications .NET Framework](http://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
  [Schéma des paramètres d’exécution](../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md)  
  [Redirection des versions d'assemblys](../../../docs/framework/configure-apps/redirect-assembly-versions.md)

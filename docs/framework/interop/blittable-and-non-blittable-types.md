@@ -17,11 +17,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 68e1d66b615db7369d71f56b402c13ce41ad5e54
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 10e9f4be3d02ac24c70c4a370ed96ff0dada130a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="blittable-and-non-blittable-types"></a>types blittable et non blittable
 La plupart des types de données ont une représentation commune à la fois dans la mémoire managée et non managée, et ne nécessitent pas de traitement particulier par le marshaleur d’interopérabilité. Ces types sont appelés *types blittables*, car ils ne nécessitent pas de conversion quand ils transitent entre le code managé et le code non managé.  
@@ -58,7 +58,7 @@ La plupart des types de données ont une représentation commune à la fois dans
   
 -   Tableaux unidimensionnels de types blittables, comme un tableau d’entiers. Toutefois, un type qui contient un tableau de variables de types blittables n’est pas lui-même blittable.  
   
--   Types valeur mis en forme qui ne contiennent que des types blittables (et des classes s’ils sont marshalés comme types mis en forme). Pour plus d’informations sur les types valeur mis en forme, consultez [Marshaling par défaut pour les types valeur](http://msdn.microsoft.com/en-us/4d9a876c-e05a-40ba-bd85-bd22877f984a).  
+-   Types valeur mis en forme qui ne contiennent que des types blittables (et des classes s’ils sont marshalés comme types mis en forme). Pour plus d’informations sur les types valeur mis en forme, consultez [Marshaling par défaut pour les types valeur](http://msdn.microsoft.com/library/4d9a876c-e05a-40ba-bd85-bd22877f984a).  
   
  Les références d’objets ne sont pas blittables. Cela inclut un tableau de références aux objets qui sont blittables en eux-mêmes. Par exemple, vous pouvez définir une structure blittable, mais vous ne pouvez pas définir un type blittable contenant un tableau de références à ces structures.  
   
@@ -66,18 +66,18 @@ La plupart des types de données ont une représentation commune à la fois dans
   
  Certains types de données managés requièrent une représentation différente dans un environnement non managé. Ces types de données non blittables doivent être convertis sous une forme qui peut être marshalée. Par exemple, les chaînes managées sont des types non blittables parce qu’elles doivent être converties en objets String avant de pouvoir être marshalées.  
   
- Le tableau suivant répertorie des types non blittables issus de l’espace de noms <xref:System>. Les [délégués](http://msdn.microsoft.com/en-us/d176ee76-f982-494b-b03d-92e4118896e2), qui sont des structures de données qui réfèrent à une méthode statique ou à une instance de classe, sont également non blittables.  
+ Le tableau suivant répertorie des types non blittables issus de l’espace de noms <xref:System>. Les [délégués](http://msdn.microsoft.com/library/d176ee76-f982-494b-b03d-92e4118896e2), qui sont des structures de données qui réfèrent à une méthode statique ou à une instance de classe, sont également non blittables.  
   
 |Type non blittable|Description|  
 |-------------------------|-----------------|  
 |[System.Array](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
-|[System.Boolean](http://msdn.microsoft.com/en-us/d4c00537-70f7-4ca6-8197-bfc1ec037ff9)|Convertit en valeur de 1, 2 ou 4 octets, la valeur `true` ayant pour valeur 1 ou -1.|  
-|[System.Char](http://msdn.microsoft.com/en-us/cecc87c1-075e-4cde-aa56-33d189f66feb)|Convertit en caractère ANSI ou Unicode.|  
-|[System.Class](http://msdn.microsoft.com/en-us/fe334af5-0123-43d8-be84-26f6f023ddb6)|Convertit en interface de classe.|  
+|[System.Boolean](http://msdn.microsoft.com/library/d4c00537-70f7-4ca6-8197-bfc1ec037ff9)|Convertit en valeur de 1, 2 ou 4 octets, la valeur `true` ayant pour valeur 1 ou -1.|  
+|[System.Char](http://msdn.microsoft.com/library/cecc87c1-075e-4cde-aa56-33d189f66feb)|Convertit en caractère ANSI ou Unicode.|  
+|[System.Class](http://msdn.microsoft.com/library/fe334af5-0123-43d8-be84-26f6f023ddb6)|Convertit en interface de classe.|  
 |[System.Object](../../../docs/framework/interop/default-marshaling-for-objects.md)|Convertit en interface ou en variant.|  
 |[System.Mdarray](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
 |[System.String](../../../docs/framework/interop/default-marshaling-for-strings.md)|Convertit en chaîne se terminant par une référence null ou en BSTR.|  
-|[System.Valuetype](http://msdn.microsoft.com/en-us/4d9a876c-e05a-40ba-bd85-bd22877f984a)|Convertit en structure avec une disposition de mémoire fixe.|  
+|[System.Valuetype](http://msdn.microsoft.com/library/4d9a876c-e05a-40ba-bd85-bd22877f984a)|Convertit en structure avec une disposition de mémoire fixe.|  
 |[System.Szarray](../../../docs/framework/interop/default-marshaling-for-arrays.md)|Convertit en tableau de style C ou en `SAFEARRAY`.|  
   
  Les types d’objets et de classes sont pris en charge uniquement par COM Interop. Pour obtenir les types correspondants en [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], C# et C++, consultez [Vue d’ensemble de la bibliothèque de classes .NET Framework](../../../docs/standard/class-library-overview.md).  

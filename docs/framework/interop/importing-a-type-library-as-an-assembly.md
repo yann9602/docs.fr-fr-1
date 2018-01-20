@@ -27,11 +27,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: e2866ef2b8f1c869da7c5989e892c1e3a5dd19fa
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2b7b0e6e93660dd49b670975112380420d7d8f0b
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Importation d'une bibliothèque de types sous la forme d'un assembly
 Les définitions des types COM résident généralement dans une bibliothèque de types. Les compilateurs conformes CLS produisent quant à eux les métadonnées des types dans un assembly. Ces deux sources d’informations sur les types sont assez différentes. Cette rubrique décrit des techniques permettant de générer des métadonnées à partir d’une bibliothèque de types. L’assembly résultant est appelé assembly d’interopérabilité, et les informations de type qu’il contient permettent aux applications .NET Framework d’utiliser des types COM.  
@@ -40,7 +40,7 @@ Les définitions des types COM résident généralement dans une bibliothèque d
   
 -   En utilisant des assemblys d’interopérabilité au moment du design : en commençant par [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], vous pouvez demander au compilateur d’incorporer les informations de type à partir de l’assembly d’interopérabilité dans votre fichier exécutable. Le compilateur incorpore uniquement les informations de type que votre application utilise. Vous n’avez pas à déployer l’assembly d’interopérabilité avec votre application. Il s'agit de la technique recommandée.  
   
--   En déployant des assemblys d’interopérabilité : vous pouvez créer une référence standard à l’assembly d’interopérabilité. Dans ce cas, l’assembly d’interopérabilité doit être déployé avec votre application. Si vous utilisez cette technique et que vous n’utilisez pas un composant COM privé, référencez toujours l’assembly PIA (Primary Interop Assembly) publié par l’auteur du composant COM que vous prévoyez d’incorporer dans votre code managé. Pour plus d’informations sur la production et l’utilisation d’assemblys PIA (Primary Interop Assembly), consultez [Assemblys PIA (Primary Interop Assembly)](http://msdn.microsoft.com/en-us/b977a8be-59a0-40a0-a806-b11ffba5c080).  
+-   En déployant des assemblys d’interopérabilité : vous pouvez créer une référence standard à l’assembly d’interopérabilité. Dans ce cas, l’assembly d’interopérabilité doit être déployé avec votre application. Si vous utilisez cette technique et que vous n’utilisez pas un composant COM privé, référencez toujours l’assembly PIA (Primary Interop Assembly) publié par l’auteur du composant COM que vous prévoyez d’incorporer dans votre code managé. Pour plus d’informations sur la production et l’utilisation d’assemblys PIA (Primary Interop Assembly), consultez [Assemblys PIA (Primary Interop Assembly)](http://msdn.microsoft.com/library/b977a8be-59a0-40a0-a806-b11ffba5c080).  
   
  Quand vous utilisez des assemblys d’interopérabilité au moment du design, vous pouvez incorporer les informations de type de l’assembly PIA publié par l’auteur du composant COM. Toutefois, vous n’avez pas à déployer l’assembly PIA avec votre application.  
   
@@ -75,17 +75,17 @@ Les définitions des types COM résident généralement dans une bibliothèque d
   
     -   une connaissance des règles de conversion de bibliothèque de types en assembly.  
   
-     L’écriture d’un wrapper personnalisé est une technique avancée. Pour obtenir des informations supplémentaires sur la manière de générer un wrapper personnalisé, consultez [Personnalisation de wrappers standard](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d).  
+     L’écriture d’un wrapper personnalisé est une technique avancée. Pour obtenir des informations supplémentaires sur la manière de générer un wrapper personnalisé, consultez [Personnalisation de wrappers standard](http://msdn.microsoft.com/library/c40d089b-6a3c-41b5-a20d-d760c215e49d).  
   
- Pour plus d’informations sur le processus d’importation COM Interop, consultez [Résumé de la conversion d’une bibliothèque de types en assembly](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958).  
+ Pour plus d’informations sur le processus d’importation COM Interop, consultez [Résumé de la conversion d’une bibliothèque de types en assembly](http://msdn.microsoft.com/library/bf3f90c5-4770-4ab8-895c-3ba1055cc958).  
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Runtime.InteropServices.TypeLibConverter>  
  [Exposition de composants COM au .NET Framework](../../../docs/framework/interop/exposing-com-components.md)  
- [Récapitulatif de la conversion d’une bibliothèque de types en assembly](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)  
+ [Récapitulatif de la conversion d’une bibliothèque de types en assembly](http://msdn.microsoft.com/library/bf3f90c5-4770-4ab8-895c-3ba1055cc958)  
  [Tlbimp.exe (importateur de bibliothèques de types)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
- [Personnalisation de Wrappers Standard](http://msdn.microsoft.com/en-us/c40d089b-6a3c-41b5-a20d-d760c215e49d)  
- [Utilisation de Types COM en Code managé](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)  
+ [Personnalisation de Wrappers Standard](http://msdn.microsoft.com/library/c40d089b-6a3c-41b5-a20d-d760c215e49d)  
+ [Utilisation de Types COM en Code managé](http://msdn.microsoft.com/library/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)  
  [Compilation d'un projet d'interopérabilité](../../../docs/framework/interop/compiling-an-interop-project.md)  
  [Déploiement d'une application d'interopérabilité](../../../docs/framework/interop/deploying-an-interop-application.md)  
  [Comment : ajouter des références aux bibliothèques de types](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)  

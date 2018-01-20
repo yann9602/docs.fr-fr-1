@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: e946066a352fb29c593a7d84fd6e728c226a3175
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 79c26ca9e167455dfbd664ea96e574c130cdc3d2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="peer-resolvers"></a>Programmes de résolution d'homologue
 Pour se connecter à une maille, un nœud d'homologue requiert les adresses IP d'autres nœuds. Les adresses IP sont obtenues en contactant un service de résolution, qui prend l'ID de la maille et retourne une liste d'adresses correspondant aux nœuds enregistrés sous cet ID de maille particulier. Le programme de résolution conserve une liste des adresses inscrites, qu'il crée en inscrivant chaque nœud de la maille avec le service.  
@@ -43,7 +43,7 @@ Pour se connecter à une maille, un nœud d'homologue requiert les adresses IP d
 > [!NOTE]
 >  Lors de l'utilisation de réseaux locaux et impromptus avec un programme de résolution personnalisé, il est fortement recommandé que les applications utilisant ou prenant en charge des réseaux de liaison locale ou impromptus incluent une logique qui sélectionne une adresse de liaison locale unique à utiliser lors de la connexion. Cela empêche tout risque de confusion provoquée par des ordinateurs dotés de plusieurs adresses de liaison locale. Ainsi, le canal homologue ne peut utiliser qu'une seule adresse de liaison locale à la fois. Vous pouvez spécifier cette adresse à l'aide de la propriété `ListenIpAddress` sur <xref:System.ServiceModel.NetPeerTcpBinding>.  
   
- Pour une démonstration de l’implémentation d’un programme de résolution personnalisé, consultez [homologue canal homologue programme de résolution personnalisé](http://msdn.microsoft.com/en-us/5b75a2bb-7ff1-4a14-abe7-3debf0537d23).  
+ Pour une démonstration de l’implémentation d’un programme de résolution personnalisé, consultez [homologue canal homologue programme de résolution personnalisé](http://msdn.microsoft.com/library/5b75a2bb-7ff1-4a14-abe7-3debf0537d23).  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Dans CustomPeerResolverService : inscriptions des clients](../../../../docs/framework/wcf/feature-details/inside-the-custompeerresolverservice-client-registrations.md)  

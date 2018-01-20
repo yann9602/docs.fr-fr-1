@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: ad24de9fd003637d1c6e31841da209346a872143
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 5b79461a6fc3314ca4178e0f9b1cff1c468cc3e6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="dataviews"></a>DataViews
 Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des données stockées dans un objet <xref:System.Data.DataTable>, possibilité qui est souvent utilisée dans les applications de liaison de données. À l’aide un **DataView**, vous pouvez présenter les données dans une table avec différents ordres de tri et vous pouvez filtrer les données par état de ligne ou en fonction d’une expression de filtre.  
@@ -55,10 +55,10 @@ Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des
  Décrit comment utiliser un **DataViewManager** pour gérer les **DataView** paramètres pour chaque table dans un **DataSet**.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Applications Web ASP.NET](http://msdn.microsoft.com/en-us/a812d7b7-049e-4234-a4c2-6acf690301f6)  
+ [Applications Web ASP.NET](http://msdn.microsoft.com/library/a812d7b7-049e-4234-a4c2-6acf690301f6)  
  Propose des vues d'ensemble et des procédures détaillées qui vous aident, étape par étape, à créer des applications ASP.NET, des Web Forms et des services Web.  
   
- [Applications Windows](http://msdn.microsoft.com/en-us/a6bb2180-09b1-4738-b9fd-7fb05fc92f23)  
+ [Applications Windows](http://msdn.microsoft.com/library/a6bb2180-09b1-4738-b9fd-7fb05fc92f23)  
  Fournit des informations détaillées sur l'utilisation de Windows Forms et d'applications console.  
   
  [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  

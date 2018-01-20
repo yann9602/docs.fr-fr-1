@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 4e7de05028b4d3fe7b402b276925b24c901b4c0e
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: ed299dd91b16815cbbb50cd51602bb0161ec6939
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="clr-user-defined-types"></a>Types CLR définis par l'utilisateur
 Microsoft SQL Server fournit la prise en charge des types définis par l'utilisateur (UDT) implémentée avec le Common Language Runtime (CLR) Microsoft .NET Framework. Le CLR est intégré dans SQL Server et son mécanisme vous permet d'étendre le système de type de la base de données. Les UDT offrent à l'utilisateur l'extensibilité du système de type de données SQL Server, ainsi que la possibilité de définir des types structurés complexes.  
@@ -36,5 +36,5 @@ Microsoft SQL Server fournit la prise en charge des types définis par l'utilisa
 1.  [Types CLR définis par l’utilisateur](http://go.microsoft.com/fwlink/?LinkId=98366)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Création d’objets SQL Server 2005 dans le Code managé](http://msdn.microsoft.com/en-us/5358a825-e19b-49aa-8214-674ce5fed1da)  
+ [Création d’objets SQL Server 2005 dans le Code managé](http://msdn.microsoft.com/library/5358a825-e19b-49aa-8214-674ce5fed1da)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

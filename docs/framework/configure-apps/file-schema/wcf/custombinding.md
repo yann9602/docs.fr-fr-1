@@ -14,18 +14,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1659e6352fa195bae56b764c80a08dee56b4c9e5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e5a95d677588beaa41e94f12550ba8647202ffe3
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltcustombindinggt"></a>&lt;customBinding&gt;
 Fournit le contrôle total sur la pile de messagerie pour l'utilisateur.  
   
- \<system.serviceModel >  
-\<liaisons >  
-\<customBinding >  
+ \<system.serviceModel>  
+\<bindings>  
+\<customBinding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -202,13 +202,13 @@ Fournit le contrôle total sur la pile de messagerie pour l'utilisateur.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<compositeDuplex >](../../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md)|Spécifie la messagerie bidirectionnelle pour la liaison personnalisée. Il est utilisé avec les transports qui n'autorisent pas nativement les communications duplex, comme HTTP. En revanche, TCP autorise nativement les communications duplex et ne requiert pas l'utilisation de cet élément de liaison pour permettre au service de renvoyer des messages à un client.<br /><br /> Le client doit exposer une adresse pour que le service puisse entrer en contact avec lui et établir une connexion. Cette adresse cliente est fournie par l'attribut `ClientBaseAddress`.<br /><br /> Cet élément est de type <xref:System.ServiceModel.Configuration.CompositeDuplexElement>.|  
-|[\<pnrpPeerResolver >](../../../../../docs/framework/configure-apps/file-schema/wcf/pnrppeerresolver.md)|Spécifie un programme de résolution de nom d’homologue PNRP (Peer Name Resolution Protocol). Cet élément est de type <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>.|  
-|[\<reliableSession >](../../../../../docs/framework/configure-apps/file-schema/wcf/reliablesession.md)|Spécifie le paramètre de WS-Reliable Messaging. Lorsque cet élément est ajouté à une liaison personnalisée, le canal résultant peut prendre en charge des assurances de remise EOD (Exactly-Once-Delivery). Cet élément est de type <xref:System.ServiceModel.Configuration.ReliableSessionElement>.|  
-|[\<sécurité >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Spécifie les options de sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.SecurityElement>.|  
-|[\<sslStreamSecurity >](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)|Spécifie les paramètres de sécurité pour une liaison de flux de données SSL. Cet élément est de type <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>.|  
-|[\<transactionFlow >](../../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md)|Spécifie que le flux de la transaction des prises en charge de la liaison, ainsi que le protocole à utiliser par l'attribut `transactionProtocol`. Cet élément est de type <xref:System.ServiceModel.Configuration.TransactionFlowElement>.|  
-|[\<windowsStreamSecurity >](../../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md)|Spécifie les options permettant de transmettre en continu la sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>.|  
+|[\<compositeDuplex>](../../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md)|Spécifie la messagerie bidirectionnelle pour la liaison personnalisée. Il est utilisé avec les transports qui n'autorisent pas nativement les communications duplex, comme HTTP. En revanche, TCP autorise nativement les communications duplex et ne requiert pas l'utilisation de cet élément de liaison pour permettre au service de renvoyer des messages à un client.<br /><br /> Le client doit exposer une adresse pour que le service puisse entrer en contact avec lui et établir une connexion. Cette adresse cliente est fournie par l'attribut `ClientBaseAddress`.<br /><br /> Cet élément est de type <xref:System.ServiceModel.Configuration.CompositeDuplexElement>.|  
+|[\<pnrpPeerResolver>](../../../../../docs/framework/configure-apps/file-schema/wcf/pnrppeerresolver.md)|Spécifie un programme de résolution de nom d’homologue PNRP (Peer Name Resolution Protocol). Cet élément est de type <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>.|  
+|[\<reliableSession>](../../../../../docs/framework/configure-apps/file-schema/wcf/reliablesession.md)|Spécifie le paramètre de WS-Reliable Messaging. Lorsque cet élément est ajouté à une liaison personnalisée, le canal résultant peut prendre en charge des assurances de remise EOD (Exactly-Once-Delivery). Cet élément est de type <xref:System.ServiceModel.Configuration.ReliableSessionElement>.|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Spécifie les options de sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.SecurityElement>.|  
+|[\<sslStreamSecurity>](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)|Spécifie les paramètres de sécurité pour une liaison de flux de données SSL. Cet élément est de type <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>.|  
+|[\<transactionFlow>](../../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md)|Spécifie que le flux de la transaction des prises en charge de la liaison, ainsi que le protocole à utiliser par l'attribut `transactionProtocol`. Cet élément est de type <xref:System.ServiceModel.Configuration.TransactionFlowElement>.|  
+|[\<windowsStreamSecurity>](../../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md)|Spécifie les options permettant de transmettre en continu la sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -310,11 +310,11 @@ Fournit le contrôle total sur la pile de messagerie pour l'utilisateur.
  <xref:System.ServiceModel.Channels.BindingElement>  
  <xref:System.ServiceModel.Configuration.BindingsSection>  
  <xref:System.ServiceModel.Channels.CustomBinding>  
- [\<liaison >](../../../../../docs/framework/misc/binding.md)  
+ [\<binding>](../../../../../docs/framework/misc/binding.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [CustomBinding (élément)](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)
+ [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)

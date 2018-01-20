@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f4cd38d8e026b3cf4bb0bf224f81be9bdab23e06
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0e66caf800fd49b4822ee22326b8a5cf712d99bb
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="default-marshaling-behavior"></a>comportement de marshaling par défaut
 Le marshaling d’interopérabilité agit sur les règles qui définissent le comportement des données associées aux paramètres de méthode quand elles sont passées de la mémoire managée à la mémoire non managée. Ces règles intégrées contrôlent les activités de marshaling telles que les transformations de types de données, le fait qu'un appelant puisse modifier les données transmises et renvoyer ces modifications à l'appelant, ainsi que les circonstances dans lesquelles le marshaleur fournit des optimisations de performances.  
@@ -33,7 +33,7 @@ Le marshaling d’interopérabilité agit sur les règles qui définissent le co
  Cette section aborde les caractéristiques de comportement par défaut du service de marshaling d'interopérabilité. Elle présente des informations détaillées sur le marshaling des tableaux, des types booléens, des types char, des délégués, des classes, des objets, des chaînes et des structures.  
   
 > [!NOTE]
->  Le marshaling des types génériques n’est pas pris en charge. Pour plus d’informations, consultez [Interopérabilité à l’aide de types génériques](http://msdn.microsoft.com/en-us/26b88e03-085b-4b53-94ba-a5a9c709ce58).  
+>  Le marshaling des types génériques n’est pas pris en charge. Pour plus d’informations, consultez [Interopérabilité à l’aide de types génériques](http://msdn.microsoft.com/library/26b88e03-085b-4b53-94ba-a5a9c709ce58).  
   
 ## <a name="memory-management-with-the-interop-marshaler"></a>Gestion de la mémoire avec le marshaleur d’interopérabilité  
  Le marshaleur d'interopérabilité tente toujours de libérer de la mémoire allouée par du code non managé. Ce comportement est conforme aux règles de gestion de mémoire COM, mais pas à celles qui régissent le code C++ natif.  
@@ -50,10 +50,10 @@ BSTR MethodOne (BSTR b) {
   
  Toutefois, si vous définissez la méthode comme un prototype d’appel de code non managé, puis remplacez chaque type **BSTR** par un type <xref:System.String> et appelez `MethodOne`, le common language runtime tentera de libérer `b` deux fois. Vous pouvez modifier le comportement de marshaling en utilisant les types <xref:System.IntPtr> plutôt que les types **String**.  
   
- Le runtime utilise toujours la méthode **CoTaskMemFree** pour libérer de la mémoire. Si la mémoire que vous utilisez n’a pas été allouée avec la méthode **CoTaskMemAlloc**, vous devez utiliser un **IntPtr** et libérer la mémoire manuellement à l’aide de la méthode appropriée. De même, vous pouvez éviter la libération automatique de mémoire dans les cas où celle-ci ne doit jamais être libérée, par exemple quand vous utilisez la fonction **GetCommandLine** depuis Kernel32.dll qui retourne un pointeur à la mémoire du noyau. Pour plus d’informations sur la libération manuelle de mémoire, consultez [Mémoires tampons, exemple](http://msdn.microsoft.com/en-us/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5).  
+ Le runtime utilise toujours la méthode **CoTaskMemFree** pour libérer de la mémoire. Si la mémoire que vous utilisez n’a pas été allouée avec la méthode **CoTaskMemAlloc**, vous devez utiliser un **IntPtr** et libérer la mémoire manuellement à l’aide de la méthode appropriée. De même, vous pouvez éviter la libération automatique de mémoire dans les cas où celle-ci ne doit jamais être libérée, par exemple quand vous utilisez la fonction **GetCommandLine** depuis Kernel32.dll qui retourne un pointeur à la mémoire du noyau. Pour plus d’informations sur la libération manuelle de mémoire, consultez [Mémoires tampons, exemple](http://msdn.microsoft.com/library/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5).  
   
 ## <a name="default-marshaling-for-classes"></a>Marshaling par défaut pour les classes  
- Les classes ne peuvent être marshalées que par COM Interop et sont toujours marshalées en tant qu'interfaces. Dans certains cas, l’interface utilisée pour marshaler la classe est appelée interface de classe. Pour plus d’informations sur la substitution de l’interface de classe par une interface de votre choix, consultez [Présentation de l’interface de classe](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024).  
+ Les classes ne peuvent être marshalées que par COM Interop et sont toujours marshalées en tant qu'interfaces. Dans certains cas, l’interface utilisée pour marshaler la classe est appelée interface de classe. Pour plus d’informations sur la substitution de l’interface de classe par une interface de votre choix, consultez [Présentation de l’interface de classe](http://msdn.microsoft.com/library/733c0dd2-12e5-46e6-8de1-39d5b25df024).  
   
 ### <a name="passing-classes-to-com"></a>Passage de classes à COM  
  Quand une classe managée est passée à COM, le marshaleur d'interopérabilité encapsule automatiquement la classe avec un proxy COM et passe l'interface de classe produite par le proxy à l'appel de méthode COM. Le proxy délègue ensuite tous les appels sur l'interface de classe vers l'objet managé. Le proxy expose également d'autres interfaces qui ne sont pas explicitement implémentées par la classe. Le proxy implémente automatiquement les interfaces telles que **IUnknown** et **IDispatch** pour le compte de la classe.  

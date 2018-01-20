@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: accbc05018644e3ead4ee0c08f44ec39cad8f036
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5c43c195411b07467f1041ecc5ed55239a1327dc
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-data-services-resources"></a>Ressources de services de données WCF
 Les rubriques d'introduction [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] se trouvent aux emplacements indiqués ci-après. Un grand nombre de ces rubriques contiennent également des liens vers des rubriques connexes qui contiennent des informations plus détaillées.  
@@ -33,7 +33,7 @@ Les rubriques d'introduction [!INCLUDE[ssAstoria](../../../../includes/ssastoria
  [Scénarios d’application](../../../../docs/framework/data/wcf/application-scenarios-wcf-data-services.md)  
  Fournit une approche basée sur les tâches à la création de [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] et les applications qui accèdent aux [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] flux.  
   
- [Glossaire Visual Studio et .NET Framework](http://msdn.microsoft.com/en-us/6529d7c6-7e25-4426-a120-d57b239ca4eb)  
+ [Glossaire Visual Studio et .NET Framework](http://msdn.microsoft.com/library/6529d7c6-7e25-4426-a120-d57b239ca4eb)  
  Inclut les termes utilisés dans [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] et [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] documentation.  
   
 ## <a name="external-resources"></a>Ressources externes  

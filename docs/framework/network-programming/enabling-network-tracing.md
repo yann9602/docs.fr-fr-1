@@ -22,11 +22,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: c4957e3ec6891dbee207c7aac5fcf1564ecd0af5
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8f6a23ce156941291fe499b6402061639569815c
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="enabling-network-tracing"></a>Activation du suivi réseau
 Le traçage réseau fournit l’accès aux informations sur les appels de méthodes et le trafic réseau généré par une application managée. Vous devez effectuer les tâches suivantes pour activer le traçage réseau dans votre application :  
@@ -58,4 +58,4 @@ Le traçage réseau fournit l’accès aux informations sur les appels de métho
 ## <a name="see-also"></a>Voir aussi  
  [Interprétation du suivi réseau](../../../docs/framework/network-programming/interpreting-network-tracing.md)  
  [Traçage réseau dans .NET Framework](../../../docs/framework/network-programming/network-tracing.md)  
- [Introduction à l’instrumentation et au traçage](http://msdn.microsoft.com/en-us/e924e57c-33cf-4b0e-9e7f-a45d13e38f2c)
+ [Introduction à l’instrumentation et au traçage](http://msdn.microsoft.com/library/e924e57c-33cf-4b0e-9e7f-a45d13e38f2c)

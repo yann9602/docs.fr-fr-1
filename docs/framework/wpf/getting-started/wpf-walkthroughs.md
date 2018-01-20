@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c24b5beae2a10720ee4d89b9d2d60306978d2628
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a6407ccb093d6bdba4e3953ffa1117cf4b56c119
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wpf-walkthroughs"></a>Procédures pas à pas WPF
 Procédures pas à pas fournissent des instructions détaillées pour les scénarios courants. Elles constituent donc un bon point de départ pour vous familiariser avec le produit ou un ensemble de fonctionnalités particulier.  
@@ -32,11 +32,11 @@ Procédures pas à pas fournissent des instructions détaillées pour les scéna
   
 |Titre|Description|  
 |-----------|-----------------|  
-|[Procédure pas à pas : Création d’une Application WPF Simple avec le Concepteur WPF](http://msdn.microsoft.com/en-us/2d412231-dbdf-4e69-b060-4f2b246c2027)|Montre comment générer une application WPF simple avec le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].|  
-|[Procédure pas à pas : Création d’une disposition dynamique](http://msdn.microsoft.com/en-us/483aafbb-b29d-435a-b956-8e4f67cd4a0f)|Montre comment créer une disposition dynamique à l’aide un <xref:System.Windows.Controls.Grid> contrôle de panneau.|  
-|[Procédure pas à pas : Création d’une Application redimensionnable à l’aide du Concepteur WPF](http://msdn.microsoft.com/en-us/18f5271e-4dc6-4eef-bc20-bb8862045d2e)|Montre comment créer des dispositions de fenêtres qui sont redimensionnables par l’utilisateur au moment de l’exécution.|  
-|[Procédure pas à pas : Création d’une liaison de données à l’aide du Concepteur WPF](http://msdn.microsoft.com/en-us/8a79ed20-d59f-46b8-944f-6fd5dbb4e278)|Montre comment utiliser le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] pour créer des liaisons de données qui connectent des données à un contrôle.|  
-|[Procédure pas à pas : Utilisation d’un DesignInstance à lier aux données dans le Concepteur](http://msdn.microsoft.com/en-us/a4d3747a-bd43-42bc-b66d-477856a6769c)|Montre comment utiliser le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] pour créer des liaisons de données au moment du design pour un contexte de données assigné au moment de l’exécution.|  
+|[Procédure pas à pas : Création d’une Application WPF Simple avec le Concepteur WPF](http://msdn.microsoft.com/library/2d412231-dbdf-4e69-b060-4f2b246c2027)|Montre comment générer une application WPF simple avec le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].|  
+|[Procédure pas à pas : Création d’une disposition dynamique](http://msdn.microsoft.com/library/483aafbb-b29d-435a-b956-8e4f67cd4a0f)|Montre comment créer une disposition dynamique à l’aide un <xref:System.Windows.Controls.Grid> contrôle de panneau.|  
+|[Procédure pas à pas : Création d’une Application redimensionnable à l’aide du Concepteur WPF](http://msdn.microsoft.com/library/18f5271e-4dc6-4eef-bc20-bb8862045d2e)|Montre comment créer des dispositions de fenêtres qui sont redimensionnables par l’utilisateur au moment de l’exécution.|  
+|[Procédure pas à pas : Création d’une liaison de données à l’aide du Concepteur WPF](http://msdn.microsoft.com/library/8a79ed20-d59f-46b8-944f-6fd5dbb4e278)|Montre comment utiliser le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] pour créer des liaisons de données qui connectent des données à un contrôle.|  
+|[Procédure pas à pas : Utilisation d’un DesignInstance à lier aux données dans le Concepteur](http://msdn.microsoft.com/library/a4d3747a-bd43-42bc-b66d-477856a6769c)|Montre comment utiliser le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] pour créer des liaisons de données au moment du design pour un contexte de données assigné au moment de l’exécution.|  
   
 ## <a name="wpf-walkthroughs"></a>Procédures pas à pas WPF  
   
@@ -61,4 +61,4 @@ Procédures pas à pas fournissent des instructions détaillées pour les scéna
   
 |Titre|Description|  
 |-----------|-----------------|  
-|[Procédures pas à pas Visual Studio](http://msdn.microsoft.com/en-us/f5399a1f-2d3d-42fb-b989-134ccda2159f)|Fournit une liste de procédures pas à pas pour toutes les zones de la programmation dans Visual Studio.|
+|[Procédures pas à pas Visual Studio](http://msdn.microsoft.com/library/f5399a1f-2d3d-42fb-b989-134ccda2159f)|Fournit une liste de procédures pas à pas pour toutes les zones de la programmation dans Visual Studio.|

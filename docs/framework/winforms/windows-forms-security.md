@@ -21,11 +21,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f45d0fb6a2ffb2e20cc23e67de4cac6a2f2c81bc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8bd9b87fdfa54a6f9bf53e4fa897106257b4c625
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="windows-forms-security"></a>Sécurité des Windows Forms
 Windows Forms comprend un modèle de sécurité qui est basée sur code (niveaux de sécurité sont définis pour le code, quel que soit l’utilisateur qui exécute le code). Il s’agit en plus de tous les schémas de sécurité qui peuvent être déjà en place sur votre système. Celles-ci peuvent inclure dans le navigateur (telles que la sécurité basée sur la zone disponible dans Internet Explorer) ou le système d’exploitation (par exemple, la sécurité basée sur les informations d’identification de Windows NT).  
@@ -44,10 +44,10 @@ Windows Forms comprend un modèle de sécurité qui est basée sur code (niveaux
  Décrit comment manipuler des fenêtres, l’utilisation du Presse-papiers et effectuer des appels au code non managé dans un environnement de confiance partiel.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [NIB : Stratégie de sécurité par défaut](http://msdn.microsoft.com/en-us/2c086873-0894-4f4d-8f7e-47427c1a3b55)  
+ [NIB : Stratégie de sécurité par défaut](http://msdn.microsoft.com/library/2c086873-0894-4f4d-8f7e-47427c1a3b55)  
  Répertorie les autorisations par défaut accordées dans les jeux d’autorisations confiance totale, Intranet Local et Internet.  
   
- [NIB : Administration de stratégie de sécurité générale](http://msdn.microsoft.com/en-us/5121fe35-f0e3-402c-94ab-4f35b0a87b4b)  
+ [NIB : Administration de stratégie de sécurité générale](http://msdn.microsoft.com/library/5121fe35-f0e3-402c-94ab-4f35b0a87b4b)  
  Fournit des informations sur l’administration de la stratégie de sécurité .NET Framework et l’élévation des autorisations.  
   
  [Autorisations dangereuses et Administration de la stratégie](../../../docs/framework/misc/dangerous-permissions-and-policy-administration.md)  
@@ -56,7 +56,7 @@ Windows Forms comprend un modèle de sécurité qui est basée sur code (niveaux
  [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)  
  Liens vers des rubriques qui expliquent les meilleures pratiques pour en toute sécurité l’écriture de code par rapport à .NET Framework.  
   
- [NIB : Demande d’autorisations](http://msdn.microsoft.com/en-us/0447c49d-8cba-45e4-862c-ff0b59bebdc2)  
+ [NIB : Demande d’autorisations](http://msdn.microsoft.com/library/0447c49d-8cba-45e4-862c-ff0b59bebdc2)  
  Décrit l’utilisation d’attributs pour permettre au runtime de savoir quelles autorisations que votre code doit s’exécuter.  
   
  [Concepts fondamentaux sur la sécurité](../../../docs/standard/security/key-security-concepts.md)  
@@ -65,8 +65,8 @@ Windows Forms comprend un modèle de sécurité qui est basée sur code (niveaux
  [Notions fondamentales de la sécurité d’accès du code](../../../docs/framework/misc/code-access-security-basics.md)  
  Décrit les principes fondamentaux de l’utilisation de la stratégie de sécurité du .NET Framework.  
   
- [NIB : Déterminer le moment modifier la stratégie de sécurité](http://msdn.microsoft.com/en-us/af749b17-e461-409d-84b9-a3d44789db16)  
+ [NIB : Déterminer le moment modifier la stratégie de sécurité](http://msdn.microsoft.com/library/af749b17-e461-409d-84b9-a3d44789db16)  
  Explique comment déterminer quand vos applications doivent diverger de la stratégie de sécurité par défaut.  
   
- [NIB : Déploiement de stratégie de sécurité](http://msdn.microsoft.com/en-us/f936c1e5-033b-4bd9-a3bd-a39ba733a681)  
+ [NIB : Déploiement de stratégie de sécurité](http://msdn.microsoft.com/library/f936c1e5-033b-4bd9-a3bd-a39ba733a681)  
  Décrit la méthode la mieux adaptée pour déployer les modifications de stratégie de sécurité.

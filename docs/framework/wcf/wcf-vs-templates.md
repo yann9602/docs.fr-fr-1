@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 75723b03468c2e7aeda765f2dabfc30e394c8c88
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 2bb195af180ab9d840f91fe82f9f643119663374
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wcf-visual-studio-templates"></a>Modèles Visual Studio WCF
 Les modèles [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] sont des modèles d'élément et de projet prédéfinis que vous pouvez utiliser dans [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] pour générer rapidement des services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] et des applications s'y rapportant.  
@@ -70,7 +70,7 @@ Les modèles [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] [!INCLUDE[vspr
  Un fichier d'hôte de service (service1.svc) est également créé si le projet existant est un projet Web.  
   
 ### <a name="wcf-wf-service-project-and-item-template"></a>Modèles d'élément et de projet de service WF WCF.  
- Ces modèles créent des services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] qui hébergent un service de workflow, dont l'accès est identique à celui d'un service Web. Différents modèles existent pour les XAML et les modèles de programmation impératifs. À l'aide des modèles, vous pouvez créer des workflows séquentiels ou des workflows de l'ordinateur d'état. Pour plus d’informations sur ces types de flux de travail, consultez [Windows Workflow Foundation didacticiels](http://msdn.microsoft.com/en-us/e9705654-bd96-4b56-8d98-f1f118112d97). [!INCLUDE[crabout](../../../includes/crabout-md.md)]créer des projets de flux de travail, consultez [création de projets de Workflow hérité](/visualstudio/workflow-designer/creating-legacy-workflow-projects).  
+ Ces modèles créent des services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] qui hébergent un service de workflow, dont l'accès est identique à celui d'un service Web. Différents modèles existent pour les XAML et les modèles de programmation impératifs. À l'aide des modèles, vous pouvez créer des workflows séquentiels ou des workflows de l'ordinateur d'état. Pour plus d’informations sur ces types de flux de travail, consultez [Windows Workflow Foundation didacticiels](http://msdn.microsoft.com/library/e9705654-bd96-4b56-8d98-f1f118112d97). [!INCLUDE[crabout](../../../includes/crabout-md.md)]créer des projets de flux de travail, consultez [création de projets de Workflow hérité](/visualstudio/workflow-designer/creating-legacy-workflow-projects).  
   
  Le concepteur [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] est plus réactif lorsque des workflows de type XOML sont utilisés au lieu de workflows basés sur le code. Le workflow XOML est le type de workflow par défaut à créer.  
   

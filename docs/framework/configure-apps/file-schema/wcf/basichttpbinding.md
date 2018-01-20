@@ -15,18 +15,18 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 44bc7a3ef40b08d7cee4e515e6628aef9987c0c8
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 80494dd0050c7a3a873e6885a8001a55171ffc8e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltbasichttpbindinggt"></a>&lt;basicHttpBinding&gt;
 Représente une liaison qu'un service [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] peut utiliser pour configurer et exposer des points de terminaison qui sont en mesure de communiquer avec les services Web basés sur ASMX et les clients et autres services qui se conforment au WS-I Basic Profile 1.1.  
   
- \<système. ServiceModel >  
-\<liaisons >  
-\<basicHttpBinding >  
+ \<system.ServiceModel>  
+\<bindings>  
+\<basicHttpBinding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -96,14 +96,14 @@ Représente une liaison qu'un service [!INCLUDE[indigo1](../../../../../includes
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<sécurité >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|Définit les paramètres de sécurité de la liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>.|  
-|[\<readerQuotas >](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Définit les contraintes sur la complexité des messages SOAP pouvant être traités par les points de terminaison configurés avec cette liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|Définit les paramètres de sécurité de la liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>.|  
+|[\<readerQuotas>](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Définit les contraintes sur la complexité des messages SOAP pouvant être traités par les points de terminaison configurés avec cette liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<liaisons >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
 ## <a name="remarks"></a>Notes  
  Le BasicHttpBinding utilise HTTP en guise de transport pour envoyer des messages SOAP 1.1. Un service peut utiliser cette liaison pour exposer des points de terminaison qui se conforment à WS-I BP 1.1, tels que ceux que les clients ASMX consomment. De la même façon, un client peut utiliser le BasicHttpBinding pour communiquer avec les services qui exposent des points de terminaison qui se conforment à WS-I BP 1.1, tel que les services Web ASMX ou les services configurés avec le BasicHttpBinding.  
@@ -194,5 +194,5 @@ Représente une liaison qu'un service [!INCLUDE[indigo1](../../../../../includes
  <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>  
  [Liaisons](../../../../../docs/framework/wcf/bindings.md)  
  [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<liaison >](../../../../../docs/framework/misc/binding.md)
+ [Utilisation de liaisons pour configurer les Clients et les Services Windows Communication Foundation](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<binding>](../../../../../docs/framework/misc/binding.md)

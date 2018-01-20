@@ -11,11 +11,11 @@ ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
 caps.latest.revision: "24"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: f554893858b9475b3d94a669a094206be6a5c3fa
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: e4ba86f15e51fdceb09c7e005e2af4fa0f9f592f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Options du compilateur Visual Basic par catégorie
 Le compilateur de ligne de commande [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] est fourni comme alternative aux programmes de compilation issus de l'environnement de développement intégré (IDE) [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]. Voici la liste des options du compilateur de ligne de commande [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] triées par catégorie fonctionnelle.  
@@ -73,18 +73,18 @@ Le compilateur de ligne de commande [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 
 |[/warnaserror](../../../visual-basic/reference/command-line-compiler/warnaserror.md)|Transforme les avertissements en erreurs.|  
 |`/ruleset:<file>`|Spécifiez un fichier ruleset qui désactive des diagnostics spécifiques.|  
   
-## <a name="help"></a>Aide  
+## <a name="help"></a>Help  
   
 |Option|Objectif|  
 |---|---|  
 |[/?](../../../visual-basic/reference/command-line-compiler/help.md)|Affiche les options du compilateur. Cette commande est identique à l'option `/help`. Aucune compilation n'a lieu.|  
 |[/help](../../../visual-basic/reference/command-line-compiler/help.md)|Affiche les options du compilateur. Cette commande est identique à l'option `/?`. Aucune compilation n'a lieu.|  
   
-## <a name="language"></a>Langage  
+## <a name="language"></a>Langue  
   
 |Option|Objectif|  
 |---|---|  
-|[/langversion](../../../visual-basic/reference/command-line-compiler/langversion.md)|Spécifiez la version de langage : 9 & #124 ; 9.0 & #124 ; 10 & #124 ; 10.0 & #124 ; 11 & #124 ; 11.0.|  
+|[/langversion](../../../visual-basic/reference/command-line-compiler/langversion.md)|Spécifiez la version de langage : 9 &#124; 9.0 &#124; 10 &#124; 10.0 &#124; 11 &#124; 11.0.|  
 |[/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)|Applique la déclaration explicite des variables.|  
 |[/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)|Applique une sémantique de type stricte.|  
 |[/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)|Spécifie si les comparaisons de chaînes doivent être binaires ou utiliser une sémantique spécifique aux paramètres régionaux.|  
@@ -129,6 +129,6 @@ Le compilateur de ligne de commande [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 
   
 ## <a name="see-also"></a>Voir aussi  
  [Options du compilateur Visual Basic par ordre alphabétique](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
- [Présentation du Concepteur de projets](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7)  
+ [Présentation du Concepteur de projets](http://msdn.microsoft.com/library/898dd854-c98d-430c-ba1b-a913ce3c73d7)  
  [Options du compilateur C# par ordre alphabétique](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)  
  [Options du compilateur C# par catégorie](../../../csharp/language-reference/compiler-options/listed-by-category.md)

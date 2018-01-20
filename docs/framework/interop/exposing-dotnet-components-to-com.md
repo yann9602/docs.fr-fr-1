@@ -18,11 +18,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 61e1dbdcf919ee6aa2150e6a57cb88a8aa859efe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a3d34c60a5c2cae5abaa6763b935f6d11a29a39e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="exposing-net-framework-components-to-com"></a>Exposition de composants .NET Framework à COM
 L’écriture d’un type .NET et l’utilisation de ce type à partir de code non managé sont deux activités distinctes pour les développeurs. Cette section contient plusieurs conseils pour l’écriture de code managé interagissant avec des clients COM :  
@@ -51,11 +51,11 @@ L’écriture d’un type .NET et l’utilisation de ce type à partir de code n
   
      Les développeurs COM peuvent référencer des types dans un assembly en utilisant les mêmes outils et techniques que ceux qu’ils utilisent aujourd’hui.  
   
-3.  [Appel d’un objet .NET](http://msdn.microsoft.com/en-us/40c9626c-aea6-4bad-b8f0-c1de462efd33).  
+3.  [Appel d’un objet .NET](http://msdn.microsoft.com/library/40c9626c-aea6-4bad-b8f0-c1de462efd33).  
   
      Les développeurs COM peuvent appeler des méthodes sur l’objet .NET de la même façon qu’ils appellent des méthodes sur un type non managé. Par exemple, l’API **CoCreateInstance** de COM active des objets .NET.  
   
-4.  [Déploiement d’une application pour accéder à COM](http://msdn.microsoft.com/en-us/fb63564c-c1b9-4655-a094-a235625882ce).  
+4.  [Déploiement d’une application pour accéder à COM](http://msdn.microsoft.com/library/fb63564c-c1b9-4655-a094-a235625882ce).  
   
      Un assembly avec nom fort peut être installé dans le Global Assembly Cache et nécessite une signature de son éditeur. Les assemblys qui n’ont pas de nom fort doivent être installés dans le répertoire de l’application du client.  
   

@@ -19,11 +19,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 28203dc428db6a2dd06e9c1e85b64ef80e81ffbe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: e90769d4eec98fc7554294c73086446bba71a400
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="type-equivalence-and-embedded-interop-types"></a>Équivalence de type et types interop incorporés
 À compter de [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], le Common Language Runtime prend en charge l’incorporation des informations de type, pour les types COM, directement dans les assemblys managés. Auparavant, les assemblys managés devaient obtenir ces informations des assemblys interop. Étant donné que les informations de type incorporées incluent uniquement les types et les membres qui sont réellement utilisés par un assembly managé, deux assemblys managés peuvent présenter des affichages très différents du même type COM. Chaque assembly managé a un objet <xref:System.Type> différent pour représenter son affichage du type COM. Le Common Language Runtime prend en charge l’équivalence des types entre ces différents affichages pour les interfaces, les structures, les énumérations et les délégués.  
@@ -61,5 +61,5 @@ ms.lasthandoff: 12/22/2017
   
 ## <a name="see-also"></a>Voir aussi  
  <xref:System.Type.IsEquivalentTo%2A>  
- [Utilisation de Types COM en Code managé](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)  
+ [Utilisation de Types COM en Code managé](http://msdn.microsoft.com/library/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66)  
  [Importation d'une bibliothèque de types sous la forme d'un assembly](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)

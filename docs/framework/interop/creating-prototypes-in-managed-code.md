@@ -29,11 +29,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9a85da0d1714c263b446c88b7c18e934817aea94
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d1006f59f9841a10066c83a8f0800d3a7c17500a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Création de prototypes dans du code managé
 Cette rubrique décrit comment accéder aux fonctions non managées et présente plusieurs champs d’attribut qui permettent d’annoter les définitions de méthode dans du code managé. Pour afficher des exemples montrant comment construire des déclarations .NET à utiliser avec l’appel de code non managé, consultez [Marshaling de données à l’aide de l’appel de code non managé](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
@@ -235,7 +235,7 @@ interface IDemandStubsItf
  [Spécification d'un point d'entrée](../../../docs/framework/interop/specifying-an-entry-point.md)  
  [Spécification d'un jeu de caractères](../../../docs/framework/interop/specifying-a-character-set.md)  
  [Exemples d'appel de code non managé](../../../docs/framework/interop/platform-invoke-examples.md)  
- [Considérations sur la sécurité d’appel de plateforme](http://msdn.microsoft.com/en-us/bbcc67f7-50b5-4917-88ed-cb15470409fb)  
+ [Considérations sur la sécurité d’appel de plateforme](http://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb)  
  [Identification des fonctions des DLL](../../../docs/framework/interop/identifying-functions-in-dlls.md)  
  [Création d’une classe pour contenir des fonctions DLL](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md)  
  [Appel à une fonction DLL](../../../docs/framework/interop/calling-a-dll-function.md)

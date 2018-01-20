@@ -23,11 +23,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: ac4b6fc2ae36d848306178f281cceeeb0654ec03
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5cee99346d19c632739bcc6540c43f1a35217a2f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a>Procédure pas à pas : création d'une application extensible
 Cette procédure pas à pas explique comment créer un pipeline pour un complément qui exécute des fonctions de calculatrice simple. Il ne présente pas un scénario réel ; au lieu de cela, il illustre les fonctionnalités de base d’un pipeline et la manière dont un complément peut fournir des services pour un ordinateur hôte.  
@@ -52,11 +52,11 @@ Cette procédure pas à pas explique comment créer un pipeline pour un complém
   
 -   L’application hôte en cours d’exécution.  
   
- Ce pipeline passe uniquement des types sérialisables (<xref:System.Double> et <xref:System.String>), entre l’hôte et le complément. Pour obtenir un exemple qui montre comment passer des collections de types de données complexes, consultez [procédure pas à pas : passage de Collections entre les hôtes et les compléments](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5).  
+ Ce pipeline passe uniquement des types sérialisables (<xref:System.Double> et <xref:System.String>), entre l’hôte et le complément. Pour obtenir un exemple qui montre comment passer des collections de types de données complexes, consultez [procédure pas à pas : passage de Collections entre les hôtes et les compléments](http://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5).  
   
  Le contrat pour ce pipeline définit un modèle d’objet de quatre opérations arithmétiques : ajouter, de soustraire, de multiplier et de diviser. L’hôte fournit le complément une équation à calculer, par exemple 2 + 2, et le complément retourne le résultat à l’hôte.  
   
- La version 2 de la calculatrice de complément fournit des possibilités de calcul plus et montre comment le contrôle de version. Il est décrit dans [procédure pas à pas : l’activation de la compatibilité descendante en tant que vos modifications de l’hôte](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
+ La version 2 de la calculatrice de complément fournit des possibilités de calcul plus et montre comment le contrôle de version. Il est décrit dans [procédure pas à pas : l’activation de la compatibilité descendante en tant que vos modifications de l’hôte](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
   
 ## <a name="prerequisites"></a>Prérequis  
  Les éléments suivants sont nécessaires pour effectuer cette procédure pas à pas :  
@@ -73,7 +73,7 @@ Cette procédure pas à pas explique comment créer un pipeline pour un complém
 2.  Nommez la solution `CalculatorV1`.  
   
 ## <a name="creating-the-pipeline-directory-structure"></a>Création de la Structure de répertoires du Pipeline  
- Le modèle de complément requiert les assemblys du segment de pipeline à placer dans une structure de répertoire spécifié. Pour plus d’informations sur la structure du pipeline, consultez [les exigences de développement de Pipeline](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
+ Le modèle de complément requiert les assemblys du segment de pipeline à placer dans une structure de répertoire spécifié. Pour plus d’informations sur la structure du pipeline, consultez [les exigences de développement de Pipeline](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
   
 #### <a name="to-create-the-pipeline-directory-structure"></a>Pour créer la structure de répertoires du pipeline  
   
@@ -92,10 +92,10 @@ Cette procédure pas à pas explique comment créer un pipeline pour un complém
       HostSideAdapters  
     ```  
   
-     Il n’est pas nécessaire de placer la structure de dossiers de pipeline dans votre dossier d’application ; Il est fait ici uniquement pour des raisons pratiques. À l’étape appropriée, la procédure pas à pas explique comment modifier le code si la structure de dossiers de pipeline est dans un autre emplacement. Consultez la discussion active des spécifications du pipeline dans [les exigences de développement de Pipeline](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
+     Il n’est pas nécessaire de placer la structure de dossiers de pipeline dans votre dossier d’application ; Il est fait ici uniquement pour des raisons pratiques. À l’étape appropriée, la procédure pas à pas explique comment modifier le code si la structure de dossiers de pipeline est dans un autre emplacement. Consultez la discussion active des spécifications du pipeline dans [les exigences de développement de Pipeline](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
   
     > [!NOTE]
-    >  Le `CalcV2` dossier n’est pas utilisé dans cette procédure pas à pas ; il s’agit d’un espace réservé pour [procédure pas à pas : l’activation de la compatibilité descendante en tant que vos modifications de l’hôte](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
+    >  Le `CalcV2` dossier n’est pas utilisé dans cette procédure pas à pas ; il s’agit d’un espace réservé pour [procédure pas à pas : l’activation de la compatibilité descendante en tant que vos modifications de l’hôte](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
   
 ## <a name="creating-the-contract-and-views"></a>Création du contrat et les vues  
  Le segment de contrat pour ce pipeline définit la `ICalc1Contract` interface qui définit les quatre méthodes : `add`, `subtract`, `multiply`, et `divide`.  
@@ -204,7 +204,7 @@ Cette procédure pas à pas explique comment créer un pipeline pour un complém
   
  Dans ce pipeline, le complément fournit un service à l’hôte et le flux de types à partir de la macro complémentaire pour l’ordinateur hôte. Car aucun type de flux de l’hôte vers le complément, il est inutile d’inclure une carte de vue en contrat.  
   
- Pour implémenter la gestion de la durée de vie, utilisez un <xref:System.AddIn.Pipeline.ContractHandle> objet à attacher un jeton de durée de vie pour le contrat. Vous devez conserver une référence à ce handle dans l’ordre pour la gestion de durée de vie. Une fois que le jeton est appliqué, aucune programmation supplémentaire n’est requise, car le système de complément peut supprimer les objets lorsqu’ils ne sont plus utilisés et les rendre disponibles pour le garbage collection. Pour plus d'informations, consultez [Gestion de la durée de vie](http://msdn.microsoft.com/en-us/57a9c87e-394c-4fef-89f2-aa4223a2aeb5).  
+ Pour implémenter la gestion de la durée de vie, utilisez un <xref:System.AddIn.Pipeline.ContractHandle> objet à attacher un jeton de durée de vie pour le contrat. Vous devez conserver une référence à ce handle dans l’ordre pour la gestion de durée de vie. Une fois que le jeton est appliqué, aucune programmation supplémentaire n’est requise, car le système de complément peut supprimer les objets lorsqu’ils ne sont plus utilisés et les rendre disponibles pour le garbage collection. Pour plus d’informations, consultez [gestion de la durée de vie](http://msdn.microsoft.com/library/57a9c87e-394c-4fef-89f2-aa4223a2aeb5).  
   
 #### <a name="to-create-the-host-side-adapter"></a>Pour créer l’adaptateur côté hôte  
   
@@ -339,7 +339,7 @@ Cette procédure pas à pas explique comment créer un pipeline pour un complém
     |Calc1HVA|MyApp|  
   
     > [!NOTE]
-    >  Si vous avez décidé de placer votre structure de dossiers de pipeline dans un emplacement autre que votre dossier d’application, vous devez modifier les chemins d’accès indiqués dans le tableau en conséquence. Consultez la discussion active des spécifications du pipeline dans [les exigences de développement de Pipeline](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
+    >  Si vous avez décidé de placer votre structure de dossiers de pipeline dans un emplacement autre que votre dossier d’application, vous devez modifier les chemins d’accès indiqués dans le tableau en conséquence. Consultez la discussion active des spécifications du pipeline dans [les exigences de développement de Pipeline](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
   
 2.  Générez la solution Visual Studio.  
   
@@ -348,7 +348,7 @@ Cette procédure pas à pas explique comment créer un pipeline pour un complém
     > [!NOTE]
     >  Si vous n’avez pas modifié **copie locale** à **False** pour le `Calc1AddInView` projet référence dans le `AddInCalcV1` projet, des problèmes de contexte de chargeur empêche le complément qui est situé.  
   
-     Pour plus d’informations sur le déploiement vers le pipeline, consultez [les exigences de développement de Pipeline](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
+     Pour plus d’informations sur le déploiement vers le pipeline, consultez [les exigences de développement de Pipeline](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
   
 ## <a name="running-the-host-application"></a>Exécution de l’Application hôte  
  Vous êtes maintenant prêt à exécuter l’hôte et d’interagir avec le complément.  
@@ -364,8 +364,8 @@ Cette procédure pas à pas explique comment créer un pipeline pour un complém
 4.  Type **quitter** et appuyez sur la **entrée** touche pour fermer l’application.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Procédure pas à pas : L’activation de la compatibilité descendante lorsque votre hôte change](http://msdn.microsoft.com/en-us/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
- [Procédure pas à pas : Passage de Collections entre les hôtes et les compléments](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5)  
- [Exigences de développement de pipeline](http://msdn.microsoft.com/en-us/ef9fa986-e80b-43e1-868b-247f4c1d9da5)  
- [Contrats, les vues et les adaptateurs](http://msdn.microsoft.com/en-us/a6460173-9507-4b87-8c07-d4ee245d715c)  
+ [Procédure pas à pas : L’activation de la compatibilité descendante lorsque votre hôte change](http://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848)  
+ [Procédure pas à pas : Passage de Collections entre les hôtes et les compléments](http://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5)  
+ [Exigences de développement de pipeline](http://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5)  
+ [Contrats, les vues et les adaptateurs](http://msdn.microsoft.com/library/a6460173-9507-4b87-8c07-d4ee245d715c)  
  [Développement de pipeline](../../../docs/framework/add-ins/pipeline-development.md)

@@ -15,11 +15,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 472bc9cc1ff18c7e199a1133a1d54994cea21055
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: acaaee2a34fad776847f3f2a89d458b49d817d30
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="default-nettcpbinding"></a>Default NetTcpBinding
 Cet exemple illustre l'utilisation de la liaison <xref:System.ServiceModel.NetTcpBinding>. Cet exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice. Dans cet exemple, le service est auto-hébergé. Le client et le service sont tous les deux des applications console.  
@@ -36,7 +36,7 @@ Cet exemple illustre l'utilisation de la liaison <xref:System.ServiceModel.NetTc
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\Default`  
   
- La liaison est spécifiée dans les fichiers de configuration pour le client et le service. Le type de liaison est spécifié dans le `binding` attribut de la [ \<point de terminaison >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément, comme indiqué dans l’exemple de configuration suivantes.  
+ La liaison est spécifiée dans les fichiers de configuration pour le client et le service. Le type de liaison est spécifié dans le `binding` attribut de la [ \<point de terminaison >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément, comme indiqué dans l’exemple de configuration suivantes.  
   
 ```xml  
 <endpoint address=""  

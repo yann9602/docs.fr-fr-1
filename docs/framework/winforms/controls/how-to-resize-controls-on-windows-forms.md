@@ -21,11 +21,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 19997c206e118353c4b712ac8c5650cd71ed3a58
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aad7c24027b7b1d45d1042d1125ee24a87bf3c15
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-resize-controls-on-windows-forms"></a>Comment : redimensionner des contrôles sur des Windows Forms
 Vous pouvez redimensionner des contrôles individuels, et vous pouvez redimensionner plusieurs contrôles du type identique ou différent, tel que <xref:System.Windows.Forms.Button> et <xref:System.Windows.Forms.GroupBox> contrôles.  
@@ -49,4 +49,4 @@ Vous pouvez redimensionner des contrôles individuels, et vous pouvez redimensio
  [Création d'étiquettes et de raccourcis pour les contrôles Windows Forms](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
  [Contrôles à utiliser dans les Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  [Classement par fonction des contrôles Windows Forms](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)  
- [Comment : redimensionner des Windows Forms à l’aide du Concepteur](http://msdn.microsoft.com/en-us/3fe57c94-851c-45d7-a6f6-6b85f3c4a104)
+ [Comment : redimensionner des Windows Forms à l’aide du Concepteur](http://msdn.microsoft.com/library/3fe57c94-851c-45d7-a6f6-6b85f3c4a104)

@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 4147f00b9396609ae80091a02c3f7d2450db34f4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8c0d1d0473a821510ee70e386058a2b3249221dd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="trusted-facade-service"></a>Trusted Facade Service
 Cet exemple de scénario illustre comment transférer les informations d'identité d'un appelant d'un service à un autre à l'aide de l'infrastructure de sécurité [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] .  
@@ -287,7 +287,7 @@ Press <ENTER> to terminate client.
   
 5.  Lancez Client.exe à partir de \client\bin. L'activité du client s'affiche sur son application de console.  
   
-6.  Si le client et le service ne parviennent pas à communiquer, consultez [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+6.  Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
   

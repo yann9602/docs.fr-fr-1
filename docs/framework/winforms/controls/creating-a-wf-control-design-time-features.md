@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: f7c875721436f0d6fe3f0cc57140a275e8d218f9
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a4e84c665897159d08cec36b0f35b4f5f2674445
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-creating-a-windows-forms-control-that-takes-advantage-of-visual-studio-design-time-features"></a>Procédure pas à pas : création d’un contrôle Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio
 L’expérience au moment du design pour un contrôle personnalisé peut être améliorée en créant un concepteur personnalisé associé.  
@@ -74,7 +74,7 @@ L’expérience au moment du design pour un contrôle personnalisé peut être a
  Pour l’intégralité du code, consultez [Comment : créer un Windows Forms contrôle que prend parti au moment du Design fonctionnalités](http://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c).  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## <a name="prerequisites"></a>Prérequis  
  Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :  
@@ -86,7 +86,7 @@ L’expérience au moment du design pour un contrôle personnalisé peut être a
   
 #### <a name="to-create-the-project"></a>Pour créer le projet  
   
--   Créez un projet d’Application Windows Forms appelé « MarqueeControlTest ». Pour plus d'informations, consultez [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).  
+-   Créez un projet d’Application Windows Forms appelé « MarqueeControlTest ». Pour plus d’informations, consultez [Comment : créer un projet d’application Windows](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa).  
   
 ## <a name="creating-a-control-library-project"></a>Création d’un projet de bibliothèque de contrôles  
  L’étape suivante consiste à créer le projet de bibliothèque de contrôles. Vous allez créer un nouveau contrôle personnalisé et son concepteur personnalisé correspondant.  
@@ -95,11 +95,11 @@ L’expérience au moment du design pour un contrôle personnalisé peut être a
   
 1.  Ajouter un projet de bibliothèque de contrôles Windows Forms à la solution. Nommez le projet « MarqueeControlLibrary ».  
   
-2.  À l’aide de **l’Explorateur de solutions**, supprimer le contrôle du projet par défaut en supprimant le fichier source nommé « UserControl1.cs » ou « UserControl1.vb », en fonction de la langue de votre choix. Pour plus d’informations, consultez [NIB : Comment : exclure des éléments, de suppression et de suppression](http://msdn.microsoft.com/en-us/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
+2.  À l’aide de **l’Explorateur de solutions**, supprimer le contrôle du projet par défaut en supprimant le fichier source nommé « UserControl1.cs » ou « UserControl1.vb », en fonction de la langue de votre choix. Pour plus d’informations, consultez [NIB : Comment : exclure des éléments, de suppression et de suppression](http://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
   
 3.  Ajouter un nouveau <xref:System.Windows.Forms.UserControl> d’élément à la `MarqueeControlLibrary` projet. Nommez le nouveau fichier source une base « MarqueeControl ».  
   
-4.  À l’aide de **l’Explorateur de solutions**, créez un dossier dans le `MarqueeControlLibrary` projet. Pour plus d’informations, consultez [NIB : Comment : ajouter de nouveaux éléments de projet](http://msdn.microsoft.com/en-us/63d3e16b-de6e-4bb5-a0e3-ecec762201ce). Nommez le nouveau dossier « Conception ».  
+4.  À l’aide de **l’Explorateur de solutions**, créez un dossier dans le `MarqueeControlLibrary` projet. Pour plus d’informations, consultez [NIB : Comment : ajouter de nouveaux éléments de projet](http://msdn.microsoft.com/library/63d3e16b-de6e-4bb5-a0e3-ecec762201ce). Nommez le nouveau dossier « Conception ».  
   
 5.  Cliquez sur le **conception** dossier et ajouter une nouvelle classe. Nommez le fichier source une base « MarqueeControlRootDesigner ».  
   

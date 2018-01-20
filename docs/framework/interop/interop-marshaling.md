@@ -18,11 +18,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 5bfd5ca9d42c654882c77efafed82aec7e4f0c9b
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 17638390a07f752a7101209e5635752bc0511d1d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="interop-marshaling"></a>Marshaling d’interopérabilité
 <a name="top"></a> Le marshaling d’interopérabilité détermine la façon dont les données sont transmises dans les arguments de méthode et les valeurs de retour entre la mémoire managée et non managée lors des appels. Le marshaling d’interopérabilité est une activité d’exécution effectuée par le service de marshaling du common language runtime.  
@@ -105,7 +105,7 @@ Appel intercloisonnements entre un client .NET et un objet COM
     > [!NOTE]
     >  Une fois le thread d’un client C# défini sur STA, les appels aux composants COM MTA nécessiteront un marshaling intercloisonnements.  
   
- Pour obtenir des instructions sur la sélection explicite d’un modèle de cloisonnement, consultez [Threading managé et non managé](http://msdn.microsoft.com/en-us/db425c20-4b2f-4433-bf96-76071c7881e5).  
+ Pour obtenir des instructions sur la sélection explicite d’un modèle de cloisonnement, consultez [Threading managé et non managé](http://msdn.microsoft.com/library/db425c20-4b2f-4433-bf96-76071c7881e5).  
   
  [Retour au début](#top)  
   
@@ -145,7 +145,7 @@ Références franchissant les limites d'hôtes et de processus
  ![SOAP ou TcpChannel](../../../docs/framework/interop/media/interopremotesoap.gif "interopremotesoap")  
 Appels distants traversant des pare-feu à l'aide de SOAP ou de la classe TcpChannel  
   
- Certains appels non managés peuvent être transmis via SOAP, tels que les appels entre [composants pris en charge](http://msdn.microsoft.com/en-us/f109ee24-81ad-4d99-9892-51ac6f34978c) et COM.  
+ Certains appels non managés peuvent être transmis via SOAP, tels que les appels entre [composants pris en charge](http://msdn.microsoft.com/library/f109ee24-81ad-4d99-9892-51ac6f34978c) et COM.  
   
  [Retour au début](#top)  
   
@@ -159,10 +159,10 @@ Appels distants traversant des pare-feu à l'aide de SOAP ou de la classe TcpCha
 |[Marshaler des données avec COM Interop](../../../docs/framework/interop/marshaling-data-with-com-interop.md)|Décrit comment personnaliser des wrappers COM pour modifier le comportement de marshaling.|  
 |[Guide pratique pour migrer le modèle DCOM de code managé vers WCF](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)|Décrit comment effectuer une migration de DCOM à WCF.|  
 |[Guide pratique pour mapper des HRESULT et des exceptions](../../../docs/framework/interop/how-to-map-hresults-and-exceptions.md)|Décrit comment mapper des exceptions personnalisées aux HRESULT et fournit le mappage complet de chaque HRESULT à sa classe d'exception comparable dans .NET Framework.|  
-|[Interopérabilité à l’aide de types génériques](http://msdn.microsoft.com/en-us/26b88e03-085b-4b53-94ba-a5a9c709ce58)|Décrit les actions prises en charge lors de l'utilisation de types génériques pour l'interopérabilité COM.|  
+|[Interopérabilité à l’aide de types génériques](http://msdn.microsoft.com/library/26b88e03-085b-4b53-94ba-a5a9c709ce58)|Décrit les actions prises en charge lors de l'utilisation de types génériques pour l'interopérabilité COM.|  
 |[Interopération avec du code non managé](../../../docs/framework/interop/index.md)|Décrit les services d'interopérabilité fournis par le common language runtime.|  
-|[Interopérabilité COM avancée](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|Fournit des liens vers des informations sur l'incorporation de composants COM dans une application .NET Framework.|  
-|[Considérations de design pour l’interopérabilité](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689)|Fournit des conseils pour l'écriture de composants COM intégrés.|  
+|[Interopérabilité COM avancée](http://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|Fournit des liens vers des informations sur l'incorporation de composants COM dans une application .NET Framework.|  
+|[Considérations de design pour l’interopérabilité](http://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689)|Fournit des conseils pour l'écriture de composants COM intégrés.|  
   
  [Retour au début](#top)  
   

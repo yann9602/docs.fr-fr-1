@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 065a3bcd64500323de7bc37c5896b13acb459fb1
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 75d78c505c81ce688e0ba0110c76712c71db1c4f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="securing-adonet-applications"></a>Sécurisation des applications ADO.NET
 L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter les pièges de codage courants, tels que la non validation des entrées d'utilisateur. Une application qui accède à des données présente de nombreux points de défaillance possibles qu'un agresseur peut exploiter pour extraire, manipuler ou détruire des données sensibles. Il est donc important de comprendre tous les aspects de la sécurité, depuis le processus de modélisation de menace durant la phase de conception de votre application, jusqu'à son déploiement éventuel et sa maintenance en cours.  
@@ -53,10 +53,10 @@ L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter le
  [Sécurité](../../../../docs/standard/security/index.md)  
  Contient des liens vers des rubriques qui décrivent tous les aspects de la sécurité dans le .NET Framework.  
   
- [Outils de sécurité](http://msdn.microsoft.com/en-us/2a3eb98a-2de6-4fba-b41c-01a74d354c11)  
+ [Outils de sécurité](http://msdn.microsoft.com/library/2a3eb98a-2de6-4fba-b41c-01a74d354c11)  
  Outils .NET Framework pour la sécurisation et l'administration de la stratégie de sécurité.  
   
- [Ressources pour la création d’Applications sécurisées](http://msdn.microsoft.com/en-us/0ebf5f69-76f2-498a-a2df-83cf3443e132)  
+ [Ressources pour la création d’Applications sécurisées](http://msdn.microsoft.com/library/0ebf5f69-76f2-498a-a2df-83cf3443e132)  
  Fournit des liens vers des rubriques pour la création d'applications sécurisées.  
   
  [Bibliographie relative à la sécurité](/visualstudio/ide/security-bibliography)  

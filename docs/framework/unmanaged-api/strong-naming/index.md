@@ -18,11 +18,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 2127cdb1178da37bcfe77a0e1a02ccd34be2d800
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ce89e27089ea2f0c918d0fe37c4eea141698f9be
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>Nom fort (Informations de référence sur les API non managées)
 L’API de nommage fort permet à un client d’administrer la signature des assemblys avec nom fort.  
@@ -30,7 +30,7 @@ L’API de nommage fort permet à un client d’administrer la signature des ass
  La signature d'un assembly avec un nom fort ajoute un chiffrement à clé publique au fichier contenant le manifeste d'assembly. La signature de nom fort permet de vérifier l’unicité du nom, empêche l’usurpation de noms et fournit aux appelants une identité unique lorsqu’une référence est résolue. Toutefois, aucun niveau de confiance n’est associé à un nom fort.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Fonctions statiques globales d’affectation de noms forts](http://msdn.microsoft.com/en-us/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)  
+ [Fonctions statiques globales d’affectation de noms forts](http://msdn.microsoft.com/library/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)  
  Décrit les fonctions statiques globales non managées par l’API d’affectation de noms forts.  
   
 > [!NOTE]
@@ -114,7 +114,7 @@ L’API de nommage fort permet à un client d’administrer la signature des ass
  [StrongNameTokenFromPublicKey, fonction](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfrompublickey-function.md)  
  Obtient un jeton représentant une clé publique. Déconseillées à compter du [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
   
- [Structure de nom fort](http://msdn.microsoft.com/en-us/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)  
+ [Structure de nom fort](http://msdn.microsoft.com/library/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)  
  Décrit la structure non managée qui utilise des API de nommage fort pour administrer la signature des assemblys avec nom fort...  
   
  [PublicKeyBlob, structure](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  

@@ -21,11 +21,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: d5dcabfadae35cad980d210806c47dab3f5a0082
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b14ee9c435d36e8d6a49cbfb29a57365bcd42d6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="msgbox-sample"></a>MsgBox, exemple
 Cet exemple montre comment passer des types chaîne par valeur comme paramètres entrants, et quand utiliser les champs <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>, <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> et <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>.  
@@ -55,7 +55,7 @@ Cet exemple montre comment passer des types chaîne par valeur comme paramètres
   
 ## <a name="see-also"></a>Voir aussi  
  [Marshaling des chaînes](../../../docs/framework/interop/marshaling-strings.md)  
- [Types de données d’appel de plateforme](http://msdn.microsoft.com/en-us/16014d9f-d6bd-481e-83f0-df11377c550f)  
+ [Types de données d’appel de plateforme](http://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f)  
  [Marshaling par défaut pour les chaînes](../../../docs/framework/interop/default-marshaling-for-strings.md)  
  [Création de prototypes dans du code managé](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)  
  [Spécification d'un jeu de caractères](../../../docs/framework/interop/specifying-a-character-set.md)

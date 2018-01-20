@@ -35,11 +35,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 32607c853506ae7339057893c10fd9931e5823be
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cb98b4d7bbc70fd54e8928c741aa444a6b832046
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Configuration des applications à l'aide de fichiers de configuration
 Le .NET Framework, par le biais de fichiers de configuration, permet aux développeurs et administrateurs de contrôler la façon dont les applications s'exécutent avec la souplesse requise. Les fichiers de configuration sont des fichiers XML qui peuvent être modifiés selon les besoins. Un administrateur peut exercer un contrôle sur les ressources protégées auxquelles une application peut accéder, les versions d'assemblys utilisées par une application et l'endroit où sont situés les applications et objets distants. Les développeurs peuvent stocker des paramètres dans des fichiers de configuration, de façon à ce qu'il ne leur soit pas nécessaire de recompiler une application chaque fois qu'un paramètre change. Cette section décrit les éléments qui peuvent être configurés et explique en quoi la configuration d'une application peut se révéler utile.  
@@ -62,7 +62,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
 ```  
   
 ## <a name="machine-configuration-files"></a>Fichiers de configuration machine  
- Le fichier de configuration machine, Machine.config, contient des paramètres qui s'appliquent à l'ordinateur tout entier. Ce fichier se trouve dans le répertoire %*chemin d'installation du runtime*%\Config. Machine.config contient les paramètres de configuration d’une liaison d’assembly à l’échelle de l’ordinateur, de [canaux de communication à distance ](http://msdn.microsoft.com/en-us/6e9b60e0-9bc0-47b4-a8ef-3b78585f9a18) intégrés et d’ASP.NET.  
+ Le fichier de configuration machine, Machine.config, contient des paramètres qui s'appliquent à l'ordinateur tout entier. Ce fichier se trouve dans le répertoire %*chemin d'installation du runtime*%\Config. Machine.config contient les paramètres de configuration d’une liaison d’assembly à l’échelle de l’ordinateur, de [canaux de communication à distance ](http://msdn.microsoft.com/library/6e9b60e0-9bc0-47b4-a8ef-3b78585f9a18) intégrés et d’ASP.NET.  
   
  Le système de configuration recherche d’abord l’élément [**\<appSettings>**](~/docs/framework/configure-apps/file-schema/appsettings/index.md) et les autres sections de configuration éventuellement définies par un développeur dans le fichier de configuration machine. Ensuite, il cherche ensuite dans le fichier de configuration de l'application. Pour que le fichier de configuration machine reste gérable, il est préférable de placer ces paramètres dans le fichier de configuration de l'application. Cependant, le fait de placer les paramètres dans le fichier de configuration machine peut rendre votre système plus facile à entretenir. Par exemple, si vous possédez un composant de tiers utilisé à la fois par votre application cliente et serveur, il est plus aisé de placer les paramètres pour ce composant dans un seul emplacement. Dans ce cas, le fichier de configuration machine est l'emplacement le plus approprié pour les paramètres, de manière à éviter d'avoir les mêmes paramètres dans deux fichiers différents.  
   
@@ -86,7 +86,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
   
 -   Application hébergée par ASP.NET.  
   
-     Pour plus d’informations sur les fichiers de configuration ASP.NET, consultez [Paramètres de configuration ASP.NET](http://msdn.microsoft.com/en-us/116608f3-c03d-4413-9fc7-978703e18b0f).  
+     Pour plus d’informations sur les fichiers de configuration ASP.NET, consultez [Paramètres de configuration ASP.NET](http://msdn.microsoft.com/library/116608f3-c03d-4413-9fc7-978703e18b0f).  
   
 -   Application hébergée par Internet Explorer.  
   
@@ -133,9 +133,9 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
  [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md)  
  [Spécification de l'emplacement d'un assembly](../../../docs/framework/configure-apps/specify-assembly-location.md)  
  [Redirection des versions d'assemblys](../../../docs/framework/configure-apps/redirect-assembly-versions.md)  
- [Inscrire des objets distants à l’aide de fichiers de Configuration](http://msdn.microsoft.com/en-us/bc503ee1-c811-4f82-9525-470343326adc)  
+ [Inscrire des objets distants à l’aide de fichiers de Configuration](http://msdn.microsoft.com/library/bc503ee1-c811-4f82-9525-470343326adc)  
  [Administration de Site Web ASP.NET](http://msdn.microsoft.com/library/1298034b-5f7d-464d-abd1-ad9e6b3eeb7e)  
- [NIB : Gestion des stratégies de sécurité](http://msdn.microsoft.com/en-us/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)  
+ [NIB : Gestion des stratégies de sécurité](http://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)  
  [Caspol.exe (outil de stratégie de sécurité d’accès du code)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)  
  [Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
- [Objets distants](http://msdn.microsoft.com/en-us/515686e6-0a8d-42f7-8188-73abede57c58)
+ [Objets distants](http://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)

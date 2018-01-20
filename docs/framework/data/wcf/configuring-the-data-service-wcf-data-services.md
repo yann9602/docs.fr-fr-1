@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: ff15e43156293a3bdd4c48b82fba224444d1885a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d9dd82926385ee97b05694d954b94d7821a1e638
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>Configuration du service de données (services de données WCF)
 Avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous pouvez créer des services de données qui exposent [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] flux. Les données de ces flux peuvent provenir de diverses sources. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]utilise des fournisseurs de données pour exposer ces données comme un [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] flux. Ces fournisseurs comprennent un fournisseur [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)], un fournisseur de réflexion et un jeu d'interfaces de fournisseur de services de données personnalisé. L'implémentation de fournisseur définit le modèle de données du service. Pour plus d’informations, consultez [des fournisseurs de Services de données](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).  
@@ -79,7 +79,7 @@ Avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous pouvez cr
 |`/Customers?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> -et-<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Non pris en charge|Non pris en charge|`Customers`: <xref:System.Data.Services.EntitySetRights.WriteAppend>|Non pris en charge|  
 |`/Customers('ALFKI')?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> -et-<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Non pris en charge|Non pris en charge|Non pris en charge|Non pris en charge|  
   
- <sup>1</sup> dans cet exemple, `Address` représente une propriété de type complexe de le `Customers` entité qui a une propriété nommée `StreetAddress`. Le modèle utilisé par les services de données Northwind ne définit pas ce type complexe explicitement. Lorsque le modèle de données est défini à l'aide du fournisseur [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)], vous pouvez utiliser les outils [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] pour définir un tel type complexe. Pour plus d’informations, consultez [Comment : créer et modifier les Types complexes](http://msdn.microsoft.com/en-us/afb8e206-0ffe-4597-b6d4-6ab566897e1d).  
+ <sup>1</sup> dans cet exemple, `Address` représente une propriété de type complexe de le `Customers` entité qui a une propriété nommée `StreetAddress`. Le modèle utilisé par les services de données Northwind ne définit pas ce type complexe explicitement. Lorsque le modèle de données est défini à l'aide du fournisseur [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)], vous pouvez utiliser les outils [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] pour définir un tel type complexe. Pour plus d’informations, consultez [Comment : créer et modifier les Types complexes](http://msdn.microsoft.com/library/afb8e206-0ffe-4597-b6d4-6ab566897e1d).  
   
  <sup>2</sup> cet URI est pris en charge lorsqu’une propriété qui retourne un objet binaire volumineux (BLOB) est définie en tant que la ressource multimédia qui appartient à une entité qui est une entrée de lien média, qui est dans ce cas, `Customers`. Pour plus d’informations, consultez [fournisseur de diffusion en continu](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md).  
   

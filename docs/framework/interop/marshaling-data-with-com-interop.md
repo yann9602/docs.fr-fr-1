@@ -15,11 +15,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: a2af80ddb558959171c255a61fae460729306e0e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 649936abfe149371445c77802bda2e72f558a41d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="marshaling-data-with-com-interop"></a>marshaler des données avec COM Interop
 COM Interop prend en charge l'utilisation des objets COM à partir de code managé, ainsi que l'exposition des objets managés à COM. La prise en charge du marshaling des données vers et depuis COM est complète et fournit quasiment toujours le comportement de marshaling approprié.  
@@ -40,23 +40,23 @@ Décrit comment créer un wrapper COM manuellement dans du code source managé.
  Décrit comment migrer du code DCOM managé vers WCF pour la solution la plus sécurisée.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Types de données COM](https://msdn.microsoft.com/en-us/library/sak564ww(v=vs.100).aspx)  
+ [Types de données COM](https://msdn.microsoft.com/library/sak564ww(v=vs.100).aspx)  
  Fournit les types de données managés et non managés correspondants.  
   
- [Personnalisation des wrappers CCW (COM Callable Wrapper)](https://msdn.microsoft.com/en-us/library/3bwc828w(v=vs.100).aspx)  
+ [Personnalisation des wrappers CCW (COM Callable Wrapper)](https://msdn.microsoft.com/library/3bwc828w(v=vs.100).aspx)  
  Décrit comment marshaler explicitement des types de données à l’aide de la <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribut au moment du design.  
   
- [Personnalisation des wrappers RCW (Runtime Callable Wrapper)](https://msdn.microsoft.com/en-us/library/e753eftz(v=vs.100).aspx)  
+ [Personnalisation des wrappers RCW (Runtime Callable Wrapper)](https://msdn.microsoft.com/library/e753eftz(v=vs.100).aspx)  
  Décrit comment ajuster le comportement de marshaling des types dans un assembly d’interopérabilité et comment définir des types COM manuellement.  
   
- [Interopérabilité COM avancée](https://msdn.microsoft.com/en-us/library/bd9cdfyx(v=vs.100).aspx)  
+ [Interopérabilité COM avancée](https://msdn.microsoft.com/library/bd9cdfyx(v=vs.100).aspx)  
  Fournit des liens vers des informations sur l'incorporation de composants COM dans une application .NET Framework.  
   
- [Récapitulatif de la conversion d’un assembly en bibliothèque de types](https://msdn.microsoft.com/en-us/library/xk1120c3(v=vs.100).aspx)  
+ [Récapitulatif de la conversion d’un assembly en bibliothèque de types](https://msdn.microsoft.com/library/xk1120c3(v=vs.100).aspx)  
  Décrit le processus d'exportation et de conversion d'un assembly en une bibliothèque de types.  
   
- [Récapitulatif de la conversion d’une bibliothèque de types en assembly](https://msdn.microsoft.com/en-us/library/k83zzh38(v=vs.100).aspx)  
+ [Récapitulatif de la conversion d’une bibliothèque de types en assembly](https://msdn.microsoft.com/library/k83zzh38(v=vs.100).aspx)  
  Décrit le processus d'importation et de conversion d'une bibliothèque de types en un assembly.  
   
- [Interopérabilité à l’aide de types génériques](https://msdn.microsoft.com/en-us/library/ms229590(v=vs.100).aspx)  
+ [Interopérabilité à l’aide de types génériques](https://msdn.microsoft.com/library/ms229590(v=vs.100).aspx)  
  Décrit les actions prises en charge lors de l'utilisation de types génériques pour l'interopérabilité COM.

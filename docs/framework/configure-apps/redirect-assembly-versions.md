@@ -20,11 +20,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 8abf7868312883e264848b0de1aa803ce3be5839
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 26475a543950b4f7161243d72252cc1982adf93f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="redirecting-assembly-versions"></a>Redirection des versions d'assemblys
 Vous pouvez rediriger des références de liaison de compilation vers des assemblys .NET Framework, des assemblys tiers ou des assemblys de votre propre application. Vous pouvez rediriger votre application pour utiliser une autre version d’un assembly de plusieurs manières : via une stratégie d’éditeur, un fichier de configuration d’application ou le fichier de configuration de l’ordinateur. Cet article explique comment la liaison d’assembly fonctionne dans le .NET Framework et comment la configurer.  
@@ -170,7 +170,7 @@ Vous pouvez rediriger des références de liaison de compilation vers des assemb
  [Programmation à l’aide d’assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)  
  [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [Configuration d'applications](../../../docs/framework/configure-apps/index.md)  
- [Configuration des applications .NET Framework](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
+ [Configuration des applications .NET Framework](http://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
  [Schéma des paramètres d’exécution](../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md)  
  [Comment : créer une stratégie d'éditeur](../../../docs/framework/configure-apps/how-to-create-a-publisher-policy.md)

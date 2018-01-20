@@ -21,17 +21,17 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 4a502cb309bce3a1a2fb55c9e5477b7a6a395960
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4299775cd23162839ab9846adc7d2c64cc18a404
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltstartupgt-element"></a>&lt;démarrage&gt; élément
 Spécifie les informations de démarrage du common language runtime.  
   
  \<configuration>  
-\<démarrage >  
+\<startup>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -78,7 +78,7 @@ Spécifie les informations de démarrage du common language runtime.
  Cet attribut est utile si votre application utilise des chemins d’activation hérités, tels que les [fonction CorBindToRuntimeEx](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md), et vous souhaitez que ces chemins activent la version 4 du CLR au lieu d’une version antérieure, ou si votre application est génération avec la [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] mais a une dépendance sur un assembly en mode mixte généré avec une version antérieure du .NET Framework. Dans ces scénarios, affectez à l’attribut `true`.  
   
 > [!NOTE]
->  Affectez à l’attribut `true` empêche le chargement dans le même processus, en désactivant efficacement la fonctionnalité côte à côte in-process CLR version 1.1 ou CLR version 2.0 (voir [exécution côte à côte pour COM Interop](http://msdn.microsoft.com/en-us/4302318c-3586-49bf-8620-b9a39cdf4a32)).  
+>  Affectez à l’attribut `true` empêche le chargement dans le même processus, en désactivant efficacement la fonctionnalité côte à côte in-process CLR version 1.1 ou CLR version 2.0 (voir [exécution côte à côte pour COM Interop](http://msdn.microsoft.com/library/4302318c-3586-49bf-8620-b9a39cdf4a32)).  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment spécifier la version du runtime dans un fichier de configuration.  
@@ -102,6 +102,6 @@ Spécifie les informations de démarrage du common language runtime.
 ## <a name="see-also"></a>Voir aussi  
  [Schéma des paramètres de démarrage](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)  
  [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<PaveOver> Spécification de la version du runtime à utiliser](http://msdn.microsoft.com/en-us/c376208d-980d-42b4-865b-fbe0d9cc97c2)  
- [Exécution côte à côte pour COM Interop](http://msdn.microsoft.com/en-us/4302318c-3586-49bf-8620-b9a39cdf4a32)  
+ [\<PaveOver> Spécification de la version du runtime à utiliser](http://msdn.microsoft.com/library/c376208d-980d-42b4-865b-fbe0d9cc97c2)  
+ [Exécution côte à côte pour COM Interop](http://msdn.microsoft.com/library/4302318c-3586-49bf-8620-b9a39cdf4a32)  
  [Exécution côte à côte in-process](../../../../../docs/framework/deployment/in-process-side-by-side-execution.md)

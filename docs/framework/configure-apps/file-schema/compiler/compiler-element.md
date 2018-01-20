@@ -22,11 +22,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 2ef50301a5188193cc13cd0e657f53593ef0d93e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 547c08e324066b872abb8df8b8b780ab3e4644a7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltcompilergt-element"></a>&lt;compilateur&gt; élément
 Spécifie les attributs de configuration du compilateur pour un fournisseur de langage.  
@@ -72,7 +72,7 @@ Spécifie les attributs de configuration du compilateur pour un fournisseur de l
 |Élément|Description|  
 |-------------|-----------------|  
 |[\<configuration>, élément](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|[\<System.CodeDom > élément](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.|  
+|[\<system.codedom> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.|  
 |[\<compilateurs > élément](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|Conteneur pour les éléments de configuration du compilateur ; contient zéro ou plusieurs `<compiler>` éléments.|  
   
 ## <a name="remarks"></a>Notes  
@@ -112,4 +112,4 @@ Spécifie les attributs de configuration du compilateur pour un fournisseur de l
  [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [\<compilateurs > élément](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
  [Spécification des noms de types complets](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)  
- [compilateur, élément pour les compilateurs pour compilation (schéma des paramètres ASP.NET)](http://msdn.microsoft.com/en-us/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)
+ [compilateur, élément pour les compilateurs pour compilation (schéma des paramètres ASP.NET)](http://msdn.microsoft.com/library/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)

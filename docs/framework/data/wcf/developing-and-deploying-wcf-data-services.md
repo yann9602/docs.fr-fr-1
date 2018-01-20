@@ -19,11 +19,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 34fd9bc3bf16446505caf12c6cfa4192ffb391c0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8abe23aebefadc68268aa1dada8474336b1f87e7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="developing-and-deploying-wcf-data-services"></a>Développer et déployer WCF Data Services
 Cette rubrique fournit des informations sur le développement et le déploiement de [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Pour des informations générales sur [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], consultez [mise en route](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md) et [vue d’ensemble](../../../../docs/framework/data/wcf/wcf-data-services-overview.md).  
@@ -63,7 +63,7 @@ Cette rubrique fournit des informations sur le développement et le déploiement
   
     -   Ce serveur est uniquement accessible sur l'ordinateur local.  
   
-    -   Ce serveur écoute sur `localhost` et sur un port spécifique, non sur le port 80, qui est le port par défaut des messages HTTP. Pour plus d'informations, voir [Serveurs web dans Visual Studio pour les projets web ASP.NET](http://msdn.microsoft.com/en-us/31d4f588-df59-4b7e-b9ea-e1f2dd204328).  
+    -   Ce serveur écoute sur `localhost` et sur un port spécifique, non sur le port 80, qui est le port par défaut des messages HTTP. Pour plus d'informations, voir [Serveurs web dans Visual Studio pour les projets web ASP.NET](http://msdn.microsoft.com/library/31d4f588-df59-4b7e-b9ea-e1f2dd204328).  
   
     -   Ce serveur exécute le service de données dans le contexte de votre compte utilisateur actuel. Par exemple, si vous êtes un utilisateur avec un niveau d'administrateur, un service de données s'exécutant dans le serveur de développement [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] aura des privilèges d'administrateur. Par conséquent, le service de données pourra accéder à des ressources pour lesquelles il ne possède pas de droits d'accès si déployé sur un serveur IIS.  
   
@@ -89,7 +89,7 @@ Cette rubrique fournit des informations sur le développement et le déploiement
   
 -   Lorsque vous déboguez un service de données, il est plus utile d'obtenir des informations sur l'erreur à partir du service de données que dans le cadre d'un fonctionnement normal. Pour obtenir davantage d'informations sur l'erreur à partir du service de données, affectez à la propriété <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> dans <xref:System.Data.Services.DataServiceConfiguration> la valeur `true` et affectez à la propriété <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> de l'attribut <xref:System.ServiceModel.Description.ServiceDebugBehavior> sur la classe de service de données la valeur `true`. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] sur la publication [Debugging WCF Data Services](http://go.microsoft.com/fwlink/?LinkId=201868)(Débogage de WCF Data Services). Vous pouvez aussi activer le traçage dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] pour afficher les exceptions levées dans la couche de messages HTTP. Pour plus d'informations, consultez [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
   
--   Un service de données est généralement développé comme un projet d'application [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] , mais vous pouvez également créer votre service de données comme un projet de site Web [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] dans [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]. Pour plus d’informations sur les différences entre les deux types de projets, consultez la page [NIB : Projets d’application web et projets de site web dans Visual Studio](http://msdn.microsoft.com/en-us/2861815e-f5a2-4378-a2f8-b8a86dc012f5).  
+-   Un service de données est généralement développé comme un projet d'application [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] , mais vous pouvez également créer votre service de données comme un projet de site Web [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] dans [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]. Pour plus d’informations sur les différences entre les deux types de projets, consultez [NIB : projets d’Application Web et projets de Site Web dans Visual Studio](http://msdn.microsoft.com/library/2861815e-f5a2-4378-a2f8-b8a86dc012f5).  
   
 -   Lorsque vous créez un service de données à l'aide de la boîte de dialogue **Ajouter un nouvel élément** dans [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)], le service de données est hébergé par [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] dans IIS. Tandis que [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] et IIS sont l'hôte par défaut d'un service de données, d'autres options d'hébergement sont prises en charge. Pour plus d’informations, consultez [qui héberge le Service de données](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md).  
   
@@ -102,9 +102,9 @@ Cette rubrique fournit des informations sur le développement et le déploiement
   
     -   **Technologies de déploiement des applications Web ASP.NET**  
   
-        -   [Package de déploiement Web](http://msdn.microsoft.com/en-us/1f9713c8-9540-494c-b80d-9893b970ad6f)  
+        -   [Package de déploiement Web](http://msdn.microsoft.com/library/1f9713c8-9540-494c-b80d-9893b970ad6f)  
   
-        -   [publication en un clic](http://msdn.microsoft.com/en-us/59226246-99ad-4aec-975d-7c61e8a8911c)  
+        -   [Publication en un clic](http://msdn.microsoft.com/library/59226246-99ad-4aec-975d-7c61e8a8911c)  
   
     -   **Technologies de déploiement des sites Web ASP.NET**  
   
@@ -114,7 +114,7 @@ Cette rubrique fournit des informations sur le développement et le déploiement
   
         -   [XCopy](http://msdn.microsoft.com/library/4312c651-2119-49be-bbeb-ee28bdbfe71e)  
   
-     [!INCLUDE[crabout](../../../../includes/crabout-md.md)] les options de déploiement associées à une application [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] , consultez la page [Vue d’ensemble sur le déploiement de projet d’application web pour Visual Studio et ASP.NET](http://msdn.microsoft.com/en-us/99bd1927-b59f-4e02-87b4-55c6ba2adbc3).  
+     [!INCLUDE[crabout](../../../../includes/crabout-md.md)]les options de déploiement pour un [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] application, consultez [vue d’ensemble du déploiement Web pour Visual Studio et ASP.NET](http://msdn.microsoft.com/library/99bd1927-b59f-4e02-87b4-55c6ba2adbc3).  
   
     > [!TIP]
     >  Avant de tenter de déployer le service de données sur IIS, testez le déploiement sur un serveur Web qui exécute IIS. Pour plus d'informations, consultez [How to: Develop a WCF Data Service Running on IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).  
@@ -126,7 +126,7 @@ Cette rubrique fournit des informations sur le développement et le déploiement
 ### <a name="deployment-considerations"></a>Points à prendre en considération pour le déploiement  
  Vous devez tenir compte de ce qui suit lorsque vous déployez un service de données :  
   
--   Lorsque vous déployez un service de données qui utilise le fournisseur [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] pour accéder à une base de données SQL Server, vous devrez peut-être propager des structures de données, des données, ou les deux à votre déploiement de service de données. [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] peut créer automatiquement des scripts (fichiers .sql) pour faire cela dans la base de données de destination, et ces scripts peuvent être inclus dans le package de déploiement Web d'une application [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] . Pour plus d’informations, consultez la page [NIB : Comment : déployer une base de données avec un projet d’application web](http://msdn.microsoft.com/en-us/683b33f1-8a3d-45cf-af6e-61ab50fc518b). Pour un site Web [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] , vous pouvez utiliser l' **Assistant Publication de base de données** dans [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]. Pour plus d'informations, consultez [Deploying a Database by Using the Database Publishing Wizard](http://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7).  
+-   Lorsque vous déployez un service de données qui utilise le fournisseur [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] pour accéder à une base de données SQL Server, vous devrez peut-être propager des structures de données, des données, ou les deux à votre déploiement de service de données. [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)] peut créer automatiquement des scripts (fichiers .sql) pour faire cela dans la base de données de destination, et ces scripts peuvent être inclus dans le package de déploiement Web d'une application [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] . Pour plus d’informations, consultez [NIB : Comment : déployer une base de données avec un projet d’Application Web](http://msdn.microsoft.com/library/683b33f1-8a3d-45cf-af6e-61ab50fc518b). Pour un site Web [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] , vous pouvez utiliser l' **Assistant Publication de base de données** dans [!INCLUDE[vs_current_short](../../../../includes/vs-current-short-md.md)]. Pour plus d'informations, consultez [Deploying a Database by Using the Database Publishing Wizard](http://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7).  
   
 -   Étant donné que [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] inclut une implémentation de base d' [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] , vous pouvez utiliser Windows Server AppFabric pour surveiller un service de données déployé sur IIS qui s'exécute sur Windows Server. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] l’utilisation de Windows Server AppFabric pour surveiller un service de données, consultez la publication [Tracking WCF Data Services with Windows Server AppFabric](http://go.microsoft.com/fwlink/?LinkID=202005)(Suivi de WCF Data Services avec Windows Server AppFabric).  
   

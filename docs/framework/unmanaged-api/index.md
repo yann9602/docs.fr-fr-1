@@ -18,11 +18,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9836d8d02bb81fc19a5b3a1714e32fcefeb8791d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d86cf65dfb3637dbacfeff0cf2b5f48b12c49212
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="unmanaged-api-reference"></a>Informations de référence sur les API non managées
 Cette section contient des informations sur les API non managées qui peuvent être utilisées par les applications associées à du code managé, comme les hôtes de runtime, les compilateurs, les désassembleurs, les obscurcisseurs, les débogueurs et les profileurs.  
@@ -40,7 +40,7 @@ Cette section contient des informations sur les API non managées qui peuvent ê
  [Constantes](../../../docs/framework/unmanaged-api/constants-unmanaged-api-reference.md)  
  Décrit les constantes définies dans CorSym.idl.  
   
- [Attributs d’Interface personnalisés](http://msdn.microsoft.com/en-us/940952f9-46ad-4a1a-920f-118dc0bdcd9f)  
+ [Attributs d’Interface personnalisés](http://msdn.microsoft.com/library/940952f9-46ad-4a1a-920f-118dc0bdcd9f)  
  Décrit les attributs de l'interface personnalisée COM (Component Object Model).  
   
  [Débogage](../../../docs/framework/unmanaged-api/debugging/index.md)  
@@ -73,4 +73,4 @@ Cette section contient des informations sur les API non managées qui peuvent ê
 ## <a name="related-sections"></a>Rubriques connexes  
  [Guide de développement](../../../docs/framework/development-guide.md)  
   
- [Lecture avancée pour le .NET Framework](http://msdn.microsoft.com/en-us/faae8083-fecb-4514-b133-b0a5a32a7c3c)
+ [Lecture avancée pour le .NET Framework](http://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)

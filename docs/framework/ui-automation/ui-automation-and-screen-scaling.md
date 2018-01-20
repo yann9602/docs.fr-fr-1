@@ -22,11 +22,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 5198de558d24770c8fdd4bfc10ce4a9199eeff47
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bb33d3175cf9e43797125b47c811042771e45782
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Mise à l'échelle de l'écran et UI Automation
 > [!NOTE]
@@ -74,7 +74,7 @@ ms.lasthandoff: 12/22/2017
      [!code-csharp[Highlighter#101](../../../samples/snippets/csharp/VS_Snippets_Wpf/Highlighter/CSharp/NativeMethods.cs#101)]
      [!code-vb[Highlighter#101](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Highlighter/VisualBasic/NativeMethods.vb#101)]  
   
-     Cette fonction active la prise en charge [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]pour l’ensemble du processus, ce qui signifie que toutes les fenêtres qui appartiennent au processus ne sont pas mises à l’échelle. Ainsi, dans l’exemple [Highlighter Sample](http://msdn.microsoft.com/en-us/19ba4577-753e-4efd-92cc-c02ee67c1b69), les quatre fenêtres qui composent le rectangle de sélection sont placées aux coordonnées physiques obtenues à partir d’ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], et non pas aux coordonnées logiques. Si l’exemple ne prenait pas en charge [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)], la sélection serait placée aux coordonnées logiques sur le bureau, ce qui entraînerait un positionnement incorrect dans un environnement doté d’un paramètre [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)] différent de 96.  
+     Cette fonction active la prise en charge [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]pour l’ensemble du processus, ce qui signifie que toutes les fenêtres qui appartiennent au processus ne sont pas mises à l’échelle. Dans le [Highlighter Sample](http://msdn.microsoft.com/library/19ba4577-753e-4efd-92cc-c02ee67c1b69), par exemple, les quatre fenêtres qui composent le rectangle de sélection sont situés aux coordonnées physiques obtenues à partir de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], pas les coordonnées logiques. Si l’exemple ne prenait pas en charge [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)], la sélection serait placée aux coordonnées logiques sur le bureau, ce qui entraînerait un positionnement incorrect dans un environnement doté d’un paramètre [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)] différent de 96.  
   
 2.  Pour obtenir les coordonnées du curseur, appelez la fonction [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] `GetPhysicalCursorPos`. L’exemple suivant montre comment déclarer et utiliser cette fonction.  
   
@@ -87,4 +87,4 @@ ms.lasthandoff: 12/22/2017
  Si votre application effectue une communication interprocessus directe avec des applications sans prise en charge [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)], vous pouvez être tenu d’effectuer des conversions entre les coordonnées logiques et physiques à l’aide des fonctions [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] `PhysicalToLogicalPoint` et `LogicalToPhysicalPoint`.  
   
 ## <a name="see-also"></a>Voir aussi  
- [Highlighter Sample](http://msdn.microsoft.com/en-us/19ba4577-753e-4efd-92cc-c02ee67c1b69)
+ [Exemple de Highlighter](http://msdn.microsoft.com/library/19ba4577-753e-4efd-92cc-c02ee67c1b69)

@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 3a3701ea-4308-4fa1-9b5c-b955c470f17a
-ms.openlocfilehash: f5ade1db39431d99f10eb6967f02335123b83d34
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 478ab74ad32cc6e53daffd1bd6229729149d2a1e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="records"></a>Enregistrements
 
@@ -32,7 +32,7 @@ type [accessibility-modifier] typename = {
     [ member-list ]
 ```
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 Dans la syntaxe précédente, *typename* est le nom du type d’enregistrement, *label1* et *label2* sont des noms de valeurs, appelés *étiquettes*, et *type1* et *type2* sont les types de ces valeurs. *liste des membres* est la liste facultative de membres pour le type.  Vous pouvez utiliser la `[<Struct>]` attribut pour créer un enregistrement de struct plutôt qu’un enregistrement qui est un type référence.
 
 Voici quelques exemples.
@@ -129,6 +129,6 @@ Si vous avez besoin de l’égalité pour les enregistrements de référence, aj
 
 [Informations de référence du langage F#](index.md)
 
-[Égalité des références](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
+[Égalité des références](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
 
 [Critères spéciaux](pattern-matching.md)

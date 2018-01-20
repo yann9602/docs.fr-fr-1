@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7ffc74fdbec204b798ee93a8ee2c91db992a83cb
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bab723e4e52db9936e635f1348dff86d75de274d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Procédure d'installation unique pour les exemples Windows Communication Foundation
 La plupart des exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] sont hébergés dans Internet Information Services (IIS) et sont exécutés à partir d'un répertoire virtuel commun. Cette procédure d’installation unique crée un dossier sur le disque ; Il ajoute également un répertoire virtuel dans IIS nommé **ServiceModelSamples**.  
@@ -36,7 +36,7 @@ La plupart des exemples [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] 
   
 3.  Si [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] n’est pas installé, et votre système d’exploitation n’est pas Windows Server 2008 SP2 ou version ultérieure, installez [correctif 251798](http://go.microsoft.com/fwlink/?LinkId=184693).  
   
-4.  Exécutez les commandes suivantes. Pour plus d’informations sur la raison pour laquelle ces commandes doivent être exécutées, consultez [IIS Service hébergé ne](http://msdn.microsoft.com/en-us/ee5499fc-1b10-4cda-a9b1-13dba70f05f8).  
+4.  Exécutez les commandes suivantes. Pour plus d’informations sur la raison pour laquelle ces commandes doivent être exécutées, consultez [IIS Service hébergé ne](http://msdn.microsoft.com/library/ee5499fc-1b10-4cda-a9b1-13dba70f05f8).  
   
     > [!WARNING]
     >  Si vous avez réinstallé IIS, réexécutez les commandes suivantes.  

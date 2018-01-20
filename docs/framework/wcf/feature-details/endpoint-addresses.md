@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 94610842cd801a54bba0266a4f658d8a4bb60dcd
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 58e6d383856d57e95a1ea5bd2658af2ec0b22ed5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="endpoint-addresses"></a>Adresses de point de terminaison
 Chaque point de terminaison a une adresse qui lui est associée et qui est utilisé pour localiser et identifier le point de terminaison. Cette adresse se compose à l'origine d'un URI (Uniform Resource Identifier) qui spécifie l'emplacement du point de terminaison. L'adresse de point de terminaison est représentée dans le modèle de programmation [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] par la classe <xref:System.ServiceModel.EndpointAddress>, qui contient une propriété <xref:System.ServiceModel.EndpointAddress.Identity%2A> facultative qui active l'authentification du point de terminaison par d'autres points de terminaison qui échangent des messages avec celui-ci et un jeu de propriétés <xref:System.ServiceModel.EndpointAddress.Headers%2A> facultatives qui définissent tous les autres en-têtes SOAP requis pour atteindre le service. Les en-têtes facultatifs fournissent des données d'adressage plus détaillées supplémentaires pour identifier ou interagir avec le point de terminaison de service. L'adresse d'un point de terminaison est représentée sur le câble comme une référence de point de terminaison WS-Addressing (EPR).  
@@ -130,7 +130,7 @@ Chaque point de terminaison a une adresse qui lui est associée et qui est utili
   
 -   Dans le code, vous créez des en-têtes d'adresse personnalisés à l'aide de la classe <xref:System.ServiceModel.Channels.AddressHeader>, que vous utilisez ensuite dans la construction d'un <xref:System.ServiceModel.EndpointAddress>.  
   
--   Dans la configuration, personnalisée [ \<en-têtes >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) sont spécifiés en tant qu’enfants de le [ \<point de terminaison >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément.  
+-   Dans la configuration, personnalisée [ \<en-têtes >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) sont spécifiés en tant qu’enfants de le [ \<point de terminaison >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément.  
   
  La configuration est généralement préférable au code, car elle vous permet de modifier les en-têtes après le déploiement.  
   
@@ -141,7 +141,7 @@ Chaque point de terminaison a une adresse qui lui est associée et qui est utili
   
 -   Dans le code, spécifiez une adresse d'écoute personnalisée en ajoutant une classe <xref:System.ServiceModel.Description.ClientViaBehavior> à la collection de comportements du point de terminaison.  
   
--   Dans la configuration, spécifiez une adresse d’écoute personnalisée avec le `ListenUri` attribut du service [ \<point de terminaison >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément.  
+-   Dans la configuration, spécifiez une adresse d’écoute personnalisée avec le `ListenUri` attribut du service [ \<point de terminaison >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément.  
   
 ### <a name="custom-soap-address-filter"></a>Filtre d'adresse SOAP personnalisé  
  L'<xref:System.ServiceModel.EndpointAddress.Uri%2A> est utilisé conjointement avec toute propriété <xref:System.ServiceModel.EndpointAddress.Headers%2A> pour définir le filtre d'adresse SOAP d'un point de terminaison (<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A>). Par défaut, ce filtre vérifie qu'un message entrant a un en-tête de message `To` qui correspond à l'URI du point de terminaison et que tous les en-têtes de point de terminaison requis sont présents dans le message.  

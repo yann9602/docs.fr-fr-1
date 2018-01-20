@@ -21,19 +21,19 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7da2e1ac5c16f6e481c974794efceb12f102b1a0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7dd24ae9e5659deff7ddbe4183c70d5b442542cd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ltqualifyassemblygt-element"></a>&lt;qualifyAssembly&gt; élément
 Spécifie le nom complet de l'assembly qui doit être chargé dynamiquement quand un nom partiel est utilisé.  
   
  \<configuration>  
-\<runtime >  
-\<assemblyBinding >  
-\<qualifyAssembly >  
+\<runtime>  
+\<assemblyBinding>  
+\<qualifyAssembly>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -87,4 +87,4 @@ Spécifie le nom complet de l'assembly qui doit être chargé dynamiquement quan
 ## <a name="see-also"></a>Voir aussi  
  [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Méthode de localisation des assemblys par le runtime](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- [NIB : Références d’Assembly partielles](http://msdn.microsoft.com/en-us/ec90f07a-398c-4306-9401-0fc5ff9cb59f)
+ [NIB : Références d’Assembly partielles](http://msdn.microsoft.com/library/ec90f07a-398c-4306-9401-0fc5ff9cb59f)

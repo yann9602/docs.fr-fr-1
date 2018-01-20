@@ -19,11 +19,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 028b66fea2b35e7b36760ec7c606f81ca2301620
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: bd8bc5e227bd68fc3c5c59d80549322ca742bcf9
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a>Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide des lignes d'alignement (SnapLines)
 Le positionnement précis des contrôles sur votre formulaire constitue une haute priorité pour de nombreuses applications. Le Concepteur Windows Forms offre de nombreux outils de disposition pour y parvenir. Un des plus importants est le <xref:System.Windows.Forms.Design.Behavior.SnapLine> fonctionnalité.  
@@ -59,14 +59,14 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
  Lorsque vous avez terminé, vous comprendrez le rôle de disposition joué par la fonctionnalité de lignes d’alignement.  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## <a name="creating-the-project"></a>Création du projet  
  La première étape consiste à créer le projet et à configurer le formulaire.  
   
 #### <a name="to-create-the-project"></a>Pour créer le projet  
   
-1.  Créez un projet d’application Windows appelé « SnaplineExample ». Pour plus d’informations, consultez l’article [Comment : créer un projet d’application Windows](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).  
+1.  Créez un projet d’application Windows appelé « SnaplineExample ». Pour plus d’informations, consultez l’article [Comment : créer un projet d’application Windows](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa).  
   
 2.  Sélectionnez le formulaire dans le Concepteur de formulaires.  
   
@@ -233,7 +233,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
   
 #### <a name="to-disable-snaplines-in-the-design-environment"></a>Pour désactiver les lignes d’alignement dans l’environnement de conception  
   
-1.  À partir de la **outils** menu, ouvrir le **Options** boîte de dialogue. Ouvrez la boîte de dialogue du Concepteur Windows Forms. Pour plus d’informations, consultez [général, Concepteur Windows Forms, boîte de dialogue Options](http://msdn.microsoft.com/en-us/8dd170af-72f0-4212-b04b-034ceee92834).  
+1.  À partir de la **outils** menu, ouvrir le **Options** boîte de dialogue. Ouvrez la boîte de dialogue du Concepteur Windows Forms. Pour plus d’informations, consultez [général, Concepteur Windows Forms, boîte de dialogue Options](http://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834).  
   
 2.  Sélectionnez le **général** nœud. Dans le **Mode de disposition** section, modifiez la sélection à partir de **les lignes d’alignement** à **SnapToGrid**.  
   

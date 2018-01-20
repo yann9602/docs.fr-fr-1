@@ -20,11 +20,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: a704930f707895e7f343566fab544e2f8b32b22c
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fdae288650a0ff7b1a34b3a38a231d3da6caf560
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Comment : configurer les composants COM .NET Framework pour l'activation sans inscription
 L’activation sans inscription des composants .NET Framework n’est que légèrement plus compliquée que pour les composants COM. L’installation requiert deux manifestes :  
@@ -183,6 +183,6 @@ L’activation sans inscription des composants .NET Framework n’est que légè
   
 ## <a name="see-also"></a>Voir aussi  
  [COM Interop sans inscription](../../../docs/framework/interop/registration-free-com-interop.md)  
- [Configuration requise pour COM Interop sans inscription](http://msdn.microsoft.com/en-us/0c43bc57-eecf-4e6c-8114-490141cce4da)  
- [Configuration des composants COM pour l’Activation sans inscription](http://msdn.microsoft.com/en-us/bfe9b02f-d964-4784-960e-a1f94692fbfe)  
+ [Configuration requise pour COM Interop sans inscription](http://msdn.microsoft.com/library/0c43bc57-eecf-4e6c-8114-490141cce4da)  
+ [Configuration des composants COM pour l’Activation sans inscription](http://msdn.microsoft.com/library/bfe9b02f-d964-4784-960e-a1f94692fbfe)  
  [Activation sans inscription de composants .NET : une procédure pas à pas](http://go.microsoft.com/fwlink/?LinkId=158812)

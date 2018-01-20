@@ -24,11 +24,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7e4d336992be216178b1237c9f43bffb3de61fba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 030b84245a5cec09dac3133b04235c65f7bb2d80
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="add-ins-and-extensibility"></a>Compléments et extensibilité
 <a name="top"></a> Les compléments fournissent des fonctionnalités ou des services étendus pour une application hôte. Le [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] fournit un modèle de programmation que les développeurs peuvent utiliser pour développer des compléments et les activer dans leur application hôte. Le modèle permet de réaliser ceci en construisant un pipeline de communication entre l'hôte et le complément. Le modèle est implémenté à l'aide des types des espaces de noms <xref:System.AddIn>, <xref:System.AddIn.Hosting>, <xref:System.AddIn.Pipeline>et <xref:System.AddIn.Contract> .  
@@ -81,7 +81,7 @@ Pipeline de complément
 ### <a name="discovery-and-activation"></a>Découverte et activation  
  Vous pouvez activer un complément en utilisant un jeton d'une collection qui représente les compléments localisés dans une banque d'informations. Les compléments sont trouvés en recherchant le type qui définit la vue du complément de l'hôte. Vous pouvez aussi trouver un complément spécifique via le type qui définit le complément. La banque d'informations se compose de deux fichiers cache : le magasin de pipelines et le magasin de compléments.  
   
- Pour plus d'informations sur la mise à jour et la régénération de la banque d'informations, consultez [Découverte des compléments](http://msdn.microsoft.com/en-us/5d268dde-11df-4c4d-a022-f58d88bbc421). Pour plus d’informations sur l’activation des compléments, consultez [Activation des compléments](http://msdn.microsoft.com/en-us/bedcbcdf-5964-4215-b5f3-3299798b2b3f) et [Comment : activer des compléments avec différents niveaux d’isolement et de sécurité](http://msdn.microsoft.com/en-us/7afe7ec8-5158-4350-9119-5df0ecab8aa5).  
+ Pour plus d’informations sur la mise à jour et la régénération de la banque d’informations, consultez [complément découverte](http://msdn.microsoft.com/library/5d268dde-11df-4c4d-a022-f58d88bbc421). Pour plus d’informations sur l’activation des compléments, consultez [Add-in Activation](http://msdn.microsoft.com/library/bedcbcdf-5964-4215-b5f3-3299798b2b3f) et [Comment : activer des compléments avec une sécurité et d’Isolation différent](http://msdn.microsoft.com/library/7afe7ec8-5158-4350-9119-5df0ecab8aa5).  
   
 ### <a name="isolation-levels-and-external-processes"></a>Niveaux d'isolement et processus externes  
  Le modèle de complément prend en charge plusieurs niveaux d'isolement entre un complément et son hôte, ou entre compléments. En commençant par le moins isolé, ces niveaux sont les suivants :  
@@ -96,10 +96,10 @@ Pipeline de complément
   
 -   Chaque complément est chargé exclusivement dans son propre domaine d'application dans son processus externe. Il s'agit du scénario avec le plus d'isolement.  
   
- Pour plus d’informations sur l’utilisation de processus externes, consultez [Comment : activer des compléments avec différents niveaux d’isolement et de sécurité](http://msdn.microsoft.com/en-us/7afe7ec8-5158-4350-9119-5df0ecab8aa5).  
+ Pour plus d’informations sur l’utilisation de processus externes, consultez [Comment : activer des compléments avec une sécurité et d’Isolation différent](http://msdn.microsoft.com/library/7afe7ec8-5158-4350-9119-5df0ecab8aa5).  
   
 ### <a name="lifetime-management"></a>Gestion de la durée de vie  
- Étant donné que le modèle de complément couvre les limites des domaines d'application et des processus, le garbage collection en lui-même n'est pas suffisant pour libérer et récupérer des objets. Le modèle de complément fournit un mécanisme de gestion de la durée de vie qui utilise des jetons et un comptage des références, et ne requiert généralement pas de programmation supplémentaire. Pour plus d'informations, consultez [Gestion de la durée de vie](http://msdn.microsoft.com/en-us/57a9c87e-394c-4fef-89f2-aa4223a2aeb5).  
+ Étant donné que le modèle de complément couvre les limites des domaines d'application et des processus, le garbage collection en lui-même n'est pas suffisant pour libérer et récupérer des objets. Le modèle de complément fournit un mécanisme de gestion de la durée de vie qui utilise des jetons et un comptage des références, et ne requiert généralement pas de programmation supplémentaire. Pour plus d’informations, consultez [gestion de la durée de vie](http://msdn.microsoft.com/library/57a9c87e-394c-4fef-89f2-aa4223a2aeb5).  
   
  [Retour au début](#top)  
   
@@ -115,7 +115,7 @@ Pipeline de complément
 |Titre|Description|  
 |-----------|-----------------|  
 |[Pipeline Development](../../../docs/framework/add-ins/pipeline-development.md)|Décrit le pipeline de communication de segments de l'application hôte vers le complément. Fournit des exemples de code dans des rubriques de procédure pas à pas qui décrivent comment construire le pipeline et déployer des segments vers le pipeline dans [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)].|  
-|[Domaines d'application et assemblys](http://msdn.microsoft.com/en-us/433b04ae-4ba8-4849-9dbd-79194f240346)|Décrit la relation entre les domaines d'application, qui fournissent une frontière d'isolement pour la sécurité, la fiabilité et le contrôle de version, et les assemblys.|  
+|[Domaines d'application et assemblys](http://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346)|Décrit la relation entre les domaines d'application, qui fournissent une frontière d'isolement pour la sécurité, la fiabilité et le contrôle de version, et les assemblys.|  
   
  [Retour au début](#top)  
   

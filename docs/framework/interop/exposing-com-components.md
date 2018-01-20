@@ -18,14 +18,14 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9361de4726b1dc58238db5ca7b5605f2cc75485d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d7cbef9247b82268b8006d640b967ffd03ae6717
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>Exposition de composants COM au .NET Framework
-Cette section résume le processus nécessaire pour exposer un composant COM existant à du code managé. Pour plus d’informations sur l’écriture de serveurs COM qui s’intègrent étroitement au .NET Framework, consultez [Considérations de design pour l’interopérabilité](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689).  
+Cette section résume le processus nécessaire pour exposer un composant COM existant à du code managé. Pour plus d’informations sur l’écriture de serveurs COM qui s’intègrent étroitement au .NET Framework, consultez [Considérations de design pour l’interopérabilité](http://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689).  
   
  Les composants COM existants sont des ressources importantes dans le code managé, en tant qu’applications métier de couche intermédiaire ou en tant que fonctionnalités isolées. Un composant idéal a un assembly PIA et se conforme étroitement aux normes de programmation imposées par COM.  
   
@@ -35,7 +35,7 @@ Cette section résume le processus nécessaire pour exposer un composant COM exi
   
      Le common language runtime nécessite des métadonnées pour tous les types, y compris les types COM. Il existe plusieurs manières d’obtenir un assembly contenant des types COM importés en tant que métadonnées.  
   
-2.  [Création de types COM dans du code managé](http://msdn.microsoft.com/en-us/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66).  
+2.  [Création de types COM dans du code managé](http://msdn.microsoft.com/library/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66).  
   
      Vous pouvez inspecter des types COM, activer des instances et appeler des méthodes sur l’objet COM de la même façon que vous le feriez pour n’importe quel type managé.  
   
@@ -49,7 +49,7 @@ Cette section résume le processus nécessaire pour exposer un composant COM exi
   
 ## <a name="see-also"></a>Voir aussi  
  [Interopération avec du code non managé](../../../docs/framework/interop/index.md)  
- [Considérations de design pour l’interopérabilité](http://msdn.microsoft.com/en-us/b59637f6-fe35-40d6-ae72-901e7a707689)  
+ [Considérations de design pour l’interopérabilité](http://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689)  
  [Exemple COM Interop : client .NET et serveur COM](../../../docs/framework/interop/com-interop-sample-net-client-and-com-server.md)  
  [Indépendance du langage et composants indépendants du langage](../../../docs/standard/language-independence-and-language-independent-components.md)  
  [Gacutil.exe (outil Global Assembly Cache)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)

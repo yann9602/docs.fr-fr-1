@@ -16,11 +16,11 @@ ms.assetid: 27d75f0a-54ab-4ee1-b91d-43513a19b12d
 caps.latest.revision: "14"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: a219e031cdd36c713db8dcee6cc1da3849c9cf93
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 772db789fba4552a4645d2c6a242ba01944652ee
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-call-windows-apis-visual-basic"></a>Comment : appeler des API Windows (Visual Basic)
 Cet exemple définit et appelle la `MessageBox` fonction dans user32.dll et lui passe une chaîne.  
@@ -43,9 +43,9 @@ Cet exemple définit et appelle la `MessageBox` fonction dans user32.dll et lui 
 -   Le type conteneur a déjà été créé à l’aide de `CreateType`. (<xref:System.InvalidOperationException>)  
   
 ## <a name="see-also"></a>Voir aussi  
- [L’appel de plateforme plus approfondie](http://msdn.microsoft.com/en-us/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)  
+ [L’appel de plateforme plus approfondie](http://msdn.microsoft.com/library/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)  
  [Exemples d'appel de code non managé](../../../framework/interop/platform-invoke-examples.md)  
  [Consommation de fonctions DLL non managées](../../../framework/interop/consuming-unmanaged-dll-functions.md)  
- [Émission de la définition d’une méthode avec la réflexion](http://msdn.microsoft.com/en-us/84fd3bf6-628f-41aa-83d9-b990cf926e81)  
+ [Émission de la définition d’une méthode avec la réflexion](http://msdn.microsoft.com/library/84fd3bf6-628f-41aa-83d9-b990cf926e81)  
  [Procédure pas à pas : appel des API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)  
  [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)

@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d55185153e3d03ddb2b1726ed25566d6b5f396ae
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: b020b3df627fcb220f4227d76fdf8eb3d60e80e4
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="linq-and-adonet"></a>LINQ et ADO.NET
 Aujourd'hui, de nombreux développeurs d'entreprise doivent utiliser au moins deux langages de programmation : un langage de haut niveau pour la logique métier et les couches de présentation (tel que [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)] ou [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]), et un langage de requête pour interagir avec la base de données (comme [!INCLUDE[tsql](../../../../includes/tsql-md.md)]). Pour être efficace, le développeur doit être expert en plusieurs langages, et cela peut entraîner des incompatibilités dans l'environnement de développement. Par exemple, une application qui utilise une API d'accès aux données pour exécuter une requête sur une base de données spécifie la requête comme un littéral de chaîne en utilisant des guillemets. Cette chaîne de requête est illisible pour le compilateur et elle ne fait l'objet d'aucun contrôle d'erreur pour vérifier sa syntaxe ou l'existence des colonnes ou lignes auxquelles elle fait référence. Il n'y a aucune vérification de type des paramètres de requête et aucune prise en charge `IntelliSense`.  
@@ -33,7 +33,7 @@ Aujourd'hui, de nombreux développeurs d'entreprise doivent utiliser au moins de
   
  ![LINQ à la vue d’ensemble d’ADO.NET](../../../../docs/framework/data/adonet/media/dpue-linqtoadonetoverview-bpuedev11.gif "DPUE_LinqToAdoNetOverview_bpuedev11")  
   
- Pour obtenir des informations générales sur les fonctionnalités de langage LINQ, consultez [Introduction à LINQ](http://msdn.microsoft.com/library/24dddf19-12a0-4707-a4bc-eba4fa7f219e). Pour plus d’informations sur l’utilisation de LINQ dans vos applications, consultez le [NOT IN BUILD : Guide de programmation LINQ General](http://msdn.microsoft.com/en-us/609c7a6b-cbdd-429d-99f3-78d13d3bc049), qui contient des informations détaillées sur l’utilisation de technologies LINQ.  
+ Pour obtenir des informations générales sur les fonctionnalités de langage LINQ, consultez [Introduction à LINQ](http://msdn.microsoft.com/library/24dddf19-12a0-4707-a4bc-eba4fa7f219e). Pour plus d’informations sur l’utilisation de LINQ dans vos applications, consultez le [NOT IN BUILD : Guide de programmation LINQ General](http://msdn.microsoft.com/library/609c7a6b-cbdd-429d-99f3-78d13d3bc049), qui contient des informations détaillées sur l’utilisation de technologies LINQ.  
   
  Les sections ci-dessous fournissent des informations supplémentaires sur [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] et [!INCLUDE[linq_entities](../../../../includes/linq-entities-md.md)].  
   

@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 4255356d4e50f3e8be28024f29701e0e9c010473
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b2ed0a0393f505d0126508e574b1cd9abe138866
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="application-settings-attributes"></a>Attributs des paramètres d'application
 L’architecture de paramètres d’Application fournit beaucoup d’attributs qui peut être appliqués à la classe wrapper de paramètres application ou à ses propriétés individuelles. Ces attributs sont examinées au moment de l’exécution par l’infrastructure de paramètres d’application, souvent en particulier le fournisseur de paramètres, afin d’adapter son fonctionnement aux besoins énoncés du wrapper personnalisé.  
@@ -52,4 +52,4 @@ L’architecture de paramètres d’Application fournit beaucoup d’attributs q
  <xref:System.Configuration.ApplicationSettingsBase>  
  <xref:System.Configuration.SettingsProvider>  
  [Architecture des paramètres d'application](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)  
- [Comment : créer des paramètres d’application](http://msdn.microsoft.com/en-us/53b3af80-1c02-4e35-99c6-787663148945)
+ [Comment : créer des paramètres d’application](http://msdn.microsoft.com/library/53b3af80-1c02-4e35-99c6-787663148945)

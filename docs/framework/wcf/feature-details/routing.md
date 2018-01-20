@@ -18,11 +18,11 @@ author: wadepickett
 ms.author: wpickett
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 335780b600535c066bc822cc5dd6c77233618bb6
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 638c768e4abd199aa52bc85582305ffaf405fe87
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="routing"></a>Routage
 Les rubriques de cette section traitent du service de routage. Le service de routage est un intermédiaire SOAP configurable générique qui vous permet de configurer le routage en fonction du contenu, de configurer un pontage de protocoles, de gérer les erreurs de communication et de mettre à jour la logique de routage de manière dynamique, au moment de l'exécution.  
@@ -31,7 +31,7 @@ Les rubriques de cette section traitent du service de routage. Le service de rou
  [Service de routage](../../../../docs/framework/wcf/feature-details/routing-service.md)  
  Propose une vue d’ensemble des fonctionnalités du service de routage.  
   
- [Service de routage](http://msdn.microsoft.com/en-us/5ac8718c-bcef-456f-bfd5-1e60a30d6eaa)  
+ [Service de routage](http://msdn.microsoft.com/library/5ac8718c-bcef-456f-bfd5-1e60a30d6eaa)  
  Décrit les fonctionnalités du service de routage.  
   
  [Introduction au routage](../../../../docs/framework/wcf/feature-details/routing-introduction.md)  

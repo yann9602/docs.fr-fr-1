@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3b423158cc3c38e92897d0dc5e48c22cf28396ae
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0aeed7e1beac1a290aebec46a356952ddf994ed7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-create-a-custom-token"></a>Comment : créer un jeton personnalisé
 Cette rubrique contient des instructions permettant de créer un jeton de sécurité personnalisé à l'aide de la classe <xref:System.IdentityModel.Tokens.SecurityToken> et de l'intégrer à un fournisseur et authentificateur de jetons de sécurité personnalisés. Pour obtenir un exemple de code complet, consultez la [jeton personnalisé](../../../../docs/framework/wcf/samples/custom-token.md) exemple.  
@@ -41,7 +41,7 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
   
  Consultez l'espace de noms <xref:System.IdentityModel.Tokens> pour obtenir davantage de classes représentant des jetons de sécurité.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]informations d’identification, Gestionnaire de jetons de sécurité et les classes de fournisseur et un authentificateur, consultez [Architecture de sécurité](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)]informations d’identification, Gestionnaire de jetons de sécurité et les classes de fournisseur et un authentificateur, consultez [Architecture de sécurité](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
 ## <a name="procedures"></a>Procédures  
  Une application cliente doit être créée de manière à permettre la spécification d'informations de carte de crédit pour l'infrastructure de sécurité. Une classe d'informations d'identification client personnalisées permet à l'application d'accéder à ces informations. La première étape consiste à créer une classe qui représente les informations de carte de crédit au sein des informations d'identification client personnalisées.  
@@ -176,4 +176,4 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
  [Procédure pas à pas : création d’informations d’identification de client et de service personnalisées](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)  
  [Guide pratique pour créer un authentificateur de jetons de sécurité personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
  [Guide pratique pour créer un fournisseur de jetons de sécurité personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
- [Architecture de sécurité](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)
+ [Architecture de sécurité](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

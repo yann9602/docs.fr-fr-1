@@ -18,11 +18,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 46208d6db716f7e1e7a443d958c059b22f74c46f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4fb24db8ad5b1ff92eadee139ddf10c044488f7d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="hosting-interfaces"></a>Interfaces d'hébergement
 Cette section décrit les interfaces non managées hôtes peuvent utiliser pour intégrer le common language runtime (CLR) dans leurs applications.  
@@ -54,4 +54,4 @@ Cette section décrit les interfaces non managées hôtes peuvent utiliser pour 
   
  [Hébergement d’applications WPF](../../../../docs/framework/unmanaged-api/hosting/index.md)  
   
- [Hôtes de runtime](http://msdn.microsoft.com/en-us/99d9246a-b994-4fe5-985c-8588d1d59998)
+ [Hôtes de runtime](http://msdn.microsoft.com/library/99d9246a-b994-4fe5-985c-8588d1d59998)

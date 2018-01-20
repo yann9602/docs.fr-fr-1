@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: d2a444440af9dfaa2b084a55db9348fa48df7b54
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 4f6ede253f52682cfe5a698cf4fb02841dc4c1e0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Prise en charge de SqlClient pour la haute disponibilité et la récupération d'urgence
 Cette rubrique décrit la prise en charge SqlClient (ajoutée dans [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) de la haute disponibilité, récupération d'urgence -- groupes de disponibilité AlwaysOn.  La fonctionnalité Groupes de disponibilité AlwaysOn a été ajoutée à [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012. Pour plus d'informations sur les groupes de disponibilité AlwaysOn, consultez la documentation en ligne de [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)].  
@@ -41,6 +41,9 @@ Cette rubrique décrit la prise en charge SqlClient (ajoutée dans [!INCLUDE[net
 1.  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.ApplicationIntent%2A>  
   
 2.  <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A>  
+
+> [!NOTE]
+>  Paramètre `MultiSubnetFailover` à `true` n’est pas nécessaire avec [!INCLUDE[net_v461](../../../../../includes/net-v461-md.md)]) ou versions ultérieures.
   
 ## <a name="connecting-with-multisubnetfailover"></a>Connexion avec MultiSubnetFailover  
  Spécifiez toujours `MultiSubnetFailover=True` lors de la connexion à un écouteur du groupe de disponibilité [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 ou à l'instance de cluster de basculement [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012. `MultiSubnetFailover` permet le basculement plus rapide de tous les groupes de disponibilité et/ou de l'instance de cluster de basculement dans [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 2012 et réduit considérablement le temps de basculement pour les topologies de sous-réseau unique et de plusieurs sous-réseaux AlwaysOn. Pendant un basculement de multi sous-réseau, le client effectue des tentatives de connexion en parallèle. Pendant un basculement de sous-réseau, le client effectue des tentatives de connexion TCP de manière agressive.  

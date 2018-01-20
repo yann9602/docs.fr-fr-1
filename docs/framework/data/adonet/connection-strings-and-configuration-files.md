@@ -17,11 +17,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 358bc0428a53817e85d5a5e278d8da4e1a8b6927
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 447b2d6c0e5eeafeaff89aa1d6430eec72d59a4d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="connection-strings-and-configuration-files"></a>Chaînes de connexion et fichiers de configuration
 L'incorporation de chaînes de connexion dans le code de votre application peut entraîner des vulnérabilités de sécurité et des problèmes de maintenance. Les chaînes de connexion non chiffrée compilés dans le code source d’une application peuvent être affichées à l’aide de la [Ildasm.exe (désassembleur IL)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) outil. En outre, si la chaîne de connexion change, votre application doit être recompilée. Pour ces raisons, nous vous recommandons de stocker les chaînes de connexion dans un fichier de configuration de l'application.  
@@ -156,7 +156,7 @@ L'incorporation de chaînes de connexion dans le code de votre application peut 
  L'espace de noms <xref:System.Configuration> fournit des classes pour utiliser des paramètres de configuration par programme. La classe <xref:System.Configuration.ConfigurationManager> fournit un accès aux fichiers de configuration d'ordinateur, d'application et d'utilisateur. Si vous créez une application ASP.NET, vous pouvez utiliser la <xref:System.Web.Configuration.WebConfigurationManager> (classe), qui fournit les mêmes fonctionnalités, alors que vous permettant également d’accéder aux paramètres qui sont uniques pour les applications ASP.NET, tels que ceux trouvés dans  **\< System.Web >**.  
   
 > [!NOTE]
->  L'espace de noms <xref:System.Security.Cryptography> contient des classes qui fournissent des options supplémentaires pour le chiffrement et déchiffrement de données. Utilisez ces classes si vous avez besoin de services de chiffrement qui ne sont pas disponibles via la configuration protégée. Certaines de ces classes sont des wrappers pour l'interface Microsoft CryptoAPI non managée, tandis que d'autres ne sont purement que des implémentations managées. Pour plus d’informations, consultez [Services de cryptographie](http://msdn.microsoft.com/en-us/68a1e844-c63c-44af-9247-f6716eb23781).  
+>  L'espace de noms <xref:System.Security.Cryptography> contient des classes qui fournissent des options supplémentaires pour le chiffrement et déchiffrement de données. Utilisez ces classes si vous avez besoin de services de chiffrement qui ne sont pas disponibles via la configuration protégée. Certaines de ces classes sont des wrappers pour l'interface Microsoft CryptoAPI non managée, tandis que d'autres ne sont purement que des implémentations managées. Pour plus d’informations, consultez [Services de cryptographie](http://msdn.microsoft.com/library/68a1e844-c63c-44af-9247-f6716eb23781).  
   
 ### <a name="appconfig-example"></a>Exemple App.config  
  Cet exemple montre comment basculer le chiffrement de la **connectionStrings** section dans un **app.config** fichier pour une application Windows. Dans cet exemple, la procédure prend le nom de l’application en tant qu’argument, par exemple, « MyApplication.exe ». Le **app.config** fichier est ensuite chiffré et copié dans le dossier qui contient le fichier exécutable sous le nom « MyApplication.exe.config ».  
@@ -178,7 +178,7 @@ L'incorporation de chaînes de connexion dans le code de votre application peut 
  [!code-csharp[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/VB/source.vb#1)]  
   
- Pour plus d’informations sur la sécurisation des applications ASP.NET, consultez [NIB : sécurité ASP.NET](http://msdn.microsoft.com/en-us/04b37532-18d9-40b4-8e5f-ee09a70b311d) et [pratiques de sécurité ASP.NET 2.0 en un coup de œil](http://go.microsoft.com/fwlink/?LinkId=59997) sur le centre de développement ASP.NET.  
+ Pour plus d’informations sur la sécurisation des applications ASP.NET, consultez [NIB : sécurité ASP.NET](http://msdn.microsoft.com/library/04b37532-18d9-40b4-8e5f-ee09a70b311d) et [pratiques de sécurité ASP.NET 2.0 en un coup de œil](http://go.microsoft.com/fwlink/?LinkId=59997) sur le centre de développement ASP.NET.  
   
 ## <a name="see-also"></a>Voir aussi  
  [Générateurs de chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md)  

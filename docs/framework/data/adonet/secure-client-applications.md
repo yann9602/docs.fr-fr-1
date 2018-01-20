@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 190e64945658f81400c2cc68beff82ccc38144f5
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 100def5fdf531527705fb0c1aebdc20674e0ce60
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="secure-client-applications"></a>Applications clientes sécurisées
 Les applications se composent généralement de nombreuses parties qui doivent toutes être protégées face aux vulnérabilités susceptibles d'entraîner une perte de données ou compromettre d'une autre manière le système. La création d'interfaces utilisateur sécurisées peut empêcher de nombreux problèmes en bloquant les attaquants avant qu'ils puissent accéder aux données ou aux ressources système.  
@@ -50,7 +50,7 @@ Les applications se composent généralement de nombreuses parties qui doivent t
  [Applications Windows Forms et non managées](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
  Explique comment interagir avec des applications non managées dans une application Windows Forms.  
   
- [Applications de déploiement de ClickOnce pour les Windows Forms](http://msdn.microsoft.com/en-us/34d8c770-48f2-460c-8d67-4ea5684511df)  
+ [Applications de déploiement de ClickOnce pour les Windows Forms](http://msdn.microsoft.com/library/34d8c770-48f2-460c-8d67-4ea5684511df)  
  Explique comment utiliser un déploiement `ClickOnce` dans une application Windows Forms et traite des implications en matière de sécurité.  
   
 ## <a name="aspnet-and-xml-web-services"></a>ASP.NET et services Web XML  
@@ -62,23 +62,23 @@ Les applications se composent généralement de nombreuses parties qui doivent t
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[NIB : ASP.NET sécurité](http://msdn.microsoft.com/en-us/04b37532-18d9-40b4-8e5f-ee09a70b311d)|Explique comment sécuriser des applications ASP.NET.|  
-|[Sécurisation des Services Web XML créés à l’aide d’ASP.NET](http://msdn.microsoft.com/en-us/354b2ab1-2782-4542-b32a-dc560178b90c)|Explique comment implémenter la sécurité pour un service Web ASP.NET.|  
+|[NIB : ASP.NET sécurité](http://msdn.microsoft.com/library/04b37532-18d9-40b4-8e5f-ee09a70b311d)|Explique comment sécuriser des applications ASP.NET.|  
+|[Sécurisation des Services Web XML créés à l’aide d’ASP.NET](http://msdn.microsoft.com/library/354b2ab1-2782-4542-b32a-dc560178b90c)|Explique comment implémenter la sécurité pour un service Web ASP.NET.|  
 |[Vue d’ensemble des attaques de script](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)|Explique comment se protéger d’une attaque de script, qui tente d’insérer des caractères nuisibles dans une page web.|  
-|[NIB : Basic les pratiques de sécurité pour les Applications Web ASP.NET](http://msdn.microsoft.com/en-us/94a52ab8-731d-417e-b997-721baf43df38)|Informations générales sur la sécurité et liens vers une présentation additionnelle.|  
+|[NIB : Basic les pratiques de sécurité pour les Applications Web ASP.NET](http://msdn.microsoft.com/library/94a52ab8-731d-417e-b997-721baf43df38)|Informations générales sur la sécurité et liens vers une présentation additionnelle.|  
   
 ## <a name="remoting"></a>Communication à distance  
  .NET Remoting vous permet de créer aisément des applications largement distribuées, que les composants d'application se trouvent tous sur un même ordinateur ou soient dispersés dans le monde entier. Vous pouvez générer des applications clientes qui utilisent des objets dans d'autres processus sur le même ordinateur ou sur tout autre ordinateur qui est accessible sur son réseau. Vous pouvez également utiliser .NET Remoting pour communiquer avec d'autres domaines d'application dans le même processus.  
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Configuration des Applications à distance](http://msdn.microsoft.com/en-us/92c0c097-d984-4315-835b-7490ecdf1097)|Explique comment configurer les applications de communication à distance pour éviter les problèmes courants.|  
-|[Sécurité de la communication à distance](http://msdn.microsoft.com/en-us/9574262c-d4b1-41c5-8600-24ff147c0add)|Décrit l'authentification et le chiffrement, ainsi que des rubriques de sécurité supplémentaires relatives à la communication à distance.|  
+|[Configuration des Applications à distance](http://msdn.microsoft.com/library/92c0c097-d984-4315-835b-7490ecdf1097)|Explique comment configurer les applications de communication à distance pour éviter les problèmes courants.|  
+|[Sécurité de la communication à distance](http://msdn.microsoft.com/library/9574262c-d4b1-41c5-8600-24ff147c0add)|Décrit l'authentification et le chiffrement, ainsi que des rubriques de sécurité supplémentaires relatives à la communication à distance.|  
 |[Sécurité et des considérations relatives à la communication à distance](../../../../docs/framework/misc/security-and-remoting-considerations.md)|Décrit les problèmes de sécurité liés aux objets protégés et au franchissement de domaine d'application.|  
   
 ## <a name="see-also"></a>Voir aussi  
  [Sécurisation des applications ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Recommandations pour les stratégies d’accès aux données](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)  
+ [Recommandations pour les stratégies d’accès aux données](http://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)  
  [Sécurisation des applications](/visualstudio/ide/securing-applications)  
  [Protection des informations de connexion](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

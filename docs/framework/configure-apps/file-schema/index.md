@@ -33,11 +33,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 283faabf0f23df2650f8d87fdebae1102b83235d
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 4af28280de24f3e25362f18985c209b1a2f29523
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>Schéma des fichiers de configuration pour le .NET Framework
 
@@ -86,10 +86,10 @@ Pour plus d’informations sur les types, le format et l’emplacement des fichi
 
 ## <a name="related-sections"></a>Rubriques connexes
 
-[Schéma des paramètres de communication à distance](http://msdn.microsoft.com/en-us/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e) Décrit les éléments qui configurent les applications clientes et serveur qui implémentent la communication à distance.
+[Schéma des paramètres de communication à distance](http://msdn.microsoft.com/library/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e) Décrit les éléments qui configurent les applications clientes et serveur qui implémentent la communication à distance.
 
 [Schéma de paramètres ASP.NET](http://msdn.microsoft.com/library/b5ysx397\(v=vs.100\).aspx) Décrit les éléments qui contrôlent le comportement des applications web ASP.NET.
 
-[Schéma des paramètres des services Web](http://msdn.microsoft.com/en-us/f84d6d55-1add-4eb7-ae46-33df5833ea2e) Décrit les éléments qui contrôlent le comportement des services web ASP.NET et de leurs clients.
+[Schéma des paramètres des services Web](http://msdn.microsoft.com/library/f84d6d55-1add-4eb7-ae46-33df5833ea2e) Décrit les éléments qui contrôlent le comportement des services web ASP.NET et de leurs clients.
 
-[Configuration d’applications .NET Framework](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42) Décrit comment configurer la sécurité, les liaisons d’assembly et la communication à distance dans le .NET Framework.
+[Configuration d’applications .NET Framework](http://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42) Décrit comment configurer la sécurité, les liaisons d’assembly et la communication à distance dans le .NET Framework.

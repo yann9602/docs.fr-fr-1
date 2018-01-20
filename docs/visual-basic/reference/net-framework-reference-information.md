@@ -12,11 +12,11 @@ ms.assetid: 8b202505-608b-4223-bbd9-2ace3d73e6cd
 caps.latest.revision: "15"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: b52323cb5c7049f87b27c24a987fcb7ba1834b6a
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: 320d9c88bde76ec27fa23c97de78122d88cb6824
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="net-framework-reference-information-visual-basic"></a>Informations de référence du .NET Framework (Visual Basic)
 Cette rubrique fournit des liens vers des informations sur la façon de travailler avec les [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] bibliothèque de classes.  
@@ -34,7 +34,7 @@ Cette rubrique fournit des liens vers des informations sur la façon de travaill
  [Outils](../../framework/tools/index.md)  
  Décrit les outils que vous pouvez utiliser pour développer, configurer et déployer des applications à l’aide des technologies .NET Framework.  
   
- [Exemples .NET Framework](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)  
+ [Exemples .NET Framework](http://msdn.microsoft.com/library/177055f8-4a1f-43e7-aee6-995c196079b1)  
  Fournit des liens vers des exemples d’applications qui illustrent les technologies .NET Framework.  
   
  [Bibliothèque de classes .NET Framework](http://go.microsoft.com/fwlink/?LinkID=227195)  

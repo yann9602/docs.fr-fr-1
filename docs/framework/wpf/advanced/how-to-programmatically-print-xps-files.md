@@ -20,16 +20,16 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 402568a78ccb2f56c6adb108536edfb121440642
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0b58e617fb04ecaba45ed655dc650459e89453dd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="how-to-programmatically-print-xps-files"></a>Comment : imprimer des fichiers XPS par programmation
 Vous pouvez utiliser une surcharge de la <xref:System.Printing.PrintQueue.AddJob%2A> méthode pour imprimer [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] fichiers sans ouvrir une <xref:System.Windows.Controls.PrintDialog> ou, en principe, n’importe quel [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] du tout.  
   
- Vous pouvez également imprimer [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] à l’aide de la plupart des fichiers <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> et <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> méthodes de la <xref:System.Windows.Xps.XpsDocumentWriter>. Pour en savoir plus sur ce sujet, consultez l’article [Printing an XPS Document](http://msdn.microsoft.com/en-us/849555c8-0c4e-48c0-86bc-a5494c69b36c) (Impression d’un document XPS).  
+ Vous pouvez également imprimer [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] à l’aide de la plupart des fichiers <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> et <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> méthodes de la <xref:System.Windows.Xps.XpsDocumentWriter>. Pour en savoir plus sur ce sujet, consultez l’article [Printing an XPS Document](http://msdn.microsoft.com/library/849555c8-0c4e-48c0-86bc-a5494c69b36c) (Impression d’un document XPS).  
   
  Une autre façon d’impression [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] consiste à utiliser le <xref:System.Windows.Controls.PrintDialog.PrintDocument%2A> ou <xref:System.Windows.Controls.PrintDialog.PrintVisual%2A> méthodes de la <xref:System.Windows.Controls.PrintDialog> contrôle. Consultez l’article [Appeler une boîte de dialogue Imprimer](../../../../docs/framework/wpf/advanced/how-to-invoke-a-print-dialog.md).  
   
@@ -75,8 +75,8 @@ Vous pouvez utiliser une surcharge de la <xref:System.Printing.PrintQueue.AddJob
  <xref:System.Threading.ApartmentState>  
  <xref:System.STAThreadAttribute>  
  [XPS](http://www.microsoft.com/xps)  
- [Impression d’un Document XPS](http://msdn.microsoft.com/en-us/849555c8-0c4e-48c0-86bc-a5494c69b36c)  
- [Threading managé et non managé](http://msdn.microsoft.com/en-us/db425c20-4b2f-4433-bf96-76071c7881e5)  
+ [Impression d’un Document XPS](http://msdn.microsoft.com/library/849555c8-0c4e-48c0-86bc-a5494c69b36c)  
+ [Threading managé et non managé](http://msdn.microsoft.com/library/db425c20-4b2f-4433-bf96-76071c7881e5)  
  [isXPS.exe (isXPS Conformance Tool)](http://msdn.microsoft.com/library/bfbb433f-7ab6-417a-90f0-71443d76bcb3)  
  [Documents dans WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [Vue d’ensemble de l’impression](../../../../docs/framework/wpf/advanced/printing-overview.md)

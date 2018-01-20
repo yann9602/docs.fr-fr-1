@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 9c739db4db5afad8fc379a5da4764cb9ab6804fe
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7526f5cda302618b2f240e5ae1c126e60b9ab5e6
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Service Trace Viewer Tool (SvcTraceViewer.exe)
 L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] vous aide à analyser des suivis de diagnostic générés par [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. Service Trace Viewer permet de fusionner, d'afficher et de filtrer facilement des messages de suivi dans le journal afin de les diagnostiquer, de les réparer et de vérifier les problèmes des services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)].  
@@ -421,7 +421,7 @@ L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)
 |![Suivi d’arrêt d’activité](../../../docs/framework/wcf/media/a0493e95-653e-4af8-84a4-4d09a400bc31.gif "a0493e95-653e-4af8-84a4-4d09a400bc31")|Suivi d'arrêt d'activité : suivi qui marque la fin d'une activité. . Il contient le nom de l'activité. En tant que concepteur ou développeur d'applications, vous devez définir un suivi d'arrêt d'activité par ID d'activité par source de suivi. Aucun suivi de source de suivi n'apparaît après le suivi d'arrêt d'activité émis par la source de suivi, sauf si la granularité de l'heure du suivi n'est pas suffisamment réduite. Lorsque cela se produit, deux suivis portant la même heure, y compris un arrêt, peuvent être entrelacés lorsqu'ils sont affichés. Si l'ID d'activité est propagé à travers les sources de suivi pour la corrélation de suivis, vous pouvez consulter plusieurs arrêts pour le même ID d'activité (un par source de suivi). Le suivi d'arrêt est émis si le suivi d'activités est activé pour la source de suivi.|  
 |![Suivi d’interruption d’activité](../../../docs/framework/wcf/media/6f7f4191-df2b-4592-8998-8379769e2d32.gif "6f7f4191-df2b-4592-8998-8379769e2d32")|Suivi d'interruption d'activité : suivi qui marque l'heure à laquelle une activité marque une pause. Aucun suivi n'est émis pendant l'interruption d'une activité, jusqu'à ce que l'activité reprenne. Une activité interrompue indique qu'aucun traitement ne parvient à cette activité au niveau de la source de suivi. Les suivis d'interruption/reprise sont utiles pour effecteur des profilages. Le suivi d'interruption est émis si le suivi d'activités est activé pour la source de suivi.|  
 |![Trace l’activité reprendre](../../../docs/framework/wcf/media/1060d9d2-c9c8-4e0a-9988-cdc2f7030f17.gif "1060d9d2-c9c8-4e0a-9988-cdc2f7030f17")|Suivi de reprise d'activité : suivi qui marque l'heure à laquelle une activité reprend après avoir été interrompue. Les suivis peuvent être émis de nouveau dans cette activité. Les suivis d'interruption/reprise sont utiles pour effecteur des profilages. Le suivi de reprise est émis si le suivi d'activités est activé pour la source de suivi.|  
-|![Transfert de](../../../docs/framework/wcf/media/b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5.gif "b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5")|Transfert : un suivi est émis lorsque le flux de contrôle logique est transféré d'une activité à une autre. L'activité dont provient le transfert peut continuer à fonctionner en parallèle de l'activité vers laquelle le transfert se dirige. Le suivi de transfert est émis si le suivi d'activités est activé pour la source de suivi.|  
+|![Transfer](../../../docs/framework/wcf/media/b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5.gif "b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5")|Transfert : un suivi est émis lorsque le flux de contrôle logique est transféré d'une activité à une autre. L'activité dont provient le transfert peut continuer à fonctionner en parallèle de l'activité vers laquelle le transfert se dirige. Le suivi de transfert est émis si le suivi d'activités est activé pour la source de suivi.|  
 |![Transfert de](../../../docs/framework/wcf/media/1df215cb-b344-4f36-a20d-195999bda741.gif "1df215cb-b344-4f36-a20d-195999bda741")|Transfert De : suivi qui définit un transfert d'une autre activité vers l'activité actuelle.|  
 |![Transférer vers](../../../docs/framework/wcf/media/74255b6e-7c47-46ef-8e53-870c76b04c3f.gif "74255b6e-7c47-46ef-8e53-870c76b04c3f")|Transfert A : suivi qui définit un transfert de flux de contrôle logique de l'activité actuelle vers une autre activité.|  
   
@@ -437,7 +437,7 @@ L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)
   
 |Icône|Description|  
 |----------|-----------------|  
-|![Activité](../../../docs/framework/wcf/media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Activité : indique que l'activité actuelle est une activité générique.|  
+|![Activity](../../../docs/framework/wcf/media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Activité : indique que l'activité actuelle est une activité générique.|  
 |![Activité racine](../../../docs/framework/wcf/media/5dc8e0eb-1c32-4076-8c66-594935beaee9.gif "5dc8e0eb-1c32-4076-8c66-594935beaee9")|Activité racine : indique l'activité racine d'un processus.|  
   
 ### <a name="wcf-activities"></a>Activités WCF  
@@ -463,4 +463,4 @@ L'outil Service Trace Viewer [!INCLUDE[indigo1](../../../includes/indigo1-md.md)
 ## <a name="see-also"></a>Voir aussi  
  [Utilisation de Service Trace Viewer pour afficher les suivis corrélés et résoudre les problèmes](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
  [Configuration du suivi](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
- [Le suivi des activités et Propagation pour la corrélation de suivi de bout en bout](http://msdn.microsoft.com/en-us/2c11a905-64f8-47b5-bae5-a74fc666137e)
+ [Le suivi des activités et Propagation pour la corrélation de suivi de bout en bout](http://msdn.microsoft.com/library/2c11a905-64f8-47b5-bae5-a74fc666137e)

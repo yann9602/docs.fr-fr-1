@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: ab5d1bd8116c2f5c07c9e91bbf0a5168c6d075d0
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ba83265b8bd533101fcde785566b9774df588c46
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="application-scenarios-wcf-data-services"></a>Scénarios d'application (services de données WCF)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]prend en charge un ensemble de scénarios pour exposer et consommer des données en tant que [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] flux. Cette rubrique vous oriente vers les rubriques concernées par ces scénarios.  
@@ -48,11 +48,11 @@ ms.lasthandoff: 12/22/2017
 -   [Bibliothèque cliente WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
   
  Consommer un flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] dans une application Silverlight cliente.  
- -   [WCF Data Services (Silverlight)](http://msdn.microsoft.com/en-us/c0cd9f4b-1372-48e4-9935-c8421239da30)  
+ -   [WCF Data Services (Silverlight)](http://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30)  
   
 -   [Opérations asynchrones](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
   
--   [Comment : lier des données de Service de données aux contrôles (WCF Data Services/Silverlight)](http://msdn.microsoft.com/en-us/bda7d82e-7b1f-4690-8a33-c6297465bdd5)  
+-   [Comment : lier des données de Service de données aux contrôles (WCF Data Services/Silverlight)](http://msdn.microsoft.com/library/bda7d82e-7b1f-4690-8a33-c6297465bdd5)  
   
  Consommer un flux [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] dans une application AJAX cliente.  
  -   [Utilisation d’un service de données dans une application cliente](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
@@ -73,7 +73,7 @@ ms.lasthandoff: 12/22/2017
   
 -   [Opérations asynchrones](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
   
--   [WCF Data Services (Silverlight)](http://msdn.microsoft.com/en-us/c0cd9f4b-1372-48e4-9935-c8421239da30)  
+-   [WCF Data Services (Silverlight)](http://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30)  
   
  Exposer et consommer une [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] flux associé à un objet binaire volumineux qui est accessible et modifié en tant que flux.  
  -   [Fournisseur de streaming](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md)  

@@ -22,11 +22,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c894d431aa31e32b4a8cb7ff02d39d5aa5e95381
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 0f4f410f0f6c209dbc43642a15ae85a788390f4a
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Vue d'ensemble des applications de navigateur XAML
 <a name="introduction"></a>
@@ -46,7 +46,7 @@ ms.lasthandoff: 12/22/2017
   
 <a name="creating_a_new_xaml_browser_application_xbap"></a>   
 ## <a name="creating-a-new-xaml-browser-application-xbap"></a>Création d’une nouvelle application de navigateur XAML (XBAP)  
- La manière la plus simple de créer un nouveau projet XBAP consiste à utiliser [!INCLUDE[vs_dev10_ext](../../../../includes/vs-dev10-ext-md.md)]. Lorsque vous créez un nouveau projet, sélectionnez **Application de navigateur WPF** dans la liste des modèles. Pour plus d’informations, consultez l’article [Comment : créer un projet d’application de navigateur WPF](http://msdn.microsoft.com/en-us/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).  
+ La manière la plus simple de créer un nouveau projet XBAP consiste à utiliser [!INCLUDE[vs_dev10_ext](../../../../includes/vs-dev10-ext-md.md)]. Lorsque vous créez un nouveau projet, sélectionnez **Application de navigateur WPF** dans la liste des modèles. Pour plus d’informations, consultez l’article [Comment : créer un projet d’application de navigateur WPF](http://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).  
   
  Lorsque vous exécutez le projet XBAP, celui-ci s’ouvre dans une fenêtre de navigateur et non dans une fenêtre indépendante. Lorsque vous déboguez l’application XBAP à partir de [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], l’application s’exécute avec les autorisations de la zone Internet et générera des exceptions de sécurité si les limites d’autorisation sont dépassées. Pour plus d’informations, voir [Sécurité](../../../../docs/framework/wpf/security-wpf.md) et [Sécurité de confiance partielle de WPF](../../../../docs/framework/wpf/wpf-partial-trust-security.md).  
   

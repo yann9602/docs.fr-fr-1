@@ -19,11 +19,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 0b08bb2b4d9cdb5e90582fbce280a03f6fc04d13
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 97f2f03cd55512c29c686759e756a1941f472157
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>Vue d'ensemble de TextPattern et des objets incorporés
 > [!NOTE]
@@ -167,4 +167,4 @@ Exemples de la façon dont une plage de texte est ajustée pour Move() et Expand
  [Accéder à des objets incorporés à l’aide d’UI Automation](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md)  
  [Exposer le contenu d’une table à l’aide d’UI Automation](../../../docs/framework/ui-automation/expose-the-content-of-a-table-using-ui-automation.md)  
  [Accéder au texte à l’aide d’UI Automation](../../../docs/framework/ui-automation/traverse-text-using-ui-automation.md)  
- [Exemple de sélection et de recherche de TextPattern](http://msdn.microsoft.com/en-us/0a3bca57-8b72-489d-a57c-da85b7a22c7f)
+ [Exemple de sélection et de recherche de TextPattern](http://msdn.microsoft.com/library/0a3bca57-8b72-489d-a57c-da85b7a22c7f)

@@ -15,11 +15,11 @@ author: BrucePerlerMS
 ms.author: bruceper
 manager: mbaldwin
 ms.workload: dotnet
-ms.openlocfilehash: a30f42c88e2478341737b99ad239d37c87a1063e
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 611272f9d0369a89d401315e9b6379d2e8cd27c0
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="securing-clients"></a>Sécurisation des clients
 Dans [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], le service dicte les conditions de sécurité pour les clients. Autrement dit, le service spécifie quel mode de sécurité utiliser, et si le client doit fournir ou non une information d'identification. Le processus de la sécurisation d'un client, par conséquent, est simple : utilisez les métadonnées obtenues depuis le service (s'il est publié) et générez un client. Les métadonnées spécifient comment configurer le client. Si le service exige que le client fournisse une information d’identification, vous devez obtenir une information d’identification qui correspond à l’exigence. Cette rubrique décrit en détail le processus. [!INCLUDE[crabout](../../../includes/crabout-md.md)]Création d’un service sécurisé, consultez [sécurisation des Services](../../../docs/framework/wcf/securing-services.md).  
@@ -117,7 +117,7 @@ Dans [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], le service dicte les 
 </configuration>  
 ```  
   
- Pour définir les informations d’identification du client dans la configuration, ajoutez une [ \<endpointBehaviors >](../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) élément au fichier de configuration. En outre, l’élément de comportement ajoutée doit être lié au point de terminaison du service à l’aide de la `behaviorConfiguration` attribut de la [ \<point de terminaison >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément, comme indiqué dans l’exemple suivant. La valeur de l'attribut `behaviorConfiguration` doit correspondre à la valeur de l'attribut de comportement `name`.  
+ Pour définir les informations d’identification du client dans la configuration, ajoutez une [ \<endpointBehaviors >](../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) élément au fichier de configuration. En outre, l’élément de comportement ajoutée doit être lié au point de terminaison du service à l’aide de la `behaviorConfiguration` attribut de la [ \<point de terminaison >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément, comme indiqué dans l’exemple suivant. La valeur de l'attribut `behaviorConfiguration` doit correspondre à la valeur de l'attribut de comportement `name`.  
   
  `<configuration>`  
   
@@ -168,7 +168,7 @@ Dans [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], le service dicte les 
  <xref:System.ServiceModel.Description.ClientCredentials>  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>  
- [\<liaisons >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
+ [\<bindings>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
  [Outil Éditeur de configuration (SvcConfigEditor.exe)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)  
  [Sécurisation de services](../../../docs/framework/wcf/securing-services.md)  
  [Accès aux services à l’aide d’un client WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  

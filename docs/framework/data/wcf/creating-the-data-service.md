@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 57e305fd8b03e8d46c1fdcb7dd551f32062a1009
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 7d890e4c2041ae4c70a79adfc0ab4141402fcd3f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="creating-the-data-service"></a>Création du service de données
 Dans cette tâche, vous allez créer un exemple de service de données qui utilise [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pour exposer un [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] flux basé sur la base de données Northwind. La tâche implique les étapes fondamentales suivantes :  
@@ -114,4 +114,4 @@ Dans cette tâche, vous allez créer un exemple de service de données qui utili
  [Accès au service à partir d’un navigateur web](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)  
   
 ## <a name="see-also"></a>Voir aussi  
- [Outils ADO.NET Entity Data Model](http://msdn.microsoft.com/en-us/91076853-0881-421b-837a-f582f36be527)
+ [Outils ADO.NET Entity Data Model](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)

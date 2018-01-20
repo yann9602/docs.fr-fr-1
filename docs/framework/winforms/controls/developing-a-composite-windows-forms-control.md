@@ -19,11 +19,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: b98ba10e1c865417b9e844c4d5c31334f763e1b4
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 06ad98fef8c51cb995644c3b29236a9b0f8cfe29
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="developing-a-composite-windows-forms-control"></a>Développement d'un contrôle Windows Forms composite
 Vous pouvez développer un contrôle Windows Forms composite en combinant d'autres contrôles Windows Forms. Contrôles composites qui dérivent <xref:System.Web.UI.UserControl> sont appelés contrôles utilisateur. La classe de base, <xref:System.Windows.Forms.UserControl>, fournit le routage clavier pour les contrôles enfants, ce qui permet de garantir que les contrôles enfants peuvent recevoir le focus. Pour obtenir un exemple d’un contrôle utilisateur, consultez la <xref:System.Windows.Forms.UserControl> sample dans [Comment : appliquer des attributs dans les contrôles Windows Forms](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md).  
@@ -34,7 +34,7 @@ Vous pouvez développer un contrôle Windows Forms composite en combinant d'autr
   
 -   [Procédure pas à pas : sérialisation des collections de types standard avec DesignerSerializationVisibilityAttribute](http://msdn.microsoft.com/library/ms171731\(v=vs.110\))  
   
--   [Procédure pas à pas : héritage d’un contrôle Windows Forms à l’aide de Visual C#](http://msdn.microsoft.com/en-us/09476da0-8d4c-4a4c-b969-649519dfb438))  
+-   [Procédure pas à pas : héritage d’un contrôle Windows Forms à l’aide de Visual C#](http://msdn.microsoft.com/library/09476da0-8d4c-4a4c-b969-649519dfb438))  
   
 -   [Comment : fournir une bitmap pour un contrôle en vue de l'afficher dans la boîte à outils](http://msdn.microsoft.com/library/4wk1wc0a\(v=vs.110\))  
   
@@ -56,7 +56,7 @@ Vous pouvez développer un contrôle Windows Forms composite en combinant d'autr
   
 -   [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual Basic](http://msdn.microsoft.com/library/c316f119\(v=vs.110\))  
   
--   [Procédure pas à pas : création d’un contrôle composite à l’aide de Visual C#](http://msdn.microsoft.com/en-us/f88481a8-c746-4a36-9479-374ce5f2e91f))  
+-   [Procédure pas à pas : création d’un contrôle composite à l’aide de Visual C#](http://msdn.microsoft.com/library/f88481a8-c746-4a36-9479-374ce5f2e91f))  
   
 -   [Procédure pas à pas : héritage à partir d’un contrôle Windows Forms à l’aide de Visual Basic](http://msdn.microsoft.com/library/w2a8y03d\(v=vs.110\))  
   

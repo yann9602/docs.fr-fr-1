@@ -27,11 +27,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: c12892c4761f0158153c87464066dd727c83bfc3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aaee6f1d650e6af57ab05ad56b5578e094ee50ef
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Procédure pas à pas : implémentation d'un formulaire qui utilise une opération d'arrière-plan
 Si vous avez une opération qui prendra un certain temps, et vous ne souhaitez pas votre interface utilisateur (IU) cesse de répondre ou « se bloque », vous pouvez utiliser la <xref:System.ComponentModel.BackgroundWorker> classe pour exécuter l’opération sur un autre thread.  
@@ -51,14 +51,14 @@ Si vous avez une opération qui prendra un certain temps, et vous ne souhaitez p
  Pour obtenir une liste complète du code utilisé dans cet exemple, consultez l’article [Comment : implémenter un formulaire qui utilise une opération d’arrière-plan](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md).  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnalisation des paramètres de développement dans Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## <a name="creating-the-project"></a>Création du projet  
  La première étape consiste à créer le projet et à configurer le formulaire.  
   
 #### <a name="to-create-a-form-that-uses-a-background-operation"></a>Pour créer un formulaire qui utilise une opération d’arrière-plan  
   
-1.  Créez un projet d’application Windows appelé `BackgroundWorkerExample`. Pour plus d’informations, consultez l’article [Comment : créer un projet d’application Windows](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa).  
+1.  Créez un projet d’application Windows appelé `BackgroundWorkerExample`. Pour plus d’informations, consultez l’article [Comment : créer un projet d’application Windows](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa).  
   
 2.  Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Form1** et sélectionnez **Renommer** dans le menu contextuel. Remplacez le nom de fichier par `FibonacciCalculator`. Cliquez sur le bouton **Oui** lorsque l’on vous demande si vous souhaitez renommer toutes les références à l’élément de code « `Form1` ».  
   
@@ -68,7 +68,7 @@ Si vous avez une opération qui prendra un certain temps, et vous ne souhaitez p
   
 5.  Renommez le premier <xref:System.Windows.Forms.Button> contrôle `startAsyncButton` et définir le <xref:System.Windows.Forms.Control.Text%2A> propriété `Start Async`. Renommez le second <xref:System.Windows.Forms.Button> contrôle `cancelAsyncButton`et définissez la <xref:System.Windows.Forms.Control.Text%2A> propriété `Cancel Async`. Définir son <xref:System.Windows.Forms.Control.Enabled%2A> propriété `false`.  
   
-6.  Créer un gestionnaire d’événements pour les deux le <xref:System.Windows.Forms.Button> contrôles <xref:System.Windows.Forms.Control.Click> événements. Pour plus d’informations, consultez l’article [Comment : créer des gestionnaires d’événements à l’aide du concepteur](http://msdn.microsoft.com/en-us/8461e9b8-14e8-406f-936e-3726732b23d2).  
+6.  Créer un gestionnaire d’événements pour les deux le <xref:System.Windows.Forms.Button> contrôles <xref:System.Windows.Forms.Control.Click> événements. Pour plus d’informations, consultez l’article [Comment : créer des gestionnaires d’événements à l’aide du concepteur](http://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
   
 7.  Faites glisser un <xref:System.Windows.Forms.Label> contrôle depuis la **boîte à outils** vers le formulaire et renommez-le `resultLabel`.  
   
@@ -86,7 +86,7 @@ Si vous avez une opération qui prendra un certain temps, et vous ne souhaitez p
   
 #### <a name="to-implement-asynchronous-event-handlers"></a>Pour implémenter des gestionnaires d’événements asynchrones  
   
-1.  Dans le **propriétés** fenêtre, avec les <xref:System.ComponentModel.BackgroundWorker> composant étant toujours sélectionnée, cliquez sur le **événements** bouton. Double-cliquez sur le <xref:System.ComponentModel.BackgroundWorker.DoWork> et <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> événements pour créer des gestionnaires d’événements. Pour plus d’informations sur l’utilisation des gestionnaires d’événements, consultez l’article [Comment : créer des gestionnaires d’événements à l’aide du concepteur](http://msdn.microsoft.com/en-us/8461e9b8-14e8-406f-936e-3726732b23d2).  
+1.  Dans le **propriétés** fenêtre, avec les <xref:System.ComponentModel.BackgroundWorker> composant étant toujours sélectionnée, cliquez sur le **événements** bouton. Double-cliquez sur le <xref:System.ComponentModel.BackgroundWorker.DoWork> et <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> événements pour créer des gestionnaires d’événements. Pour plus d’informations sur l’utilisation des gestionnaires d’événements, consultez l’article [Comment : créer des gestionnaires d’événements à l’aide du concepteur](http://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
   
 2.  Dans votre formulaire, créez une nouvelle méthode appelée `ComputeFibonacci`. Cette méthode exécute l’opération requise en arrière-plan. Ce code décrit l’implémentation récursive de l’algorithme de Fibonacci qui est particulièrement inefficace et nécessite beaucoup plus de temps pour traiter des nombres élevés. Il est utilisé ici à titre d’exemple, dans le but d’illustrer une opération qui peut occasionner des temps d’inactivité assez longs pour votre application.  
   
@@ -178,7 +178,7 @@ Si vous avez une opération qui prendra un certain temps, et vous ne souhaitez p
  <xref:System.ComponentModel.BackgroundWorker>  
  [Bonnes pratiques de threading géré](../../../../docs/standard/threading/managed-threading-best-practices.md)  
  [Multithreading dans les composants](http://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  
- [NOT IN BUILD : Multithreading en Visual Basic](http://msdn.microsoft.com/en-us/c731a50c-09c1-4468-9646-54c86b75d269)  
+ [NOT IN BUILD : Multithreading en Visual Basic](http://msdn.microsoft.com/library/c731a50c-09c1-4468-9646-54c86b75d269)  
  [Comment : implémenter un formulaire qui utilise une opération d’arrière-plan](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
  [Procédure pas à pas : exécution d’une opération en arrière-plan](../../../../docs/framework/winforms/controls/walkthrough-running-an-operation-in-the-background.md)  
  [Composant BackgroundWorker](../../../../docs/framework/winforms/controls/backgroundworker-component.md)

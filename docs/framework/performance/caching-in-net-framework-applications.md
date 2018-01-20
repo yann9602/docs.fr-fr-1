@@ -18,11 +18,11 @@ author: tdykstra
 ms.author: tdykstra
 manager: wpickett
 ms.workload: tdykstra
-ms.openlocfilehash: d72099543292a89f930135689358b37f87aac44f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9429a1a1eeef82c7587ef573f6413e45a4e97a91
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="caching-in-net-framework-applications"></a>Mise en cache dans les applications .NET Framework
 La mise en cache vous permet de stocker des données en mémoire pour y accéder rapidement. Quand vous accédez à nouveau aux données, les applications peuvent obtenir les données à partir du cache au lieu de devoir les récupérer à partir de la source d’origine. Cela peut améliorer les performances et la scalabilité. La mise en cache rend également les données disponibles quand la source de données est temporairement indisponible.  
@@ -64,7 +64,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
 >  Quand vous développez de nouvelles applications, nous vous recommandons d’utiliser la classe <xref:System.Runtime.Caching.MemoryCache>. L’API fournie dans l’espace de noms <xref:System.Runtime.Caching> est semblable à celle fournie dans l’espace de noms <xref:System.Web.Caching.Cache>. Ainsi, elle vous sera familière si vous utilisiez la mise en cache dans les versions antérieures d’ASP.NET. Pour obtenir un exemple qui illustre comment utiliser la mise en cache dans les application ASP.NET, consultez [Procédure pas à pas : mise en cache de données d’application dans ASP.NET](http://msdn.microsoft.com/library/942236f6-0138-4aaf-af71-a5ea451a1e23).  
   
 ### <a name="output-caching"></a>Mise en cache de sortie  
- Pour mettre manuellement en cache les données d’application, vous pouvez utiliser la classe <xref:System.Runtime.Caching.MemoryCache> dans ASP.NET. ASP.NET prend également en charge la mise en cache de sortie, qui stocke la sortie générée des pages, des contrôles et des réponses HTTP en mémoire. Vous pouvez configurer la mise en cache de sortie de façon déclarative dans une page web ASP.NET ou à l’aide de paramètres dans le fichier Web.config. Pour plus d’informations, consultez [outputCache, élément de caching (Schéma des paramètres ASP.NET)](http://msdn.microsoft.com/en-us/47cd2b47-316f-4dfd-bbf8-539be3066fee).  
+ Pour mettre manuellement en cache les données d’application, vous pouvez utiliser la classe <xref:System.Runtime.Caching.MemoryCache> dans ASP.NET. ASP.NET prend également en charge la mise en cache de sortie, qui stocke la sortie générée des pages, des contrôles et des réponses HTTP en mémoire. Vous pouvez configurer la mise en cache de sortie de façon déclarative dans une page web ASP.NET ou à l’aide de paramètres dans le fichier Web.config. Pour plus d’informations, consultez [outputCache, élément de caching (Schéma des paramètres ASP.NET)](http://msdn.microsoft.com/library/47cd2b47-316f-4dfd-bbf8-539be3066fee).  
   
  ASP.NET vous permet d’étendre la mise en cache de sortie en créant des fournisseurs de cache de sortie personnalisés. Grâce aux fournisseurs personnalisés, vous pouvez stocker le contenu mis en cache à l’aide d’autres dispositifs de stockage tels que des disques, le stockage cloud et des moteurs de cache distribué. Pour créer un fournisseur de cache de sortie personnalisé, vous devez créer une classe qui dérive de la classe <xref:System.Web.Caching.OutputCacheProvider> et configurer l’application pour qu’elle utilise le fournisseur de cache de sortie personnalisé.  
   

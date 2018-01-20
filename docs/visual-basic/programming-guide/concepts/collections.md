@@ -11,11 +11,11 @@ ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
 caps.latest.revision: "6"
 author: dotnet-bot
 ms.author: dotnetcontent
-ms.openlocfilehash: aac9ed655982ff4618e0bdb7fd2af16aaa546719
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: d0ea3b45803bc37f35d516260a57db422827f1e1
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="collections-visual-basic"></a>Collections (Visual Basic)
 Pour de nombreuses applications, vous voulez créer et gérer des groupes d’objets connexes. Il existe deux manières de grouper des objets : en créant des tableaux d’objets ou des collections d’objets.  
@@ -235,7 +235,7 @@ End Class
  L’espace de noms <xref:System.Collections.Specialized> fournit des classes de collection spécialisées et fortement typées, telles que les collections à chaîne unique et les dictionnaires de liste liée et hybrides.  
 
 <a name="BKMK_VisualBasic"></a> 
-###  <a name="visual-basic-collection-class"></a>Classe de la collection Visual Basic  
+###  <a name="visual-basic-collection-class"></a>Classe de la collection Visual Basic  
  Vous pouvez utiliser Visual Basic <xref:Microsoft.VisualBasic.Collection> accès à une collection d’éléments à l’aide d’un index numérique ou d’une classe `String` clé. Vous pouvez ajouter des éléments à un objet de collection en spécifiant ou non une clé. Si vous ajoutez un élément sans clé, vous devez utiliser son index numérique pour y accéder.  
   
  Visual Basic `Collection` classe stocke tous ses éléments en tant que type `Object`, de sorte que vous pouvez ajouter un élément de n’importe quel type de données. Il n’existe aucun dispositif de protection contre l’ajout de types de données inappropriés.  
@@ -470,7 +470,7 @@ End Class
   
 <a name="BKMK_CustomCollection"></a> 
 ## <a name="defining-a-custom-collection"></a>Définition d’une collection personnalisée  
- Vous pouvez définir une collection en implémentant l’interface <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Collections.IEnumerable>. Pour plus d’informations, consultez [l’énumération d’une Collection](http://msdn.microsoft.com/en-us/71807ea7-9180-48a6-916f-35a5251d477f).  
+ Vous pouvez définir une collection en implémentant l’interface <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Collections.IEnumerable>. Pour plus d’informations, consultez [l’énumération d’une Collection](http://msdn.microsoft.com/library/71807ea7-9180-48a6-916f-35a5251d477f).  
   
  Même si vous pouvez définir une collection personnalisée, il est généralement préférable d’utiliser les collections comprises dans le .NET Framework, lesquelles sont décrites dans [Types de collections](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b), plus haut dans cette rubrique.  
   
@@ -547,7 +547,7 @@ End Class
 ```  
   
 <a name="BKMK_Iterators"></a>
-##  <a name="iterators"></a>Itérateurs  
+##  <a name="iterators"></a>Iterators  
  Un *itérateur* est utilisé pour exécuter une itération personnalisée sur une collection. Un itérateur peut être une méthode ou un accesseur `get`. Un itérateur utilise une [Yield](../../../visual-basic/language-reference/statements/yield-statement.md) instruction pour retourner chaque élément de la collection un à la fois.  
   
  Vous appelez un itérateur en utilisant un [For Each... Suivant](../../../visual-basic/language-reference/statements/for-each-next-statement.md) instruction. Chaque itération de la boucle `For Each` appelle l’itérateur. Quand une instruction `Yield` est atteinte dans l’itérateur, une expression est retournée et la localisation actuelle dans le code est retenue. L’exécution est redémarrée à partir de cet emplacement la prochaine fois que l’itérateur est appelé.  
@@ -585,7 +585,7 @@ End Function
  [LINQ to Objects (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
  [Parallel LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)  
  [Collections et structures de données](../../../standard/collections/index.md)  
- [Création et manipulation de Collections](http://msdn.microsoft.com/en-us/2065398e-eb1a-4821-9188-75f16e42e069)  
+ [Création et manipulation de Collections](http://msdn.microsoft.com/library/2065398e-eb1a-4821-9188-75f16e42e069)  
  [Sélection d’une classe de collection](../../../standard/collections/selecting-a-collection-class.md)  
  [Comparaisons et tris dans les collections](../../../standard/collections/comparisons-and-sorts-within-collections.md)  
  [Quand utiliser les collections génériques](../../../standard/collections/when-to-use-generic-collections.md)

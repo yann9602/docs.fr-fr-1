@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 1933d216f991b78e21a56ec67826dce0b4a7b24a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: b7bb9f60340915f27c451d05bfbc28e1670c9d83
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="transport-udp"></a>Transport: UDP
 Cet exemple montre comment implémenter le mode unicast et multicast UDP en tant que transport [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] personnalisé. Il décrit la procédure recommandée pour créer un transport personnalisé dans [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], en utilisant l'infrastructure de canal et les meilleures pratiques [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] suivantes. Les étapes de la création d'un transport personnalisé sont les suivantes :  
@@ -405,7 +405,7 @@ protected override void OnApplyConfiguration(string configurationName)
 ```  
   
 ## <a name="the-udp-test-service-and-client"></a>Client et service de test UDP  
- Le code de test permettant d'utiliser cet exemple de transport est disponible dans les répertoires UdpTestService et UdpTestClient. Le code de service se compose de deux tests : le premier définit les liaisons et les points de terminaison à partir du code, et le deuxième le fait via la configuration. Ces deux tests utilisent deux points de terminaison. Un point de terminaison utilise le `SampleUdpProfileBinding` avec [ \<reliableSession >](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) la valeur `true`. L'autre utilise une liaison personnalisée avec `UdpTransportBindingElement`. Cela est équivalent à l’utilisation de `SampleUdpProfileBinding` avec [ \<reliableSession >](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) la valeur `false`. Ces deux tests créent un service, ajoutent  un point de terminaison pour chaque liaison, ouvrent le service, puis attendent que l’utilisateur tape ENTER avant de fermer le service.  
+ Le code de test permettant d'utiliser cet exemple de transport est disponible dans les répertoires UdpTestService et UdpTestClient. Le code de service se compose de deux tests : le premier définit les liaisons et les points de terminaison à partir du code, et le deuxième le fait via la configuration. Ces deux tests utilisent deux points de terminaison. Un point de terminaison utilise le `SampleUdpProfileBinding` avec [ \<reliableSession >](http://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) la valeur `true`. L'autre utilise une liaison personnalisée avec `UdpTransportBindingElement`. Cela est équivalent à l’utilisation de `SampleUdpProfileBinding` avec [ \<reliableSession >](http://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) la valeur `false`. Ces deux tests créent un service, ajoutent  un point de terminaison pour chaque liaison, ouvrent le service, puis attendent que l’utilisateur tape ENTER avant de fermer le service.  
   
  Lorsque vous démarrez l'application de test de service, la sortie suivante doit s'afficher.  
   

@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: fb8cf2c9f763ea32bb7c7907111fea80e542a7f7
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 5fe09601be7173fd1a9228dc090732ded7afdd90
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="datasets-datatables-and-dataviews"></a>DataSets, DataTables et DataViews
 L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données résidente en mémoire qui propose un modèle de programmation relationnel cohérent, quelle que soit la source des données qu'il contient. Un objet <xref:System.Data.DataSet> représente un jeu de données complet, y compris les tables qui contiennent et organisent les données et y appliquent des contraintes, ainsi que les relations entre les tables.  
@@ -31,7 +31,7 @@ L'objet <xref:System.Data.DataSet> ADO.NET est une représentation de données r
   
 -   Charger et rendre persistent le contenu de l'objet <xref:System.Data.DataSet> à l'aide de XML. Pour plus d’informations, consultez [Utilisation de XML dans un DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md).  
   
- Un objet <xref:System.Data.DataSet> fortement typé peut aussi être transporté au moyen d'un service Web XML. Le design de l'objet <xref:System.Data.DataSet> le rend idéal pour le transport de données à l'aide des services Web XML. Pour une vue d’ensemble des services web XML, consultez [Vue d’ensemble des services web XML](http://msdn.microsoft.com/en-us/9db0c7b8-bca6-462b-9be5-f5f9a7f05a4d). Pour obtenir un exemple d’utilisation d’un <xref:System.Data.DataSet> à partir d’un service web XML, consultez [Consommation d’un DataSet à partir d’un service web XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/consuming-a-dataset-from-an-xml-web-service.md).  
+ Un objet <xref:System.Data.DataSet> fortement typé peut aussi être transporté au moyen d'un service Web XML. Le design de l'objet <xref:System.Data.DataSet> le rend idéal pour le transport de données à l'aide des services Web XML. Pour une vue d’ensemble des services web XML, consultez [Vue d’ensemble des services web XML](http://msdn.microsoft.com/library/9db0c7b8-bca6-462b-9be5-f5f9a7f05a4d). Pour obtenir un exemple d’utilisation d’un <xref:System.Data.DataSet> à partir d’un service web XML, consultez [Consommation d’un DataSet à partir d’un service web XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/consuming-a-dataset-from-an-xml-web-service.md).  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Création d’un DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-a-dataset.md)  

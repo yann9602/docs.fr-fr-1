@@ -17,11 +17,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: dd76921059222c9c5b8958ce8e1761a3f04cb037
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 9647ce04528df390620dba67619a538d96aa7068
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="printing-how-to-topics"></a>Rubriques "Comment" relatives à l'impression
 Les rubriques de cette section montrent comment utiliser l’impression et les fonctionnalités de gestion de système d’impression inclus avec [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] , ainsi que la nouvelle [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] chemin d’impression.  
@@ -42,7 +42,7 @@ Les rubriques de cette section montrent comment utiliser l’impression et les f
  [Énumérer un sous-ensemble de files d'attente à l'impression](../../../../docs/framework/wpf/advanced/how-to-enumerate-a-subset-of-print-queues.md)  
  Instructions pour générer une liste des imprimantes présentant certaines caractéristiques.  
   
- [Not in Build : Comment : étendre le schéma d’impression et de créer de nouvelles Classes de système d’impression](http://msdn.microsoft.com/en-us/a3600218-1ea5-478a-9853-6560464f2885)  
+ [Not in Build : Comment : étendre le schéma d’impression et de créer de nouvelles Classes de système d’impression](http://msdn.microsoft.com/library/a3600218-1ea5-478a-9853-6560464f2885)  
  Présentation détaillée du fonctionnement du code managé, les programmeurs peuvent étendre le schéma d’impression pour les périphériques d’impression spécialisée ou des imprimantes avec les fonctionnalités nouvelles ou inhabituelles.  
   
  [Obtenir les propriétés de l'objet de système d'impression sans réflexion](../../../../docs/framework/wpf/advanced/how-to-get-print-system-object-properties-without-reflection.md)  

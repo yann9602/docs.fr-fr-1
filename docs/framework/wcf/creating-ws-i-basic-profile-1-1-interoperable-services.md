@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 61c4f26c9880d8a7f6a8fb356bafcc0d312509dc
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: d6bef68c8ba433e902cfd50e59a3b343e3af08cd
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="creating-ws-i-basic-profile-11-interoperable-services"></a>Création de services pouvant interagir avec le profil Basic Profile 1.1 de WS-I
 Pour configurer un point de terminaison de service [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] afin qu'il puisse interagir avec les clients du service Web [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] :  
@@ -39,7 +39,7 @@ Pour configurer un point de terminaison de service [!INCLUDE[indigo2](../../../i
   
 -   La sécurité du message contrôlée par la valeur <xref:System.ServiceModel.BasicHttpBinding.Security%2A?displayProperty=nameWithType> fournit une prise en charge de WS-Security conforme à WS-I Basic Security Profile 1.0. Conservez la valeur par défaut de cette propriété, à savoir <xref:System.ServiceModel.SecurityMode.Transport?displayProperty=nameWithType> pour ne pas utiliser WS-Security.  
   
- Pour rendre les métadonnées un [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service disponible pour [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)], utilisez les outils de génération de client de service Web : [Web Services Description Language Tool (Wsdl.exe)](http://msdn.microsoft.com/en-us/b9210348-8bc2-4367-8c91-d1a04b403e88), [Web Services Discovery Tool () Disco.exe)](http://msdn.microsoft.com/en-us/acd88078-c581-42bc-94ca-6633e2851979)et le `Add Web Reference` fonctionnalité dans [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]; vous devez activer la publication de métadonnées. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Points de terminaison de métadonnées de publication](../../../docs/framework/wcf/publishing-metadata-endpoints.md).  
+ Pour rendre les métadonnées un [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service disponible pour [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)], utilisez les outils de génération de client de service Web : [Web Services Description Language Tool (Wsdl.exe)](http://msdn.microsoft.com/library/b9210348-8bc2-4367-8c91-d1a04b403e88), [Web Services Discovery Tool () Disco.exe)](http://msdn.microsoft.com/library/acd88078-c581-42bc-94ca-6633e2851979)et le `Add Web Reference` fonctionnalité dans [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)]; vous devez activer la publication de métadonnées. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Points de terminaison de métadonnées de publication](../../../docs/framework/wcf/publishing-metadata-endpoints.md).  
   
 ## <a name="example"></a>Exemple  
   

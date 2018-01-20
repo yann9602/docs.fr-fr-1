@@ -30,11 +30,11 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 3ddb5abeee9c1cad12e40b84f2e5c81295cbed9f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 6fb682d898de8cb6bc166426c3a1accbda452c83
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Marshaling de classes, de structures, et d’unions
 Les classes et les structures sont similaires dans .NET Framework. Elles peuvent toutes deux posséder des champs, des propriétés et des événements. Elles peuvent également posséder des méthodes statiques et non statiques. Une différence notable existe toutefois : les structures sont des types valeur et les classes sont des types référence.  
@@ -77,7 +77,7 @@ Les classes et les structures sont similaires dans .NET Framework. Elles peuvent
     void TestArrayInStruct( MYARRAYSTRUCT* pStruct );  
     ```  
   
- [PinvokeLib.dll](http://msdn.microsoft.com/en-us/5d1438d7-9946-489d-8ede-6c694a08f614) est une bibliothèque non managée personnalisée qui contient des implémentations des fonctions précédemment répertoriées, ainsi que quatre structures : **MYPERSON**, **MYPERSON2**, **MYPERSON3** et **MYARRAYSTRUCT**. Ces structures contiennent les éléments suivants :  
+ [PinvokeLib.dll](http://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614) est une bibliothèque non managée personnalisée qui contient des implémentations des fonctions précédemment répertoriées, ainsi que quatre structures : **MYPERSON**, **MYPERSON2**, **MYPERSON3** et **MYARRAYSTRUCT**. Ces structures contiennent les éléments suivants :  
   
 ```  
 typedef struct _MYPERSON  
@@ -138,7 +138,7 @@ typedef struct _MYARRAYSTRUCT
  [!code-vb[Conceptual.Interop.Marshaling#24](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/structures.vb#24)]  
   
 ## <a name="findfile-sample"></a>FindFile (exemple)  
- Cet exemple montre comment passer une structure qui contient une autre structure incorporée à une fonction non managée. Il montre également comment utiliser l'attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> pour déclarer un tableau de longueur fixe au sein de la structure. Dans cet exemple, les éléments de la structure incorporée sont ajoutés à la structure parent. Pour obtenir un exemple de structure incorporée non aplatie, consultez [Exemples de structures](http://msdn.microsoft.com/en-us/96a62265-dcf9-4608-bc0a-1f762ab9f48e).  
+ Cet exemple montre comment passer une structure qui contient une autre structure incorporée à une fonction non managée. Il montre également comment utiliser l'attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> pour déclarer un tableau de longueur fixe au sein de la structure. Dans cet exemple, les éléments de la structure incorporée sont ajoutés à la structure parent. Pour obtenir un exemple de structure incorporée non aplatie, consultez [Exemples de structures](http://msdn.microsoft.com/library/96a62265-dcf9-4608-bc0a-1f762ab9f48e).  
   
  L'exemple FindFile utilise la fonction non managée ci-dessous, accompagnée de sa déclaration de fonction d'origine :  
   
@@ -191,7 +191,7 @@ typedef struct _WIN32_FIND_DATA
     void TestUnion(MYUNION u, int type);  
     ```  
   
- [PinvokeLib.dll](http://msdn.microsoft.com/en-us/5d1438d7-9946-489d-8ede-6c694a08f614) est une bibliothèque non managée personnalisée qui contient une implémentation de la fonction précédemment répertoriée, ainsi que deux unions, **MYUNION** et **MYUNION2**. Les unions peuvent contenir les éléments suivants :  
+ [PinvokeLib.dll](http://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614) est une bibliothèque non managée personnalisée qui contient une implémentation de la fonction précédemment répertoriée, ainsi que deux unions, **MYUNION** et **MYUNION2**. Les unions peuvent contenir les éléments suivants :  
   
 ```  
 union MYUNION  
@@ -251,7 +251,7 @@ typedef struct _SYSTEMTIME {
   
  Dans cet exemple, la classe `SystemTime` contient les éléments de la structure d'origine représentés en tant que membres de classe. L'attribut <xref:System.Runtime.InteropServices.StructLayoutAttribute> est défini pour s'assurer que les membres soient disposés en mémoire de manière séquentielle, dans l'ordre dans lequel ils apparaissent.  
   
- La classe `LibWrap` contient un prototype managé de la méthode `GetSystemTime`, qui passe la classe `SystemTime` en tant que paramètre In/Out par défaut. Le paramètre doit être déclaré avec les attributs <xref:System.Runtime.InteropServices.InAttribute> et <xref:System.Runtime.InteropServices.OutAttribute>, car les classes, qui sont des types référence, sont passées en tant que paramètres In par défaut. Pour que l’appelant reçoive les résultats, ces [attributs directionnels](http://msdn.microsoft.com/en-us/241ac5b5-928e-4969-8f58-1dbc048f9ea2) doivent être appliqués de manière explicite. La classe `App` crée une nouvelle instance de la classe `SystemTime` et accède à ses champs de données.  
+ La classe `LibWrap` contient un prototype managé de la méthode `GetSystemTime`, qui passe la classe `SystemTime` en tant que paramètre In/Out par défaut. Le paramètre doit être déclaré avec les attributs <xref:System.Runtime.InteropServices.InAttribute> et <xref:System.Runtime.InteropServices.OutAttribute>, car les classes, qui sont des types référence, sont passées en tant que paramètres In par défaut. Pour que l’appelant reçoive les résultats, ces [attributs directionnels](http://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2) doivent être appliqués de manière explicite. La classe `App` crée une nouvelle instance de la classe `SystemTime` et accède à ses champs de données.  
   
 ### <a name="code-samples"></a>Exemples de code  
  [!code-cpp[Conceptual.Interop.Marshaling#25](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/systime.cpp#25)]
@@ -263,7 +263,7 @@ typedef struct _SYSTEMTIME {
   
  Cet exemple montre comment appeler une fonction native à l'aide de la classe <xref:System.Runtime.InteropServices.Marshal> et à l'aide de code unsafe.  
   
- Cet exemple utilise des fonctions wrapper et des appels de code non managé définis dans [PinvokeLib.dll](http://msdn.microsoft.com/en-us/5d1438d7-9946-489d-8ede-6c694a08f614), également fournis dans les fichiers sources. Il utilise la fonction `TestOutArrayOfStructs` et la structure `MYSTRSTRUCT2`. La structure contient les éléments suivants :  
+ Cet exemple utilise des fonctions wrapper et des appels de code non managé définis dans [PinvokeLib.dll](http://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614), également fournis dans les fichiers sources. Il utilise la fonction `TestOutArrayOfStructs` et la structure `MYSTRSTRUCT2`. La structure contient les éléments suivants :  
   
 ```  
 typedef struct _MYSTRSTRUCT2  
@@ -299,6 +299,6 @@ typedef struct _MYSTRSTRUCT2
   
 ## <a name="see-also"></a>Voir aussi  
  [Marshaling de données à l’aide de l’appel de code managé](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)  
- [Types de données d’appel de plateforme](http://msdn.microsoft.com/en-us/16014d9f-d6bd-481e-83f0-df11377c550f)  
+ [Types de données d’appel de plateforme](http://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f)  
  [Marshaling des chaînes](../../../docs/framework/interop/marshaling-strings.md)  
- [Marshaling des tableaux de types](http://msdn.microsoft.com/en-us/049b1c1b-228f-4445-88ec-91bc7fd4b1e8)
+ [Marshaling des tableaux de types](http://msdn.microsoft.com/library/049b1c1b-228f-4445-88ec-91bc7fd4b1e8)

@@ -21,11 +21,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.workload: dotnet
-ms.openlocfilehash: 969ab4f3c63571488c66c8a505df3969fcd788e3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: fdd26f335fb2f9b8072103def5b00d91a6740817
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="use-the-automationid-property"></a>Utiliser la propriété AutomationID
 > [!NOTE]
@@ -56,7 +56,7 @@ ms.lasthandoff: 12/22/2017
   
 #### <a name="use-a-persistent-path-to-return-to-a-previously-identified-automationelement"></a>Utiliser un chemin persistant pour revenir à un AutomationElement déjà identifié  
   
--   Les applications clientes, qu’il s’agisse de simples scripts de test ou de véritables utilitaires d’enregistrement et de lecture, peuvent nécessiter l’accès à des éléments qui ne sont pas actuellement instanciés, comme une boîte de dialogue d’ouverture de fichier ou un élément de menu, et qui donc n’existent pas dans l’arborescence UI Automation. Ces éléments ne peuvent être instanciés qu’en reproduisant, ou en « lisant », une séquence spécifique d’actions d’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] à l’aide de propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] comme AutomationID, les modèles de contrôle et les écouteurs d’événements. Consultez [Test Script Generator Sample](http://msdn.microsoft.com/en-us/028467fd-2980-4691-9522-0131dcef23a0) pour obtenir un exemple qui utilise [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour générer des scripts de test en fonction de l’interaction de l’utilisateur avec l’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)].  
+-   Les applications clientes, qu’il s’agisse de simples scripts de test ou de véritables utilitaires d’enregistrement et de lecture, peuvent nécessiter l’accès à des éléments qui ne sont pas actuellement instanciés, comme une boîte de dialogue d’ouverture de fichier ou un élément de menu, et qui donc n’existent pas dans l’arborescence UI Automation. Ces éléments ne peuvent être instanciés qu’en reproduisant, ou en « lisant », une séquence spécifique d’actions d’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] à l’aide de propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] comme AutomationID, les modèles de contrôle et les écouteurs d’événements. Consultez [tester un exemple de générateur de Script](http://msdn.microsoft.com/library/028467fd-2980-4691-9522-0131dcef23a0) pour obtenir un exemple qui utilise [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour générer des scripts de test basés sur l’interaction utilisateur avec le [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)].  
   
  [!code-csharp[UIAAutomationID_snip#UIAWorkerThread](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAAutomationID_snip/CSharp/FindByAutomationID.xaml.cs#uiaworkerthread)]
  [!code-vb[UIAAutomationID_snip#UIAWorkerThread](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAAutomationID_snip/VisualBasic/FindByAutomationID.xaml.vb#uiaworkerthread)]  

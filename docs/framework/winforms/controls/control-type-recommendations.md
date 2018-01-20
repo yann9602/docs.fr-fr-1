@@ -19,11 +19,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 638a439a663925be6eea230984310f7b86b81030
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: a126d3b21ddd4bd31e168726c3538de21fb7d956
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="control-type-recommendations"></a>Recommandations relatives au type du contrôle
 .NET Framework vous offre la possibilité de développer et d'implémenter de nouveaux contrôles. Outre le contrôle utilisateur familier, vous constaterez que vous pouvez désormais écrire des contrôles personnalisés qui effectuent leur propre peinture et même étendre les fonctionnalités des contrôles existants via l'héritage. Le choix du type de contrôle à créer peut être délicat. Cette section souligne les différences entre les différents types de contrôles à partir desquels vous pouvez hériter et fournit des conseils quant au type le plus adapté à votre projet.  
@@ -60,7 +60,7 @@ ms.lasthandoff: 12/22/2017
   
 -   [Procédure pas à pas : sérialisation des collections de types standard avec DesignerSerializationVisibilityAttribute](http://msdn.microsoft.com/library/ms171731\(v=vs.110\))  
   
--   [Procédure pas à pas : héritage d'un contrôle Windows Forms à l'aide de Visual C#](http://msdn.microsoft.com/en-us/library/5h0k2e6x\(v=vs.110\))  
+-   [Procédure pas à pas : héritage d'un contrôle Windows Forms à l'aide de Visual C#](http://msdn.microsoft.com/library/5h0k2e6x\(v=vs.110\))  
   
 -   [Comment : fournir une bitmap pour un contrôle en vue de l'afficher dans la boîte à outils](http://msdn.microsoft.com/library/4wk1wc0a\(v=vs.110\))  
   
@@ -82,7 +82,7 @@ ms.lasthandoff: 12/22/2017
   
 -   [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual Basic](http://msdn.microsoft.com/library/c316f119\(v=vs.110\))  
   
--   [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual C#](http://msdn.microsoft.com/en-us/library/a6h7e207\(v=vs.110\))  
+-   [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual C#](http://msdn.microsoft.com/library/a6h7e207\(v=vs.110\))  
   
 -   [Procédure pas à pas : héritage à partir d'un contrôle Windows Forms à l'aide de Visual Basic](http://msdn.microsoft.com/library/w2a8y03d\(v=vs.110\))  
   

@@ -14,11 +14,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 5605c90d5f63e0ed80ac5a47b36781c45b687cba
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 8488e802ee191c261b65388d48bd26aa37d18206
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Points de terminaison de service et adressage de files d'attente
 Cette rubrique discute comment les clients adressent des services qui lisent à partir des files d'attente et comment les points de terminaison de service mappent aux files d'attente. En guise de rappel, l'illustration suivante montre le déploiement classique d'applications en file d'attente [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -57,7 +57,7 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
  L'adresse de la file d'attente est utilisée comme URI d'écoute par l'écouteur pour la lecture des messages. En d'autres termes, l'adresse de la file d'attente est équivalente au port d'écoute de socket TCP.  
   
- Un point de terminaison qui lit à partir d'une file d'attente doit spécifier l'adresse de la file d'attente à l'aide du même schéma que celui spécifié précédemment lors de l'ouverture du ServiceHost. Pour obtenir des exemples, consultez [de liaison MSMQ Net](../../../../docs/framework/wcf/samples/net-msmq-binding.md) et [exemples de liaison d’intégration de Message Queuing](http://msdn.microsoft.com/en-us/997d11cb-f2c5-4ba0-9209-92843d4d0e1a).  
+ Un point de terminaison qui lit à partir d'une file d'attente doit spécifier l'adresse de la file d'attente à l'aide du même schéma que celui spécifié précédemment lors de l'ouverture du ServiceHost. Pour obtenir des exemples, consultez [de liaison MSMQ Net](../../../../docs/framework/wcf/samples/net-msmq-binding.md) et [exemples de liaison d’intégration de Message Queuing](http://msdn.microsoft.com/library/997d11cb-f2c5-4ba0-9209-92843d4d0e1a).  
   
 ### <a name="multiple-contracts-in-a-queue"></a>Contrats multiples dans une file d'attente  
  Les messages dans une file d'attente peuvent implémenter des contrats différents. Dans ce cas, il est essentiel que l'une des conditions suivantes soit remplie pour lire et traiter avec succès tous les messages :  
@@ -83,9 +83,9 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
 |Adresse de file d'attente basée sur URI WCF |Utiliser la propriété Active Directory|Propriété de protocole de transfert de mise en file d'attente|Noms de format MSMQ résultants|  
 |----------------------------------|-----------------------------------|--------------------------------------|---------------------------------|  
-|NET.MSMQ://\<machine-name >/privé/abc|False (valeur par défaut)|Native (valeur par défaut)|DIRECT=OS:machine-name\private$\abc|  
-|NET.MSMQ://\<machine-name >/privé/abc|False|SRMP|DIRECT=http://machine/msmq/private$/abc|  
-|NET.MSMQ://\<machine-name >/privé/abc|True|Natif|PUBLIC=un-guid (le GUID de la file d'attente)|  
+|Net.msmq://\<machine-name>/private/abc|False (valeur par défaut)|Native (valeur par défaut)|DIRECT=OS:machine-name\private$\abc|  
+|Net.msmq://\<machine-name>/private/abc|False|SRMP|DIRECT=http://machine/msmq/private$/abc|  
+|Net.msmq://\<machine-name>/private/abc|True|Natif|PUBLIC=un-guid (le GUID de la file d'attente)|  
   
 ### <a name="reading-messages-from-the-dead-letter-queue-or-the-poison-message-queue"></a>Lecture de messages à partir de la file d'attente de lettres mortes ou de la file d'attente de messages incohérents  
  Pour lire des messages à partir d'une file d'attente de message incohérents qui est une sous-file d'attente de la file d'attente cible, ouvrez le `ServiceHost` avec l'adresse de la sous-file d'attente.  
@@ -105,7 +105,7 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
 ## <a name="msmqintegrationbinding-and-service-addressing"></a>MsmqIntegrationBinding et adressage de service  
  Le `MsmqIntegrationBinding` est utilisé pour la communication avec les applications MSMQ traditionnelles. Pour faciliter l'interopérabilité avec une application MSMQ existante, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] prend en charge uniquement l'adressage de nom de format. Par conséquent, les messages envoyés à l’aide de cette liaison doivent se conformer au schéma d’URI suivant :  
   
- MSMQ.FormatName :\<*nom de format MSMQ*>>  
+ msmq.formatname:\<*MSMQ-format-name*>>  
   
  Le nom de format MSMQ est au format spécifié par MSMQ dans [sur Message Queuing](http://go.microsoft.com/fwlink/?LinkId=94837).  
   

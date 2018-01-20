@@ -24,11 +24,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 76a836e2699617803b78f76f90b27452bd0cdd0f
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: ffd45957b41cdfd8488aedd865aa70ef5b2634b2
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="wpf-add-ins-overview"></a>Vue d'ensemble des compléments WPF
 <a name="Introduction"></a> Le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] inclut un modèle de complément que les développeurs peuvent utiliser pour créer des applications prenant en charge l’extensibilité des compléments. Ce modèle de complément permet de créer des compléments qui s’intègrent aux applications et étendent leurs fonctionnalités. Dans certains scénarios, les applications doivent également afficher les [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] fournies par les compléments. Cette rubrique montre comment [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] optimise le modèle de complément du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pour prendre en charge ces scénarios, l’architecture sur laquelle il repose, ainsi que ses avantages et ses limitations.  
@@ -111,7 +111,7 @@ ms.lasthandoff: 12/22/2017
 -   A la <xref:System.SerializableAttribute> attribut appliqué.  
   
 > [!NOTE]
->  Pour plus d’informations sur la création d’objets du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] accessibles à distance, consultez [Rendre des objets accessibles à distance](http://msdn.microsoft.com/en-us/01197253-3f13-43b7-894d-9683e431192a).  
+>  Pour plus d’informations sur la création d’objets du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] accessibles à distance, consultez [Rendre des objets accessibles à distance](http://msdn.microsoft.com/library/01197253-3f13-43b7-894d-9683e431192a).  
   
  Les types d’[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ne sont pas accessibles à distance. Pour résoudre ce problème, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] étend le modèle de complément du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] afin de permettre l’affichage de l’[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] créée par les compléments à partir des applications hôtes. Cette prise en charge est fournie par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] par deux types : les <xref:System.AddIn.Contract.INativeHandleContract> interface et les deux méthodes statiques implémentées par le <xref:System.AddIn.Pipeline.FrameworkElementAdapters> classe : <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A> et <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>. À un niveau élevé, ces types et méthodes sont utilisés de la manière suivante :  
   
@@ -297,6 +297,6 @@ ms.lasthandoff: 12/22/2017
  <xref:System.LoaderOptimizationAttribute>  
  [Compléments et extensibilité](../../../../docs/framework/add-ins/index.md)  
  [Domaines d’application](../../../../docs/framework/app-domains/application-domains.md)  
- [Vue d’ensemble de la communication à distance .NET framework](http://msdn.microsoft.com/en-us/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)  
- [Objets accessibles à distance](http://msdn.microsoft.com/en-us/01197253-3f13-43b7-894d-9683e431192a)  
+ [Vue d’ensemble de la communication à distance .NET framework](http://msdn.microsoft.com/library/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)  
+ [Objets accessibles à distance](http://msdn.microsoft.com/library/01197253-3f13-43b7-894d-9683e431192a)  
  [Rubriques de guide pratique](../../../../docs/framework/wpf/app-development/how-to-topics.md)

@@ -14,11 +14,11 @@ author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.workload: dotnet
-ms.openlocfilehash: 70f8b00ca0f57d4d6bf9fc49ab12443f0a8c9b83
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: c952a79b70314ff9de195da322efd78d54176201
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="security-overview"></a>Vue d'ensemble de la sécurité
 La sécurisation d'une application est un processus permanent. Un développeur ne peut à aucun moment garantir qu'une application est à l'abri de toute attaque car il est impossible de prédire les types d'attaques futures que les nouvelles technologies permettront de faire apparaître. Inversement, le fait que personne n'a encore découvert (ou révélé) les défaillances de la sécurité d'un système ne signifie pas qu'il n'en existe pas ou qu'il ne peut pas en exister. Vous devez planifier la sécurité au cours de la phase de conception du projet, ainsi que la manière dont la sécurité sera maintenue tout au long de la durée de vie de l'application.  
@@ -78,7 +78,7 @@ La sécurisation d'une application est un processus permanent. Un développeur n
 |Ressource|Description|  
 |--------------|-----------------|  
 |[Sécurité d’accès du code et ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)|Décrit les interactions entre la sécurité d'accès du code, la sécurité basée sur les rôles et les environnements avec un niveau de confiance partielle depuis la perspective d'une application ADO.NET.|  
-|[Sécurité d’accès du code](http://msdn.microsoft.com/en-us/23a20143-241d-4fe5-9d9f-3933fd594c03)|Contient des liens vers des rubriques supplémentaires qui décrivent la sécurité d'accès du code dans le .NET Framework.|  
+|[Sécurité d’accès du code](http://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03)|Contient des liens vers des rubriques supplémentaires qui décrivent la sécurité d'accès du code dans le .NET Framework.|  
   
 ## <a name="database-security"></a>Sécurité de base de données  
  Le principe des privilèges minimum s'applique également à votre source de données. Ci-dessous figurent quelques-unes des instructions générales concernant la sécurité de la base de données :  
@@ -100,7 +100,7 @@ La sécurisation d'une application est un processus permanent. Un développeur n
 |Ressource|Description|  
 |--------------|-----------------|  
 |[Sécurité SQL Server](../../../../docs/framework/data/adonet/sql/sql-server-security.md)|Fournit une vue d'ensemble de la sécurité de SQL Server avec des scénarios d'application qui fournissent des conseils pour créer des applications ADO.NET sécurisées qui ciblent SQL Server.|  
-|[Recommandations pour les stratégies d’accès aux données](http://msdn.microsoft.com/en-us/72411f32-d12a-4de8-b961-e54fca7faaf5)|Fournit des recommandations pour l'accès aux données et l'exécution d'opérations de base de données.|  
+|[Recommandations pour les stratégies d’accès aux données](http://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)|Fournit des recommandations pour l'accès aux données et l'exécution d'opérations de base de données.|  
   
 ## <a name="security-policy-and-administration"></a>Stratégie et administration de sécurité  
  Une administration incorrecte de la sécurité d'accès du code peut potentiellement créer des failles en matière de sécurité. Une fois qu'une application a été déployée, des techniques de surveillance de la sécurité doivent être utilisées et les risques évalués à mesure que de nouvelles menaces émergent.  
@@ -109,11 +109,11 @@ La sécurisation d'une application est un processus permanent. Un développeur n
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[NIB : Gestion des stratégies de sécurité](http://msdn.microsoft.com/en-us/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)|Fournit des informations sur la création et l'administration de la stratégie de sécurité.|  
-|[NIB : Meilleures pratiques de la stratégie de sécurité](http://msdn.microsoft.com/en-us/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05)|Fournit des liens qui décrivent comment administrer la stratégie de sécurité.|  
+|[NIB : Gestion des stratégies de sécurité](http://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)|Fournit des informations sur la création et l'administration de la stratégie de sécurité.|  
+|[NIB : Meilleures pratiques de la stratégie de sécurité](http://msdn.microsoft.com/library/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05)|Fournit des liens qui décrivent comment administrer la stratégie de sécurité.|  
   
 ## <a name="see-also"></a>Voir aussi  
  [Sécurisation des applications ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Sécurité PAVE dans le code natif et .NET Framework](http://msdn.microsoft.com/en-us/bd61be84-c143-409a-a75a-44253724f784)  
+ [Sécurité PAVE dans le code natif et .NET Framework](http://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  
  [Sécurité SQL Server](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  [Fournisseurs managés ADO.NET et centre de développement DataSet](http://go.microsoft.com/fwlink/?LinkId=217917)

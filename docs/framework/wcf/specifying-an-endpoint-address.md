@@ -18,11 +18,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 21b15fb2b3f3d204ebd5b59f5a93f8e53a89ff71
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 403ff897de4dc9ee95a854d9658bdee344755d59
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="specifying-an-endpoint-address"></a>Spécification d'une adresse de point de terminaison
 Toute communication avec un service [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] a lieu par l'intermédiaire de ses points de terminaison. Chaque <xref:System.ServiceModel.Description.ServiceEndpoint> contient un <xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>, un <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A> et un <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A>. Le contrat spécifie quelles opérations sont disponibles. La liaison spécifie comment communiquer avec le service et l'adresse spécifie où rechercher le service. Chaque point de terminaison doit avoir une adresse unique. L'adresse de point de terminaison est représentée par la classe <xref:System.ServiceModel.EndpointAddress>, qui contient un URI (Uniform Resource Identifier) représentant l'adresse du service, un <xref:System.ServiceModel.EndpointAddress.Identity%2A> représentant l'identité de sécurité du service et une collection de <xref:System.ServiceModel.EndpointAddress.Headers%2A> facultative. Les en-têtes facultatifs fournissent des informations d'adressage plus détaillées pour identifier ou interagir avec le point de terminaison. Par exemple, les en-tête peuvent indiquer comment traiter un message entrant, où le point de terminaison doit envoyer un message de réponse ou quelle instance d'un service utiliser pour traiter un message entrant d'un utilisateur particulier lorsque plusieurs instances sont disponibles.  
@@ -49,7 +49,7 @@ Toute communication avec un service [!INCLUDE[indigo1](../../../includes/indigo1
  Lorsque vous hébergez avec les services IIS, vous ne gérez pas l'instance <xref:System.ServiceModel.ServiceHost> vous-même. L'adresse de base est toujours l'adresse spécifiée dans le fichier .svc pour le service lors de l'hébergement dans IIS. Par conséquent, vous devez toujours utiliser des adresses de point de terminaison relatives pour les points de terminaison de service hébergés dans IIS. Fournir une adresse de point de terminaison qualifiée complète peut entraîner des erreurs lors du déploiement du service. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Déploiement d’un Service WCF hébergé par les Services d’Internet Information](../../../docs/framework/wcf/feature-details/deploying-an-internet-information-services-hosted-wcf-service.md).  
   
 ## <a name="defining-endpoint-addresses-in-configuration"></a>Définition des adresses de point de terminaison dans la configuration  
- Pour définir un point de terminaison dans un fichier de configuration, utilisez la [ \<point de terminaison >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément.  
+ Pour définir un point de terminaison dans un fichier de configuration, utilisez la [ \<point de terminaison >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) élément.  
   
  [!code-xml[S_UEHelloWorld#5](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp2.config#5)]  
   

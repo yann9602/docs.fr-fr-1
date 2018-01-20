@@ -27,11 +27,11 @@ author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 2d2c1c021759c7032257e95eb2cad202a461dc05
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5a0a4c2bca136377b9c6812008189dae009e195f
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Sources de données prises en charge par les Windows Forms
 En règle générale, la liaison de données a été utilisée dans des applications pour tirer parti des données stockées dans les bases de données. Avec la liaison de données Windows Forms, vous pourrez accéder aux données à partir de bases de données, ainsi que les données d’autres structures, tels que les tableaux et collections, tant que certaines exigences minimales ont été remplies.  
@@ -48,7 +48,7 @@ En règle générale, la liaison de données a été utilisée dans des applicat
  Windows Forms prend en charge les propriétés de contrôle de liaison de données aux propriétés publiques sur l’instance d’un objet en utilisant la <xref:System.Windows.Forms.Binding> type. Windows Forms prend également en charge des contrôles de liste en fonction de liaison comme un <xref:System.Windows.Forms.ListControl> à un objet d’instance quand un <xref:System.Windows.Forms.BindingSource> est utilisé.  
   
  tableau ou collection  
- Pour agir comme source de données, une liste doit implémenter la <xref:System.Collections.IList> interface ; un exemple serait un tableau qui est une instance de la <xref:System.Array> classe. Pour plus d’informations sur les tableaux, consultez [Comment : créer un tableau d’objets (Visual Basic)](http://msdn.microsoft.com/en-us/6b64e069-0387-400c-9081-3bdc581020c3).  
+ Pour agir comme source de données, une liste doit implémenter la <xref:System.Collections.IList> interface ; un exemple serait un tableau qui est une instance de la <xref:System.Array> classe. Pour plus d’informations sur les tableaux, consultez [Comment : créer un tableau d’objets (Visual Basic)](http://msdn.microsoft.com/library/6b64e069-0387-400c-9081-3bdc581020c3).  
   
  En général, vous devez utiliser <xref:System.ComponentModel.BindingList%601> lorsque vous créez des listes d’objets pour la liaison de données. <xref:System.ComponentModel.BindingList%601>est une version générique de le <xref:System.ComponentModel.IBindingList> interface. Le <xref:System.ComponentModel.IBindingList> interface étend la <xref:System.Collections.IList> interface en ajoutant des propriétés, méthodes et événements nécessaires pour la liaison de données bidirectionnelle.  
   

@@ -37,11 +37,11 @@ manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 1f95193e4ac90df0d0abe5a46ade08d799bdf6b2
-ms.sourcegitcommit: 91691981897cf8451033cb01071d8f5d94017f97
+ms.openlocfilehash: 653ffbf9597be9c82300b2be69ed6a7f9412769d
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="cryptographic-services"></a>services de chiffrement
 <a name="top"></a> Les réseaux publics, tels qu'Internet, n'offrent aucun moyen de sécuriser les communications entre les entités. Les communications qui transitent par ces réseaux sont susceptibles d'être lues voire modifiées par des tiers non autorisés. Le chiffrement permet de prévenir la consultation des données, offre des moyens de détecter si les données ont été modifiées et fournit un mode de communication sécurisé via des canaux qui autrement ne sont pas sécurisés. Par exemple, les données peuvent être chiffrées à l'aide d'un algorithme de chiffrement, transmises dans un état chiffré et par la suite déchiffrées par le destinataire prévu. Si un tiers intercepte les données chiffrées, il lui sera difficile de les déchiffrer.  
@@ -206,7 +206,7 @@ ms.lasthandoff: 01/09/2018
   
 -   Alice envoie le message de texte en clair et le message haché (signature numérique) à Jean. Jean reçoit et hache le message et compare sa valeur de hachage à celle qu'il a reçue d'Alice. Si les valeurs de hachage sont identiques, cela signifie que le message n'a pas été modifié. Si les valeurs ne sont pas identiques, le message a été modifié après avoir été rédigé par Alice.  
   
-     Malheureusement, cette méthode ne permet pas d'établir l'authenticité de l'expéditeur. N'importe qui peut emprunter l'identité d'Alice et envoyer un message à Jean. L'usurpateur peut utiliser le même algorithme de hachage pour signer son message et tout ce que Jean pourra constater, c'est que le message présente la même signature. Il s'agit d'une forme d'attaque de l'intercepteur. Consultez [NIB : exemple de communication sécurisée CNG (Cryptography Next Generation)](http://msdn.microsoft.com/en-us/8048e94e-054a-417b-87c6-4f5e26710e6e) pour plus d’informations.  
+     Malheureusement, cette méthode ne permet pas d'établir l'authenticité de l'expéditeur. N'importe qui peut emprunter l'identité d'Alice et envoyer un message à Jean. L'usurpateur peut utiliser le même algorithme de hachage pour signer son message et tout ce que Jean pourra constater, c'est que le message présente la même signature. Il s'agit d'une forme d'attaque de l'intercepteur. Consultez [NIB : exemple de Communication sécurisée Cryptography Next Generation (CNG)](http://msdn.microsoft.com/library/8048e94e-054a-417b-87c6-4f5e26710e6e) pour plus d’informations.  
   
 -   Alice envoie le message de texte en clair à Jean via un canal public non sécurisé. Elle envoie le message haché à Jean via un canal privé sécurisé. Jean reçoit le message de texte en clair, le hache et compare le hachage à celui échangé en privé. Si les hachages correspondent, Jean peut en déduire deux choses :  
   
