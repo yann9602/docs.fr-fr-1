@@ -22,9 +22,9 @@ ms.lasthandoff: 10/18/2017
 
 **Figure 2-2**. Docker déploie des conteneurs à toutes les couches du cloud hybride
 
-Docker image conteneurs sont exécutés en mode natif sur Linux et Windows. Les images Windows s’exécutent uniquement sur des hôtes Windows et Linux images s’exécutent uniquement sur les hôtes Linux. L’hôte est un serveur ou une machine virtuelle.
+Les images des conteneurs Docker sont exécutés en mode natif sur Linux et Windows. Les images Windows s’exécutent uniquement sur des hôtes Windows et les images Linux s’exécutent uniquement sur les hôtes Linux. L’hôte est un serveur ou une machine virtuelle.
 
-Vous pouvez développer sur Windows, Linux ou macOS. L’ordinateur de développement s’exécute à un hôte Docker où les images Docker sont déployés, y compris l’application et ses dépendances. Sur Linux ou macOS, vous utilisez un hôte Docker est Linux peut créer des images uniquement pour les conteneurs Linux. (Sur Mac OS, vous pouvez modifier le code ou exécuter l’interface CLI de Docker, mais au moment de la rédaction, conteneurs ne s’exécutent pas directement sur macOS.) Sur Windows, vous pouvez créer des images pour les conteneurs Windows ou Linux.
+Vous pouvez développer sur Windows, Linux ou macOS. L’ordinateur de développement exécute un hôte Docker où les images Docker sont déployées, y compris l’application et ses dépendances. Sur Linux ou macOS, vous utilisez un hôte Docker Linux et vous pouvez créer des images uniquement pour les conteneurs Linux. (Sur Mac OS, vous pouvez modifier le code ou exécuter l’interface CLI de Docker, mais au moment de la rédaction, les conteneurs ne s’exécutent pas directement sur macOS.) Sur Windows, vous pouvez créer des images pour les conteneurs Windows ou Linux.
 
 Sur Windows ou macOS, [Docker Community Edition (CE)](https://www.docker.com/community-edition) héberge des conteneurs dans un environnement de développement et fournit des outils de développement supplémentaires. [Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition) est utilisé par les équipes informatiques générer, sont fournis et exécutent des applications critiques volumineuses. ~ Les deux produits installent VM nécessaire (hôte Docker) pour héberger les conteneurs. ~ 
 
