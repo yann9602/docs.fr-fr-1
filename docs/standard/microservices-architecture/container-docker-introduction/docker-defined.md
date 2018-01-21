@@ -52,13 +52,13 @@ Figure 2-3 indique une comparaison entre les machines virtuelles et Docker conte
 
 Étant donné que les conteneurs nécessitent beaucoup moins de ressources (par exemple, ils n'ont pas besoin d'un système d'exploitation complet), ils démarrent plus rapidement et sont faciles à déployer. La faible utilisation des ressources permet une densité plus élevée. Vous pouvez exécuter plus de services sur la même unité de matériel et réduire les coûts.
 
-En cours d’exécution sur les mêmes résultats noyau dans moins d’isolation présentent de machines virtuelles.
+L’exécution sur le même noyau produit moins d’isolation par rapport aux machines virtuelles.
 
-L’objectif principal d’une image est qu’elle rend l’environnement (dépendances) identiques entre les différents déploiements. Cela signifie que vous pouvez déboguer sur votre ordinateur et puis le déployer sur un autre ordinateur avec le même environnement garanti.
+L’objectif principal d’une image est qu’elle rend l’environnement (dépendances) identique entre les différents déploiements. Cela signifie que vous pouvez le déboguer sur votre ordinateur et puis le déployer sur un autre ordinateur avec le même environnement garanti.
 
 Une image de conteneur est un moyen pour empaqueter une application ou un service et le déployer de manière fiable et reproductible. Vous pouvez dire que Docker est non seulement une technologie, mais également une philosophie et un processus.
 
-Les développeurs de docker ne dites, « Il fonctionne sur mon ordinateur, pourquoi ne pas en production ? » Ils affirment, « Il s’exécute sur Docker ». Les applications empaquetées de docker peuvent être exécutées sur n’importe quel environnement Docker pris en charge. Docker empaquetées des applications de s’exécuter de façon cohérente sur toutes les cibles de déploiement (développement, assurance qualité, de mise en lots, production).
+Les développeurs docker ne disent pas, « ça fonctionne sur mon ordinateur, pourquoi pas en production ? » Ils affirment, « ça s’exécute sur Docker ». Les applications empaquetées par Docker peuvent être exécutées sur n’importe quel environnement Docker pris en charge. Les applications empaquetées par Docker s’exécutent de façon cohérente sur toutes les cibles de déploiement (développement, test, pré-production, production).
 
 >[!div class="step-by-step"]
 [Précédente] (index.md) [suivant] (docker-terminology.md)
