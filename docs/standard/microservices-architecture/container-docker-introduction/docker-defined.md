@@ -1,6 +1,6 @@
 ---
-title: "Qu’est Docker ?"
-description: "Architecture de Microservices .NET pour les Applications .NET en conteneur | Qu’est Docker ?"
+title: "Qu’est-ce que Docker ?"
+description: "Architecture de Microservices .NET pour les Applications .NET en conteneur | Qu’est-ce que Docker ?"
 keywords: Docker, microservices, ASP.NET, conteneur
 author: CESARDELATORRE
 ms.author: wiwagn
@@ -26,13 +26,13 @@ Les images des conteneurs Docker sont exécutées en mode natif sur Linux et Win
 
 Vous pouvez développer sur Windows, Linux ou macOS. L’ordinateur de développement exécute un hôte Docker où les images Docker sont déployées, y compris l’application et ses dépendances. Sur Linux ou macOS, vous utilisez un hôte Docker Linux et vous pouvez créer des images uniquement pour les conteneurs Linux. (Sur Mac OS, vous pouvez modifier le code ou exécuter l’interface CLI de Docker, mais au moment de la rédaction, les conteneurs ne s’exécutent pas directement sur macOS.) Sur Windows, vous pouvez créer des images pour les conteneurs Windows ou Linux.
 
-Sur Windows ou macOS, [Docker Community Edition (CE)](https://www.docker.com/community-edition) héberge des conteneurs dans un environnement de développement et fournit des outils de développement supplémentaires. [Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition) est utilisé par les équipes informatiques générer, sont fournis et exécutent des applications critiques volumineuses. ~ Les deux produits installent VM nécessaire (hôte Docker) pour héberger les conteneurs. ~ 
+Sur Windows ou macOS, [Docker Community Edition (CE)](https://www.docker.com/community-edition) héberge des conteneurs dans un environnement de développement et fournit des outils de développement supplémentaires. [Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition) est utilisé par les équipes informatiques qui créent, publient et exécutent des applications critiques volumineuses. ~ Les deux produits installent la VM nécessaire (l'hôte Docker) pour héberger les conteneurs. ~ 
 
-[Les conteneurs Windows](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/about/about_overview) fonctionnent avec les deux types de runtime :
+[Les conteneurs Windows](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/about/about_overview) fonctionnent avec deux types de runtime :
 
--   Les conteneurs Windows Server fournissent l’isolation des applications via une technologie d’isolation des processus et l’espace de noms. Un conteneur Windows Server partage un noyau avec l’hôte de conteneur et tous les conteneurs en cours d’exécution sur l’ordinateur hôte.
+-   Les conteneurs Windows Server fournissent l’isolation des applications via une technologie d’isolation des processus et des espaces de noms. Un conteneur Windows Server partage un noyau avec l’hôte de conteneur et tous les conteneurs en cours d’exécution sur l’ordinateur hôte.
 
--   Conteneurs Hyper-V développent l’isolation fournie par les conteneurs Windows Server en exécutant chaque conteneur dans une machine virtuelle hautement optimisée. Dans cette configuration, le noyau de l’hôte de conteneur n’est pas partagé avec les conteneurs Hyper-V, qui fournit une meilleure isolation. Autoriser les conteneurs Hyper-V non approuvés et *mutualisée hostile* applications à s’exécuter sur le même hôte. Conteneurs Hyper-V ont un peu moins efficacité dans les temps de démarrage et la densité de conteneurs Windows Server.
+-   Les conteneurs Hyper-V développent l’isolation fournie par les conteneurs Windows Server en exécutant chaque conteneur dans une machine virtuelle hautement optimisée. Dans cette configuration, le noyau de l’hôte de conteneur n’est pas partagé avec les conteneurs Hyper-V, qui fournit une meilleure isolation. Autoriser les conteneurs Hyper-V non approuvés et *mutualisée hostile* applications à s’exécuter sur le même hôte. Conteneurs Hyper-V ont un peu moins efficacité dans les temps de démarrage et la densité de conteneurs Windows Server.
 
 Les images de ces conteneurs sont créés et fonctionnent de la même façon. Elles diffèrent dans la manière dont le conteneur est créé. Pour plus d’informations, consultez [conteneurs Hyper-V](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/about/about_overview).
 
