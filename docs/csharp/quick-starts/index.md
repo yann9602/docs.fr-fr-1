@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 4443609c9494ca93cbc5934dd62fedf434599962
-ms.sourcegitcommit: 9bee08539b1886c9d57fa3d5bd8a58dfdd7cad94
+ms.openlocfilehash: 7847d21e3529de1a84ef17486710d10256003ce9
+ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="c-quick-starts"></a>Démarrages rapides pour C# #
 
@@ -39,6 +39,12 @@ Ce guide de démarrage rapide part du principe que vous avez terminé le didacti
 Le guide de démarrage rapide [Branches et boucles](branches-and-loops.yml) explique les bases de la sélection de différents chemins d’exécution de code en fonction des valeurs stockées dans des variables. Vous allez apprendre les principes fondamentaux du flux de contrôle, sur la base duquel les programmes prennent des décisions et choisissent différentes actions. Vous pouvez également [exécuter ce guide de démarrage rapide localement sur votre ordinateur](branches-and-loops-local.md).
 
 Cette leçon prend pour acquis que vous avez terminé les leçons [Hello World](hello-world.yml) et [Nombres en C#](numbers-in-csharp.yml).
+
+## <a name="interpolated-stringsinterpolated-stringsyml"></a>[Chaînes interpolées](interpolated-strings.yml)
+
+Le guide de démarrage rapide [Chaînes interpolées](interpolated-strings.yml) vous montre comment insérer une expression dans une chaîne plus grande. Vous allez apprendre à définir une expression interpolée, à créer une chaîne de résultat à partir d’une chaîne interpolée contenant une ou plusieurs expressions interpolées, et à contrôler la mise en forme, la largeur de colonne et l’alignement des expressions incluses dans la chaîne de résultat. 
+
+Cette leçon prend pour acquis que vous avez terminé les leçons [Hello World](hello-world.yml), [Nombres en C#](numbers-in-csharp.yml) et [Branches et boucles](branches-and-loops.yml).
 
 ## <a name="list-collectionlist-collectionyml"></a>[Collection de listes](list-collection.yml)
 
