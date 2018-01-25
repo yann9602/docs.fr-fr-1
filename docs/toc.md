@@ -262,6 +262,7 @@
 ### [Gestion des versions](csharp/versioning.md)
 ## [Rubriques de guide pratique C#](csharp/how-to/index.md)
 ### [Guide pratique pour analyser des chaînes à l’aide de `String.Split`](csharp/how-to/parse-strings-using-split.md)
+### [Guide pratique pour concaténer des chaînes](csharp/how-to/concatenate-multiple-strings.md)
 <!-- End of C# Concepts section -->
 ## [Kit SDK .NET Compiler Platform (API Roslyn)](csharp/roslyn-sdk/)
 ## [Guide de programmation C#](csharp/programming-guide/)
@@ -496,7 +497,7 @@
 ### [Procédure principale](visual-basic/programming-guide/program-structure/main-procedure.md)
 ### [Références et l’instruction Imports](visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)
 ### [Espaces de noms](visual-basic/programming-guide/program-structure/namespaces.md)
-### [Conventions d’attribution d’un nom](visual-basic/programming-guide/program-structure/naming-conventions.md)
+### [Conventions de nommage](visual-basic/programming-guide/program-structure/naming-conventions.md)
 ### [Conventions de codage](visual-basic/programming-guide/program-structure/coding-conventions.md)
 ### [Compilation conditionnelle](visual-basic/programming-guide/program-structure/conditional-compilation.md)
 ### [Guide pratique : diviser et combiner des instructions dans le code](visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)
