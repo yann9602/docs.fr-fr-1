@@ -19,24 +19,24 @@ author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload: dotnet
-ms.openlocfilehash: 7e17b4d542206deadf960234cfe1091896ab5f92
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: cdbab5e43d2af7608c4d8322eb071baf591e18d5
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="how-to-create-an-application-domain"></a><span data-ttu-id="702f0-102">Comment : créer un domaine d'application</span><span class="sxs-lookup"><span data-stu-id="702f0-102">How to: Create an Application Domain</span></span>
-<span data-ttu-id="702f0-103">Un hôte Common Language Runtime crée automatiquement des domaines d’application quand ils sont nécessaires.</span><span class="sxs-lookup"><span data-stu-id="702f0-103">A common language runtime host creates application domains automatically when they are needed.</span></span> <span data-ttu-id="702f0-104">Toutefois, vous pouvez créer vos propres domaines d’application et y charger les assemblys que vous souhaitez gérer personnellement.</span><span class="sxs-lookup"><span data-stu-id="702f0-104">However, you can create your own application domains and load into them those assemblies that you want to manage personally.</span></span> <span data-ttu-id="702f0-105">Vous pouvez également créer des domaines d’application à partir desquels vous exécutez du code.</span><span class="sxs-lookup"><span data-stu-id="702f0-105">You can also create application domains from which you execute code.</span></span>  
+# <a name="how-to-create-an-application-domain"></a><span data-ttu-id="c7f8b-102">Comment : créer un domaine d'application</span><span class="sxs-lookup"><span data-stu-id="c7f8b-102">How to: Create an Application Domain</span></span>
+<span data-ttu-id="c7f8b-103">Un hôte Common Language Runtime crée automatiquement des domaines d’application quand ils sont nécessaires.</span><span class="sxs-lookup"><span data-stu-id="c7f8b-103">A common language runtime host creates application domains automatically when they are needed.</span></span> <span data-ttu-id="c7f8b-104">Toutefois, vous pouvez créer vos propres domaines d’application et y charger les assemblys que vous souhaitez gérer personnellement.</span><span class="sxs-lookup"><span data-stu-id="c7f8b-104">However, you can create your own application domains and load into them those assemblies that you want to manage personally.</span></span> <span data-ttu-id="c7f8b-105">Vous pouvez également créer des domaines d’application à partir desquels vous exécutez du code.</span><span class="sxs-lookup"><span data-stu-id="c7f8b-105">You can also create application domains from which you execute code.</span></span>  
   
- <span data-ttu-id="702f0-106">Vous pouvez créer un domaine d’application à l’aide de l’une des méthodes **CreateDomain** surchargées dans la classe <xref:System.AppDomain?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="702f0-106">You create a new application domain using one of the overloaded **CreateDomain** methods in the <xref:System.AppDomain?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="702f0-107">Vous pouvez nommer le domaine d’application et le référencer par ce nom.</span><span class="sxs-lookup"><span data-stu-id="702f0-107">You can give the application domain a name and reference it by that name.</span></span>  
+ <span data-ttu-id="c7f8b-106">Vous pouvez créer un domaine d’application à l’aide de l’une des méthodes **CreateDomain** surchargées dans la classe <xref:System.AppDomain?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="c7f8b-106">You create a new application domain using one of the overloaded **CreateDomain** methods in the <xref:System.AppDomain?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="c7f8b-107">Vous pouvez nommer le domaine d’application et le référencer par ce nom.</span><span class="sxs-lookup"><span data-stu-id="c7f8b-107">You can give the application domain a name and reference it by that name.</span></span>  
   
- <span data-ttu-id="702f0-108">L’exemple suivant crée un domaine d’application et lui attribue le nom `MyDomain`, puis imprime le nom du domaine hôte et du domaine d’application enfant créé dans la console.</span><span class="sxs-lookup"><span data-stu-id="702f0-108">The following example creates a new application domain, assigns it the name `MyDomain`, and then prints the name of the host domain and the newly created child application domain to the console.</span></span>  
+ <span data-ttu-id="c7f8b-108">L’exemple suivant crée un domaine d’application et lui attribue le nom `MyDomain`, puis imprime le nom du domaine hôte et du domaine d’application enfant créé dans la console.</span><span class="sxs-lookup"><span data-stu-id="c7f8b-108">The following example creates a new application domain, assigns it the name `MyDomain`, and then prints the name of the host domain and the newly created child application domain to the console.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="702f0-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="702f0-109">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="c7f8b-109">Exemple</span><span class="sxs-lookup"><span data-stu-id="c7f8b-109">Example</span></span>  
  [!code-cpp[ADCreateDomain#2](../../../samples/snippets/cpp/VS_Snippets_CLR/ADCreateDomain/CPP/source2.cpp#2)]
  [!code-csharp[ADCreateDomain#2](../../../samples/snippets/csharp/VS_Snippets_CLR/ADCreateDomain/CS/source2.cs#2)]
  [!code-vb[ADCreateDomain#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/ADCreateDomain/VB/source2.vb#2)]  
   
-## <a name="see-also"></a><span data-ttu-id="702f0-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="702f0-110">See Also</span></span>  
- [<span data-ttu-id="702f0-111">Programmation avec des domaines d’application</span><span class="sxs-lookup"><span data-stu-id="702f0-111">Programming with Application Domains</span></span>](http://msdn.microsoft.com/en-us/bd36055b-56bd-43eb-b4d8-820c37172131)  
- [<span data-ttu-id="702f0-112">Utilisation des domaines d’application</span><span class="sxs-lookup"><span data-stu-id="702f0-112">Using Application Domains</span></span>](../../../docs/framework/app-domains/use.md)
+## <a name="see-also"></a><span data-ttu-id="c7f8b-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c7f8b-110">See Also</span></span>  
+ [<span data-ttu-id="c7f8b-111">Programmation avec des domaines d’application</span><span class="sxs-lookup"><span data-stu-id="c7f8b-111">Programming with Application Domains</span></span>](http://msdn.microsoft.com/library/bd36055b-56bd-43eb-b4d8-820c37172131)  
+ [<span data-ttu-id="c7f8b-112">Utilisation des domaines d’application</span><span class="sxs-lookup"><span data-stu-id="c7f8b-112">Using Application Domains</span></span>](../../../docs/framework/app-domains/use.md)
