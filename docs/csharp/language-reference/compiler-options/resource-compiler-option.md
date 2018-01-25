@@ -16,19 +16,19 @@ ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
 caps.latest.revision: "16"
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 726956275436e22723bc32b98b2b8b7c7df5fb12
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: c20de499ae0fd5f8869c9b6e78a308fde9787ef9
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="resource-c-compiler-options"></a>/resource (Options du compilateur C#)
+# <a name="-resource-c-compiler-options"></a>-resource (Options du compilateur C#)
 Incorpore la ressource spécifiée dans le fichier de sortie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
-/resource:filename[,identifier[,accessibility-modifier]]  
+-resource:filename[,identifier[,accessibility-modifier]]  
 ```  
   
 ## <a name="arguments"></a>Arguments  
@@ -41,18 +41,18 @@ Incorpore la ressource spécifiée dans le fichier de sortie.
  `accessibility-modifier`(facultatif)  
  Accessibilité de la ressource : publique ou privée. La valeur par défaut est « public ».  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Utilisez [/linkresource](../../../csharp/language-reference/compiler-options/linkresource-compiler-option.md) pour lier une ressource à un assembly sans ajouter le fichier de ressources au fichier de sortie.  
   
  Par défaut, les ressources sont publiques dans l’assembly quand elles sont créées à l’aide du compilateur C#. Pour rendre les ressources privées, spécifiez le modificateur d’accessibilité `private`. Aucune accessibilité autre `public` ou `private` n’est autorisée.  
   
- Si `filename` est un fichier de ressources .NET Framework créé, par exemple, par [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) ou dans l'environnement de développement, il est accessible à l'aide des membres de l'espace de noms <xref:System.Resources>. Pour plus d'informations, consultez <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Pour toutes les autres ressources, utilisez le `GetManifestResource` méthodes dans la <xref:System.Reflection.Assembly> classe pour accéder à la ressource au moment de l’exécution.  
+ Si `filename` est un fichier de ressources .NET Framework créé, par exemple, par [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) ou dans l'environnement de développement, il est accessible à l'aide des membres de l'espace de noms <xref:System.Resources>. Pour plus d'informations, consultez <xref:System.Resources.ResourceManager?displayProperty=nameWithType>. Pour toutes les autres ressources, utilisez les méthodes `GetManifestResource` dans la classe <xref:System.Reflection.Assembly> pour accéder à la ressource au moment de l’exécution.  
   
- **/res** est la forme abrégée de **/resource**.  
+ **-res** est la forme abrégée de **-resource**.  
   
  L’ordre des ressources dans le fichier de sortie est déterminé par l’ordre spécifié sur la ligne de commande.  
   
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
 1.  Ajoutez un fichier de ressources à votre projet.  
   
@@ -68,7 +68,7 @@ Incorpore la ressource spécifiée dans le fichier de sortie.
  Compilez `in.cs` et attachez le fichier de ressources `rf.resource` :  
   
 ```console  
-csc /resource:rf.resource in.cs  
+csc -resource:rf.resource in.cs  
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
