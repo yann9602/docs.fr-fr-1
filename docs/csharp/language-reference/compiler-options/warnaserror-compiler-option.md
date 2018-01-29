@@ -2,22 +2,24 @@
 title: -warnaserror (Options du compilateur C#)
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
-f1_keywords: /warnaserror
+f1_keywords:
+- /warnaserror
 helpviewer_keywords:
 - /warnaserror compiler option [C#]
 - -warnaserror compiler option [C#]
 - warnaserror compiler option [C#]
 ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 0127f8982d4b8c487a7e243025052e3eb9a5ff75
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.openlocfilehash: 6a341fe9760d7fdb0e4df7046cf356e550b4adb9
+ms.sourcegitcommit: c3ebb11a66e85a465c9ba2c42592222630b7ff9e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="-warnaserror-c-compiler-options"></a>-warnaserror (Options du compilateur C#)
 L’option **-warnaserror+** considère tous les avertissements comme des erreurs.  
@@ -25,7 +27,7 @@ L’option **-warnaserror+** considère tous les avertissements comme des erreur
 ## <a name="syntax"></a>Syntaxe  
   
 ```console  
--warnaserror[<U>+</U> | -][:warning-list]  
+-warnaserror[+ | -][:warning-list]  
 ```  
   
 ## <a name="remarks"></a>Notes  
@@ -45,7 +47,7 @@ L’option **-warnaserror+** considère tous les avertissements comme des erreur
   
 3.  Modifiez la propriété **Considérer les avertissements comme des erreurs**.  
   
-     Pour définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors%2A>.  
+ Pour définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors>.  
   
 ## <a name="example"></a>Exemple  
  Compilez `in.cs` et faites en sorte que le compilateur n’affiche aucun avertissement :  

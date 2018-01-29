@@ -8,11 +8,11 @@ ms.date: 01/19/2017
 ms.topic: tutorial
 ms.prod: .net-core
 ms.custom: mvc
-ms.openlocfilehash: 4b838cafe1f4835c1c5aa6086c0997a4a9e39a9e
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: b2f52a068d128b2eb978c9e086508bd87e103ebc
+ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Utilisation de Microsoft XML Serializer Generator sur .NET Core
 
@@ -53,7 +53,7 @@ dotnet new console
 
 Utilisez la commande [`dotnet add package`](../tools//dotnet-add-package.md) pour ajouter la référence dans votre projet. 
 
-Tapez :
+Type :
  
  ```console
  dotnet add package Microsoft.XmlSerializer.Generator -v 1.0.0
@@ -102,7 +102,7 @@ Ajoutez la ligne suivante à l’intérieur de *Main* pour créer un `XmlSeriali
 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(MyClass));
 ```
 
-### <a name="build-and-run-the-application"></a>Générer et exécuter l'application
+### <a name="build-and-run-the-application"></a>Générez et exécutez l'application.
 
 Toujours dans le dossier *MyApp*, exécutez l’application avec [`dotnet run`](../tools/dotnet-run.md). Elle se charge automatiquement et utilise les sérialiseurs prégénérés au moment de l’exécution.
 
@@ -132,5 +132,5 @@ Félicitations ! Vous venez de :
 ## <a name="related-resources"></a>Ressources connexes
 
 * [Introduction à la sérialisation XML](../../standard/serialization/introducing-xml-serialization.md)
-* [Guide pratique pour sérialiser à l’aide de XmlSerializer (C#)](../../csharp/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer)
-* [Guide pratique pour sérialiser à l’aide de XmlSerializer (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer)
+* [Guide pratique pour sérialiser à l’aide de XmlSerializer (C#)](../../csharp/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
+* [Guide pratique pour sérialiser à l’aide de XmlSerializer (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)

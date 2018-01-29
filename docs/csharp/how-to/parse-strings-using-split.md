@@ -3,7 +3,8 @@ title: "Guide pratique pour analyser des chaînes à l’aide de String.Split (G
 description: "String.Split retourne un tableau de chaînes fractionnées à partir d’un ensemble de délimiteurs. Il s’agit d’un moyen simple pour analyser des chaînes."
 ms.date: 01/03/2018
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - splitting strings [C#]
@@ -14,18 +15,19 @@ ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 author: BillWagner
 ms.author: wiwagn
 ms.custom: mvc
-ms.openlocfilehash: fc1032f2cdf6706ec933323643dbf6ecff3e9f6f
-ms.sourcegitcommit: ed26cfef4e18f6d93ab822d8c29f902cff3519d1
+ms.openlocfilehash: 9dd5b1204986bd9b181c033d254bb41e8cc894da
+ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Guide pratique pour analyser des chaînes à l’aide de String.Split (Guide C#)
 
 La méthode <xref:System.String.Split%2A?displayProperty=nameWithType> crée un tableau de sous-chaînes en fractionnant la chaîne d’entrée en fonction d’un ou plusieurs délimiteurs. C’est souvent le moyen le plus simple pour séparer une chaîne sur des limites de mots. Elle sert également à fractionner des chaînes sur d’autres caractères ou chaînes spécifiques.
 
+[!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
+
 Le code suivant fractionne une expression commune en un tableau de chaînes pour chaque mot.
-Essayez par vous-même en appuyant sur le bouton *Run*.
 
 [!code-csharp-interactive[split strings on word boundaries](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#1)]
 
