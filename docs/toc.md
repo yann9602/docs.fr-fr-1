@@ -25,7 +25,9 @@
 ### [Présentation des bibliothèques de classes .NET](standard/class-library-overview.md)
 ### [Types de base](standard/base-types/)
 ## [Bibliothèques de classes .NET](standard/class-libraries.md)
-## [Analyseur de portabilité](standard/portability-analyzer.md)
+## Analyseurs
+### [Analyseur d’API](standard/analyzers/api-analyzer.md) 
+### [Analyseur de portabilité](standard/analyzers/portability-analyzer.md)
 ## [Gestion et levée des exceptions](standard/exceptions/)
 ## [Format de fichier d’assembly .NET](standard/assembly-format.md)
 ## [Nettoyage de la mémoire](standard/garbage-collection/)
@@ -282,7 +284,6 @@
 <!--## [Tutorials](fsharp/tutorials/index.md)-->
 ## Didacticiels
 ### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)
-#### [Options F# Interactive](fsharp/tutorials/fsharp-interactive/fsharp-interactive-options.md)
 ### [Fournisseurs de type](fsharp/tutorials/type-providers/index.md)
 #### [Accès à une base de données SQL Database à l’aide de fournisseurs de type](fsharp/tutorials/type-providers/accessing-a-sql-database.md)
 #### [Accès à une base de données SQL Database à l’aide de fournisseurs de type et d’entités](fsharp/tutorials/type-providers/accessing-a-sql-database-entities.md)
@@ -408,6 +409,7 @@
 ### [Corrigé mot clé](fsharp/language-reference/fixed.md)
 ### [Directives de compilateur](fsharp/language-reference/compiler-directives.md)
 ### [Options du compilateur](fsharp/language-reference/compiler-options.md)
+### [Options F# Interactive](fsharp/language-reference/fsharp-interactive-options.md)
 ### [Identificateurs de ligne, de fichier et de chemin source](fsharp/language-reference/source-line-file-path-identifiers.md)
 ### [Informations relatives à l’appelant](fsharp/language-reference/caller-information.md)
 ### [Syntaxe détaillée](fsharp/language-reference/verbose-syntax.md)
@@ -497,7 +499,7 @@
 ### [Procédure principale](visual-basic/programming-guide/program-structure/main-procedure.md)
 ### [Références et l’instruction Imports](visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)
 ### [Espaces de noms](visual-basic/programming-guide/program-structure/namespaces.md)
-### [Conventions de nommage](visual-basic/programming-guide/program-structure/naming-conventions.md)
+### [Conventions d’attribution d’un nom](visual-basic/programming-guide/program-structure/naming-conventions.md)
 ### [Conventions de codage](visual-basic/programming-guide/program-structure/coding-conventions.md)
 ### [Compilation conditionnelle](visual-basic/programming-guide/program-structure/conditional-compilation.md)
 ### [Guide pratique : diviser et combiner des instructions dans le code](visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)
