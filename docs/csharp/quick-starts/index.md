@@ -1,26 +1,26 @@
 ---
-title: "Démarrages rapides - Guide C#"
+title: "Didacticiels interactifs pour C# - Démarrages rapides pour C#"
 description: "Découvrez C# dans votre navigateur et prenez en main votre propre environnement de développement"
 keywords: "C#, Prise en main, Leçons, Interactif"
 author: billwagner
 ms.author: wiwagn
-ms.date: 09/18/2017
+ms.date: 01/30/2018
 ms.topic: get-started-article
 ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 1218e8cf877ae102e927a591b38d4c0732e5288d
-ms.sourcegitcommit: 8bde7a3432f30fc771079744955c75c58c4eb393
+ms.openlocfilehash: 3a76c28e4cc32ab883488ad84df90e6535b583d9
+ms.sourcegitcommit: d2da0142247ef42a219a5d2907f153e62dc6ea0d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/20/2018
+ms.lasthandoff: 02/01/2018
 ---
-# <a name="c-quick-starts"></a>Démarrages rapides pour C# #
+# <a name="c-quickstarts"></a>Démarrages rapides pour C# #
 
 Bienvenue dans les Démarrages rapides pour C#. Ceux-ci commencent par des leçons interactives que vous pouvez exécuter dans votre navigateur.
 
-Les premières leçons expliquent les concepts de C# à l’aide de petits extraits de code. Vous apprendrez les bases de la syntaxe C# et comment utiliser des types de données tels que des chaînes, des nombres et des valeurs booléennes. Tout est interactif et vous serez prêt à écrire du code en quelques minutes. Ces premières leçons prennent pour acquis que vous n’avez aucune connaissance préalable de la programmation ou du langage C#. 
+Les premières leçons expliquent les concepts de C# à l’aide de petits extraits de code. Vous apprendrez les bases de la syntaxe C# et comment utiliser des types de données tels que des chaînes, des nombres et des valeurs booléennes. Tout est interactif et vous serez prêt à écrire du code en quelques minutes. Ces premières leçons prennent pour acquis que vous n’avez aucune connaissance préalable de la programmation ou du langage C#.
 
 Tous les guides de démarrage rapide proposés après la leçon Hello World sont disponibles en ligne dans le navigateur ou dans votre propre environnement de développement. À la fin de chaque leçon, vous décidez si vous souhaitez effectuer le guide de démarrage rapide suivant en ligne ou sur votre propre ordinateur. Vous trouverez également des liens pour vous aider à configurer votre environnement et passer au guide de démarrage rapide suivant sur votre ordinateur.
 
