@@ -18,24 +18,27 @@ helpviewer_keywords:
 - exceptions, throwing
 - implicitly throwing exceptions
 ms.assetid: 72bdd157-caa9-4478-9ee3-cb4500b84528
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: c3fce332263dac3f9906d33fe3bd2590050b86f8
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 02576db4b9920a367ac3111f2c2c49989ea45149
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="how-to-explicitly-throw-exceptions"></a><span data-ttu-id="d3b99-102">Guide pratique pour lever explicitement des exceptions</span><span class="sxs-lookup"><span data-stu-id="d3b99-102">How to explicitly throw exceptions</span></span>
+# <a name="how-to-explicitly-throw-exceptions"></a><span data-ttu-id="90702-102">Guide pratique pour lever explicitement des exceptions</span><span class="sxs-lookup"><span data-stu-id="90702-102">How to explicitly throw exceptions</span></span>
 
-<span data-ttu-id="d3b99-103">Vous pouvez lever explicitement une exception à l’aide de l’instruction `throw`.</span><span class="sxs-lookup"><span data-stu-id="d3b99-103">You can explicitly throw an exception using the `throw` statement.</span></span> <span data-ttu-id="d3b99-104">Vous pouvez aussi lever de nouveau une exception interceptée à l’aide de l’instruction `throw`.</span><span class="sxs-lookup"><span data-stu-id="d3b99-104">You can also throw a caught exception again using the `throw` statement.</span></span> <span data-ttu-id="d3b99-105">En codage, il est conseillé d’ajouter des informations à une exception levée une deuxième fois pour fournir plus d’informations durant le débogage.</span><span class="sxs-lookup"><span data-stu-id="d3b99-105">It is good coding practice to add information to an exception that is re-thrown to provide more information when debugging.</span></span>
+<span data-ttu-id="90702-103">Vous pouvez lever explicitement une exception à l’aide de l’instruction `throw`.</span><span class="sxs-lookup"><span data-stu-id="90702-103">You can explicitly throw an exception using the `throw` statement.</span></span> <span data-ttu-id="90702-104">Vous pouvez aussi lever de nouveau une exception interceptée à l’aide de l’instruction `throw`.</span><span class="sxs-lookup"><span data-stu-id="90702-104">You can also throw a caught exception again using the `throw` statement.</span></span> <span data-ttu-id="90702-105">En codage, il est conseillé d’ajouter des informations à une exception levée une deuxième fois pour fournir plus d’informations durant le débogage.</span><span class="sxs-lookup"><span data-stu-id="90702-105">It is good coding practice to add information to an exception that is re-thrown to provide more information when debugging.</span></span>
 
-<span data-ttu-id="d3b99-106">L’exemple de code suivant utilise un bloc `try`/`catch` pour intercepter une exception <xref:System.IO.FileNotFoundException> possible.</span><span class="sxs-lookup"><span data-stu-id="d3b99-106">The following code example uses a `try`/`catch` block to catch a possible <xref:System.IO.FileNotFoundException>.</span></span> <span data-ttu-id="d3b99-107">À la suite du bloc `try`, un bloc `catch` intercepte l’exception <xref:System.IO.FileNotFoundException> et écrit un message dans la console si le fichier de données est introuvable.</span><span class="sxs-lookup"><span data-stu-id="d3b99-107">Following the `try` block is a `catch` block that catches the <xref:System.IO.FileNotFoundException> and writes a message to the console if the data file is not found.</span></span> <span data-ttu-id="d3b99-108">L’instruction suivante est `throw`, qui lève une nouvelle exception <xref:System.IO.FileNotFoundException> et ajoute des informations de texte à l’exception.</span><span class="sxs-lookup"><span data-stu-id="d3b99-108">The next statement is the `throw` statement that throws a new <xref:System.IO.FileNotFoundException> and adds text information to the exception.</span></span>
+<span data-ttu-id="90702-106">L’exemple de code suivant utilise un bloc `try`/`catch` pour intercepter une exception <xref:System.IO.FileNotFoundException> possible.</span><span class="sxs-lookup"><span data-stu-id="90702-106">The following code example uses a `try`/`catch` block to catch a possible <xref:System.IO.FileNotFoundException>.</span></span> <span data-ttu-id="90702-107">À la suite du bloc `try`, un bloc `catch` intercepte l’exception <xref:System.IO.FileNotFoundException> et écrit un message dans la console si le fichier de données est introuvable.</span><span class="sxs-lookup"><span data-stu-id="90702-107">Following the `try` block is a `catch` block that catches the <xref:System.IO.FileNotFoundException> and writes a message to the console if the data file is not found.</span></span> <span data-ttu-id="90702-108">L’instruction suivante est `throw`, qui lève une nouvelle exception <xref:System.IO.FileNotFoundException> et ajoute des informations de texte à l’exception.</span><span class="sxs-lookup"><span data-stu-id="90702-108">The next statement is the `throw` statement that throws a new <xref:System.IO.FileNotFoundException> and adds text information to the exception.</span></span>
 
 [!code-csharp[Exception.Throwing#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Exception.Throwing/CS/throw.cs#1)]
 [!code-vb[Exception.Throwing#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Exception.Throwing/VB/throw.vb#1)]  
 
-## <a name="see-also"></a><span data-ttu-id="d3b99-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d3b99-109">See Also</span></span>  
-[<span data-ttu-id="d3b99-110">Exceptions</span><span class="sxs-lookup"><span data-stu-id="d3b99-110">Exceptions</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="90702-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="90702-109">See Also</span></span>  
+[<span data-ttu-id="90702-110">Exceptions</span><span class="sxs-lookup"><span data-stu-id="90702-110">Exceptions</span></span>](index.md)

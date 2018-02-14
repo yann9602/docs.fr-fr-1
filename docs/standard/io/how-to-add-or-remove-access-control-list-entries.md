@@ -19,39 +19,42 @@ helpviewer_keywords:
 - I/O [.NET Framework], access control list entries
 - access control lists [.NET Framework]
 ms.assetid: 53758b39-bd9b-4640-bb04-cad5ed8d0abf
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 16038ffbe090cfd8d2c0578f75e66db3b021cb9c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 988fd354caa5fcc716107087242ead113c9a9939
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
-# <a name="how-to-add-or-remove-access-control-list-entries"></a><span data-ttu-id="6452c-102">Comment : ajouter ou supprimer des entrées dans la liste de contrôle d'accès</span><span class="sxs-lookup"><span data-stu-id="6452c-102">How to: Add or Remove Access Control List Entries</span></span>
-<span data-ttu-id="6452c-103">Pour ajouter des entrées de liste de contrôle d'accès (ACL) dans un fichier, ou pour en supprimer, vous devez obtenir l'objet <xref:System.Security.AccessControl.FileSecurity> ou <xref:System.Security.AccessControl.DirectorySecurity> à partir du fichier ou du répertoire, le modifier et le réappliquer ensuite dans le fichier ou répertoire.</span><span class="sxs-lookup"><span data-stu-id="6452c-103">To add or remove Access Control List (ACL) entries to or from a file, the <xref:System.Security.AccessControl.FileSecurity> or <xref:System.Security.AccessControl.DirectorySecurity> object must be obtained from the file or directory, modified, and then applied back to the file or directory.</span></span>  
+# <a name="how-to-add-or-remove-access-control-list-entries"></a><span data-ttu-id="042c9-102">Comment : ajouter ou supprimer des entrées dans la liste de contrôle d'accès</span><span class="sxs-lookup"><span data-stu-id="042c9-102">How to: Add or Remove Access Control List Entries</span></span>
+<span data-ttu-id="042c9-103">Pour ajouter des entrées de liste de contrôle d'accès (ACL) dans un fichier, ou pour en supprimer, vous devez obtenir l'objet <xref:System.Security.AccessControl.FileSecurity> ou <xref:System.Security.AccessControl.DirectorySecurity> à partir du fichier ou du répertoire, le modifier et le réappliquer ensuite dans le fichier ou répertoire.</span><span class="sxs-lookup"><span data-stu-id="042c9-103">To add or remove Access Control List (ACL) entries to or from a file, the <xref:System.Security.AccessControl.FileSecurity> or <xref:System.Security.AccessControl.DirectorySecurity> object must be obtained from the file or directory, modified, and then applied back to the file or directory.</span></span>  
   
-### <a name="to-add-or-remove-an-acl-entry-from-a-file"></a><span data-ttu-id="6452c-104">Pour ajouter ou supprimer une entrée ACL dans un fichier</span><span class="sxs-lookup"><span data-stu-id="6452c-104">To add or remove an ACL entry from a File</span></span>  
+### <a name="to-add-or-remove-an-acl-entry-from-a-file"></a><span data-ttu-id="042c9-104">Pour ajouter ou supprimer une entrée ACL dans un fichier</span><span class="sxs-lookup"><span data-stu-id="042c9-104">To add or remove an ACL entry from a File</span></span>  
   
-1.  <span data-ttu-id="6452c-105">Appelez la méthode <xref:System.IO.File.GetAccessControl%2A> pour obtenir un objet <xref:System.Security.AccessControl.FileSecurity> contenant les entrées ACL actuelles d'un fichier.</span><span class="sxs-lookup"><span data-stu-id="6452c-105">Call the <xref:System.IO.File.GetAccessControl%2A> method to get a <xref:System.Security.AccessControl.FileSecurity> object that contains the current ACL entries of a file.</span></span>  
+1.  <span data-ttu-id="042c9-105">Appelez la méthode <xref:System.IO.File.GetAccessControl%2A> pour obtenir un objet <xref:System.Security.AccessControl.FileSecurity> contenant les entrées ACL actuelles d'un fichier.</span><span class="sxs-lookup"><span data-stu-id="042c9-105">Call the <xref:System.IO.File.GetAccessControl%2A> method to get a <xref:System.Security.AccessControl.FileSecurity> object that contains the current ACL entries of a file.</span></span>  
   
-2.  <span data-ttu-id="6452c-106">Ajoutez ou supprimez des entrées ACL à partir de l'objet <xref:System.Security.AccessControl.FileSecurity> retourné à l'étape 1.</span><span class="sxs-lookup"><span data-stu-id="6452c-106">Add or remove ACL entries from the <xref:System.Security.AccessControl.FileSecurity> object returned from step 1.</span></span>  
+2.  <span data-ttu-id="042c9-106">Ajoutez ou supprimez des entrées ACL à partir de l'objet <xref:System.Security.AccessControl.FileSecurity> retourné à l'étape 1.</span><span class="sxs-lookup"><span data-stu-id="042c9-106">Add or remove ACL entries from the <xref:System.Security.AccessControl.FileSecurity> object returned from step 1.</span></span>  
   
-3.  <span data-ttu-id="6452c-107">Passez l'objet <xref:System.Security.AccessControl.FileSecurity> à la méthode <xref:System.IO.File.SetAccessControl%2A> pour appliquer les modifications.</span><span class="sxs-lookup"><span data-stu-id="6452c-107">Pass the <xref:System.Security.AccessControl.FileSecurity> object to the <xref:System.IO.File.SetAccessControl%2A> method to apply the changes.</span></span>  
+3.  <span data-ttu-id="042c9-107">Passez l'objet <xref:System.Security.AccessControl.FileSecurity> à la méthode <xref:System.IO.File.SetAccessControl%2A> pour appliquer les modifications.</span><span class="sxs-lookup"><span data-stu-id="042c9-107">Pass the <xref:System.Security.AccessControl.FileSecurity> object to the <xref:System.IO.File.SetAccessControl%2A> method to apply the changes.</span></span>  
   
-### <a name="to-add-or-remove-an-acl-entry-from-a-directory"></a><span data-ttu-id="6452c-108">Pour ajouter ou supprimer une entrée ACL dans un répertoire</span><span class="sxs-lookup"><span data-stu-id="6452c-108">To add or remove an ACL entry from a Directory</span></span>  
+### <a name="to-add-or-remove-an-acl-entry-from-a-directory"></a><span data-ttu-id="042c9-108">Pour ajouter ou supprimer une entrée ACL dans un répertoire</span><span class="sxs-lookup"><span data-stu-id="042c9-108">To add or remove an ACL entry from a Directory</span></span>  
   
-1.  <span data-ttu-id="6452c-109">Appelez la méthode <xref:System.IO.Directory.GetAccessControl%2A> pour obtenir un objet <xref:System.Security.AccessControl.DirectorySecurity> contenant les entrées ACL actuelles d'un répertoire.</span><span class="sxs-lookup"><span data-stu-id="6452c-109">Call the <xref:System.IO.Directory.GetAccessControl%2A> method to get a <xref:System.Security.AccessControl.DirectorySecurity> object that contains the current ACL entries of a directory.</span></span>  
+1.  <span data-ttu-id="042c9-109">Appelez la méthode <xref:System.IO.Directory.GetAccessControl%2A> pour obtenir un objet <xref:System.Security.AccessControl.DirectorySecurity> contenant les entrées ACL actuelles d'un répertoire.</span><span class="sxs-lookup"><span data-stu-id="042c9-109">Call the <xref:System.IO.Directory.GetAccessControl%2A> method to get a <xref:System.Security.AccessControl.DirectorySecurity> object that contains the current ACL entries of a directory.</span></span>  
   
-2.  <span data-ttu-id="6452c-110">Ajoutez ou supprimez des entrées ACL à partir de l'objet <xref:System.Security.AccessControl.DirectorySecurity> retourné à l'étape 1.</span><span class="sxs-lookup"><span data-stu-id="6452c-110">Add or remove ACL entries from the <xref:System.Security.AccessControl.DirectorySecurity> object returned from step 1.</span></span>  
+2.  <span data-ttu-id="042c9-110">Ajoutez ou supprimez des entrées ACL à partir de l'objet <xref:System.Security.AccessControl.DirectorySecurity> retourné à l'étape 1.</span><span class="sxs-lookup"><span data-stu-id="042c9-110">Add or remove ACL entries from the <xref:System.Security.AccessControl.DirectorySecurity> object returned from step 1.</span></span>  
   
-3.  <span data-ttu-id="6452c-111">Passez l'objet <xref:System.Security.AccessControl.DirectorySecurity> à la méthode <xref:System.IO.Directory.SetAccessControl%2A> pour appliquer les modifications.</span><span class="sxs-lookup"><span data-stu-id="6452c-111">Pass the <xref:System.Security.AccessControl.DirectorySecurity> object to the <xref:System.IO.Directory.SetAccessControl%2A> method to apply the changes.</span></span>  
+3.  <span data-ttu-id="042c9-111">Passez l'objet <xref:System.Security.AccessControl.DirectorySecurity> à la méthode <xref:System.IO.Directory.SetAccessControl%2A> pour appliquer les modifications.</span><span class="sxs-lookup"><span data-stu-id="042c9-111">Pass the <xref:System.Security.AccessControl.DirectorySecurity> object to the <xref:System.IO.Directory.SetAccessControl%2A> method to apply the changes.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="6452c-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="6452c-112">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="042c9-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="042c9-112">Example</span></span>  
  [!code-cpp[IO.File.GetAccessControl-SetAccessControl#1](../../../samples/snippets/cpp/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/cpp/sample.cpp#1)]
  [!code-csharp[IO.File.GetAccessControl-SetAccessControl#1](../../../samples/snippets/csharp/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/CS/sample.cs#1)]
  [!code-vb[IO.File.GetAccessControl-SetAccessControl#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/VB/sample.vb#1)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="6452c-113">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="6452c-113">Compiling the Code</span></span>  
- <span data-ttu-id="6452c-114">Vous devez entrer un compte d'utilisateur ou de groupe valide pour exécuter cet exemple.</span><span class="sxs-lookup"><span data-stu-id="6452c-114">You must supply a valid user or group account to run this example.</span></span> <span data-ttu-id="6452c-115">Cet exemple utilise un objet <xref:System.IO.File>, mais la même procédure vaut aussi pour les classes <xref:System.IO.FileInfo>, <xref:System.IO.Directory> et <xref:System.IO.DirectoryInfo>.</span><span class="sxs-lookup"><span data-stu-id="6452c-115">This example uses a <xref:System.IO.File> object; however, the same procedure is used for the <xref:System.IO.FileInfo>, <xref:System.IO.Directory>, and <xref:System.IO.DirectoryInfo> classes.</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="042c9-113">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="042c9-113">Compiling the Code</span></span>  
+ <span data-ttu-id="042c9-114">Vous devez entrer un compte d'utilisateur ou de groupe valide pour exécuter cet exemple.</span><span class="sxs-lookup"><span data-stu-id="042c9-114">You must supply a valid user or group account to run this example.</span></span> <span data-ttu-id="042c9-115">Cet exemple utilise un objet <xref:System.IO.File>, mais la même procédure vaut aussi pour les classes <xref:System.IO.FileInfo>, <xref:System.IO.Directory> et <xref:System.IO.DirectoryInfo>.</span><span class="sxs-lookup"><span data-stu-id="042c9-115">This example uses a <xref:System.IO.File> object; however, the same procedure is used for the <xref:System.IO.FileInfo>, <xref:System.IO.Directory>, and <xref:System.IO.DirectoryInfo> classes.</span></span>
