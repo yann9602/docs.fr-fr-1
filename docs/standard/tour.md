@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 809f0eaddf298b0d6a57e217c2bcf5450675c3e9
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9dca33f01c119c185717efa0666146191503f577
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="tour-of-net"></a>Présentation de .NET
 
@@ -124,7 +127,7 @@ Pour en savoir plus et obtenir des exemples, consultez la rubrique [LINQ (Langua
 
 Chaque système d’exploitation inclut une interface de programmation d’application (API) qui fournit des services système. .NET offre plusieurs moyens d’appeler ces API.
 
-Le principal moyen d’effectuer une interopérabilité native est via l’« appel de code non managé » ou P/Invoke, en forme abrégée, fonctionnalité prise en charge sur les plateformes Linux et Windows. Un moyen de faire une interopérabilité native sur Windows uniquement est connu sous le nom de « COM Interop », utilisé pour travailler avec des [composants COM](https://msdn.microsoft.com/library/bwa2bx93.aspx) dans du code managé. Il est basé sur l’infrastructure de P/Invoke, mais fonctionne légèrement différemment.
+Le principal moyen d’effectuer une interopérabilité native est via l’« appel de code non managé » ou P/Invoke, en forme abrégée, fonctionnalité prise en charge sur les plateformes Linux et Windows. Un moyen de faire une interopérabilité native sur Windows uniquement est connu sous le nom de « COM Interop », utilisé pour travailler avec des [composants COM](/cpp/atl/introduction-to-com) dans du code managé. Il est basé sur l’infrastructure de P/Invoke, mais fonctionne légèrement différemment.
 
 Une grande partie de la prise en charge d’interopérabilité dans Mono (et donc dans Xamarin) pour Java et Objective-C est générée de la même façon, autrement dit, ils utilisent les mêmes principes.
 

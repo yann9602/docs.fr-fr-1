@@ -13,15 +13,18 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 51ca7b5d18e4b664fcc5a56f7de004c42cb95c9e
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 716e9baca52e9f5b7f4f24821e50b6a16aef9136
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>Validation d'un document XML dans le DOM
 La classe <xref:System.Xml.XmlDocument> ne valide pas le XML dans le DOM (Document Object Model) par rapport à un schéma de langage XSD (XML Schema Definition) ou à une définition de type de document (DTD) par défaut ; il est seulement vérifié que le XML est correctement construit.  
@@ -31,7 +34,7 @@ La classe <xref:System.Xml.XmlDocument> ne valide pas le XML dans le DOM (Docume
 ## <a name="validating-an-xml-document-as-it-is-loaded-into-the-dom"></a>Validation d'un document XML lors de son chargement dans le DOM  
  La classe <xref:System.Xml.XmlDocument> valide les données XML lors de leur chargement dans le DOM lorsqu'un objet <xref:System.Xml.XmlReader> de validation est transféré à la méthode <xref:System.Xml.XmlDocument.Load%2A> de la classe <xref:System.Xml.XmlDocument>.  
   
- Après une validation réussie, les valeurs par défaut du schéma sont appliquées, les valeurs texte sont converties au besoin en valeurs atomiques et les informations sur le type sont associées aux éléments d'information validés. Par conséquent, les données XML typées remplacent les données XML qui ne l'étaient pas.  
+ Après une validation réussie, les valeurs par défaut du schéma sont appliquées, les valeurs texte sont converties au besoin en valeurs atomiques et les informations sur le type sont associées aux éléments d’information validés. Par conséquent, les données XML typées remplacent les données XML qui ne l'étaient pas.  
   
 ### <a name="creating-an-xml-schema-validating-xmlreader"></a>Création d'un XmlReader de validation de schéma XML  
  Pour créer un objet <xref:System.Xml.XmlReader> de validation de schéma XML, procédez comme suit.  
@@ -78,7 +81,7 @@ La classe <xref:System.Xml.XmlDocument> ne valide pas le XML dans le DOM (Docume
  L'exemple prend comme entrée les fichiers `contosoBooks.xml` et `contosoBooks.xsd` dont il est fait référence dans la section « Validation d'un document XML lors de son chargement dans le DOM » ci-dessus.  
   
 ## <a name="handling-validation-errors-and-warnings"></a>Traitement des erreurs et avertissements de validation  
- Les erreurs de validation de schéma XML sont signalées lors de la validation des données XML chargées dans le DOM. Vous êtes notifié de toutes les erreurs de validation de schéma détectées lors de la validation des données XML en cours de chargement, ou lors de la validation d'un document XML qui n'était pas validé.  
+ Les erreurs de validation de schéma XML sont signalées lors de la validation des données XML chargées dans le DOM. Vous êtes notifié de toutes les erreurs de validation de schéma détectées lors de la validation des données XML en cours de chargement, ou lors de la validation d’un document XML qui n’était pas validé.  
   
  Les erreurs de validation sont traitées par l'objet <xref:System.Xml.Schema.ValidationEventHandler>. Si un objet <xref:System.Xml.Schema.ValidationEventHandler> a été assigné à l'instance de l'objet <xref:System.Xml.XmlReaderSettings> ou transféré à la méthode <xref:System.Xml.XmlDocument.Validate%2A> de la classe <xref:System.Xml.XmlDocument>, l'objet <xref:System.Xml.Schema.ValidationEventHandler> traitera les erreurs de validation de schéma ; sinon, un objet <xref:System.Xml.Schema.XmlSchemaValidationException> est levé lorsqu'une erreur de validation de schéma est détectée.  
   
@@ -94,5 +97,5 @@ La classe <xref:System.Xml.XmlDocument> ne valide pas le XML dans le DOM (Docume
  <xref:System.Xml.XmlReader>  
  <xref:System.Xml.Schema.ValidationEventHandler>  
  <xref:System.Xml.XmlReaderSettings>  
- [Traitement des données XML à l’aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
+ [Traitement de données XML à l’aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
  [Utilisation de schémas XML](../../../../docs/standard/data/xml/working-with-xml-schemas.md)

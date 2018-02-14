@@ -13,11 +13,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: ed48191ee397bb5f892a7afba6dfbfa2d06e1045
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0a7a37b1c8eed81866035dc6fb55db89391f25aa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="language-independence-and-language-independent-components"></a>Indépendance du langage et composants indépendants du langage
 
@@ -157,7 +160,7 @@ L'interface publique d'une bibliothèque inclut les éléments suivants :
 
 Les règles de conformité CLS sont répertoriées dans le tableau suivant. Le texte des règles est repris mot pour mot du document [ECMA-335 Standard: Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm), qui est protégé par copyright 2012 par Ecma International. Vous trouverez des informations plus détaillées sur ces règles dans les sections suivantes. 
 
-Catégorie | Voir | Règle | Numéro de règle
+Category | Voir | Règle | Numéro de règle
 -------- | --- | ---- | -----------
 Accessibilité | [Accessibilité des membres](#member-accessibility) | L'accessibilité ne devra pas être changée lors du remplacement de méthodes héritées, sauf en cas de remplacement d'une méthode héritée d'un assembly différent avec accessibilité `family-or-assembly`. Dans ce cas, le remplacement devra posséder l'accessibilité `family`. | 10
 Accessibilité | [Accessibilité des membres](#member-accessibility) | La visibilité et l'accessibilité des types et des membres seront déterminées de telle sorte que les types utilisés dans la signature d'un membre seront visibles et accessibles lorsque le membre proprement dit est visible et accessible. Par exemple, une méthode publique qui est visible à l'extérieur de son assembly n'aura pas d'argument dont le type est visible uniquement dans l'assembly. La visibilité et l'accessibilité des types composant un type générique instancié utilisé dans la signature d'un membre seront visibles et accessibles lorsque le membre proprement dit est visible et accessible. Par exemple, un type générique instancié présent dans la signature d'un membre qui est visible à l'extérieur de l'assembly n'aura pas d'argument générique dont le type est visible uniquement dans l'assembly. | 12
@@ -170,11 +173,11 @@ Constructeurs | [Constructeurs](#constructors) | Un constructeur d'objet ne sera
 Énumérations | [Énumérations](#enumerations) | Le type sous-jacent d'une énumération devra être un type d'entier CLS intégré, le nom du champ devra être « valeur__ » et ce champ devra être marqué `RTSpecialName`. |  7
 Énumérations | [Énumérations](#enumerations) | Il existe deux sortes distinctes d’énumérations, signalées par la présence ou l’absence de l’attribut personnalisé [System.FlagsAttribute](xref:System.FlagsAttribute) (voir Partition IV, Library). L'un représente des valeurs entières nommées ; l'autre représente les indicateurs binaires nommés qui peuvent être combinés pour générer une valeur sans nom. La valeur d'une `enum` n'est pas limitée aux valeurs spécifiées. |  8
 Énumérations | [Énumérations](#enumerations) | Les champs static littéraux d’une énumération auront le type de l’énumération elle-même. |  9
-événements | [Événements](#events) | Les méthodes qui implémentent un événement doivent être marquées `SpecialName` dans les métadonnées. |29
-événements | [Événements](#events) | L’accessibilité d’un événement et de ses accesseurs sera identique. |30
-événements | [Événements](#events) | Les méthodes `add` et `remove` d'un événement devront toutes les deux être présentes ou absentes. |31
-événements | [Événements](#events) | Les méthodes `add` et `remove` d’un événement doivent chacune accepter un paramètre dont le type définit le type de l’événement et qui doit être dérivé de [System.Delegate](xref:System.Delegate). |32
-événements | [Événements](#events) | Les événements adhéreront à un modèle d’attribution de nom spécifique. L’attribut SpecialName dont il est question dans la règle 29 de la spécification CLS doit être ignoré dans les comparaisons de noms appropriées et doit respecter les règles d’identificateur.  |33
+Événements | [Événements](#events) | Les méthodes qui implémentent un événement doivent être marquées `SpecialName` dans les métadonnées. |29
+Événements | [Événements](#events) | L’accessibilité d’un événement et de ses accesseurs sera identique. |30
+Événements | [Événements](#events) | Les méthodes `add` et `remove` d'un événement devront toutes les deux être présentes ou absentes. |31
+Événements | [Événements](#events) | Les méthodes `add` et `remove` d’un événement doivent chacune accepter un paramètre dont le type définit le type de l’événement et qui doit être dérivé de [System.Delegate](xref:System.Delegate). |32
+Événements | [Événements](#events) | Les événements adhéreront à un modèle d’attribution de nom spécifique. L’attribut SpecialName dont il est question dans la règle 29 de la spécification CLS doit être ignoré dans les comparaisons de noms appropriées et doit respecter les règles d’identificateur.  |33
 Exceptions | [Exceptions](#exceptions) | Les objets levés doivent être de type [System.Exception](xref:System.Exception) ou d’un type hérité de celui-ci. Néanmoins, les méthodes conformes à CLS ne sont pas requises pour bloquer la propagation d'autres types d'exceptions. | 40
 Général | [Règles de conformité CLS](#cls-compliance-rules) | Les règles CLS s'appliquent uniquement aux éléments d'un type qui sont accessibles ou visibles en dehors de l'assembly de définition. | 1
 Général | [Règles de conformité CLS](#cls-compliance-rules) | Les membres de types non conformes à CLS ne seront pas marqués comme conformes à CLS. | 2
@@ -192,8 +195,8 @@ Membres | [Membres de types en général](#type-members-in-general) | La contrai
 Conventions d'attribution d'un nom | [Conventions d’attribution d’un nom](#naming-conventions) | Les assemblys doivent suivre l’Annexe 7 du Rapport technique 15 de la norme Unicode 3.0 régissant l’ensemble des caractères autorisés pour lancer les identificateurs et être inclus dans ces derniers. Cette annexe est disponible en ligne sous [Unicode Normalization Forms](http://www.unicode.org/unicode/reports/tr15/tr15-18.html) (Formes de normalisation Unicode). Les identificateurs doivent être dans un format canonique défini par la forme C de normalisation Unicode. Dans le cadre de la spécification CLS, deux identificateurs sont les mêmes si leurs mappages en minuscules (comme spécifié par les mappages en minuscules un-à-un insensibles aux paramètres régionaux Unicode) sont identiques. Autrement dit, pour que deux identificateurs soient considérés comme différents dans le cadre de la spécification CLS, ils doivent être différenciés par d’autres éléments que leur casse. Toutefois, pour remplacer une définition héritée, l’infrastructure CLI nécessite l’utilisation de l’encodage exact de la déclaration d’origine. | 4
 Surcharge | [Conventions d’attribution d’un nom](#naming-conventions) | Tous les noms introduits dans une portée conforme CLS doivent être distincts, indépendamment de leur type, sauf quand les noms sont identiques et résolus par surcharge. Par exemple, alors que CTS autorise un type à utiliser le même nom pour une méthode et un champ, CLS ne l’autorise pas. | 5
 Surcharge | [Conventions d’attribution d’un nom](#naming-conventions) | Les champs et les types imbriqués seront distincts par comparaison d'identificateurs seule, même si CTS autorise la distinction de signatures différentes. Les méthodes, les propriétés et les événements qui portent le même nom (par comparaison d’identificateurs) doivent différer par d’autres éléments que le seul type de retour, sauf dans les cas spécifiés dans la règle 39 de la spécification CLS | 6
-Surcharge | [Surcharges](#overloads) | Seules les propriétés et les méthodes peuvent être surchargées. | 37
-Surcharge | [Surcharges](#overloads) |Les propriétés et les méthodes peuvent être surchargées en fonction du nombre et des types de leurs paramètres uniquement, à l'exception des opérateurs de conversion nommés `op_Implicit` et `op_Explicit`, qui peuvent également être surchargés selon leur type de retour. | 38
+Surcharge | [Overloads](#overloads) | Seules les propriétés et les méthodes peuvent être surchargées. | 37
+Surcharge | [Overloads](#overloads) |Les propriétés et les méthodes peuvent être surchargées en fonction du nombre et des types de leurs paramètres uniquement, à l'exception des opérateurs de conversion nommés `op_Implicit` et `op_Explicit`, qui peuvent également être surchargés selon leur type de retour. | 38
 Surcharge | -- | Si deux ou plusieurs méthodes conformes CLS déclarées dans un type ont le même nom et, pour un jeu spécifique d’instanciations de types, ont le même paramètre et les mêmes types de retour, alors toutes ces méthodes sont sémantiquement équivalentes à ces instanciations de type. | 48
 Propriétés | [Propriétés](#properties) | Les méthodes qui implémentent les méthodes getter et setter d’une propriété doivent être marquées `SpecialName` dans les métadonnées. | 24
 Propriétés | [Propriétés](#properties) | Les accesseurs d’une propriété devront tous être statiques, virtuels ou être des instances. | 26

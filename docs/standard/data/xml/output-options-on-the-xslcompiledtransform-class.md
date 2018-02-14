@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 91ce8cba-386c-411e-bb38-0891a0393c0a
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 61f59c1be3376fb76c91994996840b915cd662ae
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 84171c92a56a9970b5ffc16ce8f30c85d61cc678
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="output-options-on-the-xslcompiledtransform-class"></a>Options de sortie de la classe XslCompiledTransform
 Cette rubrique présente les options de sortie XSLT disponibles. Vous pouvez spécifier des options de sortie dans la feuille de style ou dans la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>.  
@@ -52,7 +55,7 @@ Cette rubrique présente les options de sortie XSLT disponibles. Vous pouvez sp�
 #### <a name="string"></a>Chaîne  
  Utilisez ce type de sortie pour spécifier l'URI du fichier de sortie.  
   
-#### <a name="stream"></a>Flux de données  
+#### <a name="stream"></a>Flux  
  Un flux est une abstraction d'une séquence d'octets, comme un fichier, un appareil d'entrée/sortie, un canal de communication inter-processus ou un socket TCP/IP. La classe <xref:System.IO.Stream> et ses classes dérivées donnent une vue générique de ces différents types d'entrée et de sortie, isolant ainsi le programmeur des détails propres au système d'exploitation et aux périphériques sous-jacents.  
   
  Utilisez ce type de sortie pour envoyer des données à un objet <xref:System.IO.FileStream>, à un objet <xref:System.IO.MemoryStream> ou à un flux de sortie (`Response.OutputStream`).  
@@ -60,7 +63,7 @@ Cette rubrique présente les options de sortie XSLT disponibles. Vous pouvez sp�
 #### <a name="textwriter"></a>TextWriter  
  L'objet <xref:System.IO.TextWriter> produit des caractères séquentiels. Il est implémenté dans les classes <xref:System.IO.StringWriter> et <xref:System.IO.StreamWriter>, qui écrivent des caractères dans des chaînes ou des flux, respectivement. Utilisez ce type de sortie lorsque vous souhaitez envoyer la sortie vers une chaîne.  
   
-## <a name="notes"></a>Remarques  
+## <a name="notes"></a>Notes  
   
 -   Lorsque vous écrivez des chaînes vides, un espace est inséré entre le dernier caractère du nom de l'élément et la barre oblique inverse, par exemple `<myElement />`. Cela permet aux anciens navigateurs d'afficher correctement les pages HTML générées.  
   

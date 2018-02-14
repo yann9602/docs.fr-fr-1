@@ -21,15 +21,18 @@ helpviewer_keywords:
 - PE files, metadata
 - components [.NET Framework], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 8fcb5ea90cc16d62fee5b8e95b03bfe53c3a6793
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ac08dcf305e8cc0c1a3be3b8300ed9981e7d84d4
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="metadata-and-self-describing-components"></a>Métadonnées et composants autodescriptifs
 Par le passé, un composant logiciel (.exe or .dll) écrit dans un langage ne pouvait pas utiliser aisément un composant logiciel écrit dans un autre langage. COM a fourni une étape vers la résolution de ce problème. Le .NET Framework facilite encore plus l'interopérabilité des composants en autorisant les compilateurs à émettre des informations déclaratives supplémentaires dans tous les modules et assemblys. Ces informations, appelées métadonnées, aident les composants à interagir de façon transparente.  
@@ -67,7 +70,7 @@ Par le passé, un composant logiciel (.exe or .dll) écrit dans un langage ne po
   
 -   Interopérabilité des langages et design à base de composants plus simple.  
   
-     Les métadonnées fournissent toutes les informations requises concernant le code compilé pour que vous puissiez hériter une classe à partir d'un fichier PE écrit dans un autre langage. Vous pouvez créer une instance de toute classe écrite dans un langage managé (tout langage ciblant le Common Language Runtime) sans vous préoccuper de marshaling explicite ou d'utiliser un code d'interopérabilité personnalisé.  
+     Les métadonnées fournissent toutes les informations requises concernant le code compilé pour que vous puissiez hériter une classe à partir d'un fichier PE écrit dans un autre langage. Vous pouvez créer une instance de toute classe écrite dans un langage managé (tout langage ciblant le Common Language Runtime) sans vous préoccuper de marshaling explicite ou d’utiliser un code d’interopérabilité personnalisé.  
   
 -   Attributs.  
   
@@ -161,7 +164,7 @@ IL_000d:  call int32 ConsoleApplication.MyApp::Add(int32,int32) /* 06000003 */
   
  Le tableau suivant montre une partie de la table **MethodDef** référencée par le jeton de métadonnées qui décrit la méthode `Add`. Bien qu'il existe d'autres tables de métadonnées dans cet assembly et qu'elles aient leurs propres valeurs uniques, seule cette table est prise en compte dans le tableau.  
   
-|Ligne|Adresse RVA (Relative Virtual Address)|ImplFlags|Indicateurs|Nom<br /><br /> (pointe vers le tas de chaîne)|Signature (pointe vers le tas de blob)|  
+|Ligne|Adresse RVA (Relative Virtual Address)|ImplFlags|Indicateurs|Name<br /><br /> (pointe vers le tas de chaîne)|Signature (pointe vers le tas de blob)|  
 |---------|--------------------------------------|---------------|-----------|-----------------------------------------|----------------------------------------|  
 |1|0x00002050|IL<br /><br /> Managé|Public<br /><br /> ReuseSlot<br /><br /> SpecialName<br /><br /> RTSpecialName<br /><br /> .ctor|.ctor (constructeur)||  
 |2|0x00002058|IL<br /><br /> Managé|Public<br /><br /> Statique<br /><br /> ReuseSlot|Principal|Chaîne|  

@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 896a1e12-5655-42c6-8cdd-89c12862b34b
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
-ms.openlocfilehash: 6a06de3f8fb6351d340e1c8f1bfe8f4105967e25
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e18a3151228ea7edb5a8380f6ed707ee88d369e5
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="xml-schema-object-model-overview"></a>Vue d'ensemble du Modèle Objet du schéma XML
 Le Modèle Objet du schéma (SOM) de Microsoft .NET Framework est une API riche permettant de créer, modifier et valider des schémas à l'aide d'un programme. Le SOM travaille sur des documents de schéma XML de la même manière que le DOM (Document Object Model) travaille sur des documents XML. Les documents de schéma XML sont des fichiers XML valides qui, une fois chargés dans le SOM, communiquent la signification de la structure et de la validité d'autres documents XML conformes au schéma.  
@@ -41,15 +44,15 @@ Le Modèle Objet du schéma (SOM) de Microsoft .NET Framework est une API riche 
 ## <a name="the-schema-object-model"></a>Modèle Objet du schéma  
  Le SOM se compose d'un ensemble extensible de classe dans l'espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> correspondant aux éléments d'un schéma XML. Par exemple, l'élément `<xsd:schema>...</xsd:schema>` correspond à la classe <xref:System.Xml.Schema.XmlSchema?displayProperty=nameWithType> et toutes les informations pouvant être contenues dans un élément `<xsd:schema/>` peuvent être représentées à l'aide de la classe <xref:System.Xml.Schema.XmlSchema>. De même, les éléments `<xsd:element>...</xsd:element>` et `<xsd:attribute>...</xsd:attribute>` correspondent respectivement aux classes <xref:System.Xml.Schema.XmlSchemaElement?displayProperty=nameWithType> et <xref:System.Xml.Schema.XmlSchemaAttribute?displayProperty=nameWithType>. Cette correspondance continue pour tous les éléments d'un schéma XML via la création d'un modèle d'objet de schéma XML dans l'espace de noms <xref:System.Xml.Schema> illustré dans le diagramme suivant.  
   
- ![Modèle d’objet System.Xml.Schema](../../../../docs/standard/data/xml/media/xmlschemaobjmodeloverview.gif "XMLSchemaObjModelOverview")  
+ ![System.Xml.Schema Object Model](../../../../docs/standard/data/xml/media/xmlschemaobjmodeloverview.gif "XMLSchemaObjModelOverview")  
   
  Pour plus d'informations sur chaque classe de l'espace de noms <xref:System.Xml.Schema>, voir la documentation de référence sur l'espace de noms <xref:System.Xml.Schema> dans la bibliothèque de classes de .NET Framework.  
   
 ## <a name="see-also"></a>Voir aussi  
- [La lecture et écriture de schémas XML](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
+ [Lecture et écriture de schémas XML](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
  [Création de schémas XML](../../../../docs/standard/data/xml/building-xml-schemas.md)  
- [Traversée de schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
+ [Parcours des schémas XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
  [Modification de schémas XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
  [Inclusion ou importation de schémas XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
- [XmlSchemaSet pour la Compilation du schéma](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
- [Jeu d’informations de post-compilation de schéma](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)
+ [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
+ [Infoset de post-compilation de schéma](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)

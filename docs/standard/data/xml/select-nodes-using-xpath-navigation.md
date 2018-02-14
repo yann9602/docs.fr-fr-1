@@ -12,15 +12,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
-caps.latest.revision: "4"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 34fe3d74adc94930710cf7ee55013b471a2bd43c
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 836702a3200a21c6a9830bdcd1f74a78129b5a6c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="select-nodes-using-xpath-navigation"></a>Sélection de nœuds à l’aide de la navigation XPath
 Le DOM (Document Object Model) XML contient des méthodes permettant d’utiliser la navigation du langage XPath (XML Path) pour demander des informations dans le DOM. Vous pouvez utiliser XPath pour rechercher un nœud simple spécifique ou tous les nœuds qui correspondent à certains critères.  
@@ -115,7 +118,7 @@ foreach (XmlNode book in nodeList)
 doc.Save(Console.Out);  
 ```  
   
- Les exemples ci-dessus commencent la requête XPath à l'élément de document. La définition du point de départ pour la requête XPath définit le nœud de contexte, qui constitue le point de départ de la requête XPath. Si vous ne souhaitez pas commencer à l'élément de document, mais au premier enfant de l'élément de document, vous pouvez coder l'instruction de sélection illustrée comme suit :  
+ Les exemples ci-dessus commencent la requête XPath à l’élément de document. La définition du point de départ pour la requête XPath définit le nœud de contexte, qui constitue le point de départ de la requête XPath. Si vous ne souhaitez pas commencer à l'élément de document, mais au premier enfant de l'élément de document, vous pouvez coder l'instruction de sélection illustrée comme suit :  
   
 ```vb  
 doc.DocumentElement.FirstChild.SelectNodes(. . . )  
@@ -170,4 +173,4 @@ this doc.DocumentElement.FirstChild.SelectNodes(. . .);
 ```  
   
 ## <a name="see-also"></a>Voir aussi  
- [Document Object Model (DOM) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+ [DOM (Document Object Model) XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

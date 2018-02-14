@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: a315b111-8e48-446c-ab19-acb6405894a7
-ms.openlocfilehash: 08b8de2fe17a0032a1c1180667f39b1d6ce0feb6
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f36bae495631db68afb1404398cbf43e890d4f33
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="generic-types-generics-overview"></a>Vue d’ensemble des types génériques (Génériques)
 
@@ -22,7 +25,7 @@ Nous utilisons les génériques tout le temps en C#, implicitement ou explicitem
 
 Présentés pour la première fois dans le .NET Framework 2.0, les génériques impliquaient des modifications du langage C# et du Common Language Runtime (CLR). Les **génériques** sont essentiellement un « modèle de code » qui permet aux développeurs de définir des structures de données de [type sécurisé](https://msdn.microsoft.com/library/hbzz1a9a.aspx) sans se limiter à un type de données réel. Par exemple, `List<T>` est une [collection générique](xref:System.Collections.Generic) qui peut être déclarée et utilisée avec n’importe quel type : `List<int>`, `List<string>`, `List<Person>`, etc.
 
-Donc, quelle est l’idée ? Pourquoi les génériques sont-ils utiles ? Pour le comprendre, nous devons jeter un œil à une classe spécifique avant et après l’ajout des génériques. Observons `ArrayList`. Dans C# 1.0, les éléments `ArrayList` étaient de type `object`. C’est-à-dire que n’importe quel élément ajouté était converti en `object` en mode silencieux. La même chose se produit quand on lit des éléments de la liste (ce processus est appelé [boxing](https://msdn.microsoft.com/library/yz2be5wk.aspx) et unboxing, respectivement). Le boxing et l’unboxing ont un impact sur les performances. Par ailleurs, il est impossible de déterminer au moment de la compilation le type réel des données de la liste. Cela fragilise parfois le code. Les génériques résolvent ce problème en fournissant des informations supplémentaires sur le type de données que contient chaque instance de liste. Pour faire simple, vous pouvez ajouter uniquement des entiers dans `List<int>` et uniquement des personnes dans `List<Person>`, etc.
+Donc, quelle est l’idée ? Pourquoi les génériques sont-ils utiles ? Pour le comprendre, nous devons jeter un œil à une classe spécifique avant et après l’ajout des génériques. Observons `ArrayList`. Dans C# 1.0, les éléments `ArrayList` étaient de type `object`. C’est-à-dire que n’importe quel élément ajouté était converti en `object` en mode silencieux. La même chose se produit quand on lit des éléments de la liste (ce processus est appelé [boxing](../../docs/csharp/programming-guide/types/boxing-and-unboxing.md) et unboxing, respectivement). Le boxing et l’unboxing ont un impact sur les performances. Par ailleurs, il est impossible de déterminer au moment de la compilation le type réel des données de la liste. Cela fragilise parfois le code. Les génériques résolvent ce problème en fournissant des informations supplémentaires sur le type de données que contient chaque instance de liste. Pour faire simple, vous pouvez ajouter uniquement des entiers dans `List<int>` et uniquement des personnes dans `List<Person>`, etc.
 
 Les génériques sont également disponibles au moment de l’exécution, ou **réifiés**. Cela signifie que le runtime sait quel type de structure de données vous utilisez et peut le stocker dans la mémoire plus efficacement.
 
@@ -72,4 +75,4 @@ La dernière chose utile liée au fait que le runtime connaisse le type de votre
 ## <a name="further-reading-and-resources"></a>Ressources et informations supplémentaires
 
 *   [Présentation des génériques C#](https://msdn.microsoft.com/library/ms379564.aspx)
-*   [Guide de programmation C# - Génériques](https://msdn.microsoft.com/library/512aeb7t.aspx)
+*   [Guide de programmation C# - Génériques](../../docs/csharp/programming-guide/generics/index.md)

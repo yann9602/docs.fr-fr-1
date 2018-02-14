@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 9a74d111720eb9436f0cd71fd5acef7ea10939c0
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c3e6c24fafdd79676e68fa9dd06cf399fc09d5ea
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="rules-for-inferring-simple-types"></a>Règles relatives à l'inférence de types simples
 Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le type de données pour les attributs et les éléments.  
@@ -51,7 +54,7 @@ Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le
 |heure|Le format d'heure de W3C.|  
 |date|Les valeurs d'année doivent être comprises entre 0001 et 9999.|  
 |gYearMonth|Format d'année et de mois du calendrier grégorien de W3C.|  
-|string|Un ou plusieurs caractères Unicode.|  
+|chaîne|Un ou plusieurs caractères Unicode.|  
   
 ## <a name="type-promotion"></a>Promotion de type  
  La classe <xref:System.Xml.Schema.XmlSchemaInference> examine les valeurs d'attributs et d'éléments l'une après l'autre. Au fur et à mesure que des valeurs sont rencontrées, le type non signé le plus restrictif est déduit. Si un type a été déduit pour un attribut ou un élément et si une nouvelle valeur est rencontrée, qui ne correspond pas au type actuellement déduit, le type déduit est promu au rang de nouveau type qui s'applique au type actuellement déduit et à la nouvelle valeur. La classe <xref:System.Xml.Schema.XmlSchemaInference> ne considère pas les valeurs précédentes lors de la promotion du type déduit.  
@@ -84,5 +87,5 @@ Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le
   
 ## <a name="see-also"></a>Voir aussi  
  [Modèle Objet du schéma (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
- [Inférence de schémas à partir de Documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
- [Règles pour l’inférence de Types de nœud de schéma et la Structure](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
+ [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
+ [Règles pour l’inférence de types et de structure de nœud de schéma](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)

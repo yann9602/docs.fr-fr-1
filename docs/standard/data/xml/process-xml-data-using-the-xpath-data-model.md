@@ -9,15 +9,18 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 536c6fce-1453-4654-9c72-bca54d47e081
-caps.latest.revision: "2"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 3d2c8db03d494be13a93df06a359e4e4294c22a2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 9992efa209773a6e9f74050183260346f7f1f0ed
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="process-xml-data-using-the-xpath-data-model"></a>Traitement des données XML à l’aide du modèle de données XPath
 L'espace de noms <xref:System.Xml?displayProperty=nameWithType> offre une représentation par programme de documents XML, de fragments, de nœuds ou de collections de nœuds en mémoire à l'aide des classes <xref:System.Xml.XmlDocument> ou <xref:System.Xml.XPath.XPathDocument>.  
@@ -27,13 +30,13 @@ L'espace de noms <xref:System.Xml?displayProperty=nameWithType> offre une repré
  Les sections suivantes décrivent les fonctionnalités de la classe <xref:System.Xml.XPath.XPathNavigator> en fonction de la classe qui la retourne.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [La lecture des données XML à l’aide de XPathDocument et XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
+ [Lecture de données XML à l’aide de XPathDocument et XmlDocument](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
  Décrit comment créer un objet de classe <xref:System.Xml.XPath.XPathDocument> en lecture seule pour lire un document XML et un objet de classe <xref:System.Xml.XmlDocument> modifiable pour lire et modifier un document XML. Cette rubrique décrit également comment retourner un objet <xref:System.Xml.XPath.XPathNavigator> de chaque classe pour parcourir et modifier un document XML.  
   
- [Sélection, évaluation et mise en correspondance les données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)  
+ [Sélection, évaluation et mise en correspondance de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)  
  Décrit les méthodes de la classe <xref:System.Xml.XPath.XPathNavigator> utilisées pour sélectionner des nœuds dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> à l'aide de la requête XPath, pour évaluer et examiner les résultats d'une expression XPath et pour déterminer si un nœud d'un document XML correspond à une expression XPath donnée.  
   
- [Accès aux données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
+ [Accès à des données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
  Décrit les méthodes de la classe <xref:System.Xml.XPath.XPathNavigator> utilisées pour parcourir des nœuds, extraire des données XML et accéder à des données XML fortement typées dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>.  
   
  [Modification de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)  
@@ -46,4 +49,4 @@ L'espace de noms <xref:System.Xml?displayProperty=nameWithType> offre une repré
  <xref:System.Xml.XmlDocument>  
  <xref:System.Xml.XPath.XPathDocument>  
  <xref:System.Xml.XPath.XPathNavigator>  
- [Traitement des données XML à l’aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
+ [Traitement de données XML à l’aide du modèle DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)

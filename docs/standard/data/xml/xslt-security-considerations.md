@@ -9,28 +9,31 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: fea695be-617c-4977-9567-140e820436fc
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
 manager: wpickett
-ms.openlocfilehash: 560a0866a526caf4c8fe129209d0077374306a9f
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 7388bbc388dd46a30486a2300150bc9d1566593e
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="xslt-security-considerations"></a>XSLT et la sécurité
 Le langage XSLT possède une panoplie de fonctionnalités offrant puissance et flexibilité. Il comprend de nombreuses fonctions qui, tout en étant utiles, pourraient aussi être exploitées par des sources extérieures. Pour utiliser XSLT en toute sécurité, vous devez comprendre les types de risques pour la sécurité que pose l'utilisation de XSLT et les stratégies de base que vous pouvez employer pour minimiser ces risques.  
   
 ## <a name="xslt-extensions"></a>Extensions XSLT  
- Deux extensions XSLT populaires sont les scripts de feuille de style et les objets d'extension. Ces extensions permettent au processeur XSLT d'exécuter du code.  
+ Deux extensions XSLT populaires sont les scripts de feuille de style et les objets d’extension. Ces extensions permettent au processeur XSLT d'exécuter du code.  
   
 -   Les objets d'extension ajoutent des capacités de programmation aux transformations XSL.  
   
 -   Des scripts peuvent être intégrés dans la feuille de style à l'aide de l'élément d'extension `msxsl:script`.  
   
-### <a name="extension-objects"></a>Objets d'extension  
- Les objets d'extension sont ajoutés avec la méthode <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A>. Le jeu d'autorisations FullTrust est requis pour la prise en charge des objets d'extension. Cela garantit qu'il n'y a pas d'élévation d'autorisations lors de l'exécution du code de l'objet d'extension. Une tentative d'appel de la méthode <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> sans autorisation FullTrust produit une exception de sécurité.  
+### <a name="extension-objects"></a>Objets d’extension  
+ Les objets d'extension sont ajoutés avec la méthode <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A>. Le jeu d'autorisations FullTrust est requis pour la prise en charge des objets d'extension. Cela garantit qu’il n’y a pas d’élévation d’autorisations lors de l’exécution du code de l’objet d’extension. Une tentative d'appel de la méthode <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> sans autorisation FullTrust produit une exception de sécurité.  
   
 ### <a name="style-sheet-scripts"></a>Scripts de feuille de style  
  Des scripts peuvent être intégrés dans une feuille de style à l'aide de l'élément d'extension `msxsl:script`. La prise en charge des scripts est une fonction facultative de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Elle est désactivée par défaut. Les scripts peuvent être activés en définissant la propriété <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A?displayProperty=nameWithType> sur `true` et en transmettant l'objet <xref:System.Xml.Xsl.XsltSettings> à la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>.  
@@ -65,5 +68,5 @@ Le langage XSLT possède une panoplie de fonctionnalités offrant puissance et f
   
 ## <a name="see-also"></a>Voir aussi  
  [Transformations XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
- [Résoudre des ressources externes lors du traitement XSLT](../../../../docs/standard/data/xml/resolving-external-resources-during-xslt-processing.md)  
- [Sécurité d’accès du code](http://msdn.microsoft.com/en-us/23a20143-241d-4fe5-9d9f-3933fd594c03)
+ [Résolution de ressources externes lors du traitement XSLT](../../../../docs/standard/data/xml/resolving-external-resources-during-xslt-processing.md)  
+ [Sécurité d’accès du code](http://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03)
