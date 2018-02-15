@@ -6,16 +6,19 @@ ms.author: wiwagn
 ms.date: 10/08/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: e676c1225f7d11381808040cf101e897e0726ad4
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 576a717cbdcb8cf465e8cb7b4898df1df7447aa7
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="development-process-for-azure"></a>Processus de développement pour Azure
 
 > _« Avec le cloud, particuliers et petites entreprises peuvent aligner leurs doigts et configurer instantanément les services d’entreprise. »_  
-> _-Roy Stephan_
+> _- Roy Stephan_
 
  ## <a name="vision"></a>Vision
 
@@ -110,7 +113,7 @@ Pendant l’exécution de l’application Web, vous pouvez surveiller l’intég
 ## <a name="references"></a>Références
 
 **Générer et déployer votre application ASP.NET Core vers Azure**  
-<https://www.VisualStudio.com/docs/build/Apps/ASPNET/aspnetcore-to-Azure>
+<https://www.visualstudio.com/docs/build/apps/aspnet/aspnetcore-to-azure>
 
 
 >[!div class="step-by-step"]

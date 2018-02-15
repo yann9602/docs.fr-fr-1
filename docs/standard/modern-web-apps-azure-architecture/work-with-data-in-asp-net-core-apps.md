@@ -6,11 +6,14 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: bcb8f7bbfa83db9c86cd1278a89750b9f02061d9
-ms.sourcegitcommit: 6f49c973f62855ffd6c4a322903e7dd50c5c1b50
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 648e0a4cdd388cf4a322f0fc049d5dcfca53d54b
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Utilisation des données dans les applications ASP.NET Core
 
@@ -18,7 +21,7 @@ ms.lasthandoff: 11/23/2017
 
 Tim Berners-Lee
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Accès aux données est une partie importante de la plupart des applications logicielles. ASP.NET Core prend en charge une variété d’options d’accès aux données, y compris l’Entity Framework Core (et ainsi de Entity Framework 6) et peuvent fonctionner avec tout accès de données .NET framework. Le choix des accès aux données framework à utiliser dépend des besoins de l’application. En faisant abstraction de ces choix à partir des projets ApplicationCore et l’interface utilisateur et encapsuler les détails d’implémentation dans une Infrastructure, permettant de produire des logiciels faiblement couplée, testable.
 
@@ -199,11 +202,11 @@ Le premier DbContext est la \_catalogContext et le second DbContext se trouve da
 
 > ### <a name="references--entity-framework-core"></a>Références : Entity Framework Core
 > - **Documentation de base EF**  
-> <https://docs.Microsoft.com/EF/>
+> <https://docs.microsoft.com/ef/>
 > - **EF principale : Les données associées**  
-> <https://docs.Microsoft.com/EF/Core/Querying/Related-Data>
+> <https://docs.microsoft.com/ef/core/querying/related-data>
 > - **Éviter le chargement tardif des entités dans les Applications ASPNET**  
-> <http://ardalis.com/Avoid-Lazy-Loading-Entities-in-ASP-NET-applications>
+> <http://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
 
 ## <a name="ef-core-or-micro-orm"></a>EF Core ou micro-ORM ?
 
@@ -283,7 +286,7 @@ Le langage de requête DocumentDB est une interface simple et puissante permetta
 **Références – DocumentDB**
 
 -   DocumentDB Introduction\
-    <https://docs.Microsoft.com/Azure/documentdb/documentdb-introduction>
+    <https://docs.microsoft.com/azure/documentdb/documentdb-introduction>
 
 ## <a name="other-persistence-options"></a>Autres Options de persistance
 
@@ -300,7 +303,7 @@ Outre relationnelle et les options de stockage NoSQL, les applications ASP.NET C
 **Références – stockage Azure**
 
 -   Introduction\ de stockage Azure
-    <https://docs.Microsoft.com/Azure/Storage/Storage-introduction>
+    <https://docs.microsoft.com/azure/storage/storage-introduction>
 
 ## <a name="caching"></a>Mise en cache
 
@@ -438,4 +441,4 @@ _cache.Get<CancellationTokenSource>("cts").Cancel();
 ```
 
 >[!div class="step-by-step"]
-[Précédente] (develop-asp-net-core-mvc-apps.md) [suivant] (test-asp-net-core-mvc-apps.md)
+[Previous] (develop-asp-net-core-mvc-apps.md) [Next] (test-asp-net-core-mvc-apps.md)

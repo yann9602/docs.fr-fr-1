@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 9ff9380b318457a842dec4e41b9b74dcddcda3d3
-ms.sourcegitcommit: 882e02b086d7cb9c75f748494cf7a8d3377c5874
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: ecef23870ac547f4b4066628da71f8af98c91b27
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="characteristics-of-modern-web-applications"></a>Caractéristiques des Applications Web modernes
 
 > "… avec la conception, les fonctionnalités sont évidemment. Cette approche est compliquée, mais continue à réussir. »  
-> _\-Dennis Ritchie_
+> _\- Dennis Ritchie_
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les applications web modernes ont supérieurs attentes des utilisateurs et les demandes plus que jamais auparavant. Les applications web actuelles sont censées être 24 x 7 à partir de n’importe où dans le monde et utilisables à partir de pratiquement n’importe quel appareil ou la taille de l’écran. Les applications Web doivent être sécurisée, flexible et évolutive pour répondre aux pics de la demande. De plus en plus des scénarios complexes doivent être gérés par des expériences utilisateur générées sur le client à l’aide de JavaScript et pour communiquer efficacement via l’API web.
 
@@ -41,7 +44,7 @@ ASP.NET Core est optimisé pour le nuage (cloud public, cloud privé, n’import
 
 ## <a name="cross-platform"></a>Multiplateforme
 
-ASP.NET Core est interplateforme et peut s’exécuter sur Linux et MacOS, ainsi que Windows. Plusieurs nouvelles options pour le développement et déploiement d’applications générées avec ASP.NET Core s’ouvre. Les conteneurs docker, qui sont généralement exécutent Linux aujourd'hui, peuvent héberger des applications ASP.NET Core, ce qui leur permet de tirer parti des avantages de [conteneurs et microservices](../microservices-architecture).
+ASP.NET Core est interplateforme et peut s’exécuter sur Linux et MacOS, ainsi que Windows. Plusieurs nouvelles options pour le développement et déploiement d’applications générées avec ASP.NET Core s’ouvre. Les conteneurs docker, qui sont généralement exécutent Linux aujourd'hui, peuvent héberger des applications ASP.NET Core, ce qui leur permet de tirer parti des avantages de [conteneurs et microservices](../microservices-architecture/index.md).
 
 ## <a name="modular-and-loosely-coupled"></a>Faiblement couplée et modulaire
 
@@ -71,11 +74,11 @@ En plus de ASP.NET Core, ASP.NET traditionnel 4.x continue à être une platefor
 
 > ### <a name="references--modern-web-applications"></a>Références à des Applications Web
 > - **Présentation d’ASP.NET Core**  
-> <https://docs.Microsoft.com/ASPNET/Core/>
+> <https://docs.microsoft.com/aspnet/core/>
 > - **Six clé avantages d’ASP.NET Core qui rendent différentes et mieux**  
-> <https://blog.trigent.com/six-Key-Benefits-of-ASP-NET-Core-1-0-Which-Make-IT-different-Better/>
+> <https://blog.trigent.com/six-key-benefits-of-asp-net-core-1-0-which-make-it-different-better/>
 > - **Les tests dans ASP.NET Core**  
-> <https://docs.Microsoft.com/ASPNET/Core/Testing/>
+> <https://docs.microsoft.com/aspnet/core/testing/>
 
 >[!div class="step-by-step"]
 [Précédente] (index.md) [suivant] (choose-between-traditional-web-and-single-page-apps.md)

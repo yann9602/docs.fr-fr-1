@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: c361a28321ec9dcbfee1db8036757632a5d81f7c
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 868f1b7ce452be9e29b921888f90d128e074ba13
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Azure hébergeant des recommandations pour les applications Web ASP.NET Core
 
 > « Line-of-business leaders everywhere sont en ignorant les services informatiques pour obtenir des applications à partir du cloud (également appelé SaaS) et de paiement pour les comme s’il s’agissait d’un abonnement de magazine. Et lorsque le service n’est plus nécessaire, ils peuvent annuler l’abonnement avec aucun matériel pas utilisé dans le coin. »  
-> _\-Daryl Plummer, analyste de Gartner_
+> _\- Daryl Plummer, analyste de Gartner_
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Tout ce qui doit et l’architecture de votre application, Windows Azure peut prendre en charge il. Vos besoins d’hébergements peuvent être aussi simples que d’un site web statique à une application extrêmement sophistiqué constituée de dizaines de services. Des applications ASP.NET Core monolithique et les services de prise en charge, il existe plusieurs configurations connues qui sont recommandées. Les recommandations ci-dessous sont regroupées selon le type de ressource pour être hébergé, complet si des applications, des processus individuels ou des données.
 
@@ -115,16 +118,16 @@ Figure 11-2 illustre une architecture de référence d’exemple. Ce diagramme d
 **Références : recommandations d’hébergement Azure**
 
 -   Solution Azure Architectures\
-    <https://Azure.Microsoft.com/solutions/architecture/>
+    <https://azure.microsoft.com/solutions/architecture/>
 
 -   Développeur Azure Guide\
-    <https://Azure.Microsoft.com/campaigns/Developer-Guide/>
+    <https://azure.microsoft.com/campaigns/developer-guide/>
 
 -   Nouveautés du Service d’applications Azure ? \
-    <https://docs.Microsoft.com/Azure/app-service/app-service-Value-Prop-What-is>
+    <https://docs.microsoft.com/azure/app-service/app-service-value-prop-what-is>
 
 -   Azure App Service, les Machines virtuelles, Service Fabric et Comparison\ de Services de Cloud
-    <https://docs.Microsoft.com/Azure/app-service-Web/Choose-Web-site-cloud-service-VM>
+    <https://docs.microsoft.com/azure/app-service-web/choose-web-site-cloud-service-vm>
 
 >[!div class="step-by-step"]
 [Précédente] (développement-processus-de-azure.md)

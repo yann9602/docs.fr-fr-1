@@ -5,23 +5,25 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - WCF [WCF], documentation
 - Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-caps.latest.revision: "36"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 1f1026320114592c25bb5fd123bf92227b26b015
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 132cbc6c7c9ba7d8e6c29f477554fc7b3bbab469
+ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="guide-to-the-documentation"></a>Guide de la documentation
 Les indications fournies dans cette rubrique concernent la documentation [!INCLUDE[indigo1](../../../includes/indigo1-md.md)]. Les documents liés sont des points de départ recommandés regroupés en fonction d'intérêts et de niveaux d'expertise spécifiques.  
@@ -44,7 +46,7 @@ Les indications fournies dans cette rubrique concernent la documentation [!INCLU
   
 -   Si vous recherchez des conseils pour une fonctionnalité particulière ou d’une capacité de [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], consultez les rubriques sous [détails sur les fonctionnalités de WCF](../../../docs/framework/wcf/feature-details/index.md).  
   
--   Si vous souhaitez étendre ou personnaliser [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] selon vos besoins, consultez [extension de WCF](../../../docs/framework/wcf/extending/extending-wcf.md).  
+-   Si vous souhaitez étendre ou personnaliser [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] selon vos besoins, consultez [extension de WCF](../../../docs/framework/wcf/extending/index.md).  
   
 -   Pour plus d’informations sur les outils qui aident à créer et déboguer [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] les applications, consultez [outils Windows Communication Foundation](../../../docs/framework/wcf/tools.md).  
   

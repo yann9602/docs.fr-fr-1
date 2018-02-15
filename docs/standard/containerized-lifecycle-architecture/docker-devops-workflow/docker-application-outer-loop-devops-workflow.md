@@ -1,15 +1,18 @@
 ---
 title: "Étapes de workflow DevOps boucle externe pour une application de Docker"
-description: Cycle de vie Application en conteneur Docker avec la plate-forme Microsoft et les outils
+description: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 keywords: Docker, microservices, ASP.NET, conteneur
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 070d174cde9e80f542865f5617b1c702a07a8018
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: fe51fc4b5026d17f0f9b93e7fd0dedde93ef4a3c
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Étapes de workflow DevOps boucle externe pour une application de Docker
 

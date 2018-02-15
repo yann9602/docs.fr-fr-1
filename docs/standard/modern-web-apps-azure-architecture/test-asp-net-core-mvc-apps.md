@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/08/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 4611ffa8334e124946e849306d3281b695830eb1
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: d23d0accc33fb8335dff602d6e1d6c8689972906
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Test ASP.NET Core les applications MVC
 
 > _« Si vous n’aimez pas votre produit de tests unitaires, très probablement vos clients ne sont pas tels que pour le tester, soit. »_
-> _ - Anonyme -
+> _- Anonymous-
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Logiciels complexes peuvent échouer de façon inattendue en réponse aux modifications. Par conséquent, il est requis pour toutes les applications plus anecdotiques (ou moins critiques) de test après avoir apporté des modifications. Un test manuel est la plus lente, façon moins fiable, la plus coûteuse pour tester un logiciel. Malheureusement, si les applications ne sont pas conçues pour être testable, il peut être la seule méthode disponible. Les applications écrites suit les principes d’architecture présentés dans le chapitre X doivent être unité testable, et les applications ASP.NET Core prennent en charge l’intégration automatisée et également les tests fonctionnels.
 
@@ -112,9 +115,9 @@ Vous devez nommer vos tests de façon cohérente, avec des noms qui indiquent la
 
 Une variante de cette approche termine chaque nom de classe de test avec « Doit » et modifie la conjugaison légèrement :
 
--   CatalogControllerGetImage**doit**. **Appelez**ImageServiceWithId
+-   CatalogControllerGetImage**Should**.**Call**ImageServiceWithId
 
--   CatalogControllerGetImage**doit**. **Journal**WarningGivenImageMissingException
+-   CatalogControllerGetImage**Should**.**Log**WarningGivenImageMissingException
 
 Certaines équipes de recherchent la deuxième approche d’affectation des noms plus claire, bien que légèrement plus détaillée. Dans tous les cas, essayez d’utiliser une convention d’affectation de noms qui permet de comprendre le comportement de test, afin que lorsqu’un ou plusieurs tests échouent, il est évident au vu de leurs noms, les cas qui ont échoué. Éviter de nommer vous tests vaguement, telles que ControllerTests.Test1, car ceux-ci n’offrent aucune valeur lorsque vous les voyez dans les résultats des tests.
 

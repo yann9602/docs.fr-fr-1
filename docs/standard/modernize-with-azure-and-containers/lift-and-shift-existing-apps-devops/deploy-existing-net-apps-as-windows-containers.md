@@ -4,11 +4,14 @@ description: "Architecture de Microservices .NET pour les Applications .NET en c
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: 87aa05895857a425f11820a564f2a249c77f98e2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: f9a30605313c06542fabf9689f700ed726445f57
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Déployer des applications .NET existantes en tant que conteneurs Windows
 
@@ -48,13 +51,13 @@ Un grand nombre d’organisations est containerizing applications monolithiques 
 
 Des améliorations significatives dans l’agilité, la portabilité et le contrôle finalement conduire les réductions des coûts importants lorsque vous utilisez des conteneurs pour développer et maintenir des applications.
 
-## <a name="what-is-docker"></a>Qu’est Docker ?
+## <a name="what-is-docker"></a>Qu’est-ce que Docker ?
 
 [Docker](https://www.docker.com/) est un [projet open source](https://github.com/docker/docker) qui automatise le déploiement d’applications en tant que conteneurs portables, autonomes qui peuvent s’exécuter dans le nuage ou sur site. Docker est également un [société](https://www.docker.com/) qui promeut et évolue cette technologie. La société fonctionne en collaboration avec le cloud, Linux et les fournisseurs de Windows, notamment Microsoft.
 
 ![](./media/image6.png)
 
-> **Figure 4 à 6.** Docker déploie des conteneurs à toutes les couches du cloud hybride
+> **Figure 4-6.** Docker déploie des conteneurs à toutes les couches du cloud hybride
 
 À une personne familiarisé avec les machines virtuelles, les conteneurs peuvent sembler très similaire. Un conteneur exécute un système d’exploitation, a un système de fichiers et sont accessibles via un réseau, tout comme un système d’ordinateur physique ou virtuel. Toutefois, la technologie et les concepts derrière les conteneurs sont très différents des machines virtuelles. À partir du point de vue du développeur, un conteneur doit être traité plus comme un processus unique. En fait, un conteneur possède un point d’entrée unique pour un processus.
 
@@ -92,17 +95,17 @@ Dans les scénarios de migration pour les applications existantes ou héritées 
 
 Lorsque vous ajoutez le nom de l’image à votre fichier Dockerfile, vous pouvez sélectionner le système d’exploitation et la version à l’aide d’une balise, comme dans les exemples suivants pour les images de conteneur Windows basé sur le .NET Framework :
 
-> | **Balise** | **Version du système et** |
+> | **Tag** | **Version du système et** |
 > |---|---|
-> | **Microsoft/dotnet-framework:4.x-windowsservercore** | .NET framework 4.x sur Windows Server Core |
-> | **aspnet:4.x/Microsoft-windowsservercore** | .NET framework 4.x avec une personnalisation supplémentaire ASP.NET, sur Windows Server Core |
+> | **microsoft/dotnet-framework:4.x-windowsservercore** | .NET framework 4.x sur Windows Server Core |
+> | **microsoft/aspnet:4.x-windowsservercore** | .NET framework 4.x avec une personnalisation supplémentaire ASP.NET, sur Windows Server Core |
 
 Pour .NET Core (multiplateforme pour Linux et Windows), les balises ressemble à ceci :
 
-> | **Balise** | **Version du système et**
+> | **Tag** | **Version du système et**
 > |---|---|
-> | **Microsoft/dotnet:2.0.0-Runtime** | .NET core 2.0 runtime uniquement sur Linux |
-> | **Microsoft/dotnet:2.0.0-Runtime-nanoserver** | .NET core 2.0 runtime uniquement sur Windows Nano Server |
+> | **microsoft/dotnet:2.0.0-runtime** | .NET core 2.0 runtime uniquement sur Linux |
+> | **microsoft/dotnet:2.0.0-runtime-nanoserver** | .NET core 2.0 runtime uniquement sur Windows Nano Server |
 
 ### <a name="multi-arch-images"></a>Images arch multiples
 
@@ -124,15 +127,15 @@ Exécute un conteneur sous Windows, avec ou sans isolement de Hyper-V est une d�
 
 -   **Documentation sur les conteneurs de Windows**
 
-    [https://docs.Microsoft.com/Virtualization/windowscontainers/](https://docs.microsoft.com/virtualization/windowscontainers/)
+    [https://docs.microsoft.com/virtualization/windowscontainers/](https://docs.microsoft.com/virtualization/windowscontainers/)
 
 -   **Principes de base des conteneurs Windows**
 
-    [https://docs.Microsoft.com/Virtualization/windowscontainers/About/](https://docs.microsoft.com/virtualization/windowscontainers/about/)
+    [https://docs.microsoft.com/virtualization/windowscontainers/about/](https://docs.microsoft.com/virtualization/windowscontainers/about/)
 
 -   **Graphisme d’information : Microsoft et les conteneurs**
 
-    [https://info.Microsoft.com/RS/157-GQE-382/images/Container%20infographic%201.4.17.PDF](https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf)
+    [https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf](https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf)
 
 >[!div class="step-by-step"]
 [Précédent](how-to-deploy-existing-net-apps-to-azure-app-service.md)

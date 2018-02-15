@@ -4,11 +4,14 @@ description: "Architecture de Microservices .NET pour les Applications .NET en c
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: 9c21ae37ad2e4fc318eb4b206069db7662bfc5d7
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: aaf1ef968600a56d91267c6c12efa90d99446dd7
+ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Créer des services résilients prêts pour le cloud : adopter les erreurs temporaires dans le cloud 
 
@@ -30,7 +33,7 @@ Une application résistante comme celui illustré dans la Figure 4-9 doit implé
 
 ![Défaillances partielles gérées par les nouvelles tentatives avec interruption exponentielle](./media/image9.png)
 
-> **Figure 4 à 9.** Défaillances partielles gérées par les nouvelles tentatives avec interruption exponentielle
+> **Figure 4-9.** Défaillances partielles gérées par les nouvelles tentatives avec interruption exponentielle
 
 Vous pouvez utiliser ces techniques pour les ressources HTTP et les ressources de base de données. Dans la Figure 4-9, l’application est basée sur une architecture à 3 couches, vous avez besoin de ces techniques au niveau des services (HTTP) et au niveau de la couche données (TCP). Dans une application monolithique qui utilise uniquement un niveau d’application unique en plus de la base de données (aucun des services supplémentaires ou microservices), la gestion des erreurs temporaires au niveau de la connexion de base de données peuvent être suffisant. Dans ce scénario, généralement simplement une configuration particulière de la connexion de base de données est requise.
 
@@ -44,21 +47,21 @@ Pour savoir comment implémenter des stratégies pour gérer les défaillances p
 
 -   **Implémentation de la communication résiliente pour gérer une défaillance partielle**
 
-    [https://docs.Microsoft.com/dotnet/standard/microservices-architecture/Implement-RESILIENT-applications/Partial-Failure-Strategies](https://docs.microsoft.com/dotnet/standard/microservices-architecture/implement-resilient-applications/partial-failure-strategies)
+    [https://docs.microsoft.com/dotnet/standard/microservices-architecture/implement-resilient-applications/partial-failure-strategies](https://docs.microsoft.com/dotnet/standard/microservices-architecture/implement-resilient-applications/partial-failure-strategies)
 
 -   **Entity Framework résilience et nouvelle tentative logique de connexion (version 6 et versions ultérieure)**
 
-    [https://msdn.Microsoft.com/en-us/library/dn456835 (v=vs.113).aspx](https://msdn.microsoft.com/en-us/library/dn456835(v=vs.113).aspx)
+    [https://msdn.microsoft.com/library/dn456835(v=vs.113).aspx](https://msdn.microsoft.com/library/dn456835(v=vs.113).aspx)
 
 -   **Le bloc d’Application de gestion d’erreurs transitoires**
 
 <!-- -->
 
--   [https://msdn.Microsoft.com/en-us/library/hh680934 (v=pandp.50).aspx](https://msdn.microsoft.com/en-us/library/hh680934(v=pandp.50).aspx)
+-   [https://msdn.microsoft.com/library/hh680934(v=pandp.50).aspx](https://msdn.microsoft.com/library/hh680934(v=pandp.50).aspx)
 
 -   **Bibliothèque Polly pour les communications HTTP résiliente**
 
-    https://github.com/app-vNext/Polly
+    https://github.com/App-vNext/Polly
 
 >[!div class="step-by-step"]
 [Précédent](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)

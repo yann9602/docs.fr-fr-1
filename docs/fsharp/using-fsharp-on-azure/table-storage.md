@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 9e5d6cea-a98c-461e-a5cc-75f1d154eafd
-ms.openlocfilehash: bf833a96809768011f26df35332ab2372ced2aaf
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e003f537c6f0f85b3b0ba932655ae2a54c980bc5
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="get-started-with-azure-table-storage-using-f"></a>Prise en main le stockage de Table Azure à l’aide de F # #
 
@@ -28,7 +28,7 @@ Ce didacticiel montre comment écrire du code F # pour effectuer des tâches cou
 
 Pour une vue d’ensemble conceptuelle de stockage de table, consultez [le guide de .NET pour le stockage de table](/azure/storage/storage-dotnet-how-to-use-tables)
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser ce guide, vous devez d’abord [créer un compte de stockage Azure](/azure/storage/storage-create-storage-account).
 Vous devez également votre clé d’accès pour ce compte.
@@ -186,8 +186,8 @@ Vous pouvez supprimer une table à partir d’un compte de stockage. Une table q
 
 Maintenant que vous avez appris les notions de base du stockage Table, suivez ces liens pour en savoir plus sur les tâches de stockage plus complexes :
 
-- [Bibliothèque cliente de stockage pour la référence .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+- [API de stockage Azure pour .NET](/dotnet/api/overview/azure/storage)
 - [Fournisseur de Type de stockage Azure](http://fsprojects.github.io/AzureStorageTypeProvider/)
 - [Blog de l’équipe stockage Azure](http://blogs.msdn.com/b/windowsazurestorage/)
-- [Configuration des chaînes de connexion](http://msdn.microsoft.com/library/azure/ee758697.aspx)
+- [Configurez les chaînes de connexion de stockage Azure](/azure/storage/common/storage-configure-connection-string)
 - [Prise en main avec un stockage de Table Windows Azure dans .NET](https://azure.microsoft.com/documentation/samples/storage-table-dotnet-getting-started/)

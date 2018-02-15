@@ -1,15 +1,18 @@
 ---
 title: "Orchestration microservices et applications multicontainer pour une haute évolutivité et la disponibilité"
-description: Cycle de vie Application en conteneur Docker avec la plate-forme Microsoft et les outils
+description: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 keywords: Docker, microservices, ASP.NET, conteneur
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/19/2017
-ms.openlocfilehash: ea492de1c4709eb7bafe65fcf288482da9855240
-ms.sourcegitcommit: 6f49c973f62855ffd6c4a322903e7dd50c5c1b50
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 4345fe8f36ecc32a7dd8e72fce5338bff308ffdf
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="orchestrating-microservices-and-multicontainer-applications-for-high-scalability-and-availability"></a>Orchestration microservices et applications multicontainer pour une haute évolutivité et la disponibilité
 
@@ -39,10 +42,10 @@ Tableau 4-1 : les plates-formes de logiciel de clustering de conteneur, d’orc
 
 | Plateforme | Description |
 |---|---|
-| Docker essaim<br/> ![http://rancher.com/WP-Content/Themes/rancher-2016/Assets/images/swarm.png?v=2016-07-10-AM](./media/image7.png) | Docker essaim vous donne la possibilité de mettre en cluster et planifier des conteneurs Docker. À l’aide d’essaim, vous pouvez activer un pool d’hôtes Docker dans un hôte Docker virtuel unique. Les clients peuvent effectuer des demandes de API au essaim de la même façon que pour les ordinateurs hôtes, ce qui signifie que qu’essaim facilite pour les applications à l’échelle sur plusieurs hôtes. <br /><br /> Docker essaim est un produit à partir de Docker, la société. <br /><br /> Version de docker 1.12 ou plus tard pouvant s’exécuter en Mode natif et intégrées Swarm. |
-| Mésosphère contrôleur de domaine/système d’exploitation<br/>![https://mesosphere.com/wp-content/uploads/2016/04/logo-horizontal-styled.png](./media/image8.png) |  Mésosphère Enterprise contrôleur de domaine/système d’exploitation (basée sur Apache Mesos) est une plateforme de l’environnement de production pour l’exécution des conteneurs et des applications distribuées. <br /><br /> Contrôleur de domaine/système d’exploitation fonctionne en faisant abstraction d’une collection de ressources disponibles dans le cluster et la disposition de ces ressources pour les composants générés par-dessus. Marathon est généralement utilisé comme un planificateur intégré à un contrôleur de domaine/système d’exploitation. |
-| Google Kubernetes<br />![https://PBS.twimg.com/Media/BT\_pEfqCAAAiVyz.png](./media/image9.png) | Kubernetes est un produit open source qui fournit des fonctionnalités qui s’étend de l’infrastructure de cluster et le conteneur de la planification des capacités orchestrant ces opérations. Avec lui, vous pouvez automatiser les opérations de conteneurs d’applications, de mise à l’échelle et de déploiement sur tous les clusters d’ordinateurs hôtes. <br /><br /> Kubernetes fournit une infrastructure orientée conteneur qui regroupe des conteneurs d’applications dans des unités logiques pour faciliter la gestion et la découverte. |
-| Azure Service Fabric<br />![https://Azure.Microsoft.com/svghandler/service-Fabric?Width=600&Height=315](./media/image10.png) | [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) est une plateforme de microservices de Microsoft pour la création d’applications. Il s’agit d’un [orchestrator](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) de services et crée des clusters d’ordinateurs. Par défaut, Service Fabric déploie et active des services en tant que processus, mais l’infrastructure de Service peut déployer des services dans les images de conteneur Docker. Plus important, vous pouvez combiner des services dans des processus avec les services dans des conteneurs dans la même application. <br /><br /> À compter de mai 2017, la fonctionnalité de l’infrastructure de Service qui prend en charge le déploiement des services en tant que conteneurs Docker est dans un état d’aperçu. <br /><br /> Vous pouvez développer des services de l’infrastructure de Service de nombreuses façons, à l’aide de la [Service Fabric, modèles de programmation](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework) au déploiement [invité exécutables](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-existing-app) , ainsi que des conteneurs. Service Fabric prend en charge les modèles d’application normative comme [services avec état](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) et [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
+| Docker essaim<br/> ![http://rancher.com/wp-content/themes/rancher-2016/assets/images/swarm.png?v=2016-07-10-am](./media/image7.png) | Docker essaim vous donne la possibilité de mettre en cluster et planifier des conteneurs Docker. À l’aide d’essaim, vous pouvez activer un pool d’hôtes Docker dans un hôte Docker virtuel unique. Les clients peuvent effectuer des demandes de API au essaim de la même façon que pour les ordinateurs hôtes, ce qui signifie que qu’essaim facilite pour les applications à l’échelle sur plusieurs hôtes. <br /><br /> Docker essaim est un produit à partir de Docker, la société. <br /><br /> Version de docker 1.12 ou plus tard pouvant s’exécuter en Mode natif et intégrées Swarm. |
+| Mesosphere DC/OS<br/>![https://mesosphere.com/wp-content/uploads/2016/04/logo-horizontal-styled.png](./media/image8.png) |  Mésosphère Enterprise contrôleur de domaine/système d’exploitation (basée sur Apache Mesos) est une plateforme de l’environnement de production pour l’exécution des conteneurs et des applications distribuées. <br /><br /> Contrôleur de domaine/système d’exploitation fonctionne en faisant abstraction d’une collection de ressources disponibles dans le cluster et la disposition de ces ressources pour les composants générés par-dessus. Marathon est généralement utilisé comme un planificateur intégré à un contrôleur de domaine/système d’exploitation. |
+| Google Kubernetes<br />![https://pbs.twimg.com/media/Bt\_pEfqCAAAiVyz.png](./media/image9.png) | Kubernetes est un produit open source qui fournit des fonctionnalités qui s’étend de l’infrastructure de cluster et le conteneur de la planification des capacités orchestrant ces opérations. Avec lui, vous pouvez automatiser les opérations de conteneurs d’applications, de mise à l’échelle et de déploiement sur tous les clusters d’ordinateurs hôtes. <br /><br /> Kubernetes fournit une infrastructure orientée conteneur qui regroupe des conteneurs d’applications dans des unités logiques pour faciliter la gestion et la découverte. |
+| Azure Service Fabric<br />![https://azure.microsoft.com/svghandler/service-fabric?width=600&height=315](./media/image10.png) | [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) est une plateforme de microservices de Microsoft pour la création d’applications. Il s’agit d’un [orchestrator](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) de services et crée des clusters d’ordinateurs. Par défaut, Service Fabric déploie et active des services en tant que processus, mais l’infrastructure de Service peut déployer des services dans les images de conteneur Docker. Plus important, vous pouvez combiner des services dans des processus avec les services dans des conteneurs dans la même application. <br /><br /> À compter de mai 2017, la fonctionnalité de l’infrastructure de Service qui prend en charge le déploiement des services en tant que conteneurs Docker est dans un état d’aperçu. <br /><br /> Vous pouvez développer des services de l’infrastructure de Service de nombreuses façons, à l’aide de la [Service Fabric, modèles de programmation](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework) au déploiement [invité exécutables](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-existing-app) , ainsi que des conteneurs. Service Fabric prend en charge les modèles d’application normative comme [services avec état](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) et [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
 
 ## <a name="using-container-based-orchestrators-in-azure"></a>À l’aide basée sur le conteneur d’orchestrators dans Azure
 
@@ -89,19 +92,19 @@ Service de conteneur est actuellement disponible pour un Standard, D, DS, G et G
 Voici les emplacements où vous trouverez des informations supplémentaires :
 
 -   Introduction au conteneur Docker solutions avec le conteneur de Service d’hébergement :  
-    https://docs.Microsoft.com/Azure/Container-service/kubernetes/Container-service-Intro-kubernetes>
+    https://docs.microsoft.com/azure/container-service/kubernetes/container-service-intro-kubernetes>
 
 -   Vue d’ensemble de docker essaim :  
-    <https://docs.docker.com/swarm/Overview/>
+    <https://docs.docker.com/swarm/overview/>
 
 -   Swarm vue d’ensemble du mode :  
-    <https://docs.docker.com/Engine/swarm/>
+    <https://docs.docker.com/engine/swarm/>
 
 -   Vue d’ensemble du contrôleur de domaine/système d’exploitation mésosphère :    
-    <https://docs.mesosphere.com/1.7/Overview/>
+    <https://docs.mesosphere.com/1.7/overview/>
 
 -   Kubernetes (le site officiel) :  
-    <http://kubernetes.IO/>
+    <http://kubernetes.io/>
 
 ## <a name="using-service-fabric"></a>À l’aide de l’infrastructure de Service
 

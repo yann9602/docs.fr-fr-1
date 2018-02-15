@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -13,19 +14,20 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-caps.latest.revision: "51"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 5ae43f65c104376ea1e7cfc036a57c728c90ac12
-ms.sourcegitcommit: c0dd436f6f8f44dc80dc43b07f6841a00b74b23f
+ms.workload:
+- dotnet
+ms.openlocfilehash: 7aecddc617afcaf197aa212e8eea7e1342c029fa
+ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="what-is-windows-communication-foundation"></a>Présentation de Windows Communication Foundation
-[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] est une infrastructure permettant de générer des applications orientées services. Avec [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], vous pouvez envoyer des données sous forme de messages asynchrones d'un point de terminaison de service à un autre. Un point de terminaison de service peut faire partie d'un service disponible en continu et hébergé par IIS, ou il peut s'agir d'un service hébergé dans une application. Un point de terminaison peut être un client d'un service qui demande des données auprès d'un point de terminaison de service. Les messages peuvent être simplement constitués d'un caractère ou d'un mot unique envoyé au format XML, ou se présenter sous la forme d'un flux de données binaires plus complexe. Voici quelques exemples de scénarios :  
+[!INCLUDE[indigo1](../../../includes/indigo1-md.md)] est une infrastructure pour la création d’applications orientées service. Avec [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], vous pouvez envoyer des données sous forme de messages asynchrones d'un point de terminaison de service à un autre. Un point de terminaison de service peut faire partie d'un service disponible en continu et hébergé par IIS, ou il peut s'agir d'un service hébergé dans une application. Un point de terminaison peut être un client d'un service qui demande des données auprès d'un point de terminaison de service. Les messages peuvent être simplement constitués d'un caractère ou d'un mot unique envoyé au format XML, ou se présenter sous la forme d'un flux de données binaires plus complexe. Voici quelques exemples de scénarios :  
   
 -   Service sécurisé pour traiter des transactions commerciales.  
   
@@ -42,7 +44,7 @@ ms.lasthandoff: 01/19/2018
  Si la création de telles applications était possible avant [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] simplifie le développement de points de terminaison comme jamais auparavant. En résumé, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] est conçu de manière à offrir une approche gérable à la création de services Web et de clients de services Web.  
   
 ## <a name="features-of-wcf"></a>Fonctions de WCF  
- [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] comprend l'ensemble de fonctionnalités suivant. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WCF Feature Details](../../../docs/framework/wcf/feature-details/index.md).  
+ [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] inclut l’ensemble de fonctionnalités suivant. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WCF Feature Details](../../../docs/framework/wcf/feature-details/index.md).  
   
 -   **Orientation services**  
   
@@ -50,7 +52,7 @@ ms.lasthandoff: 01/19/2018
   
 -   **Interopérabilité**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] implémente les normes industrielles modernes pour l'interopérabilité des services Web. [!INCLUDE[crabout](../../../includes/crabout-md.md)] les standards pris en charge, consultez [Interoperability and Integration](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md).  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] implémente les normes industrielles modernes pour l’interopérabilité des services Web. [!INCLUDE[crabout](../../../includes/crabout-md.md)] les standards pris en charge, consultez [Interoperability and Integration](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md).  
   
 -   **Modèles de messages variés**  
   
@@ -58,7 +60,7 @@ ms.lasthandoff: 01/19/2018
   
 -   **Métadonnées de service**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] prend en charge la publication de métadonnées de service à l'aide de formats spécifiés dans les normes industrielles, tels que WSDL, les schémas XML et WS-Policy. Ces métadonnées peuvent être utilisées pour générer et configurer automatiquement des clients en vue de l'accès à des services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] . Les métadonnées peuvent être publiées via HTTP et HTTPS ou à l'aide de la norme d'échange de métadonnées de service Web. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Metadata](../../../docs/framework/wcf/feature-details/metadata.md).  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] prend en charge la publication des métadonnées de service à l’aide de formats spécifiés dans les normes industrielles telles que WSDL, schéma XML et WS-Policy. Ces métadonnées peuvent être utilisées pour générer et configurer automatiquement des clients en vue de l'accès à des services [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] . Les métadonnées peuvent être publiées via HTTP et HTTPS ou à l'aide de la norme d'échange de métadonnées de service Web. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Metadata](../../../docs/framework/wcf/feature-details/metadata.md).  
   
 -   **Contrats de données**  
   
@@ -70,11 +72,11 @@ ms.lasthandoff: 01/19/2018
   
 -   **Transports et encodages variés**  
   
-     Les messages peuvent être envoyés via l'un des différents encodages et protocoles de transport intégrés. Le protocole et encodage le plus courant consiste à envoyer des messages SOAP à encodage texte avec le protocole HTTP (HyperText Transfer Protocol) en vue d'une utilisation sur Internet. Sinon, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] vous permet d'envoyer des messages via TCP, des canaux nommés ou MSMQ. Ces messages peuvent être encodés en tant que texte ou à l'aide d'un format binaire optimisé.  Les données binaires peuvent être envoyées efficacement à l'aide de la norme MTOM. Si aucun des transports ou encodages fournis ne convient à vos besoins, vous avez la possibilité de créer votre propre encodage ou transport personnalisé. [!INCLUDE[crabout](../../../includes/crabout-md.md)]transports et encodages pris en charge par [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] consultez [Transports](../../../docs/framework/wcf/feature-details/transports.md).  
+     Les messages peuvent être envoyés via l'un des différents encodages et protocoles de transport intégrés. Le protocole et encodage le plus courant consiste à envoyer des messages SOAP à encodage texte avec le protocole HTTP (HyperText Transfer Protocol) en vue d'une utilisation sur Internet. Sinon, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] vous permet d'envoyer des messages via TCP, des canaux nommés ou MSMQ. Ces messages peuvent être encodés en tant que texte ou à l'aide d'un format binaire optimisé.  Les données binaires peuvent être envoyées efficacement à l'aide de la norme MTOM. Si aucun des transports ou encodages fournis ne convient à vos besoins, vous avez la possibilité de créer votre propre encodage ou transport personnalisé. [!INCLUDE[crabout](../../../includes/crabout-md.md)] transports et encodages pris en charge par [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] consultez [Transports](../../../docs/framework/wcf/feature-details/transports.md).  
   
 -   **Messages fiables et mis en file d'attente**  
   
-     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] prend en charge l'échange de messages fiables à l'aide de sessions fiables implémentées via WS-Reliable Messaging et MSMQ. [!INCLUDE[crabout](../../../includes/crabout-md.md)] la prise en charge de la messagerie mise en file d’attente et fiable dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] , consultez [Queues and Reliable Sessions](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md).  
+     [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] prend en charge l’échange de messages fiables à l’aide de sessions fiables implémentées via WS-Reliable Messaging et MSMQ. [!INCLUDE[crabout](../../../includes/crabout-md.md)] la prise en charge de la messagerie mise en file d’attente et fiable dans [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] , consultez [Queues and Reliable Sessions](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md).  
   
 -   **Messages durables**  
   
@@ -90,7 +92,7 @@ ms.lasthandoff: 01/19/2018
   
 -   **Extensibilité**  
   
-     L'architecture [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] comporte un certain nombre de points d'extensibilité. Si une capacité supplémentaire est requise, il existe un certain nombre de points d'entrée qui vous permettent de personnaliser le comportement d'un service. [!INCLUDE[crabout](../../../includes/crabout-md.md)] les points d’extensibilité disponibles, consultez [Extending WCF](../../../docs/framework/wcf/extending/extending-wcf.md).  
+     L'architecture [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] comporte un certain nombre de points d'extensibilité. Si une capacité supplémentaire est requise, il existe un certain nombre de points d'entrée qui vous permettent de personnaliser le comportement d'un service. [!INCLUDE[crabout](../../../includes/crabout-md.md)] les points d’extensibilité disponibles, consultez [extension de WCF](../../../docs/framework/wcf/extending/index.md).  
   
 ## <a name="wcf-integration-with-other-microsoft-technologies"></a>Intégration WCF avec d'autres technologies Microsoft  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] est une plate-forme flexible. Grâce à son extrême flexibilité, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] est également utilisé dans plusieurs autres produits Microsoft. Si vous maîtrisez les bases de [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], vous bénéficiez d'un avantage immédiat lorsque vous utilisez également l'un de ces produits.  

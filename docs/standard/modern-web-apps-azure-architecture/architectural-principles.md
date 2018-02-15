@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 20524c8aa0e64fd40a1a4a6811063557f74074d2
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: bdb215d64253fb7d22ae2c5648030336850006b5
+ms.sourcegitcommit: f28752eab00d2bd97e971542c0f49ce63cfbc239
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/29/2018
 ---
-#<a name="architectural-principles"></a>Principes d’architecture
+# <a name="architectural-principles"></a>Principes d’architecture
 
 > « Si générateurs générée bâtiments les programmeurs de façon écrit des programmes, puis le premier woodpecker fournie le long, cela va détruire civilisation. »  
-> _\-Victor Weinberg_
+> _\- Victor Weinberg_
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous devez aussi créer et concevoir des solutions logicielles avec sa maintenabilité. Les principes présentées dans cette section peuvent vous aider à vous vers des décisions architecturales qui entraîne des applications propre et facile à gérer. En règle générale, ces principes vous guide vers les systèmes de messagerie ou de la création d’applications en dehors des composants individuels qui ne sont pas étroitement couplées à d’autres parties de votre application, mais plutôt de communiquer via des interfaces explicites.
 
@@ -103,19 +106,19 @@ Le fait que les classes ont toutes les fonctionnalités et les comportements ci-
 Au minimum, des applications web individuelles efforcez-vous être son propre contexte délimitée, avec leur propre magasin de persistance pour leur modèle d’entreprise, plutôt que d’une base de données de partage avec d’autres applications. Communication entre les contextes délimitées se produit via des interfaces de programmation, plutôt que via une base de données partagée, ce qui permet de logique métier et placer des événements à prendre en réponse aux modifications qui ont lieu. Délimité contextes carte étroitement à microservices, également dans l’idéal, implémentés sous forme de leurs propres contextes délimitées individuels.
 
 > ### <a name="references--modern-web-applications"></a>Références à des Applications Web
-> - **Séparation des problèmes**  
-> <http://deviq.com/SEPARATION-of-Concerns/>
+> - Séparation des problèmes  
+> <http://deviq.com/separation-of-concerns/>
 > - **Encapsulation** <http://deviq.com/encapsulation/>
 > - **Principe d’Inversion de dépendance**  
-> <http://deviq.com/Dependency-inversion-Principle/>
+> <http://deviq.com/dependency-inversion-principle/>
 > - **Principe des dépendances explicites**  
-> <http://deviq.com/Explicit-Dependencies-Principle/>
+> <http://deviq.com/explicit-dependencies-principle/>
 > - **Ne répétez pas vous-même**  
-> <http://deviq.com/don-t-Repeat-Yourself/>
-> - **Ignorant la persistance**  
-> <http://deviq.com/Persistence-ignorance/>
+> <http://deviq.com/don-t-repeat-yourself/>
+> - Ignorant la persistance  
+> <http://deviq.com/persistence-ignorance/>
 > - **Limite de contexte**  
-> <https://martinfowler.com/bliki/BoundedContext.HTML>
+> <https://martinfowler.com/bliki/BoundedContext.html>
 
 > [!div class="step-by-step"]
 [Précédente] (choose-between-traditional-web-and-single-page-apps.md) [suivant] (commun-web-application-architectures.md)

@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 54e7ed6fff9ac709e411d0ac1e345c63fd753201
-ms.sourcegitcommit: 43c656811dd38a66a6672084c65d10c0cbbf2015
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: c10bf66dd37f0d99c038db7f95999d84986152fa
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Développer des applications MVC ASP.NET Core
 
 > « Il n’est pas important de faire au mieux la première fois. Il est essentiel de faire au mieux la dernière fois. »  
 > _-Recherche d’Andrew et David Thomas_
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 ASP.NET Core est une infrastructure inter-plateformes, open source pour la création d’applications web modernes d’optimisée pour le cloud. Applications ASP.NET Core sont légers et modulaires, avec prise en charge intégrée pour l’injection de dépendance, l’activation dans supérieur de testabilité et de facilité de maintenance. Combiné avec MVC, qui prend en charge la génération web moderne API en plus des applications basées sur une vue, ASP.NET Core est une puissante infrastructure permettant de générer des applications web d’entreprise.
 
@@ -74,7 +77,7 @@ Pour l’API web, ASP.NET MVC de base prend en charge [ *négociation de contenu
 > - **Liaison de modèle** https://docs.microsoft.com/aspnet/core/mvc/models/model-binding
 > - **Validation des modèles**
 > <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
-> - **Filtres** https://docs.microsoft.com/aspnet/core/mvc/controllers/filters
+> - **Filters** https://docs.microsoft.com/aspnet/core/mvc/controllers/filters
 
 ## <a name="working-with-dependencies"></a>Utilisation des dépendances
 
@@ -208,7 +211,7 @@ ASP.NET Core MVC utilise également une convention pour trouver les vues. Vous p
 
 À mesure que les applications augmentent, il devient plus en plus important d’isoler les problèmes transversaux pour éliminer les doublons et maintenir la cohérence. Quelques exemples de problèmes transversaux dans les applications ASP.NET Core sont l’authentification, les règles de validation de modèle, la mise en cache de sortie et une gestion d’erreurs, s’il existe beaucoup d’autres. ASP.NET Core MVC [filtres](https://docs.microsoft.com/aspnet/core/mvc/controllers/filters) vous permettent d’exécuter du code avant ou après certaines opérations dans le pipeline de traitement de la requête. Par exemple, un filtre peut s’exécuter avant et après la liaison de modèle, avant et après une action, ou avant et après les résultats d’une action. Vous pouvez également utiliser un filtre d’autorisation pour contrôler l’accès au reste du pipeline. Montre des figures 7-2 de demander des flux d’exécution des filtres si configuré.
 
-![La demande est traitée par le biais d’autorisation filtres, ressources, liaison de modèle, filtres d’Action, l’exécution d’Action et Conversion de résultat d’Action, les filtres d’Exception, filtres de résultat et l’exécution du résultat. Sur la sortie, la demande est traitée uniquement par les filtres de résultat et de ressource avant de devenir une réponse envoyée au client.](./media/image7-2.png)
+![La requête est traitée à travers les filtres d’autorisations, les filtres de ressources, la liaison de modèle, les filtres d’actions, l’exécution d’actions et la conversion des résultats d’actions, les filtres d’exceptions, les filtres de résultats et l’exécution de résultats. En sortie, la requête est traitée seulement par les filtres de résultats et les filtres de ressources avant de devenir une réponse envoyée au client.](./media/image7-2.png)
 
 Exécution de la demande figure 7-2 via des filtres et le pipeline de requête.
 
@@ -279,13 +282,13 @@ Vous pouvez en savoir plus sur les filtres de mise en œuvre et télécharger un
 
 > ### <a name="references--structuring-applications"></a>Références : structuration des Applications
 > - **Zones**  
-> <https://docs.Microsoft.com/ASPNET/Core/MVC/Controllers/Areas>
+> <https://docs.microsoft.com/aspnet/core/mvc/controllers/areas>
 > - **MSDN – tranches de fonctionnalité pour les principaux d’ASP.NET MVC**
 >  <https://msdn.microsoft.com/magazine/mt763233.aspx>
 > - **Filtres**  
-> <https://docs.Microsoft.com/ASPNET/Core/MVC/Controllers/Filters>
+> <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
 > - **MSDN – filtres MVC ASP.NET Core réel**  
-> <https://msdn.Microsoft.com/magazine/mt767699.aspx>
+> <https://msdn.microsoft.com/magazine/mt767699.aspx>
 
 ## <a name="security"></a>Sécurité
 
@@ -385,15 +388,15 @@ La plupart des API de web doit implémenter un système d’authentification par
 
 > ### <a name="references--security"></a>Références : sécurité
 > - **Vue d’ensemble des documents de sécurité**  
-> https://docs.Microsoft.com/ASPNET/Core/Security/
+> https://docs.microsoft.com/aspnet/core/security/
 > - **Application de SSL dans une application ASP.NET Core**  
-> <https://docs.Microsoft.com/ASPNET/Core/Security/enforcing-SSL>
+> <https://docs.microsoft.com/aspnet/core/security/enforcing-ssl>
 > - **Présentation d’Identity**  
-> <https://docs.Microsoft.com/ASPNET/Core/Security/Authentication/Identity>
+> <https://docs.microsoft.com/aspnet/core/security/authentication/identity>
 > - **Introduction à l’autorisation**  
-> <https://docs.Microsoft.com/ASPNET/Core/Security/Authorization/introduction>
+> <https://docs.microsoft.com/aspnet/core/security/authorization/introduction>
 > - **Authentification et autorisation pour API Apps dans Azure App Service**  
-> <https://docs.Microsoft.com/Azure/app-service-API/app-service-API-Authentication>
+> <https://docs.microsoft.com/azure/app-service-api/app-service-api-authentication>
 
 ## <a name="client-communication"></a>Communication du client
 
@@ -452,9 +455,9 @@ Envisagez de rencontrer des manières de vos applications communiquent directeme
 
 > ### <a name="references--client-communication"></a>Références : la Communication Client
 > - **ASP.NET Core SignalR**  
-> <https://github.com/ASPNET/SignalR>
+> <https://github.com/aspnet/SignalR>
 > - **Gestionnaire de WebSocket**  
-> https://github.com/Radu-matei/WebSocket-Manager
+> https://github.com/radu-matei/websocket-manager
 
 ## <a name="domain-driven-design--should-you-apply-it"></a>Domaine piloté par une conception doit appliquer ?
 
@@ -502,7 +505,7 @@ Une approche hybride serait d’utiliser uniquement les DDD pour les zones trans
 
 > ### <a name="references--domain-driven-design"></a>Références – conception pilotée par domaine
 > - **DDD en anglais (dépassement de capacité de réponse)**  
-> <https://StackOverflow.com/questions/1222392/CAN-someone-Explain-Domain-Driven-Design-ddd-in-plain-English-Please/1222488#1222488>
+> <https://stackoverflow.com/questions/1222392/can-someone-explain-domain-driven-design-ddd-in-plain-english-please/1222488#1222488>
 
 ## <a name="deployment"></a>Déploiement
 
@@ -544,13 +547,13 @@ Si vous hébergez votre application sur Azure, vous pouvez utiliser la passerell
 
 > ### <a name="references--deployment"></a>Références : déploiement
 > - **Hébergement et vue d’ensemble du déploiement**  
-> <https://docs.Microsoft.com/ASPNET/Core/Publishing/>
+> <https://docs.microsoft.com/aspnet/core/publishing/>
 > - **Quand utiliser Kestrel avec un proxy inverse**  
-> <https://docs.Microsoft.com/ASPNET/Core/Fundamentals/Servers/kestrel#When-to-Use-kestrel-with-a-Reverse-proxy>
+> <https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy>
 > - **Applications ASP.NET Core hôte dans Docker**  
-> <https://docs.Microsoft.com/ASPNET/Core/Publishing/docker>
+> <https://docs.microsoft.com/aspnet/core/publishing/docker>
 > - **Présentation de passerelle d’Application Windows Azure**  
-> <https://docs.Microsoft.com/Azure/Application-Gateway/Application-Gateway-introduction>
+> <https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction>
 
 >[!div class="step-by-step"]
 [Précédente] (commun-client-côté-web-technologies.md) [suivant] (work-with-data-in-asp-net-core-apps.md)

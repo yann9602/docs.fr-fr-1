@@ -5,27 +5,29 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 0d925119-01a1-45c2-9ea0-23061323ad33
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 58bb7f0b5d6e43f4e157bda2f7dff5ad7c57a6c3
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: fcd6f8454f77cfd2fbd80ed0f77ce1549025a4d6
+ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="interoperability-and-integration"></a>Interopérabilité et intégration
 Cette section aborde l'interopérabilité et l'intégration de [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Guide de l’interopérabilité des protocoles de services web](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] a été élaboré pour interagir avec les services Web qui prennent en charge un ensemble de spécifications connues sous le nom de spécifications de services Web. Cette rubrique répertorie les spécifications prises en charge ainsi que les liaisons qui les prennent en charge.  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] est conçu pour interagir avec les services Web qui prennent en charge un ensemble de spécifications connues sous les spécifications des services Web. Cette rubrique répertorie les spécifications prises en charge ainsi que les liaisons qui les prennent en charge.  
   
  [Intégration à des applications COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
  Discute comment les applications COM+ peuvent être exposées dans le cadre des services [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
@@ -61,4 +63,4 @@ Cette section aborde l'interopérabilité et l'intégration de [!INCLUDE[indigo1
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Extension de WCF](../../../../docs/framework/wcf/extending/extending-wcf.md)
+ [Extension de WCF](../../../../docs/framework/wcf/extending/index.md)

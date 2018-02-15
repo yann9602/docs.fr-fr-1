@@ -4,17 +4,20 @@ description: Moderniser des Applications .NET existantes avec Azure Cloud et les
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/26/2017
-ms.openlocfilehash: 0bcc330a5970ab923b48d8790c4de93171283d94
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 6e2f776b71fda9074605f072335a6e95366d2a97
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="conclusions"></a>Conclusions
 
 -   Solutions basées sur le conteneur finalement réduire les coûts économies. Les conteneurs sont une solution aux problèmes de déploiement, car ils supprimer la friction due à une absence de dépendances dans les environnements de production. En supprimant ces problèmes, il améliore considérablement les opérations de développement/Test, DevOps et de production.
 
--   Un conteneur Docker devient l’unité de déploiement pour toute application basée sur le serveur ou le service standard.
+-   Le conteneur Docker est en passe de devenir l’unité standard de déploiement d’une application ou d’un service basé sur un serveur.
 
 -   Pour les environnements de production, vous devez utiliser un orchestrator (par exemple, le Service Fabric ou Kubernetes) pour héberger des applications évolutives basés sur les conteneurs Windows.
 

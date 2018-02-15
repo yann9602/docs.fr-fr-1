@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: 70dc554c-8f4d-42a7-8e2a-6438657d012a
-ms.openlocfilehash: f5ebdb3f3b50996a397c8420b773178493744d70
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 8ec4652bab591dedc687d22c617b9466bc351f10
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="get-started-with-azure-queue-storage-using-f"></a>Prise en main avec un stockage de file d’attente Azure à l’aide de F # #
 
@@ -26,7 +26,7 @@ Ce didacticiel montre comment écrire du code F # pour certaines tâches courant
 
 Pour obtenir une vue d’ensemble conceptuelle de stockage de la file d’attente, consultez [le guide de .NET pour le stockage de file d’attente](/azure/storage/storage-dotnet-how-to-use-queues).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser ce guide, vous devez d’abord [créer un compte de stockage Azure](/azure/storage/storage-create-storage-account).
 Vous devez également votre clé d’accès pour ce compte.
@@ -142,8 +142,8 @@ Pour supprimer une file d’attente et tous les messages qu’il contient, appel
 
 Maintenant que vous avez appris les notions de base du stockage de file d’attente, suivez ces liens pour en savoir plus sur les tâches de stockage plus complexes.
 
-- [Bibliothèque cliente de stockage pour la référence .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+- [API de stockage Azure pour .NET](/dotnet/api/overview/azure/storage)
 - [Fournisseur de Type de stockage Azure](https://github.com/fsprojects/AzureStorageTypeProvider)
 - [Blog de l’équipe stockage Azure](http://blogs.msdn.com/b/windowsazurestorage/)
-- [Configuration des chaînes de connexion](http://msdn.microsoft.com/library/azure/ee758697.aspx)
-- [Référence de l’API REST](http://msdn.microsoft.com/library/azure/dd179355)
+- [Configurez les chaînes de connexion de stockage Azure](/azure/storage/common/storage-configure-connection-string)
+- [Référence de l’API REST des Services de stockage Azure](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)

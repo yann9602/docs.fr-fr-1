@@ -1,15 +1,18 @@
 ---
 title: Registres, des images et des conteneurs docker
-description: Cycle de vie Application en conteneur Docker avec la plate-forme Microsoft et les outils
+description: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 keywords: Docker, microservices, ASP.NET, conteneur
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: b115b25d8ae335aafbe41bac0d694170be7e3c49
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: 0cccead8833c63f19b359f830f555e7ff31daa1a
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="docker-containers-images-and-registries"></a>Registres, des images et des conteneurs docker
 

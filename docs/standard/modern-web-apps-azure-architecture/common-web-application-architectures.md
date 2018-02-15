@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: b6236cfab290211f930d6a1987075abeade4fd6d
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: dc5580d38ac29a5e923a4b7d84f9d7e077d5cdb2
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 #<a name="common-web-application-architectures"></a>Common Architectures d’Application Web
 
 > « Si vous pensez que la bonne architecture est coûteuse, essayez une architecture incorrecte. »  
 > _-Brian pi et Joseph Yoder_
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 .NET traditionnels sont déployées sous la forme d’unités correspondant à un fichier exécutable ou une seule application web qui s’exécutent dans un appdomain IIS unique. Cela est le modèle de déploiement plus simple et sert de nombreuses applications internes et publics plus petites très bien. Toutefois, même si cette unité de déploiement unique, la plupart des applications métier non trivial bénéficient certaine séparation logique en plusieurs couches.
 
@@ -149,7 +152,7 @@ Pour les applications monolithiques les projets de base de l’Application, l’
 
 Dans une solution nouvelle Architecture, chaque projet est claire des responsabilités. Par conséquent, certains types appartiendra dans chaque projet et vous trouverez souvent les dossiers correspondant à ces types dans le projet approprié.
 
-Le cœur de l’Application contient le modèle d’entreprise, ce qui inclut les entités, les services et les interfaces. Ces interfaces incluent des abstractions pour les opérations qui seront effectuées à l’aide de l’Infrastructure, tels que l’accès aux données, les accès au système de fichiers, les appels réseau, etc.. Parfois, services ou des interfaces définies au niveau de cette couche devrez travailler avec les types d’entité non qui n’ont aucune dépendance sur l’interface utilisateur ou d’Infrastructure. Il peuvent être définis comme simple transférer des objets de données (DTO).
+Le cœur de l’Application contient le modèle d’entreprise, ce qui inclut les entités, les services et les interfaces. Ces interfaces incluent des abstractions pour les opérations qui seront effectuées à l’aide de l’Infrastructure, tels que l’accès aux données, les accès au système de fichiers, les appels réseau, etc. Parfois, services ou des interfaces définies au niveau de cette couche devrez travailler avec les types d’entité non qui n’ont aucune dépendance sur l’interface utilisateur ou d’Infrastructure. Il peuvent être définis comme simple transférer des objets de données (DTO).
 
 > ### <a name="application-core-types"></a>Types de base d’application
 > -   Entités (entreprise classes de modèle qui sont conservées)
@@ -172,7 +175,7 @@ La couche d’interface utilisateur dans une application ASP.NET MVC de base ser
 > -   Contrôleurs
 > -   Filtres
 > -   Affichages
-> -   ViewModel
+> -   ViewModels
 > -   Démarrage
 
 La classe de démarrage est chargée pour la configuration de l’application et pour la création de types d’implémentation pour les interfaces, ce qui permet d’injection de dépendances fonctionne correctement au moment de l’exécution.
@@ -216,14 +219,14 @@ Alors que les applications monolithiques peuvent tirer parti de Docker, en fract
 
 > ### <a name="references--common-web-architectures"></a>Références – Architectures Web courantes
 > - **La nouvelle Architecture**  
-> <https://8thlight.com/blog/Uncle-Bob/2012/08/13/the-Clean-architecture.HTML>
+> <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
 > - **L’Architecture en cercles concentriques**  
-> <http://jeffreypalermo.com/blog/the-Onion-architecture-part-1/>
+> <http://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
 > - **Le modèle de référentiel**  
-> <http://deviq.com/repository-Pattern/>
+> <http://deviq.com/repository-pattern/>
 > - **Nettoyer l’exemple de Solution d’Architecture**  
 > <https://github.com/ardalis/cleanarchitecture>
-> - **Architecture des livres Microservices** <http://aka.ms/MicroservicesEbook>
+> - **Architecting Microservices e-book** <http://aka.ms/MicroservicesEbook>
 
 >[!div class="step-by-step"]
 [Précédente] (architecture principles.md) [suivant] (commun-client-côté-web-technologies.md)

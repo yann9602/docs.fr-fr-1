@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: c5b74a4f-dcd1-4849-930c-904b6c8a04e1
-ms.openlocfilehash: 92e26aff605d3bed89e388dd3616a2a9a3a96081
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 9011bdceabd1b5e0541ecb94f3e812871688025b
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Prise en main le stockage Blob Azure à l’aide de F # #
 
@@ -24,7 +24,7 @@ Cet article explique comment effectuer des tâches courantes à l’aide du stoc
 
 Pour une vue d’ensemble conceptuelle de stockage d’objets blob, consultez [le guide de .NET pour le stockage d’objets blob](/azure/storage/storage-dotnet-how-to-use-blobs).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser ce guide, vous devez d’abord [créer un compte de stockage Azure](/azure/storage/storage-create-storage-account). Vous devez également votre clé d’accès pour ce compte.
 
@@ -111,10 +111,10 @@ Par exemple, considérez l’ensemble suivant d’objets BLOB de blocs dans un c
 *photo1.jpg*
 *2015/architecture/description.txt*
 *2015/architecture/photo3.jpg*
-*2015 / architecture/photo4.jpg*
+*2015/architecture/photo4.jpg*
 *2016/architecture/photo5.jpg*
-*2016/architecture/photo6.jpg* 
- *2016/architecture/description.txt*
+*2016/architecture/photo6.jpg*
+*2016/architecture/description.txt*
 *2016/photo7.jpg*
 
 Lorsque vous appelez `ListBlobs` sur un conteneur (comme dans l’exemple ci-dessus), une liste hiérarchique est retournée. Si elle contient à la fois `CloudBlobDirectory` et `CloudBlockBlob` objets représentant les répertoires et les objets BLOB du conteneur, respectivement, puis le résultat ressemble à ceci :
@@ -242,12 +242,13 @@ Maintenant que vous avez appris les notions de base du stockage Blob, suivez ces
 
 ### <a name="blob-storage-reference"></a>Référence de stockage d’objets BLOB
 
-- [Bibliothèque cliente de stockage pour la référence .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
-- [Référence de l’API REST](http://msdn.microsoft.com/library/azure/dd179355)
+- [API de stockage Azure pour .NET](/dotnet/api/overview/azure/storage)
+- [Référence de l’API REST des Services de stockage Azure](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)
 
 ### <a name="related-guides"></a>Guides connexes
 
 - [Mise en route avec le stockage d’objets Blob Azure en c#](https://azure.microsoft.com/documentation/samples/storage-blob-dotnet-getting-started/)
-- [Transfert de données avec l’utilitaire de ligne de commande AzCopy](/azure/storage/storage-use-azcopy)
-- [Configuration des chaînes de connexion](http://msdn.microsoft.com/library/azure/ee758697.aspx)
+- [Transfert de données avec l’utilitaire de ligne de commande AzCopy sur Windows](/azure/storage/common/storage-use-azcopy)
+- [Transfert de données avec l’utilitaire de ligne de commande AzCopy sur Linux](/azure/storage/common/storage-use-azcopy-linux)
+- [Configurez les chaînes de connexion de stockage Azure](/azure/storage/common/storage-configure-connection-string)
 - [Blog de l’équipe stockage Azure](http://blogs.msdn.com/b/windowsazurestorage/)

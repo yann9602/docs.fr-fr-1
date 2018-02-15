@@ -15,18 +15,18 @@ helpviewer_keywords:
 - customizing Dispose method name
 - Finalize method
 ms.assetid: 31a6c13b-d6a2-492b-9a9f-e5238c983bcb
-caps.latest.revision: "22"
+caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
 manager: wpickett
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 86fef5b18ac2c1c1b1dfee385b726484191fe714
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.openlocfilehash: e0c2e74afea8a0cb5a0e187f05511eabe0527b90
+ms.sourcegitcommit: 08684dd61444c2f072b89b926370f750e456fca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="dispose-pattern"></a>Dispose, modèle
 Tous les programmes d’acquérir une ou plusieurs ressources système, telles que la mémoire, les handles du système ou les connexions de base de données, au cours de leur exécution. Les développeurs doivent être prudent lors de l’utilisation de ces ressources système, car ils doivent être libérées après que qu’ils ont été acquis et utilisés.  
@@ -35,7 +35,7 @@ Tous les programmes d’acquérir une ou plusieurs ressources système, telles q
   
  Malheureusement, la mémoire managée est simplement un des nombreux types de ressources système. Ressources autres que la mémoire managée toujours doivent être libérées explicitement et sont appelés les ressources non managées. Le catalogue global a été pas spécifiquement conçu pour gérer ces ressources non managées, ce qui signifie que la responsabilité de la gestion des ressources non managées se trouve entre les mains des développeurs.  
   
- Le CLR fournit une aide à la libération de ressources non managées. <xref:System.Object?displayProperty=nameWithType>déclare une méthode virtuelle <xref:System.Object.Finalize%2A> (également appelé le finaliseur) qui est appelée par le garbage collector avant que la mémoire de l’objet ne soit récupérée par le garbage collector et peut être substituée pour libérer les ressources non managées. Types de se substituer au finaliseur sont appelés types finalisables.  
+ Le CLR fournit une aide à la libération de ressources non managées. <xref:System.Object?displayProperty=nameWithType> déclare une méthode virtuelle <xref:System.Object.Finalize%2A> (également appelé le finaliseur) qui est appelée par le garbage collector avant que la mémoire de l’objet ne soit récupérée par le garbage collector et peut être substituée pour libérer les ressources non managées. Types de se substituer au finaliseur sont appelés types finalisables.  
   
  Bien que les finaliseurs sont efficaces dans certains scénarios de nettoyage, ils ont deux inconvénients importants :  
   
@@ -95,7 +95,7 @@ public class DisposableResourceHolder : IDisposable {
   
  En outre, cette section s’applique aux classes de base qui n’implémente pas déjà le modèle Dispose. Si vous héritez d’une classe qui implémente déjà le modèle, il vous suffit de remplacer le `Dispose(bool)` méthode pour fournir la logique de nettoyage des ressources supplémentaires.  
   
- **✓ FAIRE** déclarer un void virtuel protégé `Dispose(bool disposing)` méthode pour centraliser toute la logique associée à la libération des ressources non managées.  
+ **✓ FAIRE** déclarer un `protected virtual void Dispose(bool disposing)` méthode pour centraliser toute la logique associée à la libération des ressources non managées.  
   
  Nettoyage des ressources doit avoir lieu dans cette méthode. La méthode est appelée à partir de deux le finaliseur et `IDisposable.Dispose` (méthode). Le paramètre est false si l’appelé à partir d’à l’intérieur d’un finaliseur. Elle doit être utilisée pour vous assurer de n’importe quel code qui s’exécute pendant la finalisation n’accède pas aux autres objets finalisables. Détails de l’implémentation des finaliseurs sont décrits dans la section suivante.  
   
@@ -138,7 +138,7 @@ public class DisposableResourceHolder : IDisposable {
   
  **X ne sont pas** déclarer toutes les surcharges de la `Dispose` autrement que `Dispose()` et `Dispose(bool)`.  
   
- `Dispose`Prenez en compte un mot réservé pour codifier ce modèle et éviter toute confusion entre les implémenteurs, les utilisateurs et les compilateurs. Certains langages peuvent choisir d’implémenter automatiquement ce modèle sur certains types.  
+ `Dispose` Prenez en compte un mot réservé pour codifier ce modèle et éviter toute confusion entre les implémenteurs, les utilisateurs et les compilateurs. Certains langages peuvent choisir d’implémenter automatiquement ce modèle sur certains types.  
   
  **✓ FAIRE** autoriser la `Dispose(bool)` méthode à être appelée plusieurs fois. La méthode peut choisir de ne rien faire après le premier appel.  
   

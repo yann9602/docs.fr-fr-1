@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: dc82a932-5401-4d19-9fb3-92c50d8db514
-ms.openlocfilehash: 770d405921758eeb7e8d7ea98b95c29c99631475
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: e0e78e06fa1129ba5eeb73bc36c14343c93d6927
+ms.sourcegitcommit: e2bf8e6bc365bd9a0e86fe81eeae7d14f85f48c1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/13/2018
 ---
 # <a name="walkthrough-accessing-a-sql-database-by-using-type-providers-and-entities"></a>Procédure pas à pas : accès à une base de données SQL Database à l'aide des fournisseurs de type et des entités
 
@@ -45,7 +45,7 @@ Les tâches suivantes, décrites dans cette procédure pas à pas, doivent être
 <br />
 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 Vous devez avoir accès à un serveur qui exécute SQL Server sur lequel vous pouvez créer une base de données pour effectuer ces étapes.
 
 ## <a name="create-the-school-database"></a>Créer la base de données School
@@ -66,7 +66,7 @@ Vous pouvez créer la base de données School sur un serveur qui exécute SQL Se
 3. Ouvrez le menu contextuel pour le nouveau nœud de connexion, puis choisissez **nouvelle requête**.
 <br />
 
-4. Ouvrez [création de la base de données School](http://go.microsoft.com/fwlink/?LinkID=237278) dans le site Web de Microsoft, puis copiez et collez le script de base de données qui crée la base de données de l’étudiant dans la fenêtre d’éditeur.
+4. Ouvrez [création de la base de données School](https://msdn.microsoft.com/library/bb399731(v=vs.100).aspx) dans le site Web de Microsoft, puis copiez et collez le script de base de données qui crée la base de données School dans la fenêtre d’éditeur.
 <br />
 
 
@@ -113,8 +113,8 @@ open Microsoft.FSharp.Data.TypeProviders
 7. Mettez en surbrillance chaque bloc de code au fur et à mesure que vous l'ajoutez, puis appuyez sur Alt+Entrée pour l'exécuter dans F# Interactive.
 <br />
 
-## <a name="configure-the-type-provider-and-connect-to-the-entity-data-model"></a>Configurer le fournisseur de type et se connecter à l'Entity Data Model
-Dans cette étape, vous configurez un fournisseur de type avec une connexion de données et obtenez un contexte de données qui vous permet d'utiliser des données.
+## <a name="configure-the-type-provider-and-connect-to-the-entity-data-model"></a>Configurer le fournisseur de type et se connecter à l’Entity Data Model
+Dans cette étape, vous configurez un fournisseur de type avec une connexion de données et obtenez un contexte de données qui vous permet d’utiliser des données.
 
 
 #### <a name="to-configure-the-type-provider-and-connect-to-the-entity-data-model"></a>Pour configurer le fournisseur de type et se connecter à l'Entity Data Model
@@ -172,7 +172,7 @@ query {
 ```
 
 ## <a name="updating-the-database"></a>Mise à jour de la base de données
-Pour mettre à jour la base de données, vous utilisez les classes et les méthodes Entity Framework. Vous pouvez utiliser deux types de contexte de données avec le fournisseur de type SQLEntityConnection. En premier lieu, `ServiceTypes.SimpleDataContextTypes.EntityContainer` est le contexte de données simplifié, qui inclut uniquement les propriétés fournies qui représentent des tables et des colonnes de base de données. Ensuite, le contexte de données complet est une instance de la classe Entity Framework `System.Data.Objects.ObjectContext`, qui contient la méthode `System.Data.Objects.ObjectContext.AddObject(System.String,System.Object)` pour ajouter des lignes à la base de données. L'Entity Framework reconnaît des tables et des relations entre elles, ce qui garantit la cohérence de base de données.
+Pour mettre à jour la base de données, vous utilisez les classes et les méthodes Entity Framework. Vous pouvez utiliser deux types de contexte de données avec le fournisseur de type SQLEntityConnection. En premier lieu, `ServiceTypes.SimpleDataContextTypes.EntityContainer` est le contexte de données simplifié, qui inclut uniquement les propriétés fournies qui représentent des tables et des colonnes de base de données. Ensuite, le contexte de données complet est une instance de la classe Entity Framework `System.Data.Objects.ObjectContext`, qui contient la méthode `System.Data.Objects.ObjectContext.AddObject(System.String,System.Object)` pour ajouter des lignes à la base de données. L’Entity Framework reconnaît des tables et des relations entre elles, ce qui garantit la cohérence de base de données.
 
 
 #### <a name="to-update-the-database"></a>Pour mettre à jour la base de données
@@ -240,14 +240,9 @@ Explorer d’autres options de requête en examinant les opérateurs de requête
 
 
 ## <a name="see-also"></a>Voir aussi
-[Fournisseurs de type](index.md)
-
-[Fournisseur de Type de SqlEntityConnection](https://msdn.microsoft.com/visualfsharpdocs/conceptual/sqlentityconnection-type-provider-%5bfsharp%5d)
-
-[Procédure pas à pas : Génération de Types F # à partir d’un fichier de schéma EDMX](generating-fsharp-types-from-edmx.md)
-
-[ADO.NET Entity Framework](https://msdn.microsoft.com/library/bb399572)
-
-[vue d’ensemble du fichier .edmx](https://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)
-
-[EDM Generator &#40; EdmGen.exe &#41;](https://msdn.microsoft.com/library/bb387165)
+[Fournisseurs de type](index.md)  
+[Fournisseur de Type de SqlEntityConnection](https://msdn.microsoft.com/visualfsharpdocs/conceptual/sqlentityconnection-type-provider-%5bfsharp%5d)  
+[Procédure pas à pas : Génération de Types F # à partir d’un fichier de schéma EDMX](generating-fsharp-types-from-edmx.md)  
+[ADO.NET Entity Framework](https://msdn.microsoft.com/library/bb399572)  
+[vue d’ensemble du fichier .edmx](https://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
+[EDM Generator &#40; EdmGen.exe &#41;](https://msdn.microsoft.com/library/bb387165)  

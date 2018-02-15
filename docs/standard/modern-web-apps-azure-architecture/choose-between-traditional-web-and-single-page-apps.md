@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/06/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 5bae77fc4e0df9d0bc7fecfad25adfcee2419084
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: eb830ede1b644700a80f0e9fac2f3608deb88276
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Choisissez entre les applications Web classiques et les applications de Page unique (ZPS)
 
 > « Par la loi de Atwood : toutes les applications qui peuvent être écrites en JavaScript, sera finalement être écrites en JavaScript. »  
-> _\-Jeff Atwood_
+> _\- Jeff Atwood_
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Il existe deux approches générales pour la création d’applications web aujourd'hui : les applications web traditionnelles qui effectuent la plupart de la logique d’application sur le serveur et les applications à page unique (ZPS) qui effectuent la plupart de la logique d’interface utilisateur dans un navigateur web, communication avec le serveur web principalement à l’aide des API web. Une approche hybride est également possible, plus simples étant héberger un ou plusieurs type secondaire applications riches au sein d’une application web classique plus importante.
 
@@ -75,7 +78,7 @@ L’écriture SPAs nécessaire de connaître JavaScript ou TypeScript et les bib
 > - **AngularJS**  
 > <https://angularjs.org/>
 > - **Comparaison entre les infrastructures JavaScript courantes 4**  
-> <https://www.developereconomics.com/Feature-Comparison-of-4-Popular-js-MV-Frameworks>
+> <https://www.developereconomics.com/feature-comparison-of-4-popular-js-mv-frameworks>
 
 **Votre application doit exposer déjà une API pour d’autres clients (internes ou publics)**
 
@@ -85,12 +88,12 @@ Si vous êtes déjà en charge une API web pour une utilisation par d’autres c
 
 Le tableau ci-dessous résume certains facteurs à prendre en compte lors du choix entre une application web classique et SPA base.
 
-  | **Facteur** | **Application Web traditionnel** | **Application à Page unique** |
+  | **Factor** | **Application Web traditionnel** | **Application à une seule page** |
   |---|---|---|
-  | Connaissance de l’équipe requises avec JavaScript/TypeScript | **Minimale** | **Obligatoire** |
-  | Prise en charge des navigateurs sans script | **Prise en charge** | **Non pris en charge** |
-  | Comportement de l’Application côté Client minimale | **Convient parfaitement** | **Excessifs** |
-  | Exigences de l’Interface utilisateur riches et complexes | **Limitée** | **Convient parfaitement** |
+  | Connaissance de l’équipe requises avec JavaScript/TypeScript | **Minimal** | **Obligatoire** |
+  | Prise en charge des navigateurs sans script | **Prise en charge** | Non pris en charge |
+  | Comportement de l’Application côté Client minimale | **Well-Suited** | **Excessifs** |
+  | Exigences de l’Interface utilisateur riches et complexes | **Limited** | **Well-Suited** |
 
 >[!div class="step-by-step"]
-[Précédente] (modern-web-applications-characteristics.md) [suivant](architectural-principles.md)
+[Previous] (modern-web-applications-characteristics.md) [Next](architectural-principles.md)

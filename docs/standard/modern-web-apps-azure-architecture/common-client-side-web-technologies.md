@@ -6,18 +6,21 @@ ms.author: wiwagn
 ms.date: 10/07/2017
 ms.prod: .net-core
 ms.technology: dotnet-docker
-ms.openlocfilehash: 1084aee3d81a5df6ac99d6ec0e2ef647b4173c24
-ms.sourcegitcommit: bbde43da655ae7bea1977f7af7345eb87bd7fd5f
-ms.translationtype: HT
+ms.workload:
+- dotnet
+- dotnetcore
+ms.openlocfilehash: e8e156552fd4aa733594c01845fb7ed1643b4aef
+ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="common-client-side-web-technologies"></a>Technologies Web côté Client courantes
 
 > « Sites Web doivent apparaîtront correctement à partir de l’intérieur et du délai d’attente ».  
 > _-Paul Cookson_
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les applications ASP.NET Core sont des applications web et ils s’appuient généralement sur des technologies web côté client telles que HTML, CSS et JavaScript. En séparant le contenu de la page (HTML) à partir de sa mise en page et de style (CSS) et son comportement (via JavaScript), les applications web complexes peuvent tirer parti du principe de la séparation des intérêts. Les modifications ultérieures à la structure, la conception ou le comportement de l’application peuvent être apportées plus facilement quand ces problèmes ne sont pas étroitement liés.
 
@@ -67,7 +70,7 @@ Par exemple, imaginez que si la valeur d’une zone de texte est supérieur à 1
 
 ### <a name="jquery-vs-a-spa-framework"></a>jQuery vs une infrastructure SPA
 
-| **Facteur** | **jQuery** | **Angulaire**|
+| **Factor** | **jQuery** | **Angular**|
 |--------------------------|------------|-------------|
 | Extrait le DOM | **Oui** | **Oui** |
 | Prise en charge d’AJAX | **Oui** | **Oui** |
@@ -146,26 +149,26 @@ Infrastructures JavaScript continuent à faire évoluer avec une fréquence blin
 > ### <a name="references--client-web-technologies"></a>Références à des Technologies Web Client
 > - **HTML et CSS**  
 > <https://www.w3.org/standards/webdesign/htmlcss>
-> - **Sass vs. MOINS**  
-> <https://www.keycdn.com/blog/sass-VS-less/>
+> - **Sass vs. LESS**  
+> <https://www.keycdn.com/blog/sass-vs-less/>
 > - **Styles de police impressionnant, Sass et les applications ASP.NET Core avec moins**  
-> <https://docs.Microsoft.com/ASPNET/Core/client-side/less-sass-FA>
+> <https://docs.microsoft.com/aspnet/core/client-side/less-sass-fa>
 > - **Développement côté client dans ASP.NET Core**  
-> <https://docs.Microsoft.com/ASPNET/Core/client-side/>
+> <https://docs.microsoft.com/aspnet/core/client-side/>
 > - **jQuery**  
-> <https://jQuery.com/>
+> <https://jquery.com/>
 > - **jQuery vs AngularJS**  
-> <https://www.airpair.com/angularjs/posts/jQuery-angularjs-Comparison-migration-Walkthrough>
-> - **Angulaire**  
-> <https://Angular.IO/>
-> - **Réagir**  
-> <https://Facebook.github.IO/React/>
+> <https://www.airpair.com/angularjs/posts/jquery-angularjs-comparison-migration-walkthrough>
+> - **Angular**  
+> <https://angular.io/>
+> - réagir  
+> <https://facebook.github.io/react/>
 > - **Réagir Slingshot**  
-> <https://github.com/coryhouse/React-Slingshot>
+> <https://github.com/coryhouse/react-slingshot>
 > - **Réagir vs angulaire 2 comparaison**  
-> <https://www.codementor.IO/codementorteam/React-VS-Angular-2-Comparison-Beginners-Guide-lvz5710ha>
+> <https://www.codementor.io/codementorteam/react-vs-angular-2-comparison-beginners-guide-lvz5710ha>
 > - **Infrastructures JavaScript meilleures 5 de 2017**  
-> <https://hackernoon.com/5-Best-JavaScript-Frameworks-in-2017-7a63b3870282>
+> <https://hackernoon.com/5-best-javascript-frameworks-in-2017-7a63b3870282>
 
 >[!div class="step-by-step"]
 [Précédente] (commun-web-application-architectures.md) [suivant] (develop-asp-net-core-mvc-apps.md)
