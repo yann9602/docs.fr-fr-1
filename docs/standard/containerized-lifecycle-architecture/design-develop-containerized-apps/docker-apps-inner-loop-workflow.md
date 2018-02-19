@@ -8,15 +8,15 @@ ms.date: 09/22/2017
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 5c3b58ef434e1fd7b713102f2642250d8335d859
-ms.sourcegitcommit: e7f04439d78909229506b56935a1105a4149ff3d
-ms.translationtype: HT
+ms.openlocfilehash: 3605a6cd53db695de3af015a777e3c1a0e92af58
+ms.sourcegitcommit: 672c9cd122c13c9813f57f022c86ebdf6dd69b4f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Flux de travail de développement de la boucle interne pour les applications de Docker
 
-Avant de déclencher le flux de travail de boucle externe couvrant l’ensemble DevOps cycle, tout commence sur l’ordinateur de chaque développeur, le codage de l’application elle-même, à l’aide de son langues par défaut ou les plateformes et de le tester localement la (Figure 4-14). Mais dans tous les cas, vous aurez un point très important, en commun, quel que soit le langage, framework ou plateformes que vous choisissez. Dans ce flux de travail spécifique, vous toujours développez et testez les conteneurs Docker, mais localement.
+Avant de déclencher le flux de travail de boucle externe couvrant l’ensemble DevOps cycle, tout commence sur l’ordinateur de chaque développeur, le codage de l’application elle-même, à l’aide de leurs langues par défaut ou les plateformes et de le tester localement la (Figure 4-14). Mais dans tous les cas, vous aurez un point très important, en commun, quel que soit le langage, framework ou plateformes que vous choisissez. Dans ce flux de travail spécifique, vous toujours développez et testez les conteneurs Docker, mais localement.
 
 ![](./media/image18.png)
 
