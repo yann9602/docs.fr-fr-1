@@ -10,11 +10,11 @@ ms.prod: .net
 ms.technology: devlang-fsharp
 ms.devlang: fsharp
 ms.assetid: b3797415-3e49-4f8a-a8ee-fa614c5721aa
-ms.openlocfilehash: 88b4590a4323e75949c1915503b51793283792de
-ms.sourcegitcommit: bd1ef61f4bb794b25383d3d72e71041a5ced172e
+ms.openlocfilehash: 14c629d6223584113af47636495be61decca02ad
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="statically-resolved-type-parameters"></a>Paramètres de type résolus statiquement
 
@@ -27,7 +27,7 @@ A *paramètre de type résolus statiquement* est un paramètre de type qui est r
 ˆtype-parameter
 ```
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 Dans le langage F #, il existe deux types distincts de paramètres de type. Le premier type est le paramètre de type générique standard. Elles sont indiquées par une apostrophe ('), comme dans `'T` et `'U`. Ils sont équivalents aux paramètres de type générique dans d’autres langages .NET Framework. L’autre type est résolu statiquement et est indiqué par un symbole de point d’insertion, comme dans `^T` et `^U`.
 
 Paramètres de type résolus statiquement sont essentiellement utiles conjointement aux contraintes de membre, qui sont des contraintes qui vous permettent de spécifier qu’un argument de type doit avoir un membre particulier ou les membres pour pouvoir être utilisé. Il n’existe aucun moyen pour créer ce type de contrainte à l’aide d’un paramètre de type générique normal.
@@ -53,8 +53,8 @@ Le type résolu de `(+@)` est basée sur l’utilisation des deux `(+)` et `(*)`
 
 ```fsharp
 ^a -> ^c -> ^d
-when (^a or ^b) : (static member (+) : ^a * ^b -> ^d) and
-(^a or ^c) : (static member (+) : ^a * ^c -> ^b)
+when (^a or ^b) : (static member ( + ) : ^a * ^b -> ^d) and
+(^a or ^c) : (static member ( * ) : ^a * ^c -> ^b)
 ```
 
 La sortie est la suivante.
@@ -64,7 +64,7 @@ La sortie est la suivante.
 1.500000
 ```
 
-À compter de F # 4.1, vous pouvez également spécifier les noms de type concret dans les signatures de paramètres de type résolus statiquement.  Dans les versions précédentes de la langue, le nom de type peut effectivement être déduit par le compilateur, mais n’a pas réellement être spécifié dans la signature.  À compter de F # 4.1, vous pouvez également spécifier des noms de type concret dans les signatures de paramètres de type résolus statiquement. Voici un exemple :
+À compter de F # 4.1, vous pouvez également spécifier les noms de type concret dans les signatures de paramètres de type résolus statiquement.  Dans les versions précédentes de la langue, le nom de type peut effectivement être déduit par le compilateur, mais n’a pas réellement être spécifié dans la signature.  À compter de F # 4.1, vous pouvez également spécifier des noms de type concret dans les signatures de paramètres de type résolus statiquement. Voici un exemple :
 
 ```fsharp
 type CFunctor() = 
