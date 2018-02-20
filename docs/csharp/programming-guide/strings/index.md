@@ -2,20 +2,21 @@
 title: "Chaînes (Guide de programmation C#)"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-caps.latest.revision: "41"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 45dd48a53d3fae58596d9328ef8daba566b2ded1
-ms.sourcegitcommit: 685143b62385500f59bc36274b8adb191f573a16
+ms.openlocfilehash: 24a030bb43d49615a7487ce10ad2347fdfd8a290
+ms.sourcegitcommit: 96cc82cac4650adfb65ba351506d8a8fbcd17b5c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="strings-c-programming-guide"></a>Chaînes (Guide de programmation C#)
 Une chaîne est un objet de type <xref:System.String> dont la valeur est du texte. En interne, le texte est stocké sous la forme d’une collection séquentielle en lecture seule d’objets <xref:System.Char>. Il n’existe aucun caractère de fin Null à la fin d’une chaîne C# ; par conséquent, une chaîne C# peut contenir n’importe quel nombre de caractères Null incorporés ('\0'). La propriété <xref:System.String.Length%2A> d’une chaîne représente le nombre d’objets `Char` qu’elle contient, et non pas le nombre de caractères Unicode. Pour accéder à des points de code Unicode individuels dans une chaîne, utilisez l’objet <xref:System.Globalization.StringInfo>.  
@@ -125,7 +126,7 @@ string s = String.Empty;
 |[Comment : modifier du contenu de chaîne](../../../csharp/programming-guide/strings/how-to-modify-string-contents.md)|Fournit un exemple de code qui montre comment modifier le contenu des chaînes.|  
 |[Comment : concaténer plusieurs chaînes](../../../csharp/programming-guide/strings/how-to-concatenate-multiple-strings.md)|Montre comment utiliser l’opérateur `+` et la classe `Stringbuilder` pour joindre des chaînes au moment de la compilation et au moment de l’exécution.|  
 |[Comment : comparer des chaînes](../../../csharp/programming-guide/strings/how-to-compare-strings.md)|Montre comment effectuer des comparaisons ordinales de chaînes.|  
-|[Comment : analyser des chaînes à l’aide de String.Split](../../../csharp/programming-guide/strings/how-to-parse-strings-using-string-split.md)|Contient un exemple de code qui illustre l’utilisation de la méthode `String.Split` pour analyser des chaînes.|  
+|[Comment : analyser des chaînes à l’aide de String.Split](../../how-to/parse-strings-using-split.md)|Contient un exemple de code qui illustre l’utilisation de la méthode `String.Split` pour analyser des chaînes.|  
 |[Comment : rechercher des chaînes à l’aide de méthodes String](../../../csharp/programming-guide/strings/how-to-search-strings-using-string-methods.md)|Explique comment utiliser des méthodes spécifiques pour rechercher des chaînes.|  
 |[Comment : rechercher des chaînes à l’aide d’expressions régulières](../../../csharp/programming-guide/strings/how-to-search-strings-using-regular-expressions.md)|Explique comment utiliser des expressions régulières pour rechercher des chaînes.|  
 |[Guide pratique pour déterminer si une chaîne représente une valeur numérique](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|Montre comment analyser une chaîne en toute sécurité pour déterminer si elle possède une valeur numérique valide.|  
