@@ -6,7 +6,7 @@
       tocHref: /dotnet/
       topicHref: /dotnet/index
       items:
-        - name: Informations de référence sur les API
+        - name: Navigateur d’API .NET
           tocHref: /dotnet/api/
           topicHref: /dotnet/api/index
         - name: Guide de .NET

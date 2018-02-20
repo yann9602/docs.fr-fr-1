@@ -1,5 +1,4 @@
 # [Chaînes](index.md)
-## [Comment : concaténer plusieurs chaînes](how-to-concatenate-multiple-strings.md)
 ## [Comment : modifier du contenu de chaîne](how-to-modify-string-contents.md)
 ## [Comment : comparer des chaînes](how-to-compare-strings.md)
 ## [Comment : rechercher des chaînes à l’aide de méthodes String](how-to-search-strings-using-string-methods.md)

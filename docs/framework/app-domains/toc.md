@@ -10,7 +10,7 @@
 ### [Assemblys et exécution côte à côte](assemblies-and-side-by-side-execution.md)
 ## [Domaines d’application](application-domains.md)
 ## [Rubriques Guide pratique relatives aux domaines d'application et aux assemblys](application-domains-and-assemblies-how-to-topics.md)
-## [Utilisation des domaines d’application](application-domains.md)
+## [Utilisation des domaines d’application](use.md)
 ### [Guide pratique pour créer un domaine d’application](how-to-create-an-application-domain.md)
 ### [Guide pratique pour décharger un domaine d’application](how-to-unload-an-application-domain.md)
 ### [Guide pratique pour configurer un domaine d’application](how-to-configure-an-application-domain.md)
