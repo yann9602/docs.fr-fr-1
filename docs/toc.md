@@ -265,6 +265,7 @@
 ## [Rubriques de guide pratique C#](csharp/how-to/index.md)
 ### [Guide pratique pour analyser des chaînes à l’aide de `String.Split`](csharp/how-to/parse-strings-using-split.md)
 ### [Guide pratique pour concaténer des chaînes](csharp/how-to/concatenate-multiple-strings.md)
+### [Comment convertir une chaîne en DateTime](standard/base-types/parsing-datetime.md)
 <!-- End of C# Concepts section -->
 ## [Kit SDK .NET Compiler Platform (API Roslyn)](csharp/roslyn-sdk/)
 ## [Guide de programmation C#](csharp/programming-guide/)
