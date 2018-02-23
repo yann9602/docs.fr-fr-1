@@ -33,17 +33,17 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-the-stringbuilder-class-in-net"></a>À l’aide de la classe StringBuilder Class dans .NET
-Le <xref:System.String> objet est immuable. Chaque fois que vous utilisez une des méthodes dans le <xref:System.String?displayProperty=nameWithType> (classe), vous créez un nouvel objet string en mémoire, ce qui requiert une nouvelle allocation d’espace pour ce nouvel objet. Dans les situations où vous avez besoin pour effectuer des modifications répétées d’une chaîne, la surcharge associée de création d’un nouveau <xref:System.String> objet peut s’avérer coûteux. La <xref:System.Text.StringBuilder?displayProperty=nameWithType> classe peut être utilisée lorsque vous souhaitez modifier une chaîne sans créer un nouvel objet. Par exemple, à l’aide de la <xref:System.Text.StringBuilder> classe peut améliorer les performances lors de la concaténation de plusieurs chaînes dans une boucle.  
+Le type <xref:System.String> est immuable. Chaque fois que vous utilisez une des méthodes du type <xref:System.String?displayProperty=nameWithType> (classe), vous créez un nouvel objet string en mémoire, ce qui requiert une nouvelle allocation d’espace pour ce nouvel objet. Dans les situations où vous avez besoin pour effectuer des modifications répétées d’une chaîne, la surcharge associée de création d’un nouveau <xref:System.String> objet peut s’avérer coûteux. La classe <xref:System.Text.StringBuilder?displayProperty=nameWithType> peut être utilisée lorsque vous souhaitez modifier une chaîne sans créer un nouvel objet. A l’aide de la classe <xref:System.Text.StringBuilder>  vous pouvez améliorer les performances lors de la concaténation de plusieurs chaînes dans une boucle.  
   
 ## <a name="importing-the-systemtext-namespace"></a>Importation de l’espace de noms System.Text  
- Le <xref:System.Text.StringBuilder> classe se trouve dans le <xref:System.Text> espace de noms.  Pour éviter d’avoir à fournir un nom de type qualifié complet dans votre code, vous pouvez importer le <xref:System.Text> espace de noms :  
+ La classe <xref:System.Text.StringBuilder>  se trouve dans l'espace de noms  <xref:System.Text>.  Pour éviter d’avoir à fournir l'espace de noms complet dans votre code, vous pouvez importer <xref:System.Text>.
   
  [!code-cpp[Conceptual.StringBuilder#11](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#11)]
  [!code-csharp[Conceptual.StringBuilder#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#11)]
  [!code-vb[Conceptual.StringBuilder#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/Example.vb#11)]  
   
 ## <a name="instantiating-a-stringbuilder-object"></a>Instanciation d’un objet StringBuilder  
- Vous pouvez créer une nouvelle instance de la <xref:System.Text.StringBuilder> classe en initialisant votre variable avec l’une des méthodes de constructeur surchargées, comme illustré dans l’exemple suivant.  
+ Vous pouvez créer une nouvelle instance de la classe <xref:System.Text.StringBuilder> en initialisant votre variable avec l’une des méthodes de constructeur surchargées, comme illustré dans l’exemple suivant.  
   
  [!code-cpp[Conceptual.StringBuilder#1](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#1)]
  [!code-csharp[Conceptual.StringBuilder#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#1)]
