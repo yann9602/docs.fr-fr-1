@@ -2,7 +2,8 @@
 title: "Nous sommes désolés, nous don &#39; t pas de détails sur cette erreur c#"
 ms.date: 07/20/2015
 ms.prod: .net
-ms.technology: devlang-csharp
+ms.technology:
+- devlang-csharp
 ms.topic: article
 f1_keywords:
 - CS1583
@@ -882,30 +883,31 @@ f1_keywords:
 - CS8168
 - CS8172
 - CS8179
-helpviewer_keywords: errors [C#], additional information
+helpviewer_keywords:
+- errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-caps.latest.revision: "15"
+caps.latest.revision: 
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 312bcc963e2e444bb5125124a0cb690126c0a770
-ms.sourcegitcommit: 4f3fef493080a43e70e951223894768d36ce430a
+ms.openlocfilehash: 5f6224f661aff817b4314d832fcc2ff3938644c0
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>Nous sommes désolés, nous don &#39; t pas de détails sur cette erreur c#
 Nous sommes désolés, mais nous n'avons pas d'informations spécifiques sur cette erreur. Pour plus d'informations, vous pouvez rechercher le numéro d'erreur et le texte du message sur le web. Ou vous pouvez interroger d’autres développeurs au travers des forums suivants :  
   
- [v](http://go.microsoft.com/fwlink/?LinkId=146921)  
+ [v](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  
  Propose un forum de questions et de discussions générales sur la syntaxe du langage [!INCLUDE[csprcs](~/includes/csprcs-md.md)] et son compilateur.  
   
- [IDE Visual C#](http://go.microsoft.com/fwlink/?LinkId=146922)  
+ [IDE Visual C#](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharpide)  
  Fournit un forum de questions sur l'utilisation dans l'environnement [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)].  
   
- [Généralités Visual C#](http://go.microsoft.com/fwlink/?LinkId=146920)  
+ [Généralités Visual C#](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=csharpgeneral)  
  Propose un forum de questions et de problèmes avec [!INCLUDE[csprcs](~/includes/csprcs-md.md)] qui ne sont pas abordés dans d'autres forums.  
   
- [Dépassement de capacité](http://stackoverflow.com/questions/tagged/c%23)  
+ [StackOverflow](http://stackoverflow.com/questions/tagged/c%23)  
  Fournit un forum de questions et de problèmes relatifs à [!INCLUDE[csprcs](~/includes/csprcs-md.md)].  
   
  Voir aussi :  
@@ -915,4 +917,3 @@ Nous sommes désolés, mais nous n'avons pas d'informations spécifiques sur cet
  [Guide de programmation C#](../../csharp/programming-guide/index.md)  
  [Référence C#](../../csharp/language-reference/index.md)  
  [Nous contacter](/visualstudio/ide/talk-to-us)  
- [Nous contacter](/visualstudio/ide/talk-to-us)

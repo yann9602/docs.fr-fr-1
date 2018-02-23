@@ -5,7 +5,8 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-wpf
+ms.technology:
+- dotnet-wpf
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -19,16 +20,17 @@ helpviewer_keywords:
 - syntax [WPF], object elements
 - binding declarations [WPF]
 ms.assetid: b97fd626-4c0d-4761-872a-2bca5820da2c
-caps.latest.revision: "34"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: 2fc90769b1524ec93fd3df6a9b8be3eb28de8195
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 615b92d264b91ab5b267d5e79ab829b8afa489cd
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="binding-declarations-overview"></a>Vue d'ensemble des déclarations de liaison
 Cette rubrique décrit les différentes façons dont vous pouvez déclarer une liaison.  
@@ -51,7 +53,7 @@ Cette rubrique décrit les différentes façons dont vous pouvez déclarer une l
   
  Lorsque vous créez des chaînes de déclaration de liaison dans le balisage, elles doivent être jointes à la propriété de dépendance spécifique d’un objet cible. L’exemple suivant montre comment lier le <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> propriété à l’aide de l’extension de liaison, en spécifiant le <xref:System.Windows.Data.Binding.Source%2A> et <xref:System.Windows.Data.Binding.Path%2A> propriétés.  
   
- [!code-xaml[SimpleBinding#BDO1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#bdo1)]  
+ [!code-xaml[SimpleBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#L37-L37)]  
   
  Vous pouvez spécifier la plupart des propriétés de la <xref:System.Windows.Data.Binding> classe de cette façon. Pour plus d’informations sur l’extension de liaison, ainsi que pour une liste de <xref:System.Windows.Data.Binding> propriétés qui ne peut pas être définies à l’aide de l’extension de liaison, consultez la [Extension de balisage de liaison](../../../../docs/framework/wpf/advanced/binding-markup-extension.md) vue d’ensemble.  
   
@@ -69,7 +71,7 @@ Cette rubrique décrit les différentes façons dont vous pouvez déclarer une l
   
 <a name="MBandPB"></a>   
 ### <a name="multibinding-and-prioritybinding"></a>MultiBinding et PriorityBinding  
- <xref:System.Windows.Data.MultiBinding>et <xref:System.Windows.Data.PriorityBinding> ne prennent pas en charge la syntaxe d’extension XAML. Par conséquent, vous devez utiliser la syntaxe d’élément objet si vous déclarez un <xref:System.Windows.Data.MultiBinding> ou un <xref:System.Windows.Data.PriorityBinding> en XAML.  
+ <xref:System.Windows.Data.MultiBinding> et <xref:System.Windows.Data.PriorityBinding> ne prennent pas en charge la syntaxe d’extension XAML. Par conséquent, vous devez utiliser la syntaxe d’élément objet si vous déclarez un <xref:System.Windows.Data.MultiBinding> ou un <xref:System.Windows.Data.PriorityBinding> en XAML.  
   
 <a name="BindinginCode"></a>   
 ## <a name="creating-a-binding-in-code"></a>Création d’une liaison dans le code  
@@ -77,8 +79,6 @@ Cette rubrique décrit les différentes façons dont vous pouvez déclarer une l
   
  [!code-csharp[BindConversion#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#1)]
  [!code-vb[BindConversion#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#1)]  
-[!code-csharp[BindConversion#end1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#end1)]
-[!code-vb[BindConversion#end1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#end1)]  
   
  Si l’objet que vous établissez une liaison est un <xref:System.Windows.FrameworkElement> ou un <xref:System.Windows.FrameworkContentElement> que vous pouvez appeler la `SetBinding` méthode sur votre objet directement au lieu d’utiliser <xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>. Pour un exemple, consultez [Créer une liaison dans du code](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md).  
   

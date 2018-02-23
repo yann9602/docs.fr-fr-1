@@ -5,29 +5,32 @@ ms.date: 03/30/2017
 ms.prod: .net-framework
 ms.reviewer: 
 ms.suite: 
-ms.technology: dotnet-clr
+ms.technology:
+- dotnet-clr
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - csharp
 - vb
-helpviewer_keywords: authentication [WCF], specifying the identity of a service
+helpviewer_keywords:
+- authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-caps.latest.revision: "32"
+caps.latest.revision: 
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: wpickett
-ms.workload: dotnet
-ms.openlocfilehash: b741e421a8773e1a4b2d2ab7da5e119073e861ed
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.workload:
+- dotnet
+ms.openlocfilehash: 579f41a213564dd18dae719a14170100903efd92
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="service-identity-and-authentication"></a>Identité du service et authentification
 D’un service *identité du point de terminaison*est une valeur générée à partir du service Web Services Description Language (WSDL). Cette valeur, propagée à tout client, est utilisée pour authentifier le service. Une fois que le client a initialisé une communication à un point de terminaison et le service s'authentifie au client, le client compare la valeur de l'identité du point de terminaison avec la valeur réelle que le processus d'authentification du point de terminaison a retournée. Si elles correspondent, le client est assuré qu'il a contacté le point de terminaison du service attendu. Cela fonctionne comme une protection contre les *hameçonnage* par un client empêche d’être redirigé vers un point de terminaison hébergé par un service malveillant.  
   
- Pour un exemple d’application qui illustre la définition de l’identité, consultez [exemple](../../../../docs/framework/wcf/samples/service-identity-sample.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]points de terminaison et adresses de point de terminaison, consultez [adresses](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md).  
+ Pour un exemple d’application qui illustre la définition de l’identité, consultez [exemple](../../../../docs/framework/wcf/samples/service-identity-sample.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] points de terminaison et adresses de point de terminaison, consultez [adresses](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md).  
   
 > [!NOTE]
 >  Lorsque vous utilisez NT LanMan (NTLM) pour l'authentification, l'identité du service n'est pas vérifiée parce que, sous NTLM, le client ne peut pas authentifier le serveur. NTLM est utilisé lorsque les ordinateurs font partie d'un groupe de travail Windows, ou lors de l'exécution d'une version antérieure de Windows qui ne prend pas en charge l'authentification Kerberos.  
@@ -45,22 +48,22 @@ D’un service *identité du point de terminaison*est une valeur générée à p
  La propriété <xref:System.ServiceModel.EndpointAddress.Identity%2A> de la classe <xref:System.ServiceModel.EndpointAddress> représente l'identité du service appelé par le client. Le service publie <xref:System.ServiceModel.EndpointAddress.Identity%2A> dans ses métadonnées. Lorsque le développeur client exécute le [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) sur le point de terminaison de service, la configuration générée contient la valeur du service <xref:System.ServiceModel.EndpointAddress.Identity%2A> propriété. L'infrastructure [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] (en cas de configuration sécurisée) vérifie que le service possède l'identité spécifiée.  
   
 > [!IMPORTANT]
->  Les métadonnées contiennent l'identité attendue du service, il est par conséquent recommandé d'exposer les métadonnées du service de manière sécurisée, par exemple, en créant un point de terminaison HTTPS. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Comment : sécuriser des points de terminaison de métadonnées](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md).  
+>  Les métadonnées contiennent l'identité attendue du service, il est par conséquent recommandé d'exposer les métadonnées du service de manière sécurisée, par exemple, en créant un point de terminaison HTTPS. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Comment : sécuriser des points de terminaison de métadonnées](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md).  
   
 ## <a name="identity-types"></a>Types d'identité  
- Un service peut fournir cinq types d'identités. Chaque type d'identité correspond à un élément qui peut être contenu à l'intérieur de l'élément `<identity>` dans la configuration. Le type utilisé dépend du scénario et des spécifications de sécurité du service. Le tableau suivant décrit chaque type d'identité.  
+ Un service peut fournir des six types d’identités. Chaque type d'identité correspond à un élément qui peut être contenu à l'intérieur de l'élément `<identity>` dans la configuration. Le type utilisé dépend du scénario et des spécifications de sécurité du service. Le tableau suivant décrit chaque type d'identité.  
   
 |Type d'identité|Description|Scénario typique|  
 |-------------------|-----------------|----------------------|  
 |DNS (Domain Name System)|Utilisez cet élément avec les certificats X.509 ou les comptes Windows. Il compare le nom DNS spécifié dans l'information d'identification avec la valeur spécifiée dans cet élément.|Un contrôle DNS vous permet d'utiliser des certificats avec les noms DNS ou de sujet. Si un certificat est réédité avec le même nom DNS ou de sujet, le contrôle d'identité est encore valide. Lorsqu'un certificat est réédité, il obtient une nouvelle clé RSA mais conserve le même nom DNS ou de sujet. Cela signifie que les clients n'ont pas à mettre à jour les informations d'identité relatives du service.|  
-|certificat ;  Il s'agit de la valeur par défaut lorsque la valeur de certificat a été attribuée à la propriété `ClientCredentialType`.|Cet élément spécifie une valeur de certificat X.509 encodée en base 64 qui sera comparée avec le client.<br /><br /> Utilisez également cet élément en cas d'utilisation d'un [!INCLUDE[infocard](../../../../includes/infocard-md.md)] comme information d'identification pour authentifier le service.|Cet élément restreint l'authentification à un certificat unique basé sur sa valeur d'empreinte numérique. Cela permet une authentification plus stricte parce que les valeurs d'empreinte numérique sont uniques. Il convient cependant de noter que si le certificat est réédité avec le même nom de sujet, il a également une nouvelle empreinte numérique. Par conséquent, les clients ne sont pas en mesure de valider le service à moins que la nouvelle empreinte numérique soit connue. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]recherche de l’empreinte numérique d’un certificat, consultez [Comment : récupérer l’empreinte numérique d’un certificat](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).|  
+|certificat ;  Il s'agit de la valeur par défaut lorsque la valeur de certificat a été attribuée à la propriété `ClientCredentialType`.|Cet élément spécifie une valeur de certificat X.509 encodée en base 64 qui sera comparée avec le client.<br /><br /> Utilisez également cet élément en cas d'utilisation d'un [!INCLUDE[infocard](../../../../includes/infocard-md.md)] comme information d'identification pour authentifier le service.|Cet élément restreint l'authentification à un certificat unique basé sur sa valeur d'empreinte numérique. Cela permet une authentification plus stricte parce que les valeurs d'empreinte numérique sont uniques. Il convient cependant de noter que si le certificat est réédité avec le même nom de sujet, il a également une nouvelle empreinte numérique. Par conséquent, les clients ne sont pas en mesure de valider le service à moins que la nouvelle empreinte numérique soit connue. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] recherche de l’empreinte numérique d’un certificat, consultez [Comment : récupérer l’empreinte numérique d’un certificat](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).|  
 |Référence de certificat|Identique à l'option de certificat décrite précédemment. Toutefois, cet élément vous permet de spécifier un nom de certificat et l'emplacement du magasin à partir duquel vous pouvez le récupérer.|Identique au scénario de certificat décrit précédemment.<br /><br /> L'avantage est que l'emplacement du magasin du certificat peut changer.|  
 |RSA|Cet élément spécifie une valeur de clé RSA à comparer avec le client. Il est similaire à l'option de certificat mais la clé RSA est utilisée au lieu de l'empreinte numérique du certificat.|Un contrôle RSA vous permet de restreindre spécifiquement l'authentification à un certificat unique en fonction de sa clé RSA. Cela permet l'authentification plus stricte d'une clé RSA spécifique aux dépens du service, qui n'utilise plus les clients existants lorsque la valeur de clé RSA est modifiée.|  
 |Nom d'utilisateur principal (UPN). Il s'agit de la valeur par défaut lorsque la valeur Windows est attribuée à `ClientCredentialType` et le processus du service ne s'exécute pas sous l'un des comptes système.|Cet élément spécifie l'UPN sous lequel le service s'exécute. Consultez la section du protocole Kerberos et l’identité de [substitution de l’identité d’un Service pour l’authentification](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md).|Cela garantit que le service s'exécute sous un compte d'utilisateur Windows spécifique. Le compte d'utilisateur peut être l'utilisateur actuellement connecté ou le service qui s'exécute sous un compte d'utilisateur particulier.<br /><br /> Ce paramètre tire parti de la sécurité Windows Kerberos si le service s'exécute sous un compte de domaine dans un environnement Active Directory.|  
 |Nom de principal du service (SPN). Valeur par défaut lorsque le `ClientCredentialType` a la valeur Windows et le processus du service s'exécute sous l'un des comptes système LocalService, LocalSystem ou NetworkService.|Cet élément spécifie le SPN associé au compte du service. Consultez la section du protocole Kerberos et l’identité de [substitution de l’identité d’un Service pour l’authentification](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md).|Cela garantit que le SPN et le compte Windows spécifique, associé au SPN, identifient le service.<br /><br /> Vous pouvez utiliser l'outil Setspn.exe pour associer un compte d'ordinateur pour le compte d'utilisateur du service.<br /><br /> Ce paramètre tire parti de la sécurité Windows Kerberos si le service s'exécute sous l'un des comptes système ou sous un compte de domaine qui a un nom SPN associé et si l'ordinateur est un membre d'un domaine dans un environnement Active Directory.|  
   
 ## <a name="specifying-identity-at-the-service"></a>Spécification de l'identité au service  
- Généralement, vous n'avez pas besoin de définir l'identité sur un service car la sélection d'un type d'informations d'identification du client impose le type d'identité exposé dans les métadonnées du service. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]comment remplacer ou spécifier l’identité du service, consultez [substitution de l’identité d’un Service pour l’authentification](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md).  
+ Généralement, vous n'avez pas besoin de définir l'identité sur un service car la sélection d'un type d'informations d'identification du client impose le type d'identité exposé dans les métadonnées du service. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] comment remplacer ou spécifier l’identité du service, consultez [substitution de l’identité d’un Service pour l’authentification](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md).  
   
 ## <a name="using-the-identity-element-in-configuration"></a>À l’aide de la \<identité > élément de Configuration  
  Si vous remplacez le type d'information d'identification du client dans la liaison présentée précédemment par `Certificate,`, alors le fichier WSDL généré contient un certificat X.509 sérialisé en base 64 pour la valeur d'identité, tel qu'indiqué dans le code suivant. Il s'agit de la valeur par défaut pour tous les types d'informations d'identification du client autres que Windows.  
@@ -120,7 +123,7 @@ D’un service *identité du point de terminaison*est une valeur générée à p
  [!code-csharp[C_Identity#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#8)]
  [!code-vb[C_Identity#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#8)]  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)]la pile de liaison éléments correctement pour une liaison personnalisée, consultez [Creating liaisons](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)]Création d’une liaison personnalisée avec le <xref:System.ServiceModel.Channels.SecurityBindingElement>, consultez [Comment : créer un SecurityBindingElement pour un Mode d’authentification spécifié](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
+ [!INCLUDE[crabout](../../../../includes/crabout-md.md)] la pile de liaison éléments correctement pour une liaison personnalisée, consultez [Creating liaisons](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Création d’une liaison personnalisée avec le <xref:System.ServiceModel.Channels.SecurityBindingElement>, consultez [Comment : créer un SecurityBindingElement pour un Mode d’authentification spécifié](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
   
 ## <a name="see-also"></a>Voir aussi  
  [Guide pratique pour créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
