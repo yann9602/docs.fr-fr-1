@@ -7,11 +7,11 @@ ms.date: 12/20/2017
 ms.topic: article
 ms.prod: .net
 ms.devlang: devlang-csharp
-ms.openlocfilehash: d1bef5813df40fb5c6e6b96e0042a682022beb8d
-ms.sourcegitcommit: dd6ea7f0e581ac84e0a90d9b23c463fcf1ec3ce7
+ms.openlocfilehash: 918dfeceb0bfd8ee808e5615df014973dedf5cc1
+ms.sourcegitcommit: 973a12d1e6962cd9a9c263fbfaad040ec8267fe9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 02/22/2018
 ---
 # <a name="how-to-c"></a>Guides pratiques (C#)
 
@@ -68,7 +68,7 @@ Vous aurez peut-être besoin de convertir un objet en un autre type.
 
 - [Déterminer si une chaîne représente un nombre](../programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md).
 - [Convertir entre des chaînes qui représentent des nombres hexadécimaux et le nombre](../programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md).
-- [Convertir une chaîne en <xref:System.DateTime>](../programming-guide/strings/how-to-convert-a-string-to-a-datetime.md).
+- [Convertir une chaîne en `DateTime`](../../standard/base-types/parsing-datetime.md).
 - [Convertir un tableau d’octets en int](../programming-guide/types/how-to-convert-a-byte-array-to-an-int.md).
 - [Convertir une chaîne en nombre ](../programming-guide/types/how-to-convert-a-string-to-a-number.md).
 - [Utiliser `as` et `is` pour caster sans problème en un autre type](../programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md).
